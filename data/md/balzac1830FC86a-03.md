@@ -1,6 +1,6 @@
 ---
 identifier: balzac1830FC86a-03
-creator: Honoré de Balzac et al.
+creator: Balzac, Honoré de
 created: 1830
 modified: 1830
 isPartOf: Pathologie de la vie sociale : Traité de la vie élégante. Études analytiques

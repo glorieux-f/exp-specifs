@@ -1,6 +1,6 @@
 ---
 identifier: balzac1839FC86c-03
-creator: Honoré de Balzac et al.
+creator: Balzac, Honoré de
 created: 1839
 modified: 1839
 isPartOf: Pathologie de la vie sociale : Traité des excitants modernes. Études analytiques
