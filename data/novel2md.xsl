@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:transform version="1.1" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns="http://www.w3.org/1999/xhtml" xmlns:html="http://www.w3.org/1999/xhtml"
+  xmlns:tei="http://www.tei-c.org/ns/1.0" 
+  xmlns:data="urn:data" 
+  xmlns:exsl="http://exslt.org/common"
+  extension-element-prefixes="exsl"
+  exclude-result-prefixes="tei html data"
+  >
+  <xsl:include href="../../teinte-xsl/tei_txt/tei_markdown.xsl"/>
+  <xsl:param name="filename"/>
+  <xsl:param name="outdir"/>
+  <xsl:variable name="chapcount" select="count(/tei:TEI/tei:text/tei:body//tei:div[@type='chapter'])"/>
+  <xsl:variable name="chapformat">
+    <xsl:choose>
+      <xsl:when test="$chapcount &gt; 99">001</xsl:when>
+      <xsl:otherwise>01</xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
+  <xsl:variable name="yamline">
+    <xsl:text>---</xsl:text>
+    <xsl:value-of select="$lf"/>
+  </xsl:variable>
+  <xsl:variable name="bookid" select="substring-before($filename, '_')"/>
+  <xsl:template match="/">
+    <xsl:choose>
+      <xsl:when test="$chapcount = 1">###error</xsl:when>
+    </xsl:choose>
+    <xsl:value-of select="$lf"/>
+    <xsl:choose>
+      <xsl:when test="$chapcount = 0">
+        <xsl:variable name="href" select="concat($outdir, $bookid, '.md')"/>
+        <xsl:value-of select="$href"/>
+        <xsl:value-of select="$lf"/>
+        <exsl:document href="{$href}" method="text" omit-xml-declaration="yes" encoding="UTF-8" indent="yes">
+          <xsl:value-of select="$yamline"/>
+          <xsl:text>identifier: </xsl:text>
+          <xsl:value-of select="$bookid"/>
+          <xsl:value-of select="$lf"/>
+          <xsl:text>creator: </xsl:text>
+          <xsl:value-of select="$author1"/>
+          <xsl:value-of select="$lf"/>
+          <xsl:text>created: </xsl:text>
+          <xsl:value-of select="$docdate"/>
+          <xsl:value-of select="$lf"/>
+          <xsl:text>title: </xsl:text>
+          <xsl:call-template name="quote">
+            <xsl:with-param name="value" select="$doctitle"/>
+          </xsl:call-template>
+          <xsl:value-of select="$lf"/>
+          <xsl:value-of select="$yamline"/>
+          <xsl:value-of select="$lf"/>
+          <xsl:apply-templates select="/tei:TEI/tei:text/tei:body/node()" mode="md"/>
+        </exsl:document>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:apply-templates select="/tei:TEI/tei:text/tei:body//tei:div[@type='chapter']" mode="md"
+        />
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+
+  <xsl:template match="tei:div[@type = 'chapter']" mode="md">
+    <xsl:variable name="no">
+      <xsl:number count="tei:div[@type = 'chapter']" format="{$chapformat}" from="tei:body" level="any"/>
+    </xsl:variable>
+    <xsl:variable name="docid">
+      <xsl:value-of select="$bookid"/>
+      <xsl:text>-</xsl:text>
+      <xsl:value-of select="$no"/>
+    </xsl:variable>
+    <xsl:variable name="href" select="concat($outdir, $docid, '.md')"/>
+    <xsl:variable name="title">
+      <xsl:variable name="raw">
+        <xsl:apply-templates select="tei:head" mode="title"/>
+      </xsl:variable>
+      <xsl:value-of select="normalize-space($raw)"/>
+    </xsl:variable>
+    <xsl:value-of select="$href"/>
+    <xsl:value-of select="$lf"/>
+    <exsl:document href="{$href}" method="text" omit-xml-declaration="yes" encoding="UTF-8" indent="yes">
+      <xsl:value-of select="$yamline"/>
+      <xsl:text>identifier: </xsl:text>
+      <xsl:value-of select="$docid"/>
+      <xsl:value-of select="$lf"/>
+      <xsl:text>creator: </xsl:text>
+      <xsl:value-of select="$author1"/>
+      <xsl:value-of select="$lf"/>
+      <xsl:text>created: </xsl:text>
+      <xsl:value-of select="$docdate"/>
+      <xsl:value-of select="$lf"/>
+      <xsl:text>isPartOf: </xsl:text>
+      <xsl:call-template name="quote">
+        <xsl:with-param name="value" select="$doctitle"/>
+      </xsl:call-template>
+      <xsl:value-of select="$lf"/>
+      <xsl:text>title: </xsl:text>
+      <xsl:call-template name="quote">
+        <xsl:with-param name="value" select="$title"/>
+      </xsl:call-template>
+      <xsl:value-of select="$lf"/>
+      <xsl:value-of select="$yamline"/>
+      <xsl:value-of select="$lf"/>
+      <xsl:apply-templates mode="md"/>
+    </exsl:document>
+  </xsl:template>
+  <xsl:template match="tei:note" mode="md"/>
+  <xsl:template match="tei:hi" mode="md">
+    <xsl:apply-templates/>
+  </xsl:template>
+  <xsl:template name="quote">
+    <xsl:param name="value"/>
+    <xsl:choose>
+      <xsl:when test="substring($value, 1, 1) = '[' or contains($value, ':')">
+        <xsl:text>"</xsl:text>
+        <xsl:value-of select="translate($value, '&quot;', ' ')"/>
+        <xsl:text>"</xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$value"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+</xsl:transform>
