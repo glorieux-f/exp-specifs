@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = balzac1841FC03-08
 # creator = Balzac, Honoré de
 # created = 1841
@@ -26,7 +26,7 @@ un	un	DET
 pauvre	pauvre	NOUN
 réfugié	réfugier	VERB
 forcé	forcer	VERB
-de	de	DET
+de	de	ADP
 se	se	PRON
 cacher	cacher	VERB
 à cause de	à cause de	ADP
@@ -38,23 +38,23 @@ révolution	révolution	NOUN
 que	que	SCONJ
 le	le	DET
 duc	duc	NOUN
-de	de	DET
+de	de	ADP
 Angoulême	Angoulême	PROPN
 est	être	AUX
 allé	aller	VERB
-vaincre	vaincre	ADV
+vaincre	vaincre	VERB
 ;	;	PUNCTclause
 succès	succès	NOUN
 auquel	auquel	ADP_PRON
 nous	nous	PRON
 avons	avoir	AUX
 dû	devoir	VERB
-de	de	DET
+de	de	ADP
 belles	beau	ADJ
 fêtes	fête	NOUN
 .	.	PUNCTsent
-Quoique	quoique	ADJ
-libéral	libéral	NOUN
+Quoique	quoique	SCONJ
+libéral	libéral	ADJ
 et	et	CCONJ
 sans doute	sans doute	ADV
 bourgeois	bourgeois	ADJ
@@ -78,7 +78,7 @@ mort	mort	NOUN
 .	.	PUNCTsent
 Je	je	PRON
 le	le:PRON	PRON
-fais	faire	AUX
+fais	faire	VERB
 causer	causer	VERB
 pour	pour	ADP
 savoir	savoir	VERB
@@ -88,29 +88,29 @@ secret	secret	NOUN
 mais	mais	CCONJ
 il	il	PRON
 est	être	AUX
-de	de	DET
-une	un	PRON
-taciturnité	taciturnité	ADP_DET
+de	de	ADP
+une	un	DET
+taciturnité	taciturnité	NOUN
 castillane	castillan	ADJ
 ,	,	PUNCTclause
 fier	fier	ADJ
-comme	comme	CCONJ
+comme	comme	SCONJ
 si	si	SCONJ
 il	il	PRON
 était	être	AUX
 Gonzalve	Gonzalve	PROPN
-de	de	DET
+de	de	ADP
 Cordoue	Cordoue	PROPN
 ,	,	PUNCTclause
 et	et	CCONJ
 néanmoins	néanmoins	ADV
-de	de	DET
-une	un	PRON
+de	de	ADP
+une	un	DET
 douceur	douceur	NOUN
 et	et	CCONJ
-de	de	DET
-une	un	PRON
-patience	patience	ADP
+de	de	ADP
+une	un	DET
+patience	patience	NOUN
 angéliques	angélique	ADJ
 ;	;	PUNCTclause
 sa	son	DET
@@ -121,7 +121,7 @@ pas	pas	ADV
 montée	monter	VERB
 comme	comme	ADP
 celle	celle	PRON
-de	de	DET
+de	de	ADP
 miss	miss	NOUN
 Griffith	Griffith	PROPN
 ,	,	PUNCTclause
@@ -132,9 +132,9 @@ intérieure	intérieur	ADJ
 ;	;	PUNCTclause
 il	il	PRON
 se	se	PRON
-fait	faire	AUX
+fait	faire	VERB
 rendre	rendre	VERB
-ce	ce	PRON
+ce	ce	DET
 qui	qui	PRON
 lui	lui	PRON
 est	être	AUX
@@ -148,7 +148,7 @@ devoirs	devoir	NOUN
 et	et	CCONJ
 nous	nous	PRON
 écarte	écarter	VERB
-de	de	DET
+de	de	ADP
 lui	lui	PRON
 par	par	ADP
 le	le	DET
@@ -186,7 +186,7 @@ je	je	PRON
 me	me	PRON
 suis	être	AUX
 permis	permettre	VERB
-de	de	DET
+de	de	ADP
 l'	le:PRON	PRON
 appeler	appeler	VERB
 ainsi	ainsi	ADV
@@ -208,7 +208,7 @@ que	que	SCONJ
 il	il	PRON
 tient	tenir	VERB
 ordinairement	ordinairement	ADV
-baissés	baissé	NOUN
+baissés	baisser	VERB
 ,	,	PUNCTclause
 et	et	CCONJ
 me	me	PRON
@@ -245,7 +245,7 @@ je	je	PRON
 l'	le:PRON	PRON
 avais	avoir	AUX
 fâché	fâcher	VERB
-en	en	DET
+en	en	ADP
 quelque chose	quelque chose	PRON
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -256,10 +256,10 @@ dit	dire	VERB
 alors	alors	ADV
 dans	dans	ADP
 sa	son	DET
-sublime	sublime	NOUN
+sublime	sublime	ADJ
 et	et	CCONJ
-grandiose	grandiose	NOUN
-langue	langue	ADJ
+grandiose	grandiose	ADJ
+langue	langue	NOUN
 espagnole	espagnol	ADJ
 :	:	PUNCTclause
 —	—	PUNCTclause
@@ -284,7 +284,7 @@ humiliée	humilier	VERB
 ,	,	PUNCTclause
 je	je	PRON
 ai	avoir	AUX
-rougi	rougi	ADV
+rougi	rougir	VERB
 ;	;	PUNCTclause
 je	je	PRON
 allais	aller	VERB
@@ -300,9 +300,9 @@ je	je	PRON
 me	me	PRON
 suis	être	AUX
 souvenue	souvenir	VERB
-de	de	DET
+de	de	ADP
 ce	ce	PRON
-que	que	SCONJ
+que	que	PRON
 nous	nous	PRON
 disait	dire	VERB
 notre	notre	DET
@@ -328,7 +328,7 @@ reprendre	reprendre	VERB
 en	en	ADP
 quoi que	quoi que	SCONJ
 ce	ce	PRON
-soit	soit	CCONJ
+soit	soit	ADV
 ,	,	PUNCTclause
 je	je	PRON
 deviendrais	devenir	VERB
@@ -345,14 +345,14 @@ a	avoir	AUX
 coloré	colorer	VERB
 son	son	DET
 teint	teint	NOUN
-olivâtre	olivâtre	NOUN
+olivâtre	olivâtre	ADJ
 ,	,	PUNCTclause
 il	il	PRON
 me	me	PRON
 a	avoir	AUX
 répondu	répondre	VERB
-de	de	DET
-une	une	NUM
+de	de	ADP
+une	un	DET
 voix	voix	NOUN
 doucement	doucement	ADV
 émue	ému	ADJ
@@ -381,18 +381,18 @@ Si	si	SCONJ
 je	je	PRON
 étais	être	AUX
 Don	Don	PROPN
-en	en	NUM
+en	en	ADP
 Espagne	Espagne	PROPN
 ,	,	PUNCTclause
 et	et	CCONJ
 que	que	SCONJ
 je	je	PRON
 eusse	avoir	VERB
-tout	tout	ADJ
-perdu	perdu	NOUN
+tout	tout	ADV
+perdu	perdre	VERB
 au	au	ADP_DET
 triomphe	triomphe	NOUN
-de	de	DET
+de	de	ADP
 Ferdinand	Ferdinand	PROPN
 VII	VII	NUM
 ,	,	PUNCTclause
@@ -411,12 +411,12 @@ que	que	ADV
 un	un	DET
 pauvre	pauvre	NOUN
 maître	maître	NOUN
-de	de	DET
+de	de	ADP
 langue	langue	NOUN
 ,	,	PUNCTclause
 n'est-ce pas	n'est-ce pas	ADV
 une	un	DET
-atroce	atroce	NOUN
+atroce	atroce	ADJ
 raillerie	raillerie	NOUN
 ?	?	PUNCTsent
 Ni	ni	CCONJ
@@ -426,8 +426,8 @@ l'autre	l'autre	PRON
 ne	ne	ADV
 sont	être	AUX
 dignes	digne	ADJ
-de	de	DET
-une	un	SCONJ
+de	de	ADP
+une	un	DET
 jeune	jeune	ADJ
 fille	fille	NOUN
 noble	noble	ADJ
@@ -452,8 +452,8 @@ religion	religion	NOUN
 pour	pour	ADP
 vous	vous	PRON
 prier	prier	VERB
-de	de	DET
-oublier	oublier	NOUN
+de	de	ADP
+oublier	oublier	VERB
 mon	mon	DET
 tort	tort	NOUN
 .	.	PUNCTsent
@@ -481,7 +481,7 @@ me	me	PRON
 a	avoir	AUX
 causé	causer	VERB
 plus	plus	ADV
-de	de	DET
+de	de	ADP
 trouble	trouble	NOUN
 que	que	SCONJ
 tous	tout	ADJ
@@ -493,20 +493,20 @@ regards	regard	NOUN
 et	et	CCONJ
 les	le	DET
 phrases	phrase	NOUN
-que	que	SCONJ
+que	que	PRON
 je	je	PRON
 ai	avoir	AUX
 recueillis	recueillir	VERB
 pendant	pendant	ADP
 la	le	DET
 soirée	soirée	NOUN
-où	où	ADV
+où	où	PRON
 je	je	PRON
 ai	avoir	AUX
 été	être	AUX
 le	le	DET
 plus	plus	ADV
-courtisée	courtisé	ADJ
+courtisée	courtiser	VERB
 .	.	PUNCTsent
 Durant	durant	ADP
 la	le	DET
@@ -558,7 +558,7 @@ doit	devoir	VERB
 pas	pas	ADV
 avoir	avoir	VERB
 plus	plus	ADV
-de	de	DET
+de	de	ADP
 vingt-six	vingt-six	NUM
 à	à	ADP
 vingt-huit	vingt-huit	NUM
@@ -580,15 +580,15 @@ fait	faire	AUX
 remarquer	remarquer	VERB
 la	le	DET
 beauté	beauté	NOUN
-de	de	DET
-ses	son	NOUN
+de	de	ADP
+ses	son	DET
 cheveux	cheveu	NOUN
 noirs	noir	ADJ
 et	et	CCONJ
 celle	celle	PRON
-de	de	DET
-ses	son	NOUN
-dents	dent	ADJ
+de	de	ADP
+ses	son	DET
+dents	dent	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
 sont	être	AUX
@@ -609,8 +609,8 @@ et	et	CCONJ
 du	du	ADP_DET
 feu	feu	NOUN
 .	.	PUNCTsent
-Voilà	voilà	VERB
-tout	tout	ADJ
+Voilà	voilà	ADP
+tout	tout	PRON
 ,	,	PUNCTclause
 il	il	PRON
 est	être	AUX
@@ -650,7 +650,7 @@ a	avoir	AUX
 le	le	DET
 dos	dos	NOUN
 un	un	DET
-peu	peu	NOUN
+peu	peu	ADV
 voûté	voûter	VERB
 ;	;	PUNCTclause
 sa	son	DET
@@ -658,8 +658,8 @@ tête	tête	NOUN
 est	être	AUX
 énorme	énorme	ADJ
 et	et	CCONJ
-de	de	DET
-une	un	PRON
+de	de	ADP
+une	un	DET
 forme	forme	NOUN
 bizarre	bizarre	ADJ
 ;	;	PUNCTclause
@@ -675,7 +675,7 @@ aggravée	aggraver	VERB
 par	par	ADP
 des	un	DET
 marques	marque	NOUN
-de	de	DET
+de	de	ADP
 petite	petit	ADJ
 vérole	vérole	NOUN
 qui	qui	PRON
@@ -732,7 +732,7 @@ ont	avoir	AUX
 dû	devoir	VERB
 la	le	DET
 vie	vie	NOUN
-que	que	SCONJ
+que	que	PRON
 à	à	ADP
 des	un	DET
 soins	soin	NOUN
@@ -746,8 +746,8 @@ Enfin	enfin	ADV
 ,	,	PUNCTclause
 comme	comme	ADP
 le	le	DET
-disait	dire	NOUN
-mon	mon	ADJ
+disait	dire	VERB
+mon	mon	DET
 père	père	NOUN
 ,	,	PUNCTclause
 il	il	PRON
@@ -757,14 +757,14 @@ masque	masque	NOUN
 amoindri	amoindrir	VERB
 du	du	ADP_DET
 cardinal	cardinal	NOUN
-de	de	DET
+de	de	ADP
 Ximenès	Ximenès	PROPN
 .	.	PUNCTsent
 Mon	mon	DET
 père	père	NOUN
 ne	ne	ADV
 l'	le	DET
-aime	aimer	NOUN
+aime	aimer	VERB
 point	point	ADV
 ,	,	PUNCTclause
 il	il	PRON
@@ -776,8 +776,8 @@ lui	lui	PRON
 .	.	PUNCTsent
 Les	le	DET
 manières	manière	NOUN
-de	de	DET
-notre	notre	ADJ
+de	de	ADP
+notre	notre	DET
 maître	maître	NOUN
 ont	avoir	AUX
 une	un	DET
@@ -819,7 +819,7 @@ jours	jour	NOUN
 après	après	ADP
 la	le	DET
 leçon	leçon	NOUN
-que	que	SCONJ
+que	que	PRON
 je	je	PRON
 avais	avoir	AUX
 reçue	recevoir	VERB
@@ -839,7 +839,7 @@ lui	lui	PRON
 marquer	marquer	VERB
 une	un	DET
 sorte	sorte	NOUN
-de	de	DET
+de	de	ADP
 reconnaissance	reconnaissance	NOUN
 :	:	PUNCTclause
 —	—	PUNCTclause
@@ -876,14 +876,14 @@ nous	nous	PRON
 serons	être	VERB
 à	à	ADP
 même	même	ADV
-de	de	DET
+de	de	ADP
 vous	vous	PRON
 y	y	PRON
 rendre	rendre	VERB
 quelques	quelque	DET
 services	service	NOUN
 et	et	CCONJ
-de	de	DET
+de	de	ADP
 obtenir	obtenir	VERB
 votre	votre	DET
 grâce	grâce	NOUN
@@ -901,10 +901,10 @@ ne	ne	ADV
 est	être	VERB
 au	au	ADP_DET
 pouvoir	pouvoir	NOUN
-de	de	DET
+de	de	ADP
 personne	personne	NOUN
-de	de	DET
-me	me	NOUN
+de	de	ADP
+me	me	PRON
 obliger	obliger	VERB
 ,	,	PUNCTclause
 me	me	PRON
@@ -959,8 +959,8 @@ silence	silence	NOUN
 .	.	PUNCTsent
 Le	le	DET
 sang	sang	NOUN
-de	de	DET
-mon	mon	NOUN
+de	de	ADP
+mon	mon	DET
 père	père	NOUN
 a	avoir	AUX
 grondé	gronder	VERB
@@ -990,13 +990,13 @@ chère	chère	NOUN
 ,	,	PUNCTclause
 il y a	il y a	VERB
 quelque chose	quelque chose	PRON
-de	de	DET
+de	de	ADP
 beau	beau	ADJ
 à	à	ADP
 ne	ne	ADV
 rien	rien	PRON
 vouloir	vouloir	VERB
-de	de	DET
+de	de	ADP
 autrui	autrui	PRON
 .	.	PUNCTsent
 Il	il	PRON
@@ -1007,9 +1007,9 @@ même	même	ADV
 notre	notre	DET
 amitié	amitié	NOUN
 ,	,	PUNCTclause
-pensais	penser	NOUN
+pensais	penser	VERB
 je	je	PRON
-en	en	PRON
+en	en	ADP
 conjuguant	conjuguer	VERB
 un	un	DET
 verbe	verbe	NOUN
@@ -1054,7 +1054,7 @@ une	un	DET
 qui	qui	PRON
 ne	ne	ADV
 se	se	PRON
-y	y	AUX
+y	y	PRON
 trouverait	trouver	VERB
 point	point	ADV
 ,	,	PUNCTclause
@@ -1070,7 +1070,7 @@ inutile	inutile	ADJ
 Entendez	entendre	VERB
 vous	vous	PRON
 l'	le:PRON	PRON
-égalité	égalité	PRON
+égalité	égalité	NOUN
 relativement	relativement	ADV
 à	à	ADP
 la	le	DET
@@ -1089,11 +1089,11 @@ je	je	PRON
 demandé	demander	VERB
 pour	pour	ADP
 essayer	essayer	VERB
-de	de	DET
-le	le:PRON	PRON
+de	de	ADP
+le	le	DET
 faire	faire	AUX
 sortir	sortir	VERB
-de	de	DET
+de	de	ADP
 sa	son	DET
 gravité	gravité	NOUN
 qui	qui	PRON
@@ -1105,8 +1105,8 @@ a	avoir	AUX
 encore	encore	ADV
 relevé	relever	VERB
 ses	son	DET
-redoutables	redoutable	NOUN
-yeux	œil	ADJ
+redoutables	redoutable	ADJ
+yeux	œil	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 je	je	PRON
@@ -1146,7 +1146,7 @@ fierté	fierté	NOUN
 ,	,	PUNCTclause
 une	un	DET
 angoisse	angoisse	NOUN
-de	de	DET
+de	de	ADP
 incertitude	incertitude	NOUN
 qui	qui	PRON
 me	me	PRON
@@ -1184,8 +1184,8 @@ je	je	PRON
 suis	être	AUX
 rentrée	rentrer	VERB
 un	un	DET
-peu	peu	NOUN
-sotte	sot	VERB
+peu	peu	ADV
+sotte	sot	NOUN
 dans	dans	ADP
 ma	mon	DET
 coquille	coquille	NOUN
@@ -1205,7 +1205,7 @@ jetant	jeter	VERB
 un	un	DET
 regard	regard	NOUN
 plein	plein	ADJ
-de	de	DET
+de	de	ADP
 prières	prière	NOUN
 humbles	humble	ADJ
 ,	,	PUNCTclause
@@ -1217,8 +1217,8 @@ Ne	ne	ADV
 vous	vous	PRON
 jouez	jouer	VERB
 pas	pas	ADV
-de	de	DET
-un	un	PRON
+de	de	ADP
+un	un	DET
 malheureux	malheureux	ADJ
 .	.	PUNCTsent
 Ce	ce	DET
@@ -1227,12 +1227,12 @@ subit	subir	VERB
 avec	avec	ADP
 ses	son	DET
 façons	façon	NOUN
-graves	graver	VERB
+graves	grave	ADJ
 et	et	CCONJ
 dignes	digne	ADJ
 me	me	PRON
 a	avoir	AUX
-fait	faire	AUX
+fait	faire	VERB
 une	un	DET
 vive	vif	ADJ
 impression	impression	NOUN
@@ -1252,7 +1252,7 @@ que	que	SCONJ
 il y a	il y a	VERB
 des	un	DET
 trésors	trésor	NOUN
-de	de	DET
+de	de	ADP
 affection	affection	NOUN
 dans	dans	ADP
 cet	ce	DET

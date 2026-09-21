@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = sand1866-53
 # creator = Sand, George
 # created = 1866
@@ -8,7 +8,7 @@
 ↵↵↵	↵↵↵	PUNCTstruct
 Liii	Liii	PROPN
 .	.	PUNCTsent
-De	de	DET
+De	de	ADP
 Gédéon	Gédéon	PROPN
 Nuñez	Nuñez	PROPN
 à	à	ADP
@@ -42,11 +42,11 @@ jamais	jamais	ADV
 .	.	PUNCTsent
 Soyez	être	AUX
 donc	donc	ADV
-miséricordieuse	miséricordieux	VERB
+miséricordieuse	miséricordieux	ADJ
 et	et	CCONJ
-tâchez	tâcher	ADV
-de	de	DET
-me	me	NOUN
+tâchez	tâcher	VERB
+de	de	ADP
+me	me	PRON
 pardonner	pardonner	VERB
 .	.	PUNCTsent
 Je	je	PRON
@@ -74,9 +74,9 @@ vous	vous	PRON
 ignoriez	ignorer	VERB
 l'	le	DET
 amour	amour	NOUN
-de	de	DET
+de	de	ADP
 celui	celui	PRON
-que	que	SCONJ
+que	que	PRON
 vous	vous	PRON
 aimez	aimer	VERB
 .	.	PUNCTsent
@@ -97,7 +97,7 @@ moi	moi	PRON
 qui	qui	PRON
 me	me	PRON
 suis	être	AUX
-fait	faire	AUX
+fait	faire	VERB
 des	un	DET
 illusions	illusion	NOUN
 déplorables	déplorable	ADJ
@@ -119,9 +119,9 @@ vous	vous	PRON
 donnera	donner	VERB
 l'	le	DET
 exemple	exemple	NOUN
-de	de	DET
-la	le:PRON	PRON
-générosité	générosité	VERB
+de	de	ADP
+la	le	DET
+générosité	générosité	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Je	je	PRON
@@ -131,12 +131,12 @@ enfants	enfant	NOUN
 sous	sous	ADP
 la	le	DET
 garde	garde	NOUN
-de	de	DET
-mes	mon	NOUN
+de	de	ADP
+mes	mon	DET
 sœurs	sœur	NOUN
 .	.	PUNCTsent
 Je	je	PRON
-leur	leur	DET
+leur	leur	PRON
 ai	avoir	AUX
 trouvé	trouver	VERB
 une	un	DET
@@ -165,8 +165,8 @@ orphelins	orphelin	ADJ
 Ils	ils	PRON
 sont	être	AUX
 innocents	innocent	ADJ
-de	de	DET
-mon	mon	NOUN
+de	de	ADP
+mon	mon	DET
 crime	crime	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ

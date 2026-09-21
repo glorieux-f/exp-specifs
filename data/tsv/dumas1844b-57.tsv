@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = dumas1844b-57
 # creator = Dumas, Alexandre
 # created = 1844
@@ -24,8 +24,8 @@ dans	dans	ADP
 le	le	DET
 petit	petit	ADJ
 hôtel	hôtel	NOUN
-de	de	DET
-la	le	AUX
+de	de	ADP
+la	le	DET
 rue	rue	NOUN
 des	un	ADP_DET
 Mathurins	Mathurins	PROPN
@@ -39,12 +39,12 @@ causeries	causerie	NOUN
 et	et	CCONJ
 les	le	DET
 enfantillages	enfantillage	NOUN
-de	de	DET
+de	de	ADP
 deux	deux	NUM
 époux	époux	NOUN
-de	de	DET
-la	le:PRON	PRON
-veille	veiller	VERB
+de	de	ADP
+la	le	DET
+veille	veille	NOUN
 ,	,	PUNCTclause
 que	que	SCONJ
 la	le	DET
@@ -65,12 +65,12 @@ unis	unir	VERB
 à	à	ADP
 l'	le	DET
 église	église	NOUN
-de	de	DET
+de	de	ADP
 Sainte-Croix-d'Antin	Sainte-Croix-d'Antin	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Voyons	voir	NOUN
+Voyons	voir	VERB
 ,	,	PUNCTclause
 cher	cher	ADJ
 Amaury	Amaury	PROPN
@@ -83,8 +83,8 @@ faut	falloir	VERB
 cependant	cependant	ADV
 partir	partir	VERB
 ,	,	PUNCTclause
-voilà	voilà	NOUN
-midi	midi	X
+voilà	voilà	ADP
+midi	midi	NOUN
 qui	qui	PRON
 va	aller	VERB
 sonner	sonner	VERB
@@ -113,7 +113,7 @@ vieux	vieux	ADJ
 Joseph	Joseph	PROPN
 .	.	PUNCTsent
 M.	M.	PROPN
-de	de	DET
+de	de	ADP
 Avrigny	Avrigny	PROPN
 ,	,	PUNCTclause
 qui	qui	PRON
@@ -139,9 +139,9 @@ que	que	SCONJ
 on	on	PRON
 vous	vous	PRON
 prévînt	prévenir	VERB
-de	de	DET
-sa	son	X
-position	position	X
+de	de	ADP
+sa	son	DET
+position	position	NOUN
 ,	,	PUNCTclause
 est	être	AUX
 mort	mourir	VERB
@@ -149,8 +149,8 @@ hier	hier	ADV
 à	à	ADP
 quatre	quatre	NUM
 heures	heure	NOUN
-de	de	DET
-l'	le	NOUN
+de	de	ADP
+l'	le	DET
 après-midi	après-midi	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -176,7 +176,7 @@ le	le	DET
 secrétaire	secrétaire	NOUN
 du	du	ADP_DET
 comte	comte	NOUN
-de	de	DET
+de	de	ADP
 M	M	PROPN
 …	…	PUNCTsent
 eut	avoir	VERB
@@ -187,12 +187,12 @@ lecture	lecture	NOUN
 il y a	il y a	VERB
 un	un	DET
 moment	moment	NOUN
-de	de	DET
+de	de	ADP
 silence	silence	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-hé	hé	NOUN
+hé	hé	INTJ
 bien	bien	ADV
 !	!	PUNCTsent
 dit	dire	VERB
@@ -248,7 +248,7 @@ vous	vous	PRON
 raconter	raconter	VERB
 une	un	DET
 histoire	histoire	NOUN
-où	où	ADV
+où	où	PRON
 l'	le	DET
 amant	amant	NOUN
 est	être	AUX
@@ -257,7 +257,7 @@ sans	sans	ADP
 rémission	rémission	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
-où	où	ADV
+où	où	PRON
 le	le	DET
 père	père	NOUN
 a	avoir	AUX

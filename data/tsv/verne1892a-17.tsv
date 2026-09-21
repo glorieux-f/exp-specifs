@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = verne1892a-17
 # creator = Verne, Jules
 # created = 1892
@@ -25,7 +25,7 @@ conversation	conversation	NOUN
 du	du	ADP_DET
 baron	baron	NOUN
 et	et	CCONJ
-de	de	DET
+de	de	ADP
 Orfanik	Orfanik	PROPN
 ,	,	PUNCTclause
 l'	le	DET
@@ -39,9 +39,9 @@ que	que	SCONJ
 après	après	ADP
 le	le	DET
 départ	départ	NOUN
-de	de	DET
+de	de	ADP
 Rodolphe	Rodolphe	PROPN
-de	de	DET
+de	de	ADP
 Gortz	Gortz	PROPN
 .	.	PUNCTsent
 Or	or	NOUN
@@ -63,7 +63,7 @@ eût	avoir	AUX
 eu	avoir	VERB
 le	le	DET
 temps	temps	NOUN
-de	de	DET
+de	de	ADP
 se	se	PRON
 enfuir	enfuir	VERB
 par	par	ADP
@@ -78,8 +78,8 @@ col	col	NOUN
 Dans	dans	ADP
 l'	le	DET
 emportement	emportement	NOUN
-de	de	DET
-la	la	NUM
+de	de	ADP
+la	le	DET
 douleur	douleur	NOUN
 ,	,	PUNCTclause
 dans	dans	ADP
@@ -92,14 +92,14 @@ ne	ne	ADV
 ayant	avoir	VERB
 plus	plus	ADV
 conscience	conscience	NOUN
-de	de	DET
+de	de	ADP
 ce	ce	PRON
-que	que	SCONJ
+que	que	PRON
 il	il	PRON
-faisait	faire	AUX
+faisait	faire	VERB
 ,	,	PUNCTclause
 Rodolphe	Rodolphe	PROPN
-de	de	DET
+de	de	ADP
 Gortz	Gortz	PROPN
 avait	avoir	AUX
 il	il	PRON
@@ -128,10 +128,10 @@ lui	lui	PRON
 au moment où	au moment où	ADP
 la	le	DET
 balle	balle	NOUN
-de	de	DET
+de	de	ADP
 Rotzko	Rotzko	PROPN
 venait	venir	VERB
-de	de	DET
+de	de	ADP
 briser	briser	VERB
 la	le	DET
 boîte	boîte	NOUN
@@ -152,7 +152,7 @@ burg	burg	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 En	en	ADP
-tout	tout	ADJ
+tout	tout	PRON
 cas	cas	NOUN
 ,	,	PUNCTclause
 il	il	PRON
@@ -167,7 +167,7 @@ surpris	surprendre	VERB
 par	par	ADP
 le	le	DET
 coup de fusil	coup de fusil	NOUN
-de	de	DET
+de	de	ADP
 Rotzko	Rotzko	PROPN
 ,	,	PUNCTclause
 se	se	PRON
@@ -176,12 +176,12 @@ encore	encore	ADV
 à	à	ADP
 une	un	DET
 certaine	certain	ADJ
-distance	distancer	VERB
+distance	distance	NOUN
 ,	,	PUNCTclause
 lorsque	lorsque	SCONJ
 l'	le	DET
 explosion	explosion	NOUN
-ébranla	ébranler	AUX
+ébranla	ébranler	VERB
 le	le	DET
 massif	massif	NOUN
 .	.	PUNCTsent
@@ -201,7 +201,7 @@ au	au	ADP_DET
 pied	pied	NOUN
 du	du	ADP_DET
 plateau	plateau	NOUN
-de	de	DET
+de	de	ADP
 Orgall	Orgall	PROPN
 .	.	PUNCTsent
 Seuls	seul	ADJ
@@ -233,7 +233,7 @@ pas	pas	ADV
 sous	sous	ADP
 cette	ce	DET
 pluie	pluie	NOUN
-de	de	DET
+de	de	ADP
 pierres	pierre	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -257,7 +257,7 @@ parvinrent	parvenir	VERB
 ,	,	PUNCTclause
 sans	sans	ADP
 trop	trop	ADV
-de	de	DET
+de	de	ADP
 peine	peine	NOUN
 ,	,	PUNCTclause
 à	à	ADP
@@ -286,9 +286,9 @@ murailles	muraille	NOUN
 Cinquante	Cinquante	NUM
 pas	pas	NOUN
 au-delà	au-delà	ADV
-de	de	DET
-la	le	AUX
-courtine	courtine	ADJ
+de	de	ADP
+la	le	DET
+courtine	courtine	NOUN
 ,	,	PUNCTclause
 un	un	DET
 corps	corps	NOUN
@@ -309,9 +309,9 @@ donjon	donjon	NOUN
 ce	ce	PRON
 était	être	AUX
 celui	celui	PRON
-de	de	DET
+de	de	ADP
 Rodolphe	Rodolphe	PROPN
-de	de	DET
+de	de	ADP
 Gortz	Gortz	PROPN
 .	.	PUNCTsent
 Quelques	quelque	DET
@@ -321,11 +321,11 @@ pays	pays	NOUN
 —	—	PUNCTclause
 entre	entre	ADP
 autres	autre	PRON
-maître	maître	VERB
+maître	maître	NOUN
 Koltz	Koltz	PROPN
 —	—	PUNCTclause
 le	le	DET
-reconnurent	reconnaître	NOUN
+reconnurent	reconnaître	VERB
 sans	sans	ADP
 hésitation	hésitation	NOUN
 .	.	PUNCTsent
@@ -393,9 +393,9 @@ fût	être	AUX
 pas	pas	ADV
 une	un	DET
 victime	victime	NOUN
-de	de	DET
-la	le:PRON	PRON
-catastrophe	catastrophe	ADJ
+de	de	ADP
+la	le	DET
+catastrophe	catastrophe	NOUN
 ;	;	PUNCTclause
 aussi	aussi	ADV
 pleurait	pleurer	VERB
@@ -411,7 +411,7 @@ ne	ne	ADV
 savait	savoir	VERB
 comment	comment	ADV
 le	le	DET
-calmer	calmer	NOUN
+calmer	calmer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Cependant	cependant	ADV
@@ -419,14 +419,14 @@ Cependant	cependant	ADV
 après	après	ADP
 une	un	DET
 demi-heure	demi-heure	NOUN
-de	de	DET
+de	de	ADP
 recherches	recherche	NOUN
 ,	,	PUNCTclause
 Lejeune	Lejeune	PROPN
 comte	comte	NOUN
 fut	être	AUX
 retrouvé	retrouver	VERB
-an	an	ADP
+an	an	NOUN
 premier	premier	ADJ
 étage	étage	NOUN
 du	du	ADP_DET
@@ -435,15 +435,15 @@ donjon	donjon	NOUN
 sous	sous	ADP
 un	un	DET
 arc-boutement	arc-boutement	NOUN
-de	de	DET
-la	la	NUM
+de	de	ADP
+la	le	DET
 muraille	muraille	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
 l'	le:PRON	PRON
 avait	avoir	AUX
 empêché	empêcher	VERB
-de	de	DET
+de	de	ADP
 être	être	AUX
 écrasé	écraser	VERB
 .	.	PUNCTsent
@@ -499,7 +499,7 @@ que	que	ADV
 Franz	Franz	PROPN
 rouvrit	rouvrir	VERB
 les	le	DET
-veux	vouloir	NOUN
+veux	vouloir	VERB
 ;	;	PUNCTclause
 mais	mais	CCONJ
 son	son	DET
@@ -513,7 +513,7 @@ reconnaître	reconnaître	VERB
 Rotzko	Rotzko	PROPN
 ni	ni	CCONJ
 l'	le	DET
-entendre	entendre	NOUN
+entendre	entendre	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Nic	Nic	PROPN
@@ -535,7 +535,7 @@ encore	encore	ADV
 ;	;	PUNCTclause
 il	il	PRON
 ne	ne	ADV
-fit	faire	AUX
+fit	faire	VERB
 aucune	aucun	DET
 réponse	réponse	NOUN
 .	.	PUNCTsent
@@ -545,14 +545,14 @@ derniers	dernier	ADJ
 mots	mot	NOUN
 du	du	ADP_DET
 chant	chant	NOUN
-de	de	DET
-la	le:PRON	PRON
+de	de	ADP
+la	le	DET
 Stilla	Stilla	PROPN
 se	se	PRON
 échappaient	échapper	VERB
 seuls	seul	ADJ
-de	de	DET
-sa	son	NOUN
+de	de	ADP
+sa	son	DET
 bouche	bouche	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
@@ -563,7 +563,7 @@ morire	morire	VERB
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Franz	Franz	PROPN
-de	de	DET
+de	de	ADP
 Télek	Télek	PROPN
 était	être	AUX
 fou	fou	ADJ

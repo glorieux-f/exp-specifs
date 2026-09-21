@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = dumas1850e-17
 # creator = Dumas, Alexandre
 # created = 1850
@@ -17,8 +17,8 @@ mai	mai	NOUN
 ,	,	PUNCTclause
 trois	trois	NUM
 heures	heure	NOUN
-de	de	DET
-l'	le	NOUN
+de	de	ADP
+l'	le	DET
 après-midi	après-midi	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -27,7 +27,7 @@ Oui	oui	INTJ
 la	le	DET
 preuve	preuve	NOUN
 !	!	PUNCTsent
-soit	soit	CCONJ
+soit	soit	ADV
 ,	,	PUNCTclause
 elle	elle	PRON
 me	me	PRON
@@ -37,12 +37,12 @@ facile	facile	ADJ
 donner	donner	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Tout	tout	ADJ
+Tout	tout	PRON
 ce	ce	PRON
-que	que	ADV
+que	que	PRON
 vous	vous	PRON
 avez	avoir	AUX
-vu	voir	AUX
+vu	voir	VERB
 paraissait	paraître	VERB
 être	être	AUX
 vrai	vrai	ADJ
@@ -51,10 +51,10 @@ et	et	CCONJ
 cependant	cependant	ADV
 tout	tout	ADJ
 ce	ce	PRON
-que	que	ADV
+que	que	PRON
 vous	vous	PRON
 avez	avoir	AUX
-vu	vu	ADP
+vu	voir	VERB
 était	être	AUX
 faux	faux	ADJ
 .	.	PUNCTsent
@@ -64,24 +64,24 @@ Seulement	seulement	ADV
 je	je	PRON
 ai	avoir	AUX
 un	un	DET
-long	long	NOUN
-récit	récit	ADJ
+long	long	ADJ
+récit	récit	NOUN
 à	à	ADP
 vous	vous	PRON
-faire	faire	AUX
+faire	faire	VERB
 ;	;	PUNCTclause
 tant	tant	ADV
 mieux	mieux	ADV
 ,	,	PUNCTclause
 notre	notre	DET
 pauvre	pauvre	NOUN
-colombe	colombe	ADJ
+colombe	colombe	NOUN
 est	être	AUX
 épuisée	épuiser	VERB
 et	et	CCONJ
 a	avoir	VERB
 besoin	besoin	NOUN
-de	de	DET
+de	de	ADP
 repos	repos	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -104,8 +104,8 @@ vais	aller	VERB
 écrire	écrire	VERB
 une	un	DET
 partie	partie	NOUN
-de	de	DET
-la	le	AUX
+de	de	ADP
+la	le	DET
 nuit	nuit	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -124,7 +124,7 @@ main	main	NOUN
 tremble	trembler	VERB
 au	au	ADP_DET
 point	point	NOUN
-de	de	DET
+de	de	ADP
 ne	ne	ADV
 pouvoir	pouvoir	VERB
 tenir	tenir	VERB
@@ -140,9 +140,9 @@ d'abord	d'abord	ADV
 aller	aller	VERB
 vous	vous	PRON
 remercier	remercier	VERB
-de	de	DET
+de	de	ADP
 ce	ce	PRON
-que	que	SCONJ
+que	que	PRON
 il	il	PRON
 vit	vivre	VERB
 .	.	PUNCTsent

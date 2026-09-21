@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = dumas1850e-38
 # creator = Dumas, Alexandre
 # created = 1850
@@ -14,7 +14,7 @@ lettre	lettre	NOUN
 juillet	juillet	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Voilà	voilà	VERB
+Voilà	voilà	ADP
 trois	trois	NUM
 jours	jour	NOUN
 que	que	SCONJ
@@ -32,7 +32,7 @@ longeant	longer	VERB
 des	un	DET
 ruisseaux	ruisseau	NOUN
 .	.	PUNCTsent
-Hélas	hélas	NOUN
+Hélas	hélas	INTJ
 !	!	PUNCTsent
 l'	le	DET
 air	air	NOUN
@@ -42,7 +42,7 @@ pas	pas	ADV
 tous	tout	ADJ
 les	le	DET
 obstacles	obstacle	NOUN
-que	que	SCONJ
+que	que	PRON
 me	me	PRON
 oppose	opposer	VERB
 la	le	DET
@@ -52,21 +52,21 @@ La	le	DET
 colombe	colombe	NOUN
 passait	passer	VERB
 là	là	ADV
-où	où	ADV
+où	où	PRON
 je	je	PRON
 suis	être	AUX
 forcée	forcer	VERB
-de	de	DET
+de	de	ADP
 me	me	PRON
 arrêter	arrêter	VERB
 parfois	parfois	ADV
 .	.	PUNCTsent
 Je	je	PRON
-te	te	VERB
-l'	le	DET
-avoue	avouer	NOUN
+te	te	PRON
+l'	le:PRON	PRON
+avoue	avouer	VERB
 ,	,	PUNCTclause
-ô	ô	ADP
+ô	ô	INTJ
 mon	mon	DET
 bien-aimé	bien-aimé	NOUN
 !	!	PUNCTsent
@@ -85,8 +85,8 @@ me	me	PRON
 couche	coucher	VERB
 au	au	ADP_DET
 pied	pied	NOUN
-de	de	DET
-quelque	quelque	SCONJ
+de	de	ADP
+quelque	quelque	DET
 arbre	arbre	NOUN
 ,	,	PUNCTclause
 mourante	mourant	ADJ
@@ -106,7 +106,7 @@ partie	partie	NOUN
 et	et	CCONJ
 je	je	PRON
 ai	avoir	AUX
-fait	faire	AUX
+fait	faire	VERB
 à peine	à peine	ADV
 quinze	quinze	NUM
 ou	ou	CCONJ
@@ -114,9 +114,9 @@ dix-huit	dix-huit	NUM
 lieues	lieue	NOUN
 ,	,	PUNCTclause
 ce	ce	PRON
-que	que	SCONJ
+que	que	PRON
 elle	elle	PRON
-faisait	faire	AUX
+faisait	faire	VERB
 en	en	ADP
 une	une	NUM
 heure	heure	NOUN
@@ -127,7 +127,7 @@ elle	elle	PRON
 était	être	AUX
 notre	notre	DET
 messagère	messager	NOUN
-de	de	DET
+de	de	ADP
 amour	amour	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -139,16 +139,16 @@ comme	comme	ADP
 la	le	DET
 flèche	flèche	NOUN
 au-dessus	au-dessus	ADV
-de	de	DET
-ces	ce	NOUN
-misérables	misérable	ADJ
-reptiles	reptile	ADJ
+de	de	ADP
+ces	ce	DET
+misérables	misérable	NOUN
+reptiles	reptile	NOUN
 qui	qui	PRON
 se	se	PRON
 intitulent	intituler	VERB
 les	le	DET
 rois	roi	NOUN
-de	de	DET
+de	de	ADP
 la	le	DET
 création	création	NOUN
 ,	,	PUNCTclause
@@ -158,8 +158,8 @@ ont	avoir	VERB
 pas	pas	ADV
 l'	le	DET
 instinct	instinct	NOUN
-de	de	DET
-un	un	NUM
+de	de	ADP
+un	un	DET
 oiseau	oiseau	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -174,7 +174,7 @@ chemin	chemin	NOUN
 que	que	SCONJ
 une	un	DET
 colombe	colombe	NOUN
-fait	faire	AUX
+fait	faire	VERB
 dans	dans	ADP
 une	un	DET
 heure	heure	NOUN
@@ -185,15 +185,15 @@ moi	moi	PRON
 ,	,	PUNCTclause
 comment	comment	ADV
 se	se	PRON
-fait	faire	AUX
+fait	faire	VERB
 il	il	PRON
 que	que	SCONJ
 une	un	DET
 misérable	misérable	NOUN
-aiguille	aiguille	ADJ
+aiguille	aiguiller	VERB
 aimantée	aimanter	VERB
-sache	savoir	NOUN
-où	où	ADV
+sache	savoir	VERB
+où	où	PRON
 est	être	AUX
 le	le	DET
 nord	nord	NOUN
@@ -212,7 +212,7 @@ pensante	pensant	ADJ
 ,	,	PUNCTclause
 agissante	agissant	ADJ
 ,	,	PUNCTclause
-faite	faire	AUX
+faite	faire	VERB
 à	à	ADP
 l'	le	DET
 image	image	NOUN
@@ -223,22 +223,22 @@ je	je	PRON
 ne	ne	ADV
 sache	savoir	VERB
 pas	pas	ADV
-où	où	ADV
-tu	tu	ADJ
-es	être	X
+où	où	PRON
+tu	tu	PRON
+es	être	VERB
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Comment	comment	ADV
 se	se	PRON
-fait	faire	AUX
+fait	faire	VERB
 il	il	PRON
 que	que	SCONJ
 un	un	DET
 vaisseau	vaisseau	NOUN
 qui	qui	PRON
 part	partir	VERB
-de	de	DET
-un	un	NUM
+de	de	ADP
+un	un	DET
 point	point	NOUN
 du	du	ADP_DET
 monde	monde	NOUN
@@ -262,7 +262,7 @@ moi	moi	PRON
 je	je	PRON
 ne	ne	ADV
 puisse	pouvoir	VERB
-te	te	VERB
+te	te	PRON
 retrouver	retrouver	VERB
 ,	,	PUNCTclause
 toi	toi	PRON
@@ -281,7 +281,7 @@ les	le	DET
 bras	bras	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-ho	ho	NOUN
+ho	ho	INTJ
 !	!	PUNCTsent
 je	je	PRON
 le	le	DET
@@ -294,7 +294,7 @@ si	si	SCONJ
 je	je	PRON
 veux	vouloir	VERB
 le	le	DET
-retrouver	retrouver	NOUN
+retrouver	retrouver	VERB
 ,	,	PUNCTclause
 ce	ce	PRON
 ne	ne	ADV

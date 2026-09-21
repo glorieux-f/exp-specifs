@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = balzac1841FC03-47
 # creator = Balzac, Honoré de
 # created = 1841
@@ -20,8 +20,8 @@ Ma	mon	DET
 chérie	chéri	NOUN
 ,	,	PUNCTclause
 quand	quand	SCONJ
-tu	tu	ADJ
-tiendras	tenir	NOUN
+tu	tu	PRON
+tiendras	tenir	VERB
 cette	ce	DET
 lettre	lettre	NOUN
 entre	entre	ADP
@@ -40,7 +40,7 @@ pars	partir	VERB
 quelques	quelque	DET
 instants	instant	NOUN
 après	après	ADP
-te	te	NOUN
+te	te	PRON
 l'	le	DET
 avoir	avoir	AUX
 envoyée	envoyer	VERB
@@ -52,8 +52,8 @@ seules	seul	ADJ
 Louis	Louis	PROPN
 est	être	AUX
 obligé	obliger	VERB
-de	de	DET
-rester	rester	NOUN
+de	de	ADP
+rester	rester	VERB
 en	en	ADP
 Provence	Provence	PROPN
 à	à	ADP
@@ -64,7 +64,7 @@ qui	qui	PRON
 vont	aller	VERB
 se	se	PRON
 y	y	PRON
-faire	faire	AUX
+faire	faire	VERB
 ;	;	PUNCTclause
 il	il	PRON
 veut	vouloir	VERB
@@ -75,9 +75,9 @@ et	et	CCONJ
 il y a	il y a	VERB
 déjà	déjà	ADV
 des	un	DET
-intrigues	intriguer	VERB
-de	de	DET
-nouées	noué	ADJ
+intrigues	intrigue	NOUN
+de	de	ADP
+nouées	nouer	VERB
 contre	contre	ADP
 lui	lui	PRON
 par	par	ADP
@@ -89,11 +89,11 @@ Je	je	PRON
 ne	ne	ADV
 viens	venir	VERB
 pas	pas	ADV
-te	te	ADJ
+te	te	PRON
 consoler	consoler	VERB
 ,	,	PUNCTclause
 je	je	PRON
-te	te	VERB
+te	te	PRON
 apporte	apporter	VERB
 seulement	seulement	ADV
 mon	mon	DET
@@ -102,7 +102,7 @@ pour	pour	ADP
 tenir	tenir	VERB
 compagnie	compagnie	NOUN
 au	au	ADP_DET
-tien	tien	NOUN
+tien	tien	PRON
 et	et	CCONJ
 pour	pour	ADP
 te	te	PRON
@@ -112,10 +112,10 @@ vivre	vivre	VERB
 .	.	PUNCTsent
 Je	je	PRON
 viens	venir	VERB
-te	te	VERB
+te	te	PRON
 ordonner	ordonner	VERB
-de	de	DET
-pleurer	pleurer	NOUN
+de	de	ADP
+pleurer	pleurer	VERB
 :	:	PUNCTclause
 il	il	PRON
 faut	falloir	VERB
@@ -123,7 +123,7 @@ acheter	acheter	VERB
 ainsi	ainsi	ADV
 le	le	DET
 bonheur	bonheur	NOUN
-de	de	DET
+de	de	ADP
 le	le:PRON	PRON
 rejoindre	rejoindre	VERB
 un	un	DET
@@ -139,7 +139,7 @@ voyage	voyage	NOUN
 vers	vers	ADP
 Dieu	Dieu	PROPN
 ;	;	PUNCTclause
-tu	tu	ADJ
+tu	tu	PRON
 ne	ne	ADV
 feras	faire	AUX
 plus	plus	ADV
@@ -148,7 +148,7 @@ seul	seul	ADJ
 pas	pas	ADV
 qui	qui	PRON
 ne	ne	ADV
-te	te	VERB
+te	te	PRON
 conduise	conduire	VERB
 vers	vers	ADP
 lui	lui	PRON
@@ -159,8 +159,8 @@ accompli	accomplir	VERB
 rompra	rompre	VERB
 quelque	quelque	DET
 anneau	anneau	NOUN
-de	de	DET
-la	la	NUM
+de	de	ADP
+la	le	DET
 chaîne	chaîne	NOUN
 qui	qui	PRON
 vous	vous	PRON
@@ -171,33 +171,33 @@ Allons	aller	VERB
 ma	mon	DET
 Louise	Louise	PROPN
 ,	,	PUNCTclause
-tu	tu	ADJ
-te	te	NOUN
-relèveras	relever	PRON
+tu	tu	PRON
+te	te	PRON
+relèveras	relever	VERB
 dans	dans	ADP
 mes	mon	DET
 bras	bras	NOUN
 et	et	CCONJ
-tu	tu	ADJ
-iras	aller	NOUN
+tu	tu	PRON
+iras	aller	VERB
 à	à	ADP
 lui	lui	PRON
 pure	pur	ADJ
 ,	,	PUNCTclause
 noble	noble	ADJ
 ,	,	PUNCTclause
-pardonnée	pardonné	NOUN
-de	de	DET
-tes	ton	NOUN
-fautes	fauter	VERB
+pardonnée	pardonner	VERB
+de	de	ADP
+tes	ton	DET
+fautes	faute	NOUN
 involontaires	involontaire	ADJ
 ,	,	PUNCTclause
 et	et	CCONJ
 accompagnée	accompagner	VERB
 des	un	DET
-œuvres	œuvrer	VERB
+œuvres	œuvre	NOUN
 que	que	SCONJ
-tu	tu	ADJ
+tu	tu	PRON
 feras	faire	AUX
 ici-bas	ici-bas	ADV
 en	en	ADP
@@ -206,7 +206,7 @@ nom	nom	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Je	je	PRON
-te	te	VERB
+te	te	PRON
 trace	tracer	VERB
 ces	ce	DET
 lignes	ligne	NOUN
@@ -217,12 +217,12 @@ au milieu de	au milieu de	ADP
 mes	mon	DET
 préparatifs	préparatif	NOUN
 ,	,	PUNCTclause
-de	de	DET
-mes	mon	NOUN
+de	de	ADP
+mes	mon	DET
 enfants	enfant	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
-de	de	DET
+de	de	ADP
 Armand	Armand	PROPN
 qui	qui	PRON
 me	me	PRON
@@ -235,7 +235,7 @@ marraine	marraine	NOUN
 !	!	PUNCTsent
 allons	aller	VERB
 la	le	DET
-voir	voir	AUX
+voir	voir	VERB
 !	!	PUNCTsent
 à	à	ADP
 me	me	PRON
@@ -245,6 +245,6 @@ jalouse	jaloux	ADJ
 ce	ce	PRON
 est	être	AUX
 presque	presque	ADV
-ton	ton	ADV
+ton	ton	DET
 fils	fils	NOUN
 !	!	PUNCTsent

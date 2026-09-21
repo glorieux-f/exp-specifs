@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = verne1874-48
 # creator = Verne, Jules
 # created = 1874
@@ -37,8 +37,8 @@ modification	modification	NOUN
 dans	dans	ADP
 l'	le	DET
 état	état	NOUN
-de	de	DET
-l'	le	NOUN
+de	de	ADP
+l'	le	DET
 atmosphère	atmosphère	NOUN
 .	.	PUNCTsent
 Je	je	PRON
@@ -60,7 +60,7 @@ je	je	PRON
 entends	entendre	VERB
 des	un	DET
 cris	cri	NOUN
-de	de	DET
+de	de	ADP
 colère	colère	NOUN
 qui	qui	PRON
 éclatent	éclater	VERB
@@ -105,7 +105,7 @@ Daoulas	Daoulas	PROPN
 ,	,	PUNCTclause
 les	le	DET
 autres	autre	PRON
-matelots	matelot	ADJ
+matelots	matelot	NOUN
 sont	être	AUX
 dans	dans	ADP
 une	un	DET
@@ -127,7 +127,7 @@ et	et	CCONJ
 ,	,	PUNCTclause
 se	se	PRON
 informant	informer	VERB
-de	de	DET
+de	de	ADP
 ce	ce	PRON
 qui	qui	PRON
 excite	exciter	VERB
@@ -136,21 +136,21 @@ fureur	fureur	NOUN
 ,	,	PUNCTclause
 il	il	PRON
 essaie	essayer	VERB
-de	de	DET
-les	le:PRON	PRON
+de	de	ADP
+les	le	DET
 calmer	calmer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	non	INTJ
+Non	non	ADV
 !	!	PUNCTsent
-non	non	INTJ
+non	non	ADV
 !	!	PUNCTsent
 nous	nous	PRON
 saurons	savoir	VERB
 qui	qui	PRON
 a	avoir	AUX
-fait	faire	AUX
+fait	faire	VERB
 cela	cela	PRON
 !	!	PUNCTsent
 dit	dire	VERB
@@ -216,7 +216,7 @@ coins	coin	NOUN
 ,	,	PUNCTclause
 soulevant	soulever	VERB
 les	le	DET
-voiles	voiler	VERB
+voiles	voile	NOUN
 ,	,	PUNCTclause
 déplaçant	déplacer	VERB
 les	le	DET
@@ -227,7 +227,7 @@ colère	colère	NOUN
 se	se	PRON
 accroît	accroître	VERB
 à	à	ADP
-voir	voir	AUX
+voir	voir	VERB
 que	que	SCONJ
 ces	ce	DET
 recherches	recherche	NOUN
@@ -282,7 +282,7 @@ approchent	approcher	VERB
 Nous	nous	PRON
 avons	avoir	AUX
 fouillé	fouiller	VERB
-tout	tout	ADJ
+tout	tout	ADV
 le	le	DET
 radeau	radeau	NOUN
 ,	,	PUNCTclause
@@ -303,7 +303,7 @@ visiter	visiter	VERB
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
 Personne	personne	NOUN
-de	de	DET
+de	de	ADP
 nous	nous	PRON
 ne	ne	ADV
 a	avoir	AUX
@@ -317,11 +317,11 @@ Daoulas	Daoulas	PROPN
 —	—	PUNCTclause
 Il	il	PRON
 faut	falloir	VERB
-voir	voir	AUX
+voir	voir	VERB
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	non	INTJ
+Non	non	ADV
 !	!	PUNCTsent
 laissez	laisser	VERB
 en	en	ADP
@@ -329,7 +329,7 @@ paix	paix	NOUN
 ceux	ceux	PRON
 qui	qui	PRON
 meurent	mourir	VERB
-de	de	DET
+de	de	ADP
 faim	faim	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -342,7 +342,7 @@ dit	dire	VERB
 le	le	DET
 bosseman	bosseman	NOUN
 en	en	ADP
-se	se	NOUN
+se	se	PRON
 contenant	contenir	VERB
 ,	,	PUNCTclause
 nous	nous	PRON
@@ -353,7 +353,7 @@ pas	pas	ADV
 …	…	PUNCTsent
 Quand	quand	SCONJ
 l'un	l'un	PRON
-de	de	DET
+de	de	ADP
 vous	vous	PRON
 aurait	avoir	AUX
 pris	prendre	VERB
@@ -374,7 +374,7 @@ son	son	DET
 droit	droit	NOUN
 .	.	PUNCTsent
 Mais	mais	CCONJ
-tout	tout	ADJ
+tout	tout	PRON
 a	avoir	AUX
 disparu	disparaître	VERB
 ,	,	PUNCTclause
@@ -382,7 +382,7 @@ vous	vous	PRON
 entendez	entendre	VERB
 bien	bien	ADV
 ,	,	PUNCTclause
-tout	tout	ADJ
+tout	tout	PRON
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
@@ -413,8 +413,8 @@ colère	colère	NOUN
 aveugle	aveugle	ADJ
 .	.	PUNCTsent
 Une	un	DET
-horrible	horrible	NOUN
-crainte	craint	ADJ
+horrible	horrible	ADJ
+crainte	crainte	NOUN
 me	me	PRON
 saisit	saisir	VERB
 .	.	PUNCTsent
@@ -422,7 +422,7 @@ est-ce que	est-ce que	ADV
 M.	M.	PROPN
 Letourneur	Letourneur	PROPN
 ,	,	PUNCTclause
-non	non	INTJ
+non	non	ADV
 pour	pour	ADP
 lui	lui	PRON
 ,	,	PUNCTclause
@@ -441,14 +441,14 @@ si	si	SCONJ
 il	il	PRON
 l'	le:PRON	PRON
 a	avoir	AUX
-fait	faire	AUX
+fait	faire	VERB
 il	il	PRON
 va	aller	VERB
 être	être	AUX
 déchiré	déchirer	VERB
 par	par	ADP
 ces	ce	DET
-furieux	furieux	NOUN
+furieux	furieux	ADJ
 !	!	PUNCTsent
 Je	je	PRON
 regarde	regarder	VERB
@@ -475,7 +475,7 @@ sont	être	AUX
 enfoncées	enfoncer	VERB
 dans	dans	ADP
 ses	son	DET
-poches	pocher	VERB
+poches	poche	NOUN
 ,	,	PUNCTclause
 mais	mais	CCONJ
 je	je	PRON
@@ -496,7 +496,7 @@ bosseman	bosseman	NOUN
 miss	miss	NOUN
 Herbey	Herbey	PROPN
 et	et	CCONJ
-messieurs	messieurs	DET
+messieurs	messieurs	NOUN
 Letourneur	Letourneur	PROPN
 ont	avoir	AUX
 dû	devoir	VERB
@@ -527,7 +527,7 @@ que	que	SCONJ
 puisque	puisque	SCONJ
 les	le	DET
 restes	reste	NOUN
-de	de	DET
+de	de	ADP
 Hobbart	Hobbart	PROPN
 ont	avoir	AUX
 disparu	disparaître	VERB
@@ -563,7 +563,7 @@ Mais	mais	CCONJ
 qui	qui	PRON
 donc	donc	ADV
 a	avoir	AUX
-fait	faire	AUX
+fait	faire	VERB
 cela	cela	PRON
 ?	?	PUNCTsent
 Je	je	PRON
@@ -618,7 +618,7 @@ comprend	comprendre	VERB
 il	il	PRON
 les	le	DET
 conséquences	conséquence	NOUN
-de	de	DET
-cet	ce	NOUN
-acte	acte	ADJ
+de	de	ADP
+cet	ce	DET
+acte	acte	NOUN
 ?	?	PUNCTsent

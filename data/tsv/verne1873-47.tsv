@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = verne1873-47
 # creator = Verne, Jules
 # created = 1873
@@ -16,10 +16,10 @@ ce	ce	PRON
 à	à	ADP
 l'	le	DET
 extrémité	extrémité	NOUN
-de	de	DET
-la	le	AUX
+de	de	ADP
+la	le	DET
 mer	mer	NOUN
-de	de	DET
+de	de	ADP
 Behring	Behring	PROPN
 ,	,	PUNCTclause
 sur	sur	ADP
@@ -33,7 +33,7 @@ l'	le	DET
 Blejinic	Blejinic	PROPN
 ,	,	PUNCTclause
 que	que	SCONJ
-tout	tout	ADJ
+tout	tout	PRON
 le	le	DET
 personnel	personnel	NOUN
 du	du	ADP_DET
@@ -47,15 +47,15 @@ après	après	ADP
 avoir	avoir	AUX
 franchi	franchir	VERB
 plus	plus	ADV
-de	de	DET
+de	de	ADP
 dix-huit	dix-huit	NUM
-cents	cent	NOUN
-milles	mille	ADJ
+cents	cents	NUM
+milles	mille	NOUN
 depuis	depuis	ADP
 la	le	DET
 débâcle	débâcle	NOUN
 des	un	ADP_DET
-glaces	glacer	VERB
+glaces	glace	NOUN
 !	!	PUNCTsent
 Des	un	ADP_DET
 pêcheurs	pêcheur	NOUN
@@ -67,8 +67,8 @@ leur	leur	DET
 secours	secours	NOUN
 ,	,	PUNCTclause
 les	le	DET
-accueillirent	accueillir	NOUN
-hospitalièrement	hospitalièrement	ADJ
+accueillirent	accueillir	VERB
+hospitalièrement	hospitalièrement	ADV
 .	.	PUNCTsent
 Bientôt	bientôt	ADV
 même	même	ADV
@@ -94,18 +94,18 @@ appartenaient	appartenir	VERB
 à	à	ADP
 la	le	DET
 Compagnie	compagnie	NOUN
-de	de	DET
-la	la	NUM
-baie	bayer	VERB
-de	de	DET
+de	de	ADP
+la	le	DET
+baie	bai	NOUN
+de	de	ADP
 Hudson	Hudson	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Il	il	PRON
 est	être	AUX
 inutile	inutile	ADJ
-de	de	DET
-faire	faire	AUX
+de	de	ADP
+faire	faire	VERB
 ressortir	ressortir	VERB
 ,	,	PUNCTclause
 après	après	ADP
@@ -115,7 +115,7 @@ détaillé	détailler	VERB
 ,	,	PUNCTclause
 le	le	DET
 courage	courage	NOUN
-de	de	DET
+de	de	ADP
 tous	tout	ADJ
 ces	ce	DET
 braves	brave	ADJ
@@ -123,7 +123,7 @@ gens	gens	NOUN
 ,	,	PUNCTclause
 bien	bien	ADV
 dignes	digne	ADJ
-de	de	DET
+de	de	ADP
 leur	leur	DET
 chef	chef	NOUN
 ,	,	PUNCTclause
@@ -138,13 +138,13 @@ pendant	pendant	ADP
 cette	ce	DET
 longue	long	ADJ
 série	série	NOUN
-de	de	DET
+de	de	ADP
 épreuves	épreuve	NOUN
 .	.	PUNCTsent
 Le	le	DET
 cœur	cœur	NOUN
 ne	ne	ADV
-leur	leur	DET
+leur	leur	PRON
 avait	avoir	AUX
 pas	pas	ADV
 manqué	manquer	VERB
@@ -168,23 +168,23 @@ toujours	toujours	ADV
 donné	donner	VERB
 l'	le	DET
 exemple	exemple	NOUN
-de	de	DET
-l'	le:PRON	PRON
-énergie	énergie	VERB
+de	de	ADP
+l'	le	DET
+énergie	énergie	NOUN
 dans	dans	ADP
 la	le	DET
 détresse	détresse	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
-de	de	DET
-la	le:PRON	PRON
+de	de	ADP
+la	le	DET
 résignation	résignation	NOUN
 aux	au	ADP_DET
 volontés	volonté	NOUN
 du	du	ADP_DET
 Ciel	Ciel	PROPN
 .	.	PUNCTsent
-Tous	tout	ADJ
+Tous	tous	PRON
 avaient	avoir	AUX
 lutté	lutter	VERB
 jusqu'au bout	jusqu'au bout	ADV
@@ -195,8 +195,8 @@ pas	pas	ADV
 permis	permettre	VERB
 au	au	ADP_DET
 désespoir	désespoir	NOUN
-de	de	DET
-les	le:PRON	PRON
+de	de	ADP
+les	le	DET
 abattre	abattre	VERB
 ,	,	PUNCTclause
 même quand	même quand	SCONJ
@@ -230,14 +230,14 @@ cet	ce	DET
 en	en	ADP
 glaçon	glaçon	NOUN
 ,	,	PUNCTclause
-non	non	INTJ
+non	non	ADV
 pas	pas	ADV
 même	même	ADV
 enfin	enfin	ADV
 ,	,	PUNCTclause
 quand	quand	SCONJ
 ce	ce	PRON
-glaçon	glaçon	PRON
+glaçon	glaçon	NOUN
 se	se	PRON
 fondit	fondre	VERB
 sous	sous	ADP
@@ -249,14 +249,14 @@ eaux	eau	NOUN
 chaudes	chaud	ADJ
 et	et	CCONJ
 des	un	DET
-rayons	rayer	VERB
-solaires	solaire	NOUN
+rayons	rayon	NOUN
+solaires	solaire	ADJ
 !	!	PUNCTsent
 Si	si	SCONJ
 la	le	DET
 tentative	tentative	NOUN
-de	de	DET
-la	le	AUX
+de	de	ADP
+la	le	DET
 Compagnie	compagnie	NOUN
 était	être	AUX
 à	à	ADP
@@ -267,13 +267,13 @@ le	le	DET
 nouveau	nouveau	ADJ
 fort	fort	NOUN
 avait	avoir	AUX
-péri	péri	ADJ
+péri	périr	VERB
 ,	,	PUNCTclause
-nul	nul	ADJ
+nul	nul	PRON
 ne	ne	ADV
 pouvait	pouvoir	VERB
 le	le	DET
-reprocher	reprocher	NOUN
+reprocher	reprocher	VERB
 à	à	ADP
 Jasper	Jasper	PROPN
 Hobson	Hobson	PROPN
@@ -296,7 +296,7 @@ prévisions	prévision	NOUN
 humaines	humain	ADJ
 .	.	PUNCTsent
 En	en	ADP
-tout	tout	ADJ
+tout	tout	PRON
 cas	cas	NOUN
 ,	,	PUNCTclause
 des	un	DET
@@ -321,7 +321,7 @@ colonie	colonie	NOUN
 se	se	PRON
 était	être	AUX
 accrue	accroître	VERB
-de	de	DET
+de	de	ADP
 deux	deux	NUM
 nouveaux	nouveau	ADJ
 membres	membre	NOUN
@@ -340,7 +340,7 @@ Nap	Nap	PROPN
 ,	,	PUNCTclause
 le	le	DET
 filleul	filleul	NOUN
-de	de	DET
+de	de	ADP
 messieurs	messieurs	NOUN
 .	.	PUNCTsent
 Paulina	Paulina	PROPN
@@ -361,8 +361,8 @@ New-Arkhangel	New-Arkhangel	PROPN
 ,	,	PUNCTclause
 la	le	DET
 capitale	capital	NOUN
-de	de	DET
-l'	le	NOUN
+de	de	ADP
+l'	le	DET
 Amérique	Amérique	PROPN
 russe	russe	ADJ
 .	.	PUNCTsent
@@ -408,12 +408,12 @@ Reliance	Reliance	PROPN
 à travers	à travers	ADP
 les	le	DET
 territoires	territoire	NOUN
-de	de	DET
-la	le	SCONJ
+de	de	ADP
+la	le	DET
 Compagnie	compagnie	NOUN
 ,	,	PUNCTclause
 tandis que	tandis que	SCONJ
-messieurs	messieurs	DET
+messieurs	messieurs	NOUN
 .	.	PUNCTsent
 Paulina	Paulina	PROPN
 Barnett	Barnett	PROPN
@@ -425,7 +425,7 @@ voulait	vouloir	VERB
 plus	plus	ADV
 se	se	PRON
 séparer	séparer	VERB
-de	de	DET
+de	de	ADP
 elle	elle	PRON
 ,	,	PUNCTclause
 Madge	Madge	PROPN
@@ -458,8 +458,8 @@ ses	son	DET
 compagnons	compagnon	NOUN
 réunis	réunir	VERB
 ,	,	PUNCTclause
-de	de	DET
-une	un	PRON
+de	de	ADP
+une	un	DET
 voix	voix	NOUN
 émue	ému	ADJ
 ,	,	PUNCTclause
@@ -483,7 +483,7 @@ bien	bien	ADV
 que	que	SCONJ
 vous	vous	PRON
 avez	avoir	AUX
-fait	faire	AUX
+fait	faire	VERB
 parmi	parmi	ADP
 nous	nous	PRON
 !	!	PUNCTsent
@@ -498,8 +498,8 @@ consolation	consolation	NOUN
 ,	,	PUNCTclause
 l'	le	DET
 âme	âme	NOUN
-de	de	DET
-notre	notre	ADJ
+de	de	ADP
+notre	notre	DET
 petit	petit	ADJ
 monde	monde	NOUN
 !	!	PUNCTsent
@@ -508,7 +508,7 @@ vous	vous	PRON
 en	en	PRON
 remercie	remercier	VERB
 au nom de	au nom de	ADP
-tous	tout	ADJ
+tous	tous	PRON
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
@@ -518,7 +518,7 @@ hurrahs	hurrah	NOUN
 en	en	ADP
 l'	le	DET
 honneur	honneur	NOUN
-de	de	DET
+de	de	ADP
 messieurs	messieurs	NOUN
 .	.	PUNCTsent
 Paulina	Paulina	PROPN
@@ -530,16 +530,16 @@ des	un	ADP_DET
 soldats	soldat	NOUN
 voulut	vouloir	VERB
 serrer la main	serrer la main	VERB
-de	de	DET
-la	le	AUX
+de	de	ADP
+la	le	DET
 vaillante	vaillant	ADJ
-voyageuse	voyageur	ADJ
+voyageuse	voyageur	NOUN
 .	.	PUNCTsent
 Chacune	chacune	PRON
 des	un	ADP_DET
 femmes	femme	NOUN
 l'	le	DET
-embrassa	embrasser	NOUN
+embrassa	embrasser	VERB
 avec	avec	ADP
 effusion	effusion	NOUN
 .	.	PUNCTsent
@@ -552,11 +552,11 @@ qui	qui	PRON
 avait	avoir	AUX
 conçu	concevoir	VERB
 pour	pour	ADP
-messieurs	messieurs	DET
+messieurs	messieurs	NOUN
 .	.	PUNCTsent
 Paulina	Paulina	PROPN
 Barnett	Barnett	PROPN
-une	un	ADP
+une	un	DET
 affection	affection	NOUN
 si	si	ADV
 sincère	sincère	ADJ
@@ -595,7 +595,7 @@ il	il	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	non	INTJ
+Non	non	ADV
 ,	,	PUNCTclause
 Jasper	Jasper	PROPN
 Hobson	Hobson	PROPN
@@ -604,7 +604,7 @@ répondit	répondre	VERB
 la	le	DET
 voyageuse	voyageur	NOUN
 ,	,	PUNCTclause
-non	non	INTJ
+non	non	ADV
 ,	,	PUNCTclause
 ce	ce	PRON
 ne	ne	ADV
@@ -657,13 +657,13 @@ depuis	depuis	ADP
 que	que	SCONJ
 il	il	PRON
 venait	venir	VERB
-de	de	DET
-reprendre	reprendre	NOUN
+de	de	ADP
+reprendre	reprendre	VERB
 pied	pied	NOUN
 sur	sur	ADP
 la	le	DET
 terre	terre	NOUN
-ferme	ferme	ADV
+ferme	ferme	ADJ
 ,	,	PUNCTclause
 avait	avoir	AUX
 retrouvé	retrouver	VERB
@@ -687,9 +687,9 @@ ans	an	NOUN
 !	!	PUNCTsent
 dit	dire	VERB
 il	il	PRON
-de	de	DET
-l'	le	NOUN
-air	air	VERB
+de	de	ADP
+l'	le	DET
+air	air	NOUN
 le	le	DET
 plus	plus	ADV
 convaincu	convaincre	VERB
@@ -704,7 +704,7 @@ ai	avoir	AUX
 manqué	manquer	VERB
 l'	le	DET
 éclipse	éclipse	NOUN
-de	de	DET
+de	de	ADP
 1860	1860	NUM
 ,	,	PUNCTclause
 mais	mais	CCONJ
@@ -735,7 +735,7 @@ ans	an	NOUN
 ,	,	PUNCTclause
 à	à	ADP
 vous	vous	PRON
-chère	cher	VERB
+chère	cher	ADJ
 madame	madame	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -752,9 +752,9 @@ de nouveau	de nouveau	ADV
 rendez-vous	rendez-vous	NOUN
 aux	au	ADP_DET
 limites	limite	NOUN
-de	de	DET
-la	le	AUX
+de	de	ADP
+la	le	DET
 mer	mer	NOUN
-polaire	polaire	NOUN
+polaire	polaire	ADJ
 .	.	PUNCTsent
 »	»	PUNCTclause

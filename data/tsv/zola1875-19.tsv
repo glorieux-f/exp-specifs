@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = zola1875-19
 # creator = Zola, Émile
 # created = 1875
@@ -16,7 +16,7 @@ le	le	DET
 beau temps	beau temps	NOUN
 se	se	PRON
 était	être	AUX
-gâté	gâter	NOUN
+gâté	gâter	VERB
 ,	,	PUNCTclause
 il	il	PRON
 pleuvait	pleuvoir	VERB
@@ -31,7 +31,7 @@ fièvre	fièvre	NOUN
 passa	passer	VERB
 une	un	DET
 journée	journée	NOUN
-de	de	DET
+de	de	ADP
 souffrance	souffrance	NOUN
 ,	,	PUNCTclause
 les	le	DET
@@ -42,22 +42,22 @@ sur	sur	ADP
 les	le	DET
 rideaux	rideau	NOUN
 ,	,	PUNCTclause
-de	de	DET
-où	où	ADV
+de	de	ADP
+où	où	PRON
 ne	ne	ADV
 tombait	tomber	VERB
 que	que	ADV
 une	un	DET
 lueur	lueur	NOUN
-de	de	DET
+de	de	ADP
 cave	cave	NOUN
 ,	,	PUNCTclause
 louche	louche	NOUN
 ,	,	PUNCTclause
-de	de	DET
-un	un	PRON
+de	de	ADP
+un	un	DET
 gris	gris	NOUN
-de	de	DET
+de	de	ADP
 cendre	cendre	NOUN
 .	.	PUNCTsent
 Il	il	PRON
@@ -87,9 +87,9 @@ dans	dans	ADP
 la	le	DET
 buée	buée	NOUN
 blafarde	blafard	ADJ
-de	de	DET
-l'	le	NOUN
-averse	averse	ADJ
+de	de	ADP
+l'	le	DET
+averse	averse	NOUN
 ,	,	PUNCTclause
 lui	lui	PRON
 semblait	sembler	VERB
@@ -106,15 +106,15 @@ le	le	DET
 soir	soir	NOUN
 ,	,	PUNCTclause
 agité	agiter	VERB
-de	de	DET
-un	un	PRON
+de	de	ADP
+un	un	DET
 léger	léger	ADJ
-délire	délire	ADJ
+délire	délire	NOUN
 ,	,	PUNCTclause
 il	il	PRON
 cria	crier	VERB
 en	en	ADP
-sanglotant	sangloter	NOUN
+sanglotant	sanglotant	ADJ
 à	à	ADP
 Albine	Albine	PROPN
 que	que	SCONJ
@@ -126,7 +126,7 @@ mort	mourir	VERB
 que	que	SCONJ
 il	il	PRON
 entendait	entendre	VERB
-tout	tout	ADJ
+tout	tout	ADV
 le	le	DET
 ciel	ciel	NOUN
 ,	,	PUNCTclause
@@ -204,7 +204,7 @@ des	un	DET
 éboulements	éboulement	NOUN
 ,	,	PUNCTclause
 luttant	lutter	VERB
-furieusement	furieusement	NOUN
+furieusement	furieusement	ADV
 pour	pour	ADP
 arriver	arriver	VERB
 au	au	ADP_DET
@@ -228,9 +228,9 @@ hiver	hiver	NOUN
 était	être	AUX
 une	un	DET
 maladie	maladie	NOUN
-de	de	DET
-la	le:PRON	PRON
-terre	terrer	VERB
+de	de	ADP
+la	le	DET
+terre	terre	NOUN
 ,	,	PUNCTclause
 que	que	SCONJ
 il	il	PRON
@@ -245,7 +245,7 @@ le	le	DET
 printemps	printemps	NOUN
 ne	ne	ADV
 les	le	DET
-guérissait	guérir	NOUN
+guérissait	guérir	VERB
 tous deux	tous deux	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -268,9 +268,9 @@ arbres	arbre	NOUN
 ,	,	PUNCTclause
 dans	dans	ADP
 une	un	DET
-lointaine	lointain	NOUN
+lointaine	lointain	ADJ
 clameur	clameur	NOUN
-de	de	DET
+de	de	ADP
 fleuve	fleuve	NOUN
 débordé	déborder	VERB
 .	.	PUNCTsent
@@ -287,7 +287,7 @@ fenêtres	fenêtre	NOUN
 avec	avec	ADP
 un	un	DET
 acharnement	acharnement	NOUN
-de	de	DET
+de	de	ADP
 vagues	vague	NOUN
 énormes	énorme	ADJ
 .	.	PUNCTsent
@@ -368,9 +368,9 @@ malade	malade	ADJ
 À	à	ADP
 certaines	certain	DET
 heures	heure	NOUN
-de	de	DET
+de	de	ADP
 nuages	nuage	NOUN
-de	de	DET
+de	de	ADP
 encre	encre	NOUN
 ,	,	PUNCTclause
 lorsque	lorsque	SCONJ
@@ -393,8 +393,8 @@ averse	averse	NOUN
 comme	comme	ADP
 des	un	DET
 cheveux	cheveu	NOUN
-de	de	DET
-noyée	noyer	NOUN
+de	de	ADP
+noyée	noyer	VERB
 ,	,	PUNCTclause
 il	il	PRON
 perdait	perdre	VERB
@@ -421,7 +421,7 @@ première	premier	ADJ
 au	au	ADP_DET
 moindre	moindre	ADJ
 coin	coin	NOUN
-de	de	DET
+de	de	ADP
 bleu	bleu	NOUN
 ,	,	PUNCTclause
 entre	entre	ADP
@@ -437,7 +437,7 @@ l'	le	DET
 apaisement	apaisement	NOUN
 des	un	ADP_DET
 feuillages	feuillage	NOUN
-essuyés	essuyé	ADJ
+essuyés	essuyer	VERB
 ,	,	PUNCTclause
 des	un	DET
 sentiers	sentier	NOUN
@@ -449,7 +449,7 @@ buvant	boire	VERB
 leur	leur	DET
 dernière	dernier	ADJ
 gorgée	gorgée	NOUN
-de	de	DET
+de	de	ADP
 eau	eau	NOUN
 .	.	PUNCTsent
 Albine	albin	ADV
@@ -482,20 +482,20 @@ horizon	horizon	NOUN
 ,	,	PUNCTclause
 heureuse	heureux	NOUN
 des	un	ADP_DET
-moindres	moindre	NOUN
-taches	tache	ADJ
+moindres	moindre	ADJ
+taches	tache	NOUN
 blanches	blanc	ADJ
 ,	,	PUNCTclause
-inquiète	inquiéter	PRON
-des	un	ADP_DET
+inquiète	inquiéter	VERB
+des	un	DET
 masses	masse	NOUN
-de	de	DET
+de	de	ADP
 ombre	ombre	NOUN
 ,	,	PUNCTclause
-cuivrées	cuivré	NOUN
+cuivrées	cuivrer	VERB
 ,	,	PUNCTclause
 chargées	charger	VERB
-de	de	DET
+de	de	ADP
 grêle	grêle	NOUN
 ,	,	PUNCTclause
 redoutant	redouter	VERB
@@ -512,8 +512,8 @@ malade	malade	NOUN
 .	.	PUNCTsent
 Elle	elle	PRON
 parlait	parler	VERB
-de	de	DET
-envoyer	envoyer	NOUN
+de	de	ADP
+envoyer	envoyer	VERB
 chercher	chercher	VERB
 le	le	DET
 docteur	docteur	NOUN
@@ -540,7 +540,7 @@ les	le	DET
 rideaux	rideau	NOUN
 ,	,	PUNCTclause
 je	je	PRON
-serai	être	PRON
+serai	être	AUX
 guéri	guérir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -577,9 +577,9 @@ pas	pas	ADV
 ,	,	PUNCTclause
 elle	elle	PRON
 pleura	pleurer	VERB
-de	de	DET
+de	de	ADP
 se	se	PRON
-voir	voir	AUX
+voir	voir	VERB
 impuissante	impuissant	ADJ
 .	.	PUNCTsent
 Depuis	depuis	ADP
@@ -590,8 +590,8 @@ retombé	retomber	VERB
 dans	dans	ADP
 l'	le	DET
 assoupissement	assoupissement	NOUN
-de	de	DET
-l'	le	NOUN
+de	de	ADP
+l'	le	DET
 hiver	hiver	NOUN
 ,	,	PUNCTclause
 elle	elle	PRON
@@ -609,7 +609,7 @@ elle	elle	PRON
 seule	seul	ADJ
 du	du	ADP_DET
 cauchemar	cauchemar	NOUN
-où	où	ADV
+où	où	PRON
 il	il	PRON
 se	se	PRON
 débattait	débattre	VERB
@@ -617,9 +617,9 @@ débattait	débattre	VERB
 Elle	elle	PRON
 avait	avoir	VERB
 besoin	besoin	NOUN
-de	de	DET
-la	le:PRON	PRON
-complicité	complicité	VERB
+de	de	ADP
+la	le	DET
+complicité	complicité	NOUN
 du	du	ADP_DET
 printemps	printemps	NOUN
 .	.	PUNCTsent
@@ -690,8 +690,8 @@ encore	encore	ADV
 le	le:PRON	PRON
 charme	charmer	VERB
 rompu	rompu	ADJ
-de	de	DET
-ses	son	NOUN
+de	de	ADP
+ses	son	DET
 mains	main	NOUN
 ,	,	PUNCTclause
 elle	elle	PRON
@@ -705,14 +705,14 @@ jour	jour	NOUN
 sur	sur	ADP
 les	le	DET
 lèvres	lèvre	NOUN
-de	de	DET
+de	de	ADP
 Serge	Serge	PROPN
 ,	,	PUNCTclause
 dont	dont	PRON
 elle	elle	PRON
 venait	venir	VERB
-de	de	DET
-effleurer	effleurer	NOUN
+de	de	ADP
+effleurer	effleurer	VERB
 la	le	DET
 nuque	nuque	NOUN
 ,	,	PUNCTclause
@@ -751,9 +751,9 @@ ne	ne	ADV
 avait	avoir	AUX
 aperçu	apercevoir	VERB
 ,	,	PUNCTclause
-de	de	DET
-la	le:PRON	PRON
-fenêtre	fenêtrer	VERB
+de	de	ADP
+la	le	DET
+fenêtre	fenêtre	NOUN
 du	du	ADP_DET
 palier	palier	NOUN
 ,	,	PUNCTclause
@@ -765,7 +765,7 @@ deuil	deuil	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Dors	dormir	NOUN
+Dors	dormir	VERB
 ,	,	PUNCTclause
 reprit	reprendre	VERB
 elle	elle	PRON
@@ -775,15 +775,15 @@ je	je	PRON
 te	te	PRON
 ai	avoir	AUX
 promis	promettre	VERB
-de	de	DET
-te	te	NOUN
+de	de	ADP
+te	te	PRON
 éveiller	éveiller	VERB
 ,	,	PUNCTclause
 au	au	ADP_DET
 premier	premier	ADJ
 rayon	rayon	NOUN
 …	…	PUNCTsent
-Dors	dormir	DET
+Dors	dormir	VERB
 encore	encore	ADV
 ,	,	PUNCTclause
 le	le	DET

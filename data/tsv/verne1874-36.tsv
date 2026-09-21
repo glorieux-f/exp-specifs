@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = verne1874-36
 # creator = Verne, Jules
 # created = 1874
@@ -15,7 +15,7 @@ décembre	décembre	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
 Le	le:PRON	PRON
-jour	jour	ADP
+jour	jour	NOUN
 est	être	AUX
 enfin	enfin	ADV
 arrivé	arriver	VERB
@@ -93,13 +93,13 @@ me	me	PRON
 a	avoir	AUX
 pas	pas	ADV
 permis	permettre	VERB
-de	de	DET
-observer	observer	NOUN
+de	de	ADP
+observer	observer	VERB
 la	le	DET
 fin	fin	NOUN
-de	de	DET
-ce	ce	PRON
-cataclysme	cataclysme	ADJ
+de	de	ADP
+ce	ce	DET
+cataclysme	cataclysme	NOUN
 .	.	PUNCTsent
 Je	je	PRON
 sais	savoir	VERB
@@ -111,7 +111,7 @@ temps	temps	NOUN
 après	après	ADP
 le	le	DET
 coup	coup	NOUN
-de	de	DET
+de	de	ADP
 mer	mer	NOUN
 ,	,	PUNCTclause
 l'	le	DET
@@ -122,17 +122,17 @@ calmé	calmer	VERB
 sous	sous	ADP
 l'	le	DET
 action	action	NOUN
-de	de	DET
-violentes	violent	NOUN
-averses	averse	ADJ
+de	de	ADP
+violentes	violent	ADJ
+averses	averse	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 que	que	SCONJ
 la	le	DET
 tension	tension	NOUN
 électrique	électrique	ADJ
-de	de	DET
-l'	le	NOUN
+de	de	ADP
+l'	le	DET
 atmosphère	atmosphère	NOUN
 se	se	PRON
 est	être	AUX
@@ -147,8 +147,8 @@ donc	donc	ADV
 pas	pas	ADV
 prolongée	prolonger	VERB
 au-delà	au-delà	ADV
-de	de	DET
-la	le	AUX
+de	de	ADP
+la	le	DET
 nuit	nuit	NOUN
 .	.	PUNCTsent
 Mais	mais	CCONJ
@@ -156,11 +156,11 @@ en	en	ADP
 ce	ce	PRON
 court	courir	VERB
 espace	espace	NOUN
-de	de	DET
+de	de	ADP
 temps	temps	NOUN
 ,	,	PUNCTclause
-que	que	SCONJ
-de	de	DET
+que	que	PRON
+de	de	ADP
 dommages	dommage	NOUN
 elle	elle	PRON
 nous	nous	PRON
@@ -176,7 +176,7 @@ et	et	CCONJ
 par suite	par suite	ADV
 ,	,	PUNCTclause
 que	que	SCONJ
-de	de	DET
+de	de	ADP
 misères	misère	NOUN
 nous	nous	PRON
 attendent	attendre	VERB
@@ -190,10 +190,10 @@ pu	pouvoir	VERB
 conserver	conserver	VERB
 une	un	DET
 goutte	goutte	NOUN
-de	de	DET
-ces	ce	NOUN
+de	de	ADP
+ces	ce	DET
 torrents	torrent	NOUN
-de	de	DET
+de	de	ADP
 eau	eau	NOUN
 que	que	SCONJ
 elle	elle	PRON
@@ -210,11 +210,11 @@ moi	moi	PRON
 grâce	grâce	NOUN
 aux	au	ADP_DET
 soins	soin	NOUN
-de	de	DET
+de	de	ADP
 messieurs	messieurs	NOUN
 Letourneur	Letourneur	PROPN
 et	et	CCONJ
-de	de	DET
+de	de	ADP
 miss	miss	NOUN
 Herbey	Herbey	PROPN
 ,	,	PUNCTclause
@@ -224,10 +224,10 @@ est	être	AUX
 à	à	ADP
 Robert	Robert	PROPN
 Kurtis	Kurtis	PROPN
-que	que	SCONJ
+que	que	PRON
 je	je	PRON
 dois	devoir	VERB
-de	de	DET
+de	de	ADP
 ne	ne	ADV
 pas	pas	ADV
 avoir	avoir	AUX
@@ -237,7 +237,7 @@ par	par	ADP
 un	un	DET
 second	second	ADJ
 coup	coup	NOUN
-de	de	DET
+de	de	ADP
 mer	mer	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -247,7 +247,7 @@ deux	deux	NUM
 matelots	matelot	NOUN
 qui	qui	PRON
 ont	avoir	AUX
-péri	péri	ADJ
+péri	périr	VERB
 pendant	pendant	ADP
 la	le	DET
 tempête	tempête	NOUN
@@ -256,7 +256,7 @@ Austin	Austin	PROPN
 ,	,	PUNCTclause
 jeune	jeune	ADJ
 homme	homme	NOUN
-de	de	DET
+de	de	ADP
 vingt-huit	vingt-huit	NUM
 ans	an	NOUN
 ,	,	PUNCTclause
@@ -279,7 +279,7 @@ O'Ready	O'Ready	PROPN
 ,	,	PUNCTclause
 le	le	DET
 survivant	survivant	NOUN
-de	de	DET
+de	de	ADP
 tant de	tant de	DET
 naufrages	naufrage	NOUN
 !	!	PUNCTsent
@@ -299,7 +299,7 @@ que	que	SCONJ
 près de	près de	ADP
 la	le	DET
 moitié	moitié	NOUN
-de	de	DET
+de	de	ADP
 ceux	ceux	PRON
 qui	qui	PRON
 se	se	PRON
@@ -343,7 +343,7 @@ ils	ils	PRON
 ,	,	PUNCTclause
 et	et	CCONJ
 combien	combien	ADV
-de	de	DET
+de	de	ADP
 temps	temps	NOUN
 dureront	durer	VERB
 ils	ils	PRON
@@ -363,9 +363,9 @@ reste	rester	VERB
 dans	dans	ADP
 le	le	DET
 fond	fond	NOUN
-de	de	DET
-la	le:PRON	PRON
-barrique	barrique	ADJ
+de	de	ADP
+la	le	DET
+barrique	barrique	NOUN
 brisée	briser	VERB
 environ	environ	ADV
 quatorze	quatorze	NUM
@@ -403,9 +403,9 @@ emportés	emporter	VERB
 tous deux	tous deux	PRON
 ,	,	PUNCTclause
 et	et	CCONJ
-de	de	DET
-cette	ce	NOUN
-réserve	réserver	VERB
+de	de	ADP
+cette	ce	DET
+réserve	réserve	NOUN
 il	il	PRON
 ne	ne	ADV
 reste	rester	VERB
@@ -422,7 +422,7 @@ estime	estimer	VERB
 pas	pas	ADV
 à	à	ADP
 plus	plus	ADV
-de	de	DET
+de	de	ADP
 soixante	soixante	NUM
 livres	livre	NOUN
 ce	ce	PRON
@@ -433,23 +433,23 @@ pu	pouvoir	VERB
 sauvé	sauver	VERB
 des	un	ADP_DET
 atteintes	atteinte	NOUN
-de	de	DET
-la	le	AUX
+de	de	ADP
+la	le	DET
 mer	mer	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Soixante	Soixante	NUM
 livres	livre	NOUN
-de	de	DET
+de	de	ADP
 biscuit	biscuit	NOUN
 pour	pour	ADP
 seize	seize	NUM
 ,	,	PUNCTclause
 cela	cela	PRON
-fait	faire	AUX
+fait	faire	VERB
 huit	huit	NUM
 jours	jour	NOUN
-de	de	DET
+de	de	ADP
 nourriture	nourriture	NOUN
 ,	,	PUNCTclause
 à	à	ADP
@@ -506,7 +506,7 @@ naissent	naître	VERB
 dans	dans	ADP
 l'	le	DET
 esprit	esprit	NOUN
-de	de	DET
+de	de	ADP
 tous	tout	ADJ
 .	.	PUNCTsent
 Il	il	PRON
@@ -524,8 +524,8 @@ et	et	CCONJ
 que	que	SCONJ
 le	le	DET
 spectre	spectre	NOUN
-de	de	DET
-la	le	AUX
+de	de	ADP
+la	le	DET
 faim	faim	NOUN
 apparaît	apparaître	VERB
 déjà	déjà	ADV
@@ -540,11 +540,11 @@ encore	encore	ADV
 été	être	AUX
 absolument	absolument	ADV
 privés	priver	VERB
-de	de	DET
+de	de	ADP
 boire	boire	NOUN
 et	et	CCONJ
-de	de	DET
-manger	manger	NOUN
+de	de	ADP
+manger	manger	VERB
 .	.	PUNCTsent
 Mais	mais	CCONJ
 ,	,	PUNCTclause
@@ -552,7 +552,7 @@ maintenant	maintenant	ADV
 ,	,	PUNCTclause
 la	le	DET
 ration	ration	NOUN
-de	de	DET
+de	de	ADP
 eau	eau	NOUN
 va	aller	VERB
 être	être	AUX
@@ -563,7 +563,7 @@ et	et	CCONJ
 quant à	quant à	ADP
 la	le	DET
 ration	ration	NOUN
-de	de	DET
+de	de	ADP
 biscuit	biscuit	NOUN
 !…	!…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -592,10 +592,10 @@ ai	avoir	AUX
 entendu	entendre	VERB
 Flaypol	Flaypol	PROPN
 dire	dire	VERB
-de	de	DET
-un	un	PRON
-ton	ton	DET
-ironique	ironique	NOUN
+de	de	ADP
+un	un	DET
+ton	ton	NOUN
+ironique	ironique	ADJ
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
@@ -603,10 +603,10 @@ Ceux	ceux	PRON
 qui	qui	PRON
 doivent	devoir	VERB
 mourir	mourir	VERB
-feraient	faire	AUX
+feraient	faire	VERB
 bien	bien	ADV
-de	de	DET
-mourir	mourir	NOUN
+de	de	ADP
+mourir	mourir	VERB
 tout de suite	tout de suite	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -641,7 +641,7 @@ a	avoir	AUX
 reçu	recevoir	VERB
 sa	son	DET
 demi-livre	demi-livre	NOUN
-de	de	DET
+de	de	ADP
 biscuit	biscuit	NOUN
 réglementaire	réglementaire	ADJ
 .	.	PUNCTsent
@@ -654,7 +654,7 @@ immédiatement	immédiatement	ADV
 avec	avec	ADP
 une	un	DET
 sorte	sorte	NOUN
-de	de	DET
+de	de	ADP
 rage	rage	NOUN
 ,	,	PUNCTclause
 les	le	DET
@@ -677,13 +677,13 @@ sa	son	DET
 ration	ration	NOUN
 en	en	ADP
 autant	autant	ADV
-de	de	DET
+de	de	ADP
 parts	part	NOUN
-que	que	SCONJ
+que	que	PRON
 il	il	PRON
-fait	faire	AUX
+fait	faire	VERB
 habituellement	habituellement	ADV
-de	de	DET
+de	de	ADP
 repas	repas	NOUN
 par	par	ADP
 jour	jour	NOUN
@@ -692,7 +692,7 @@ jour	jour	NOUN
 Si	si	ADV
 un	un	DET
 seul	seul	ADJ
-doit	devoir	NOUN
+doit	devoir	VERB
 survivre	survivre	VERB
 ,	,	PUNCTclause
 Falsten	Falsten	PROPN

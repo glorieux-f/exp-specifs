@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = dumas1844c-19
 # creator = Dumas, Alexandre
 # created = 1844
@@ -8,14 +8,14 @@
 ↵↵↵	↵↵↵	PUNCTstruct
 XIX	XIX	NUM
 .	.	PUNCTsent
-Procès-verbal	procès-verbal	ADJ
+Procès-verbal	procès-verbal	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Au	au	ADP_DET
 mois	mois	NOUN
-de	de	DET
+de	de	ADP
 octobre	octobre	NOUN
-mil	mil	ADP
+mil	mil	NUM
 huit	huit	NUM
 cent	cent	NUM
 quarante-deux	quarante-deux	NUM
@@ -33,7 +33,7 @@ oublié	oublier	VERB
 l'	le	DET
 étrange	étrange	ADJ
 histoire	histoire	NOUN
-de	de	DET
+de	de	ADP
 Gabriel	Gabriel	PROPN
 Lambert	Lambert	PROPN
 ,	,	PUNCTclause
@@ -41,11 +41,11 @@ et	et	CCONJ
 je	je	PRON
 étais	être	AUX
 curieux	curieux	ADJ
-de	de	DET
-savoir	savoir	NOUN
+de	de	ADP
+savoir	savoir	VERB
 si	si	SCONJ
 les	le	DET
-choses	choser	VERB
+choses	chose	NOUN
 se	se	PRON
 étaient	être	AUX
 passées	passer	VERB
@@ -61,7 +61,7 @@ avait	avoir	AUX
 ↵↵	↵↵	PUNCTstruct
 je	je	PRON
 allai	aller	VERB
-faire	faire	AUX
+faire	faire	VERB
 une	un	DET
 visite	visite	NOUN
 au	au	ADP_DET
@@ -94,7 +94,7 @@ moins	moins	ADV
 merveille	merveille	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
-comme	comme	ADP
+comme	comme	SCONJ
 ,	,	PUNCTclause
 dans	dans	ADP
 la	le	DET
@@ -121,10 +121,10 @@ visite	visite	NOUN
 ne	ne	ADV
 était	être	AUX
 pas	pas	ADV
-tout	tout	ADJ
+tout	tout	ADV
 à	à	ADP
-fait	faire	AUX
-désintéressée	désintéresser	VERB
+fait	fait	NOUN
+désintéressée	désintéressé	ADJ
 ,	,	PUNCTclause
 et	et	CCONJ
 que	que	SCONJ
@@ -143,7 +143,7 @@ Lambert	Lambert	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Il	il	PRON
-fit	faire	AUX
+fit	faire	VERB
 aussitôt	aussitôt	ADV
 appeler	appeler	VERB
 son	son	DET
@@ -173,7 +173,7 @@ an	an	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mon	mon	NOUN
+Mon	mon	DET
 cher	cher	ADJ
 M.	M.	PROPN
 Durand	Durand	PROPN
@@ -198,11 +198,11 @@ revenez	revenir	VERB
 nous	nous	PRON
 dire	dire	VERB
 ce	ce	PRON
-que	que	SCONJ
+que	que	PRON
 il	il	PRON
-fait	faire	AUX
+fait	faire	VERB
 et	et	CCONJ
-quelles	quel	ADJ
+quelles	quel	DET
 sont	être	AUX
 les	le	DET
 notes	note	NOUN
@@ -229,7 +229,7 @@ ouvert	ouvert	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Tenez	tenir	NOUN
+Tenez	tenir	VERB
 ,	,	PUNCTclause
 monsieur	monsieur	NOUN
 ,	,	PUNCTclause
@@ -241,10 +241,10 @@ si	si	SCONJ
 vous	vous	PRON
 voulez	vouloir	VERB
 prendre la peine	prendre la peine	VERB
-de	de	DET
-lire	lire	NOUN
+de	de	ADP
+lire	lire	VERB
 ces	ce	DET
-quelques	quelque	NOUN
+quelques	quelque	DET
 lignes	ligne	NOUN
 ,	,	PUNCTclause
 vous	vous	PRON
@@ -259,7 +259,7 @@ assis	asseoir	VERB
 devant	devant	ADP
 la	le	DET
 table	table	NOUN
-où	où	ADV
+où	où	PRON
 il	il	PRON
 avait	avoir	AUX
 posé	poser	VERB
@@ -268,7 +268,7 @@ registre	registre	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 je	je	PRON
-lus	lire	PRON
+lus	lire	VERB
 :	:	PUNCTclause
 ↵↵↵↵	↵↵↵↵	PUNCTstruct
 «	«	PUNCTclause
@@ -276,7 +276,7 @@ Ce	ce	PRON
 jourd'hui	jourd'hui	PRON
 cinq	cinq	NUM
 juin	juin	NOUN
-mil	mil	CCONJ
+mil	mil	NUM
 huit	huit	NUM
 cent	cent	NUM
 quarante	quarante	NUM
@@ -289,11 +289,11 @@ Laurent	Laurent	PROPN
 Chiverny	Chiverny	PROPN
 ,	,	PUNCTclause
 surveillant	surveiller	VERB
-de	de	DET
+de	de	ADP
 première	premier	ADJ
 classe	classe	NOUN
 ,	,	PUNCTclause
-faisant	faire	AUX
+faisant	faire	VERB
 ma	mon	DET
 tournée	tournée	NOUN
 dans	dans	ADP
@@ -303,7 +303,7 @@ chantier	chantier	NOUN
 pendant	pendant	ADP
 l'	le	DET
 heure	heure	NOUN
-de	de	DET
+de	de	ADP
 repos	repos	NOUN
 accordée	accorder	VERB
 aux	au	ADP_DET
@@ -319,7 +319,7 @@ déclare	déclarer	VERB
 avoir	avoir	AUX
 trouvé	trouver	VERB
 le	le	DET
-nommé	nommé	NOUN
+nommé	nommer	VERB
 Gabriel	Gabriel	PROPN
 Lambert	Lambert	PROPN
 ,	,	PUNCTclause
@@ -342,14 +342,14 @@ duquel	duquel	ADP_PRON
 dormait	dormir	VERB
 ,	,	PUNCTclause
 ou	ou	CCONJ
-faisait	faire	AUX
+faisait	faire	VERB
 semblant	sembler	VERB
-de	de	DET
-dormir	dormir	NOUN
+de	de	ADP
+dormir	dormir	VERB
 ,	,	PUNCTclause
 son	son	DET
 compagnon	compagnon	NOUN
-de	de	DET
+de	de	ADP
 chaîne	chaîne	NOUN
 ,	,	PUNCTclause
 André	André	PROPN
@@ -368,8 +368,8 @@ mon	mon	DET
 premier	premier	ADJ
 soin	soin	NOUN
 fut	être	AUX
-de	de	DET
-réveiller	réveiller	NOUN
+de	de	ADP
+réveiller	réveiller	VERB
 ce	ce	DET
 dernier	dernier	ADJ
 ,	,	PUNCTclause
@@ -379,8 +379,8 @@ la	le	DET
 plus	plus	ADV
 grande	grand	ADJ
 surprise	surprise	NOUN
-de	de	DET
-cet	ce	NOUN
+de	de	ADP
+cet	ce	DET
 événement	événement	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -389,7 +389,7 @@ ne	ne	ADV
 en	en	PRON
 être	être	AUX
 aucunement	aucunement	ADV
-complice	complice	VERB
+complice	complice	ADJ
 .	.	PUNCTsent
 en effet	en effet	ADV
 ,	,	PUNCTclause
@@ -409,10 +409,10 @@ trouva	trouver	VERB
 dans	dans	ADP
 sa	son	DET
 poche	poche	NOUN
-un	un	ADP
+un	un	DET
 billet	billet	NOUN
 écrit	écrire	VERB
-de	de	DET
+de	de	ADP
 sa	son	DET
 main	main	NOUN
 et	et	CCONJ
@@ -426,7 +426,7 @@ termes	terme	NOUN
 Aujourd'hui	aujourd'hui	ADV
 cinq	cinq	NUM
 juin	juin	NOUN
-mil	mil	CCONJ
+mil	mil	NUM
 huit	huit	NUM
 cent	cent	NUM
 quarante	quarante	NUM
@@ -436,9 +436,9 @@ un	un	DET
 pendant	pendant	ADP
 l'	le	DET
 heure	heure	NOUN
-de	de	DET
+de	de	ADP
 repos	repos	NOUN
-que	que	SCONJ
+que	que	PRON
 on	on	PRON
 nous	nous	PRON
 accorde	accorder	VERB
@@ -455,21 +455,21 @@ compte	compter	VERB
 exécuter	exécuter	VERB
 la	le	DET
 résolution	résolution	NOUN
-que	que	SCONJ
+que	que	PRON
 je	je	PRON
 ai	avoir	AUX
 prise	prendre	VERB
 depuis	depuis	ADP
 longtemps	longtemps	ADV
-de	de	DET
-me	me	NOUN
+de	de	ADP
+me	me	PRON
 suicider	suicider	VERB
 ,	,	PUNCTclause
 la	le	DET
 vie	vie	NOUN
 du	du	ADP_DET
 bagne	bagne	NOUN
-me	me	ADJ
+me	me	PRON
 étant	être	AUX
 devenue	devenir	VERB
 insupportable	insupportable	ADJ
@@ -483,9 +483,9 @@ lettre	lettre	NOUN
 afin que	afin que	SCONJ
 Rossignol	Rossignol	PROPN
 ne	ne	ADV
-soit	soit	CCONJ
+soit	être	AUX
 aucunement	aucunement	ADV
-inquiété	inquiété	NOUN
+inquiété	inquiéter	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
@@ -520,8 +520,8 @@ pendu	pendre	VERB
 sans	sans	ADP
 l'	le	DET
 aide	aide	NOUN
-de	de	DET
-son	son	NOUN
+de	de	ADP
+son	son	DET
 compagnon	compagnon	NOUN
 ,	,	PUNCTclause
 auquel	auquel	ADP_PRON
@@ -531,7 +531,7 @@ attaché	attacher	VERB
 par	par	ADP
 une	un	DET
 chaîne	chaîne	NOUN
-de	de	DET
+de	de	ADP
 deux	deux	NUM
 pieds	pied	NOUN
 et	et	CCONJ
@@ -542,14 +542,14 @@ je	je	PRON
 ai	avoir	AUX
 l'	le	DET
 honneur	honneur	NOUN
-de	de	DET
-proposer	proposer	ADJ
+de	de	ADP
+proposer	proposer	VERB
 à	à	ADP
 M.	M.	PROPN
 l'	le	DET
 inspecteur	inspecteur	NOUN
-de	de	DET
-envoyer	envoyer	NOUN
+de	de	ADP
+envoyer	envoyer	VERB
 ,	,	PUNCTclause
 pour	pour	ADP
 un	un	DET
@@ -572,7 +572,7 @@ Chiverny	Chiverny	PROPN
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
 surveillant	surveiller	VERB
-de	de	DET
+de	de	ADP
 1	1	NUM
 re	re	NOUN
 classe	classe	NOUN
@@ -582,15 +582,15 @@ classe	classe	NOUN
 Au-dessous	au-dessous	ADV
 étaient	être	AUX
 écrites	écrire	VERB
-de	de	DET
-une	une	NUM
+de	de	ADP
+une	un	DET
 autre	autre	ADJ
 écriture	écriture	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 signées	signer	VERB
-de	de	DET
-un	un	PRON
+de	de	ADP
+un	un	DET
 simple	simple	ADJ
 paraphe	paraphe	NOUN
 ,	,	PUNCTclause
@@ -606,7 +606,7 @@ enterrer	enterrer	VERB
 ce	ce	DET
 soir	soir	NOUN
 le	le	DET
-nommé	nommé	NOUN
+nommé	nommer	VERB
 Gabriel	Gabriel	PROPN
 Lambert	Lambert	PROPN
 ,	,	PUNCTclause
@@ -620,7 +620,7 @@ un	un	DET
 mois	mois	NOUN
 ,	,	PUNCTclause
 le	le	DET
-nommé	nommé	NOUN
+nommé	nommer	VERB
 Rossignol	Rossignol	PROPN
 au	au	ADP_DET
 cachot	cachot	NOUN
@@ -634,9 +634,9 @@ B.	B.	PROPN
 Je	je	PRON
 pris	prendre	VERB
 copie	copie	NOUN
-de	de	DET
-ce	ce	NOUN
-procès-verbal	procès-verbal	ADJ
+de	de	ADP
+ce	ce	DET
+procès-verbal	procès-verbal	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 je	je	PRON
@@ -658,8 +658,8 @@ trouveront	trouver	VERB
 avec	avec	ADP
 la	le	DET
 confirmation	confirmation	NOUN
-de	de	DET
-ce	ce	PRON
+de	de	ADP
+ce	ce	DET
 que	que	SCONJ
 me	me	PRON
 avait	avoir	AUX
@@ -671,15 +671,15 @@ dénouement	dénouement	NOUN
 naturel	naturel	ADJ
 et	et	CCONJ
 complet	complet	ADJ
-de	de	DET
-l'	le	NOUN
+de	de	ADP
+l'	le	DET
 histoire	histoire	NOUN
-que	que	SCONJ
+que	que	PRON
 je	je	PRON
 viens	venir	VERB
-de	de	DET
+de	de	ADP
 leur	leur	DET
-raconter	raconter	NOUN
+raconter	raconter	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 je	je	PRON
@@ -690,10 +690,10 @@ je	je	PRON
 admirai	admirer	VERB
 la	le	DET
 perspicacité	perspicacité	NOUN
-de	de	DET
-l'	le	NOUN
+de	de	ADP
+l'	le	DET
 honorable	honorable	ADJ
-surveillant	surveiller	VERB
+surveillant	surveillant	NOUN
 ,	,	PUNCTclause
 maître	maître	NOUN
 Laurent	Laurent	PROPN
@@ -708,7 +708,7 @@ l'on	on	PRON
 retrouva	retrouver	VERB
 le	le	DET
 cadavre	cadavre	NOUN
-de	de	DET
+de	de	ADP
 Gabriel	Gabriel	PROPN
 Lambert	Lambert	PROPN
 ,	,	PUNCTclause

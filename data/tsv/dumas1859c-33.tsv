@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = dumas1859c-33
 # creator = Dumas, Alexandre
 # created = 1859
@@ -14,7 +14,7 @@ mois	mois	NOUN
 plus tard	plus tard	ADV
 ,	,	PUNCTclause
 Eusèbe	Eusèbe	PROPN
-van	van	X
+van	van	NOUN
 den	den	ADP
 Beek	Beek	PROPN
 et	et	CCONJ
@@ -34,13 +34,13 @@ pu	pouvoir	VERB
 conserver	conserver	VERB
 la	le	DET
 partie	partie	NOUN
-de	de	DET
-l'	le	NOUN
+de	de	ADP
+l'	le	DET
 héritage	héritage	NOUN
 du	du	ADP_DET
 docteur	docteur	NOUN
 Basilius	Basilius	PROPN
-que	que	SCONJ
+que	que	PRON
 ni	ni	CCONJ
 Arroa	Arroa	PROPN
 ,	,	PUNCTclause
@@ -57,16 +57,16 @@ le	le	DET
 notaire	notaire	NOUN
 Maes	Maes	PROPN
 le	le	DET
-leur	leur	DET
-conseillait	conseiller	NOUN
+leur	leur	PRON
+conseillait	conseiller	VERB
 ;	;	PUNCTclause
 mais	mais	CCONJ
 ,	,	PUNCTclause
 malgré	malgré	ADP
 les	le	DET
 avis	avis	NOUN
-de	de	DET
-cet	ce	NOUN
+de	de	ADP
+cet	ce	DET
 excellent	excellent	ADJ
 homme	homme	NOUN
 ,	,	PUNCTclause
@@ -75,11 +75,11 @@ distribuèrent	distribuer	VERB
 tout	tout	ADJ
 ce	ce	PRON
 qui	qui	PRON
-leur	leur	DET
-restait	rester	NOUN
+leur	leur	PRON
+restait	rester	VERB
 aux	au	ADP_DET
 hôpitaux	hôpital	NOUN
-de	de	DET
+de	de	ADP
 Batavia	Batavia	PROPN
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -114,18 +114,18 @@ qui	qui	PRON
 les	le:PRON	PRON
 portait	porter	VERB
 les	le	DET
-débarqua	débarquer	NOUN
+débarqua	débarquer	VERB
 sains	sain	ADJ
 et	et	CCONJ
 saufs	sauf	ADJ
 sur	sur	ADP
 le	le	DET
 quai	quai	NOUN
-de	de	DET
+de	de	ADP
 Rotterdam	Rotterdam	PROPN
 ,	,	PUNCTclause
 ville	ville	NOUN
-où	où	ADV
+où	où	PRON
 ils	ils	PRON
 sont	être	AUX
 encore	encore	ADV
@@ -143,7 +143,7 @@ Java	Java	PROPN
 ,	,	PUNCTclause
 Eusèbe	Eusèbe	PROPN
 avait	avoir	AUX
-fait	faire	AUX
+fait	faire	VERB
 chercher	chercher	VERB
 Harruch	Harruch	PROPN
 ,	,	PUNCTclause
@@ -153,20 +153,20 @@ voulait	vouloir	VERB
 laisser	laisser	VERB
 quelque	quelque	DET
 témoignage	témoignage	NOUN
-de	de	DET
-sa	son	AUX
+de	de	ADP
+sa	son	DET
 gratitude	gratitude	NOUN
 ;	;	PUNCTclause
 mais	mais	CCONJ
 tous	tout	ADJ
 les	le	DET
 efforts	effort	NOUN
-que	que	SCONJ
+que	que	PRON
 il	il	PRON
-fit	faire	AUX
+fit	faire	VERB
 pour	pour	ADP
 le	le	DET
-découvrir	découvrir	NOUN
+découvrir	découvrir	VERB
 furent	être	AUX
 infructueux	infructueux	ADJ
 ;	;	PUNCTclause
@@ -190,9 +190,9 @@ les	le	DET
 forêts	forêt	NOUN
 du	du	ADP_DET
 centre	centre	NOUN
-de	de	DET
-l'	le	NOUN
-île	île	ADP
+de	de	ADP
+l'	le	DET
+île	île	NOUN
 un	un	DET
 homme	homme	NOUN
 basané	basané	ADJ
@@ -201,12 +201,12 @@ paraissait	paraître	VERB
 avoir	avoir	AUX
 choisi	choisir	VERB
 pour	pour	ADP
-compagnons	compagnon	VERB
+compagnons	compagnon	NOUN
 les	le	DET
 hôtes	hôte	NOUN
 les	le	DET
 plus	plus	ADV
-féroces	féroce	NOUN
+féroces	féroce	ADJ
 des	un	ADP_DET
 grands	grand	ADJ
 bois	bois	NOUN

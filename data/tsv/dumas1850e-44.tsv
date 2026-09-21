@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = dumas1850e-44
 # creator = Dumas, Alexandre
 # created = 1850
@@ -22,8 +22,8 @@ matin	matin	NOUN
 ↵↵	↵↵	PUNCTstruct
 Je	je	PRON
 viens	venir	VERB
-de	de	DET
-voir	voir	AUX
+de	de	ADP
+voir	voir	VERB
 se	se	PRON
 lever	lever	VERB
 une	un	DET
@@ -46,7 +46,7 @@ magnifique	magnifique	ADJ
 plus	plus	ADV
 splendide	splendide	ADJ
 .	.	PUNCTsent
-Que	que	SCONJ
+Que	que	PRON
 lui	lui	PRON
 importent	importer	VERB
 ,	,	PUNCTclause
@@ -55,8 +55,8 @@ lui	lui	PRON
 ,	,	PUNCTclause
 les	le	DET
 douleurs	douleur	NOUN
-de	de	DET
-ce	ce	PRON
+de	de	ADP
+ce	ce	DET
 pauvre	pauvre	ADJ
 petit	petit	ADJ
 monde	monde	NOUN
@@ -64,12 +64,12 @@ que	que	SCONJ
 il	il	PRON
 éclaire	éclairer	VERB
 !	!	PUNCTsent
-que	que	SCONJ
+que	que	PRON
 lui	lui	PRON
 importent	importer	VERB
 les	le	DET
 larmes	larme	NOUN
-que	que	SCONJ
+que	que	PRON
 je	je	PRON
 répands	répandre	VERB
 et	et	CCONJ
@@ -84,24 +84,24 @@ ai	avoir	VERB
 que	que	ADV
 à	à	ADP
 les	le	DET
-exposer	exposer	X
+exposer	exposer	VERB
 dix	dix	NUM
 minutes	minute	NOUN
 à	à	ADP
 ses	son	DET
-rayons	rayer	VERB
+rayons	rayon	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 il	il	PRON
 les	le:PRON	PRON
 aura	avoir	VERB
-bues	bu	NOUN
+bues	bu	ADJ
 comme	comme	ADP
 il	il	PRON
 boit	boire	VERB
 la	le	DET
 goutte	goutte	NOUN
-de	de	DET
+de	de	ADP
 rosée	rosée	NOUN
 qui	qui	PRON
 tremble	trembler	VERB
@@ -110,7 +110,7 @@ l'	le	DET
 extrémité	extrémité	NOUN
 du	du	ADP_DET
 brin	brin	NOUN
-de	de	DET
+de	de	ADP
 herbe	herbe	NOUN
 ou	ou	CCONJ
 qui	qui	PRON
@@ -122,9 +122,9 @@ au	au	ADP_DET
 fond	fond	NOUN
 du	du	ADP_DET
 calice	calice	NOUN
-de	de	DET
-une	un	PRON
-fleur	fleur	ADJ
+de	de	ADP
+une	un	DET
+fleur	fleur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Je	je	PRON
@@ -144,16 +144,16 @@ sur	sur	ADP
 une	un	DET
 cour	cour	NOUN
 fermée	fermer	VERB
-de	de	DET
+de	de	ADP
 hautes	haut	ADJ
 murailles	muraille	NOUN
 ;	;	PUNCTclause
 par	par	ADP
 l'	le	DET
 échancrure	échancrure	NOUN
-de	de	DET
-une	un	PRON
-arcade	arcade	ADP_DET
+de	de	ADP
+une	un	DET
+arcade	arcade	NOUN
 je	je	PRON
 apercevrai	apercevoir	VERB
 seulement	seulement	ADV
@@ -168,7 +168,7 @@ que	que	SCONJ
 ce	ce	DET
 coin	coin	NOUN
 me	me	PRON
-soit	soit	CCONJ
+soit	être	AUX
 accordé	accorder	VERB
 pour	pour	ADP
 ma	mon	DET
@@ -182,10 +182,10 @@ le	le	DET
 plus	plus	ADV
 près	près	ADV
 possible	possible	ADJ
-de	de	DET
+de	de	ADP
 soi	soi	PRON
 ce	ce	PRON
-que	que	SCONJ
+que	que	PRON
 l'on	on	PRON
 désire	désirer	VERB
 atteindre	atteindre	VERB

@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = verne1871-28
 # creator = Verne, Jules
 # created = 1871
@@ -44,7 +44,7 @@ eût	avoir	AUX
 décidé	décider	VERB
 à	à	ADP
 demander	demander	VERB
-sur-le-champ	sur-le-champ	ADP
+sur-le-champ	sur-le-champ	ADV
 une	un	DET
 réparation	réparation	NOUN
 par	par	ADP
@@ -52,7 +52,7 @@ les	le	DET
 armes	arme	NOUN
 .	.	PUNCTsent
 Ce	ce	PRON
-retard	retard	VERB
+retard	retard	NOUN
 pouvait	pouvoir	VERB
 il	il	PRON
 nous	nous	PRON
@@ -66,7 +66,7 @@ bien	bien	ADV
 que	que	SCONJ
 les	le	DET
 races	race	NOUN
-saxonnes	saxon	NOUN
+saxonnes	saxon	ADJ
 entendent	entendre	VERB
 autrement	autrement	ADV
 que	que	SCONJ
@@ -75,7 +75,7 @@ la	le	DET
 question	question	NOUN
 du	du	ADP_DET
 point	point	NOUN
-de	de	DET
+de	de	ADP
 honneur	honneur	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -110,7 +110,7 @@ on	on	PRON
 ne	ne	ADV
 peut	pouvoir	VERB
 la	le	DET
-tourner	tourner	NOUN
+tourner	tourner	VERB
 comme	comme	ADP
 en	en	ADP
 France	France	PROPN
@@ -192,7 +192,7 @@ ce	ce	PRON
 étaient	être	AUX
 les	le	DET
 fidèles	fidèle	ADJ
-endimanchés	endimanché	NOUN
+endimanchés	endimancher	VERB
 qui	qui	PRON
 revenaient	revenir	VERB
 du	du	ADP_DET
@@ -205,7 +205,7 @@ et	et	CCONJ
 passagers	passager	NOUN
 regagnaient	regagner	VERB
 leurs	leur	DET
-postes	poster	VERB
+postes	poste	NOUN
 ,	,	PUNCTclause
 leurs	leur	DET
 cabines	cabine	NOUN
@@ -258,22 +258,22 @@ que	que	SCONJ
 à	à	ADP
 348	348	NUM
 milles	mille	NOUN
-de	de	DET
-la	le	AUX
-pointe	pointer	VERB
-de	de	DET
+de	de	ADP
+la	le	DET
+pointe	pointe	NOUN
+de	de	ADP
 Sandy	Sandy	PROPN
 Hook	Hook	PROPN
 ,	,	PUNCTclause
 langue	langue	NOUN
 sablonneuse	sablonneux	ADJ
 qui	qui	PRON
-forme	forme	VERB
+forme	forme	NOUN
 l'	le	DET
 entrée	entrée	NOUN
 des	un	ADP_DET
 passes	passe	NOUN
-de	de	DET
+de	de	ADP
 New York	New York	PROPN
 .	.	PUNCTsent
 Il	il	PRON
@@ -307,7 +307,7 @@ Drake	Drake	PROPN
 occupait	occuper	VERB
 la sienne	la sienne	PRON
 .	.	PUNCTsent
-Quoique	quoique	PRON
+Quoique	quoique	SCONJ
 bruyant	bruyant	ADJ
 ,	,	PUNCTclause
 ce	ce	DET
@@ -325,8 +325,8 @@ du	du	ADP_DET
 vin	vin	NOUN
 l'	le	DET
 oubli	oubli	NOUN
-de	de	DET
-ses	son	NOUN
+de	de	ADP
+ses	son	DET
 remords	remords	NOUN
 ?	?	PUNCTsent
 Je	je	PRON
@@ -382,7 +382,7 @@ le	le	DET
 dire	dire	NOUN
 .	.	PUNCTsent
 Un	un	DET
-fait	faire	AUX
+fait	fait	NOUN
 à	à	ADP
 noter	noter	VERB
 ,	,	PUNCTclause
@@ -406,7 +406,7 @@ levai	lever	VERB
 aussitôt	aussitôt	ADV
 pour	pour	ADP
 l'	le	DET
-observer	observer	NOUN
+observer	observer	VERB
 ,	,	PUNCTclause
 mais	mais	CCONJ
 il	il	PRON
@@ -461,13 +461,13 @@ Le	le	DET
 docteur	docteur	NOUN
 Pitferge	Pitferge	PROPN
 ,	,	PUNCTclause
-que	que	SCONJ
+que	que	PRON
 je	je	PRON
 rencontrai	rencontrer	VERB
 ,	,	PUNCTclause
 me	me	PRON
 donna	donner	VERB
-de	de	DET
+de	de	ADP
 mauvaises	mauvais	ADJ
 nouvelles	nouvelle	NOUN
 du	du	ADP_DET
@@ -527,7 +527,7 @@ City	City	PROPN
 of	of	X
 Paris	Paris	PROPN
 ,	,	PUNCTclause
-de	de	DET
+de	de	ADP
 deux	deux	NUM
 mille	mille	NUM
 sept	sept	NUM
@@ -540,8 +540,8 @@ des	un	DET
 plus	plus	ADV
 beaux	beau	ADJ
 steamers	steamer	NOUN
-de	de	DET
-la	le	AUX
+de	de	ADP
+la	le	DET
 compagnie	compagnie	NOUN
 Inman	Inman	PROPN
 ;	;	PUNCTclause
@@ -563,7 +563,7 @@ nom	nom	NOUN
 :	:	PUNCTclause
 Saxonia	Saxonia	PROPN
 ,	,	PUNCTclause
-de	de	DET
+de	de	ADP
 Steam	Steam	PROPN
 National	national	X
 Company	Company	PROPN
@@ -581,11 +581,11 @@ contrebord	contrebord	NOUN
 ,	,	PUNCTclause
 à	à	ADP
 moins	moins	ADV
-de	de	DET
+de	de	ADP
 trois	trois	NUM
 encablures	encablure	NOUN
 l'un	l'un	PRON
-de	de	DET
+de	de	ADP
 l'autre	l'autre	PRON
 .	.	PUNCTsent
 Le	le	DET
@@ -594,15 +594,15 @@ du	du	ADP_DET
 Saxonia	Saxonia	PROPN
 était	être	AUX
 couvert	couvrir	VERB
-de	de	DET
+de	de	ADP
 passagers	passager	NOUN
 qui	qui	PRON
 nous	nous	PRON
 saluèrent	saluer	VERB
-de	de	DET
-un	un	PRON
-triple	triple	ADJ
-hourra	hourra	VERB
+de	de	ADP
+un	un	DET
+triple	triple	NOUN
+hourra	hourra	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 À	à	ADP
@@ -621,7 +621,7 @@ trop	trop	ADV
 pour que	pour que	SCONJ
 sa	son	DET
 nationalité	nationalité	NOUN
-pût	pouvoir	ADJ
+pût	pouvoir	VERB
 être	être	AUX
 reconnue	reconnaître	VERB
 .	.	PUNCTsent
@@ -638,13 +638,13 @@ attraction	attraction	NOUN
 que	que	SCONJ
 ces	ce	DET
 rencontres	rencontre	NOUN
-de	de	DET
+de	de	ADP
 bâtiments	bâtiment	NOUN
 ,	,	PUNCTclause
 ces	ce	DET
 hôtes	hôte	NOUN
-de	de	DET
-l'	le:PRON	PRON
+de	de	ADP
+l'	le	DET
 Atlantique	Atlantique	PROPN
 ,	,	PUNCTclause
 qui	qui	PRON
@@ -664,21 +664,21 @@ ne	ne	ADV
 y	y	PRON
 ait	avoir	AUX
 pas	pas	ADV
-de	de	DET
+de	de	ADP
 indifférence	indifférence	NOUN
 possible	possible	ADJ
-de	de	DET
+de	de	ADP
 navire	navire	NOUN
-à	à	ADJ
-navire	navire	VERB
+à	à	ADP
+navire	navire	NOUN
 .	.	PUNCTsent
 Le	le	DET
 commun	commun	ADJ
 danger	danger	NOUN
-de	de	DET
-l'	le:PRON	PRON
+de	de	ADP
+l'	le	DET
 élément	élément	NOUN
-affronté	affronté	NOUN
+affronté	affronter	VERB
 est	être	AUX
 un	un	DET
 lien	lien	NOUN
@@ -697,9 +697,9 @@ navire	navire	NOUN
 ,	,	PUNCTclause
 Philadelphia	Philadelphia	PROPN
 ,	,	PUNCTclause
-de	de	DET
-la	le:PRON	PRON
-ligne	ligner	VERB
+de	de	ADP
+la	le	DET
+ligne	ligne	NOUN
 Inman	Inman	PROPN
 ,	,	PUNCTclause
 affecté	affecter	VERB
@@ -707,7 +707,7 @@ au	au	ADP_DET
 transport	transport	NOUN
 des	un	ADP_DET
 émigrants	émigrant	NOUN
-de	de	DET
+de	de	ADP
 Liverpool	Liverpool	PROPN
 à	à	ADP
 New York	New York	PROPN
@@ -744,33 +744,33 @@ Europe	Europe	PROPN
 ,	,	PUNCTclause
 paquebot	paquebot	NOUN
 à	à	ADP
-roues	rouer	VERB
-de	de	DET
+roues	roue	NOUN
+de	de	ADP
 trois	trois	NUM
 mille	mille	NUM
 deux	deux	NUM
 cents	cents	NUM
 tonneaux	tonneau	NOUN
-de	de	DET
+de	de	ADP
 jauge	jauge	NOUN
 et	et	CCONJ
-de	de	DET
+de	de	ADP
 mille	mille	NUM
 trois	trois	NUM
 cents	cents	NUM
 chevaux	cheval	NOUN
-de	de	DET
+de	de	ADP
 force	force	NOUN
 .	.	PUNCTsent
 Ce	ce	PRON
-steamer	steamer	VERB
+steamer	steamer	NOUN
 appartient	appartenir	VERB
 à	à	ADP
 la	le	DET
 Compagnie	compagnie	NOUN
 Transatlantique	Transatlantique	PROPN
 et	et	CCONJ
-fait	faire	AUX
+fait	faire	VERB
 le	le	DET
 service	service	NOUN
 des	un	ADP_DET
@@ -791,7 +791,7 @@ signalé	signaler	VERB
 Il	il	PRON
 avait	avoir	AUX
 sans doute	sans doute	ADV
-passé	passé	ADP
+passé	passer	VERB
 plus	plus	ADV
 au	au	ADP_DET
 nord	nord	NOUN
@@ -809,13 +809,13 @@ demie	demi	NOUN
 .	.	PUNCTsent
 Le	le	DET
 croissant	croissant	NOUN
-de	de	DET
-la	le:PRON	PRON
-lune	lune	ADP
+de	de	ADP
+la	le	DET
+lune	lune	NOUN
 se	se	PRON
 dégagea	dégager	VERB
 des	un	DET
-rayons	rayer	VERB
+rayons	rayon	NOUN
 du	du	ADP_DET
 soleil	soleil	NOUN
 couchant	coucher	VERB
@@ -825,15 +825,15 @@ quelque	quelque	DET
 temps	temps	NOUN
 suspendu	suspendre	VERB
 au-dessus	au-dessus	ADV
-de	de	DET
-l'	le	NOUN
+de	de	ADP
+l'	le	DET
 horizon	horizon	NOUN
 .	.	PUNCTsent
 Une	un	DET
 lecture	lecture	NOUN
 religieuse	religieux	ADJ
 ,	,	PUNCTclause
-faite	faire	AUX
+faite	faire	VERB
 par	par	ADP
 le	le	DET
 capitaine	capitaine	NOUN
@@ -844,7 +844,7 @@ grand	grand	ADJ
 salon	salon	NOUN
 et	et	CCONJ
 entrecoupée	entrecouper	VERB
-de	de	DET
+de	de	ADP
 cantiques	cantique	NOUN
 ,	,	PUNCTclause
 se	se	PRON
@@ -877,7 +877,7 @@ la	le	DET
 visite	visite	NOUN
 des	un	ADP_DET
 témoins	témoin	NOUN
-de	de	DET
+de	de	ADP
 Harry	Harry	PROPN
 Drake	Drake	PROPN
 .	.	PUNCTsent

@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = dumas1850e-40
 # creator = Dumas, Alexandre
 # created = 1850
@@ -22,11 +22,11 @@ dormi	dormir	VERB
 deux	deux	NUM
 heures	heure	NOUN
 à peu près	à peu près	ADV
-de	de	DET
-un	un	PRON
-sommeil	sommeil	ADP
+de	de	ADP
+un	un	DET
+sommeil	sommeil	NOUN
 horriblement	horriblement	ADV
-agité	agité	NOUN
+agité	agiter	VERB
 et	et	CCONJ
 qui	qui	PRON
 ressemblait	ressembler	VERB
@@ -45,10 +45,10 @@ vois	voir	VERB
 le	le	DET
 jour	jour	NOUN
 près de	près de	ADP
-naître	naître	NOUN
+naître	naître	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-ho	ho	NOUN
+ho	ho	INTJ
 !	!	PUNCTsent
 mon	mon	DET
 bien-aimé	bien-aimé	NOUN
@@ -56,7 +56,7 @@ bien-aimé	bien-aimé	NOUN
 la	le	DET
 belle	beau	ADJ
 chose	chose	NOUN
-que	que	SCONJ
+que	que	PRON
 la	le	DET
 naissance	naissance	NOUN
 du	du	ADP_DET
@@ -83,7 +83,7 @@ toutes	tout	ADJ
 les	le	DET
 étoiles	étoile	NOUN
 dont	dont	PRON
-tu	tu	ADJ
+tu	tu	PRON
 sais	savoir	VERB
 les	le	DET
 noms	nom	NOUN
@@ -98,8 +98,8 @@ se	se	PRON
 dans	dans	ADP
 l'	le	DET
 éther	éther	NOUN
-quelques	quelque	ADJ
-instants	instant	ADJ
+quelques	quelque	DET
+instants	instant	NOUN
 avant que	avant que	SCONJ
 le	le	DET
 soleil	soleil	NOUN
@@ -117,8 +117,8 @@ tour	tour	NOUN
 ↵↵	↵↵	PUNCTstruct
 Je	je	PRON
 viens	venir	VERB
-de	de	DET
-ouvrir	ouvrir	NOUN
+de	de	ADP
+ouvrir	ouvrir	VERB
 ma	mon	DET
 fenêtre	fenêtre	NOUN
 ,	,	PUNCTclause
@@ -134,7 +134,7 @@ une	un	DET
 étendue	étendue	NOUN
 immense	immense	ADJ
 .	.	PUNCTsent
-Hélas	hélas	NOUN
+Hélas	hélas	INTJ
 !	!	PUNCTsent
 plus	plus	ADV
 l'	le	DET
@@ -154,10 +154,10 @@ cette	ce	DET
 belle	beau	ADJ
 fable	fable	NOUN
 amoureuse	amoureux	ADJ
-de	de	DET
+de	de	ADP
 Thésée	Thésée	PROPN
 et	et	CCONJ
-de	de	DET
+de	de	ADP
 Ariane	Ariane	PROPN
 ne	ne	ADV
 est	être	AUX
@@ -184,9 +184,9 @@ me	me	PRON
 détachera	détacher	VERB
 elle	elle	PRON
 pas	pas	ADV
-de	de	DET
-votre	votre	NOUN
-droite	droit	ADJ
+de	de	ADP
+votre	votre	DET
+droite	droite	NOUN
 bénie	bénir	VERB
 quelque	quelque	DET
 ange	ange	NOUN
@@ -195,7 +195,7 @@ me	me	PRON
 apporte	apporter	VERB
 le	le	DET
 fil	fil	NOUN
-conducteur	conducteur	VERB
+conducteur	conducteur	ADJ
 qui	qui	PRON
 doit	devoir	VERB
 me	me	PRON
@@ -204,7 +204,7 @@ conduire	conduire	VERB
 lui	lui	PRON
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-ho	ho	NOUN
+ho	ho	INTJ
 !	!	PUNCTsent
 je	je	PRON
 écoute	écouter	VERB
@@ -237,10 +237,10 @@ sans	sans	ADP
 paraître	paraître	VERB
 encore	encore	ADV
 ,	,	PUNCTclause
-colore	colorer	NOUN
-de	de	DET
-une	un	PRON
-teinte	teint	ADJ
+colore	colorer	VERB
+de	de	ADP
+une	un	DET
+teinte	teinte	NOUN
 rose	rose	ADJ
 toute	tout	ADJ
 l'	le	DET
@@ -249,7 +249,7 @@ qui	qui	PRON
 baigne	baigner	VERB
 la	le	DET
 chaîne	chaîne	NOUN
-de	de	DET
+de	de	ADP
 montagnes	montagne	NOUN
 derrière	derrière	ADP
 laquelle	laquelle	PRON
@@ -261,7 +261,7 @@ en	en	ADP
 ce	ce	DET
 moment	moment	NOUN
 .	.	PUNCTsent
-ho	ho	NOUN
+ho	ho	INTJ
 !	!	PUNCTsent
 pour	pour	ADP
 un	un	DET
@@ -285,12 +285,12 @@ se	se	PRON
 découpe	découper	VERB
 sur	sur	ADP
 ses	son	DET
-rayons	rayer	VERB
-dorés	doré	NOUN
+rayons	rayon	NOUN
+dorés	doré	ADJ
 ,	,	PUNCTclause
 sont	être	AUX
-de	de	DET
-une	un	PRON
+de	de	ADP
+une	un	DET
 belle	beau	ADJ
 et	et	CCONJ
 gracieuse	gracieux	ADJ
@@ -300,10 +300,10 @@ Comme	comme	ADP
 cette	ce	DET
 autre	autre	ADJ
 chaîne	chaîne	NOUN
-de	de	DET
+de	de	ADP
 montagnes	montagne	NOUN
 qui	qui	PRON
-forme	forme	VERB
+forme	forme	NOUN
 l'	le	DET
 horizon	horizon	NOUN
 est	être	AUX
@@ -320,13 +320,13 @@ argentent	argenter	VERB
 et	et	CCONJ
 qui	qui	PRON
 se	se	PRON
-étincellent	étinceler	AUX
+étincellent	étinceler	VERB
 aux	au	ADP_DET
 premières	premier	ADJ
 flammes	flamme	NOUN
-de	de	DET
-l'	le:PRON	PRON
-astre	astre	VERB
+de	de	ADP
+l'	le	DET
+astre	astre	NOUN
 divin	divin	ADJ
 !	!	PUNCTsent
 Comme	comme	ADP
@@ -346,7 +346,7 @@ vient	venir	VERB
 moi	moi	PRON
 ,	,	PUNCTclause
 est	être	AUX
-unie	uni	DET
+unie	unir	VERB
 ,	,	PUNCTclause
 majestueuse	majestueux	ADJ
 et	et	CCONJ
@@ -354,7 +354,7 @@ profonde	profond	ADJ
 !	!	PUNCTsent
 Comme	comme	CCONJ
 …	…	PUNCTsent
-ho	ho	NOUN
+ho	ho	INTJ
 !	!	PUNCTsent
 mon Dieu	mon Dieu	NOUN
 !	!	PUNCTsent
@@ -402,10 +402,10 @@ lève	lever	VERB
 ,	,	PUNCTclause
 cette	ce	DET
 double	double	NOUN
-arête	arête	VERB
+arête	arête	NOUN
 au	au	ADP_DET
 centre	centre	NOUN
-de	de	DET
+de	de	ADP
 laquelle	laquelle	PRON
 il	il	PRON
 se	se	PRON
@@ -416,14 +416,14 @@ moment	moment	NOUN
 ,	,	PUNCTclause
 ces	ce	DET
 montagnes	montagne	NOUN
-de	de	DET
+de	de	ADP
 neige	neige	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
 semblent	sembler	VERB
 des	un	ADP_DET
 piliers	pilier	NOUN
-de	de	DET
+de	de	ADP
 argent	argent	NOUN
 soutenant	soutenir	VERB
 la	le	DET
@@ -452,9 +452,9 @@ souveraine	souverain	NOUN
 reçoit	recevoir	VERB
 le	le	DET
 tribut	tribut	NOUN
-de	de	DET
-ses	son	NOUN
-sujets	sujet	ADJ
+de	de	ADP
+ses	son	DET
+sujets	sujet	NOUN
 …	…	PUNCTsent
 ce	ce	PRON
 sont	être	AUX
@@ -478,10 +478,10 @@ décrits	décrire	VERB
 et	et	CCONJ
 que	que	SCONJ
 il	il	PRON
-voit	voir	AUX
-de	de	DET
-ses	son	NOUN
-fenêtres	fenêtre	ADJ
+voit	voir	VERB
+de	de	ADP
+ses	son	DET
+fenêtres	fenêtre	NOUN
 .	.	PUNCTsent
 Mon	mon	DET
 horizon	horizon	NOUN
@@ -570,8 +570,8 @@ foi	foi	NOUN
 qui	qui	PRON
 a	avoir	AUX
 douté	douter	VERB
-de	de	DET
-la	le	AUX
+de	de	ADP
+la	le	DET
 bonté	bonté	NOUN
 du	du	ADP_DET
 Dieu	Dieu	PROPN

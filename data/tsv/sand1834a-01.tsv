@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = sand1834a-01
 # creator = Sand, George
 # created = 1834
@@ -11,17 +11,17 @@ Notice	notice	NOUN
 ↵↵	↵↵	PUNCTstruct
 Que	que	SCONJ
 Jacques	Jacques	PROPN
-soit	soit	CCONJ
+soit	être	AUX
 l'	le	DET
 expression	expression	NOUN
 et	et	CCONJ
 le	le	DET
 résultat	résultat	NOUN
-de	de	DET
+de	de	ADP
 pensées	pensée	NOUN
 tristes	triste	ADJ
 et	et	CCONJ
-de	de	DET
+de	de	ADP
 sentiments	sentiment	NOUN
 amers	amer	ADJ
 ,	,	PUNCTclause
@@ -30,7 +30,7 @@ ne	ne	ADV
 est	être	AUX
 pas	pas	ADV
 besoin	besoin	NOUN
-de	de	DET
+de	de	ADP
 le	le:PRON	PRON
 dire	dire	VERB
 .	.	PUNCTsent
@@ -63,7 +63,7 @@ A	avoir	AUX
 on	on	PRON
 le	le	DET
 droit	droit	NOUN
-de	de	DET
+de	de	ADP
 être	être	AUX
 désespéré	désespérer	VERB
 ?	?	PUNCTsent
@@ -74,7 +74,7 @@ A	avoir	AUX
 on	on	PRON
 le	le	DET
 droit	droit	NOUN
-de	de	DET
+de	de	ADP
 être	être	AUX
 malade	malade	ADJ
 ?	?	PUNCTsent
@@ -93,20 +93,20 @@ ce	ce	PRON
 est	être	AUX
 l'	le	DET
 histoire	histoire	NOUN
-de	de	DET
-une	une	NUM
+de	de	ADP
+une	un	DET
 passion	passion	NOUN
 ,	,	PUNCTclause
-de	de	DET
-la	le:PRON	PRON
+de	de	ADP
+la	le	DET
 dernière	dernier	ADJ
 et	et	CCONJ
 intolérable	intolérable	ADJ
 passion	passion	NOUN
 ,	,	PUNCTclause
-de	de	DET
-une	un	PRON
-âme	âme	ADP
+de	de	ADP
+une	un	DET
+âme	âme	NOUN
 passionnée	passionner	VERB
 ;	;	PUNCTclause
 je	je	PRON
@@ -121,10 +121,10 @@ roman	roman	NOUN
 ,	,	PUNCTclause
 que	que	SCONJ
 certains	certain	PRON
-cœurs	cœur	ADV
+cœurs	cœur	NOUN
 dévoués	dévouer	VERB
 se	se	PRON
-voient	voir	AUX
+voient	voir	VERB
 réduits	réduire	VERB
 à	à	ADP
 céder	céder	VERB
@@ -137,9 +137,9 @@ que	que	SCONJ
 la	le	DET
 société	société	NOUN
 ne	ne	ADV
-leur	leur	DET
-laisse	laisse	NOUN
-guère	guère	ADJ
+leur	leur	PRON
+laisse	laisser	VERB
+guère	guère	ADV
 d'autre	d'autre	ADP
 choix	choix	NOUN
 ,	,	PUNCTclause
@@ -155,10 +155,10 @@ résignation	résignation	NOUN
 ou	ou	CCONJ
 la	le	DET
 miséricorde	miséricorde	NOUN
-de	de	DET
-un	un	PRON
-époux	époux	ADP_DET
-trahi	trahir	NOUN
+de	de	ADP
+un	un	DET
+époux	époux	NOUN
+trahi	trahir	VERB
 .	.	PUNCTsent
 En	en	ADP
 ceci	ceci	PRON
@@ -177,7 +177,7 @@ Jacques	Jacques	PROPN
 finit	finir	VERB
 il	il	PRON
 peu	peu	ADV
-chrétiennement	chrétiennement	VERB
+chrétiennement	chrétiennement	ADV
 sa	son	DET
 vie	vie	NOUN
 en	en	ADP
@@ -185,7 +185,7 @@ se	se	PRON
 arrogeant	arroger	VERB
 le	le	DET
 droit	droit	NOUN
-de	de	DET
+de	de	ADP
 en	en	PRON
 disposer	disposer	VERB
 .	.	PUNCTsent
@@ -229,8 +229,8 @@ est	être	AUX
 donc	donc	ADV
 l'	le	DET
 homme	homme	NOUN
-de	de	DET
-son	son	NOUN
+de	de	ADP
+son	son	DET
 temps	temps	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -259,16 +259,16 @@ possible	possible	ADJ
 entre	entre	ADP
 l'	le	DET
 état	état	NOUN
-de	de	DET
+de	de	ADP
 meurtriers	meurtrier	NOUN
 et	et	CCONJ
 celui	celui	PRON
-de	de	DET
-saints	saint	NOUN
+de	de	ADP
+saints	saint	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Tâchons	tâcher	NOUN
-de	de	DET
+Tâchons	tâcher	VERB
+de	de	ADP
 être	être	AUX
 saints	saint	ADJ
 ,	,	PUNCTclause
@@ -290,7 +290,7 @@ est	être	AUX
 difficile	difficile	ADJ
 ,	,	PUNCTclause
 et	et	CCONJ
-quelle	quel	ADJ
+quelle	quel	DET
 indulgence	indulgence	NOUN
 on	on	PRON
 doit	devoir	VERB
@@ -325,18 +325,18 @@ opinion	opinion	NOUN
 car	car	CCONJ
 le	le	DET
 but	but	NOUN
-de	de	DET
-la	le:PRON	PRON
-société	société	VERB
+de	de	ADP
+la	le	DET
+société	société	NOUN
 devrait	devoir	VERB
 être	être	AUX
-de	de	DET
-rendre	rendre	NOUN
+de	de	ADP
+rendre	rendre	VERB
 la	le	DET
 perfection	perfection	NOUN
 accessible	accessible	ADJ
 à	à	ADP
-tous	tout	ADJ
+tous	tous	PRON
 ,	,	PUNCTclause
 et	et	CCONJ
 l'	le	DET

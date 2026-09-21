@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = verne1888-01
 # creator = Verne, Jules
 # created = 1888
@@ -19,13 +19,13 @@ en	en	ADP
 éveil	éveil	NOUN
 la	le	DET
 curiosité	curiosité	NOUN
-de	de	DET
-nos	nos	NOUN
+de	de	ADP
+nos	nos	DET
 jeunes	jeune	ADJ
-lecteurs	lecteur	DET
+lecteurs	lecteur	NOUN
 .	.	PUNCTsent
 Daniel	Daniel	PROPN
-de	de	DET
+de	de	ADP
 Foë	Foë	PROPN
 ,	,	PUNCTclause
 dans	dans	ADP
@@ -80,8 +80,8 @@ prises	prise	NOUN
 avec	avec	ADP
 les	le	DET
 nécessités	nécessité	NOUN
-de	de	DET
-cette	ce	NOUN
+de	de	ADP
+cette	ce	DET
 situation	situation	NOUN
 .	.	PUNCTsent
 On	on	PRON
@@ -90,14 +90,14 @@ imaginé	imaginer	VERB
 encore	encore	ADV
 le	le	DET
 Robinson	Robinson	PROPN
-de	de	DET
+de	de	ADP
 douze	douze	NUM
 ans	an	NOUN
 ,	,	PUNCTclause
 le	le	DET
 Robinson	Robinson	PROPN
 des	un	ADP_DET
-glaces	glacer	VERB
+glaces	glace	NOUN
 ,	,	PUNCTclause
 le	le	DET
 Robinson	Robinson	PROPN
@@ -127,7 +127,7 @@ que	que	SCONJ
 ,	,	PUNCTclause
 pour	pour	ADP
 le	le	DET
-parfaire	parfaire	NOUN
+parfaire	parfaire	VERB
 ,	,	PUNCTclause
 il	il	PRON
 restait	rester	VERB
@@ -135,9 +135,9 @@ restait	rester	VERB
 montrer	montrer	VERB
 une	un	DET
 troupe	troupe	NOUN
-de	de	DET
+de	de	ADP
 enfants	enfant	NOUN
-de	de	DET
+de	de	ADP
 huit	huit	NUM
 à	à	ADP
 treize	treize	NUM
@@ -160,17 +160,17 @@ entretenues	entretenir	VERB
 par	par	ADP
 les	le	DET
 différences	différence	NOUN
-de	de	DET
+de	de	ADP
 nationalité	nationalité	NOUN
 ,	,	PUNCTclause
 —	—	PUNCTclause
-en	en	NOUN
+en	en	ADP
 un	un	DET
 mot	mot	NOUN
 ,	,	PUNCTclause
 un	un	DET
 pensionnat	pensionnat	NOUN
-de	de	DET
+de	de	ADP
 Robinsons	Robinsons	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -179,16 +179,16 @@ d'autre part	d'autre part	ADV
 dans	dans	ADP
 le	le	DET
 Capitaine	capitaine	NOUN
-de	de	DET
+de	de	ADP
 quinze	quinze	NUM
 ans	an	NOUN
 ,	,	PUNCTclause
 je	je	PRON
 avais	avoir	AUX
 entrepris	entreprendre	VERB
-de	de	DET
-montrer	montrer	NOUN
-ce	ce	ADJ
+de	de	ADP
+montrer	montrer	VERB
+ce	ce	DET
 que	que	SCONJ
 peuvent	pouvoir	VERB
 la	le	DET
@@ -196,8 +196,8 @@ bravoure	bravoure	NOUN
 et	et	CCONJ
 l'	le	DET
 intelligence	intelligence	NOUN
-de	de	DET
-un	un	NUM
+de	de	ADP
+un	un	DET
 enfant	enfant	NOUN
 aux	au	ADP_DET
 prises	prise	NOUN
@@ -207,13 +207,13 @@ périls	péril	NOUN
 et	et	CCONJ
 les	le	DET
 difficultés	difficulté	NOUN
-de	de	DET
-une	un	PRON
+de	de	ADP
+une	un	DET
 responsabilité	responsabilité	NOUN
 au-dessus	au-dessus	ADV
-de	de	DET
-son	son	NOUN
-âge	âge	ADJ
+de	de	ADP
+son	son	DET
+âge	âge	NOUN
 .	.	PUNCTsent
 Or	or	NOUN
 ,	,	PUNCTclause
@@ -249,7 +249,7 @@ but	but	NOUN
 que	que	SCONJ
 a	avoir	AUX
 été	être	AUX
-fait	faire	AUX
+fait	faire	VERB
 ce	ce	DET
 nouvel	nouveau	ADJ
 ouvrage	ouvrage	NOUN

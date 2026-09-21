@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = sand1851-01
 # creator = Sand, George
 # created = 1851
@@ -16,16 +16,16 @@ Désertes	Désertes	PROPN
 est	être	AUX
 une	un	DET
 analyse	analyse	NOUN
-de	de	DET
-quelques	quelque	NOUN
+de	de	ADP
+quelques	quelque	DET
 idées	idée	NOUN
-de	de	DET
+de	de	ADP
 art	art	NOUN
 plutôt	plutôt	ADV
 que	que	SCONJ
 une	un	DET
 analyse	analyse	NOUN
-de	de	DET
+de	de	ADP
 sentiments	sentiment	NOUN
 .	.	PUNCTsent
 Ce	ce	DET
@@ -46,15 +46,15 @@ la	le	DET
 certitude	certitude	NOUN
 que	que	SCONJ
 les	le	DET
-choses	choser	VERB
+choses	chose	NOUN
 réelles	réel	ADJ
 ,	,	PUNCTclause
 transportées	transporter	VERB
 dans	dans	ADP
 le	le	DET
 domaine	domaine	NOUN
-de	de	DET
-la	le	AUX
+de	de	ADP
+la	le	DET
 fiction	fiction	NOUN
 ,	,	PUNCTclause
 ne	ne	ADV
@@ -92,15 +92,15 @@ enfants	enfant	NOUN
 et	et	CCONJ
 quelques	quelque	DET
 amis	ami	NOUN
-de	de	DET
+de	de	ADP
 leur	leur	DET
 âge	âge	NOUN
 ,	,	PUNCTclause
 nous	nous	PRON
 avions	avoir	AUX
 imaginé	imaginer	VERB
-de	de	DET
-jouer	jouer	NOUN
+de	de	ADP
+jouer	jouer	VERB
 la	le	DET
 comédie	comédie	NOUN
 sur	sur	ADP
@@ -109,14 +109,14 @@ et	et	CCONJ
 sans	sans	ADP
 spectateurs	spectateur	NOUN
 ,	,	PUNCTclause
-non	non	INTJ
+non	non	ADV
 pour	pour	ADP
 nous	nous	PRON
 instruire	instruire	VERB
 en	en	ADP
 quoi que	quoi que	SCONJ
 ce	ce	PRON
-soit	soit	CCONJ
+soit	être	AUX
 ,	,	PUNCTclause
 mais	mais	CCONJ
 pour	pour	ADP
@@ -136,7 +136,7 @@ et	et	CCONJ
 peu à peu	peu à peu	ADV
 une	un	DET
 sorte	sorte	NOUN
-de	de	DET
+de	de	ADP
 exercice	exercice	NOUN
 littéraire	littéraire	ADJ
 qui	qui	PRON
@@ -147,14 +147,14 @@ inutile	inutile	ADJ
 au	au	ADP_DET
 développement	développement	NOUN
 intellectuel	intellectuel	ADJ
-de	de	DET
-plusieurs	plusieurs	PRON
+de	de	ADP
+plusieurs	plusieurs	DET
 d'entre	d'entre	ADP
 eux	eux	PRON
 .	.	PUNCTsent
 Une	un	DET
 sorte	sorte	NOUN
-de	de	DET
+de	de	ADP
 mystère	mystère	NOUN
 que	que	SCONJ
 nous	nous	PRON
@@ -166,8 +166,8 @@ mais	mais	CCONJ
 qui	qui	PRON
 résultait	résulter	VERB
 naturellement	naturellement	ADV
-de	de	DET
-ce	ce	PRON
+de	de	ADP
+ce	ce	DET
 petit	petit	ADJ
 vacarme	vacarme	NOUN
 prolongé	prolonger	VERB
@@ -205,7 +205,7 @@ ni	ni	CCONJ
 à	à	ADP
 nos	nos	DET
 changements	changement	NOUN
-de	de	DET
+de	de	ADP
 décor	décor	NOUN
 ,	,	PUNCTclause
 ni	ni	CCONJ
@@ -217,7 +217,7 @@ quittaient	quitter	VERB
 de bonne heure	de bonne heure	ADV
 la	le	DET
 maison	maison	NOUN
-où	où	ADV
+où	où	PRON
 nous	nous	PRON
 restions	rester	VERB
 seuls	seul	ADJ
@@ -247,7 +247,7 @@ tout	tout	ADJ
 cela	cela	PRON
 avait	avoir	VERB
 quelque chose	quelque chose	PRON
-de	de	DET
+de	de	ADP
 fantastique	fantastique	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -257,8 +257,8 @@ passants	passant	NOUN
 qui	qui	PRON
 en	en	PRON
 saisirent	saisir	VERB
-de	de	DET
-loin	loin	NOUN
+de	de	ADP
+loin	loin	ADV
 quelque chose	quelque chose	PRON
 ne	ne	ADV
 hésitèrent	hésiter	VERB
@@ -276,8 +276,8 @@ je	je	PRON
 introduisis	introduire	VERB
 un	un	DET
 épisode	épisode	NOUN
-de	de	DET
-ce	ce	PRON
+de	de	ADP
+ce	ce	DET
 genre	genre	NOUN
 dans	dans	ADP
 le	le	DET
@@ -301,9 +301,9 @@ des	un	DET
 proportions	proportion	NOUN
 si	si	ADV
 différentes	différent	ADJ
-de	de	DET
-l'	le	NOUN
-original	original	ADJ
+de	de	ADP
+l'	le	DET
+original	original	NOUN
 ,	,	PUNCTclause
 que	que	SCONJ
 mes	mon	DET
@@ -327,12 +327,12 @@ bleu	bleu	ADJ
 et	et	CCONJ
 les	le	DET
 costumes	costume	NOUN
-de	de	DET
+de	de	ADP
 papier	papier	NOUN
 découpé	découper	VERB
 qui	qui	PRON
 avaient	avoir	AUX
-fait	faire	AUX
+fait	faire	VERB
 leurs	leur	DET
 délices	délice	NOUN
 .	.	PUNCTsent
@@ -343,13 +343,13 @@ sert	servir	VERB
 toujours	toujours	ADV
 l'	le	DET
 exagération	exagération	NOUN
-de	de	DET
-la	la	NUM
+de	de	ADP
+la	le	DET
 fantaisie	fantaisie	NOUN
 ,	,	PUNCTclause
 car	car	CCONJ
 ils	ils	PRON
-firent	faire	AUX
+firent	faire	VERB
 eux-mêmes	eux-mêmes	PRON
 un	un	DET
 théâtre	théâtre	NOUN
@@ -372,7 +372,7 @@ des	un	DET
 pièces	pièce	NOUN
 que	que	SCONJ
 ils	ils	PRON
-firent	faire	AUX
+firent	faire	VERB
 ,	,	PUNCTclause
 eux-mêmes	eux-mêmes	PRON
 aussi	aussi	ADV
@@ -402,22 +402,22 @@ autres	autre	ADJ
 :	:	PUNCTclause
 mais	mais	CCONJ
 ne	ne	ADV
-firent	faire	AUX
+firent	faire	VERB
 ils	ils	PRON
 pas	pas	ADV
 mieux	mieux	ADV
-de	de	DET
-se	se	NOUN
-amuser	amuser	ADJ
+de	de	ADP
+se	se	PRON
+amuser	amuser	VERB
 et	et	CCONJ
-de	de	DET
+de	de	ADP
 se	se	PRON
 exercer	exercer	VERB
 ainsi	ainsi	ADV
 ,	,	PUNCTclause
 que	que	SCONJ
-de	de	DET
-courir	courir	NOUN
+de	de	ADP
+courir	courir	VERB
 cette	ce	DET
 bohème	bohème	NOUN
 du	du	ADP_DET
@@ -431,9 +431,9 @@ trouve	trouver	VERB
 tous	tout	ADJ
 les	le	DET
 étages	étage	NOUN
-de	de	DET
-la	le:PRON	PRON
-société	société	VERB
+de	de	ADP
+la	le	DET
+société	société	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 ce	ce	PRON
@@ -448,15 +448,15 @@ roman	roman	NOUN
 ,	,	PUNCTclause
 l'	le	DET
 œuvre	œuvre	NOUN
-de	de	DET
-l'	le:PRON	PRON
-imagination	imagination	PRON
+de	de	ADP
+l'	le	DET
+imagination	imagination	NOUN
 ,	,	PUNCTclause
 en	en	ADP
 un	un	DET
 mot	mot	NOUN
 ,	,	PUNCTclause
-a	avoir	X
+a	avoir	VERB
 son	son	DET
 effet	effet	NOUN
 détourné	détourner	VERB
@@ -467,26 +467,26 @@ certain	certain	ADJ
 sur	sur	ADP
 l'	le	DET
 emploi	emploi	NOUN
-de	de	DET
-la	le:PRON	PRON
-vie	vie	VERB
+de	de	ADP
+la	le	DET
+vie	vie	NOUN
 .	.	PUNCTsent
 Effet	effet	NOUN
 souvent	souvent	ADV
-funeste	funeste	VERB
+funeste	funeste	ADJ
 ,	,	PUNCTclause
 disent	dire	VERB
 les	le	DET
 rigoristes	rigoriste	NOUN
-de	de	DET
+de	de	ADP
 mauvaise foi	mauvaise foi	NOUN
 ou	ou	CCONJ
-de	de	DET
+de	de	ADP
 mauvaise humeur	mauvaise humeur	NOUN
 .	.	PUNCTsent
 Je	je	PRON
 le	le	DET
-nie	nier	NOUN
+nie	nier	VERB
 .	.	PUNCTsent
 La	le	DET
 fiction	fiction	NOUN
@@ -504,13 +504,13 @@ transformée	transformer	VERB
 son	son	DET
 tour	tour	NOUN
 et	et	CCONJ
-fait	faire	AUX
+fait	fait	NOUN
 entrer	entrer	VERB
 un	un	DET
 peu de	peu de	DET
 idéal	idéal	ADJ
 ,	,	PUNCTclause
-non	non	INTJ
+non	non	ADV
 pas	pas	ADV
 seulement	seulement	ADV
 dans	dans	ADP
@@ -523,8 +523,8 @@ dans	dans	ADP
 les	le	DET
 grands	grand	ADJ
 sentiments	sentiment	NOUN
-de	de	DET
-la	le	AUX
+de	de	ADP
+la	le	DET
 vie	vie	NOUN
 réelle	réel	ADJ
 .	.	PUNCTsent

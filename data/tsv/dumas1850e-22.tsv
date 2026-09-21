@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = dumas1850e-22
 # creator = Dumas, Alexandre
 # created = 1850
@@ -12,13 +12,13 @@ lettre	lettre	NOUN
 ↵↵	↵↵	PUNCTstruct
 Deux	Deux	NUM
 heures	heure	NOUN
-de	de	DET
-l'	le	NOUN
+de	de	ADP
+l'	le	DET
 après	après	ADP
 midi	midi	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-hé	hé	VERB
+hé	hé	INTJ
 bien	bien	ADV
 !	!	PUNCTsent
 oui	oui	INTJ
@@ -60,13 +60,13 @@ ciel	ciel	NOUN
 pur	pur	ADJ
 tout	tout	ADJ
 constellé	consteller	VERB
-de	de	DET
+de	de	ADP
 étoiles	étoile	NOUN
 .	.	PUNCTsent
 Oui	oui	INTJ
 ,	,	PUNCTclause
 celui	celui	PRON
-auquel	auquel	ADP_DET
+auquel	auquel	ADP_PRON
 je	je	PRON
 me	me	PRON
 adresserai	adresser	VERB
@@ -75,7 +75,7 @@ me	me	PRON
 ;	;	PUNCTclause
 oui	oui	INTJ
 ,	,	PUNCTclause
-tout	tout	ADJ
+tout	tout	PRON
 inflexible	inflexible	ADJ
 que	que	SCONJ
 il	il	PRON
@@ -84,7 +84,7 @@ est	être	AUX
 il	il	PRON
 aura	avoir	VERB
 pitié	pitié	NOUN
-de	de	DET
+de	de	ADP
 moi	moi	PRON
 ;	;	PUNCTclause
 oui	oui	INTJ
@@ -112,7 +112,7 @@ a	avoir	AUX
 point	point	ADV
 porté	porter	VERB
 la	le	DET
-bulle	buller	VERB
+bulle	bulle	NOUN
 qui	qui	PRON
 me	me	PRON
 délie	délier	VERB
@@ -121,7 +121,7 @@ alors	alors	ADV
 ce	ce	DET
 est	être	AUX
 que	que	SCONJ
-tout	tout	ADJ
+tout	tout	PRON
 notre	notre	DET
 espoir	espoir	NOUN
 est	être	AUX
@@ -144,16 +144,16 @@ des	un	DET
 nœuds	nœud	NOUN
 indissolubles	indissoluble	ADJ
 .	.	PUNCTsent
-ho	ho	NOUN
+ho	ho	INTJ
 !	!	PUNCTsent
 je	je	PRON
-serais	être	PRON
+serais	être	AUX
 trop	trop	ADV
 jalouse	jaloux	ADJ
-de	de	DET
+de	de	ADP
 vous	vous	PRON
 savoir	savoir	VERB
-libre	libre	DET
+libre	libre	ADJ
 encore	encore	ADV
 étant	être	AUX
 enchaînée	enchaîner	VERB
@@ -165,6 +165,6 @@ suis	suivre	VERB
 ↵↵	↵↵	PUNCTstruct
 Demain	demain	ADV
 je	je	PRON
-serai	être	PRON
-partie	partir	VERB
+serai	être	VERB
+partie	partie	NOUN
 .	.	PUNCTsent

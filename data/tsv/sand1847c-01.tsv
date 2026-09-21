@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = sand1847c-01
 # creator = Sand, George
 # created = 1847
@@ -14,7 +14,7 @@ Piccinino	Piccinino	PROPN
 est	être	AUX
 un	un	DET
 roman	roman	NOUN
-de	de	DET
+de	de	ADP
 fantaisie	fantaisie	NOUN
 qui	qui	PRON
 ne	ne	ADV
@@ -22,7 +22,7 @@ a	avoir	VERB
 la	le	DET
 prétention	prétention	NOUN
 ni	ni	CCONJ
-de	de	DET
+de	de	ADP
 peindre	peindre	VERB
 une	un	DET
 époque	époque	NOUN
@@ -30,8 +30,8 @@ historique	historique	ADJ
 précise	préciser	VERB
 ,	,	PUNCTclause
 ni	ni	CCONJ
-de	de	DET
-décrire	décrire	NOUN
+de	de	ADP
+décrire	décrire	VERB
 fidèlement	fidèlement	ADV
 un	un	DET
 pays	pays	NOUN
@@ -40,16 +40,16 @@ ce	ce	PRON
 est	être	AUX
 une	un	DET
 étude	étude	NOUN
-de	de	DET
+de	de	ADP
 couleur	couleur	NOUN
 ,	,	PUNCTclause
 rêvée	rêver	VERB
 plutôt	plutôt	ADV
 que	que	SCONJ
-sentie	sentir	NOUN
+sentie	sentir	VERB
 ,	,	PUNCTclause
 et	et	CCONJ
-où	où	ADV
+où	où	PRON
 quelques	quelque	DET
 traits	trait	NOUN
 seulement	seulement	ADV
@@ -62,9 +62,9 @@ par hasard	par hasard	ADV
 .	.	PUNCTsent
 La	le	DET
 scène	scène	NOUN
-de	de	DET
-ce	ce	PRON
-roman	roman	ADJ
+de	de	ADP
+ce	ce	DET
+roman	roman	NOUN
 pourrait	pouvoir	VERB
 se trouver	se trouver	VERB
 placée	placer	VERB
@@ -76,8 +76,8 @@ le	le	DET
 ciel	ciel	NOUN
 du	du	ADP_DET
 midi	midi	NOUN
-de	de	DET
-l'	le:PRON	PRON
+de	de	ADP
+l'	le	DET
 Europe	Europe	PROPN
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -85,23 +85,23 @@ ce	ce	PRON
 qui	qui	PRON
 me	me	PRON
 a	avoir	AUX
-fait	faire	AUX
+fait	faire	VERB
 choisir	choisir	VERB
 la	le	DET
 Sicile	Sicile	PROPN
 ,	,	PUNCTclause
 ce	ce	PRON
 est	être	AUX
-tout	tout	ADJ
-bonnement	bonnement	CCONJ
+tout	tout	ADV
+bonnement	bonnement	ADV
 un	un	DET
 recueil	recueil	NOUN
-de	de	DET
+de	de	ADP
 belles	beau	ADJ
 gravures	gravure	NOUN
-que	que	SCONJ
+que	que	PRON
 je	je	PRON
-avais	avoir	VERB
+avais	avoir	AUX
 sous	sous	ADP
 les	le	DET
 yeux	œil	NOUN
@@ -115,10 +115,10 @@ avais	avoir	AUX
 toujours	toujours	ADV
 eu	avoir	VERB
 envie	envie	NOUN
-de	de	DET
-faire	faire	AUX
+de	de	ADP
+faire	faire	VERB
 ,	,	PUNCTclause
-tout	tout	ADJ
+tout	tout	ADV
 comme	comme	ADP
 un	un	DET
 autre	autre	ADJ
@@ -126,12 +126,12 @@ autre	autre	ADJ
 mon	mon	DET
 petit	petit	ADJ
 chef	chef	NOUN
-de	de	DET
+de	de	ADP
 brigands	brigand	NOUN
 .	.	PUNCTsent
 Le	le	DET
 chef	chef	NOUN
-de	de	DET
+de	de	ADP
 brigands	brigand	NOUN
 qui	qui	PRON
 a	avoir	AUX
@@ -139,7 +139,7 @@ défrayé	défrayer	VERB
 tant de	tant de	DET
 romans	roman	NOUN
 et	et	CCONJ
-de	de	DET
+de	de	ADP
 mélodrames	mélodrame	NOUN
 sous	sous	ADP
 l'	le	DET
@@ -158,7 +158,7 @@ romantique	romantique	ADJ
 ,	,	PUNCTclause
 a	avoir	AUX
 toujours	toujours	ADV
-amusé	amusé	ADJ
+amusé	amuser	VERB
 tout le monde	tout le monde	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -171,7 +171,7 @@ toujours	toujours	ADV
 attaché	attacher	VERB
 à	à	ADP
 ce	ce	PRON
-personnage	personnage	VERB
+personnage	personnage	NOUN
 terrible	terrible	ADJ
 et	et	CCONJ
 mystérieux	mystérieux	ADJ
@@ -189,17 +189,17 @@ cela	cela	PRON
 Que	que	SCONJ
 le	le	DET
 type	type	NOUN
-soit	soit	CCONJ
+soit	être	AUX
 effrayant	effrayer	VERB
 comme	comme	ADP
 ceux	ceux	PRON
-de	de	DET
+de	de	ADP
 Byron	Byron	PROPN
 ,	,	PUNCTclause
 ou	ou	CCONJ
 comme	comme	ADP
 ceux	ceux	PRON
-de	de	DET
+de	de	ADP
 Cooper	Cooper	PROPN
 digne	digne	ADJ
 du	du	ADP_DET
@@ -220,29 +220,29 @@ la	le	DET
 corde	corde	NOUN
 ou	ou	CCONJ
 les	le	DET
-galères	galérer	VERB
+galères	galère	NOUN
 pour que	pour que	SCONJ
-tout	tout	ADJ
+tout	tout	ADV
 bon	bon	ADJ
 et	et	CCONJ
 honnête	honnête	ADJ
 lecteur	lecteur	NOUN
 les	le	DET
-chérisse	chérir	NOUN
+chérisse	chérir	VERB
 dès	dès	ADP
 les	le	DET
 premières	premier	ADJ
 pages	page	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
-fasse	faire	AUX
+fasse	faire	VERB
 des	un	DET
 vœux	vœu	NOUN
 pour	pour	ADP
 le	le	DET
 succès	succès	NOUN
-de	de	DET
-leurs	leur	ADJ
+de	de	ADP
+leurs	leur	DET
 entreprises	entreprise	NOUN
 .	.	PUNCTsent
 Pourquoi	pourquoi	ADV
@@ -258,10 +258,10 @@ me	me	PRON
 serais	être	AUX
 je	je	PRON
 privé	priver	VERB
-de	de	DET
+de	de	ADP
 en	en	PRON
 créer	créer	VERB
-un	un	PUNCT
+un	un	NUM
 à	à	ADP
 ma	mon	DET
 fantaisie	fantaisie	NOUN
@@ -272,7 +272,7 @@ persuadé	persuader	VERB
 que	que	SCONJ
 le	le	DET
 chef	chef	NOUN
-de	de	DET
+de	de	ADP
 brigands	brigand	NOUN
 était	être	AUX
 tombé	tomber	VERB
@@ -284,7 +284,7 @@ public	public	ADJ
 et	et	CCONJ
 appartenait	appartenir	VERB
 à	à	ADP
-tout	tout	ADJ
+tout	tout	PRON
 romancier	romancier	NOUN
 comme	comme	ADP
 les	le	DET
@@ -295,16 +295,16 @@ lui	lui	PRON
 appartiennent	appartenir	VERB
 ,	,	PUNCTclause
 je	je	PRON
-voulus	vouloir	PRON
+voulus	vouloir	VERB
 au moins	au moins	ADV
 essayer	essayer	VERB
-de	de	DET
+de	de	ADP
 faire	faire	AUX
 possible	possible	ADJ
 et	et	CCONJ
 réel	réel	ADJ
-de	de	DET
-sa	son	AUX
+de	de	ADP
+sa	son	DET
 nature	nature	NOUN
 ,	,	PUNCTclause
 ce	ce	DET
@@ -315,12 +315,12 @@ sa	son	DET
 position	position	NOUN
 .	.	PUNCTsent
 Un	un	DET
-tel	tel	ADJ
+tel	tel	PRON
 mystère	mystère	NOUN
 enveloppe	envelopper	VERB
 les	le	DET
-pirates	pirater	VERB
-de	de	DET
+pirates	pirate	NOUN
+de	de	ADP
 Byron	Byron	PROPN
 ,	,	PUNCTclause
 que	que	SCONJ
@@ -328,7 +328,7 @@ on	on	PRON
 ne	ne	ADV
 oserait	oser	VERB
 les	le	DET
-questionner	questionner	NOUN
+questionner	questionner	VERB
 ,	,	PUNCTclause
 et	et	CCONJ
 que	que	SCONJ
@@ -337,7 +337,7 @@ les	le	DET
 redoute	redoute	NOUN
 ou	ou	CCONJ
 les	le	DET
-plaint	plaindre	NOUN
+plaint	plaindre	VERB
 sans	sans	ADP
 les	le:PRON	PRON
 connaître	connaître	VERB
@@ -347,15 +347,15 @@ faut	falloir	VERB
 même	même	ADV
 dire	dire	VERB
 bien	bien	ADV
-vite	vite	ADJ
+vite	vite	ADV
 que	que	SCONJ
 ce	ce	PRON
 est	être	AUX
 par	par	ADP
 ce	ce	DET
 mystère	mystère	NOUN
-inexpliqué	inexpliqué	VERB
-que	que	SCONJ
+inexpliqué	inexpliqué	ADJ
+que	que	PRON
 ils	ils	PRON
 nous	nous	PRON
 saisissent	saisir	VERB
@@ -388,12 +388,12 @@ très	très	ADV
 expliqué	expliquer	VERB
 ,	,	PUNCTclause
 entouré	entourer	VERB
-de	de	DET
+de	de	ADP
 circonstances	circonstance	NOUN
 romanesques	romanesque	ADJ
 ,	,	PUNCTclause
 un	un	DET
-peu	peu	NOUN
+peu	peu	ADV
 exceptionnel	exceptionnel	ADJ
 par	par	ADP
 lui-même	lui-même	PRON
@@ -408,8 +408,8 @@ mon	mon	DET
 bon	bon	ADJ
 lecteur	lecteur	NOUN
 pût	pouvoir	VERB
-faire	faire	AUX
-connaissance	connaissance	VERB
+faire	faire	VERB
+connaissance	connaissance	NOUN
 peu à peu	peu à peu	ADV
 ,	,	PUNCTclause
 comme	comme	ADP

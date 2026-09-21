@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = dumas1850e-09
 # creator = Dumas, Alexandre
 # created = 1850
@@ -17,8 +17,8 @@ mai	mai	NOUN
 Vous	vous	PRON
 me	me	PRON
 dites	dire	VERB
-de	de	DET
-oublier	oublier	NOUN
+de	de	ADP
+oublier	oublier	VERB
 .	.	PUNCTsent
 Écoutez	écouter	VERB
 ce	ce	PRON
@@ -85,15 +85,15 @@ pâle	pâle	ADJ
 ,	,	PUNCTclause
 son	son	DET
 mâle	mâle	NOUN
-visage	visage	VERB
+visage	visage	NOUN
 tout	tout	ADJ
 empreint	empreindre	VERB
-de	de	DET
+de	de	ADP
 la	le	DET
 noblesse	noblesse	NOUN
-de	de	DET
-sa	son	PRON
-race	race	VERB
+de	de	ADP
+sa	son	DET
+race	race	NOUN
 .	.	PUNCTsent
 Il	il	PRON
 est	être	AUX
@@ -113,12 +113,12 @@ me	me	PRON
 écrie	écrier	VERB
 :	:	PUNCTclause
 Mais	mais	CCONJ
-tu	tu	ADJ
+tu	tu	PRON
 vis	voir	VERB
 donc	donc	ADV
 encore	encore	ADV
 ?	?	PUNCTsent
-tu	tu	ADJ
+tu	tu	PRON
 me	me	PRON
 aimes	aimer	VERB
 donc	donc	ADV
@@ -131,7 +131,7 @@ répond	répondre	VERB
 que	que	SCONJ
 oui	oui	INTJ
 ,	,	PUNCTclause
-que	que	SCONJ
+que	que	PRON
 il	il	PRON
 vit	vivre	VERB
 encore	encore	ADV
@@ -164,18 +164,18 @@ disparaître	disparaître	VERB
 que	que	ADV
 aux	au	ADP_DET
 premiers	premier	ADJ
-rayons	rayer	VERB
+rayons	rayon	NOUN
 du	du	ADP_DET
 jour	jour	NOUN
 .	.	PUNCTsent
-hé	hé	VERB
+hé	hé	INTJ
 !	!	PUNCTsent
-que	que	SCONJ
+que	que	PRON
 ne	ne	ADV
 ai	avoir	AUX
 je	je	PRON
 pas	pas	ADV
-fait	faire	AUX
+fait	faire	VERB
 ,	,	PUNCTclause
 mon Dieu	mon Dieu	INTJ
 ,	,	PUNCTclause
@@ -184,16 +184,16 @@ cette	ce	DET
 vision	vision	NOUN
 ,	,	PUNCTclause
 œuvre	œuvre	NOUN
-de	de	DET
-l'	le:PRON	PRON
-ange	ange	VERB
+de	de	ADP
+l'	le	DET
+ange	ange	NOUN
 des	un	ADP_DET
 ténèbres	ténèbre	NOUN
 sans doute	sans doute	ADV
 ,	,	PUNCTclause
 cessât	cesser	VERB
-de	de	DET
-me	me	NOUN
+de	de	ADP
+me	me	PRON
 tourmenter	tourmenter	VERB
 !	!	PUNCTsent
 Je	je	PRON
@@ -215,9 +215,9 @@ autour de	autour de	ADP
 mon	mon	DET
 cou	cou	NOUN
 et	et	CCONJ
-de	de	DET
-mes	mon	NOUN
-poignets	poignet	ADJ
+de	de	ADP
+mes	mon	DET
+poignets	poignet	NOUN
 ,	,	PUNCTclause
 je	je	PRON
 ai	avoir	AUX
@@ -231,7 +231,7 @@ et	et	CCONJ
 je	je	PRON
 me	me	PRON
 suis	être	AUX
-endormie	endormir	VERB
+endormie	endormi	ADJ
 les	le	DET
 mains	main	NOUN
 croisées	croiser	VERB
@@ -242,7 +242,7 @@ du	du	ADP_DET
 martyr	martyr	NOUN
 divin	divin	ADJ
 :	:	PUNCTclause
-tout	tout	ADJ
+tout	tout	PRON
 a	avoir	AUX
 été	être	AUX
 vain	vain	ADJ
@@ -266,7 +266,7 @@ lui	lui	PRON
 ;	;	PUNCTclause
 je	je	PRON
 suis	suivre	VERB
-comme	comme	ADP
+comme	comme	SCONJ
 cette	ce	DET
 reine	reine	NOUN
 dont	dont	PRON
@@ -282,8 +282,8 @@ nuit	nuit	NOUN
 défaisait	défaire	VERB
 l'	le	DET
 ouvrage	ouvrage	NOUN
-de	de	DET
-chaque	chaque	NOUN
+de	de	ADP
+chaque	chaque	DET
 jour	jour	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -293,7 +293,7 @@ ne	ne	ADV
 y	y	PRON
 ait	avoir	VERB
 plus	plus	ADV
-de	de	DET
+de	de	ADP
 nuit	nuit	NOUN
 ,	,	PUNCTclause
 que	que	SCONJ
@@ -302,7 +302,7 @@ ne	ne	ADV
 y	y	PRON
 ait	avoir	VERB
 plus	plus	ADV
-de	de	DET
+de	de	ADP
 sommeil	sommeil	NOUN
 ,	,	PUNCTclause
 que	que	SCONJ
@@ -311,7 +311,7 @@ ne	ne	ADV
 y	y	PRON
 ait	avoir	VERB
 plus	plus	ADV
-de	de	DET
+de	de	ADP
 rêves	rêve	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -324,6 +324,6 @@ Pouvez	pouvoir	VERB
 vous	vous	PRON
 obtenir	obtenir	VERB
 cela	cela	PRON
-de	de	DET
+de	de	ADP
 Dieu	Dieu	PROPN
 ?	?	PUNCTsent

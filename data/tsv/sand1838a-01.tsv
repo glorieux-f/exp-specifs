@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = sand1838a-01
 # creator = Sand, George
 # created = 1838
@@ -23,11 +23,11 @@ et	et	CCONJ
 il	il	PRON
 en	en	PRON
 est	être	AUX
-de	de	DET
-ces	ce	NOUN
-fantaisies	fantaisie	VERB
-de	de	DET
-l'	le:PRON	PRON
+de	de	ADP
+ces	ce	DET
+fantaisies	fantaisie	NOUN
+de	de	ADP
+l'	le	DET
 imagination	imagination	NOUN
 comme	comme	ADP
 des	un	DET
@@ -35,13 +35,13 @@ nuages	nuage	NOUN
 qui	qui	PRON
 passent	passer	VERB
 .	.	PUNCTsent
-de	de	DET
-où	où	ADV
+de	de	ADP
+où	où	PRON
 viennent	venir	VERB
 les	le	DET
 nuages	nuage	NOUN
 et	et	CCONJ
-où	où	ADV
+où	où	PRON
 vont	aller	VERB
 ils	ils	PRON
 ?	?	PUNCTsent
@@ -56,7 +56,7 @@ promenant	promener	VERB
 à travers	à travers	ADP
 la	le	DET
 forêt	forêt	NOUN
-de	de	DET
+de	de	ADP
 Fontainebleau	Fontainebleau	PROPN
 ,	,	PUNCTclause
 tête	tête	NOUN
@@ -67,14 +67,14 @@ mon	mon	DET
 fils	fils	NOUN
 ,	,	PUNCTclause
 à	à	ADP
-tout	tout	ADJ
+tout	tout	PRON
 autre chose	autre chose	NOUN
-que	que	ADV
+que	que	PRON
 à	à	ADP
 ce	ce	DET
 livre	livre	NOUN
 ,	,	PUNCTclause
-que	que	SCONJ
+que	que	PRON
 je	je	PRON
 écrivais	écrire	VERB
 le	le	DET
@@ -104,7 +104,7 @@ papillons	papillon	NOUN
 Je	je	PRON
 pourrais	pouvoir	VERB
 raconter	raconter	VERB
-toutes	tout	ADJ
+toutes	toutes	DET
 nos	nos	DET
 courses	course	NOUN
 et	et	CCONJ
@@ -119,8 +119,8 @@ il	il	PRON
 me	me	PRON
 est	être	AUX
 impossible	impossible	ADJ
-de	de	DET
-dire	dire	AUX
+de	de	ADP
+dire	dire	VERB
 pourquoi	pourquoi	ADV
 mon	mon	DET
 esprit	esprit	NOUN
@@ -145,8 +145,8 @@ il	il	PRON
 sera	être	AUX
 plus	plus	ADV
 sincère	sincère	ADJ
-de	de	DET
-avouer	avouer	NOUN
+de	de	ADP
+avouer	avouer	VERB
 que	que	SCONJ
 je	je	PRON
 ne	ne	ADV
@@ -156,7 +156,7 @@ souviens	souvenir	VERB
 pas	pas	ADV
 :	:	PUNCTclause
 il y a	il y a	VERB
-de	de	DET
+de	de	ADP
 cela	cela	PRON
 quinze	quinze	NUM
 ou	ou	CCONJ
@@ -188,8 +188,8 @@ Spagna	Spagna	PROPN
 ↵↵↵↵	↵↵↵↵	PUNCTstruct
 Les	le	DET
 mariniers	marinier	NOUN
-de	de	DET
-l'	le	NOUN
+de	de	ADP
+l'	le	DET
 Adriatique	Adriatique	PROPN
 ne	ne	ADV
 mettent	mettre	VERB
@@ -201,12 +201,12 @@ barque	barque	NOUN
 neuve	neuf	ADJ
 sans	sans	ADP
 la	le	DET
-décorer	décorer	NOUN
-de	de	DET
-l'	le	NOUN
+décorer	décorer	VERB
+de	de	ADP
+l'	le	DET
 image	image	NOUN
-de	de	DET
-la	le:PRON	PRON
+de	de	ADP
+la	le	DET
 Madone	Madone	PROPN
 .	.	PUNCTsent
 Que	que	SCONJ
@@ -218,9 +218,9 @@ sur	sur	ADP
 cette	ce	DET
 page	page	NOUN
 ,	,	PUNCTclause
-soit	soit	CCONJ
+soit	soit	ADV
 ,	,	PUNCTclause
-ô	ô	VERB
+ô	ô	INTJ
 ma	mon	DET
 belle	beau	NOUN
 et	et	CCONJ
@@ -230,16 +230,16 @@ amie	ami	NOUN
 comme	comme	ADP
 l'	le	DET
 effigie	effigie	NOUN
-de	de	DET
-la	le	AUX
+de	de	ADP
+la	le	DET
 céleste	céleste	ADJ
 patronne	patron	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
 protège	protéger	VERB
 un	un	DET
-frêle	frêle	NOUN
-esquif	esquif	ADJ
+frêle	frêle	ADJ
+esquif	esquif	NOUN
 livré	livrer	VERB
 aux	au	ADP_DET
 flots	flot	NOUN

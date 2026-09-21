@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = sand1834a-66
 # creator = Sand, George
 # created = 1834
@@ -8,7 +8,7 @@
 ↵↵↵	↵↵↵	PUNCTstruct
 		TOKEN
 .	.	PUNCTsent
-de	de	DET
+de	de	ADP
 Octave	Octave	PROPN
 à	à	ADP
 Fernande	Fernande	PROPN
@@ -38,8 +38,8 @@ entendre	entendre	VERB
 les	le	DET
 inutiles	inutile	NOUN
 lamentations	lamentation	NOUN
-de	de	DET
-un	un	NUM
+de	de	ADP
+un	un	DET
 importun	importun	ADJ
 .	.	PUNCTsent
 Vous	vous	PRON
@@ -51,8 +51,8 @@ cela	cela	PRON
 vous	vous	PRON
 ôte	ôter	VERB
 beaucoup de	beaucoup de	DET
-votre	votre	PRON
-mérite	mériter	VERB
+votre	votre	DET
+mérite	mérite	NOUN
 à	à	ADP
 mes	mon	DET
 yeux	œil	NOUN
@@ -78,7 +78,7 @@ que	que	SCONJ
 vous	vous	PRON
 aviez	avoir	VERB
 pitié	pitié	NOUN
-de	de	DET
+de	de	ADP
 moi	moi	PRON
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -89,16 +89,16 @@ supporteriez	supporter	VERB
 auprès de	auprès de	ADP
 vous	vous	PRON
 tant	tant	ADV
-que	que	SCONJ
+que	que	PRON
 je	je	PRON
 aurais	avoir	VERB
 besoin	besoin	NOUN
-de	de	DET
-vos	vos	NOUN
+de	de	ADP
+vos	vos	DET
 consolations	consolation	NOUN
 et	et	CCONJ
-de	de	DET
-votre	votre	NOUN
+de	de	ADP
+votre	votre	DET
 appui	appui	NOUN
 .	.	PUNCTsent
 à présent	à présent	ADV
@@ -112,14 +112,14 @@ rien	rien	PRON
 Je	je	PRON
 vous	vous	PRON
 parle	parler	VERB
-de	de	DET
-mon	mon	NOUN
-amour	amour	VERB
+de	de	ADP
+mon	mon	DET
+amour	amour	NOUN
 dans	dans	ADP
 le	le	DET
 délire	délire	NOUN
-de	de	DET
-la	la	NUM
+de	de	ADP
+la	le	DET
 fièvre	fièvre	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -127,7 +127,7 @@ vous	vous	PRON
 avez	avoir	VERB
 la	le	DET
 charité	charité	NOUN
-de	de	DET
+de	de	ADP
 ne	ne	ADV
 pas	pas	ADV
 me	me	PRON
@@ -148,7 +148,7 @@ avez	avoir	VERB
 pas	pas	ADV
 la	le	DET
 patience	patience	NOUN
-de	de	DET
+de	de	ADP
 me	me	PRON
 entendre	entendre	VERB
 davantage	davantage	ADV
@@ -160,7 +160,7 @@ partez	partir	VERB
 Vous	vous	PRON
 vous	vous	PRON
 êtes	être	AUX
-lassée	lassé	NOUN
+lassée	lasser	VERB
 trop	trop	ADV
 tôt	tôt	ADV
 ,	,	PUNCTclause
@@ -185,8 +185,8 @@ pas	pas	ADV
 eu	avoir	VERB
 la	le	DET
 force	force	NOUN
-de	de	DET
-remplir	remplir	NOUN
+de	de	ADP
+remplir	remplir	VERB
 .	.	PUNCTsent
 Mon	mon	DET
 amour	amour	NOUN
@@ -196,8 +196,8 @@ pas	pas	ADV
 eu	avoir	VERB
 le	le	DET
 temps	temps	NOUN
-de	de	DET
-guérir	guérir	NOUN
+de	de	ADP
+guérir	guérir	VERB
 ;	;	PUNCTclause
 mais	mais	CCONJ
 il	il	PRON
@@ -213,7 +213,7 @@ plus	plus	ADV
 âcre	âcre	ADJ
 et	et	CCONJ
 plus	plus	ADV
-envenimée	envenimé	ADJ
+envenimée	envenimer	VERB
 que	que	SCONJ
 auparavant	auparavant	ADV
 .	.	PUNCTsent
@@ -250,11 +250,11 @@ tous	tout	ADJ
 les	le	DET
 obstacles	obstacle	NOUN
 avec	avec	ADP
-toute	tout	ADJ
+toute	toute	DET
 l'	le	DET
 habileté	habileté	NOUN
 et	et	CCONJ
-tout	tout	ADJ
+tout	tout	PRON
 le	le	DET
 sang-froid	sang-froid	NOUN
 du	du	ADP_DET
@@ -284,7 +284,7 @@ me	me	PRON
 laissant	laisser	VERB
 des	un	ADP_DET
 billets	billet	NOUN
-où	où	ADV
+où	où	PRON
 elle	elle	PRON
 me	me	PRON
 apprenait	apprendre	VERB
@@ -309,15 +309,15 @@ des	un	ADP_DET
 occasions	occasion	NOUN
 et	et	CCONJ
 les	le	DET
-saisir	saisir	NOUN
+saisir	saisir	VERB
 au	au	ADP_DET
 vol	vol	NOUN
 ;	;	PUNCTclause
 vous	vous	PRON
 arrangez	arranger	VERB
-tout	tout	ADJ
-de	de	DET
-une	un	PRON
+tout	tout	ADV
+de	de	ADP
+une	un	DET
 manière	manière	NOUN
 si	si	ADV
 savante	savant	ADJ
@@ -364,8 +364,8 @@ Sylvia	Sylvia	PROPN
 se	se	PRON
 soucie	soucier	VERB
 médiocrement	médiocrement	ADV
-de	de	DET
-aller	aller	NOUN
+de	de	ADP
+aller	aller	VERB
 se	se	PRON
 installer	installer	VERB
 chez	chez	ADP
@@ -390,7 +390,7 @@ vous	vous	PRON
 ne	ne	ADV
 tenez	tenir	VERB
 compte	compte	NOUN
-de	de	DET
+de	de	ADP
 rien	rien	PRON
 .	.	PUNCTsent
 Vous	vous	PRON
@@ -398,13 +398,13 @@ me	me	PRON
 comblez	combler	VERB
 devant	devant	ADP
 eux	eux	PRON
-de	de	DET
+de	de	ADP
 hypocrites	hypocrite	NOUN
 témoignages	témoignage	NOUN
-de	de	DET
+de	de	ADP
 regret	regret	NOUN
 et	et	CCONJ
-de	de	DET
+de	de	ADP
 attachement	attachement	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -412,7 +412,7 @@ vous	vous	PRON
 évitez	éviter	VERB
 si	si	ADV
 bien	bien	ADV
-de	de	DET
+de	de	ADP
 vous	vous	PRON
 trouver	trouver	VERB
 seule	seul	ADJ
@@ -430,16 +430,16 @@ ne	ne	ADV
 furieux	furieux	ADJ
 ,	,	PUNCTclause
 je	je	PRON
-serais	être	PRON
+serais	être	AUX
 désespéré	désespérer	VERB
 .	.	PUNCTsent
 Soyez	être	AUX
-tranquille	tranquille	NOUN
+tranquille	tranquille	ADJ
 ;	;	PUNCTclause
 je	je	PRON
 ai	avoir	VERB
 autant	autant	ADV
-de	de	DET
+de	de	ADP
 orgueil	orgueil	NOUN
 que	que	SCONJ
 un	un	DET
@@ -461,28 +461,28 @@ les vôtres	les vôtres	PRON
 dès	dès	ADP
 le	le	DET
 jour	jour	NOUN
-où	où	ADV
+où	où	PRON
 je	je	PRON
 ai	avoir	AUX
 eu	avoir	VERB
 l'	le	DET
 insolence	insolence	NOUN
-de	de	DET
+de	de	ADP
 vous	vous	PRON
 parler	parler	VERB
-de	de	DET
+de	de	ADP
 amour	amour	NOUN
 ;	;	PUNCTclause
 je	je	PRON
-serais	être	PRON
+serais	être	AUX
 parti	partir	VERB
-sur-le-champ	sur-le-champ	NOUN
+sur-le-champ	sur-le-champ	ADV
 ,	,	PUNCTclause
 et	et	CCONJ
 vous	vous	PRON
 seriez	être	VERB
 débarrassée	débarrasser	VERB
-de	de	DET
+de	de	ADP
 moi	moi	PRON
 depuis	depuis	ADP
 longtemps	longtemps	ADV
@@ -520,7 +520,7 @@ Suisse	Suisse	PROPN
 ?	?	PUNCTsent
 Croyez	croire	VERB
 vous	vous	PRON
-que	que	SCONJ
+que	que	PRON
 je	je	PRON
 veuille	vouloir	VERB
 me	me	PRON
@@ -531,9 +531,9 @@ pas	pas	NOUN
 et	et	CCONJ
 vous	vous	PRON
 fatiguer	fatiguer	VERB
-de	de	DET
-mes	mon	NOUN
-poursuites	poursuites	PUNCT
+de	de	ADP
+mes	mon	DET
+poursuites	poursuite	NOUN
 ?	?	PUNCTsent
 Vous	vous	PRON
 avez	avoir	AUX
@@ -553,7 +553,7 @@ seul	seul	ADJ
 lieu	lieu	NOUN
 du	du	ADP_DET
 monde	monde	NOUN
-où	où	ADV
+où	où	PRON
 je	je	PRON
 ne	ne	ADV
 oserais	oser	VERB
@@ -561,14 +561,14 @@ pas	pas	ADV
 vous	vous	PRON
 suivre	suivre	VERB
 :	:	PUNCTclause
-hé	hé	NOUN
+hé	hé	INTJ
 !	!	PUNCTsent
 mon Dieu	mon Dieu	NOUN
 ,	,	PUNCTclause
 ce	ce	PRON
 est	être	AUX
 trop	trop	ADV
-de	de	DET
+de	de	ADP
 soin	soin	NOUN
 ;	;	PUNCTclause
 restez	rester	VERB
@@ -595,7 +595,7 @@ que	que	ADV
 vous	vous	PRON
 avez	avoir	AUX
 changé	changer	VERB
-de	de	DET
+de	de	ADP
 idée	idée	NOUN
 :	:	PUNCTclause
 je	je	PRON
@@ -608,11 +608,11 @@ pour	pour	ADP
 la	le	DET
 dernière	dernier	ADJ
 fois	fois	NOUN
-de	de	DET
-ma	mon	AUX
+de	de	ADP
+ma	mon	DET
 vie	vie	NOUN
 .	.	PUNCTsent
-Adieu	adieu	VERB
+Adieu	adieu	NOUN
 ,	,	PUNCTclause
 Madame	madame	NOUN
 .	.	PUNCTsent

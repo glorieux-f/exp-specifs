@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = dumas1850e-27
 # creator = Dumas, Alexandre
 # created = 1850
@@ -31,23 +31,23 @@ dans	dans	ADP
 certaines	certain	DET
 situations	situation	NOUN
 mystérieuses	mystérieux	ADJ
-de	de	DET
-la	le	AUX
+de	de	ADP
+la	le	DET
 vie	vie	NOUN
 ,	,	PUNCTclause
 l'	le	DET
 existence	existence	NOUN
-de	de	DET
-une	un	PRON
-colombe	colombe	ADJ
+de	de	ADP
+une	un	DET
+colombe	colombe	NOUN
 était	être	AUX
 aussi	aussi	ADV
 précieuse	précieux	ADJ
 que	que	SCONJ
 l'	le	DET
 existence	existence	NOUN
-de	de	DET
-un	un	PRON
+de	de	ADP
+un	un	DET
 roi	roi	NOUN
 .	.	PUNCTsent
 Il	il	PRON
@@ -118,7 +118,7 @@ dit	dire	VERB
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Cette	ce	NOUN
+Cette	ce	DET
 aile	aile	NOUN
 que	que	SCONJ
 vous	vous	PRON
@@ -168,17 +168,17 @@ mais	mais	CCONJ
 du	du	ADP_DET
 moins	moins	ADV
 je	je	PRON
-ferai	faire	AUX
-tout	tout	ADJ
+ferai	faire	VERB
+tout	tout	ADV
 pour	pour	ADP
 cela	cela	PRON
 .	.	PUNCTsent
 En	en	ADP
-tout	tout	ADJ
+tout	tout	PRON
 cas	cas	NOUN
 ,	,	PUNCTclause
 ce	ce	DET
-ne	ne	NOUN
+ne	ne	ADV
 serait	être	AUX
 que	que	SCONJ
 dans	dans	ADP
@@ -193,7 +193,7 @@ volerait	voler	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Soit	soit	CCONJ
+Soit	être	AUX
 ,	,	PUNCTclause
 dans	dans	ADP
 quinze	quinze	NUM
@@ -219,7 +219,7 @@ bien	bien	ADV
 mon	mon	DET
 ami	ami	NOUN
 ,	,	PUNCTclause
-tout	tout	ADJ
+tout	tout	PRON
 mon	mon	DET
 espoir	espoir	NOUN
 est	être	AUX
@@ -248,7 +248,7 @@ petite	petit	ADJ
 ;	;	PUNCTclause
 elle	elle	PRON
 ne	ne	ADV
-fait	faire	AUX
+fait	faire	VERB
 aucun	aucun	DET
 mouvement	mouvement	NOUN
 ;	;	PUNCTclause
@@ -264,9 +264,9 @@ ai	avoir	AUX
 mis	mettre	VERB
 à	à	ADP
 portée	portée	NOUN
-de	de	DET
-son	son	NOUN
-bec	bec	ADJ
+de	de	ADP
+son	son	DET
+bec	bec	NOUN
 et	et	CCONJ
 l'	le	DET
 eau	eau	NOUN
@@ -280,17 +280,17 @@ elle	elle	PRON
 a	avoir	AUX
 ma	mon	DET
 main	main	NOUN
-où	où	ADV
+où	où	PRON
 prendre	prendre	VERB
 sa	son	DET
 nourriture	nourriture	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Que	que	SCONJ
-faire	faire	AUX
+Que	que	PRON
+faire	faire	VERB
 ,	,	PUNCTclause
 en	en	ADP
-attendant	attendre	NOUN
+attendant	attendre	VERB
 ,	,	PUNCTclause
 pour que	pour que	SCONJ
 vous	vous	PRON
@@ -300,8 +300,8 @@ qui	qui	PRON
 est	être	AUX
 arrivé	arriver	VERB
 ?	?	PUNCTsent
-Quel	quel	ADJ
-messager	messager	VERB
+Quel	quel	DET
+messager	messager	NOUN
 vous	vous	PRON
 envoyer	envoyer	VERB
 qui	qui	PRON
@@ -317,27 +317,27 @@ me	me	PRON
 tourner	tourner	VERB
 ,	,	PUNCTclause
 pour	pour	ADP
-faire	faire	AUX
+faire	faire	VERB
 ,	,	PUNCTclause
 comme	comme	ADP
 le	le	DET
 naufragé	naufragé	NOUN
-perdu	perdu	NOUN
+perdu	perdre	VERB
 au milieu de	au milieu de	ADP
 l'	le	DET
 Océan	Océan	PROPN
 ,	,	PUNCTclause
 mon	mon	DET
 signal	signal	NOUN
-de	de	DET
+de	de	ADP
 détresse	détresse	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Pourquoi	pourquoi	ADV
 n'est-ce pas	n'est-ce pas	ADV
 un	un	DET
-de	de	DET
-mes	mon	NOUN
+de	de	ADP
+mes	mon	DET
 bras	bras	NOUN
 qui	qui	PRON
 a	avoir	AUX
@@ -346,7 +346,7 @@ brisé	briser	VERB
 ,	,	PUNCTclause
 au lieu de	au lieu de	ADP
 une	un	PRON
-de	de	DET
-ses	son	NOUN
+de	de	ADP
+ses	son	DET
 ailes	aile	NOUN
 ?	?	PUNCTsent

@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = sand1875b-16
 # creator = Sand, George
 # created = 1875
@@ -10,12 +10,12 @@ XVI	XVI	NUM
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 M.	M.	PROPN
-de	de	DET
+de	de	ADP
 Flamarande	Flamarande	PROPN
 était	être	AUX
 bien	bien	ADV
 capable	capable	ADJ
-de	de	DET
+de	de	ADP
 se	se	PRON
 tenir	tenir	VERB
 parole	parole	NOUN
@@ -32,7 +32,7 @@ politique	politique	NOUN
 ,	,	PUNCTclause
 en	en	ADP
 montrant	montrer	VERB
-tout	tout	ADJ
+tout	tout	ADV
 à	à	ADP
 coup	coup	NOUN
 des	un	ADP_DET
@@ -47,8 +47,8 @@ ou	ou	CCONJ
 que	que	SCONJ
 il	il	PRON
 feignit	feindre	VERB
-de	de	DET
-avoir	avoir	AUX
+de	de	ADP
+avoir	avoir	VERB
 .	.	PUNCTsent
 Il	il	PRON
 porta	porter	VERB
@@ -67,7 +67,7 @@ tranchante	tranchant	ADJ
 On	on	PRON
 se	se	PRON
 éloigna	éloigner	VERB
-de	de	DET
+de	de	ADP
 lui	lui	PRON
 ,	,	PUNCTclause
 il	il	PRON
@@ -75,8 +75,8 @@ défendit	défendre	VERB
 à	à	ADP
 sa	son	DET
 femme	femme	NOUN
-de	de	DET
-faire	faire	AUX
+de	de	ADP
+faire	faire	VERB
 des	un	DET
 visites	visite	NOUN
 et	et	CCONJ
@@ -89,7 +89,7 @@ que	que	SCONJ
 il	il	PRON
 avait	avoir	VERB
 besoin	besoin	NOUN
-de	de	DET
+de	de	ADP
 repos	repos	NOUN
 .	.	PUNCTsent
 Madame	madame	NOUN
@@ -104,21 +104,21 @@ inébranlable	inébranlable	ADJ
 douceur	douceur	NOUN
 .	.	PUNCTsent
 Je	je	PRON
-croyais	croire	PRON
-voir	voir	AUX
+croyais	croire	VERB
+voir	voir	VERB
 dans	dans	ADP
 cette	ce	DET
 soumission	soumission	NOUN
 la	le	DET
 preuve	preuve	NOUN
-de	de	DET
-son	son	NOUN
+de	de	ADP
+son	son	DET
 innocence	innocence	NOUN
 .	.	PUNCTsent
 M.	M.	PROPN
 le	le	DET
 comte	comte	NOUN
-l'	le	ADP
+l'	le	DET
 interpréta	interpréter	VERB
 en sens contraire	en sens contraire	ADV
 .	.	PUNCTsent
@@ -133,7 +133,7 @@ il	il	PRON
 que	que	SCONJ
 elle	elle	PRON
 mérite	mériter	VERB
-pire	pire	ADV
+pire	pire	ADJ
 que	que	SCONJ
 cela	cela	PRON
 .	.	PUNCTsent
@@ -153,7 +153,7 @@ note	note	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Madame	madame	NOUN
-de	de	DET
+de	de	ADP
 Montesparre	Montesparre	PROPN
 écrivit	écrire	VERB
 une	un	DET
@@ -173,7 +173,7 @@ Rolande	Rolande	PROPN
 !	!	PUNCTsent
 Je	je	PRON
 le	le	DET
-comprends	comprendre	NOUN
+comprends	comprendre	VERB
 .	.	PUNCTsent
 Je	je	PRON
 sais	savoir	VERB
@@ -188,9 +188,9 @@ résoudre	résoudre	VERB
 à	à	ADP
 me	me	PRON
 parler	parler	VERB
-de	de	DET
-ce	ce	PRON
-pauvre	pauvre	VERB
+de	de	ADP
+ce	ce	DET
+pauvre	pauvre	NOUN
 malheureux	malheureux	ADJ
 !	!	PUNCTsent
 Vous	vous	PRON
@@ -201,7 +201,7 @@ je	je	PRON
 ignorais	ignorer	VERB
 ,	,	PUNCTclause
 ce	ce	PRON
-que	que	SCONJ
+que	que	PRON
 je	je	PRON
 sais	savoir	VERB
 enfin	enfin	ADV
@@ -222,12 +222,12 @@ en	en	ADP
 jaloux	jaloux	NOUN
 féroce	féroce	ADJ
 .	.	PUNCTsent
-ha	ha	NOUN
+ha	ha	INTJ
 !	!	PUNCTsent
-que	que	SCONJ
+que	que	PRON
 je	je	PRON
-le	le	DET
-hais	haïr	NOUN
+le	le:PRON	PRON
+hais	haïr	VERB
 ,	,	PUNCTclause
 votre	votre	DET
 cher	cher	ADJ
@@ -238,7 +238,7 @@ vous	vous	PRON
 ,	,	PUNCTclause
 Rolande	Rolande	PROPN
 ,	,	PUNCTclause
-quel	quel	ADJ
+quel	quel	DET
 est	être	AUX
 donc	donc	ADV
 votre	votre	DET
@@ -268,14 +268,14 @@ vous	vous	PRON
 avez	avoir	AUX
 été	être	AUX
 flattée	flatter	VERB
-de	de	DET
-l'	le:PRON	PRON
+de	de	ADP
+l'	le	DET
 emporter	emporter	VERB
 sur	sur	ADP
 moi	moi	PRON
 et	et	CCONJ
-de	de	DET
-voir	voir	AUX
+de	de	ADP
+voir	voir	VERB
 à	à	ADP
 vos	vos	DET
 pieds	pied	NOUN
@@ -300,11 +300,11 @@ aurez	avoir	AUX
 eu	avoir	VERB
 un	un	DET
 instant	instant	NOUN
-de	de	DET
+de	de	ADP
 émotion	émotion	NOUN
-que	que	ADV
+que	que	PRON
 M.	M.	PROPN
-de	de	DET
+de	de	ADP
 Flamarande	Flamarande	PROPN
 aura	avoir	AUX
 surpris	surprendre	VERB
@@ -312,7 +312,7 @@ surpris	surprendre	VERB
 quoi que	quoi que	SCONJ
 il	il	PRON
 en	en	PRON
-soit	soit	CCONJ
+soit	soit	ADV
 ,	,	PUNCTclause
 vous	vous	PRON
 êtes	être	AUX
@@ -376,7 +376,7 @@ et	et	CCONJ
 si	si	SCONJ
 je	je	PRON
 évite	éviter	VERB
-de	de	DET
+de	de	ADP
 vous	vous	PRON
 rencontrer	rencontrer	VERB
 .	.	PUNCTsent
@@ -395,16 +395,16 @@ et	et	CCONJ
 que	que	SCONJ
 vous	vous	PRON
 soyez	être	AUX
-niaise	niaiser	VERB
+niaise	niais	NOUN
 ou	ou	CCONJ
-perfide	perfide	NOUN
+perfide	perfide	ADJ
 ,	,	PUNCTclause
 je	je	PRON
 ne	ne	ADV
 peux	pouvoir	VERB
 plus	plus	ADV
 avoir	avoir	VERB
-de	de	DET
+de	de	ADP
 confiance	confiance	NOUN
 en	en	ADP
 vous	vous	PRON
@@ -413,7 +413,7 @@ vous	vous	PRON
 ↵↵	↵↵	PUNCTstruct
 je	je	PRON
 étais	être	VERB
-de	de	DET
+de	de	ADP
 avis	avis	NOUN
 que	que	SCONJ
 M.	M.	PROPN
@@ -428,7 +428,7 @@ lettre	lettre	NOUN
 afin que	afin que	SCONJ
 madame	madame	NOUN
 la	le	DET
-reçût	recevoir	NOUN
+reçût	recevoir	VERB
 ,	,	PUNCTclause
 et	et	CCONJ
 que	que	SCONJ
@@ -436,13 +436,13 @@ on	on	PRON
 pût	pouvoir	VERB
 se	se	PRON
 emparer	emparer	VERB
-de	de	DET
+de	de	ADP
 la	le	DET
 réponse	réponse	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	non	INTJ
+Non	non	ADV
 ,	,	PUNCTclause
 dit	dire	VERB
 il	il	PRON
@@ -461,7 +461,7 @@ ne	ne	ADV
 y	y	PRON
 aura	avoir	VERB
 plus	plus	ADV
-de	de	DET
+de	de	ADP
 confidence	confidence	NOUN
 sincère	sincère	ADJ
 entre	entre	ADP
@@ -472,7 +472,7 @@ femmes	femme	NOUN
 Mettez	mettre	VERB
 cette	ce	DET
 lettre	lettre	NOUN
-de	de	DET
+de	de	ADP
 côté	côté	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -480,18 +480,18 @@ que	que	SCONJ
 il	il	PRON
 ne	ne	ADV
 en	en	PRON
-soit	soit	CCONJ
+soit	être	AUX
 pas	pas	ADV
 question	question	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Un	un	DET
 matin	matin	NOUN
-que	que	SCONJ
+que	que	PRON
 madame	madame	NOUN
 était	être	AUX
 un	un	DET
-peu	peu	NOUN
+peu	peu	ADV
 souffrante	souffrant	ADJ
 ,	,	PUNCTclause
 le	le	DET
@@ -499,8 +499,8 @@ médecin	médecin	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
 venait	venir	VERB
-voir	voir	AUX
-monsieur	monsieur	ADJ
+voir	voir	VERB
+monsieur	monsieur	NOUN
 tous les deux	tous les deux	PRON
 ou	ou	CCONJ
 trois	trois	NUM
@@ -549,12 +549,12 @@ dit	dire	VERB
 ,	,	PUNCTclause
 dès que	dès que	SCONJ
 nous	nous	PRON
-fûmes	être	PRON
+fûmes	être	VERB
 seuls	seul	ADJ
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Voilà	voilà	NOUN
+Voilà	voilà	ADP
 qui	qui	PRON
 résout	résoudre	VERB
 la	le	DET
@@ -567,7 +567,7 @@ enfant	enfant	NOUN
 ne	ne	ADV
 est	être	AUX
 pas	pas	ADV
-de	de	DET
+de	de	ADP
 moi	moi	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -585,10 +585,10 @@ impossible	impossible	ADJ
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	non	INTJ
+Non	non	ADV
 ,	,	PUNCTclause
 ces	ce	DET
-choses	choser	VERB
+choses	chose	NOUN
 ne	ne	ADV
 peuvent	pouvoir	VERB
 jamais	jamais	ADV
@@ -598,7 +598,7 @@ que	que	SCONJ
 dans	dans	ADP
 le	le	DET
 cas	cas	NOUN
-de	de	DET
+de	de	ADP
 absence	absence	NOUN
 ;	;	PUNCTclause
 mais	mais	CCONJ
@@ -614,15 +614,15 @@ suis	être	AUX
 souffrant	souffrir	VERB
 au	au	ADP_DET
 point	point	NOUN
-de	de	DET
+de	de	ADP
 avoir	avoir	AUX
 peu de	peu de	DET
 espoir	espoir	NOUN
-de	de	DET
+de	de	ADP
 être	être	AUX
 père	père	NOUN
 avant	avant	ADP
-parfaite	parfait	ADP
+parfaite	parfait	NOUN
 guérison	guérison	NOUN
 .	.	PUNCTsent
 Ma	mon	DET
@@ -641,7 +641,7 @@ son	son	DET
 appartement	appartement	NOUN
 .	.	PUNCTsent
 il y a	il y a	VERB
-de	de	DET
+de	de	ADP
 quoi	quoi	PRON
 réfléchir	réfléchir	VERB
 .	.	PUNCTsent
@@ -700,7 +700,7 @@ ce	ce	PRON
 est	être	AUX
 à	à	ADP
 vous	vous	PRON
-de	de	DET
+de	de	ADP
 me	me	PRON
 renseigner	renseigner	VERB
 sur	sur	ADP
@@ -721,12 +721,12 @@ l'	le	DET
 être	être	AUX
 aussi	aussi	ADV
 .	.	PUNCTsent
-Quel	quel	ADJ
+Quel	quel	DET
 est	être	AUX
 le	le	DET
 moyen	moyen	NOUN
-de	de	DET
-éluder	éluder	NOUN
+de	de	ADP
+éluder	éluder	VERB
 une	un	DET
 paternité	paternité	NOUN
 douteuse	douteux	ADJ
@@ -755,8 +755,8 @@ comte	comte	NOUN
 ,	,	PUNCTclause
 à	à	ADP
 moins	moins	ADV
-de	de	DET
-quelque	quelque	SCONJ
+de	de	ADP
+quelque	quelque	DET
 crime	crime	NOUN
 dont	dont	PRON
 la	le	DET
@@ -771,7 +771,7 @@ venue	venir	VERB
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
 Soyez	être	AUX
-tranquille	tranquille	NOUN
+tranquille	tranquille	ADJ
 ,	,	PUNCTclause
 je	je	PRON
 ne	ne	ADV
@@ -779,20 +779,20 @@ suis	être	AUX
 pas	pas	ADV
 un	un	DET
 héros	héros	NOUN
-de	de	DET
+de	de	ADP
 mélodrame	mélodrame	NOUN
 .	.	PUNCTsent
 Je	je	PRON
 méprise	mépriser	VERB
 les	le	DET
-choses	choser	VERB
+choses	chose	NOUN
 tragiques	tragique	ADJ
 ,	,	PUNCTclause
 et	et	CCONJ
 ne	ne	ADV
 connais	connaître	VERB
 rien	rien	PRON
-de	de	DET
+de	de	ADP
 bête	bête	ADJ
 comme	comme	ADP
 le	le	DET
@@ -803,7 +803,7 @@ je	je	PRON
 ne	ne	ADV
 appelle	appeler	VERB
 pas	pas	ADV
-crime	crime	VERB
+crime	crime	NOUN
 la	le	DET
 résistance	résistance	NOUN
 à	à	ADP
@@ -813,13 +813,13 @@ inique	inique	ADJ
 ,	,	PUNCTclause
 ma	mon	DET
 conscience	conscience	NOUN
-proteste	protester	ADJ
+proteste	protester	VERB
 contre	contre	ADP
 l'	le	DET
 obligation	obligation	NOUN
-de	de	DET
-transmettre	transmettre	ADJ
-mon	mon	NOUN
+de	de	ADP
+transmettre	transmettre	VERB
+mon	mon	DET
 nom	nom	NOUN
 et	et	CCONJ
 ma	mon	DET
@@ -833,14 +833,14 @@ ne	ne	ADV
 suis	être	AUX
 pas	pas	ADV
 certain	certain	ADJ
-de	de	DET
+de	de	ADP
 être	être	AUX
 le	le	DET
 père	père	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mais	mai	NOUN
+Mais	mais	CCONJ
 dans	dans	ADP
 le	le	DET
 doute	doute	NOUN
@@ -854,7 +854,7 @@ comte	comte	NOUN
 Le	le:PRON	PRON
 doute	douter	VERB
 est	être	AUX
-pire	pire	ADV
+pire	pire	ADJ
 que	que	SCONJ
 la	le	DET
 certitude	certitude	NOUN
@@ -871,7 +871,7 @@ ma	mon	DET
 fortune	fortune	NOUN
 ,	,	PUNCTclause
 je	je	PRON
-ferais	faire	AUX
+ferais	faire	VERB
 un	un	DET
 sort	sort	NOUN
 à	à	ADP
@@ -897,7 +897,7 @@ des	un	DET
 pour	pour	ADP
 elle	elle	PRON
 ou	ou	CCONJ
-que	que	ADV
+que	que	PRON
 je	je	PRON
 sois	être	AUX
 universellement	universellement	ADV
@@ -908,7 +908,7 @@ aucun	aucun	DET
 époux	époux	NOUN
 ne	ne	ADV
 a	avoir	VERB
-de	de	DET
+de	de	ADP
 certitude	certitude	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -919,7 +919,7 @@ un	un	DET
 état	état	NOUN
 normal	normal	ADJ
 dont	dont	PRON
-tous	tout	ADJ
+tous	tous	PRON
 savent	savoir	VERB
 prendre	prendre	VERB
 leur	leur	DET
@@ -943,8 +943,8 @@ Je	je	PRON
 suis	être	AUX
 l'	le	DET
 homme	homme	NOUN
-de	de	DET
-la	le	AUX
+de	de	ADP
+la	le	DET
 stricte	strict	ADJ
 équité	équité	NOUN
 .	.	PUNCTsent
@@ -976,15 +976,15 @@ y	y	PRON
 a	avoir	VERB
 il	il	PRON
 moyen	moyen	ADJ
-de	de	DET
-cacher	cacher	NOUN
+de	de	ADP
+cacher	cacher	VERB
 la	le	DET
 naissance	naissance	NOUN
-de	de	DET
-l'	le	NOUN
+de	de	ADP
+l'	le	DET
 enfant	enfant	NOUN
 et	et	CCONJ
-de	de	DET
+de	de	ADP
 ne	ne	ADV
 point	point	ADV
 le	le	DET
@@ -992,8 +992,8 @@ faire	faire	AUX
 inscrire	inscrire	VERB
 aux	au	ADP_DET
 registres	registre	NOUN
-de	de	DET
-l'	le	NOUN
+de	de	ADP
+l'	le	DET
 état civil	état civil	NOUN
 sous	sous	ADP
 mon	mon	DET
@@ -1001,7 +1001,7 @@ nom	nom	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	non	INTJ
+Non	non	ADV
 ,	,	PUNCTclause
 monsieur	monsieur	NOUN
 le	le	DET
@@ -1014,9 +1014,9 @@ a	avoir	AUX
 pas	pas	ADV
 moyen	moyen	ADJ
 sans	sans	ADP
-risquer	risquer	NOUN
-des	un	ADP_DET
-peines	peiner	VERB
+risquer	risquer	VERB
+des	un	DET
+peines	peine	NOUN
 qui	qui	PRON
 ébruitent	ébruiter	VERB
 le	le	DET
@@ -1034,14 +1034,14 @@ règle	règle	NOUN
 avec	avec	ADP
 les	le	DET
 textes	texte	NOUN
-de	de	DET
+de	de	ADP
 lois	loi	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
 Je	je	PRON
 savais	savoir	VERB
-vaguement	vaguement	NOUN
+vaguement	vaguement	ADV
 tout	tout	ADJ
 cela	cela	PRON
 ,	,	PUNCTclause
@@ -1060,7 +1060,7 @@ Code	code	NOUN
 moi	moi	PRON
 aussi	aussi	ADV
 .	.	PUNCTsent
-hé	hé	VERB
+hé	hé	INTJ
 bien	bien	ADV
 ,	,	PUNCTclause
 je	je	PRON
@@ -1076,7 +1076,7 @@ faut	falloir	VERB
 que	que	SCONJ
 l'	le	DET
 enfant	enfant	NOUN
-soit	soit	CCONJ
+soit	être	AUX
 inscrit	inscrire	VERB
 sous	sous	ADP
 mon	mon	DET
@@ -1121,8 +1121,8 @@ machinalement	machinalement	ADV
 —	—	PUNCTclause
 Vous	vous	PRON
 êtes	être	AUX
-de	de	DET
-mon	mon	NOUN
+de	de	ADP
+mon	mon	DET
 avis	avis	NOUN
 ,	,	PUNCTclause
 reprit	reprendre	VERB
@@ -1131,14 +1131,14 @@ il	il	PRON
 Il	il	PRON
 se	se	PRON
 agit	agir	VERB
-de	de	DET
-trouver	trouver	NOUN
-le	le:PRON	PRON
-moyen	moyen	ADP
+de	de	ADP
+trouver	trouver	VERB
+le	le	DET
+moyen	moyen	NOUN
 sans	sans	ADP
 encourir	encourir	VERB
 les	le	DET
-peines	peiner	VERB
+peines	peine	NOUN
 légales	légal	ADJ
 et	et	CCONJ
 sans	sans	ADP
@@ -1150,8 +1150,8 @@ loi	loi	NOUN
 la	le	DET
 loi	loi	NOUN
 morale	moral	ADJ
-de	de	DET
-l'	le	NOUN
+de	de	ADP
+l'	le	DET
 humanité	humanité	NOUN
 .	.	PUNCTsent
 je	je	PRON
@@ -1161,7 +1161,7 @@ encore	encore	ADV
 .	.	PUNCTsent
 Pensez	penser	VERB
 y	y	PRON
-de	de	DET
-votre	votre	NOUN
+de	de	ADP
+votre	votre	DET
 côté	côté	NOUN
 .	.	PUNCTsent

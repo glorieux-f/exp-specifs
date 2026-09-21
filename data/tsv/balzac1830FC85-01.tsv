@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = balzac1830FC85-01
 # creator = Balzac, Honoré de
 # created = 1830
@@ -8,7 +8,7 @@
 
 ↵↵↵	↵↵↵	PUNCTstruct
 Préface	préface	NOUN
-où	où	ADV
+où	où	PRON
 chacun	chacun	PRON
 retrouvera	retrouver	VERB
 ses	son	DET
@@ -22,8 +22,8 @@ Un	un	DET
 ami	ami	NOUN
 vous	vous	PRON
 parle	parler	VERB
-de	de	DET
-une	un	PRON
+de	de	ADP
+une	un	DET
 jeune	jeune	ADJ
 personne	personne	NOUN
 :	:	PUNCTclause
@@ -84,7 +84,7 @@ charmante	charmant	ADJ
 Elle	elle	PRON
 .	.	PUNCTsent
 —	—	PUNCTclause
-ho	ho	NOUN
+ho	ho	INTJ
 !	!	PUNCTsent
 oui	oui	INTJ
 ,	,	PUNCTclause
@@ -120,7 +120,7 @@ petite	petit	ADJ
 fille	fille	NOUN
 est	être	AUX
 susceptible	susceptible	ADJ
-de	de	DET
+de	de	ADP
 attachement	attachement	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -130,12 +130,12 @@ deux	deux	NUM
 familles	famille	NOUN
 sont	être	AUX
 en	en	ADP
-délicatesse	délicatesse	VERB
+délicatesse	délicatesse	NOUN
 à	à	ADP
 propos	propos	NOUN
 des	un	ADP_DET
 questions	question	NOUN
-de	de	DET
+de	de	ADP
 intérêt	intérêt	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -149,7 +149,7 @@ belle-mère	belle-mère	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
 Ma	mon	DET
-ferme	ferme	ADV
+ferme	ferme	NOUN
 vaut	valoir	VERB
 cinq	cinq	NUM
 cent	cent	NUM
@@ -178,19 +178,19 @@ est	être	AUX
 à	à	ADP
 un	un	DET
 coin	coin	NOUN
-de	de	DET
+de	de	ADP
 rue	rue	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Un	un	DET
 contrat	contrat	NOUN
 se	se	PRON
-ensuit	ensuivre	AUX
+ensuit	ensuivre	VERB
 discuté	discuter	VERB
 par	par	ADP
 deux	deux	NUM
 affreux	affreux	NOUN
-notaires	notaire	ADJ
+notaires	notaire	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 un	un	DET
@@ -206,7 +206,7 @@ deux	deux	NUM
 familles	famille	NOUN
 jugent	juger	VERB
 nécessaire	nécessaire	ADJ
-de	de	DET
+de	de	ADP
 vous	vous	PRON
 faire	faire	AUX
 passer	passer	VERB
@@ -224,12 +224,12 @@ avant de	avant de	ADP
 procéder	procéder	VERB
 au	au	ADP_DET
 coucher	coucher	NOUN
-de	de	DET
-la	le	AUX
-mariée	marier	VERB
+de	de	ADP
+la	le	DET
+mariée	marié	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
-fait	faire	AUX
+fait	faire	VERB
 des	un	DET
 façons	façon	NOUN
 .	.	PUNCTsent
@@ -242,7 +242,7 @@ vous	vous	PRON
 arrive	arriver	VERB
 une	un	DET
 foule	foule	NOUN
-de	de	DET
+de	de	ADP
 petites	petit	ADJ
 misères	misère	NOUN
 imprévues	imprévu	ADJ

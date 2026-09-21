@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = sand1866-41
 # creator = Sand, George
 # created = 1866
@@ -8,7 +8,7 @@
 ↵↵↵	↵↵↵	PUNCTstruct
 XLI	XLI	X
 .	.	PUNCTsent
-De	de	DET
+De	de	ADP
 M.	M.	PROPN
 Sylvestre	Sylvestre	PROPN
 à	à	ADP
@@ -28,8 +28,8 @@ regrette	regretter	VERB
 ,	,	PUNCTclause
 monsieur	monsieur	NOUN
 ,	,	PUNCTclause
-de	de	DET
-ne	ne	NOUN
+de	de	ADP
+ne	ne	ADV
 pouvoir	pouvoir	VERB
 répondre	répondre	VERB
 à	à	ADP
@@ -38,7 +38,7 @@ confiance	confiance	NOUN
 avec	avec	ADP
 la	le	DET
 conformité	conformité	NOUN
-de	de	DET
+de	de	ADP
 vues	vue	NOUN
 qui	qui	PRON
 vous	vous	PRON
@@ -71,8 +71,8 @@ que	que	SCONJ
 vous	vous	PRON
 êtes	être	AUX
 chargé	charger	VERB
-de	de	DET
-transmettre	transmettre	NOUN
+de	de	ADP
+transmettre	transmettre	VERB
 à	à	ADP
 votre	votre	DET
 neveu	neveu	NOUN
@@ -81,7 +81,7 @@ court	courir	VERB
 plus	plus	ADV
 le	le	DET
 danger	danger	NOUN
-de	de	DET
+de	de	ADP
 être	être	AUX
 contesté	contester	VERB
 ,	,	PUNCTclause
@@ -95,8 +95,8 @@ et	et	CCONJ
 si	si	SCONJ
 l'	le	DET
 ignorance	ignorance	NOUN
-de	de	DET
-cette	ce	NOUN
+de	de	ADP
+cette	ce	DET
 situation	situation	NOUN
 devait	devoir	VERB
 influer	influer	VERB
@@ -116,11 +116,11 @@ vous	vous	PRON
 pourriez	pouvoir	VERB
 avoir	avoir	VERB
 de	de	DET
-graves	graver	VERB
-reproches	reprocher	VERB
+graves	grave	ADJ
+reproches	reproche	NOUN
 à	à	ADP
 vous	vous	PRON
-faire	faire	AUX
+faire	faire	VERB
 .	.	PUNCTsent
 Fiez	fier	VERB
 vous	vous	PRON
@@ -145,7 +145,7 @@ est	être	AUX
 ni	ni	CCONJ
 exalté	exalté	NOUN
 ni	ni	CCONJ
-frivole	frivole	NOUN
+frivole	frivole	ADJ
 ,	,	PUNCTclause
 vous	vous	PRON
 ne	ne	ADV
@@ -164,11 +164,11 @@ un	un	DET
 caractère	caractère	NOUN
 très-énergique	très-énergique	ADJ
 ,	,	PUNCTclause
-de	de	DET
-une	un	PRON
-droiture	droiture	ADP_DET
+de	de	ADP
+une	un	DET
+droiture	droiture	NOUN
 à	à	ADP
-toute	tout	ADJ
+toute	toute	DET
 épreuve	épreuve	NOUN
 et	et	CCONJ
 nullement	nullement	ADV
@@ -203,7 +203,7 @@ inclination	inclination	NOUN
 sérieuse	sérieux	ADJ
 pour	pour	ADP
 mademoiselle	mademoiselle	NOUN
-de	de	DET
+de	de	ADP
 Magneval	Magneval	PROPN
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -217,18 +217,18 @@ bien	bien	ADV
 me	me	PRON
 honorer	honorer	VERB
 aussi	aussi	ADV
-de	de	DET
-sa	son	NOUN
+de	de	ADP
+sa	son	DET
 confiance	confiance	NOUN
 ,	,	PUNCTclause
 je	je	PRON
-ferai	faire	AUX
-ce	ce	PRON
+ferai	faire	VERB
+ce	ce	DET
 que	que	SCONJ
 je	je	PRON
 ai	avoir	AUX
 déjà	déjà	ADV
-fait	faire	AUX
+fait	faire	VERB
 ,	,	PUNCTclause
 c'est-à-dire	c'est-à-dire	CCONJ
 que	que	SCONJ
@@ -237,7 +237,7 @@ lui	lui	PRON
 donnerai	donner	VERB
 le	le	DET
 conseil	conseil	NOUN
-de	de	DET
+de	de	ADP
 ne	ne	ADV
 jamais	jamais	ADV
 songer	songer	VERB
@@ -263,13 +263,13 @@ mois	mois	NOUN
 vous	vous	PRON
 serez	être	AUX
 forcé	forcer	VERB
-de	de	DET
-dire	dire	NOUN
+de	de	ADP
+dire	dire	VERB
 à	à	ADP
-votre	votre	VERB
+votre	votre	DET
 neveu	neveu	NOUN
 ce	ce	PRON
-que	que	SCONJ
+que	que	PRON
 vous	vous	PRON
 hésitez	hésiter	VERB
 à	à	ADP
@@ -279,21 +279,21 @@ aujourd'hui	aujourd'hui	ADV
 .	.	PUNCTsent
 Laissez	laisser	VERB
 le	le	DET
-disposer	disposer	NOUN
-de	de	DET
-son	son	NOUN
-sort	sortir	VERB
+disposer	disposer	VERB
+de	de	ADP
+son	son	DET
+sort	sort	NOUN
 et	et	CCONJ
 vous	vous	PRON
 savoir	savoir	VERB
-gré	gré	VERB
-de	de	DET
-une	une	NUM
+gré	gré	NOUN
+de	de	ADP
+une	un	DET
 preuve	preuve	NOUN
-de	de	DET
+de	de	ADP
 estime	estime	NOUN
 et	et	CCONJ
-de	de	DET
+de	de	ADP
 confiance	confiance	NOUN
 qui	qui	PRON
 lui	lui	PRON
@@ -306,8 +306,8 @@ monsieur	monsieur	NOUN
 ,	,	PUNCTclause
 l'	le	DET
 expression	expression	NOUN
-de	de	DET
-mes	mon	NOUN
-sentiments	sentiment	ADJ
+de	de	ADP
+mes	mon	DET
+sentiments	sentiment	NOUN
 distingués	distinguer	VERB
 .	.	PUNCTsent

@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = dumas1850c-61
 # creator = Dumas, Alexandre
 # created = 1850
@@ -20,21 +20,21 @@ Christiane	Christiane	PROPN
 ne	ne	ADV
 sachant	savoir	VERB
 ce	ce	PRON
-que	que	SCONJ
+que	que	PRON
 elle	elle	PRON
 avait	avoir	VERB
 .	.	PUNCTsent
 Elle	elle	PRON
 la	le	DET
-vit	vit	NOUN
+vit	vivre	VERB
 poser	poser	VERB
 le	le	DET
 doigt	doigt	NOUN
 sur	sur	ADP
 une	un	DET
 saillie	saillie	NOUN
-de	de	DET
-un	un	PRON
+de	de	ADP
+un	un	DET
 des	un	ADP_DET
 panneaux	panneau	NOUN
 boisés	boisé	ADJ
@@ -44,7 +44,7 @@ boisés	boisé	ADJ
 Madame	madame	NOUN
 ,	,	PUNCTclause
 que	que	SCONJ
-faites	faire	AUX
+faites	faire	VERB
 vous	vous	PRON
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -59,7 +59,7 @@ Qui	qui	PRON
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-hé	hé	NOUN
+hé	hé	INTJ
 bien	bien	ADV
 !	!	PUNCTsent
 celui	celui	PRON
@@ -76,16 +76,16 @@ appelez	appeler	VERB
 Samuel	Samuel	PROPN
 Gelb	Gelb	PROPN
 ?	?	PUNCTsent
-balbutia	balbutier	DET
+balbutia	balbutier	VERB
 Gretchen	Gretchen	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-ha	ha	NOUN
-çà	çà	ADJ
+ha	ha	INTJ
+çà	çà	ADV
 ,	,	PUNCTclause
 est-ce que	est-ce que	ADV
-tu	tu	ADJ
+tu	tu	PRON
 crois	croire	VERB
 que	que	SCONJ
 je	je	PRON
@@ -120,7 +120,7 @@ démon	démon	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-hé	hé	NOUN
+hé	hé	INTJ
 bien	bien	ADV
 !	!	PUNCTsent
 puisque	puisque	SCONJ
@@ -130,11 +130,11 @@ invoqué	invoquer	VERB
 Dieu	Dieu	PROPN
 en vain	en vain	ADV
 !	!	PUNCTsent
-ha	ha	NOUN
+ha	ha	INTJ
 !	!	PUNCTsent
 je	je	PRON
 ne	ne	ADV
-crains	craindre	PRON
+crains	craindre	VERB
 que	que	SCONJ
 une	un	DET
 chose	chose	NOUN
@@ -143,7 +143,7 @@ ce	ce	PRON
 est	être	AUX
 la	le	DET
 maladie	maladie	NOUN
-de	de	DET
+de	de	ADP
 Wilhelm	Wilhelm	PROPN
 .	.	PUNCTsent
 Wilhelm	Wilhelm	PROPN
@@ -154,7 +154,7 @@ ne	ne	ADV
 existe	exister	VERB
 plus	plus	ADV
 .	.	PUNCTsent
-Ô	ô	DET
+Ô	ô	INTJ
 mon Dieu	mon Dieu	INTJ
 !	!	PUNCTsent
 si	si	SCONJ
@@ -176,8 +176,8 @@ tout de suite	tout de suite	ADV
 Et	et	CCONJ
 elle	elle	PRON
 appuya	appuyer	VERB
-de	de	DET
-toute	tout	ADJ
+de	de	ADP
+toute	toute	DET
 sa	son	DET
 force	force	NOUN
 sur	sur	ADP
@@ -246,7 +246,7 @@ coup	coup	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Hélas	hélas	NOUN
+Hélas	hélas	INTJ
 !	!	PUNCTsent
 madame	madame	NOUN
 ,	,	PUNCTclause
@@ -326,11 +326,11 @@ dans	dans	ADP
 la	le	DET
 chambre	chambre	NOUN
 ,	,	PUNCTclause
-fébrile	fébrile	NOUN
+fébrile	fébrile	ADJ
 ,	,	PUNCTclause
 échevelée	écheveler	VERB
 ,	,	PUNCTclause
-hagarde	hagard	NOUN
+hagarde	hagard	ADJ
 ,	,	PUNCTclause
 prenant	prendre	VERB
 chaque	chaque	DET
@@ -380,14 +380,14 @@ parut	paraître	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Dans	dans	ADP
-tout	tout	ADJ
-autre	autre	PRON
-moment	moment	ADV
+tout	tout	DET
+autre	autre	ADJ
+moment	moment	NOUN
 ,	,	PUNCTclause
 son	son	DET
 seul	seul	ADJ
 aspect	aspect	NOUN
-eût	avoir	ADJ
+eût	avoir	VERB
 effrayé	effrayer	VERB
 Christiane	Christiane	PROPN
 .	.	PUNCTsent
@@ -403,23 +403,23 @@ il	il	PRON
 était	être	AUX
 grave	grave	ADJ
 ,	,	PUNCTclause
-pâle	pâle	NOUN
+pâle	pâle	ADJ
 ,	,	PUNCTclause
 glacé	glacé	ADJ
 ,	,	PUNCTclause
 et	et	CCONJ
 comme	comme	ADP
 armé	armer	VERB
-de	de	DET
+de	de	ADP
 avance	avance	NOUN
-de	de	DET
-une	un	PRON
+de	de	ADP
+une	un	DET
 résolution	résolution	NOUN
 implacable	implacable	ADJ
 .	.	PUNCTsent
 Plus	plus	ADV
 rien	rien	PRON
-de	de	DET
+de	de	ADP
 humain	humain	ADJ
 ne	ne	ADV
 semblait	sembler	VERB
@@ -435,7 +435,7 @@ une	un	DET
 raison	raison	NOUN
 ,	,	PUNCTclause
 ce	ce	DET
-ne	ne	NOUN
+ne	ne	ADV
 était	être	AUX
 plus	plus	ADV
 un	un	DET
@@ -452,7 +452,7 @@ rigide	rigide	ADJ
 ,	,	PUNCTclause
 inflexible	inflexible	ADJ
 ,	,	PUNCTclause
-de	de	DET
+de	de	ADP
 fer	fer	NOUN
 ,	,	PUNCTclause
 fatale	fatal	ADJ
@@ -488,12 +488,12 @@ monsieur	monsieur	NOUN
 sauvez	sauver	VERB
 le	le	DET
 !	!	PUNCTsent
-cria	crier	DET
+cria	crier	VERB
 elle	elle	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-ha	ha	NOUN
+ha	ha	INTJ
 !	!	PUNCTsent
 dit	dire	VERB
 Samuel	Samuel	PROPN
@@ -508,7 +508,7 @@ piège	piège	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-ho	ho	NOUN
+ho	ho	INTJ
 !	!	PUNCTsent
 reprit	reprendre	VERB
 Christiane	Christiane	PROPN
@@ -518,7 +518,7 @@ ne	ne	ADV
 se	se	PRON
 agit	agir	VERB
 pas	pas	ADV
-de	de	DET
+de	de	ADP
 cela	cela	PRON
 !	!	PUNCTsent
 Je	je	PRON
@@ -537,7 +537,7 @@ bon	bon	ADJ
 Pardonnez	pardonner	VERB
 moi	moi	PRON
 mon	mon	DET
-passé	passé	ADP
+passé	passé	NOUN
 .	.	PUNCTsent
 je	je	PRON
 ai	avoir	AUX
@@ -553,7 +553,7 @@ vous	vous	PRON
 bénis	bénir	VERB
 .	.	PUNCTsent
 Venez	venir	VERB
-vite	vite	ADJ
+vite	vite	ADV
 .	.	PUNCTsent
 Sauvez	sauver	VERB
 le	le	DET
@@ -575,7 +575,7 @@ chambre	chambre	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Regardez	regarder	NOUN
+Regardez	regarder	VERB
 ,	,	PUNCTclause
 dit	dire	VERB
 elle	elle	PRON
@@ -589,7 +589,7 @@ mais	mais	CCONJ
 vous	vous	PRON
 êtes	être	AUX
 si	si	ADV
-savant	savant	VERB
+savant	savant	ADJ
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Samuel	Samuel	PROPN
@@ -622,9 +622,9 @@ froidement	froidement	ADV
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
 Le	le:PRON	PRON
-croup	croup	VERB
+croup	croup	NOUN
 !	!	PUNCTsent
-ha	ha	NOUN
+ha	ha	INTJ
 !	!	PUNCTsent
 ce	ce	PRON
 est	être	AUX
@@ -638,12 +638,12 @@ Christiane	Christiane	PROPN
 Vous	vous	PRON
 qui	qui	PRON
 savez	savoir	VERB
-tout	tout	ADJ
+tout	tout	ADV
 ,	,	PUNCTclause
 qu'est-ce que	qu'est-ce que	ADV
 il	il	PRON
 faut	falloir	VERB
-faire	faire	AUX
+faire	faire	VERB
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Samuel	Samuel	PROPN
@@ -691,7 +691,7 @@ Il	il	PRON
 faut	falloir	VERB
 que	que	ADV
 tout le monde	tout le monde	NOUN
-sorte	sorte	ADJ
+sorte	sorte	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
@@ -714,12 +714,12 @@ regardant	regarder	VERB
 autour de	autour de	ADP
 lui	lui	PRON
 pour	pour	ADP
-voir	voir	AUX
+voir	voir	VERB
 si	si	SCONJ
 il	il	PRON
 ne	ne	ADV
 restait	rester	VERB
-personne	personne:PRON	ADV
+personne	personne:PRON	PRON
 ,	,	PUNCTclause
 Samuel	Samuel	PROPN
 aperçut	apercevoir	VERB
@@ -734,8 +734,8 @@ frémissante	frémissant	ADJ
 effarée	effarer	VERB
 ,	,	PUNCTclause
 épouvantée	épouvanter	VERB
-de	de	DET
-regarder	regarder	NOUN
+de	de	ADP
+regarder	regarder	VERB
 Samuel	Samuel	PROPN
 et	et	CCONJ
 ne	ne	ADV
@@ -768,7 +768,7 @@ Samuel	Samuel	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Sors	sortir	NOUN
+Sors	sortir	VERB
 ,	,	PUNCTclause
 Gretchen	Gretchen	PROPN
 ,	,	PUNCTclause
@@ -782,7 +782,7 @@ un	un	DET
 mot	mot	NOUN
 ,	,	PUNCTclause
 Gretchen	Gretchen	PROPN
-recula	reculer	X
+recula	reculer	VERB
 vers	vers	ADP
 la	le	DET
 porte	porte	NOUN
@@ -813,8 +813,8 @@ Quand	quand	SCONJ
 elle	elle	PRON
 fut	être	AUX
 dehors	dehors	ADV
-de	de	DET
-la	le	AUX
+de	de	ADP
+la	le	DET
 chambre	chambre	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
@@ -826,7 +826,7 @@ garde	garde	NOUN
 à	à	ADP
 vous	vous	PRON
 !	!	PUNCTsent
-cria	crier	DET
+cria	crier	VERB
 elle	elle	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct

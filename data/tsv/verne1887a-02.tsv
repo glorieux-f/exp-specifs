@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = verne1887a-02
 # creator = Verne, Jules
 # created = 1887
@@ -21,7 +21,7 @@ rocher	rocher	NOUN
 formidable	formidable	ADJ
 ,	,	PUNCTclause
 haut	haut	ADJ
-de	de	DET
+de	de	ADP
 quatre	quatre	NUM
 cent	cent	NUM
 vingt-cinq	vingt-cinq	NUM
@@ -32,13 +32,13 @@ sur	sur	ADP
 une	un	DET
 base	base	NOUN
 large	large	ADJ
-de	de	DET
+de	de	ADP
 douze	douze	NUM
 cent	cent	NUM
 quarante-cinq	quarante-cinq	NUM
 ,	,	PUNCTclause
 longue	long	ADJ
-de	de	DET
+de	de	ADP
 quatre	quatre	NUM
 mille	mille	NUM
 trois	trois	NUM
@@ -47,7 +47,7 @@ cents	cents	NUM
 Il	il	PRON
 ressemble	ressembler	VERB
 quelque	quelque	DET
-peu	peu	NOUN
+peu	peu	ADV
 à	à	ADP
 un	un	DET
 énorme	énorme	ADJ
@@ -75,7 +75,7 @@ dents	dent	NOUN
 ,	,	PUNCTclause
 —	—	PUNCTclause
 sept	sept	NUM
-cents	cent	NOUN
+cents	cents	NUM
 canons	canon	NOUN
 braqués	braquer	VERB
 à travers	à travers	ADP
@@ -84,9 +84,9 @@ embrasures	embrasure	NOUN
 ,	,	PUNCTclause
 —	—	PUNCTclause
 les	le:PRON	PRON
-dents	dent	VERB
-de	de	DET
-la	le	AUX
+dents	dent	NOUN
+de	de	ADP
+la	le	DET
 vieille	vieux	ADJ
 ,	,	PUNCTclause
 comme	comme	ADP
@@ -113,7 +113,7 @@ solidement	solidement	ADV
 postée	poster	VERB
 là	là	ADV
 ,	,	PUNCTclause
-comme	comme	ADP
+comme	comme	SCONJ
 à	à	ADP
 Périn	Périn	PROPN
 ,	,	PUNCTclause
@@ -130,22 +130,22 @@ Poulo-Pinang	Poulo-Pinang	PROPN
 Hongkong	Hongkong	PROPN
 ,	,	PUNCTclause
 autant	autant	ADV
-de	de	DET
+de	de	ADP
 rochers	rocher	NOUN
 dont	dont	PRON
 ,	,	PUNCTclause
-quelque	quelque	SCONJ
+quelque	quelque	ADV
 jour	jour	NOUN
 ,	,	PUNCTclause
 avec	avec	ADP
 les	le	DET
 progrès	progrès	NOUN
-de	de	DET
-la	le:PRON	PRON
-mécanique	mécanique	ADJ
+de	de	ADP
+la	le	DET
+mécanique	mécanique	NOUN
 ,	,	PUNCTclause
 elle	elle	PRON
-fera	faire	AUX
+fera	faire	VERB
 des	un	DET
 forteresses	forteresse	NOUN
 tournantes	tournant	ADJ
@@ -165,13 +165,13 @@ sur	sur	ADP
 les	le	DET
 dix-huit	dix-huit	NUM
 kilomètres	mètre	NOUN
-de	de	DET
-ce	ce	NOUN
-détroit	détroit	VERB
+de	de	ADP
+ce	ce	DET
+détroit	détroit	NOUN
 que	que	SCONJ
 la	le	DET
 massue	massue	NOUN
-de	de	DET
+de	de	ADP
 Hercule	Hercule	PROPN
 a	avoir	AUX
 ouvert	ouvrir	VERB
@@ -197,7 +197,7 @@ renoncé	renoncer	VERB
 reprendre	reprendre	VERB
 ce	ce	DET
 morceau	morceau	NOUN
-de	de	DET
+de	de	ADP
 leur	leur	DET
 péninsule	péninsule	NOUN
 ?	?	PUNCTsent
@@ -229,10 +229,10 @@ hantait	hanter	VERB
 la	le	DET
 pensée	pensée	NOUN
 obsédante	obsédant	ADJ
-de	de	DET
-reconquérir	reconquérir	NOUN
-ce	ce	PRON
-roc	roc	AUX
+de	de	ADP
+reconquérir	reconquérir	VERB
+ce	ce	DET
+roc	roc	NOUN
 offensif	offensif	ADJ
 et	et	CCONJ
 défensif	défensif	ADJ
@@ -241,8 +241,8 @@ ce	ce	PRON
 était	être	AUX
 le	le	DET
 chef	chef	NOUN
-de	de	DET
-la	le	AUX
+de	de	ADP
+la	le	DET
 bande	bande	NOUN
 ,	,	PUNCTclause
 un	un	PRON
@@ -285,7 +285,7 @@ ne	ne	ADV
 y	y	PRON
 avait	avoir	AUX
 point	point	ADV
-résisté	résister	DET
+résisté	résister	VERB
 ,	,	PUNCTclause
 et	et	CCONJ
 sa	son	DET
@@ -314,7 +314,7 @@ ne	ne	ADV
 savait	savoir	VERB
 trop	trop	ADV
 ce	ce	PRON
-que	que	SCONJ
+que	que	PRON
 il	il	PRON
 était	être	AUX
 devenu	devenir	VERB
@@ -340,10 +340,10 @@ patrimonial	patrimonial	ADJ
 Il	il	PRON
 y	y	PRON
 vivait	vivre	VERB
-de	de	DET
+de	de	ADP
 une	un	DET
 existence	existence	NOUN
-de	de	DET
+de	de	ADP
 troglodyte	troglodyte	NOUN
 ,	,	PUNCTclause
 sous	sous	ADP
@@ -359,13 +359,13 @@ plus	plus	ADV
 particulièrement	particulièrement	ADV
 au	au	ADP_DET
 fond	fond	NOUN
-de	de	DET
-ces	ce	NOUN
-réduits	réduire	VERB
+de	de	ADP
+ces	ce	DET
+réduits	réduit	NOUN
 inaccessibles	inaccessible	ADJ
 des	un	ADP_DET
 grottes	grotte	NOUN
-de	de	DET
+de	de	ADP
 San-Miguel	San-Miguel	PROPN
 ,	,	PUNCTclause
 qui	qui	PRON
@@ -392,14 +392,14 @@ mais	mais	CCONJ
 à	à	ADP
 la	le	DET
 façon	façon	NOUN
-de	de	DET
-ces	ce	ADJ
+de	de	ADP
+ces	ce	DET
 hommes	homme	NOUN
 sauvages	sauvage	ADJ
 ,	,	PUNCTclause
 dépourvus	dépourvoir	VERB
-de	de	DET
-la	le	AUX
+de	de	ADP
+la	le	DET
 raison	raison	NOUN
 humaine	humain	ADJ
 ,	,	PUNCTclause
@@ -410,7 +410,7 @@ plus	plus	ADV
 que	que	SCONJ
 aux	au	ADP_DET
 instincts	instinct	NOUN
-de	de	DET
-l'	le	NOUN
+de	de	ADP
+l'	le	DET
 animalité	animalité	NOUN
 .	.	PUNCTsent

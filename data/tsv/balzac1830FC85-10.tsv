@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = balzac1830FC85-10
 # creator = Balzac, Honoré de
 # created = 1830
@@ -20,8 +20,8 @@ latitude	latitude	NOUN
 ou	ou	CCONJ
 la	le	DET
 longitude	longitude	NOUN
-de	de	DET
-l'	le	NOUN
+de	de	ADP
+l'	le	DET
 océan	océan	NOUN
 conjugal	conjugal	ADJ
 ,	,	PUNCTclause
@@ -33,14 +33,14 @@ petit	petit	ADJ
 mal	mal	NOUN
 chronique	chronique	ADJ
 ,	,	PUNCTclause
-intermittent	intermittent	VERB
+intermittent	intermittent	ADJ
 ,	,	PUNCTclause
 assez	assez	ADV
 semblable	semblable	ADJ
 à	à	ADP
 des	un	DET
 rages	rage	NOUN
-de	de	DET
+de	de	ADP
 dents	dent	NOUN
 …	…	PUNCTsent
 Vous	vous	PRON
@@ -61,7 +61,7 @@ Comment	comment	ADV
 relève	relever	VERB
 on	on	PRON
 la	le:PRON	PRON
-hauteur	hauteur	VERB
+hauteur	hauteur	NOUN
 dans	dans	ADP
 cette	ce	DET
 mer	mer	NOUN
@@ -101,9 +101,9 @@ bien	bien	ADV
 après	après	ADP
 dix	dix	NUM
 mois	mois	NOUN
-de	de	DET
+de	de	ADP
 mariage	mariage	NOUN
-que	que	ADV
+que	que	PRON
 après	après	ADP
 dix	dix	NUM
 ans	an	NOUN
@@ -134,11 +134,11 @@ surtout	surtout	ADV
 selon	selon	ADP
 la	le	DET
 composition	composition	NOUN
-de	de	DET
-l'	le:PRON	PRON
+de	de	ADP
+l'	le	DET
 équipage	équipage	NOUN
 .	.	PUNCTsent
-hé	hé	VERB
+hé	hé	INTJ
 !	!	PUNCTsent
 bien	bien	ADV
 ,	,	PUNCTclause
@@ -153,8 +153,8 @@ ont	avoir	VERB
 que	que	ADV
 une	un	DET
 manière	manière	NOUN
-de	de	DET
-prendre	prendre	ADV
+de	de	ADP
+prendre	prendre	VERB
 le	le	DET
 point	point	NOUN
 ,	,	PUNCTclause
@@ -164,9 +164,9 @@ maris	mari	NOUN
 en	en	ADP
 ont	avoir	AUX
 mille	mille	NUM
-de	de	DET
-trouver	trouver	NOUN
-le	le:PRON	PRON
+de	de	ADP
+trouver	trouver	VERB
+le	le	DET
 leur	leur	DET
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -181,8 +181,8 @@ votre	votre	DET
 ex-trésor	ex-trésor	NOUN
 ,	,	PUNCTclause
 devenue	devenir	VERB
-tout	tout	ADJ
-bonnement	bonnement	ADJ
+tout	tout	ADV
+bonnement	bonnement	ADV
 votre	votre	DET
 femme	femme	NOUN
 ,	,	PUNCTclause
@@ -205,7 +205,7 @@ trouve	trouver	VERB
 beaucoup	beaucoup	ADV
 plus	plus	ADV
 distingué	distinguer	VERB
-de	de	DET
+de	de	ADP
 ne	ne	ADV
 plus	plus	ADV
 vous	vous	PRON
@@ -216,7 +216,7 @@ bras	bras	NOUN
 ↵↵	↵↵	PUNCTstruct
 Ou	ou	CCONJ
 elle	elle	PRON
-voit	voir	AUX
+voit	voir	VERB
 des	un	DET
 hommes	homme	NOUN
 plus	plus	ADV
@@ -242,16 +242,16 @@ le	le	DET
 Boulevard	Boulevard	PROPN
 était	être	AUX
 noir	noir	ADJ
-de	de	DET
+de	de	ADP
 chapeaux	chapeau	NOUN
 et	et	CCONJ
 battu	battre	VERB
 par	par	ADP
 plus	plus	ADV
-de	de	DET
+de	de	ADP
 bottes	botte	NOUN
 que	que	ADV
-de	de	DET
+de	de	ADP
 bottines	bottine	NOUN
 ;	;	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
@@ -267,7 +267,7 @@ dit	dire	VERB
 «	«	PUNCTclause
 —	—	PUNCTclause
 Ce	ce	DET
-ne	ne	NOUN
+ne	ne	ADV
 est	être	AUX
 rien	rien	PRON
 ,	,	PUNCTclause
@@ -280,14 +280,14 @@ au lieu de	au lieu de	ADP
 :	:	PUNCTclause
 «	«	PUNCTclause
 —	—	PUNCTclause
-ha	ha	NOUN
+ha	ha	INTJ
 !	!	PUNCTsent
 ce	ce	PRON
 est	être	AUX
 Adolphe	Adolphe	PROPN
 !	!	PUNCTsent
 »	»	PUNCTclause
-que	que	SCONJ
+que	que	PRON
 elle	elle	PRON
 disait	dire	VERB
 avec	avec	ADP
@@ -300,7 +300,7 @@ regard	regard	NOUN
 un	un	DET
 accent	accent	NOUN
 qui	qui	PRON
-faisaient	faire	AUX
+faisaient	faire	VERB
 penser	penser	VERB
 à	à	ADP
 ceux	ceux	PRON
@@ -311,16 +311,16 @@ admiraient	admirer	VERB
 Enfin	enfin	ADV
 ,	,	PUNCTclause
 en	en	ADP
-voilà	voilà	VERB
+voilà	voilà	ADP
 une	un	DET
 heureuse	heureux	NOUN
 !	!	PUNCTsent
 (	(	PUNCTclause
 Cette	ce	DET
 exclamation	exclamation	NOUN
-de	de	DET
-une	un	PRON
-femme	femme	ADP
+de	de	ADP
+une	un	DET
+femme	femme	NOUN
 implique	impliquer	VERB
 deux	deux	NUM
 temps	temps	NOUN
@@ -342,7 +342,7 @@ avec	avec	ADP
 :	:	PUNCTclause
 «	«	PUNCTclause
 —	—	PUNCTclause
-ha	ha	NOUN
+ha	ha	INTJ
 !	!	PUNCTsent
 ce	ce	PRON
 est	être	AUX
@@ -357,7 +357,7 @@ se	se	PRON
 «	«	PUNCTclause
 —	—	PUNCTclause
 Ce	ce	DET
-ne	ne	NOUN
+ne	ne	ADV
 est	être	AUX
 rien	rien	PRON
 ,	,	PUNCTclause
@@ -382,7 +382,7 @@ si	si	SCONJ
 vous	vous	PRON
 revenez	revenir	VERB
 un	un	DET
-peu	peu	NOUN
+peu	peu	ADV
 tard	tard	ADV
 (	(	PUNCTclause
 onze	onze	NUM
@@ -393,7 +393,7 @@ minuit	minuit	NOUN
 ,	,	PUNCTclause
 elle	elle	PRON
 …	…	PUNCTsent
-ronfle	ronfler	NOUN
+ronfle	ronfler	VERB
 !!	!!	PUNCTsent
 odieux	odieux	ADJ
 indice	indice	NOUN
@@ -425,9 +425,9 @@ dans	dans	ADP
 la	le	DET
 vie	vie	NOUN
 conjugale	conjugal	ADJ
-de	de	DET
-une	un	PRON
-lady	lady	PRON
+de	de	ADP
+une	un	DET
+lady	lady	NOUN
 ;	;	PUNCTclause
 le	le	DET
 lendemain	lendemain	NOUN
@@ -468,8 +468,8 @@ adresse	adresser	VERB
 des	un	DET
 marins	marin	NOUN
 ou	ou	CCONJ
-maris	mari	X
-familiarisés	familiarisé	X
+maris	mari	NOUN
+familiarisés	familiariser	VERB
 avec	avec	ADP
 la	le	DET
 connaissance	connaissance	NOUN

@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = sand1866-07
 # creator = Sand, George
 # created = 1866
@@ -8,7 +8,7 @@
 ↵↵↵	↵↵↵	PUNCTstruct
 VII	VII	NOUN
 .	.	PUNCTsent
-De	de	DET
+De	de	ADP
 Philippe	Philippe	PROPN
 à	à	ADP
 Pierre	Pierre	PROPN
@@ -34,11 +34,11 @@ ce	ce	PRON
 est	être	AUX
 une	un	DET
 faculté	faculté	NOUN
-de	de	DET
-l'	le	NOUN
+de	de	ADP
+l'	le	DET
 âme	âme	NOUN
 ,	,	PUNCTclause
-féconde	fécond	NOUN
+féconde	féconder	VERB
 en	en	ADP
 résultats	résultat	NOUN
 certains	certain	ADJ
@@ -48,7 +48,7 @@ ne	ne	ADV
 faut	falloir	VERB
 pas	pas	ADV
 le	le	DET
-chercher	chercher	NOUN
+chercher	chercher	VERB
 ailleurs	ailleurs	ADV
 que	que	SCONJ
 dans	dans	ADP
@@ -71,7 +71,7 @@ nécessaire	nécessaire	ADJ
 toujours	toujours	ADV
 certaine	certain	ADJ
 .	.	PUNCTsent
-Tout	tout	ADJ
+Tout	tout	PRON
 le	le	DET
 reste	reste	NOUN
 est	être	AUX
@@ -79,11 +79,11 @@ fugitif	fugitif	ADJ
 ,	,	PUNCTclause
 l'	le	DET
 amour	amour	NOUN
-passe	passer	ADJ
+passe	passer	VERB
 ,	,	PUNCTclause
 l'	le	DET
 amitié	amitié	NOUN
-délaisse	délaisser	ADJ
+délaisse	délaisser	VERB
 ou	ou	CCONJ
 trahit	trahir	VERB
 ,	,	PUNCTclause
@@ -92,7 +92,7 @@ mort	mort	NOUN
 nous	nous	PRON
 enlève	enlever	VERB
 les	le:PRON	PRON
-êtres	être	VERB
+êtres	être	NOUN
 les	le	DET
 plus	plus	ADV
 chers	cher	ADJ
@@ -100,13 +100,13 @@ chers	cher	ADJ
 Toutes	tout	ADJ
 ces	ce	DET
 sources	source	NOUN
-de	de	DET
+de	de	ADP
 joie	joie	NOUN
 sont	être	AUX
 donc	donc	ADV
 des	un	DET
 sources	source	NOUN
-de	de	DET
+de	de	ADP
 douleur	douleur	NOUN
 .	.	PUNCTsent
 Ce	ce	PRON
@@ -143,8 +143,8 @@ l'	le	DET
 être	être	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Tu	tu	ADJ
-vois	voir	NOUN
+Tu	tu	PRON
+vois	voir	VERB
 que	que	SCONJ
 je	je	PRON
 ne	ne	ADV
@@ -181,7 +181,7 @@ mieux	mieux	ADV
 l'	le:PRON	PRON
 employer	employer	VERB
 à	à	ADP
-te	te	NOUN
+te	te	PRON
 écrire	écrire	VERB
 ,	,	PUNCTclause
 si	si	SCONJ
@@ -206,17 +206,17 @@ mon	mon	DET
 malade	malade	NOUN
 ,	,	PUNCTclause
 je	je	PRON
-serai	être	PRON
+serai	être	AUX
 demain	demain	ADV
-très-heureux	très-heureux	ADJ
+très-heureux	très-heureux	ADV
 ;	;	PUNCTclause
-sinon	sinon	CCONJ
+sinon	sinon	ADV
 ,	,	PUNCTclause
 je	je	PRON
 aurai	avoir	VERB
 la	le	DET
 consolation	consolation	NOUN
-de	de	DET
+de	de	ADP
 avoir	avoir	AUX
 fait	faire	AUX
 mon	mon	DET
@@ -229,7 +229,7 @@ aurai	avoir	VERB
 pas	pas	ADV
 le	le	DET
 droit	droit	NOUN
-de	de	DET
+de	de	ADP
 me	me	PRON
 plaindre	plaindre	VERB
 .	.	PUNCTsent
@@ -240,11 +240,11 @@ déjouent	déjouer	VERB
 nos	nos	DET
 efforts	effort	NOUN
 ,	,	PUNCTclause
-notre	notre	VERB
+notre	notre	DET
 cœur	cœur	NOUN
 nous	nous	PRON
 dit	dire	VERB
-tout	tout	ADJ
+tout	tout	ADV
 bas	bas	ADJ
 :	:	PUNCTclause
 «	«	PUNCTsent
@@ -255,7 +255,7 @@ recommence	recommencer	VERB
 »	»	PUNCTclause
 Ma	mon	DET
 mère	mère	NOUN
-te	te	PUNCT
+te	te	PRON
 envoie	envoyer	VERB
 sa	son	DET
 bénédiction	bénédiction	NOUN

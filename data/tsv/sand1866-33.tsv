@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = sand1866-33
 # creator = Sand, George
 # created = 1866
@@ -9,7 +9,7 @@
 XXXIII	XXXIII	X
 .	.	PUNCTsent
 Jeanne	Jeanne	PROPN
-de	de	DET
+de	de	ADP
 Magneval	Magneval	PROPN
 à	à	ADP
 son	son	DET
@@ -28,13 +28,13 @@ chéri	chérir	VERB
 suspendez	suspendre	VERB
 vos	vos	DET
 préparatifs	préparatif	NOUN
-de	de	DET
+de	de	ADP
 voyage	voyage	NOUN
 .	.	PUNCTsent
 Il	il	PRON
 est	être	AUX
 inutile	inutile	ADJ
-de	de	DET
+de	de	ADP
 vous	vous	PRON
 condamner	condamner	VERB
 à	à	ADP
@@ -42,7 +42,7 @@ cette	ce	DET
 fatigue	fatigue	NOUN
 .	.	PUNCTsent
 Je	je	PRON
-fais	faire	AUX
+fais	faire	VERB
 ce	ce	PRON
 que	que	SCONJ
 vous	vous	PRON
@@ -59,22 +59,22 @@ installe	installer	VERB
 la	le	DET
 Tilleraie	Tilleraie	PROPN
 ,	,	PUNCTclause
-où	où	ADV
+où	où	PRON
 les	le	DET
 excellentes	excellent	ADJ
 demoiselles	demoiselle	NOUN
 Nuñez	Nuñez	PROPN
 se	se	PRON
 chargent	charger	VERB
-de	de	DET
+de	de	ADP
 moi	moi	PRON
 et	et	CCONJ
-de	de	DET
-mon	mon	NOUN
+de	de	ADP
+mon	mon	DET
 mariage	mariage	NOUN
 ,	,	PUNCTclause
 si	si	SCONJ
-mariage	mariage	SCONJ
+mariage	mariage	NOUN
 il	il	PRON
 y	y	PRON
 a.	a.	PUNCT
@@ -85,9 +85,9 @@ question	question	NOUN
 n'est-ce pas	n'est-ce pas	ADV
 ,	,	PUNCTclause
 ce	ce	DET
-était	être	NOUN
-de	de	DET
-devenir	devenir	NOUN
+était	être	AUX
+de	de	ADP
+devenir	devenir	VERB
 pauvre	pauvre	ADJ
 pour	pour	ADP
 rassurer	rassurer	VERB
@@ -95,12 +95,12 @@ certaines	certain	DET
 consciences	conscience	NOUN
 farouches	farouche	ADJ
 ?	?	PUNCTsent
-hé	hé	VERB
+hé	hé	INTJ
 bien	bien	ADV
 ,	,	PUNCTclause
 ce	ce	PRON
 est	être	AUX
-fait	faire	AUX
+fait	faire	VERB
 .	.	PUNCTsent
 je	je	PRON
 ai	avoir	AUX
@@ -117,10 +117,10 @@ je	je	PRON
 ne	ne	ADV
 veux	vouloir	VERB
 pas	pas	ADV
-de	de	DET
+de	de	ADP
 dot	dot	NOUN
 .	.	PUNCTsent
-Tu	tu	ADJ
+Tu	tu	PRON
 es	être	AUX
 jeune	jeune	ADJ
 encore	encore	ADV
@@ -140,7 +140,7 @@ bien	bien	ADV
 longtemps	longtemps	ADV
 rien	rien	PRON
 à	à	ADP
-voir	voir	AUX
+voir	voir	VERB
 dans	dans	ADP
 tes	ton	DET
 affaires	affaire	NOUN
@@ -152,9 +152,9 @@ viendra	venir	VERB
 cette	ce	DET
 horrible	horrible	ADJ
 question	question	NOUN
-de	de	DET
-l'	le:PRON	PRON
-héritage	héritage	VERB
+de	de	ADP
+l'	le	DET
+héritage	héritage	NOUN
 ,	,	PUNCTclause
 je	je	PRON
 ne	ne	ADV
@@ -183,18 +183,18 @@ voyez	voir	VERB
 cher	cher	ADJ
 père	père	NOUN
 ,	,	PUNCTclause
-que	que	SCONJ
+que	que	PRON
 je	je	PRON
 sais	savoir	VERB
-tout	tout	ADJ
+tout	tout	PRON
 !	!	PUNCTsent
 Je	je	PRON
 voulais	vouloir	VERB
-tout	tout	ADJ
+tout	tout	PRON
 savoir	savoir	VERB
 :	:	PUNCTclause
-me	me	X
-voilà	voilà	X
+me	me	PRON
+voilà	voilà	ADP
 satisfaite	satisfait	ADJ
 ,	,	PUNCTclause
 c'est-à-dire	c'est-à-dire	CCONJ
@@ -205,7 +205,7 @@ vous	vous	PRON
 devez	devoir	VERB
 être	être	AUX
 content	conter	VERB
-de	de	DET
+de	de	ADP
 moi	moi	PRON
 ,	,	PUNCTclause
 vous	vous	PRON
@@ -215,14 +215,14 @@ cela	cela	PRON
 me	me	PRON
 console	consoler	VERB
 un	un	DET
-peu	peu	NOUN
+peu	peu	ADV
 .	.	PUNCTsent
 Permettez	permettre	VERB
 moi	moi	PRON
-de	de	DET
-aller	aller	NOUN
+de	de	ADP
+aller	aller	VERB
 vous	vous	PRON
-voir	voir	AUX
+voir	voir	VERB
 demain	demain	ADV
 ,	,	PUNCTclause
 je	je	PRON
@@ -232,14 +232,14 @@ ce	ce	PRON
 qui	qui	PRON
 se	se	PRON
 est	être	AUX
-passé	passé	ADP
+passé	passer	VERB
 .	.	PUNCTsent
 à présent	à présent	ADV
 ,	,	PUNCTclause
 vous	vous	PRON
 me	me	PRON
 permettrez	permettre	VERB
-de	de	DET
+de	de	ADP
 vous	vous	PRON
 tenir	tenir	VERB
 souvent	souvent	ADV

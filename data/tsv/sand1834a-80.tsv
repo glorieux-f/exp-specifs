@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = sand1834a-80
 # creator = Sand, George
 # created = 1834
@@ -8,7 +8,7 @@
 ↵↵↵	↵↵↵	PUNCTstruct
 Lxxix	Lxxix	PROPN
 .	.	PUNCTsent
-de	de	DET
+de	de	ADP
 Octave	Octave	PROPN
 à	à	ADP
 Jacques	Jacques	PROPN
@@ -25,11 +25,11 @@ franchise	franchise	NOUN
 et	et	CCONJ
 la	le	DET
 confiance	confiance	NOUN
-de	de	DET
-un	un	PRON
-homme	homme	ADP
+de	de	ADP
+un	un	DET
+homme	homme	NOUN
 sûr	sûr	ADJ
-de	de	DET
+de	de	ADP
 lui	lui	PRON
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
@@ -47,13 +47,13 @@ que	que	SCONJ
 vous	vous	PRON
 étiez	être	AUX
 informé	informer	VERB
-de	de	DET
+de	de	ADP
 ce	ce	PRON
 qui	qui	PRON
 se	se	PRON
 est	être	AUX
-passé	passé	ADP
-entre	entre	NOUN
+passé	passer	VERB
+entre	entre	ADP
 elle	elle	PRON
 et	et	CCONJ
 moi	moi	PRON
@@ -72,17 +72,17 @@ ma	mon	DET
 vie	vie	NOUN
 en	en	ADP
 réparation	réparation	NOUN
-de	de	DET
-l'	le	NOUN
+de	de	ADP
+l'	le	DET
 outrage	outrage	NOUN
 et	et	CCONJ
 du	du	ADP_DET
 tort	tort	NOUN
-que	que	SCONJ
+que	que	PRON
 je	je	PRON
 vous	vous	PRON
 ai	avoir	AUX
-fait	faire	AUX
+fait	faire	VERB
 ;	;	PUNCTclause
 si	si	SCONJ
 vous	vous	PRON
@@ -100,12 +100,12 @@ et	et	CCONJ
 je	je	PRON
 vous	vous	PRON
 prierai	prier	VERB
-de	de	DET
-tirer	tirer	NOUN
+de	de	ADP
+tirer	tirer	VERB
 sur	sur	ADP
 moi	moi	PRON
 ou	ou	CCONJ
-de	de	DET
+de	de	ADP
 me	me	PRON
 frapper	frapper	VERB
 avec	avec	ADP
@@ -134,7 +134,7 @@ vie	vie	NOUN
 et	et	CCONJ
 je	je	PRON
 tâcherai	tâcher	VERB
-de	de	DET
+de	de	ADP
 vous	vous	PRON
 tuer	tuer	VERB
 ;	;	PUNCTclause
@@ -142,7 +142,7 @@ tuer	tuer	VERB
 3	3	NUM
 °	°	SYM
 je	je	PRON
-ai	avoir	ADJ
+ai	avoir	VERB
 pour	pour	ADP
 elle	elle	PRON
 un	un	DET
@@ -159,7 +159,7 @@ si	si	SCONJ
 vous	vous	PRON
 devez	devoir	VERB
 l'	le	DET
-abandonner	abandonner	NOUN
+abandonner	abandonner	VERB
 soit	soit	CCONJ
 par	par	ADP
 la	le	DET
@@ -171,19 +171,19 @@ le	le	DET
 ressentiment	ressentiment	NOUN
 ,	,	PUNCTclause
 je	je	PRON
-fais	faire	AUX
+fais	faire	VERB
 serment	serment	NOUN
-de	de	DET
+de	de	ADP
 lui	lui	PRON
 consacrer	consacrer	VERB
 ma	mon	DET
 vie	vie	NOUN
-tout	tout	ADJ
+tout	tout	ADV
 entière	entier	ADJ
 ,	,	PUNCTclause
 et	et	CCONJ
-de	de	DET
-réparer	réparer	NOUN
+de	de	ADP
+réparer	réparer	VERB
 ainsi	ainsi	ADV
 ,	,	PUNCTclause
 autant	autant	ADV
@@ -192,11 +192,11 @@ possible	possible	ADJ
 ,	,	PUNCTclause
 le	le:PRON	PRON
 mal	mal	ADV
-que	que	SCONJ
+que	que	PRON
 je	je	PRON
 lui	lui	PRON
 ai	avoir	AUX
-fait	faire	AUX
+fait	faire	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Adieu	adieu	NOUN
@@ -226,13 +226,13 @@ vous	vous	PRON
 voulez	vouloir	VERB
 vous	vous	PRON
 venger	venger	VERB
-de	de	DET
+de	de	ADP
 moi	moi	PRON
 ,	,	PUNCTclause
 vous	vous	PRON
 devez	devoir	VERB
 désirer	désirer	VERB
-de	de	DET
+de	de	ADP
 me	me	PRON
 trouver	trouver	VERB
 debout	debout	ADV
@@ -249,11 +249,11 @@ implorais	implorer	VERB
 je	je	PRON
 serais	être	AUX
 un	un	DET
-impudent	impudent	NOUN
-si	si	ADV
+impudent	impudent	ADJ
+si	si	SCONJ
 je	je	PRON
 vous	vous	PRON
-bravais	braver	INTJ
+bravais	braver	VERB
 ;	;	PUNCTclause
 mais	mais	CCONJ
 je	je	PRON

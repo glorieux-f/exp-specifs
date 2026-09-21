@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = verne1874-53
 # creator = Verne, Jules
 # created = 1874
@@ -18,7 +18,7 @@ La	le	DET
 proposition	proposition	NOUN
 a	avoir	AUX
 été	être	AUX
-faite	faire	AUX
+faite	faire	VERB
 .	.	PUNCTsent
 Tous	tout	ADJ
 l'	le	DET
@@ -56,7 +56,7 @@ au	au	ADP_DET
 sort	sort	NOUN
 .	.	PUNCTsent
 Celui	celui	PRON
-que	que	SCONJ
+que	que	PRON
 le	le	DET
 sort	sort	NOUN
 désignera	désigner	VERB
@@ -67,7 +67,7 @@ aura	avoir	VERB
 sa	son	DET
 part	part	NOUN
 .	.	PUNCTsent
-hé	hé	VERB
+hé	hé	INTJ
 bien	bien	ADV
 ,	,	PUNCTclause
 soit	soit	CCONJ
@@ -94,7 +94,7 @@ exception	exception	NOUN
 est	être	AUX
 proposée	proposé	ADJ
 en faveur de	en faveur de	ADV
-miss	miss	VERB
+miss	miss	NOUN
 Herbey	Herbey	PROPN
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -106,12 +106,12 @@ Letourneur	Letourneur	PROPN
 qui	qui	PRON
 l'	le:PRON	PRON
 a	avoir	AUX
-faite	faire	AUX
+faite	faire	VERB
 .	.	PUNCTsent
 Mais	mais	CCONJ
 un	un	DET
 murmure	murmure	NOUN
-de	de	DET
+de	de	ADP
 colère	colère	NOUN
 court	courir	VERB
 parmi	parmi	ADP
@@ -124,7 +124,7 @@ onze	onze	NUM
 à bord	à bord	ADV
 ,	,	PUNCTclause
 chacun	chacun	PRON
-de	de	DET
+de	de	ADP
 nous	nous	PRON
 a	avoir	AUX
 donc	donc	ADV
@@ -144,7 +144,7 @@ changerait	changer	VERB
 cette	ce	DET
 proportion	proportion	NOUN
 .	.	PUNCTsent
-Miss	miss	VERB
+Miss	miss	NOUN
 Herbey	Herbey	PROPN
 subira	subir	VERB
 le	le	DET
@@ -168,7 +168,7 @@ bosseman	bosseman	NOUN
 que	que	SCONJ
 la	le	DET
 proposition	proposition	NOUN
-de	de	DET
+de	de	ADP
 Daoulas	Daoulas	PROPN
 a	avoir	AUX
 ranimé	ranimer	VERB
@@ -177,7 +177,7 @@ insiste	insister	VERB
 pour que	pour que	SCONJ
 le	le	DET
 tirage	tirage	NOUN
-soit	soit	CCONJ
+soit	être	AUX
 fait	faire	AUX
 immédiatement	immédiatement	ADV
 .	.	PUNCTsent
@@ -188,7 +188,7 @@ raison	raison	NOUN
 D'ailleurs	d'ailleurs	ADV
 ,	,	PUNCTclause
 nul	nul	ADJ
-de	de	DET
+de	de	ADP
 nous	nous	PRON
 ne	ne	ADV
 tient	tenir	VERB
@@ -203,13 +203,13 @@ désigné	désigner	VERB
 ne	ne	ADV
 devancera	devancer	VERB
 que	que	ADV
-de	de	DET
-quelques	quelque	NOUN
+de	de	ADP
+quelques	quelque	DET
 jours	jour	NOUN
 seulement	seulement	ADV
 ,	,	PUNCTclause
-de	de	DET
-quelques	quelque	NOUN
+de	de	ADP
+quelques	quelque	DET
 heures	heure	NOUN
 peut-être	peut-être	ADV
 ,	,	PUNCTclause
@@ -228,15 +228,15 @@ ne	ne	ADV
 se	se	PRON
 effraie	effrayer	VERB
 pas	pas	ADV
-de	de	DET
-mourir	mourir	NOUN
+de	de	ADP
+mourir	mourir	VERB
 .	.	PUNCTsent
 Mais	mais	CCONJ
 ne	ne	ADV
 plus	plus	ADV
 souffrir	souffrir	VERB
-de	de	DET
-cette	ce	NOUN
+de	de	ADP
+cette	ce	DET
 faim	faim	NOUN
 pendant	pendant	ADP
 un	un	DET
@@ -250,14 +250,14 @@ ressentir	ressentir	VERB
 cette	ce	DET
 soif	soif	NOUN
 ,	,	PUNCTclause
-voilà	voilà	VERB
+voilà	voilà	ADP
 ce	ce	PRON
 que	que	SCONJ
 on	on	PRON
 veut	vouloir	VERB
 ,	,	PUNCTclause
 et	et	CCONJ
-voilà	voilà	VERB
+voilà	voilà	ADP
 ce	ce	PRON
 qui	qui	PRON
 sera	être	AUX
@@ -269,16 +269,16 @@ puis	puis	CCONJ
 dire	dire	VERB
 comment	comment	ADV
 chacun	chacun	PRON
-de	de	DET
-nos	nos	ADJ
+de	de	ADP
+nos	nos	DET
 noms	nom	NOUN
 se	se	PRON
 est	être	AUX
 trouvé	trouver	VERB
 au	au	ADP_DET
 fond	fond	NOUN
-de	de	DET
-un	un	NUM
+de	de	ADP
+un	un	DET
 chapeau	chapeau	NOUN
 .	.	PUNCTsent
 Ce	ce	PRON
@@ -295,9 +295,9 @@ sur	sur	ADP
 une	un	DET
 feuille	feuille	NOUN
 détachée	détacher	VERB
-de	de	DET
-son	son	NOUN
-carnet	carnet	CCONJ
+de	de	ADP
+son	son	DET
+carnet	carnet	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Les	le:PRON	PRON
@@ -331,7 +331,7 @@ tirage	tirage	NOUN
 il y a	il y a	VERB
 une	un	DET
 sorte	sorte	NOUN
-de	de	DET
+de	de	ADP
 hésitation	hésitation	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -340,7 +340,7 @@ Moi	moi	PRON
 !	!	PUNCTsent
 répond	répondre	VERB
 l'un	l'un	PRON
-de	de	DET
+de	de	ADP
 nous	nous	PRON
 .	.	PUNCTsent
 Je	je	PRON
@@ -359,11 +359,11 @@ là	là	ADV
 ,	,	PUNCTclause
 debout	debout	ADV
 ,	,	PUNCTclause
-livide	livide	PRON
+livide	livide	ADJ
 ,	,	PUNCTclause
 la	le	DET
 main	main	NOUN
-étendue	étendu	ADJ
+étendue	étendre	VERB
 ,	,	PUNCTclause
 ses	son	DET
 cheveux	cheveu	NOUN
@@ -380,20 +380,20 @@ son	son	DET
 calme	calme	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-ha	ha	NOUN
+ha	ha	INTJ
 !	!	PUNCTsent
 malheureux	malheureux	ADJ
 père	père	NOUN
 !	!	PUNCTsent
 Je	je	PRON
-te	te	VERB
-comprends	comprendre	NOUN
+te	te	PRON
+comprends	comprendre	VERB
 !	!	PUNCTsent
 Je	je	PRON
 sais	savoir	VERB
 pourquoi	pourquoi	ADV
-tu	tu	ADJ
-veux	vouloir	PRON
+tu	tu	PRON
+veux	vouloir	VERB
 appeler	appeler	VERB
 les	le	DET
 noms	nom	NOUN
@@ -431,7 +431,7 @@ billet	billet	NOUN
 ,	,	PUNCTclause
 il	il	PRON
 le	le	DET
-déplie	déplier	NOUN
+déplie	déplier	VERB
 ,	,	PUNCTclause
 il	il	PRON
 prononce	prononcer	VERB
@@ -465,7 +465,7 @@ sorti	sortir	VERB
 ce	ce	PRON
 est	être	AUX
 celui	celui	PRON
-de	de	DET
+de	de	ADP
 Burke	Burke	PROPN
 ,	,	PUNCTclause
 qui	qui	PRON
@@ -477,7 +477,7 @@ Le	le	DET
 second	second	ADJ
 ,	,	PUNCTclause
 celui	celui	PRON
-de	de	DET
+de	de	ADP
 Flaypol	Flaypol	PROPN
 .	.	PUNCTsent
 Le	le	DET
@@ -491,14 +491,14 @@ Le	le	DET
 4e	4e	ADJ
 ,	,	PUNCTclause
 celui	celui	PRON
-de	de	DET
+de	de	ADP
 Falsten	Falsten	PROPN
 .	.	PUNCTsent
 Le	le	DET
 5e	5e	ADJ
 ,	,	PUNCTclause
 celui	celui	PRON
-de	de	DET
+de	de	ADP
 Robert	Robert	PROPN
 Kurtis	Kurtis	PROPN
 .	.	PUNCTsent
@@ -506,7 +506,7 @@ Le	le	DET
 6e	6e	ADJ
 ,	,	PUNCTclause
 celui	celui	PRON
-de	de	DET
+de	de	ADP
 Sandon	Sandon	PROPN
 .	.	PUNCTsent
 La	le	DET
@@ -565,7 +565,7 @@ Letourneur	Letourneur	PROPN
 continue	continuer	VERB
 son	son	DET
 sinistre	sinistre	NOUN
-office	office	X
+office	office	NOUN
 .	.	PUNCTsent
 Le	le	DET
 7e	7e	ADJ
@@ -574,7 +574,7 @@ nom	nom	NOUN
 ce	ce	PRON
 est	être	AUX
 celui	celui	PRON
-de	de	DET
+de	de	ADP
 miss	miss	NOUN
 Herbey	Herbey	PROPN
 ,	,	PUNCTclause
@@ -637,7 +637,7 @@ connaissance	connaissance	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mais	mai	NOUN
+Mais	mais	CCONJ
 va	aller	VERB
 donc	donc	ADV
 !	!	PUNCTsent
@@ -659,7 +659,7 @@ le	le	DET
 chapeau	chapeau	NOUN
 avec	avec	ADP
 celui	celui	PRON
-de	de	DET
+de	de	ADP
 M.	M.	PROPN
 Letourneur	Letourneur	PROPN
 .	.	PUNCTsent
@@ -697,7 +697,7 @@ il	il	PRON
 tire	tirer	VERB
 l'	le	DET
 avant-dernier	avant-dernier	NOUN
-billet	billet	ADJ
+billet	billet	NOUN
 ,	,	PUNCTclause
 il	il	PRON
 le	le:PRON	PRON
@@ -708,7 +708,7 @@ et	et	CCONJ
 sans que	sans que	SCONJ
 sa	son	DET
 voix	voix	NOUN
-faiblisse	faiblir	ADJ
+faiblisse	faiblir	VERB
 ,	,	PUNCTclause
 avec	avec	ADP
 une	un	DET
@@ -719,8 +719,8 @@ ne	ne	ADV
 aurais	avoir	AUX
 jamais	jamais	ADV
 attendue	attendre	VERB
-de	de	DET
-cet	ce	NOUN
+de	de	ADP
+cet	ce	DET
 homme	homme	NOUN
 ,	,	PUNCTclause
 il	il	PRON
@@ -741,7 +741,7 @@ Un	un	DET
 hurlement	hurlement	NOUN
 se	se	PRON
 échappe	échapper	VERB
-de	de	DET
+de	de	ADP
 sa	son	DET
 poitrine	poitrine	NOUN
 .	.	PUNCTsent
@@ -762,7 +762,7 @@ ouvrir	ouvrir	VERB
 ,	,	PUNCTclause
 il	il	PRON
 le	le	DET
-déchire	déchirer	NOUN
+déchire	déchirer	VERB
 .	.	PUNCTsent
 Mais	mais	CCONJ
 un	un	DET
@@ -781,13 +781,13 @@ radeau	radeau	NOUN
 Personne	personne:PRON	PRON
 ne	ne	ADV
 y	y	PRON
-fait	faire	AUX
+fait	faire	VERB
 attention	attention	NOUN
 .	.	PUNCTsent
 Je	je	PRON
 rampe	ramper	VERB
-de	de	DET
-ce	ce	NOUN
+de	de	ADP
+ce	ce	DET
 côté	côté	NOUN
 ,	,	PUNCTclause
 je	je	PRON
@@ -821,8 +821,8 @@ violemment	violemment	ADV
 des	un	ADP_DET
 mains	main	NOUN
 ce	ce	PRON
-bout	bout	PRON
-de	de	DET
+bout	bouillir	VERB
+de	de	ADP
 papier	papier	NOUN
 ,	,	PUNCTclause
 il	il	PRON
@@ -836,9 +836,9 @@ puis	puis	CCONJ
 ,	,	PUNCTclause
 me	me	PRON
 regardant	regarder	VERB
-de	de	DET
-un	un	PRON
-air	air	ADP
+de	de	ADP
+un	un	DET
+air	air	NOUN
 grave	grave	ADJ
 ,	,	PUNCTclause
 il	il	PRON

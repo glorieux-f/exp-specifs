@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = dumas1850e-21
 # creator = Dumas, Alexandre
 # created = 1850
@@ -8,7 +8,7 @@
 ↵↵↵	↵↵↵	PUNCTstruct
 Vingt	Vingt	NUM
 et	et	CCONJ
-unième	unième	DET
+unième	unième	ADJ
 lettre	lettre	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -29,18 +29,18 @@ fibres	fibre	NOUN
 les	le	DET
 plus	plus	ADV
 secrètes	secret	ADJ
-de	de	DET
-mon	mon	NOUN
+de	de	ADP
+mon	mon	DET
 cœur	cœur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-ha	ha	NOUN
+ha	ha	INTJ
 !	!	PUNCTsent
-quelle	quel	ADJ
-destinée	destiner	VERB
+quelle	quel	DET
+destinée	destinée	NOUN
 est	être	AUX
 la	le	DET
-nôtre	nôtre	NOUN
+nôtre	nôtre	PRON
 !	!	PUNCTsent
 Vous	vous	PRON
 me	me	PRON
@@ -49,7 +49,7 @@ le	le	DET
 bonheur	bonheur	NOUN
 cherché	chercher	VERB
 ,	,	PUNCTclause
-attendu	attendu	ADP
+attendu	attendre	VERB
 ,	,	PUNCTclause
 désiré	désirer	VERB
 pendant	pendant	ADP
@@ -73,7 +73,7 @@ Isabelle	Isabelle	PROPN
 vous	vous	PRON
 êtes	être	AUX
 gentilfemme	gentilfemme	NOUN
-comme	comme	ADP
+comme	comme	SCONJ
 je	je	PRON
 suis	être	AUX
 gentilhomme	gentilhomme	NOUN
@@ -94,9 +94,9 @@ engagerait	engager	VERB
 plus	plus	ADV
 forte	fort	ADJ
 raison	raison	NOUN
-un	un	ADP
+un	un	PRON
 serment	serment	NOUN
-fait	faire	AUX
+fait	faire	VERB
 à	à	ADP
 Dieu	Dieu	PROPN
 .	.	PUNCTsent
@@ -104,10 +104,10 @@ Dieu	Dieu	PROPN
 ne	ne	ADV
 essayez	essayer	VERB
 pas	pas	ADV
-de	de	DET
+de	de	ADP
 vous	vous	PRON
 faire	faire	AUX
-illusion	illusion	PRON
+illusion	illusion	NOUN
 .	.	PUNCTsent
 Vos	vos	DET
 vœux	vœu	NOUN
@@ -119,9 +119,9 @@ Dieu	Dieu	PROPN
 ne	ne	ADV
 admet	admettre	VERB
 pas	pas	ADV
-de	de	DET
+de	de	ADP
 pareilles	pareil	NOUN
-subtilités	subtilité	VERB
+subtilités	subtilité	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Il	il	PRON
@@ -163,13 +163,13 @@ Je	je	PRON
 vous	vous	PRON
 suis	être	AUX
 ;	;	PUNCTclause
-nous	nous	ADJ
+nous	nous	PRON
 arriverons	arriver	VERB
 ensemble	ensemble	ADV
 ,	,	PUNCTclause
 puisque	puisque	SCONJ
 nous	nous	PRON
-poursuivons	poursuivre	ADP
+poursuivons	poursuivre	VERB
 le	le	DET
 même	même	ADJ
 but	but	NOUN
@@ -247,7 +247,7 @@ ne	ne	ADV
 me	me	PRON
 aimez	aimer	VERB
 .	.	PUNCTsent
-Non	non	INTJ
+Non	non	ADV
 ,	,	PUNCTclause
 je	je	PRON
 ne	ne	ADV
@@ -267,8 +267,8 @@ aime	aimer	VERB
 avec	avec	ADP
 la	le	DET
 force	force	NOUN
-de	de	DET
-un	un	NUM
+de	de	ADP
+un	un	DET
 homme	homme	NOUN
 d'autant	d'autant	PUNCT
 plus	plus	ADV
@@ -299,8 +299,8 @@ avoir	avoir	AUX
 touché	toucher	VERB
 la	le	DET
 mort	mort	NOUN
-de	de	DET
-la	la	NUM
+de	de	ADP
+la	le	DET
 main	main	NOUN
 ,	,	PUNCTclause
 a	avoir	AUX
@@ -308,9 +308,9 @@ rapporté	rapporter	VERB
 du	du	ADP_DET
 tombeau	tombeau	NOUN
 ce	ce	PRON
-visage	visage	VERB
+visage	visage	NOUN
 pâle	pâle	ADJ
-que	que	SCONJ
+que	que	PRON
 donnent	donner	VERB
 à	à	ADP
 ceux	ceux	PRON
@@ -320,13 +320,13 @@ ont	avoir	AUX
 eues	avoir	VERB
 les	le	DET
 révélations	révélation	NOUN
-de	de	DET
-une	une	NUM
+de	de	ADP
+une	un	DET
 autre	autre	ADJ
 vie	vie	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Croyez	croire	AUX
+Croyez	croire	VERB
 moi	moi	PRON
 donc	donc	ADV
 ,	,	PUNCTclause
@@ -356,9 +356,9 @@ sophisme	sophisme	NOUN
 .	.	PUNCTsent
 La	le	DET
 vie	vie	NOUN
-de	de	DET
-ce	ce	PRON
-monde	monde	PRON
+de	de	ADP
+ce	ce	DET
+monde	monde	NOUN
 est	être	AUX
 à	à	ADP
 l'	le	DET
@@ -412,8 +412,8 @@ lie	lier	VERB
 a	avoir	VERB
 le	le	DET
 droit	droit	NOUN
-de	de	DET
-délier	délier	NOUN
+de	de	ADP
+délier	délier	VERB
 ,	,	PUNCTclause
 et	et	CCONJ
 ce	ce	PRON
@@ -448,7 +448,7 @@ pape	pape	NOUN
 votre	votre	DET
 famille	famille	NOUN
 a	avoir	AUX
-de	de	DET
+de	de	ADP
 puissantes	puissant	ADJ
 alliances	alliance	NOUN
 en	en	ADP
@@ -457,8 +457,8 @@ Italie	Italie	PROPN
 Obtenez	obtenir	VERB
 la	le	DET
 rupture	rupture	NOUN
-de	de	DET
-vos	vos	NOUN
+de	de	ADP
+vos	vos	DET
 vœux	vœu	NOUN
 .	.	PUNCTsent
 Ce	ce	DET
@@ -478,11 +478,11 @@ alors	alors	ADV
 ,	,	PUNCTclause
 alors	alors	ADV
 …	…	PUNCTsent
-ho	ho	NOUN
+ho	ho	INTJ
 !	!	PUNCTsent
 je	je	PRON
 ne	ne	ADV
-ose	ose	NOUN
+ose	oser	VERB
 pas	pas	ADV
 penser	penser	VERB
 à	à	ADP

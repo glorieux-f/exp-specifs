@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = verne1874-45
 # creator = Verne, Jules
 # created = 1874
@@ -20,21 +20,21 @@ tous	tout	ADJ
 étendus	étendu	ADJ
 sur	sur	ADP
 les	le	DET
-voiles	voiler	VERB
+voiles	voile	NOUN
 .	.	PUNCTsent
 l'	le	DET
 équipage	équipage	NOUN
-de	de	DET
-un	un	NUM
+de	de	ADP
+un	un	DET
 navire	navire	NOUN
 qui	qui	PRON
 passerait	passer	VERB
 croirait	croire	VERB
-voir	voir	AUX
+voir	voir	VERB
 une	un	DET
 épave	épave	NOUN
 couverte	couvert	ADJ
-de	de	DET
+de	de	ADP
 morts	mort	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -45,7 +45,7 @@ horriblement	horriblement	ADV
 Dans	dans	ADP
 l'	le	DET
 état	état	NOUN
-où	où	ADV
+où	où	PRON
 sont	être	AUX
 mes	mon	DET
 lèvres	lèvre	NOUN
@@ -56,7 +56,7 @@ langue	langue	NOUN
 mon	mon	DET
 gosier	gosier	NOUN
 ,	,	PUNCTclause
-pourrais	pouvoir	ADP
+pourrais	pouvoir	VERB
 je	je	PRON
 manger	manger	VERB
 ?	?	PUNCTsent
@@ -101,7 +101,7 @@ est	être	AUX
 orageux	orageux	ADJ
 .	.	PUNCTsent
 il y a	il y a	VERB
-de	de	DET
+de	de	ADP
 grosses	gros	ADJ
 vapeurs	vapeur	NOUN
 qui	qui	PRON
@@ -132,9 +132,9 @@ regarde	regarder	VERB
 monter	monter	VERB
 les	le	DET
 nuages	nuage	NOUN
-de	de	DET
-un	un	PRON
-œil	œil	ADP
+de	de	ADP
+un	un	DET
+œil	œil	NOUN
 avide	avide	ADJ
 .	.	PUNCTsent
 Nos	nos	DET
@@ -178,8 +178,8 @@ vapeurs	vapeur	NOUN
 ont	avoir	AUX
 arrêté	arrêter	VERB
 les	le	DET
-rayons	rayer	VERB
-solaires	solaire	NOUN
+rayons	rayon	NOUN
+solaires	solaire	ADJ
 ,	,	PUNCTclause
 mais	mais	CCONJ
 déjà	déjà	ADV
@@ -251,16 +251,16 @@ peut	pouvoir	VERB
 elle	elle	PRON
 se	se	PRON
 dégager	dégager	VERB
-de	de	DET
-ce	ce	NOUN
+de	de	ADP
+ce	ce	DET
 brouillard	brouillard	NOUN
 ,	,	PUNCTclause
 si peu que	si peu que	ADP
 ce	ce	PRON
-soit	soit	CCONJ
+soit	être	AUX
 ,	,	PUNCTclause
 quelques	quelque	DET
-gouttes	goutter	VERB
+gouttes	goutte	NOUN
 seulement	seulement	ADV
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -269,10 +269,10 @@ La	le	DET
 pluie	pluie	NOUN
 !	!	PUNCTsent
 crie	crier	VERB
-tout	tout	ADJ
-de	de	DET
-un	un	PRON
-coup	coup	VERB
+tout	tout	ADV
+de	de	ADP
+un	un	DET
+coup	coup	NOUN
 Daoulas	Daoulas	PROPN
 .	.	PUNCTsent
 en effet	en effet	ADV
@@ -287,7 +287,7 @@ le	le	DET
 ciel	ciel	NOUN
 est	être	AUX
 rayé	rayer	VERB
-de	de	DET
+de	de	ADP
 hachures	hachure	NOUN
 parallèles	parallèle	ADJ
 .	.	PUNCTsent
@@ -304,8 +304,8 @@ rebondir	rebondir	VERB
 à	à	ADP
 la	le	DET
 surface	surface	NOUN
-de	de	DET
-l'	le	NOUN
+de	de	ADP
+l'	le	DET
 Océan	Océan	PROPN
 .	.	PUNCTsent
 Le	le	DET
@@ -329,16 +329,16 @@ se	se	PRON
 pas	pas	ADV
 avant de	avant de	ADP
 avoir	avoir	AUX
-passé	passé	ADP
-sur	sur	NOUN
+passé	passer	VERB
+sur	sur	ADP
 notre	notre	DET
 tête	tête	NOUN
 !	!	PUNCTsent
 Dieu	Dieu	PROPN
 a	avoir	AUX
 enfin	enfin	ADV
-pitié	pitié	VERB
-de	de	DET
+pitié	pitié	NOUN
+de	de	ADP
 nous	nous	PRON
 .	.	PUNCTsent
 La	le	DET
@@ -346,9 +346,9 @@ pluie	pluie	NOUN
 tombe	tomber	VERB
 à	à	ADP
 grosses	gros	ADJ
-gouttes	goutter	VERB
+gouttes	goutte	NOUN
 ,	,	PUNCTclause
-telles	tel	ADJ
+telles	tel	DET
 que	que	SCONJ
 en	en	ADP
 répandent	répandre	VERB
@@ -369,7 +369,7 @@ faut	falloir	VERB
 recueillir	recueillir	VERB
 tout	tout	ADJ
 ce	ce	PRON
-que	que	SCONJ
+que	que	PRON
 elle	elle	PRON
 pourra	pouvoir	VERB
 donner	donner	VERB
@@ -379,9 +379,9 @@ déjà	déjà	ADV
 une	un	DET
 vive	vif	ADJ
 traînée	traînée	NOUN
-de	de	DET
+de	de	ADP
 lumière	lumière	NOUN
-enflamme	enflammer	ADP
+enflamme	enflammer	VERB
 le	le	DET
 nuage	nuage	NOUN
 par	par	ADP
@@ -389,15 +389,15 @@ son	son	DET
 bord	bord	NOUN
 inférieur	inférieur	ADJ
 au-dessus	au-dessus	ADV
-de	de	DET
-l'	le	NOUN
+de	de	ADP
+l'	le	DET
 horizon	horizon	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Robert	Robert	PROPN
 Kurtis	Kurtis	PROPN
 a	avoir	AUX
-fait	faire	AUX
+fait	faire	VERB
 dresser	dresser	VERB
 la	le	DET
 barrique	barrique	NOUN
@@ -407,13 +407,13 @@ de manière à	de manière à	ADP
 retenir	retenir	VERB
 le	le	DET
 plus	plus	ADV
-de	de	DET
+de	de	ADP
 eau	eau	NOUN
 possible	possible	ADJ
 ,	,	PUNCTclause
 et	et	CCONJ
 les	le	DET
-voiles	voiler	VERB
+voiles	voile	NOUN
 sont	être	AUX
 déployées	déployer	VERB
 pour	pour	ADP
@@ -440,7 +440,7 @@ ouverte	ouvert	ADJ
 .	.	PUNCTsent
 l'	le	DET
 eau	eau	NOUN
-arrose	arroser	ADJ
+arrose	arroser	VERB
 ma	mon	DET
 figure	figure	NOUN
 ,	,	PUNCTclause
@@ -458,7 +458,7 @@ dans	dans	ADP
 ma	mon	DET
 gorge	gorge	NOUN
 !	!	PUNCTsent
-ha	ha	NOUN
+ha	ha	INTJ
 !	!	PUNCTsent
 jouissance	jouissance	NOUN
 inexprimable	inexprimable	ADJ
@@ -474,9 +474,9 @@ moi	moi	PRON
 !	!	PUNCTsent
 Les	le	DET
 muqueuses	muqueuse	NOUN
-de	de	DET
-mon	mon	NOUN
-gosier	gosier	VERB
+de	de	ADP
+mon	mon	DET
+gosier	gosier	NOUN
 se	se	PRON
 lubrifient	lubrifier	VERB
 à	à	ADP
@@ -499,8 +499,8 @@ jusque	jusque	ADP
 au	au	ADP_DET
 plus	plus	ADV
 profond	profond	ADJ
-de	de	DET
-mon	mon	ADJ
+de	de	ADP
+mon	mon	DET
 être	être	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -565,7 +565,7 @@ miséricorde	miséricorde	NOUN
 nous	nous	PRON
 enverra	envoyer	VERB
 d'autres	d'autre	PRON
-nuages	nuage	PRON
+nuages	nuage	NOUN
 qui	qui	PRON
 nous	nous	PRON
 apporteront	apporter	VERB
@@ -601,8 +601,8 @@ La	le	DET
 barrique	barrique	NOUN
 et	et	CCONJ
 les	le	DET
-voiles	voiler	VERB
-l'	le	DET
+voiles	voile	NOUN
+l'	le:PRON	PRON
 ont	avoir	AUX
 recueillie	recueillir	VERB
 ,	,	PUNCTclause
@@ -610,13 +610,13 @@ mais	mais	CCONJ
 il	il	PRON
 faudra	falloir	VERB
 la	le	DET
-conserver	conserver	NOUN
-précieusement	précieusement	ADJ
+conserver	conserver	VERB
+précieusement	précieusement	ADV
 et	et	CCONJ
 ne	ne	ADV
 la	le	DET
-distribuer	distribuer	NOUN
-que	que	ADV
+distribuer	distribuer	VERB
+que	que	SCONJ
 goutte à goutte	goutte à goutte	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -631,7 +631,7 @@ deux	deux	NUM
 à	à	ADP
 trois	trois	NUM
 pintes	pinte	NOUN
-de	de	DET
+de	de	ADP
 eau	eau	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -642,10 +642,10 @@ celle	celle	PRON
 qui	qui	PRON
 imbibe	imbiber	VERB
 les	le	DET
-voiles	voiler	VERB
+voiles	voile	NOUN
 ,	,	PUNCTclause
 nous	nous	PRON
-pourrons	pouvoir	AUX
+pourrons	pouvoir	VERB
 accroître	accroître	VERB
 notre	notre	DET
 réserve	réserve	NOUN
@@ -686,7 +686,7 @@ potable	potable	ADJ
 ↵↵	↵↵	PUNCTstruct
 Je	je	PRON
 le	le	DET
-regarde	regarder	NOUN
+regarde	regarder	VERB
 .	.	PUNCTsent
 Pourquoi	pourquoi	ADV
 cette	ce	DET
@@ -696,10 +696,10 @@ qui	qui	PRON
 ne	ne	ADV
 est	être	AUX
 que	que	ADV
-de	de	DET
-l'	le	NOUN
+de	de	ADP
+l'	le	DET
 eau	eau	NOUN
-de	de	DET
+de	de	ADP
 pluie	pluie	NOUN
 ,	,	PUNCTclause
 ne	ne	ADV
@@ -715,25 +715,25 @@ exprime	exprimer	VERB
 dans	dans	ADP
 la	le	DET
 tasse	tasse	NOUN
-de	de	DET
+de	de	ADP
 fer-blanc	fer-blanc	NOUN
-un	un	ADP
+un	un	DET
 peu de	peu de	DET
 l'	le:PRON	PRON
-eau	eau	ADP_DET
-contenue	contenu	NOUN
+eau	eau	NOUN
+contenue	contenir	VERB
 dans	dans	ADP
 les	le	DET
 plis	pli	NOUN
-de	de	DET
-une	un	PRON
+de	de	ADP
+une	un	DET
 voile	voile	NOUN
 ;	;	PUNCTclause
 puis	puis	CCONJ
 ,	,	PUNCTclause
 il	il	PRON
 la	le	DET
-goûte	goûter	NOUN
+goûte	goûter	VERB
 ,	,	PUNCTclause
 et	et	CCONJ
 ,	,	PUNCTclause
@@ -745,7 +745,7 @@ surprise	surprise	NOUN
 ,	,	PUNCTclause
 il	il	PRON
 la	le	DET
-rejette	rejeter	NOUN
+rejette	rejeter	VERB
 immédiatement	immédiatement	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -760,14 +760,14 @@ eau	eau	NOUN
 est	être	AUX
 plus	plus	ADV
 que	que	SCONJ
-saumâtre	saumâtre	NOUN
+saumâtre	saumâtre	ADJ
 !	!	PUNCTsent
 On	on	PRON
 dirait	dire	VERB
-de	de	DET
-l'	le	NOUN
+de	de	ADP
+l'	le	DET
 eau	eau	NOUN
-de	de	DET
+de	de	ADP
 mer	mer	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -775,7 +775,7 @@ ce	ce	PRON
 est	être	AUX
 que	que	SCONJ
 les	le	DET
-voiles	voiler	VERB
+voiles	voile	NOUN
 ,	,	PUNCTclause
 depuis	depuis	ADP
 si	si	SCONJ

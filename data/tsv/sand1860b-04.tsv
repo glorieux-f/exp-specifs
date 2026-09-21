@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = sand1860b-04
 # creator = Sand, George
 # created = 1860
@@ -51,7 +51,7 @@ particulier	particulier	ADJ
 ↵↵	↵↵	PUNCTstruct
 Cela	cela	PRON
 me	me	PRON
-fait	faire	AUX
+fait	faire	VERB
 penser	penser	VERB
 à	à	ADP
 vous	vous	PRON
@@ -59,7 +59,7 @@ dire	dire	VERB
 que	que	SCONJ
 vous	vous	PRON
 manquez	manquer	VERB
-de	de	DET
+de	de	ADP
 épingles	épingle	NOUN
 nos	nos	DET
 5	5	NUM
@@ -69,9 +69,9 @@ et	et	CCONJ
 et	et	CCONJ
 que	que	SCONJ
 vous	vous	PRON
-ferez	faire	AUX
+ferez	faire	VERB
 bien	bien	ADV
-de	de	DET
+de	de	ADP
 en	en	PRON
 apporter	apporter	VERB
 .	.	PUNCTsent
@@ -104,7 +104,7 @@ empêché	empêcher	VERB
 par	par	ADP
 le	le	DET
 catalogue	catalogue	NOUN
-de	de	DET
+de	de	ADP
 M.	M.	PROPN
 K	K	PROPN
 …	…	PUNCTsent
@@ -140,8 +140,8 @@ vous	vous	PRON
 dire	dire	VERB
 le	le	DET
 résultat	résultat	NOUN
-de	de	DET
-ma	mon	NOUN
+de	de	ADP
+ma	mon	DET
 chasse	chasse	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
@@ -173,7 +173,7 @@ introuvable	introuvable	ADJ
 pourtant	pourtant	ADV
 ,	,	PUNCTclause
 il	il	PRON
-fait	faire	AUX
+fait	faire	VERB
 plus	plus	ADV
 chaud	chaud	ADV
 ici	ici	ADV
@@ -217,7 +217,7 @@ crois	croire	VERB
 à	à	ADP
 l'	le	DET
 état	état	NOUN
-de	de	DET
+de	de	ADP
 larve	larve	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -225,7 +225,7 @@ Lasiocampa	Lasiocampa	PROPN
 lineosa	lineosa	X
 ,	,	PUNCTclause
 éclosion	éclosion	NOUN
-de	de	DET
+de	de	ADP
 hier	hier	ADV
 .	.	PUNCTsent
 Je	je	PRON
@@ -246,7 +246,7 @@ attendais	attendre	VERB
 guère	guère	ADV
 à	à	ADP
 les	le	DET
-trouver	trouver	NOUN
+trouver	trouver	VERB
 ici	ici	ADV
 ;	;	PUNCTclause
 mais	mais	CCONJ
@@ -259,12 +259,12 @@ pas	pas	ADV
 ↵↵	↵↵	PUNCTstruct
 je	je	PRON
 ai	avoir	AUX
-fait	faire	AUX
+fait	faire	VERB
 la	le	DET
 revue	revue	NOUN
-de	de	DET
-mes	mon	NOUN
-boîtes	boîte	ADJ
+de	de	ADP
+mes	mon	DET
+boîtes	boîte	NOUN
 .	.	PUNCTsent
 je	je	PRON
 ai	avoir	AUX
@@ -282,12 +282,12 @@ cela	cela	PRON
 ,	,	PUNCTclause
 l'	le	DET
 an	an	NOUN
-passé	passé	ADP
+passé	passer	VERB
 ,	,	PUNCTclause
 dans	dans	ADP
 les	le	DET
 environs	environ	NOUN
-de	de	DET
+de	de	ADP
 Kasan	Kasan	PROPN
 .	.	PUNCTsent
 ce	ce	PRON
@@ -332,7 +332,7 @@ Il	il	PRON
 faut	falloir	VERB
 que	que	SCONJ
 il	il	PRON
-soit	soit	CCONJ
+soit	être	AUX
 tombé	tomber	VERB
 en	en	ADP
 poussière	poussière	NOUN
@@ -348,7 +348,7 @@ consoler	consoler	VERB
 ,	,	PUNCTclause
 je	je	PRON
 ai	avoir	AUX
-fait	faire	AUX
+fait	faire	VERB
 ,	,	PUNCTclause
 à	à	ADP
 votre	votre	DET
@@ -359,7 +359,7 @@ un	un	DET
 avec	avec	ADP
 le	le	DET
 cabinet	cabinet	NOUN
-de	de	DET
+de	de	ADP
 Florence	Florence	PROPN
 .	.	PUNCTsent
 je	je	PRON
@@ -372,7 +372,7 @@ Osiris	Osiris	PROPN
 pour	pour	ADP
 une	un	DET
 paire	pair	NOUN
-de	de	DET
+de	de	ADP
 petites	petit	ADJ
 Arctia	Arctia	PROPN
 luctuosa	luctuosa	VERB
@@ -411,13 +411,13 @@ pourtant	pourtant	ADV
 je	je	PRON
 regrette	regretter	VERB
 beaucoup de	beaucoup de	DET
-ne	ne	NOUN
+ne	ne	ADV
 avoir	avoir	AUX
 pu	pouvoir	VERB
 me	me	PRON
 emparer	emparer	VERB
-de	de	DET
-une	un	PRON
+de	de	ADP
+une	un	DET
 superbe	superbe	ADJ
 couleuvre	couleuvre	NOUN
 qui	qui	PRON
@@ -434,10 +434,10 @@ saisir	saisir	VERB
 quand	quand	SCONJ
 une	un	DET
 société	société	NOUN
-de	de	DET
+de	de	ADP
 flâneurs	flâneur	NOUN
 me	me	PRON
-la	le	AUX
+la	le	DET
 fit	faire	AUX
 perdre	perdre	VERB
 .	.	PUNCTsent
@@ -447,7 +447,7 @@ ai	avoir	AUX
 eu	avoir	VERB
 un	un	DET
 accès	accès	NOUN
-de	de	DET
+de	de	ADP
 colère	colère	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -461,11 +461,11 @@ ces	ce	DET
 gens	gens	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Voilà	voilà	VERB
+Voilà	voilà	ADP
 ,	,	PUNCTclause
 mon	mon	DET
-aimable	aimable	NOUN
-ami	ami	ADJ
+aimable	aimable	ADJ
+ami	ami	NOUN
 ,	,	PUNCTclause
 tout	tout	ADJ
 ce	ce	PRON
@@ -479,12 +479,12 @@ Je	je	PRON
 ne	ne	ADV
 parle	parler	VERB
 pas	pas	ADV
-de	de	DET
-votre	votre	NOUN
+de	de	ADP
+votre	votre	DET
 mère	mère	NOUN
 et	et	CCONJ
-de	de	DET
-vos	vos	NOUN
+de	de	ADP
+vos	vos	DET
 amis	ami	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
@@ -539,8 +539,8 @@ rien	rien	PRON
 contre	contre	ADP
 les	le	DET
 branches	branche	NOUN
-de	de	DET
-la	la	NUM
+de	de	ADP
+la	le	DET
 science	science	NOUN
 qui	qui	PRON
 me	me	PRON
@@ -549,7 +549,7 @@ absorbé	absorber	VERB
 jusque	jusque	ADP
 à présent	à présent	ADV
 ;	;	PUNCTclause
-tout	tout	ADJ
+tout	tout	PRON
 chemin	chemin	NOUN
 conduit	conduire	VERB
 à	à	ADP
@@ -579,10 +579,10 @@ se	se	PRON
 dissèque	disséquer	VERB
 lui-même	lui-même	PRON
 et	et	CCONJ
-fait	faire	AUX
-de	de	DET
-son	son	NOUN
-cerveau	cerveau	CCONJ
+fait	faire	VERB
+de	de	ADP
+son	son	DET
+cerveau	cerveau	NOUN
 une	un	DET
 boîte	boîte	NOUN
 vide	vide	ADJ
@@ -592,20 +592,20 @@ est	être	AUX
 sur	sur	ADP
 l'	le	DET
 être vivant	être vivant	NOUN
-que	que	SCONJ
+que	que	PRON
 il	il	PRON
 faut	falloir	VERB
 observer	observer	VERB
 les	le	DET
 phénomènes	phénomène	NOUN
-de	de	DET
-la	le:PRON	PRON
-vie	vie	VERB
+de	de	ADP
+la	le	DET
+vie	vie	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Nous	nous	PRON
 causerons	causer	VERB
-de	de	DET
+de	de	ADP
 tout	tout	ADJ
 cela	cela	PRON
 si	si	SCONJ
@@ -613,7 +613,7 @@ vous	vous	PRON
 arrivez	arriver	VERB
 bientôt	bientôt	ADV
 ,	,	PUNCTclause
-comme	comme	CCONJ
+comme	comme	SCONJ
 je	je	PRON
 l'	le:PRON	PRON
 espère	espérer	VERB
@@ -639,17 +639,17 @@ fort	fort	ADV
 aimables	aimable	ADJ
 ;	;	PUNCTclause
 M.	M.	PROPN
-de	de	DET
+de	de	ADP
 K	K	PROPN
 …	…	PUNCTsent
 ,	,	PUNCTclause
 un	un	DET
-peu	peu	NOUN
+peu	peu	ADV
 étroit	étroit	ADJ
 dans	dans	ADP
 ses	son	DET
 idées	idée	NOUN
-de	de	DET
+de	de	ADP
 classification	classification	NOUN
 ;	;	PUNCTclause
 sa	son	DET
@@ -679,8 +679,8 @@ vrai	vrai	ADJ
 Vous	vous	PRON
 aurez	avoir	VERB
 bien	bien	ADV
-de	de	DET
-la	le	AUX
+de	de	ADP
+la	le	DET
 peine	peine	NOUN
 à	à	ADP
 lui	lui	PRON
@@ -707,7 +707,7 @@ gaieté	gaieté	NOUN
 Malgré	malgré	ADP
 le	le	DET
 plaisir	plaisir	NOUN
-que	que	SCONJ
+que	que	PRON
 je	je	PRON
 aurais	avoir	VERB
 à	à	ADP
@@ -722,21 +722,21 @@ pas	pas	ADV
 vous	vous	PRON
 attendre	attendre	VERB
 plus	plus	ADV
-de	de	DET
+de	de	ADP
 huit	huit	NUM
 jours	jour	NOUN
 .	.	PUNCTsent
 je	je	PRON
 ai	avoir	AUX
-impatience	impatience	PRON
-de	de	DET
-voir	voir	AUX
+impatience	impatience	NOUN
+de	de	ADP
+voir	voir	VERB
 une	un	DET
 opération	opération	NOUN
 que	que	SCONJ
 D	D	PROPN
 doit	devoir	VERB
-faire	faire	AUX
+faire	faire	VERB
 à	à	ADP
 Milan	Milan	PROPN
 et	et	CCONJ

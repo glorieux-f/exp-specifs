@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = sand1850-08
 # creator = Sand, George
 # created = 1850
@@ -22,7 +22,7 @@ cherchant	chercher	VERB
 des	un	DET
 raisons	raison	NOUN
 à	à	ADP
-tout	tout	ADJ
+tout	tout	DET
 ,	,	PUNCTclause
 depuis	depuis	ADP
 que	que	SCONJ
@@ -33,7 +33,7 @@ et	et	CCONJ
 que	que	SCONJ
 il	il	PRON
 avait	avoir	AUX
-fait	faire	AUX
+fait	faire	VERB
 sa	son	DET
 première	premier	ADJ
 communion	communion	NOUN
@@ -43,7 +43,7 @@ dans	dans	ADP
 sa	son	DET
 tête	tête	NOUN
 ce	ce	PRON
-que	que	SCONJ
+que	que	PRON
 la	le	DET
 Catherine	Catherine	PROPN
 avait	avoir	AUX
@@ -68,9 +68,9 @@ jamais	jamais	ADV
 comprendre	comprendre	VERB
 pourquoi	pourquoi	ADV
 ,	,	PUNCTclause
-de	de	DET
+de	de	ADP
 ce	ce	PRON
-que	que	SCONJ
+que	que	PRON
 il	il	PRON
 devenait	devenir	VERB
 grand	grand	ADJ
@@ -86,12 +86,12 @@ ce	ce	PRON
 était	être	AUX
 le	le	DET
 garçon	garçon	NOUN
-le	le	ADP
+le	le	DET
 plus	plus	ADV
 innocent	innocent	ADJ
-de	de	DET
-la	le:PRON	PRON
-terre	terrer	VERB
+de	de	ADP
+la	le	DET
+terre	terre	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 il	il	PRON
@@ -99,18 +99,18 @@ ne	ne	ADV
 se	se	PRON
 doutait	douter	VERB
 point	point	ADV
-de	de	DET
+de	de	ADP
 ce	ce	PRON
 que	que	SCONJ
 les	le	DET
 gars	gars	NOUN
-de	de	DET
-son	son	NOUN
-âge	âge	ADJ
+de	de	ADP
+son	son	DET
+âge	âge	NOUN
 apprennent	apprendre	VERB
 bien	bien	ADV
 trop	trop	ADV
-vite	vite	ADJ
+vite	vite	ADV
 à	à	ADP
 la	le	DET
 campagne	campagne	NOUN
@@ -119,11 +119,11 @@ campagne	campagne	NOUN
 Sa	son	DET
 grande	grand	ADJ
 honnêteté	honnêteté	NOUN
-de	de	DET
+de	de	ADP
 esprit	esprit	NOUN
 lui	lui	PRON
 venait	venir	VERB
-de	de	DET
+de	de	ADP
 ce	ce	PRON
 que	que	SCONJ
 il	il	PRON
@@ -138,13 +138,13 @@ autres	autre	ADJ
 .	.	PUNCTsent
 Son	son	DET
 état	état	NOUN
-de	de	DET
+de	de	ADP
 champi	champi	NOUN
 ,	,	PUNCTclause
 sans	sans	ADP
 lui	lui	PRON
 faire	faire	AUX
-honte	honte	ADJ
+honte	honte	NOUN
 ,	,	PUNCTclause
 l'	le:PRON	PRON
 avait	avoir	AUX
@@ -174,16 +174,16 @@ pas	pas	ADV
 à	à	ADP
 l'	le	DET
 étonnement	étonnement	NOUN
-de	de	DET
-porter	porter	NOUN
+de	de	ADP
+porter	porter	VERB
 une	un	DET
 qualité	qualité	NOUN
 qui	qui	PRON
 le	le:PRON	PRON
-faisait	faire	AUX
+faisait	faire	VERB
 toujours	toujours	ADV
 différent	différent	ADJ
-de	de	DET
+de	de	ADP
 ceux	ceux	PRON
 avec	avec	ADP
 qui	qui	PRON
@@ -198,22 +198,22 @@ sont	être	AUX
 presque	presque	ADV
 toujours	toujours	ADV
 humiliés	humilier	VERB
-de	de	DET
+de	de	ADP
 leur	leur	DET
 sort	sort	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 on	on	PRON
 le	le:PRON	PRON
-leur	leur	DET
+leur	leur	PRON
 fait	faire	AUX
 si	si	SCONJ
 durement	durement	ADV
 comprendre	comprendre	VERB
 que	que	SCONJ
 on	on	PRON
-leur	leur	DET
-ôte	ôter	NOUN
+leur	leur	PRON
+ôte	ôter	VERB
 de bonne heure	de bonne heure	ADV
 la	le	DET
 fierté	fierté	NOUN
@@ -245,7 +245,7 @@ qui	qui	PRON
 les	le:PRON	PRON
 y	y	PRON
 ont	avoir	AUX
-fait	faire	AUX
+fait	faire	VERB
 rester	rester	VERB
 .	.	PUNCTsent
 Mais	mais	CCONJ
@@ -259,8 +259,8 @@ tombé	tomber	VERB
 dans	dans	ADP
 les	le	DET
 mains	main	NOUN
-de	de	DET
-la	le:PRON	PRON
+de	de	ADP
+la	le	DET
 Zabelle	Zabelle	PROPN
 qui	qui	PRON
 l'	le:PRON	PRON
@@ -270,8 +270,8 @@ et	et	CCONJ
 qui	qui	PRON
 ne	ne	ADV
 le	le	DET
-maltraitait	maltraiter	NOUN
-point	point	ADV
+maltraitait	maltraiter	VERB
+point	point	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 ensuite	ensuite	ADV
@@ -293,7 +293,7 @@ plus	plus	ADV
 humaines	humain	ADJ
 que	que	SCONJ
 celles	celle	PRON
-de	de	DET
+de	de	ADP
 tout le monde	tout le monde	NOUN
 .	.	PUNCTsent
 Elle	elle	PRON
@@ -315,8 +315,8 @@ un	un	DET
 champi	champi	NOUN
 qui	qui	PRON
 rencontre	rencontrer	VERB
-de	de	DET
-l'	le	NOUN
+de	de	ADP
+l'	le	DET
 amitié	amitié	NOUN
 est	être	AUX
 meilleur	meilleur	ADJ
@@ -328,11 +328,11 @@ enfant	enfant	NOUN
 de même que	de même que	CCONJ
 il	il	PRON
 est	être	AUX
-pire	pire	ADV
+pire	pire	ADJ
 quand	quand	SCONJ
 il	il	PRON
 se	se	PRON
-voit	voir	AUX
+voit	voir	VERB
 molesté	molester	VERB
 et	et	CCONJ
 avili	avilir	VERB
@@ -342,20 +342,20 @@ Aussi	aussi	ADV
 français	français	ADJ
 ne	ne	ADV
 avait	avoir	VERB
-il	il	AUX
+il	il	PRON
 jamais	jamais	ADV
 eu	avoir	VERB
-de	de	DET
+de	de	ADP
 amusement	amusement	NOUN
 et	et	CCONJ
-de	de	DET
+de	de	ADP
 contentement	contentement	NOUN
 parfait	parfait	ADJ
 que	que	SCONJ
 dans	dans	ADP
 la	le	DET
 compagnie	compagnie	NOUN
-de	de	DET
+de	de	ADP
 Madeleine	Madeleine	PROPN
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -372,7 +372,7 @@ il	il	PRON
 se	se	PRON
 était	être	AUX
 élevé	élevé	ADJ
-tout	tout	ADJ
+tout	tout	ADV
 seul	seul	ADJ
 ,	,	PUNCTclause
 ou	ou	CCONJ
@@ -410,8 +410,8 @@ ne	ne	ADV
 était	être	AUX
 pas	pas	ADV
 pressé	presser	VERB
-de	de	DET
-aller	aller	NOUN
+de	de	ADP
+aller	aller	VERB
 courir	courir	VERB
 avec	avec	ADP
 ceux	ceux	PRON
@@ -419,8 +419,8 @@ qui	qui	PRON
 le	le:PRON	PRON
 traitaient	traiter	VERB
 bien	bien	ADV
-vite	vite	ADJ
-de	de	DET
+vite	vite	ADV
+de	de	ADP
 champi	champi	NOUN
 ,	,	PUNCTclause
 puisque	puisque	SCONJ
@@ -429,9 +429,9 @@ eux	eux	PRON
 il	il	PRON
 se	se	PRON
 trouvait	trouver	VERB
-tout	tout	ADJ
-de	de	DET
-un	un	NUM
+tout	tout	ADV
+de	de	ADP
+un	un	DET
 coup	coup	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -449,7 +449,7 @@ arriva	arriver	VERB
 donc	donc	ADV
 en	en	ADP
 âge	âge	NOUN
-de	de	DET
+de	de	ADP
 quinze	quinze	NUM
 ans	an	NOUN
 sans	sans	ADP
@@ -479,8 +479,8 @@ et	et	CCONJ
 sans que	sans que	SCONJ
 ses	son	DET
 oreilles	oreille	NOUN
-l'	le	ADP
-eussent	avoir	NOUN
+l'	le	DET
+eussent	avoir	AUX
 compris	comprendre	VERB
 .	.	PUNCTsent
 Et	et	CCONJ
@@ -488,7 +488,7 @@ pourtant	pourtant	ADV
 depuis	depuis	ADP
 le	le	DET
 jour	jour	NOUN
-où	où	ADV
+où	où	PRON
 Catherine	Catherine	PROPN
 avait	avoir	AUX
 critiqué	critiquer	VERB
@@ -497,7 +497,7 @@ maîtresse	maître	NOUN
 sur	sur	ADP
 l'	le	DET
 amitié	amitié	NOUN
-que	que	SCONJ
+que	que	PRON
 elle	elle	PRON
 lui	lui	PRON
 montrait	montrer	VERB
@@ -512,7 +512,7 @@ et	et	CCONJ
 le	le	DET
 grand	grand	ADJ
 jugement	jugement	NOUN
-de	de	DET
+de	de	ADP
 ne	ne	ADV
 plus	plus	ADV
 se	se	PRON
@@ -526,7 +526,7 @@ Il	il	PRON
 eut	avoir	VERB
 l'	le	DET
 air	air	NOUN
-de	de	DET
+de	de	ADP
 ne	ne	ADV
 pas	pas	ADV
 y	y	PRON
@@ -534,11 +534,11 @@ penser	penser	VERB
 ,	,	PUNCTclause
 et	et	CCONJ
 peut-être	peut-être	ADV
-de	de	DET
+de	de	ADP
 avoir	avoir	AUX
-honte	honte	VERB
-de	de	DET
-faire	faire	AUX
+honte	honte	NOUN
+de	de	ADP
+faire	faire	VERB
 la	le	DET
 petite	petit	ADJ
 fille	fille	NOUN
@@ -547,7 +547,7 @@ le	le	DET
 câlin	câlin	NOUN
 ,	,	PUNCTclause
 comme	comme	ADP
-disait	dire	NOUN
+disait	dire	VERB
 Catherine	Catherine	PROPN
 .	.	PUNCTsent
 Mais	mais	CCONJ
@@ -588,8 +588,8 @@ reproche	reproche	NOUN
 cette	ce	DET
 chère	chère	NOUN
 femme	femme	NOUN
-de	de	DET
-l'	le:PRON	PRON
+de	de	ADP
+l'	le	DET
 aimer	aimer	VERB
 .	.	PUNCTsent
 Pourquoi	pourquoi	ADV
@@ -599,8 +599,8 @@ reproche	reproche	NOUN
 Il	il	PRON
 ne	ne	ADV
 se	se	PRON
-l'	le	ADP_DET
-expliquait	expliquer	NOUN
+l'	le	DET
+expliquait	expliquer	VERB
 point	point	ADV
 ;	;	PUNCTclause
 et	et	CCONJ
@@ -611,7 +611,7 @@ ne	ne	ADV
 le	le:PRON	PRON
 trouverait	trouver	VERB
 pas	pas	ADV
-de	de	DET
+de	de	ADP
 lui-même	lui-même	PRON
 ,	,	PUNCTclause
 il	il	PRON
@@ -631,8 +631,8 @@ que	que	SCONJ
 elle	elle	PRON
 était	être	AUX
 capable	capable	ADJ
-de	de	DET
-supporter	supporter	NOUN
+de	de	ADP
+supporter	supporter	VERB
 la	le	DET
 critique	critique	NOUN
 par	par	ADP
@@ -660,7 +660,7 @@ tancée	tancer	VERB
 et	et	CCONJ
 en	en	ADP
 danger	danger	NOUN
-de	de	DET
+de	de	ADP
 être	être	AUX
 battue	battre	VERB
 dans	dans	ADP
@@ -670,7 +670,7 @@ temps	temps	NOUN
 pour	pour	ADP
 lui	lui	PRON
 avoir	avoir	AUX
-fait	faire	AUX
+fait	faire	VERB
 du	du	DET
 bien	bien	NOUN
 .	.	PUNCTsent
@@ -687,7 +687,7 @@ lui	lui	PRON
 épargna	épargner	VERB
 l'	le	DET
 ennui	ennui	NOUN
-de	de	DET
+de	de	ADP
 être	être	AUX
 reprise	reprendre	VERB
 et	et	CCONJ
@@ -701,13 +701,13 @@ comprit	comprendre	VERB
 et	et	CCONJ
 ce	ce	PRON
 est	être	AUX
-merveille	merveille	ADJ
+merveille	merveille	NOUN
 !	!	PUNCTsent
 il	il	PRON
 comprit	comprendre	VERB
 ,	,	PUNCTclause
 ce	ce	PRON
-pauvre	pauvre	VERB
+pauvre	pauvre	ADJ
 enfant	enfant	NOUN
 ,	,	PUNCTclause
 que	que	SCONJ
@@ -726,8 +726,8 @@ secret	secret	NOUN
 et	et	CCONJ
 plutôt	plutôt	ADV
 que	que	SCONJ
-de	de	DET
-causer	causer	NOUN
+de	de	ADP
+causer	causer	VERB
 un	un	DET
 désagrément	désagrément	NOUN
 à	à	ADP
@@ -742,18 +742,18 @@ pas	pas	ADV
 être	être	AUX
 aimé	aimer	VERB
 du	du	ADP_DET
-tout	tout	ADJ
+tout	tout	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Il	il	PRON
 était	être	AUX
-attentif	attentif	VERB
+attentif	attentif	ADJ
 à	à	ADP
 son	son	DET
 ouvrage	ouvrage	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
-comme	comme	ADP
+comme	comme	SCONJ
 ,	,	PUNCTclause
 à	à	ADP
 mesure	mesure	NOUN
@@ -765,7 +765,7 @@ grand	grand	ADJ
 il	il	PRON
 avait	avoir	AUX
 plus	plus	ADV
-de	de	DET
+de	de	ADP
 travail	travail	NOUN
 sur	sur	ADP
 les	le	DET
@@ -787,9 +787,9 @@ il	il	PRON
 ne	ne	ADV
 se	se	PRON
 en	en	ADP
-faisait	faire	AUX
+faisait	faire	VERB
 pas	pas	ADV
-de	de	DET
+de	de	ADP
 chagrin	chagrin	NOUN
 ,	,	PUNCTclause
 parce que	parce que	SCONJ
@@ -800,7 +800,7 @@ se	se	PRON
 disait	dire	VERB
 que	que	SCONJ
 ce	ce	DET
-était	être	NOUN
+était	être	AUX
 pour	pour	ADP
 elle	elle	PRON
 ,	,	PUNCTclause
@@ -813,9 +813,9 @@ récompensé	récompenser	VERB
 par	par	ADP
 le	le	DET
 plaisir	plaisir	NOUN
-de	de	DET
-la	le:PRON	PRON
-voir	voir	AUX
+de	de	ADP
+la	le	DET
+voir	voir	VERB
 aux	au	ADP_DET
 repas	repas	NOUN
 .	.	PUNCTsent
@@ -825,7 +825,7 @@ soir	soir	NOUN
 quand	quand	SCONJ
 Jeannie	Jeannie	PROPN
 était	être	AUX
-endormi	endormir	PRON
+endormi	endormir	VERB
 ,	,	PUNCTclause
 Catherine	Catherine	PROPN
 allait	aller	VERB
@@ -840,8 +840,8 @@ encore	encore	ADV
 dans	dans	ADP
 les	le	DET
 temps	temps	NOUN
-de	de	DET
-veillée	veillée	NOUN
+de	de	ADP
+veillée	veiller	VERB
 ,	,	PUNCTclause
 pendant	pendant	ADP
 une	un	DET
@@ -853,12 +853,12 @@ Madeleine	Madeleine	PROPN
 .	.	PUNCTsent
 Il	il	PRON
 lui	lui	PRON
-faisait	faire	AUX
+faisait	faire	VERB
 lecture	lecture	NOUN
-de	de	DET
+de	de	ADP
 livres	livre	NOUN
 ou	ou	CCONJ
-causait	causer	NOUN
+causait	causer	VERB
 avec	avec	ADP
 elle	elle	PRON
 pendant que	pendant que	SCONJ
@@ -867,12 +867,12 @@ travaillait	travailler	VERB
 .	.	PUNCTsent
 Les	le	DET
 gens	gens	NOUN
-de	de	DET
+de	de	ADP
 campagne	campagne	NOUN
 ne	ne	ADV
 lisent	lire	VERB
 pas	pas	ADV
-vite	vite	ADJ
+vite	vite	ADV
 ;	;	PUNCTclause
 si bien que	si bien que	SCONJ
 les	le	DET
@@ -884,7 +884,7 @@ avaient	avoir	AUX
 suffisaient	suffire	VERB
 pour	pour	ADP
 les	le	DET
-contenter	contenter	NOUN
+contenter	contenter	VERB
 .	.	PUNCTsent
 Quand	quand	SCONJ
 ils	ils	PRON
@@ -910,9 +910,9 @@ fini	finir	VERB
 il	il	PRON
 se	se	PRON
 était	être	AUX
-passé	passé	ADP
+passé	passer	VERB
 assez	assez	ADV
-de	de	DET
+de	de	ADP
 temps	temps	NOUN
 depuis	depuis	ADP
 le	le	DET
@@ -939,15 +939,15 @@ puis	puis	CCONJ
 il y a	il y a	VERB
 deux	deux	NUM
 manières	manière	NOUN
-de	de	DET
-lire	lire	NOUN
+de	de	ADP
+lire	lire	VERB
 ,	,	PUNCTclause
 et	et	CCONJ
 il	il	PRON
 serait	être	AUX
 bon	bon	ADJ
-de	de	DET
-dire	dire	NOUN
+de	de	ADP
+dire	dire	VERB
 cela	cela	PRON
 aux	au	ADP_DET
 gens	gens	NOUN
@@ -980,8 +980,8 @@ se	se	PRON
 mettent	mettre	VERB
 tant de	tant de	DET
 sortes	sorte	NOUN
-de	de	DET
-choses	choser	VERB
+de	de	ADP
+choses	chose	NOUN
 dans	dans	ADP
 la	le	DET
 tête	tête	NOUN
@@ -993,7 +993,7 @@ ne	ne	ADV
 y	y	PRON
 connaît	connaître	VERB
 plus	plus	ADV
-goutte	goutte	DET
+goutte	goutte	NOUN
 .	.	PUNCTsent
 Ceux	ceux	PRON
 qui	qui	PRON
@@ -1017,7 +1017,7 @@ morceau	morceau	NOUN
 .	.	PUNCTsent
 Ils	ils	PRON
 le	le	DET
-recommencent	recommencer	NOUN
+recommencent	recommencer	VERB
 cent	cent	NUM
 fois	fois	NOUN
 sans	sans	ADP
@@ -1079,22 +1079,22 @@ portant	porter	VERB
 ,	,	PUNCTclause
 à	à	ADP
 lui	lui	PRON
-tout	tout	ADJ
+tout	tout	PRON
 seul	seul	ADJ
 ,	,	PUNCTclause
-que	que	ADV
+que	que	PRON
 trente	trente	NUM
 mille	mille	NUM
 cervelles	cervelle	NOUN
 remplies	remplier	VERB
-de	de	DET
+de	de	ADP
 vents	vent	NOUN
 et	et	CCONJ
-de	de	DET
+de	de	ADP
 fadaises	fadaise	NOUN
 .	.	PUNCTsent
 Ce	ce	PRON
-que	que	SCONJ
+que	que	PRON
 je	je	PRON
 vous	vous	PRON
 dis	dire	VERB
@@ -1105,7 +1105,7 @@ enfants	enfant	NOUN
 ,	,	PUNCTclause
 je	je	PRON
 les tiens	les tiens	PRON
-de	de	DET
+de	de	ADP
 M.	M.	PROPN
 le	le	DET
 curé	curé	NOUN
@@ -1124,9 +1124,9 @@ deux	deux	NUM
 personnes	personne	NOUN
 vivaient	vivre	VERB
 contentes	content	ADJ
-de	de	DET
+de	de	ADP
 ce	ce	PRON
-que	que	SCONJ
+que	que	PRON
 elles	elles	PRON
 avaient	avoir	VERB
 à	à	ADP
@@ -1138,7 +1138,7 @@ et	et	CCONJ
 elles	elles	PRON
 le	le:PRON	PRON
 consommaient	consommer	VERB
-tout	tout	ADJ
+tout	tout	ADV
 doucement	doucement	ADV
 ,	,	PUNCTclause
 se	se	PRON
@@ -1152,7 +1152,7 @@ et	et	CCONJ
 aimer	aimer	VERB
 ce	ce	DET
 qui	qui	PRON
-fait	faire	AUX
+fait	faire	VERB
 que	que	SCONJ
 on	on	PRON
 est	être	AUX
@@ -1161,8 +1161,8 @@ et	et	CCONJ
 bon	bon	ADJ
 .	.	PUNCTsent
 Il	il	PRON
-leur	leur	DET
-venait	venir	NOUN
+leur	leur	PRON
+venait	venir	VERB
 par là	par là	ADV
 une	un	DET
 grande	grand	ADJ
@@ -1183,8 +1183,8 @@ grand	grand	ADJ
 bonheur	bonheur	NOUN
 pour	pour	ADP
 elles	elles	PRON
-que	que	SCONJ
-de	de	DET
+que	que	PRON
+de	de	ADP
 se	se	PRON
 sentir	sentir	VERB
 bien	bien	ADV
@@ -1194,27 +1194,27 @@ le	le	DET
 monde	monde	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
-de	de	DET
+de	de	ADP
 être	être	AUX
 d'accord	d'accord	ADV
 en	en	ADP
-tout	tout	ADJ
+tout	tout	PRON
 temps	temps	NOUN
 et	et	CCONJ
 en	en	ADP
-tout	tout	ADJ
+tout	tout	PRON
 lieu	lieu	NOUN
 ,	,	PUNCTclause
 sur	sur	ADP
 l'	le	DET
 article	article	NOUN
-de	de	DET
-la	le	AUX
+de	de	ADP
+la	le	DET
 vérité	vérité	NOUN
 et	et	CCONJ
 la	le	DET
 volonté	volonté	NOUN
-de	de	DET
+de	de	ADP
 bien	bien	ADV
 agir	agir	VERB
 .	.	PUNCTsent

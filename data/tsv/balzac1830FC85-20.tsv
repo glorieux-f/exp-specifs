@@ -1,4 +1,4 @@
-# columns = TERM LEMMA POS PROB
+# columns = TERM LEMMA POS
 # identifier = balzac1830FC85-20
 # creator = Balzac, Honoré de
 # created = 1830
@@ -23,7 +23,7 @@ livre	livre	NOUN
 et	et	CCONJ
 l'on	on	PRON
 vous	vous	PRON
-fait	faire	AUX
+fait	faire	VERB
 un	un	DET
 honneur	honneur	NOUN
 infini	infini	ADJ
@@ -51,8 +51,8 @@ jamais	jamais	ADV
 les	le	DET
 différents	différent	ADJ
 sens	sens	NOUN
-de	de	DET
-son	son	NOUN
+de	de	ADP
+son	son	DET
 livre	livre	NOUN
 ,	,	PUNCTclause
 ni	ni	CCONJ
@@ -65,7 +65,7 @@ bien	bien	NOUN
 ni	ni	CCONJ
 le	le	DET
 mal	mal	NOUN
-que	que	SCONJ
+que	que	PRON
 il	il	PRON
 cause	causer	VERB
 )	)	PUNCTclause
@@ -81,8 +81,8 @@ attention	attention	NOUN
 ces	ce	DET
 petites	petit	ADJ
 scènes	scène	NOUN
-de	de	DET
-la	le	AUX
+de	de	ADP
+la	le	DET
 vie	vie	NOUN
 conjugale	conjugal	ADJ
 ,	,	PUNCTclause
@@ -114,7 +114,7 @@ en	en	ADP
 bleu	bleu	NOUN
 ,	,	PUNCTclause
 revers	revers	NOUN
-de	de	DET
+de	de	ADP
 botte	botte	NOUN
 ,	,	PUNCTclause
 vert-pâle	vert-pâle	NOUN
@@ -124,7 +124,7 @@ gris-perle	gris-perle	NOUN
 blanc	blanc	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Hélas	hélas	NOUN
+Hélas	hélas	INTJ
 !	!	PUNCTsent
 les	le	DET
 livres	livre	NOUN
@@ -194,7 +194,7 @@ déplorable	déplorable	ADJ
 ne	ne	ADV
 ont	avoir	AUX
 pas	pas	ADV
-de	de	DET
+de	de	ADP
 sexe	sexe	NOUN
 ,	,	PUNCTclause
 ce	ce	PRON
@@ -202,30 +202,30 @@ qui	qui	PRON
 ,	,	PUNCTclause
 nous	nous	PRON
 l'	le	DET
-espérons	espérer	NOUN
+espérons	espérer	VERB
 ,	,	PUNCTclause
 ne	ne	ADV
 est	être	AUX
 pas	pas	ADV
 le	le	DET
 cas	cas	NOUN
-de	de	DET
+de	de	ADP
 celui	celui	PRON
 ,	,	PUNCTclause
 en	en	ADP
 supposant	supposer	VERB
 que	que	SCONJ
 vous	vous	PRON
-fassiez	faire	AUX
+fassiez	faire	VERB
 à	à	ADP
 cette	ce	DET
 collection	collection	NOUN
-de	de	DET
+de	de	ADP
 sujets	sujet	NOUN
 nosographiques	nosographique	ADJ
 l'	le	DET
 honneur	honneur	NOUN
-de	de	DET
+de	de	ADP
 l'	le:PRON	PRON
 appeler	appeler	VERB
 un	un	DET
@@ -240,7 +240,7 @@ misères	misère	NOUN
 sont	être	AUX
 des	un	DET
 misères	misère	NOUN
-infligées	infligé	ADJ
+infligées	infliger	VERB
 uniquement	uniquement	ADV
 par	par	ADP
 la	le	DET
@@ -254,7 +254,7 @@ ne	ne	ADV
 avez	avoir	VERB
 donc	donc	ADV
 encore	encore	ADV
-vu	vu	ADP
+vu	voir	VERB
 que	que	SCONJ
 le	le	DET
 côté	côté	NOUN
@@ -271,7 +271,7 @@ a	avoir	AUX
 réellement	réellement	ADV
 l'	le	DET
 ouïe	ouïe	NOUN
-que	que	SCONJ
+que	que	PRON
 on	on	PRON
 lui	lui	PRON
 suppose	supposer	VERB
@@ -281,14 +281,14 @@ a	avoir	AUX
 déjà	déjà	ADV
 surpris	surprendre	VERB
 plus	plus	ADV
-de	de	DET
-une	une	NUM
+de	de	ADP
+une	un	DET
 exclamation	exclamation	NOUN
 ou	ou	CCONJ
-de	de	DET
-une	un	PRON
-déclamation	déclamation	ADP_DET
-de	de	DET
+de	de	ADP
+une	un	DET
+déclamation	déclamation	NOUN
+de	de	ADP
 femme	femme	NOUN
 furieuse	furieux	ADJ
 :	:	PUNCTclause
@@ -310,7 +310,7 @@ aura	avoir	AUX
 elle	elle	PRON
 dit	dire	VERB
 ,	,	PUNCTclause
-comme	comme	CCONJ
+comme	comme	SCONJ
 si	si	SCONJ
 nous	nous	PRON
 ne	ne	ADV
@@ -322,7 +322,7 @@ misères	misère	NOUN
 aussi	aussi	ADV
 !…	!…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ô	ô	ADJ
+Ô	ô	INTJ
 femmes	femme	NOUN
 !	!	PUNCTsent
 vous	vous	PRON
@@ -341,7 +341,7 @@ comprises	compris	ADJ
 ,	,	PUNCTclause
 vous	vous	PRON
 vous	vous	PRON
-faites	faire	AUX
+faites	faire	VERB
 toujours	toujours	ADV
 très-bien	très-bien	ADV
 entendre	entendre	VERB
@@ -353,7 +353,7 @@ il	il	PRON
 serait	être	AUX
 souverainement	souverainement	ADV
 injuste	injuste	ADJ
-de	de	DET
+de	de	ADP
 faire	faire	AUX
 porter	porter	VERB
 sur	sur	ADP
@@ -362,7 +362,7 @@ seules	seul	ADJ
 les	le	DET
 reproches	reproche	NOUN
 que	que	SCONJ
-tout	tout	ADJ
+tout	tout	PRON
 être	être	AUX
 social	social	ADJ
 mis	mettre	VERB
@@ -375,8 +375,8 @@ conjungium	conjungium	NOUN
 a	avoir	VERB
 le	le	DET
 droit	droit	NOUN
-de	de	DET
-adresser	adresser	NOUN
+de	de	ADP
+adresser	adresser	VERB
 à	à	ADP
 cette	ce	DET
 institution	institution	NOUN
@@ -386,18 +386,18 @@ sacrée	sacrer	VERB
 ,	,	PUNCTclause
 utile	utile	ADJ
 ,	,	PUNCTclause
-éminemment	éminemment	NOUN
+éminemment	éminemment	ADV
 conservatrice	conservateur	ADJ
 ,	,	PUNCTclause
 mais	mais	CCONJ
 tant	tant	ADV
-soit	soit	CCONJ
+soit	être	AUX
 peu	peu	ADV
 gênante	gênant	ADJ
 ,	,	PUNCTclause
 et	et	CCONJ
-de	de	DET
-un	un	PRON
+de	de	ADP
+un	un	DET
 porter	porter	VERB
 difficile	difficile	ADJ
 aux	au	ADP_DET
@@ -426,7 +426,7 @@ crétinisme	crétinisme	NOUN
 Un	un	DET
 homme	homme	NOUN
 ,	,	PUNCTclause
-non	non	INTJ
+non	non	ADV
 un	un	DET
 écrivain	écrivain	NOUN
 ,	,	PUNCTclause
@@ -448,7 +448,7 @@ ressembler	ressembler	VERB
 à	à	ADP
 Janus	Janus	PROPN
 :	:	PUNCTclause
-voir	voir	AUX
+voir	voir	VERB
 en	en	ADP
 avant	avant	NOUN
 et	et	CCONJ
@@ -456,36 +456,36 @@ en arrière	en arrière	ADV
 ,	,	PUNCTclause
 se	se	PRON
 faire	faire	AUX
-rapporteur	rapporteur	VERB
+rapporteur	rapporteur	NOUN
 ,	,	PUNCTclause
 découvrir	découvrir	VERB
 toutes	tout	ADJ
 les	le	DET
 faces	face	NOUN
-de	de	DET
-une	un	PRON
-idée	idée	ADJ
+de	de	ADP
+une	un	DET
+idée	idée	NOUN
 ,	,	PUNCTclause
 passer	passer	VERB
 alternativement	alternativement	ADV
 dans	dans	ADP
 l'	le	DET
 âme	âme	NOUN
-de	de	DET
+de	de	ADP
 Alceste	Alceste	PROPN
 et	et	CCONJ
 dans	dans	ADP
 celle	celle	PRON
-de	de	DET
+de	de	ADP
 Philinte	Philinte	PROPN
 ,	,	PUNCTclause
 ne	ne	ADV
 pas	pas	ADV
-tout	tout	ADJ
+tout	tout	ADV
 dire	dire	VERB
 et	et	CCONJ
 néanmoins	néanmoins	ADV
-tout	tout	ADJ
+tout	tout	PRON
 savoir	savoir	VERB
 ,	,	PUNCTclause
 ne	ne	ADV
@@ -504,7 +504,7 @@ programme	programme	NOUN
 autrement	autrement	ADV
 nous	nous	PRON
 dirions	dire	VERB
-tout	tout	ADJ
+tout	tout	ADV
 ,	,	PUNCTclause
 et	et	CCONJ
 ce	ce	PRON
@@ -517,8 +517,8 @@ qui	qui	PRON
 réfléchissent	réfléchir	VERB
 aux	au	ADP_DET
 conditions	condition	NOUN
-de	de	DET
-la	le	AUX
+de	de	ADP
+la	le	DET
 littérature	littérature	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -532,7 +532,7 @@ parole	parole	NOUN
 au milieu de	au milieu de	ADP
 son	son	DET
 livre	livre	NOUN
-fait	faire	AUX
+fait	faire	VERB
 l'	le	DET
 effet	effet	NOUN
 du	du	ADP_DET
@@ -574,7 +574,7 @@ Assez	assez	ADV
 donc	donc	ADV
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Voici	voici	VERB
+Voici	voici	ADP
 maintenant	maintenant	ADV
 le	le	DET
 côté	côté	NOUN
