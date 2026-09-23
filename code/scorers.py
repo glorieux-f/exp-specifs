@@ -116,13 +116,13 @@ class Scorer(ABC):
         raise NotImplementedError
 
 
-class Freq(Scorer):
-    """Raw term frequency."""
+class Tf(Scorer):
+    """Raw term frequency (TF)."""
 
     @property
     def code(self) -> str:
         """Return the filename code."""
-        return "freq"
+        return "tf"
 
     def score_terms(
         self,
@@ -252,20 +252,21 @@ class BM25(Scorer):
 
 
 class G2(Scorer):
-    """Alix G² with the frequency-specificity control in ``[0, 2]``.
+    """G² with a continuous frequency-to-specificity control in ``[0, 2]``.
 
-    The implementation follows ``KeynessScorer.G2`` from Alix:
+    Let ``q = tf / cf`` be the share of all corpus occurrences of a term that
+    fall in the focus document.
 
-    - ``specificity = 0``: raw focus frequency;
-    - ``specificity = 1``: ordinary non-negative log-likelihood G²;
-    - ``specificity = 2``: G² divided by ``expected_focus + 20``.
+    - ``s = 0``: raw term frequency ``tf``;
+    - ``0 < s < 1``: geometric interpolation ``tf^(1-s) * G²^s``;
+    - ``s = 1``: ordinary non-negative log-likelihood ``G²``;
+    - ``1 < s < 2``: ``G² * q^((s-1)/(2-s))``;
+    - ``s = 2``: exclusive terms only: ``G²`` when ``tf == cf``, else ``0``.
 
-    Values between 0 and 1 geometrically interpolate raw frequency and G².
-    Values between 1 and 2 increasingly discount expected focus frequency.
+    Thus the upper half of the scale increasingly rewards concentration in one
+    document and has a clear limiting interpretation at ``s = 2``.
     No enrichment/depletion sign is added.
     """
-
-    REGULARIZER = 20.0
 
     def __init__(
         self,
@@ -280,14 +281,15 @@ class G2(Scorer):
     @property
     def code(self) -> str:
         """Return the filename code."""
-        if self.specificity == 0.0:
-            return "g2s0"
-        return f"g2s{self.specificity}"
+        text = f"{self.specificity:.2f}".rstrip("0")
+        if text.endswith("."):
+            text += "0"
+        return f"g2s{text}"
 
     @property
     def name(self) -> str:
         """Return the human-readable scorer name."""
-        return f"Alix G² (specificity={self.specificity})"
+        return f"G² (specificity={self.specificity:g})"
 
     def score_terms(
         self,
@@ -295,7 +297,7 @@ class G2(Scorer):
         term_ids: IntArray,
         tf: IntArray,
     ) -> FloatArray:
-        """Score terms with Alix G² and the configured specificity."""
+        """Score terms with G² and the configured specificity."""
         focus_term = np.asarray(tf, dtype=np.float64)
 
         if self.specificity == 0.0:
@@ -347,13 +349,27 @@ class G2(Scorer):
             scores[invalid] = np.nan
             return scores
 
-        if self.specificity > 1.0:
-            return g2 / np.power(
-                expected_focus_term + self.REGULARIZER,
-                self.specificity - 1.0,
-            )
+        if self.specificity == 1.0:
+            return g2
 
-        return g2
+        concentration = np.divide(
+            focus_term,
+            corpus_term,
+            out=np.zeros_like(focus_term),
+            where=corpus_term > 0.0,
+        )
+
+        if self.specificity == 2.0:
+            scores = np.zeros(g2.shape, dtype=np.float64)
+            exclusive = (focus_term == corpus_term) & (corpus_term > 0.0) & ~invalid
+            scores[exclusive] = g2[exclusive]
+            scores[invalid] = np.nan
+            return scores
+
+        exponent = (self.specificity - 1.0) / (2.0 - self.specificity)
+        scores = g2 * np.power(concentration, exponent)
+        scores[invalid] = np.nan
+        return scores
 
     @staticmethod
     def _add_g2_cell(
@@ -613,8 +629,12 @@ class SimpleMaths(Scorer):
         return ppm_focus / ppm_other
 
 
+# Backward-compatible alias for older experiment scripts.
+Freq = Tf
+
+
 SCORER_TYPES: tuple[type[Scorer], ...] = (
-    Freq,
+    Tf,
     LogTfIdf,
     BM25,
     Chi2,
@@ -626,21 +646,21 @@ SCORER_TYPES: tuple[type[Scorer], ...] = (
 
 
 def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
-    """Return the default scorer configurations used by experiments.
-
-    ``G2(s=0)`` is omitted because it is exactly equivalent to :class:`Freq`.
-    """
+    """Return the scorer configurations used by the current keyword experiment."""
     return (
-        Freq(corpus),
+        Tf(corpus),
         LogTfIdf(corpus),
         BM25(corpus),
         Chi2(corpus),
         Lafon(corpus),
-        LogRatio(corpus),
-        SimpleMaths(corpus),
+        G2(corpus, 0.0),
+        G2(corpus, 0.25),
         G2(corpus, 0.5),
+        G2(corpus, 0.75),
         G2(corpus, 1.0),
+        G2(corpus, 1.25),
         G2(corpus, 1.5),
+        G2(corpus, 1.75),
         G2(corpus, 2.0),
     )
 
@@ -648,13 +668,14 @@ def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
 def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
     """Create a scorer from its stable experiment code.
 
-    Supported codes are ``freq``, ``tfidf``, ``bm25``, ``chi2``, ``lafon``,
+    Supported codes are ``tf`` (legacy alias ``freq``), ``tfidf``, ``bm25``, ``chi2``, ``lafon``,
     ``logratio``, ``simplemaths`` and ``g2sX`` where ``X`` is a specificity
     value in ``[0, 2]``.
     """
     code = code.strip().lower()
     factories = {
-        "freq": Freq,
+        "tf": Tf,
+        "freq": Tf,
         "tfidf": LogTfIdf,
         "bm25": BM25,
         "chi2": Chi2,
@@ -674,5 +695,5 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
             raise ValueError(f"Invalid G2 scorer code: {code!r}") from error
         return G2(corpus, specificity)
 
-    known = ", ".join((*factories.keys(), "g2s0", "g2s0.5", "g2s1.0", "g2s1.5", "g2s2.0"))
+    known = ", ".join((*factories.keys(), "g2s0.0", "g2s0.5", "g2s1.0", "g2s1.5", "g2s2.0"))
     raise ValueError(f"Unknown scorer {code!r}. Known scorer codes: {known}")

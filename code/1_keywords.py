@@ -25,7 +25,7 @@ from pathlib import Path
 import numpy as np
 
 from corpus import Corpus, Document
-from scorers import default_scorers
+from scorers import G2, default_scorers
 
 
 TOP_N = 100
@@ -119,7 +119,24 @@ def generate(input_dir: Path, output_dir: Path) -> None:
 
                 for scorer in scorers:
                     scores = scorer.score_terms(doc_id, term_ids, tf)
-                    ranked = rank_terms(term_ids, tf, scores, top_n)
+                    candidate_terms = term_ids
+                    candidate_tf = tf
+                    candidate_scores = scores
+                    candidate_top_n = top_n
+
+                    if isinstance(scorer, G2) and scorer.specificity == 2.0:
+                        keep = scores > 0.0
+                        candidate_terms = term_ids[keep]
+                        candidate_tf = tf[keep]
+                        candidate_scores = scores[keep]
+                        candidate_top_n = min(TOP_N, len(candidate_terms))
+
+                    ranked = rank_terms(
+                        candidate_terms,
+                        candidate_tf,
+                        candidate_scores,
+                        candidate_top_n,
+                    )
                     keywords = KEYWORD_SEPARATOR.join(
                         corpus.lemmas[int(term_id)] for term_id in ranked
                     )
