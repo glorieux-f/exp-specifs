@@ -156,7 +156,7 @@ class LogTfIdf(Scorer):
     @property
     def code(self) -> str:
         """Return the filename code."""
-        return "tfidf"
+        return "tfidflog"
 
     def score_terms(
         self,
@@ -652,6 +652,8 @@ def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
     return (
         Tf(corpus),
         LogTfIdf(corpus),
+        LogRatio(corpus),
+        SimpleMaths(corpus),
         BM25(corpus),
         Chi2(corpus),
         Lafon(corpus),
@@ -663,7 +665,6 @@ def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
         G2(corpus, 1.25),
         G2(corpus, 1.5),
         G2(corpus, 1.75),
-        G2(corpus, 2.0),
     )
 
 
