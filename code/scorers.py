@@ -282,7 +282,7 @@ class G2(Scorer):
     def code(self) -> str:
         """Return the filename code."""
         if self.specificity == 1.0:
-            return g2
+            return "g2"
         text = f"{self.specificity:.2f}".rstrip("0")
         if text.endswith("."):
             text += "0"
@@ -684,6 +684,7 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
         "lafon": Lafon,
         "logratio": LogRatio,
         "simplemaths": SimpleMaths,
+        "g2": lambda c: G2(c, 1.0),
     }
     factory = factories.get(code)
     if factory is not None:
