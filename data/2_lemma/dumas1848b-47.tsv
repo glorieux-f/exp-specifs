@@ -6,7 +6,7 @@
 # title = XX
 
 ↵↵↵	↵↵↵	PUNCTstruct
-XX	XX	NUM
+		TOKEN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Un	un	DET
@@ -48,7 +48,7 @@ lancer	lancer	VERB
 la	le	DET
 rébellion	rébellion	NOUN
 de	de	ADP
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 les	le	DET
 princes	prince	NOUN
 dans	dans	ADP
@@ -116,7 +116,7 @@ petit	petit	ADJ
 ce	ce	PRON
 que	que	PRON
 la	le	DET
-Commune	commun	NOUN
+Commune	Commune	NOUN
 de	de	ADP
 Paris	Paris	PROPN
 fit	faire	VERB
@@ -132,7 +132,7 @@ le	le:PRON	PRON
 sait	savoir	VERB
 ,	,	PUNCTclause
 la	le	DET
-Commune	commun	NOUN
+Commune	Commune	NOUN
 de	de	ADP
 Paris	Paris	PROPN
 agissait	agir	VERB
@@ -182,7 +182,7 @@ feuilleter	feuilleter	VERB
 des	un	DET
 registres	registre	NOUN
 ;	;	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 La	le	DET
 Rochefoucauld	Rochefoucauld	PROPN
@@ -192,7 +192,7 @@ une	un	DET
 attitude	attitude	NOUN
 rêveuse	rêveur	ADJ
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Bouillon	Bouillon	PROPN
 causait	causer	VERB
@@ -771,7 +771,7 @@ leva	lever	VERB
 hé	hé	INTJ
 bien	bien	ADV
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 !	!	PUNCTsent
 dit	dire	VERB
 elle	elle	PRON
@@ -810,7 +810,7 @@ les	le	DET
 jurats	jurat	NOUN
 :	:	PUNCTclause
 Ces	ce	DET
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 veulent	vouloir	VERB
 ils	ils	PRON
 bien	bien	ADV
@@ -1045,7 +1045,7 @@ officiers	officier	NOUN
 ,	,	PUNCTclause
 votons	voter	VERB
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 ,	,	PUNCTclause
 votons	voter	VERB
 !	!	PUNCTsent
@@ -1156,7 +1156,7 @@ avait	avoir	AUX
 attaqué	attaquer	VERB
 Saint-Georges	Saint-Georges	PROPN
 avec	avec	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 La	le	DET
 Rochefoucauld	Rochefoucauld	PROPN
@@ -1844,7 +1844,7 @@ que	que	PRON
 me	me	PRON
 fait	faire	VERB
 Votre	votre	DET
-Altesse	altesse	NOUN
+Altesse	Altesse	NOUN
 —	—	PUNCTclause
 et	et	CCONJ
 il	il	PRON
@@ -2097,7 +2097,7 @@ vous	vous	PRON
 êtes	être	AUX
 vendu	vendre	VERB
 à	à	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 Mazarin	Mazarin	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -2484,7 +2484,7 @@ grade	grade	NOUN
 militaire	militaire	ADJ
 dans	dans	ADP
 l'	le	DET
-État	état	NOUN
+État	État	NOUN
 ,	,	PUNCTclause
 je	je	PRON
 en	en	PRON
@@ -2941,7 +2941,7 @@ fût	être	AUX
 agréable	agréable	ADJ
 à	à	ADP
 Votre	votre	DET
-Altesse	altesse	NOUN
+Altesse	Altesse	NOUN
 ;	;	PUNCTclause
 mais	mais	CCONJ
 dans	dans	ADP
@@ -3037,7 +3037,7 @@ impossibilité	impossibilité	NOUN
 dit	dire	VERB
 Cauvignac	Cauvignac	PROPN
 .	.	PUNCTsent
-Dieu	Dieu	PROPN
+Dieu	dieu	NOUN
 me	me	PRON
 garde	garder	VERB
 de	de	ADP
@@ -3415,7 +3415,7 @@ dévorait	dévorer	VERB
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Messieurs	messieurs	NOUN
+Messieurs	monsieur	NOUN
 les	le	DET
 Bordelais	Bordelais	PROPN
 ,	,	PUNCTclause
@@ -3636,14 +3636,14 @@ ce	ce	PRON
 est	être	AUX
 ce	ce	DET
 même	même	ADJ
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Canolles	Canolles	PROPN
 qui	qui	PRON
 a	avoir	AUX
 sauvé	sauver	VERB
 Votre	votre	DET
-Altesse	altesse	NOUN
+Altesse	Altesse	NOUN
 à	à	ADP
 Chantilly	Chantilly	PROPN
 .	.	PUNCTsent
@@ -3678,7 +3678,7 @@ erreur	erreur	NOUN
 ce	ce	PRON
 est	être	AUX
 que	que	ADV
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Canolles	Canolles	PROPN
 ne	ne	ADV
@@ -3722,13 +3722,13 @@ la	le	DET
 route	route	NOUN
 ensemble	ensemble	ADV
 ;	;	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Canolles	Canolles	PROPN
 me	me	PRON
 connaissait	connaître	VERB
 :	:	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Canolles	Canolles	PROPN
 ,	,	PUNCTclause
@@ -3826,7 +3826,7 @@ donc	donc	ADV
 —	—	PUNCTclause
 ce	ce	PRON
 était	être	AUX
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Canolles	Canolles	PROPN
 lui-même	lui-même	PRON
@@ -4057,7 +4057,7 @@ pour	pour	ADP
 payer	payer	VERB
 celle	celle	PRON
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 Richon	Richon	PROPN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -4415,7 +4415,7 @@ destiné	destiner	VERB
 mourir	mourir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Claire	Claire	PROPN
+Claire	clair	ADJ
 saisit	saisir	VERB
 la	le	DET
 main	main	NOUN

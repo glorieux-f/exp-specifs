@@ -6,7 +6,7 @@
 # title = XIX. Le mannequin de la place Dauphine
 
 ↵↵↵	↵↵↵	PUNCTstruct
-XIX	XIX	NUM
+		TOKEN
 .	.	PUNCTsent
 Le	le	DET
 mannequin	mannequin	NOUN
@@ -151,7 +151,7 @@ crient	crier	VERB
 :	:	PUNCTclause
 Vive	Vive	PROPN
 le	le	DET
-Parlement	parlement	NOUN
+Parlement	Parlement	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
@@ -163,11 +163,11 @@ pas	pas	ADV
 :	:	PUNCTclause
 Vive	Vive	PROPN
 le	le	DET
-Parlement	parlement	NOUN
+Parlement	Parlement	NOUN
 !	!	PUNCTsent
 puisque	puisque	SCONJ
 le	le	DET
-Parlement	parlement	NOUN
+Parlement	Parlement	NOUN
 vit	vivre	VERB
 ,	,	PUNCTclause
 quoique	quoique	SCONJ
@@ -175,12 +175,12 @@ aient	avoir	AUX
 pu	pouvoir	VERB
 faire	faire	AUX
 Louis	Louis	PROPN
-XIV	XIV	NUM
+		TOKEN
 et	et	CCONJ
 Louis	Louis	PROPN
-XV	XV	NUM
+		TOKEN
 pour	pour	ADP
-le	le	DET
+le	le:PRON	PRON
 tuer	tuer	VERB
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -284,7 +284,7 @@ ministère	ministère	NOUN
 de	de	ADP
 ce	ce	DET
 malheureux	malheureux	ADJ
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Brienne	Brienne	PROPN
 !	!	PUNCTsent
@@ -506,7 +506,7 @@ Dauphine	Dauphine	PROPN
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
 Brûler	brûler	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Brienne	Brienne	PROPN
 .	.	PUNCTsent
@@ -823,7 +823,7 @@ criait	crier	VERB
 «	«	PUNCTsent
 Vive	vif	ADJ
 le	le	DET
-Parlement	parlement	NOUN
+Parlement	Parlement	NOUN
 !	!	PUNCTsent
 vive	vif	ADJ
 Necker	Necker	PROPN
@@ -975,7 +975,7 @@ environnants	environnant	ADJ
 et	et	CCONJ
 particulièrement	particulièrement	ADV
 le	le	DET
-Pont-Neuf	Pont-Neuf	PROPN
+Pont-Neuf	Pont-Neuf	NOUN
 ,	,	PUNCTclause
 se	se	PRON
 encombrèrent	encombrer	VERB
@@ -1008,7 +1008,7 @@ de	de	ADP
 bronze	bronze	NOUN
 de	de	ADP
 Henri	Henri	PROPN
-IV	IV	NUM
+		TOKEN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Une	un	DET
@@ -1040,7 +1040,7 @@ son	son	DET
 esprit	esprit	NOUN
 que	que	SCONJ
 Henri	Henri	PROPN
-IV	IV	NUM
+		TOKEN
 doit	devoir	VERB
 cette	ce	DET
 popularité	popularité	NOUN
@@ -1121,7 +1121,7 @@ ce	ce	PRON
 est	être	AUX
 que	que	SCONJ
 Henri	Henri	PROPN
-IV	IV	NUM
+		TOKEN
 ,	,	PUNCTclause
 cette fois ci	cette fois ci	ADV
 comme	comme	SCONJ
@@ -1150,7 +1150,7 @@ personne	personne:PRON	PRON
 ne	ne	ADV
 traverserait	traverser	VERB
 le	le	DET
-Pont-Neuf	Pont-Neuf	PROPN
+Pont-Neuf	Pont-Neuf	NOUN
 en	en	ADP
 voiture	voiture	NOUN
 ,	,	PUNCTclause
@@ -1173,7 +1173,7 @@ la	le	DET
 statue	statue	NOUN
 de	de	ADP
 Henri	Henri	PROPN
-IV	IV	NUM
+		TOKEN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Or	or	NOUN
@@ -1203,7 +1203,7 @@ sommes	être	AUX
 fort	fort	ADV
 occupés	occupé	ADJ
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 le	le	DET
 duc	duc	NOUN
 de	de	ADP
@@ -1381,11 +1381,11 @@ multitude	multitude	NOUN
 «	«	PUNCTclause
 Saluez	saluer	VERB
 Henri	Henri	PROPN
-IV	IV	NUM
+		TOKEN
 !	!	PUNCTsent
 saluez	saluer	VERB
 Henri	Henri	PROPN
-IV	IV	NUM
+		TOKEN
 !	!	PUNCTsent
 lui	lui	PRON
 cria	crier	VERB
@@ -1412,7 +1412,7 @@ Mais	mais	CCONJ
 bien	bien	ADV
 volontiers	volontiers	ADV
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 !	!	PUNCTsent
 Pour	pour	ADP
 vous	vous	PRON
@@ -1429,7 +1429,7 @@ roi	roi	NOUN
 pour	pour	ADP
 moi	moi	PRON
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 ,	,	PUNCTclause
 ce	ce	PRON
 est	être	AUX
@@ -1618,14 +1618,14 @@ comme	comme	SCONJ
 l'	le	DET
 était	être	AUX
 Henri	Henri	PROPN
-IV	IV	NUM
+		TOKEN
 ,	,	PUNCTclause
 et	et	CCONJ
 comme	comme	SCONJ
 l'	le	DET
 est	être	AUX
 Louis	Louis	PROPN
-XVI	XVI	NUM
+		TOKEN
 :	:	PUNCTclause
 je	je	PRON
 ne	ne	ADV
@@ -1715,7 +1715,7 @@ chanter	chanter	VERB
 :	:	PUNCTclause
 Vive	Vive	PROPN
 Henri	Henri	PROPN
-IV	IV	NUM
+		TOKEN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
@@ -1730,7 +1730,7 @@ oui	oui	INTJ
 ,	,	PUNCTclause
 Vive	Vive	PROPN
 Henri	Henri	PROPN
-IV	IV	NUM
+		TOKEN
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
@@ -2011,7 +2011,7 @@ présentation	présentation	NOUN
 de	de	ADP
 ce	ce	DET
 même	même	ADJ
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Brienne	Brienne	PROPN
 dont	dont	PRON
@@ -2061,7 +2061,7 @@ envoyé	envoyer	VERB
 à	à	ADP
 Vienne	Vienne	PROPN
 par	par	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Choiseul	Choiseul	PROPN
 ,	,	PUNCTclause
@@ -2318,7 +2318,7 @@ Mesdames	Mesdames	PROPN
 filles	fille	NOUN
 de	de	ADP
 Louis	Louis	PROPN
-XV	XV	NUM
+		TOKEN
 ,	,	PUNCTclause
 madame	madame	NOUN
 Victoire	Victoire	PROPN
@@ -2442,7 +2442,7 @@ des	un	ADP_DET
 filles	fille	NOUN
 de	de	ADP
 Louis	Louis	PROPN
-XV	XV	NUM
+		TOKEN
 ,	,	PUNCTclause
 laquelle	laquelle	PRON
 avait	avoir	AUX
@@ -2520,7 +2520,7 @@ de	de	ADP
 Marat	Marat	PROPN
 ,	,	PUNCTclause
 au	au	ADP_DET
-Club	club	NOUN
+Club	Club	NOUN
 des	un	ADP_DET
 droits de l'homme	droits de l'homme	NOUN
 .	.	PUNCTsent
@@ -2564,7 +2564,7 @@ proposant	proposer	VERB
 le	le	DET
 rappel	rappel	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Choiseul	Choiseul	PROPN
 .	.	PUNCTsent
@@ -2649,7 +2649,7 @@ près	près	ADV
 du	du	ADP_DET
 roi	roi	NOUN
 Louis	Louis	PROPN
-XV	XV	NUM
+		TOKEN
 ,	,	PUNCTclause
 et	et	CCONJ
 se	se	PRON
@@ -2730,7 +2730,7 @@ de	de	ADP
 son	son	DET
 ancien	ancien	ADJ
 protecteur	protecteur	NOUN
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Brienne	Brienne	PROPN
 ,	,	PUNCTclause
@@ -3495,7 +3495,7 @@ que	que	SCONJ
 vous	vous	PRON
 faites	faire	VERB
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 :	:	PUNCTclause
 vous	vous	PRON
 allez	aller	VERB
@@ -3605,7 +3605,7 @@ et	et	CCONJ
 que	que	SCONJ
 il	il	PRON
 confesse	confesser	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Brienne	Brienne	PROPN
 .	.	PUNCTsent
@@ -3724,7 +3724,7 @@ mouche	mouche	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Messieurs	messieurs	NOUN
+Messieurs	monsieur	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 l'	le	DET
@@ -3741,7 +3741,7 @@ un	un	DET
 peu	peu	ADV
 tremblante	tremblant	ADJ
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 ,	,	PUNCTclause
 je	je	PRON
 ne	ne	ADV
@@ -3778,7 +3778,7 @@ confession	confession	NOUN
 —	—	PUNCTclause
 Mais	mais	CCONJ
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 ,	,	PUNCTclause
 continua	continuer	VERB
 il	il	PRON
@@ -3901,7 +3901,7 @@ M.	M.	PROPN
 le	le	DET
 lieutenant de police	lieutenant de police	NOUN
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 le	le	DET
 chevalier	chevalier	NOUN
 du	du	ADP_DET

@@ -6,7 +6,7 @@
 # title = II
 
 ↵↵↵	↵↵↵	PUNCTstruct
-II	II	PRON
+		TOKEN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Dans	dans	ADP
@@ -1161,7 +1161,7 @@ gauche	gauche	NOUN
 ,	,	PUNCTclause
 chez	chez	ADP
 la	le	DET
-Levaque	Levaque	PROPN
+Levaque	Levaque	NOUN
 .	.	PUNCTsent
 La	le	DET
 journée	journée	NOUN
@@ -1621,7 +1621,7 @@ plaine	plaine	NOUN
 Ces	ce	DET
 routes	route	NOUN
 du	du	ADP_DET
-Nord	Nord	PROPN
+Nord	Nord	NOUN
 ,	,	PUNCTclause
 tirées	tirer	VERB
 au	au	ADP_DET
@@ -1805,10 +1805,10 @@ Comme	comme	SCONJ
 elle	elle	PRON
 approchait	approcher	VERB
 des	un	DET
-Chantiers	chantier	NOUN
+Chantiers	Chantiers	NOUN
 de	de	ADP
 la	le	DET
-Compagnie	compagnie	NOUN
+Compagnie	Compagnie	NOUN
 ,	,	PUNCTclause
 une	un	DET
 vaste	vaste	ADJ
@@ -1849,7 +1849,7 @@ hôtel	hôtel	NOUN
 du	du	ADP_DET
 directeur	directeur	NOUN
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 Hennebeau	Hennebeau	PROPN
 ,	,	PUNCTclause
 une	un	DET
@@ -2104,7 +2104,7 @@ la	le	DET
 main	main	NOUN
 de	de	ADP
 la	le	DET
-Compagnie	compagnie	NOUN
+Compagnie	Compagnie	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
 lui	lui	PRON
@@ -2615,7 +2615,7 @@ briques	brique	NOUN
 où	où	PRON
 les	le	DET
 gros	gros	ADJ
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 de	de	ADP
 Paris	Paris	PROPN
 ,	,	PUNCTclause
@@ -3421,7 +3421,8 @@ Madame	madame	NOUN
 je	je	PRON
 en	en	PRON
 ai	avoir	AUX
-septembre	septembre	NOUN
+sept	sept	NUM
+.	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 M.	M.	PROPN
 Grégoire	Grégoire	PROPN
@@ -3708,7 +3709,7 @@ Réquillart	Réquillart	PROPN
 ↵↵	↵↵	PUNCTstruct
 Rêveur	rêveur	NOUN
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 Grégoire	Grégoire	PROPN
 regardait	regarder	VERB
 cette	ce	DET
@@ -3819,7 +3820,7 @@ gauche	gauche	NOUN
 ↵↵	↵↵	PUNCTstruct
 Cependant	cependant	ADV
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 Grégoire	Grégoire	PROPN
 acheva	achever	VERB
 tout	tout	ADV
@@ -4202,7 +4203,7 @@ Grégoire	Grégoire	PROPN
 ,	,	PUNCTclause
 que	que	SCONJ
 la	le	DET
-Compagnie	compagnie	NOUN
+Compagnie	Compagnie	NOUN
 vous	vous	PRON
 donnait	donner	VERB
 le	le	DET
@@ -4401,7 +4402,7 @@ n'est-ce pas	n'est-ce pas	ADV
 ?	?	PUNCTsent
 Monsieur	monsieur	NOUN
 et	et	CCONJ
-Madame	madame	NOUN
+Madame	Madame	NOUN
 ,	,	PUNCTclause
 ce	ce	DET
 est	être	AUX

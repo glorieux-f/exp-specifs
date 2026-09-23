@@ -6,10 +6,10 @@
 # title = VI. Le Club social
 
 ↵↵↵	↵↵↵	PUNCTstruct
-VI	VI	ADJ
+		TOKEN
 .	.	PUNCTsent
 Le	le	DET
-Club	club	NOUN
+Club	Club	NOUN
 social	social	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -73,7 +73,7 @@ Chénier	Chénier	PROPN
 allés	aller	VERB
 à	à	ADP
 la	le	DET
-Comédie	comédie	NOUN
+Comédie	Comédie	NOUN
 Française	français	ADJ
 ,	,	PUNCTclause
 pour	pour	ADP
@@ -84,7 +84,7 @@ peu de	peu de	DET
 ce	ce	PRON
 fameux	fameux	ADJ
 Charles	Charles	PROPN
-IX	IX	NUM
+		TOKEN
 dont	dont	PRON
 il	il	PRON
 leur	leur	PRON
@@ -113,7 +113,7 @@ Guillotin	Guillotin	PROPN
 ayant	avoir	AUX
 rendez-vous	rendez-vous	NOUN
 avec	avec	ADP
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 les	le	DET
 électeurs	électeur	NOUN
 —	—	PUNCTclause
@@ -239,7 +239,7 @@ bruyait	bruyait	ADJ
 le	le	DET
 théâtre	théâtre	NOUN
 des	un	ADP_DET
-Variétés	variété	NOUN
+Variétés	Variétés	NOUN
 ,	,	PUNCTclause
 où	où	PRON
 l'	le	DET
@@ -372,7 +372,7 @@ de	de	ADP
 saltimbanques	saltimbanque	NOUN
 et	et	CCONJ
 le	le	DET
-Club	club	NOUN
+Club	Club	NOUN
 social	social	ADJ
 ,	,	PUNCTclause
 transformé	transformer	VERB
@@ -439,7 +439,7 @@ et	et	CCONJ
 du	du	ADP_DET
 rappel	rappel	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 Necker	Necker	PROPN
 commençait	commencer	VERB
 à	à	ADP
@@ -705,7 +705,7 @@ nombreuse	nombreux	ADJ
 réception	réception	NOUN
 chez	chez	ADP
 Son	son	DET
-Altesse	altesse	NOUN
+Altesse	Altesse	NOUN
 ;	;	PUNCTclause
 en outre	en outre	ADV
 ,	,	PUNCTclause
@@ -1213,12 +1213,12 @@ Monsieur	monsieur	NOUN
 voulez	vouloir	VERB
 vous	vous	PRON
 Le	le	DET
-Libertin	libertin	NOUN
+Libertin	Libertin	NOUN
 de	de	ADP
 qualité	qualité	NOUN
 ,	,	PUNCTclause
 par	par	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 le	le	DET
 comte	comte	NOUN
 de	de	ADP
@@ -1238,7 +1238,7 @@ Mes	mon	DET
 Fredaines	Fredaines	PROPN
 ,	,	PUNCTclause
 par	par	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Nerciat	Nerciat	PROPN
 ,	,	PUNCTclause
@@ -1251,7 +1251,7 @@ Monsieur	monsieur	NOUN
 voulez	vouloir	VERB
 vous	vous	PRON
 Le	le	DET
-Compère	compère	NOUN
+Compère	Compère	NOUN
 Mathieu	Mathieu	PROPN
 ,	,	PUNCTclause
 par	par	ADP
@@ -1598,7 +1598,7 @@ Laclos	Laclos	PROPN
 l'	le	DET
 auteur	auteur	NOUN
 des	un	ADP_DET
-Liaisons	liaison	NOUN
+Liaisons	Liaisons	NOUN
 dangereuses	dangereux	ADJ
 ,	,	PUNCTclause
 remplissait	remplir	VERB
@@ -1824,7 +1824,7 @@ l'autre	l'autre	PRON
 ;	;	PUNCTclause
 la	le	DET
 fameuse	fameux	ADJ
-Olympe	Olympe	PROPN
+Olympe	Olympe	NOUN
 de	de	ADP
 Gouges	Gouges	PROPN
 ,	,	PUNCTclause
@@ -1937,7 +1937,7 @@ de	de	ADP
 faire	faire	AUX
 jouer	jouer	VERB
 au	au	ADP_DET
-Théâtre-Français	Théâtre-Français	PROPN
+Théâtre-Français	Théâtre-Français	NOUN
 ,	,	PUNCTclause
 après	après	ADP
 cinq	cinq	NUM
@@ -1955,9 +1955,9 @@ sa	son	DET
 pièce	pièce	NOUN
 de	de	ADP
 l'	le	DET
-Esclavage	esclavage	NOUN
+Esclavage	Esclavage	NOUN
 des	un	ADP_DET
-Noirs	noir	NOUN
+Noirs	Noirs	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
 était	être	AUX
@@ -2022,7 +2022,7 @@ et	et	CCONJ
 les	le	DET
 galeries	galerie	NOUN
 du	du	ADP_DET
-Club	club	NOUN
+Club	Club	NOUN
 social	social	ADJ
 ,	,	PUNCTclause
 converti	convertir	VERB
@@ -2292,8 +2292,8 @@ fait	faire	AUX
 citoyen	citoyen	NOUN
 ,	,	PUNCTclause
 Louis	Louis	PROPN
-XVI	XVI	NUM
-le	le	DET
+		TOKEN
+le	le:PRON	PRON
 fit	faire	AUX
 général	général	ADJ
 .	.	PUNCTsent
@@ -2503,7 +2503,7 @@ ce	ce	PRON
 étaient	être	AUX
 :	:	PUNCTclause
 l'	le	DET
-Abbé	abbé	NOUN
+Abbé	Abbé	NOUN
 Grégoire	Grégoire	PROPN
 ,	,	PUNCTclause
 qui	qui	PRON
@@ -2568,11 +2568,11 @@ l'	le	DET
 avait	avoir	AUX
 envoyé	envoyer	VERB
 son	son	DET
-Histoire	histoire	NOUN
+Histoire	Histoire	NOUN
 philosophique	philosophique	ADJ
 des	un	ADP_DET
 deux	deux	NUM
-Indes	inde	NOUN
+Indes	Indes	NOUN
 ;	;	PUNCTclause
 Condorcet	Condorcet	PROPN
 ,	,	PUNCTclause
@@ -2737,7 +2737,7 @@ occupé	occuper	VERB
 de	de	ADP
 traduire	traduire	VERB
 La	le	DET
-Richesse	richesse	NOUN
+Richesse	Richesse	NOUN
 des	un	ADP_DET
 nations	nation	NOUN
 ,	,	PUNCTclause
@@ -3049,7 +3049,7 @@ entière	entier	ADJ
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Messieurs	messieurs	NOUN
+Messieurs	monsieur	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 Malouet	Malouet	PROPN
@@ -3125,7 +3125,7 @@ il	il	PRON
 jamais	jamais	ADV
 arrivé	arriver	VERB
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 ,	,	PUNCTclause
 quand	quand	SCONJ
 vous	vous	PRON
@@ -3278,7 +3278,7 @@ aux	au	ADP_DET
 caprices	caprice	NOUN
 voluptueux	voluptueux	ADJ
 des	un	ADP_DET
-Européens	européen	NOUN
+Européens	Européens	NOUN
 ,	,	PUNCTclause
 que	que	PRON
 l'on	on	PRON
@@ -4869,15 +4869,15 @@ univers	univers	NOUN
 tout	tout	ADV
 entier	entier	ADJ
 ,	,	PUNCTclause
-Anglais	anglais	NOUN
+Anglais	Anglais	NOUN
 ,	,	PUNCTclause
-Français	français	NOUN
+Français	Français	NOUN
 ,	,	PUNCTclause
 Russes	Russes	PROPN
 ,	,	PUNCTclause
 Allemands	allemand	ADJ
 ,	,	PUNCTclause
-Américains	américain	NOUN
+Américains	Américains	NOUN
 ,	,	PUNCTclause
 Espagnols	espagnol	ADJ
 !	!	PUNCTsent
@@ -5642,7 +5642,7 @@ est	être	AUX
 avec	avec	ADP
 joie	joie	NOUN
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 ,	,	PUNCTclause
 que	que	PRON
 je	je	PRON
@@ -5743,7 +5743,7 @@ raison	raison	NOUN
 Ce	ce	DET
 supplice	supplice	NOUN
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 ,	,	PUNCTclause
 est	être	AUX
 l'	le	DET
@@ -5862,7 +5862,7 @@ imagina	imaginer	VERB
 enfin	enfin	ADV
 que	que	SCONJ
 quelques	quelque	DET
-Noirs	noir	NOUN
+Noirs	Noirs	NOUN
 conspiraient	conspirer	VERB
 pour	pour	ADP
 recouvrer	recouvrer	VERB
@@ -6353,7 +6353,7 @@ seule	seul	ADJ
 exporte	exporter	VERB
 cent	cent	NUM
 mille	mille	NUM
-Noirs	noir	NOUN
+Noirs	Noirs	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 la	le	DET
@@ -7138,7 +7138,7 @@ café	café	NOUN
 trois	trois	NUM
 ou	ou	CCONJ
 quatre	quatre	NUM
-Américains	américain	NOUN
+Américains	Américains	NOUN
 étaient	être	AUX
 assis	asseoir	VERB
 autour de	autour de	ADP
@@ -7640,7 +7640,7 @@ vous	vous	PRON
 n'est-ce pas	n'est-ce pas	ADV
 le	le	DET
 même	même	ADJ
-Créateur	créateur	NOUN
+Créateur	Créateur	NOUN
 qui	qui	PRON
 nous	nous	PRON
 a	avoir	AUX
@@ -7672,7 +7672,7 @@ nous	nous	PRON
 n'est-ce pas	n'est-ce pas	ADV
 le	le	DET
 même	même	ADJ
-Père	père	NOUN
+Père	Père	NOUN
 de	de	ADP
 l'	le	DET
 univers	univers	NOUN
@@ -7961,7 +7961,7 @@ cris	cri	NOUN
 enthousiastes	enthousiaste	ADJ
 de	de	ADP
 «	«	PUNCTclause
-Liberté	liberté	NOUN
+Liberté	Liberté	NOUN
 !	!	PUNCTsent
 liberté	liberté	NOUN
 !	!	PUNCTsent
@@ -8196,7 +8196,7 @@ de	de	ADP
 l'	le	DET
 affranchissement	affranchissement	NOUN
 des	un	ADP_DET
-Noirs	noir	NOUN
+Noirs	Noirs	NOUN
 ,	,	PUNCTclause
 n'est-ce pas	n'est-ce pas	ADV
 ?	?	PUNCTsent

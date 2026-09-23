@@ -281,6 +281,8 @@ class G2(Scorer):
     @property
     def code(self) -> str:
         """Return the filename code."""
+        if self.specificity == 1.0:
+            return g2
         text = f"{self.specificity:.2f}".rstrip("0")
         if text.endswith("."):
             text += "0"

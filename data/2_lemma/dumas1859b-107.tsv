@@ -39,7 +39,7 @@ fonctions	fonction	NOUN
 de	de	ADP
 ministres	ministre	NOUN
 de	de	ADP
-État	état	NOUN
+État	État	NOUN
 :	:	PUNCTclause
 le	le	DET
 duc	duc	NOUN
@@ -50,7 +50,7 @@ archevêque	archevêque	NOUN
 de	de	ADP
 Toulouse	Toulouse	PROPN
 ;	;	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Latil	Latil	PROPN
 ,	,	PUNCTclause
@@ -303,7 +303,7 @@ francs	franc	NOUN
 ↵↵	↵↵	PUNCTstruct
 Ce	ce	PRON
 fut	être	AUX
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Peyronnet	Peyronnet	PROPN
 ,	,	PUNCTclause
@@ -477,13 +477,13 @@ incident	incident	NOUN
 fut	être	AUX
 suscité	susciter	VERB
 par	par	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 Lacretelle	Lacretelle	PROPN
 ,	,	PUNCTclause
 membre	membre	NOUN
 de	de	ADP
 l'	le	DET
-Académie	académie	NOUN
+Académie	Académie	NOUN
 française	français	ADJ
 .	.	PUNCTsent
 Cette	ce	DET
@@ -568,7 +568,7 @@ elle-même	elle-même	PRON
 proposa	proposer	VERB
 à	à	ADP
 l'	le	DET
-Académie	académie	NOUN
+Académie	Académie	NOUN
 française	français	ADJ
 de	de	ADP
 adresser	adresser	VERB
@@ -610,14 +610,14 @@ concerté	concerter	VERB
 cette	ce	DET
 démarche	démarche	NOUN
 avec	avec	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 Villemain	Villemain	PROPN
 .	.	PUNCTsent
 La	le	DET
 majorité	majorité	NOUN
 de	de	ADP
 l'	le	DET
-Académie	académie	NOUN
+Académie	Académie	NOUN
 était	être	AUX
 loin de	loin de	ADP
 être	être	AUX
@@ -708,7 +708,7 @@ lire	lire	VERB
 une	un	DET
 lettre	lettre	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Quélen	Quélen	PROPN
 ,	,	PUNCTclause
@@ -719,7 +719,7 @@ et	et	CCONJ
 membre	membre	NOUN
 de	de	ADP
 l'	le	DET
-Académie	académie	NOUN
+Académie	Académie	NOUN
 ;	;	PUNCTclause
 le	le	DET
 zèle	zèle	NOUN
@@ -808,7 +808,7 @@ sur	sur	ADP
 la	le	DET
 demande	demande	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 Villemain	Villemain	PROPN
 ,	,	PUNCTclause
 que	que	SCONJ
@@ -818,7 +818,7 @@ de	de	ADP
 la	le	DET
 lettre	lettre	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Quélen	Quélen	PROPN
 serait	être	AUX
@@ -846,7 +846,7 @@ envisagés	envisager	VERB
 avec	avec	ADP
 profondeur	profondeur	NOUN
 par	par	ADP
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 de	de	ADP
 Chateaubriand	Chateaubriand	PROPN
 ,	,	PUNCTclause
@@ -885,7 +885,7 @@ l'	le	DET
 auteur	auteur	NOUN
 de	de	ADP
 l'	le	DET
-Histoire	histoire	NOUN
+Histoire	Histoire	NOUN
 des	un	ADP_DET
 Croisades	Croisades	PROPN
 ,	,	PUNCTclause
@@ -963,7 +963,7 @@ supplique	supplique	NOUN
 La	le	DET
 motion	motion	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 Lacretelle	Lacretelle	PROPN
 ne	ne	ADV
 en	en	PRON
@@ -979,9 +979,8 @@ de	de	ADP
 dix-sept	dix-sept	NUM
 voix	voix	NOUN
 contre	contre	ADP
-neuf	neuf	NUM
-.	.	PUNCTsent
-messieurs	messieurs	NOUN
+neuf.	neuf.	DET
+messieurs	monsieur	NOUN
 de	de	ADP
 Châteaubriand	Châteaubriand	PROPN
 ,	,	PUNCTclause
@@ -1019,7 +1018,7 @@ frapper	frapper	VERB
 les	le	DET
 académiciens	académicien	NOUN
 .	.	PUNCTsent
-Chateaubriand	Chateaubriand	PROPN
+Chateaubriand	chateaubriand	NOUN
 était	être	AUX
 invulnérable	invulnérable	ADJ
 ,	,	PUNCTclause
@@ -1050,7 +1049,7 @@ Le	le	DET
 janvier	janvier	NOUN
 parut	paraître	VERB
 au	au	ADP_DET
-Moniteur	moniteur	NOUN
+Moniteur	Moniteur	NOUN
 une	un	DET
 ordonnance	ordonnance	NOUN
 qui	qui	PRON
@@ -1080,7 +1079,7 @@ dramatique	dramatique	ADJ
 Ce	ce	DET
 coup	coup	NOUN
 de	de	ADP
-État	état	NOUN
+État	État	NOUN
 en	en	ADP
 miniature	miniature	NOUN
 ne	ne	ADV
@@ -1106,7 +1105,7 @@ ils	ils	PRON
 occupaient	occuper	VERB
 dans	dans	ADP
 l'	le	DET
-Université	université	NOUN
+Université	Université	NOUN
 ,	,	PUNCTclause
 aller	aller	VERB
 grossir	grossir	VERB
@@ -1168,7 +1167,7 @@ par	par	ADP
 amour	amour	NOUN
 pour	pour	ADP
 Henri	Henri	PROPN
-IV	IV	NUM
+		TOKEN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Mais	mais	CCONJ
@@ -1250,7 +1249,7 @@ réduit	réduire	VERB
 à	à	ADP
 dicter	dicter	VERB
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 Villemain	Villemain	PROPN
 perdait	perdre	VERB
 plus	plus	ADV
@@ -1325,7 +1324,7 @@ la	le	DET
 salle	salle	NOUN
 de	de	ADP
 l'	le	DET
-Institut	institut	NOUN
+Institut	Institut	NOUN
 ,	,	PUNCTclause
 tout le monde	tout le monde	NOUN
 se	se	PRON
@@ -1432,7 +1431,7 @@ de	de	ADP
 loi	loi	NOUN
 dans	dans	ADP
 le	le	DET
-Moniteur	moniteur	NOUN
+Moniteur	Moniteur	NOUN
 ;	;	PUNCTclause
 il	il	PRON
 appela	appeler	VERB
@@ -1476,7 +1475,7 @@ celui	celui	PRON
 du	du	ADP_DET
 collègue	collègue	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Villèle	Villèle	PROPN
 .	.	PUNCTsent
@@ -1485,7 +1484,7 @@ La	le	DET
 supplique	supplique	NOUN
 de	de	ADP
 l'	le	DET
-Académie	académie	NOUN
+Académie	Académie	NOUN
 ne	ne	ADV
 fut	être	AUX
 pas	pas	ADV
@@ -1521,7 +1520,7 @@ librairie	librairie	NOUN
 déposa	déposer	VERB
 à	à	ADP
 la	le	DET
-Chambre	chambre	NOUN
+Chambre	Chambre	NOUN
 leur	leur	PRON
 pétition	pétition	NOUN
 :	:	PUNCTclause
@@ -1717,7 +1716,7 @@ passés	passer	VERB
 ,	,	PUNCTclause
 tandis que	tandis que	SCONJ
 les	le	DET
-Omars	Omars	PROPN
+Omars	Omars	NOUN
 de	de	ADP
 1827	1827	NUM
 prétendaient	prétendre	VERB
@@ -1737,7 +1736,7 @@ plus	plus	ADV
 dévoués	dévouer	VERB
 à	à	ADP
 la	le	DET
-Restauration	restauration	NOUN
+Restauration	Restauration	NOUN
 ,	,	PUNCTclause
 ceux	ceux	PRON
 qui	qui	PRON
@@ -1763,7 +1762,7 @@ dévouement	dévouement	NOUN
 la	le	DET
 famille	famille	NOUN
 des	un	ADP_DET
-Bourbons	bourbon	NOUN
+Bourbons	Bourbons	NOUN
 ,	,	PUNCTclause
 exprimaient	exprimer	VERB
 hautement	hautement	ADV
@@ -2171,7 +2170,7 @@ ambassadeur	ambassadeur	NOUN
 de	de	ADP
 Autriche	Autriche	PROPN
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Apponi	Apponi	PROPN
 ,	,	PUNCTclause
@@ -2180,7 +2179,7 @@ l'	le	DET
 article	article	NOUN
 de	de	ADP
 la	le	DET
-Charte	charte	NOUN
+Charte	Charte	NOUN
 qui	qui	PRON
 disait	dire	VERB
 :	:	PUNCTclause
@@ -2208,7 +2207,7 @@ dans	dans	ADP
 le	le	DET
 salon	salon	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Apponi	Apponi	PROPN
 ,	,	PUNCTclause
@@ -2256,7 +2255,7 @@ poète	poète	NOUN
 Le	le	DET
 jurisconsulte	jurisconsulte	NOUN
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 Dupin	Dupin	PROPN
 aîné	aîné	ADJ
 ,	,	PUNCTclause
@@ -2282,7 +2281,7 @@ impériales	impérial	ADJ
 Le	le	DET
 journal	journal	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 Corbière	Corbière	PROPN
 donnait	donner	VERB
 pleine	plein	ADJ
@@ -2308,7 +2307,7 @@ que	que	SCONJ
 l'	le	DET
 ambassadeur	ambassadeur	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Metternich	Metternich	PROPN
 avait	avoir	AUX
@@ -2323,7 +2322,7 @@ refuser	refuser	VERB
 Le	le	DET
 poète	poète	NOUN
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 Victor	Victor	PROPN
 Hugo	Hugo	PROPN
 —	—	PUNCTclause

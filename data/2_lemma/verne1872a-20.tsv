@@ -6,7 +6,7 @@
 # title = XX. Huit jours au sommet du Scorzef
 
 ↵↵↵	↵↵↵	PUNCTstruct
-XX	XX	NUM
+		TOKEN
 .	.	PUNCTsent
 Huit	Huit	NUM
 jours	jour	NOUN
@@ -98,7 +98,7 @@ très	très	ADV
 occupés	occupé	ADJ
 autour	autour	ADV
 du	du	ADP_DET
-Scorzef	Scorzef	PROPN
+Scorzef	Scorzef	NOUN
 ,	,	PUNCTclause
 ne	ne	ADV
 battraient	battre	VERB
@@ -193,7 +193,7 @@ sur	sur	ADP
 les	le	DET
 flancs	flanc	NOUN
 du	du	ADP_DET
-Scorzef	Scorzef	PROPN
+Scorzef	Scorzef	NOUN
 .	.	PUNCTsent
 Peut-être	peut-être	ADV
 attendaient	attendre	VERB
@@ -266,7 +266,7 @@ entourait	entourer	VERB
 la	le	DET
 base	base	NOUN
 du	du	ADP_DET
-Scorzef	Scorzef	PROPN
+Scorzef	Scorzef	NOUN
 et	et	CCONJ
 rendait	rendre	VERB
 toute	toute	DET
@@ -324,7 +324,7 @@ de	de	ADP
 fuir	fuir	VERB
 .	.	PUNCTsent
 Les	le	DET
-Européens	européen	NOUN
+Européens	Européens	NOUN
 occupaient	occuper	VERB
 un	un	DET
 poste	poste	NOUN
@@ -523,7 +523,7 @@ rigoureuse	rigoureux	ADJ
 la	le	DET
 latitude	latitude	NOUN
 du	du	ADP_DET
-Scorzef	Scorzef	PROPN
+Scorzef	Scorzef	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Une	un	DET
@@ -624,7 +624,7 @@ milles	mille	NOUN
 le	le	DET
 séparait	séparer	VERB
 du	du	ADP_DET
-Scorzef	Scorzef	PROPN
+Scorzef	Scorzef	NOUN
 .	.	PUNCTsent
 La	le	DET
 petite	petit	ADJ
@@ -808,7 +808,7 @@ horizon	horizon	NOUN
 .	.	PUNCTsent
 Les	le	DET
 quatre	quatre	NUM
-Européens	européen	NOUN
+Européens	Européens	NOUN
 ,	,	PUNCTclause
 leurs	leur	DET
 six	six	NUM
@@ -1219,7 +1219,7 @@ le	le	DET
 revers	revers	NOUN
 septentrional	septentrional	ADJ
 du	du	ADP_DET
-Scorzef	Scorzef	PROPN
+Scorzef	Scorzef	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 contemplant	contempler	VERB
@@ -1249,14 +1249,15 @@ prendre	prendre	VERB
 des	un	DET
 oiseaux	oiseau	NOUN
 au	au	ADP_DET
-vol.	vol.	NOUN
+vol	vol	NOUN
+.	.	PUNCTsent
 Mais	mais	CCONJ
 ne	ne	ADV
 désespérons	désespérer	VERB
 point	point	ADV
 .	.	PUNCTsent
 Votre	votre	DET
-Honneur	honneur	NOUN
+Honneur	Honneur	NOUN
 sait	savoir	VERB
 que	que	SCONJ
 le	le	DET
@@ -1399,7 +1400,7 @@ Les	le	DET
 paroles	parole	NOUN
 de	de	ADP
 Son	son	DET
-Honneur	honneur	NOUN
+Honneur	Honneur	NOUN
 étaient	être	AUX
 rassurantes	rassurant	ADJ
 à coup sûr	à coup sûr	ADV
@@ -1480,7 +1481,7 @@ les	le	DET
 plus	plus	ADV
 rapprochées	rapprocher	VERB
 du	du	ADP_DET
-Scorzef	Scorzef	PROPN
+Scorzef	Scorzef	NOUN
 que	que	SCONJ
 les	le	DET
 infiltrations	infiltration	NOUN
@@ -1807,7 +1808,7 @@ les	le	DET
 marins	marin	NOUN
 de	de	ADP
 la	le	DET
-Queen	Queen	PROPN
+Queen	queen	X
 and	and	X
 Tsar	tsar	X
 se	se	PRON
@@ -1941,7 +1942,7 @@ par	par	ADP
 la	le	DET
 latitude	latitude	NOUN
 du	du	ADP_DET
-Scorzef	Scorzef	PROPN
+Scorzef	Scorzef	NOUN
 19	19	NUM
 °	°	SYM
 37	37	NUM
@@ -2269,7 +2270,7 @@ l'	le	DET
 estomac	estomac	NOUN
 de	de	ADP
 un	un	DET
-Anglais	anglais	NOUN
+Anglais	Anglais	NOUN
 .	.	PUNCTsent
 Sir	sir	NOUN
 John	John	PROPN
@@ -2492,7 +2493,7 @@ la	le	DET
 petite	petit	ADJ
 garnison	garnison	NOUN
 du	du	ADP_DET
-Scorzef	Scorzef	PROPN
+Scorzef	Scorzef	NOUN
 mangea	manger	VERB
 son	son	DET
 dernier	dernier	ADJ
@@ -2820,7 +2821,7 @@ Les	le	DET
 marins	marin	NOUN
 de	de	ADP
 la	le	DET
-Queen	Queen	PROPN
+Queen	queen	X
 and	and	X
 Tsar	tsar	X
 avaient	avoir	AUX
@@ -3756,7 +3757,7 @@ Voilà	voilà	ADP
 notre	notre	DET
 rôti	rôti	NOUN
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 le	le	DET
@@ -3832,7 +3833,7 @@ fourmis	fourmi	NOUN
 ,	,	PUNCTclause
 que	que	SCONJ
 les	le	DET
-Hollandais	hollandais	NOUN
+Hollandais	Hollandais	NOUN
 connaissent	connaître	VERB
 aussi	aussi	ADV
 sous	sous	ADP
@@ -3976,7 +3977,7 @@ espoir	espoir	NOUN
 à	à	ADP
 ces	ce	DET
 vaillants	vaillant	ADJ
-Européens	européen	NOUN
+Européens	Européens	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Et	et	CCONJ

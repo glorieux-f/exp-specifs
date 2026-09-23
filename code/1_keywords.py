@@ -8,6 +8,9 @@ Each author corpus is selected by an identifier glob. Scorer statistics such as
 ``df``, ``cf``, collection length and average document length are therefore
 computed inside that author's corpus, not across all five authors.
 
+Keyword candidate filters are applied *after* scoring. They do not alter corpus
+statistics or document lengths.
+
 Each document is written as a two-line block followed by a blank line::
 
     [identifier] creator — date — work — title
@@ -21,6 +24,7 @@ from __future__ import annotations
 import argparse
 from contextlib import ExitStack
 from pathlib import Path
+import unicodedata
 
 import numpy as np
 
@@ -38,6 +42,50 @@ AUTHOR_GLOBS = {
     "verne": "verne*",
     "zola": "zola*",
 }
+
+
+def normalize_word(value: str) -> str:
+    """Return a normalized case-insensitive form for stopword comparison."""
+    return unicodedata.normalize("NFC", value.strip()).casefold()
+
+
+def load_stopwords(path: Path) -> set[str]:
+    """Load a one-entry-per-line stopword file.
+
+    Empty lines, comment lines beginning with ``#``, and the conventional
+    ``__STOPWORDS`` header are ignored. The same loader therefore accepts the
+    current one-column ``gramwords.csv`` as well as a plain ``gramwords.txt``.
+    """
+    words: set[str] = set()
+
+    with path.open("r", encoding="utf-8-sig") as stream:
+        for line in stream:
+            value = line.strip()
+            if not value or value.startswith("#") or value == "__STOPWORDS":
+                continue
+            words.add(normalize_word(value))
+
+    return words
+
+
+def keyword_mask(
+    corpus: Corpus,
+    exclude_capitalized: bool,
+    stopwords: set[str],
+) -> np.ndarray:
+    """Return a boolean mask of terms eligible as keyword candidates."""
+    mask = np.ones(len(corpus.lemmas), dtype=bool)
+    mask[0] = False
+
+    for term_id in range(1, len(corpus.lemmas)):
+        lemma = corpus.lemmas[term_id]
+        if exclude_capitalized and lemma[:1].isupper():
+            mask[term_id] = False
+            continue
+        if stopwords and normalize_word(lemma) in stopwords:
+            mask[term_id] = False
+
+    return mask
 
 
 def rank_terms(
@@ -84,10 +132,18 @@ def clean_text(value: str) -> str:
     return " ".join(value.split())
 
 
-def generate(input_dir: Path, output_dir: Path) -> None:
+def generate(
+    input_dir: Path,
+    output_dir: Path,
+    exclude_capitalized: bool = False,
+    stopwords_path: Path | None = None,
+) -> None:
     """Generate one keyword file per author and scorer."""
     base_corpus = Corpus.load(input_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
+
+    stopwords = load_stopwords(stopwords_path) if stopwords_path else set()
+    candidates = keyword_mask(base_corpus, exclude_capitalized, stopwords)
 
     file_count = 0
     document_count = 0
@@ -114,28 +170,29 @@ def generate(input_dir: Path, output_dir: Path) -> None:
                 doc_id = int(doc_id_value)
                 document = corpus.document(doc_id)
                 term_ids, tf = corpus.terms(doc_id)
-                top_n = min(TOP_N, len(term_ids))
+
+                keep = candidates[term_ids]
+                candidate_terms = term_ids[keep]
+                candidate_tf = tf[keep]
                 header = metadata_line(document)
 
                 for scorer in scorers:
-                    scores = scorer.score_terms(doc_id, term_ids, tf)
-                    candidate_terms = term_ids
-                    candidate_tf = tf
-                    candidate_scores = scores
-                    candidate_top_n = top_n
+                    scores = scorer.score_terms(doc_id, candidate_terms, candidate_tf)
+                    scorer_terms = candidate_terms
+                    scorer_tf = candidate_tf
+                    scorer_scores = scores
 
                     if isinstance(scorer, G2) and scorer.specificity == 2.0:
-                        keep = scores > 0.0
-                        candidate_terms = term_ids[keep]
-                        candidate_tf = tf[keep]
-                        candidate_scores = scores[keep]
-                        candidate_top_n = min(TOP_N, len(candidate_terms))
+                        positive = scores > 0.0
+                        scorer_terms = candidate_terms[positive]
+                        scorer_tf = candidate_tf[positive]
+                        scorer_scores = scores[positive]
 
                     ranked = rank_terms(
-                        candidate_terms,
-                        candidate_tf,
-                        candidate_scores,
-                        candidate_top_n,
+                        scorer_terms,
+                        scorer_tf,
+                        scorer_scores,
+                        min(TOP_N, len(scorer_terms)),
                     )
                     keywords = KEYWORD_SEPARATOR.join(
                         corpus.lemmas[int(term_id)] for term_id in ranked
@@ -153,9 +210,16 @@ def generate(input_dir: Path, output_dir: Path) -> None:
             f"but corpus contains {base_corpus.n_docs}"
         )
 
+    filters = []
+    if exclude_capitalized:
+        filters.append("capitalized")
+    if stopwords_path:
+        filters.append(f"stopwords={stopwords_path}")
+    filter_text = ", ".join(filters) if filters else "none"
+
     print(
         f"Generated {file_count} files for {document_count} documents "
-        f"in {output_dir}"
+        f"in {output_dir}; filters: {filter_text}"
     )
 
 
@@ -185,13 +249,28 @@ def parse_args() -> argparse.Namespace:
         default=default_output,
         help=f"Keyword output directory (default: {default_output})",
     )
+    parser.add_argument(
+        "--exclude-capitalized",
+        action="store_true",
+        help="Exclude lemmas beginning with an uppercase letter from keyword candidates",
+    )
+    parser.add_argument(
+        "--stopwords",
+        type=Path,
+        help="One-entry-per-line stopword file, matched case-insensitively",
+    )
     return parser.parse_args()
 
 
 def main() -> None:
     """Run the keyword experiment."""
     args = parse_args()
-    generate(args.input_dir, args.output_dir)
+    generate(
+        args.input_dir,
+        args.output_dir,
+        exclude_capitalized=args.exclude_capitalized,
+        stopwords_path=args.stopwords,
+    )
 
 
 if __name__ == "__main__":

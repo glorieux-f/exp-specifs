@@ -6,7 +6,7 @@
 # title = XI. Le sphinx rouge.
 
 ↵↵↵	↵↵↵	PUNCTstruct
-XI	XI	NUM
+		TOKEN
 .	.	PUNCTsent
 Le	le	DET
 sphinx	sphinx	NOUN
@@ -54,13 +54,13 @@ Richelieu	Richelieu	PROPN
 Tout	tout	PRON
 au contraire	au contraire	ADV
 des	un	ADP_DET
-Flamands	flamand	NOUN
+Flamands	Flamands	NOUN
 ses	son	DET
 compatriotes	compatriote	NOUN
 ,	,	PUNCTclause
 ou	ou	CCONJ
 des	un	ADP_DET
-Espagnols	espagnol	NOUN
+Espagnols	Espagnols	NOUN
 ses	son	DET
 maîtres	maître	NOUN
 ,	,	PUNCTclause
@@ -450,10 +450,10 @@ ne	ne	ADV
 fait	faire	VERB
 entre	entre	ADP
 Henri	Henri	PROPN
-IV	IV	NUM
+		TOKEN
 et	et	CCONJ
 Louis	Louis	PROPN
-XIV	XIV	NUM
+		TOKEN
 ,	,	PUNCTclause
 pour	pour	ADP
 dominer	dominer	VERB
@@ -507,7 +507,7 @@ pas	pas	ADV
 autre chose	autre chose	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Dieu	Dieu	PROPN
+Dieu	dieu	NOUN
 créa	créer	VERB
 de	de	ADP
 ses	son	DET
@@ -527,7 +527,7 @@ distance	distance	NOUN
 égale	égal	ADJ
 de	de	ADP
 Louis	Louis	PROPN
-XI	XI	NUM
+		TOKEN
 et	et	CCONJ
 de	de	ADP
 Robespierre	Robespierre	PROPN
@@ -539,7 +539,7 @@ les	le	DET
 grand seigneur	grand seigneur	NOUN
 comme	comme	ADP
 Louis	Louis	PROPN
-XI	XI	NUM
+		TOKEN
 avait	avoir	AUX
 abattu	abattre	VERB
 les	le	DET
@@ -676,7 +676,7 @@ chasser	chasser	VERB
 l'	le	DET
 Espagne	Espagne	PROPN
 du	du	ADP_DET
-Milanais	milanais	NOUN
+Milanais	Milanais	NOUN
 ,	,	PUNCTclause
 tuer	tuer	VERB
 l'	le	DET
@@ -737,7 +737,7 @@ historien	historien	NOUN
 Michelet	Michelet	PROPN
 appelle	appeler	VERB
 le	le	DET
-Sphinx	sphinx	NOUN
+Sphinx	Sphinx	NOUN
 rouge	rouge	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -893,8 +893,8 @@ en	en	ADP
 ,	,	PUNCTclause
 où	où	PRON
 Henri	Henri	PROPN
-IV	IV	NUM
-en	en	ADP
+		TOKEN
+en	en	PRON
 était	être	AUX
 en	en	ADP
 1606	1606	NUM
@@ -916,7 +916,7 @@ ce	ce	PRON
 est	être	AUX
 que	que	SCONJ
 Louis	Louis	PROPN
-XIII	XIII	NUM
+Xiii	Xiii	PROPN
 ne	ne	ADV
 aimait	aimer	VERB
 pas	pas	ADV
@@ -1149,7 +1149,7 @@ reine mère	reine mère	NOUN
 ,	,	PUNCTclause
 haï	haïr	VERB
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Soissons	Soissons	PROPN
 que	que	SCONJ
@@ -1198,7 +1198,7 @@ jour	jour	NOUN
 au moins	au moins	ADV
 que	que	SCONJ
 Louis	Louis	PROPN
-XIII	XIII	NUM
+Xiii	Xiii	PROPN
 ,	,	PUNCTclause
 à	à	ADP
 la	le	DET
@@ -1492,7 +1492,7 @@ fois	fois	NOUN
 faites	faire	VERB
 le	le	DET
 entrer	entrer	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Cavois	Cavois	PROPN
 est	être	AUX
@@ -2603,7 +2603,7 @@ abattus	abattre	VERB
 mes	mon	DET
 pieds	pied	NOUN
 ,	,	PUNCTclause
-Monsieur	monsieur	NOUN
+Monsieur	Monsieur	NOUN
 ,	,	PUNCTclause
 la	le	DET
 reine	reine	NOUN
@@ -3285,7 +3285,7 @@ rival	rival	NOUN
 ce	ce	PRON
 est	être	AUX
 un	un	DET
-Vauthier	Vauthier	PROPN
+Vauthier	Vauthier	NOUN
 ;	;	PUNCTclause
 mon	mon	DET
 véritable	véritable	ADJ
@@ -3438,14 +3438,14 @@ eu	avoir	VERB
 combattre	combattre	VERB
 que	que	SCONJ
 Philippe	Philippe	PROPN
-III	III	NUM
+		TOKEN
 ,	,	PUNCTclause
 que	que	SCONJ
 Charles-Emmanuel	Charles-Emmanuel	PROPN
 ,	,	PUNCTclause
 que	que	SCONJ
 Ferdinand	Ferdinand	PROPN
-II	II	NUM
+		TOKEN
 ,	,	PUNCTclause
 c'est-à-dire	c'est-à-dire	CCONJ
 que	que	SCONJ
@@ -3496,7 +3496,7 @@ qui	qui	PRON
 existe	exister	VERB
 entre	entre	ADP
 Sa	son	DET
-Majesté	majesté	NOUN
+Majesté	Majesté	NOUN
 très	très	ADV
 chrétienne	chrétien	ADJ
 et	et	CCONJ
@@ -3852,7 +3852,7 @@ avec	avec	ADP
 les	le	DET
 protestants	protestant	NOUN
 du	du	ADP_DET
-Midi	Midi	PROPN
+Midi	Midi	NOUN
 ?	?	PUNCTsent
 Si	si	SCONJ
 je	je	PRON
@@ -3962,7 +3962,7 @@ le	le	DET
 meurtre	meurtre	NOUN
 de	de	ADP
 Henri	Henri	PROPN
-IV	IV	NUM
+		TOKEN
 ,	,	PUNCTclause
 et	et	CCONJ
 que	que	SCONJ
@@ -4259,7 +4259,7 @@ poète	poète	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Pierre	Pierre	PROPN
+Pierre	pierre	NOUN
 Corneille	Corneille	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -4948,7 +4948,7 @@ comme	comme	ADP
 un	un	DET
 fou	fou	ADJ
 :	:	PUNCTclause
-Voiture	voiture	NOUN
+Voiture	Voiture	NOUN
 et	et	CCONJ
 Brancas	Brancas	PROPN
 ,	,	PUNCTclause
@@ -4995,7 +4995,7 @@ un	un	DET
 timbre	timbre	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Charpentier	Charpentier	PROPN
+Charpentier	charpentier	NOUN
 parut	paraître	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -5147,7 +5147,7 @@ allez	aller	VERB
 aller	aller	VERB
 rue	rue	NOUN
 des	un	ADP_DET
-Frondeurs	frondeur	NOUN
+Frondeurs	Frondeurs	NOUN
 ,	,	PUNCTclause
 entre	entre	ADP
 la	le	DET

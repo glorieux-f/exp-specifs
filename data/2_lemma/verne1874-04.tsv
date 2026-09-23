@@ -6,7 +6,7 @@
 # title = IV
 
 ↵↵↵	↵↵↵	PUNCTstruct
-IV	IV	NOUN
+		TOKEN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
@@ -175,9 +175,9 @@ moins	moins	ADV
 monotone	monotone	ADJ
 .	.	PUNCTsent
 Le	le	DET
-Français	français	NOUN
+Français	Français	NOUN
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 Letourneur	Letourneur	PROPN
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -416,7 +416,7 @@ un	un	DET
 peu	peu	ADV
 effacé	effacer	VERB
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 Letourneur	Letourneur	PROPN
 ,	,	PUNCTclause
 mais	mais	CCONJ
@@ -598,7 +598,7 @@ Je	je	PRON
 viens	venir	VERB
 de	de	ADP
 quitter	quitter	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 André	André	PROPN
 .	.	PUNCTsent
 Vous	vous	PRON
@@ -629,7 +629,7 @@ Kazallon	Kazallon	PROPN
 ,	,	PUNCTclause
 me	me	PRON
 répond	répondre	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 Letourneur	Letourneur	PROPN
 ,	,	PUNCTclause
 dont	dont	PRON
@@ -679,7 +679,7 @@ cher	cher	ADJ
 enfant	enfant	NOUN
 !	!	PUNCTsent
 murmure	murmurer	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 Letourneur	Letourneur	PROPN
 en	en	ADP
 baissant	baisser	VERB
@@ -821,7 +821,7 @@ voir	voir	VERB
 !	!	PUNCTsent
 répond	répondre	VERB
 vivement	vivement	ADV
-M.	M.	PROPN
+M.	M.	NOUN
 Letourneur	Letourneur	PROPN
 .	.	PUNCTsent
 Je	je	PRON
@@ -894,10 +894,10 @@ de	de	ADP
 parcourir	parcourir	VERB
 les	le	DET
 principaux	principal	ADJ
-États	état	NOUN
+États	États	NOUN
 de	de	ADP
 l'	le	DET
-Union	union	NOUN
+Union	Union	NOUN
 .	.	PUNCTsent
 je	je	PRON
 ai	avoir	AUX
@@ -989,7 +989,7 @@ il	il	PRON
 oublie	oublier	VERB
 ,	,	PUNCTclause
 reprend	reprendre	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 Letourneur	Letourneur	PROPN
 en	en	PRON
 me	me	PRON
@@ -1184,7 +1184,7 @@ impressionné	impressionner	VERB
 l'	le	DET
 opinion	opinion	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 Letourneur	Letourneur	PROPN
 est	être	AUX
 ,	,	PUNCTclause
@@ -1236,7 +1236,7 @@ des	un	DET
 actes	acte	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Robert	Robert	PROPN
+Robert	robert	NOUN
 Kurtis	Kurtis	PROPN
 vient	venir	VERB
 de	de	ADP
@@ -1323,7 +1323,7 @@ se	se	PRON
 intéresse	intéresser	VERB
 au	au	ADP_DET
 jeune	jeune	ADJ
-Letourneur	Letourneur	PROPN
+Letourneur	Letourneur	NOUN
 et	et	CCONJ
 se	se	PRON
 empresse	empresser	VERB
@@ -1368,7 +1368,7 @@ vois	voir	VERB
 que	que	SCONJ
 le	le	DET
 jeune	jeune	ADJ
-Letourneur	Letourneur	PROPN
+Letourneur	Letourneur	NOUN
 aime	aimer	VERB
 à	à	ADP
 causer	causer	VERB
@@ -1376,7 +1376,7 @@ avec	avec	ADP
 lui	lui	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Robert	Robert	PROPN
+Robert	robert	NOUN
 Kurtis	Kurtis	PROPN
 nous	nous	PRON
 donne	donner	VERB
@@ -1397,17 +1397,16 @@ que	que	ADV
 des	un	DET
 relations	relation	NOUN
 fort	fort	ADJ
-imparfaites	imparfait	ADJ
-.	.	PUNCTsent
+imparfaites.	imparfaites.	PUNCT
 ↵↵	↵↵	PUNCTstruct
 monsieur	monsieur	NOUN
 et	et	CCONJ
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 .	.	PUNCTsent
 Kear	Kear	PROPN
 sont	être	AUX
 deux	deux	NUM
-Américains	américain	NOUN
+Américains	Américains	NOUN
 du	du	ADP_DET
 North-Amérique	North-Amérique	PROPN
 ,	,	PUNCTclause
@@ -1445,6 +1444,7 @@ des	un	ADP_DET
 Mais	mais	CCONJ
 ce	ce	PRON
 monsieur	monsieur	NOUN
+.	.	PUNCTsent
 Kear	Kear	PROPN
 ,	,	PUNCTclause
 homme	homme	NOUN
@@ -1590,7 +1590,7 @@ des	un	ADP_DET
 transatlantiques	transatlantique	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 .	.	PUNCTsent
 Kear	Kear	PROPN
 est	être	AUX
@@ -1672,7 +1672,7 @@ miss	miss	NOUN
 Herbey	Herbey	PROPN
 ,	,	PUNCTclause
 jeune	jeune	ADJ
-Anglaise	anglais	NOUN
+Anglaise	Anglaise	NOUN
 de	de	ADP
 vingt	vingt	NUM
 ans	an	NOUN
@@ -1825,7 +1825,7 @@ dans	dans	ADP
 la	le	DET
 Caroline	Caroline	PROPN
 du	du	ADP_DET
-Sud	sud	NOUN
+Sud	Sud	NOUN
 et	et	CCONJ
 va	aller	VERB
 chercher	chercher	VERB

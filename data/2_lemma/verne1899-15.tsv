@@ -6,7 +6,7 @@
 # title = XV. La situation au 27 mai
 
 ↵↵↵	↵↵↵	PUNCTstruct
-XV	XV	NUM
+		TOKEN
 .	.	PUNCTsent
 La	le	DET
 situation	situation	NOUN
@@ -124,7 +124,7 @@ par	par	ADP
 les	le	DET
 initiales	initial	NOUN
 X	X	NUM
-K	K	PROPN
+K	K	NOUN
 Z.	Z.	PUNCT
 Ce	ce	DET
 nouveau	nouveau	ADJ
@@ -180,7 +180,7 @@ l'	le	DET
 Le	le	DET
 sieur	sieur	NOUN
 X	X	NUM
-K	K	PROPN
+K	K	NOUN
 Z	Z	PROPN
 —	—	PUNCTclause
 l'	le	DET
@@ -273,7 +273,7 @@ obligeait	obliger	VERB
 le	le	DET
 sieur	sieur	NOUN
 X	X	NUM
-K	K	PROPN
+K	K	NOUN
 Z	Z	PROPN
 à	à	ADP
 se	se	PRON
@@ -496,7 +496,7 @@ On	on	PRON
 espérait	espérer	VERB
 reconnaître	reconnaître	VERB
 cet	ce	DET
-X	X	PROPN
+X	X	NOUN
 K	K	PROPN
 Z	Z	PROPN
 à	à	ADP
@@ -639,7 +639,7 @@ côté	côté	NOUN
 mystérieux	mystérieux	ADJ
 de	de	ADP
 cet	ce	DET
-X	X	PROPN
+X	X	NOUN
 K	K	PROPN
 Z	Z	PROPN
 ,	,	PUNCTclause
@@ -685,7 +685,7 @@ en	en	PRON
 tenir	tenir	VERB
 sur	sur	ADP
 cet	ce	DET
-X	X	PROPN
+X	X	NOUN
 K	K	PROPN
 Z	Z	PROPN
 !…	!…	PUNCTsent
@@ -881,7 +881,7 @@ restante	restant	ADJ
 aux	au	ADP_DET
 initiales	initial	NOUN
 X	X	NUM
-K	K	PROPN
+K	K	NOUN
 Z	Z	PROPN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -983,7 +983,7 @@ l'	le	DET
 identité	identité	NOUN
 de	de	ADP
 cet	ce	DET
-X	X	PROPN
+X	X	NOUN
 K	K	PROPN
 Z.	Z.	PROPN
 Au	au	ADP_DET
@@ -1126,7 +1126,7 @@ les	le	DET
 cours	cours	NOUN
 de	de	ADP
 la	le	DET
-Bourse	bourse	NOUN
+Bourse	Bourse	NOUN
 .	.	PUNCTsent
 non seulement	non seulement	ADV
 à	à	ADP
@@ -1136,7 +1136,7 @@ un	un	DET
 chroniqueur	chroniqueur	NOUN
 baptisa	baptiser	VERB
 «	«	PUNCTclause
-Ville	ville	NOUN
+Ville	Ville	NOUN
 de	de	ADP
 paris	pari	NOUN
 »	»	PUNCTclause
@@ -1148,7 +1148,7 @@ grandes	grand	ADJ
 villes	ville	NOUN
 de	de	ADP
 l'	le	DET
-Union	union	NOUN
+Union	Union	NOUN
 ,	,	PUNCTclause
 mais	mais	CCONJ
 dans	dans	ADP
@@ -1272,7 +1272,7 @@ Hodge	Hodge	PROPN
 Urrican	Urrican	PROPN
 et	et	CCONJ
 X	X	NUM
-K	K	PROPN
+K	K	NOUN
 Z	Z	PROPN
 seraient	être	AUX
 les	le	DET
@@ -1318,7 +1318,8 @@ chances	chance	NOUN
 de	de	ADP
 tel	tel	DET
 ou	ou	CCONJ
-tel.	tel.	DET
+tel	tel	DET
+.	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Il	il	PRON
 va	aller	VERB
@@ -1346,7 +1347,7 @@ se	se	PRON
 ramifiait	ramifier	VERB
 à travers	à travers	ADP
 le	le	DET
-Dominion	dominion	NOUN
+Dominion	Dominion	NOUN
 ,	,	PUNCTclause
 par	par	ADP
 Québec	Québec	PROPN
@@ -1372,7 +1373,7 @@ Mexique	Mexique	PROPN
 vers	vers	ADP
 les	le	DET
 petits	petit	ADJ
-États	état	NOUN
+États	États	NOUN
 baignés	baigner	VERB
 des	un	DET
 eaux	eau	NOUN
@@ -1387,7 +1388,7 @@ sur	sur	ADP
 l'	le	DET
 Amérique	Amérique	PROPN
 du	du	ADP_DET
-Sud	sud	NOUN
+Sud	Sud	NOUN
 ,	,	PUNCTclause
 la	le	DET
 Colombie	Colombie	PROPN
@@ -1399,7 +1400,7 @@ le	le	DET
 Brésil	Brésil	PROPN
 ,	,	PUNCTclause
 la	le	DET
-République	République	PROPN
+République	République	NOUN
 Argentine	Argentine	PROPN
 ,	,	PUNCTclause
 le	le	DET
@@ -1635,7 +1636,7 @@ sa	son	DET
 correspondance	correspondance	NOUN
 quotidienne	quotidien	ADJ
 .	.	PUNCTsent
-Max	Max	PROPN
+Max	max	NOUN
 Réal	Réal	PROPN
 ,	,	PUNCTclause
 avec	avec	ADP
@@ -1900,7 +1901,7 @@ partenaire	partenaire	NOUN
 Restait	rester	VERB
 enfin	enfin	ADV
 X	X	NUM
-K	K	PROPN
+K	K	NOUN
 Z	Z	PROPN
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -2108,10 +2109,10 @@ avait	avoir	AUX
 distribué	distribuer	VERB
 les	le	DET
 divers	divers	ADJ
-États	état	NOUN
+États	États	NOUN
 de	de	ADP
 l'	le	DET
-Union	union	NOUN
+Union	Union	NOUN
 sur	sur	ADP
 sa	son	DET
 carte	carte	NOUN
@@ -2124,7 +2125,7 @@ arbitraire	arbitraire	ADJ
 en effet	en effet	ADV
 ,	,	PUNCTclause
 ces	ce	DET
-États	état	NOUN
+États	États	NOUN
 ne	ne	ADV
 étaient	être	AUX
 placés	placer	VERB
@@ -2234,7 +2235,7 @@ Wisconsin	Wisconsin	PROPN
 que	que	SCONJ
 le	le	DET
 mystérieux	mystérieux	ADJ
-X	X	PROPN
+X	X	NOUN
 K	K	PROPN
 Z	Z	PROPN
 devait	devoir	VERB
@@ -2385,7 +2386,7 @@ y	y	PRON
 voir	voir	VERB
 ce	ce	DET
 mystérieux	mystérieux	ADJ
-X	X	PROPN
+X	X	NOUN
 K	K	PROPN
 Z.	Z.	PROPN
 ↵↵	↵↵	PUNCTstruct
@@ -2463,7 +2464,7 @@ coup	coup	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 X	X	NUM
-K	K	PROPN
+K	K	NOUN
 Z	Z	PROPN
 étant	être	AUX
 à	à	ADP
@@ -2553,7 +2554,7 @@ premier	premier	ADJ
 coup	coup	NOUN
 ,	,	PUNCTclause
 un	un	DET
-État	état	NOUN
+État	État	NOUN
 limitrophe	limitrophe	ADJ
 de	de	ADP
 l'	le	DET
@@ -2564,7 +2565,7 @@ second	second	ADJ
 coup	coup	NOUN
 ,	,	PUNCTclause
 trois	trois	NUM
-États	état	NOUN
+États	États	NOUN
 seulement	seulement	ADV
 à	à	ADP
 traverser	traverser	VERB
@@ -2726,7 +2727,7 @@ dépêche	dépêche	NOUN
 aux	au	ADP_DET
 initiales	initial	NOUN
 X	X	NUM
-K	K	PROPN
+K	K	NOUN
 Z	Z	PROPN
 ?…	?…	PUNCTsent
 demande	demander	VERB
@@ -2997,7 +2998,7 @@ la	le	DET
 partie	partie	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Max	Max	PROPN
+Max	max	NOUN
 Réal	Réal	PROPN
 ,	,	PUNCTclause
 le	le	DET
@@ -3018,7 +3019,7 @@ la	le	DET
 vingt-huitième	vingt-huitième	ADJ
 case	case	NOUN
 ,	,	PUNCTclause
-État	état	NOUN
+État	État	NOUN
 de	de	ADP
 Wyoming	Wyoming	PROPN
 .	.	PUNCTsent
@@ -3043,7 +3044,7 @@ la	le	DET
 trente-cinquième	trente-cinquième	ADJ
 case	case	NOUN
 ,	,	PUNCTclause
-État	état	NOUN
+État	État	NOUN
 de	de	ADP
 l'	le	DET
 Ohio	Ohio	PROPN
@@ -3075,7 +3076,7 @@ la	le	DET
 4e	4e	ADJ
 case	case	NOUN
 ,	,	PUNCTclause
-État	état	NOUN
+État	État	NOUN
 de	de	ADP
 l'	le	DET
 Utah	Utah	PROPN
@@ -3105,7 +3106,7 @@ la	le	DET
 vingt-deuxième	vingt-deuxième	ADJ
 case	case	NOUN
 ,	,	PUNCTclause
-État	état	NOUN
+État	État	NOUN
 de	de	ADP
 South	South	PROPN
 Carolina	Carolina	PROPN
@@ -3131,7 +3132,7 @@ la	le	DET
 trente-huitième	trente-huitième	ADJ
 case	case	NOUN
 ,	,	PUNCTclause
-État	état	NOUN
+État	État	NOUN
 de	de	ADP
 Kentucky	Kentucky	PROPN
 .	.	PUNCTsent
@@ -3182,7 +3183,7 @@ la	le	DET
 cinquante-huitième	cinquante-huitième	ADJ
 case	case	NOUN
 ,	,	PUNCTclause
-État	état	NOUN
+État	État	NOUN
 de	de	ADP
 Californie	Californie	PROPN
 ,	,	PUNCTclause
@@ -3201,7 +3202,7 @@ partie	partie	NOUN
 ↵↵	↵↵	PUNCTstruct
 Enfin	enfin	ADV
 X	X	NUM
-K	K	PROPN
+K	K	NOUN
 Z	Z	PROPN
 ,	,	PUNCTclause
 le	le	DET
@@ -3374,7 +3375,7 @@ l'	le	DET
 orangé	orangé	ADJ
 ,	,	PUNCTclause
 X	X	NUM
-K	K	PROPN
+K	K	NOUN
 Z	Z	PROPN
 le	le	DET
 rouge	rouge	NOUN

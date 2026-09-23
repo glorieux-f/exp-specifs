@@ -6,7 +6,7 @@
 # title = VI. Le verdict
 
 ↵↵↵	↵↵↵	PUNCTstruct
-VI	VI	ADJ
+		TOKEN
 .	.	PUNCTsent
 Le	le	DET
 verdict	verdict	NOUN
@@ -207,7 +207,7 @@ criminelle	criminel	ADJ
 La	le	DET
 lettre	lettre	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 Zieger	Zieger	PROPN
 ,	,	PUNCTclause
 l'	le	DET
@@ -312,7 +312,7 @@ de	de	ADP
 l'	le	DET
 audience	audience	NOUN
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 Hawkins	Hawkins	PROPN
 sentait	sentir	VERB
 se	se	PRON
@@ -414,7 +414,7 @@ mur	mur	NOUN
 ↵↵	↵↵	PUNCTstruct
 D'ailleurs	d'ailleurs	ADV
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 Hawkins	Hawkins	PROPN
 évitait	éviter	VERB
 de	de	ADP
@@ -514,7 +514,7 @@ jamais	jamais	ADV
 même	même	ADV
 ,	,	PUNCTclause
 comme	comme	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 Hawkins	Hawkins	PROPN
 ,	,	PUNCTclause
 de	de	ADP
@@ -693,7 +693,7 @@ depuis	depuis	ADP
 l'	le	DET
 audience	audience	NOUN
 du	du	ADP_DET
-Conseil	conseil	NOUN
+Conseil	Conseil	NOUN
 maritime	maritime	ADJ
 où	où	PRON
 Flig	Flig	PROPN
@@ -839,13 +839,13 @@ du	du	ADP_DET
 février	février	NOUN
 devant	devant	ADP
 la	le	DET
-Cour	cour	NOUN
+Cour	Cour	NOUN
 criminelle	criminel	ADJ
 de	de	ADP
 Hobart-Town	Hobart-Town	PROPN
 .	.	PUNCTsent
 Cette	ce	DET
-Cour	cour	NOUN
+Cour	Cour	NOUN
 se	se	PRON
 composait	composer	VERB
 de	de	ADP
@@ -960,15 +960,15 @@ figuraient	figurer	VERB
 au	au	ADP_DET
 procès	procès	NOUN
 du	du	ADP_DET
-Conseil	conseil	NOUN
+Conseil	Conseil	NOUN
 maritime	maritime	ADJ
 se	se	PRON
 retrouvèrent	retrouver	VERB
 devant	devant	ADP
 la	le	DET
-Cour	cour	NOUN
+Cour	Cour	NOUN
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 Hawkins	Hawkins	PROPN
 ,	,	PUNCTclause
 Nat	Nat	PROPN
@@ -1662,7 +1662,7 @@ manquait	manquer	VERB
 ,	,	PUNCTclause
 envoyée	envoyer	VERB
 par	par	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 Zieger	Zieger	PROPN
 ,	,	PUNCTclause
 se	se	PRON
@@ -1714,7 +1714,7 @@ aurions	avoir	AUX
 montrée	montrer	VERB
 soit	soit	ADV
 à	à	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 Hawkins	Hawkins	PROPN
 ,	,	PUNCTclause
 soit	soit	CCONJ
@@ -1997,7 +1997,7 @@ vouloir	vouloir	VERB
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 Lorsque	lorsque	SCONJ
-M.	M.	PROPN
+M.	M.	NOUN
 Hawkins	Hawkins	PROPN
 se	se	PRON
 présenta	présenter	VERB
@@ -2517,7 +2517,7 @@ inquiet	inquiet	ADJ
 cherchait	chercher	VERB
 celui	celui	PRON
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 Hawkins	Hawkins	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -2593,7 +2593,8 @@ kriss	kriss	NOUN
 qui	qui	PRON
 appartenait	appartenir	VERB
 à	à	ADP
-messieurs	messieurs	NOUN
+		TOKEN
+.	.	PUNCTsent
 Kip	Kip	PROPN
 …	…	PUNCTsent
 »	»	PUNCTclause
@@ -2723,7 +2724,8 @@ Dans	dans	ADP
 la	le	DET
 cabine	cabine	NOUN
 de	de	ADP
-messieurs	messieurs	NOUN
+		TOKEN
+.	.	PUNCTsent
 Kip	Kip	PROPN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -3027,7 +3029,7 @@ est	être	AUX
 pas	pas	ADV
 jusque	jusque	ADP
 à	à	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 Hawkins	Hawkins	PROPN
 qui	qui	PRON
 ne	ne	ADV
@@ -3172,11 +3174,11 @@ termes	terme	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Messieurs	messieurs	NOUN
+Messieurs	monsieur	NOUN
 les	le	DET
 juges	juge	NOUN
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 les	le	DET
 jurés	juré	NOUN
 ,	,	PUNCTclause
@@ -3208,7 +3210,7 @@ repousser	repousser	VERB
 l'	le	DET
 attaque	attaque	NOUN
 des	un	ADP_DET
-Papouas	Papouas	PROPN
+Papouas	Papouas	NOUN
 à	à	ADP
 la	le	DET
 hauteur	hauteur	NOUN
@@ -3270,7 +3272,7 @@ Gibson	Gibson	PROPN
 hé	hé	INTJ
 bien	bien	ADV
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 ,	,	PUNCTclause
 jusqu'ici	jusqu'ici	ADV
 ,	,	PUNCTclause
@@ -3452,7 +3454,7 @@ coulèrent	couler	VERB
 des	un	DET
 yeux	œil	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 Hawkins	Hawkins	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -4154,7 +4156,7 @@ enfant	enfant	NOUN
 !	!	PUNCTsent
 »	»	PUNCTclause
 répondit	répondre	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 Hawkins	Hawkins	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct

@@ -6,7 +6,7 @@
 # title = VI
 
 ↵↵↵	↵↵↵	PUNCTstruct
-VI	VI	ADJ
+		TOKEN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Le	le	DET
@@ -206,7 +206,7 @@ grandes	grand	ADJ
 idées	idée	NOUN
 .	.	PUNCTsent
 Ainsi	ainsi	ADV
-Constantin	Constantin	PROPN
+Constantin	Constantin	NOUN
 ,	,	PUNCTclause
 destiné	destiner	VERB
 à	à	ADP
@@ -243,7 +243,7 @@ Occident	Occident	PROPN
 fut	être	AUX
 environné	environner	VERB
 de	de	ADP
-Anglais	anglais	NOUN
+Anglais	Anglais	NOUN
 .	.	PUNCTsent
 quant à	quant à	ADP
 professeur	professeur	NOUN
@@ -381,7 +381,7 @@ plus	plus	ADV
 petit	petit	ADJ
 »	»	PUNCTclause
 ;	;	PUNCTclause
-Constantin	Constantin	PROPN
+Constantin	Constantin	NOUN
 répondait	répondre	VERB
 à	à	ADP
 Saken	Saken	PROPN
@@ -594,7 +594,7 @@ sa	son	DET
 défaite	défaite	NOUN
 dans	dans	ADP
 les	le	DET
-Alpes	alpe	NOUN
+Alpes	Alpes	NOUN
 .	.	PUNCTsent
 Un	un	DET
 pareil	pareil	NOUN
@@ -1645,7 +1645,7 @@ tête	tête	NOUN
 et	et	CCONJ
 un	un	DET
 vieux	vieux	ADJ
-Cosaque	cosaque	NOUN
+Cosaque	Cosaque	NOUN
 de	de	ADP
 Ukraine	Ukraine	PROPN
 ,	,	PUNCTclause
@@ -1812,7 +1812,7 @@ rappela	rappeler	VERB
 la	le	DET
 prédiction	prédiction	NOUN
 du	du	ADP_DET
-Cosaque	cosaque	NOUN
+Cosaque	Cosaque	NOUN
 ;	;	PUNCTclause
 il	il	PRON
 vit	vivre	VERB
@@ -1859,7 +1859,7 @@ restait	rester	VERB
 celui	celui	PRON
 de	de	ADP
 l'	le	DET
-Empereur	empereur	NOUN
+Empereur	Empereur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Celui	celui	PRON
@@ -2201,7 +2201,7 @@ montrai	montrer	VERB
 ma	mon	DET
 lettre	lettre	NOUN
 pour	pour	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Rodna	Rodna	PROPN
 ,	,	PUNCTclause
@@ -2313,7 +2313,7 @@ dicter	dicter	VERB
 une	un	DET
 dépêche	dépêche	NOUN
 à	à	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Rodna	Rodna	PROPN
 assis	asseoir	VERB
@@ -2429,7 +2429,7 @@ des	un	ADP_DET
 régiments	régiment	NOUN
 de	de	ADP
 Sa	son	DET
-Majesté	majesté	NOUN
+Majesté	Majesté	NOUN
 Impériale	impérial	ADJ
 mon	mon	DET
 frère	frère	NOUN
@@ -2497,7 +2497,7 @@ penses	penser	VERB
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
 Votre	votre	DET
-Altesse	altesse	NOUN
+Altesse	Altesse	NOUN
 Impériale	impérial	ADJ
 sait	savoir	VERB
 que	que	SCONJ
@@ -2638,7 +2638,7 @@ est	être	AUX
 selon	selon	ADP
 comme	comme	SCONJ
 Votre	votre	DET
-Altesse	altesse	NOUN
+Altesse	Altesse	NOUN
 Impériale	impérial	ADJ
 désirerait	désirer	VERB
 que	que	PRON
@@ -2743,13 +2743,13 @@ permet	permettre	VERB
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
 Mon	mon	DET
-Altesse	altesse	NOUN
+Altesse	Altesse	NOUN
 ne	ne	ADV
 permet	permettre	VERB
 pas	pas	ADV
 ,	,	PUNCTclause
 mon	mon	DET
-Altesse	altesse	NOUN
+Altesse	Altesse	NOUN
 veut	vouloir	VERB
 que	que	SCONJ
 tu	tu	PRON
@@ -2815,7 +2815,7 @@ peu	peu	ADV
 ce	ce	PRON
 est	être	AUX
 Votre	votre	DET
-Altesse	altesse	NOUN
+Altesse	Altesse	NOUN
 qui	qui	PRON
 me	me	PRON
 y	y	PRON
@@ -2977,7 +2977,7 @@ donc	donc	ADV
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
 Votre	votre	DET
-Altesse	altesse	NOUN
+Altesse	Altesse	NOUN
 ,	,	PUNCTclause
 le	le	DET
 respect	respect	NOUN
@@ -3043,7 +3043,7 @@ Je	je	PRON
 crois	croire	VERB
 que	que	SCONJ
 Votre	votre	DET
-Altesse	altesse	NOUN
+Altesse	Altesse	NOUN
 ne	ne	ADV
 me	me	PRON
 ménage	ménager	VERB
@@ -3119,14 +3119,15 @@ ai	avoir	AUX
 touché	toucher	VERB
 deux fois	deux fois	ADV
 sur	sur	ADP
-septembre	septembre	NOUN
+sept	sept	NUM
+.	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
 deux fois	deux fois	ADV
 sur	sur	ADP
 dix	dix	NUM
 ,	,	PUNCTclause
-Monseigneur	monseigneur	NOUN
+Monseigneur	Monseigneur	NOUN
 ,	,	PUNCTclause
 répondis	répondre	VERB
 je	je	PRON
@@ -3388,7 +3389,7 @@ allez	aller	VERB
 —	—	PUNCTclause
 Mais	mais	CCONJ
 ,	,	PUNCTclause
-Monseigneur	monseigneur	NOUN
+Monseigneur	Monseigneur	NOUN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
@@ -3408,7 +3409,7 @@ ne	ne	ADV
 recule	reculer	VERB
 pas	pas	ADV
 ,	,	PUNCTclause
-Monseigneur	monseigneur	NOUN
+Monseigneur	Monseigneur	NOUN
 et	et	CCONJ
 ,	,	PUNCTclause
 contre	contre	ADP
@@ -3864,7 +3865,7 @@ plaisanterie	plaisanterie	NOUN
 demandai	demander	VERB
 je	je	PRON
 à	à	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Rodna	Rodna	PROPN
 .	.	PUNCTsent
@@ -4028,7 +4029,7 @@ me	me	PRON
 en	en	PRON
 eût	avoir	AUX
 dit	dire	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Rodna	Rodna	PROPN
 ,	,	PUNCTclause
@@ -4542,7 +4543,7 @@ grand-duc	grand-duc	NOUN
 —	—	PUNCTclause
 Voilà	voilà	ADP
 ,	,	PUNCTclause
-Monseigneur	monseigneur	NOUN
+Monseigneur	Monseigneur	NOUN
 ,	,	PUNCTclause
 lui	lui	PRON
 dis	dire	VERB
@@ -4656,7 +4657,7 @@ le	le	DET
 soussigné	soussigné	ADJ
 à	à	ADP
 Sa	son	DET
-Majesté	majesté	NOUN
+Majesté	Majesté	NOUN
 Impériale	impérial	ADJ
 ,	,	PUNCTclause
 le	le	DET
@@ -4691,7 +4692,7 @@ remets	remettre	VERB
 la	le:PRON	PRON
 à	à	ADP
 l'	le	DET
-Empereur	empereur	NOUN
+Empereur	Empereur	NOUN
 lui-même	lui-même	PRON
 .	.	PUNCTsent
 il y a	il y a	VERB
@@ -4835,7 +4836,7 @@ Selo	Selo	PROPN
 que	que	PRON
 habitait	habiter	VERB
 l'	le	DET
-Empereur	empereur	NOUN
+Empereur	Empereur	NOUN
 ,	,	PUNCTclause
 décidé	décider	VERB
 à	à	ADP

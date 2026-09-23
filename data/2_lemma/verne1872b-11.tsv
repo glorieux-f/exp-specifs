@@ -6,7 +6,7 @@
 # title = XI. Où Phileas Fogg achète une monture à un prix fabuleux
 
 ↵↵↵	↵↵↵	PUNCTstruct
-XI	XI	NUM
+		TOKEN
 .	.	PUNCTsent
 Où	où	PRON
 Phileas	Phileas	PROPN
@@ -101,6 +101,7 @@ des	un	ADP_DET
 partenaires	partenaire	NOUN
 de	de	ADP
 monsieur	monsieur	NOUN
+.	.	PUNCTsent
 Fogg	Fogg	PROPN
 pendant	pendant	ADP
 la	le	DET
@@ -686,6 +687,7 @@ programme	programme	NOUN
 ,	,	PUNCTclause
 répondit	répondre	VERB
 monsieur	monsieur	NOUN
+.	.	PUNCTsent
 Fogg	Fogg	PROPN
 .	.	PUNCTsent
 Je	je	PRON
@@ -817,6 +819,7 @@ Francis	Francis	PROPN
 ,	,	PUNCTclause
 répondit	répondre	VERB
 monsieur	monsieur	NOUN
+.	.	PUNCTsent
 Fogg	Fogg	PROPN
 ,	,	PUNCTclause
 il	il	PRON
@@ -1229,7 +1232,7 @@ la	le	DET
 déesse	déesse	NOUN
 de	de	ADP
 la	le	DET
-Mort	mort	NOUN
+Mort	Mort	NOUN
 ,	,	PUNCTclause
 des	un	DET
 victimes	victime	NOUN
@@ -1538,6 +1541,7 @@ moins	moins	ADV
 flegmatique	flegmatique	ADJ
 que	que	SCONJ
 monsieur	monsieur	NOUN
+.	.	PUNCTsent
 Fogg	Fogg	PROPN
 ,	,	PUNCTclause
 il	il	PRON
@@ -1568,6 +1572,7 @@ et	et	CCONJ
 blâmait	blâmer	VERB
 in petto	in petto	ADV
 monsieur	monsieur	NOUN
+.	.	PUNCTsent
 Fogg	Fogg	PROPN
 de	de	ADP
 ne	ne	ADV
@@ -2174,6 +2179,7 @@ Francis	Francis	PROPN
 dit	dire	VERB
 simplement	simplement	ADV
 monsieur	monsieur	NOUN
+.	.	PUNCTsent
 Fogg	Fogg	PROPN
 ,	,	PUNCTclause
 nous	nous	PRON
@@ -2415,9 +2421,11 @@ palanquins	palanquin	NOUN
 ,	,	PUNCTclause
 poneys	poney	NOUN
 ,	,	PUNCTclause
-etc.	etc.	NOUN
+etc	etc	ADV
+.	.	PUNCTsent
 Aussi	aussi	ADV
 monsieur	monsieur	NOUN
+.	.	PUNCTsent
 Fogg	Fogg	PROPN
 et	et	CCONJ
 Sir	Sir	PROPN
@@ -2523,7 +2531,7 @@ qui	qui	PRON
 appartient	appartenir	VERB
 à	à	ADP
 un	un	DET
-Indien	indien	NOUN
+Indien	Indien	NOUN
 logé	loger	VERB
 à	à	ADP
 cent	cent	NUM
@@ -2540,6 +2548,7 @@ l'	le	DET
 ,	,	PUNCTclause
 répondit	répondre	VERB
 monsieur	monsieur	NOUN
+.	.	PUNCTsent
 Fogg	Fogg	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -2575,7 +2584,7 @@ hutte	hutte	NOUN
 ,	,	PUNCTclause
 il y a	il y a	VERB
 un	un	DET
-Indien	indien	NOUN
+Indien	Indien	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 dans	dans	ADP
@@ -2590,9 +2599,10 @@ leur	leur	DET
 demande	demande	NOUN
 ,	,	PUNCTclause
 l'	le	DET
-Indien	indien	NOUN
+Indien	Indien	NOUN
 introduisit	introduire	VERB
 monsieur	monsieur	NOUN
+.	.	PUNCTsent
 Fogg	Fogg	PROPN
 et	et	CCONJ
 ses	son	DET
@@ -2715,6 +2725,7 @@ Très	très	ADV
 heureusement	heureusement	ADV
 pour	pour	ADP
 monsieur	monsieur	NOUN
+.	.	PUNCTsent
 Fogg	Fogg	PROPN
 ,	,	PUNCTclause
 l'	le	DET
@@ -2857,11 +2868,12 @@ extrêmes	extrême	ADJ
 et	et	CCONJ
 lorsque	lorsque	SCONJ
 monsieur	monsieur	NOUN
+.	.	PUNCTsent
 Fogg	Fogg	PROPN
 demanda	demander	VERB
 à	à	ADP
 l'	le	DET
-Indien	indien	NOUN
+Indien	Indien	NOUN
 si	si	SCONJ
 il	il	PRON
 voulait	vouloir	VERB
@@ -2871,7 +2883,7 @@ son	son	DET
 éléphant	éléphant	NOUN
 ,	,	PUNCTclause
 l'	le	DET
-Indien	indien	NOUN
+Indien	Indien	NOUN
 refusa	refuser	VERB
 net	net	ADV
 .	.	PUNCTsent
@@ -2891,7 +2903,7 @@ dix	dix	NUM
 livres	livre	NOUN
 (	(	PUNCTclause
 250	250	NUM
-F	F	PROPN
+F	F	NOUN
 )	)	PUNCTclause
 l'	le	DET
 heure	heure	NOUN
@@ -2918,7 +2930,7 @@ surenchère	surenchère	NOUN
 .	.	PUNCTsent
 Mais	mais	CCONJ
 l'	le	DET
-Indien	indien	NOUN
+Indien	Indien	NOUN
 ne	ne	ADV
 se	se	PRON
 laissait	laisser	VERB
@@ -2955,7 +2967,7 @@ livres	livre	NOUN
 (	(	PUNCTclause
 15	15	NUM
 000	000	NUM
-F	F	PROPN
+F	F	NOUN
 )	)	PUNCTclause
 que	que	SCONJ
 il	il	PRON
@@ -2979,7 +2991,7 @@ proposa	proposer	VERB
 alors	alors	ADV
 à	à	ADP
 l'	le	DET
-Indien	indien	NOUN
+Indien	Indien	NOUN
 de	de	ADP
 lui	lui	PRON
 acheter	acheter	VERB
@@ -2996,12 +3008,12 @@ livres	livre	NOUN
 (	(	PUNCTclause
 25	25	NUM
 000	000	NUM
-F	F	PROPN
+F	F	NOUN
 )	)	PUNCTclause
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 l'	le	DET
-Indien	indien	NOUN
+Indien	Indien	NOUN
 ne	ne	ADV
 voulait	vouloir	VERB
 pas	pas	ADV
@@ -3022,6 +3034,7 @@ Francis	Francis	PROPN
 Cromarty	Cromarty	PROPN
 prit	prendre	VERB
 monsieur	monsieur	NOUN
+.	.	PUNCTsent
 Fogg	Fogg	PROPN
 à part	à part	ADP
 et	et	CCONJ
@@ -3091,11 +3104,12 @@ cet	ce	DET
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 monsieur	monsieur	NOUN
+.	.	PUNCTsent
 Fogg	Fogg	PROPN
 revint	revenir	VERB
 trouver	trouver	VERB
 l'	le	DET
-Indien	indien	NOUN
+Indien	Indien	NOUN
 ,	,	PUNCTclause
 dont	dont	PRON
 les	le	DET
@@ -3144,7 +3158,7 @@ mille	mille	NUM
 (	(	PUNCTclause
 50	50	NUM
 000	000	NUM
-F	F	PROPN
+F	F	NOUN
 )	)	PUNCTclause
 .	.	PUNCTsent
 passe-partout	passe-partout	NOUN
@@ -3166,7 +3180,7 @@ mille	mille	NUM
 livres	livre	NOUN
 ,	,	PUNCTclause
 l'	le	DET
-Indien	indien	NOUN
+Indien	Indien	NOUN
 se	se	PRON
 rendit	rendre	VERB
 .	.	PUNCTsent
@@ -3228,6 +3242,7 @@ ses	son	DET
 services	service	NOUN
 .	.	PUNCTsent
 monsieur	monsieur	NOUN
+.	.	PUNCTsent
 Fogg	Fogg	PROPN
 accepta	accepter	VERB
 et	et	CCONJ
@@ -3303,7 +3318,7 @@ Phileas	Phileas	PROPN
 Fogg	Fogg	PROPN
 paya	payer	VERB
 l'	le	DET
-Indien	indien	NOUN
+Indien	Indien	NOUN
 en	en	ADP
 bank-notes	bank-notes	NOUN
 qui	qui	PRON
@@ -3327,6 +3342,7 @@ passe-partout	passe-partout	NOUN
 .	.	PUNCTsent
 Puis	puis	CCONJ
 monsieur	monsieur	NOUN
+.	.	PUNCTsent
 Fogg	Fogg	PROPN
 offrit	offrir	VERB
 à	à	ADP

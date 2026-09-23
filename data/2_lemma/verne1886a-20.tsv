@@ -6,7 +6,7 @@
 # title = XX
 
 ↵↵↵	↵↵↵	PUNCTstruct
-XX	XX	NUM
+		TOKEN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Oui	oui	INTJ
@@ -206,7 +206,7 @@ de	de	ADP
 la	le	DET
 loterie	loterie	NOUN
 des	un	ADP_DET
-Écoles	école	NOUN
+Écoles	Écoles	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Et	et	CCONJ
@@ -349,7 +349,7 @@ dernière	dernier	ADJ
 lettre	lettre	NOUN
 que	que	PRON
 la	le	DET
-Marine	Marine	PROPN
+Marine	Marine	NOUN
 lui	lui	PRON
 avait	avoir	AUX
 adressée	adresser	VERB
@@ -440,7 +440,7 @@ La	le	DET
 lettre	lettre	NOUN
 de	de	ADP
 la	le	DET
-Marine	Marine	PROPN
+Marine	Marine	NOUN
 ajoutait	ajouter	VERB
 que	que	SCONJ
 ces	ce	DET
@@ -1254,7 +1254,7 @@ mariage	mariage	NOUN
 à	à	ADP
 sa	son	DET
 petite	petit	ADJ
-Hulda	Hulda	PROPN
+Hulda	Hulda	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Peut-être	peut-être	ADV
@@ -1494,7 +1494,8 @@ tous	tout	ADJ
 ces	ce	DET
 invités	invité	NOUN
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+		TOKEN
+.	.	PUNCTsent
 Help	Help	PROPN
 frères	frère	NOUN
 ,	,	PUNCTclause

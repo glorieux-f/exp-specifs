@@ -6,7 +6,7 @@
 # title = II.14. Quelques nouvelles du docteur Livingstone
 
 ↵↵↵	↵↵↵	PUNCTstruct
-II	II	PRON
+		TOKEN
 .	.	PUNCTsent
 14	14	NUM
 .	.	PUNCTsent
@@ -17,7 +17,7 @@ docteur	docteur	NOUN
 Livingstone	Livingstone	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 .	.	PUNCTsent
 Weldon	Weldon	PROPN
 ,	,	PUNCTclause
@@ -233,7 +233,7 @@ Cette	ce	DET
 livraison	livraison	NOUN
 »	»	PUNCTclause
 de	de	ADP
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 .	.	PUNCTsent
 Weldon	Weldon	PROPN
 et	et	CCONJ
@@ -298,7 +298,7 @@ est	être	AUX
 à	à	ADP
 quoi	quoi	PRON
 réfléchissait	réfléchir	VERB
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 .	.	PUNCTsent
 Weldon	Weldon	PROPN
 .	.	PUNCTsent
@@ -441,7 +441,7 @@ Jack	Jack	PROPN
 non	non	ADV
 !	!	PUNCTsent
 répondit	répondre	VERB
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 .	.	PUNCTsent
 Weldon	Weldon	PROPN
 .	.	PUNCTsent
@@ -524,7 +524,7 @@ Oui	oui	INTJ
 oui	oui	INTJ
 !...	!...	PUNCTsent
 répondit	répondre	VERB
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 .	.	PUNCTsent
 Weldon	Weldon	PROPN
 ,	,	PUNCTclause
@@ -578,7 +578,7 @@ peut-être	peut-être	ADV
 !...	!...	PUNCTsent
 »	»	PUNCTclause
 répondit	répondre	VERB
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 .	.	PUNCTsent
 Weldon	Weldon	PROPN
 .	.	PUNCTsent
@@ -628,7 +628,7 @@ motifs	motif	NOUN
 qui	qui	PRON
 avaient	avoir	AUX
 poussé	pousser	VERB
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 .	.	PUNCTsent
 Weldon	Weldon	PROPN
 à	à	ADP
@@ -651,7 +651,7 @@ pas	pas	ADV
 sans	sans	ADP
 valeur	valeur	NOUN
 .	.	PUNCTsent
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 .	.	PUNCTsent
 Weldon	Weldon	PROPN
 avait	avoir	AUX
@@ -750,7 +750,7 @@ la	le	DET
 hutte	hutte	NOUN
 que	que	PRON
 occupait	occuper	VERB
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 .	.	PUNCTsent
 Weldon	Weldon	PROPN
 .	.	PUNCTsent
@@ -801,7 +801,7 @@ efforts	effort	NOUN
 que	que	PRON
 faisaient	faire	VERB
 les	le	DET
-Anglais	anglais	NOUN
+Anglais	Anglais	NOUN
 pour	pour	ADP
 le	le	DET
 détruire	détruire	VERB
@@ -1221,7 +1221,7 @@ dirent	dire	VERB
 ,	,	PUNCTclause
 ce	ce	PRON
 que	que	PRON
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 .	.	PUNCTsent
 Weldon	Weldon	PROPN
 entendit	entendre	VERB
@@ -1321,7 +1321,7 @@ mise	mise	NOUN
 en	en	ADP
 liberté	liberté	NOUN
 de	de	ADP
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 .	.	PUNCTsent
 Weldon	Weldon	PROPN
 et	et	CCONJ
@@ -1588,7 +1588,8 @@ et	et	CCONJ
 deux	deux	NUM
 amis	ami	NOUN
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+		TOKEN
+.	.	PUNCTsent
 Oswell	Oswell	PROPN
 et	et	CCONJ
 Murray	Murray	PROPN
@@ -1668,7 +1669,7 @@ avec	avec	ADP
 sa	son	DET
 famille	famille	NOUN
 et	et	CCONJ
-M.	M.	PROPN
+M.	M.	NOUN
 Oswell	Oswell	PROPN
 ,	,	PUNCTclause
 après	après	ADP
@@ -1856,7 +1857,7 @@ fut	être	AUX
 faite	faire	VERB
 par	par	ADP
 les	le	DET
-Anglais	anglais	NOUN
+Anglais	Anglais	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Livingstone	Livingstone	PROPN
@@ -2607,9 +2608,9 @@ absence	absence	NOUN
 Prix	prix	NOUN
 de	de	ADP
 la	le	DET
-Société	Société	PROPN
+Société	Société	NOUN
 de	de	ADP
-Géographie	géographie	NOUN
+Géographie	Géographie	NOUN
 de	de	ADP
 Paris	Paris	PROPN
 ,	,	PUNCTclause
@@ -2617,9 +2618,9 @@ grande	grand	ADJ
 médaille	médaille	NOUN
 de	de	ADP
 la	le	DET
-Société	Société	PROPN
+Société	Société	NOUN
 de	de	ADP
-Géographie	géographie	NOUN
+Géographie	Géographie	NOUN
 de	de	ADP
 Londres	Londres	PROPN
 ,	,	PUNCTclause
@@ -2678,8 +2679,9 @@ Kirk	Kirk	PROPN
 et	et	CCONJ
 Meller	Meller	PROPN
 ,	,	PUNCTclause
-de	de	ADP
-messieurs	messieurs	NOUN
+de	de	DET
+		TOKEN
+.	.	PUNCTsent
 Thornton	Thornton	PROPN
 et	et	CCONJ
 Baines	Baines	PROPN
@@ -3641,7 +3643,7 @@ Le	le	DET
 blanc	blanc	NOUN
 était	être	AUX
 l'	le	DET
-Américain	américain	NOUN
+Américain	Américain	NOUN
 Stanley	Stanley	PROPN
 ,	,	PUNCTclause
 reporter	reporter	VERB
@@ -3675,7 +3677,7 @@ octobre	octobre	NOUN
 1870	1870	NUM
 ,	,	PUNCTclause
 cet	ce	DET
-Américain	américain	NOUN
+Américain	Américain	NOUN
 ,	,	PUNCTclause
 sans	sans	ADP
 une	un	DET
@@ -3884,7 +3886,7 @@ suis	être	AUX
 bien	bien	ADV
 reconnaissant	reconnaître	VERB
 .	.	PUNCTsent
-Dieu	Dieu	PROPN
+Dieu	dieu	NOUN
 vous	vous	PRON
 conduise	conduire	VERB
 ,	,	PUNCTclause
@@ -4233,7 +4235,7 @@ voyageur	voyageur	NOUN
 que	que	PRON
 pouvait	pouvoir	VERB
 compter	compter	VERB
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 .	.	PUNCTsent
 Weldon	Weldon	PROPN
 ,	,	PUNCTclause
@@ -4276,7 +4278,7 @@ devait	devoir	VERB
 revenir	revenir	VERB
 réclamer	réclamer	VERB
 à	à	ADP
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 .	.	PUNCTsent
 Weldon	Weldon	PROPN
 la	le	DET

@@ -525,7 +525,7 @@ quant à	quant à	ADP
 reste	rester	VERB
 ,	,	PUNCTclause
 les	le	DET
-Anglais	anglais	NOUN
+Anglais	Anglais	NOUN
 et	et	CCONJ
 les	le	DET
 écossais	écossais	NOUN
@@ -536,7 +536,7 @@ cinquante	cinquante	NUM
 mille	mille	NUM
 ,	,	PUNCTclause
 les	le	DET
-Canadiens	canadien	NOUN
+Canadiens	Canadiens	NOUN
 pour	pour	ADP
 quarante	quarante	NUM
 mille	mille	NUM
@@ -551,14 +551,14 @@ les	le	DET
 bohèmes	bohème	NOUN
 et	et	CCONJ
 les	le	DET
-Polonais	polonais	NOUN
+Polonais	Polonais	NOUN
 pour	pour	ADP
 un	un	DET
 chiffre	chiffre	NOUN
 égal	égal	ADJ
 ,	,	PUNCTclause
 les	le	DET
-Juifs	juif	NOUN
+Juifs	Juifs	NOUN
 pour	pour	ADP
 une	un	DET
 quinzaine	quinzaine	NOUN
@@ -566,7 +566,7 @@ de	de	ADP
 mille	mille	NUM
 ,	,	PUNCTclause
 les	le	DET
-Français	français	NOUN
+Français	Français	NOUN
 pour	pour	ADP
 une	un	DET
 dizaine	dizaine	NOUN
@@ -805,14 +805,14 @@ les	le	DET
 bohèmes	bohème	NOUN
 ,	,	PUNCTclause
 les	le	DET
-Polonais	polonais	NOUN
+Polonais	Polonais	NOUN
 ,	,	PUNCTclause
 les	le	DET
-Italiens	italien	NOUN
+Italiens	Italiens	NOUN
 et	et	CCONJ
 nombre	nombre	NOUN
 de	de	ADP
-Chinois	chinois	NOUN
+Chinois	Chinois	NOUN
 échappés	échappé	ADJ
 des	un	ADP_DET
 paravents	paravent	NOUN
@@ -894,7 +894,7 @@ de	de	ADP
 l'	le	DET
 hôtel	hôtel	NOUN
 du	du	ADP_DET
-Comté	comté	NOUN
+Comté	Comté	NOUN
 ,	,	PUNCTclause
 conseillers	conseiller	NOUN
 municipaux	municipal	ADJ
@@ -929,8 +929,9 @@ bazars	bazar	NOUN
 ,	,	PUNCTclause
 ceux	ceux	PRON
 de	de	ADP
-messieurs	messieurs	NOUN
-Marshall	Marshall	PROPN
+		TOKEN
+.	.	PUNCTsent
+Marshall	marshall	NOUN
 Field	Field	PROPN
 ,	,	PUNCTclause
 Lehmann	Lehmann	PROPN
@@ -1001,7 +1002,7 @@ mille	mille	NUM
 des	un	ADP_DET
 ouvriers	ouvrier	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 Mac	Mac	PROPN
 Cormick	Cormick	PROPN
 ,	,	PUNCTclause
@@ -1030,7 +1031,7 @@ ceux	ceux	PRON
 des	un	ADP_DET
 usines	usine	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 J.	J.	PROPN
 Mac	Mac	PROPN
 Gregor	Gregor	PROPN
@@ -1291,7 +1292,7 @@ eussent	avoir	VERB
 en train de	en train de	ADV
 fonctionner	fonctionner	VERB
 au	au	ADP_DET
-Board	Board	PROPN
+Board	Board	NOUN
 of	of	X
 Trade	Trade	PROPN
 ou	ou	CCONJ
@@ -1300,7 +1301,7 @@ Wheat	Wheat	PROPN
 Pit	Pit	PROPN
 ,	,	PUNCTclause
 la	le	DET
-Bourse	bourse	NOUN
+Bourse	Bourse	NOUN
 des	un	ADP_DET
 blés	blé	NOUN
 .	.	PUNCTsent
@@ -1319,7 +1320,7 @@ banques	banque	NOUN
 nationales	national	ADJ
 ou	ou	CCONJ
 de	de	ADP
-États	état	NOUN
+États	États	NOUN
 ,	,	PUNCTclause
 Corn	Corn	PROPN
 Exchange	Exchange	PROPN
@@ -1360,7 +1361,8 @@ Co.	Co.	PROPN
 ,	,	PUNCTclause
 etc.	etc.	NOUN
 ,	,	PUNCTclause
-etc.	etc.	NOUN
+etc	etc	ADV
+.	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Et	et	CCONJ
 comment	comment	ADV
@@ -1502,7 +1504,7 @@ la	le	DET
 Reine	Reine	PROPN
 de	de	ADP
 l'	le	DET
-Ouest	ouest	NOUN
+Ouest	Ouest	NOUN
 tienne	tenir	VERB
 le	le	DET
 second	second	ADJ
@@ -1842,7 +1844,7 @@ le	le	DET
 nom	nom	NOUN
 de	de	ADP
 un	un	DET
-Français	français	NOUN
+Français	Français	NOUN
 ,	,	PUNCTclause
 Robert	Robert	PROPN
 Cavelier	Cavelier	PROPN
@@ -2186,7 +2188,7 @@ Monroe	Monroe	PROPN
 Street	Street	PROPN
 ,	,	PUNCTclause
 de	de	ADP
-Union	union	NOUN
+Union	Union	NOUN
 League	League	PROPN
 de	de	ADP
 Custom	Custom	PROPN
@@ -2280,7 +2282,7 @@ le	le	DET
 gouverneur	gouverneur	NOUN
 de	de	ADP
 l'	le	DET
-État	état	NOUN
+État	État	NOUN
 ,	,	PUNCTclause
 John	John	PROPN
 Hamilton	Hamilton	PROPN
@@ -2346,10 +2348,10 @@ universel	universel	ADJ
 ,	,	PUNCTclause
 mais	mais	CCONJ
 du	du	ADP_DET
-Président	président	NOUN
+Président	Président	NOUN
 de	de	ADP
 l'	le	DET
-Union	union	NOUN
+Union	Union	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Puis	puis	CCONJ
@@ -3084,7 +3086,7 @@ de	de	ADP
 dédicace	dédicace	NOUN
 de	de	ADP
 notre	notre	DET
-Exposition	exposition	NOUN
+Exposition	Exposition	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
@@ -4198,7 +4200,7 @@ auparavant	auparavant	ADV
 lors de	lors de	ADP
 la	le	DET
 grande	grand	ADJ
-Exposition	exposition	NOUN
+Exposition	Exposition	NOUN
 organisée	organiser	VERB
 dans	dans	ADP
 son	son	DET

@@ -6,7 +6,7 @@
 # title = XXV
 
 ↵↵↵	↵↵↵	PUNCTstruct
-XXV	XXV	X
+		TOKEN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
@@ -18,13 +18,13 @@ au	au	ADP_DET
 décembre	décembre	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-Robert	Robert	PROPN
+Robert	robert	NOUN
 Kurtis	Kurtis	PROPN
 a	avoir	AUX
 enlevé	enlever	VERB
 le	le	DET
 jeune	jeune	ADJ
-Letourneur	Letourneur	PROPN
+Letourneur	Letourneur	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 ,	,	PUNCTclause
@@ -77,7 +77,7 @@ se	se	PRON
 passe	passer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Robert	Robert	PROPN
+Robert	robert	NOUN
 Kurtis	Kurtis	PROPN
 ,	,	PUNCTclause
 revenu	revenir	VERB
@@ -111,6 +111,7 @@ dans	dans	ADP
 l'	le	DET
 ombre	ombre	NOUN
 monsieur	monsieur	NOUN
+.	.	PUNCTsent
 Kear	Kear	PROPN
 ,	,	PUNCTclause
 sa	son	DET
@@ -197,7 +198,7 @@ faire	faire	AUX
 entendre	entendre	VERB
 raison	raison	NOUN
 à	à	ADP
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 .	.	PUNCTsent
 Kear	Kear	PROPN
 ,	,	PUNCTclause
@@ -1069,7 +1070,7 @@ devenues	devenir	VERB
 plus	plus	ADV
 fortes	fort	ADJ
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 .	.	PUNCTsent
 Kear	Kear	PROPN
 se	se	PRON
@@ -1112,6 +1113,7 @@ complète	complet	ADJ
 prostration	prostration	NOUN
 .	.	PUNCTsent
 monsieur	monsieur	NOUN
+.	.	PUNCTsent
 Kear	Kear	PROPN
 ,	,	PUNCTclause
 lui	lui	PRON
@@ -1128,7 +1130,7 @@ de	de	ADP
 misaine	misaine	NOUN
 .	.	PUNCTsent
 près de	près de	ADP
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 .	.	PUNCTsent
 Kear	Kear	PROPN
 et	et	CCONJ
@@ -1137,7 +1139,8 @@ miss	miss	NOUN
 Herbey	Herbey	PROPN
 sont	être	AUX
 placés	placer	VERB
-messieurs	messieurs	NOUN
+		TOKEN
+.	.	PUNCTsent
 Letourneur	Letourneur	PROPN
 ,	,	PUNCTclause
 fort	fort	ADV

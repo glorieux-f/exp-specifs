@@ -5,6 +5,8 @@ from __future__ import annotations
 
 import argparse
 import csv
+import glob
+import sys
 from collections import Counter
 from pathlib import Path
 
@@ -20,21 +22,32 @@ CLOSED_POS = {
 }
 
 
-def iter_tsv_files(path: Path):
-    """Yield TSV files from a file or directory in deterministic order."""
-    if path.is_file():
-        yield path
-        return
-    if not path.is_dir():
-        raise ValueError(f"Input does not exist: {path}")
-    yield from sorted(p for p in path.rglob("*.tsv") if p.is_file())
+def tsv_files(paths: list[str]) -> list[Path]:
+    """Return TSV files selected by files, directories, or glob patterns."""
+    files: set[Path] = set()
+
+    for raw_path in paths:
+        if any(char in raw_path for char in "*?["):
+            matches = [Path(path) for path in glob.glob(raw_path, recursive=True)]
+            if not matches:
+                print(f"Warning: no files match {raw_path}", file=sys.stderr)
+        else:
+            matches = [Path(raw_path)]
+
+        for path in matches:
+            if path.is_file() and path.suffix.lower() == ".tsv":
+                files.add(path)
+            elif path.is_dir():
+                files.update(path.rglob("*.tsv"))
+
+    return sorted(files)
 
 
-def count_closed_forms(path: Path) -> Counter[str]:
+def count_closed_forms(files: list[Path]) -> Counter[str]:
     """Count lower-cased surface forms tagged with a closed-class POS."""
     counts: Counter[str] = Counter()
 
-    for file_path in iter_tsv_files(path):
+    for file_path in files:
         columns: list[str] | None = None
 
         with file_path.open("r", encoding="utf-8", newline="") as stream:
@@ -81,19 +94,30 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         description="Extract lower-cased closed-class surface forms from verticalized TSV files."
     )
-    parser.add_argument("input", type=Path, help="Vertical TSV file or directory")
     parser.add_argument(
-        "output",
+        "paths",
+        nargs="+",
+        help="TSV files, directories, or glob patterns; globs may use **",
+    )
+    parser.add_argument(
+        "-o",
+        "--output",
         type=Path,
-        nargs="?",
         default=Path("stopwords.tsv"),
         help="Output TSV (default: stopwords.tsv)",
     )
     args = parser.parse_args()
 
-    counts = count_closed_forms(args.input)
+    files = tsv_files(args.paths)
+    if not files:
+        parser.error("no TSV files selected")
+
+    counts = count_closed_forms(files)
     write_counts(counts, args.output)
-    print(f"forms={len(counts)} occurrences={sum(counts.values())} output={args.output}")
+    print(
+        f"files={len(files)} forms={len(counts)} "
+        f"occurrences={sum(counts.values())} output={args.output}"
+    )
 
 
 if __name__ == "__main__":

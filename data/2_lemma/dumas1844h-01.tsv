@@ -63,14 +63,14 @@ trois	trois	NUM
 hommes	homme	NOUN
 :	:	PUNCTclause
 Louis	Louis	PROPN
-XI	XI	NUM
+		TOKEN
 ,	,	PUNCTclause
 Richelieu	Richelieu	PROPN
 ,	,	PUNCTclause
 Robespierre	Robespierre	PROPN
 .	.	PUNCTsent
-Louis	Louis	PROPN
-XI	XI	NUM
+Louis	louis	NOUN
+		TOKEN
 abattit	abattre	VERB
 les	le	DET
 grands	grand	ADJ
@@ -215,10 +215,10 @@ plus	plus	ADV
 de	de	ADP
 Paris	Paris	PROPN
 .	.	PUNCTsent
-Louis	Louis	PROPN
-XIV	XIV	NUM
+Louis	louis	NOUN
+		TOKEN
 ne	ne	ADV
-avait	avoir	VERB
+avait	avoir	AUX
 pu	pouvoir	VERB
 pardonner	pardonner	VERB
 à	à	ADP
@@ -308,7 +308,7 @@ royale	royal	ADJ
 ,	,	PUNCTclause
 le	le	DET
 vieux	vieux	ADJ
-Louvre	Louvre	PROPN
+Louvre	Louvre	NOUN
 de	de	ADP
 sa	son	DET
 vieille	vieux	ADJ
@@ -323,7 +323,7 @@ le	le	DET
 jour	jour	NOUN
 où	où	PRON
 Louis	Louis	PROPN
-XIV	XIV	NUM
+		TOKEN
 y	y	PRON
 avait	avoir	VERB
 transporté	transporter	VERB
@@ -457,7 +457,7 @@ le	le	DET
 règne	règne	NOUN
 de	de	ADP
 Louis	Louis	PROPN
-XIV	XIV	NUM
+		TOKEN
 ,	,	PUNCTclause
 l'	le	DET
 histoire	histoire	NOUN
@@ -579,7 +579,7 @@ Jeanne-d'Arc	Jeanne-d'Arc	PROPN
 le	le	DET
 roi	roi	NOUN
 Henri	Henri	PROPN
-VI	VI	NUM
+		TOKEN
 de	de	ADP
 la	le	DET
 France	France	PROPN
@@ -1002,7 +1002,7 @@ grandes	grand	ADJ
 familles	famille	NOUN
 que	que	SCONJ
 Louis	Louis	PROPN
-XI	XI	NUM
+		TOKEN
 avait	avoir	AUX
 fauchées	faucher	VERB
 par	par	ADP
@@ -1056,7 +1056,7 @@ sous	sous	ADP
 Philippe-Auguste	Philippe-Auguste	PROPN
 et	et	CCONJ
 Louis	Louis	PROPN
-XI	XI	NUM
+		TOKEN
 ,	,	PUNCTclause
 chefs	chef	NOUN
 de	de	ADP
@@ -1075,7 +1075,7 @@ français	français	ADJ
 1er	1er	NUM
 et	et	CCONJ
 Henri	Henri	PROPN
-II	II	NUM
+		TOKEN
 ,	,	PUNCTclause
 ils	ils	PRON
 avaient	avoir	AUX
@@ -1090,11 +1090,11 @@ les	le	DET
 armées	armée	NOUN
 de	de	ADP
 Henri	Henri	PROPN
-IV	IV	NUM
+		TOKEN
 et	et	CCONJ
 de	de	ADP
 Louis	Louis	PROPN
-XIII	XIII	NUM
+Xiii	Xiii	PROPN
 ;	;	PUNCTclause
 puis	puis	CCONJ
 enfin	enfin	ADV
@@ -1137,7 +1137,7 @@ primitifs	primitif	ADJ
 dont	dont	PRON
 parle	parler	VERB
 la	le	DET
-Bible	bible	NOUN
+Bible	Bible	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 se	se	PRON
@@ -1235,7 +1235,7 @@ et	et	CCONJ
 de	de	ADP
 Maintenon	Maintenon	PROPN
 .	.	PUNCTsent
-Loches	Loches	PROPN
+Loches	loche	NOUN
 ,	,	PUNCTclause
 subissant	subir	VERB
 la	le	DET
@@ -1821,7 +1821,7 @@ les	le	DET
 privilèges	privilège	NOUN
 de	de	ADP
 un	un	DET
-Procuste	Procuste	PROPN
+Procuste	Procuste	NOUN
 ,	,	PUNCTclause
 de	de	ADP
 un	un	DET
@@ -4062,7 +4062,7 @@ mais	mais	CCONJ
 le	le	DET
 roi	roi	NOUN
 Louis	Louis	PROPN
-XIV	XIV	NUM
+		TOKEN
 avait	avoir	AUX
 tant	tant	ADV
 fait	faire	VERB
@@ -4303,7 +4303,7 @@ père	père	NOUN
 Lachaise	Lachaise	PROPN
 et	et	CCONJ
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 du	du	ADP_DET
 Maine	Maine	PROPN
 .	.	PUNCTsent
@@ -4447,8 +4447,8 @@ de	de	ADP
 un	un	DET
 gentilhomme	gentilhomme	NOUN
 .	.	PUNCTsent
-Louis	Louis	PROPN
-XIV	XIV	NUM
+Louis	louis	NOUN
+		TOKEN
 avait	avoir	AUX
 fait	faire	VERB
 de	de	ADP
@@ -4848,7 +4848,7 @@ ne	ne	ADV
 suis	être	AUX
 pas	pas	ADV
 une	un	DET
-Romaine	romain	NOUN
+Romaine	Romaine	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 en effet	en effet	ADV
@@ -5164,7 +5164,7 @@ parent	parent	NOUN
 à	à	ADP
 Versailles	Versailles	PROPN
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Bouzenois	Bouzenois	PROPN
 ,	,	PUNCTclause
@@ -5430,10 +5430,10 @@ en	en	ADP
 canonnant	canonner	NOUN
 tour à tour	tour à tour	ADV
 les	le	DET
-Anglais	anglais	NOUN
+Anglais	Anglais	NOUN
 et	et	CCONJ
 les	le	DET
-Hollandais	hollandais	NOUN
+Hollandais	Hollandais	NOUN
 .	.	PUNCTsent
 Puis	puis	CCONJ
 enfin	enfin	ADV
@@ -5641,7 +5641,7 @@ la	le	DET
 philanthropique	philanthropique	ADJ
 surveillance	surveillance	NOUN
 des	un	ADP_DET
-Anglais	anglais	NOUN
+Anglais	Anglais	NOUN
 ,	,	PUNCTclause
 commence	commencer	VERB
 à	à	ADP
@@ -5735,7 +5735,7 @@ par conséquent	par conséquent	CCONJ
 jeune	jeune	ADJ
 encore	encore	ADV
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Bouzenois	Bouzenois	PROPN
 ,	,	PUNCTclause
@@ -6260,7 +6260,7 @@ Un	un	DET
 an	an	NOUN
 après	après	ADV
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Bouzenois	Bouzenois	PROPN
 épousa	épouser	VERB
@@ -6468,7 +6468,7 @@ de	de	ADP
 leurs	leur	DET
 alliés	allié	NOUN
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Chemillé	Chemillé	PROPN
 ,	,	PUNCTclause
@@ -6484,7 +6484,7 @@ camp	camp	NOUN
 parlait	parler	VERB
 cavalerie	cavalerie	NOUN
 ;	;	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Birgarou	Birgarou	PROPN
 ,	,	PUNCTclause
@@ -6500,7 +6500,7 @@ Vauban	Vauban	PROPN
 parlait	parler	VERB
 sièges	siège	NOUN
 ;	;	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 Gantry	Gantry	PROPN
 ,	,	PUNCTclause
 qui	qui	PRON
@@ -6520,7 +6520,7 @@ l'	le	DET
 abbé	abbé	NOUN
 Dubuquoi	Dubuquoi	PROPN
 parlait	parler	VERB
-Église	église	NOUN
+Église	Église	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 quant à	quant à	ADP

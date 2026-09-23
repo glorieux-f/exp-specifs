@@ -6,7 +6,7 @@
 # title = IX. L’archipel des Sandwich
 
 ↵↵↵	↵↵↵	PUNCTstruct
-IX	IX	NOUN
+		TOKEN
 .	.	PUNCTsent
 l'	le	DET
 archipel	archipel	NOUN
@@ -231,13 +231,13 @@ reposeront	reposer	VERB
 un	un	DET
 peu	peu	ADV
 des	un	DET
-Pawnies	Pawnies	PROPN
+Pawnies	Pawnies	NOUN
 ,	,	PUNCTclause
 des	un	DET
 Sioux	Sioux	PROPN
 ou	ou	CCONJ
 autres	autre	ADJ
-Indiens	indien	NOUN
+Indiens	Indiens	NOUN
 trop	trop	ADV
 civilisés	civilisé	ADJ
 du	du	ADP_DET
@@ -328,7 +328,7 @@ l'	le	DET
 avouer	avouer	VERB
 ,	,	PUNCTclause
 Son	son	DET
-Altesse	altesse	NOUN
+Altesse	Altesse	NOUN
 parlait	parler	VERB
 trop	trop	ADV
 irrévérencieusement	irrévérencieusement	ADV
@@ -377,9 +377,9 @@ spécimens	spécimen	NOUN
 exhibés	exhiber	VERB
 dans	dans	ADP
 les	le	DET
-Jardins	jardin	NOUN
+Jardins	Jardins	NOUN
 de	de	ADP
-Acclimatation	acclimatation	NOUN
+Acclimatation	Acclimatation	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 ,	,	PUNCTclause
@@ -743,7 +743,7 @@ mât	mât	NOUN
 comme	comme	ADP
 dit	dire	VERB
 Son	son	DET
-Altesse	altesse	NOUN
+Altesse	Altesse	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Le	le	DET
@@ -912,8 +912,9 @@ Si	si	SCONJ
 je	je	PRON
 étais	être	VERB
 riche	riche	ADJ
-comme	comme	ADP
-messieurs	messieurs	NOUN
+comme	comme	CCONJ
+		TOKEN
+.	.	PUNCTsent
 Tankerdon	Tankerdon	PROPN
 et	et	CCONJ
 Coverley	Coverley	PROPN
@@ -1051,7 +1052,7 @@ bouchée	bouchée	NOUN
 de	de	ADP
 tous	tout	ADJ
 les	le	DET
-Milliardais	Milliardais	PROPN
+Milliardais	Milliardais	NOUN
 de	de	ADP
 Standard-Island	Standard-Island	PROPN
 !	!	PUNCTsent
@@ -1209,7 +1210,7 @@ de	de	ADP
 Punch	Punch	PROPN
 par	par	ADP
 les	le	DET
-Anglais	anglais	NOUN
+Anglais	Anglais	NOUN
 .	.	PUNCTsent
 Ainsi	ainsi	ADV
 que	que	SCONJ
@@ -1516,7 +1517,7 @@ de	de	ADP
 cannibales	cannibale	NOUN
 ,	,	PUNCTclause
 Son	son	DET
-Altesse	altesse	NOUN
+Altesse	Altesse	NOUN
 ne	ne	ADV
 aura	avoir	VERB
 plus	plus	ADV
@@ -1731,10 +1732,10 @@ l'	le	DET
 archipel	archipel	NOUN
 renferme	renfermer	VERB
 des	un	ADP_DET
-Américains	américain	NOUN
+Américains	Américains	NOUN
 ,	,	PUNCTclause
 des	un	DET
-Chinois	chinois	NOUN
+Chinois	Chinois	NOUN
 ,	,	PUNCTclause
 —	—	PUNCTclause
 pour	pour	ADP
@@ -2106,7 +2107,7 @@ sous	sous	ADP
 le	le	DET
 nom	nom	NOUN
 de	de	ADP
-Mer	mer	NOUN
+Mer	Mer	NOUN
 des	un	ADP_DET
 Chaleurs	Chaleurs	PROPN
 .	.	PUNCTsent
@@ -2263,7 +2264,7 @@ mystification	mystification	NOUN
 ce	ce	PRON
 est	être	AUX
 ce	ce	DET
-Calistus	Calistus	PROPN
+Calistus	Calistus	NOUN
 Munbar	Munbar	PROPN
 qui	qui	PRON
 nous	nous	PRON
@@ -2524,7 +2525,7 @@ Pinchinat	Pinchinat	PROPN
 ,	,	PUNCTclause
 que	que	SCONJ
 cette	ce	DET
-Majesté	majesté	NOUN
+Majesté	Majesté	NOUN
 ne	ne	ADV
 avait	avoir	AUX
 même	même	ADV
@@ -2668,7 +2669,7 @@ tout	tout	ADV
 comme	comme	ADP
 ces	ce	DET
 bons	bon	ADJ
-États	état	NOUN
+États	États	NOUN
 de	de	ADP
 l'	le	DET
 Amérique	Amérique	PROPN
@@ -2809,7 +2810,7 @@ bien	bien	ADV
 ,	,	PUNCTclause
 et	et	CCONJ
 les	le	DET
-Américains	américain	NOUN
+Américains	Américains	NOUN
 ,	,	PUNCTclause
 dira	dire	VERB
 on	on	PRON
@@ -2834,7 +2835,7 @@ indiquée	indiquer	VERB
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
 Les	le	DET
-Américains	américain	NOUN
+Américains	Américains	NOUN
 ?	?	PUNCTsent
 répond	répondre	VERB
 le	le	DET
@@ -2934,7 +2935,7 @@ sous	sous	ADP
 la	le	DET
 présidence	présidence	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 Sanford	Sanford	PROPN
 Dole	Dole	PROPN
 ,	,	PUNCTclause
@@ -2994,7 +2995,7 @@ sous	sous	ADP
 la	le	DET
 présidence	présidence	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 Dole	Dole	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -3061,7 +3062,7 @@ sur	sur	ADP
 ces	ce	DET
 parages	parage	NOUN
 des	un	ADP_DET
-Havaï	Havaï	PROPN
+Havaï	Havaï	NOUN
 ,	,	PUNCTclause
 l'	le	DET
 admiration	admiration	NOUN
@@ -3134,7 +3135,7 @@ de	de	ADP
 demeurer	demeurer	VERB
 sur	sur	ADP
 le	le	DET
-Joyau	joyau	NOUN
+Joyau	Joyau	NOUN
 du	du	ADP_DET
 Pacifique	Pacifique	PROPN
 sans	sans	ADP
@@ -3192,7 +3193,7 @@ indigènes	indigène	NOUN
 plaisent	plaire	VERB
 à	à	ADP
 nos	nos	DET
-Parisiens	parisien	NOUN
+Parisiens	Parisiens	NOUN
 .	.	PUNCTsent
 Leur	leur	DET
 type	type	NOUN
@@ -3333,7 +3334,7 @@ constitution	constitution	NOUN
 de	de	ADP
 l'	le	DET
 an	an	NOUN
-VIII	VIII	NUM
+Viii	Viii	PROPN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
@@ -3715,7 +3716,7 @@ furent	être	AUX
 primées	primer	VERB
 à	à	ADP
 l'	le	DET
-Exposition	exposition	NOUN
+Exposition	Exposition	NOUN
 de	de	ADP
 1878	1878	NUM
 ,	,	PUNCTclause
@@ -3733,7 +3734,7 @@ et	et	CCONJ
 kanaque	kanaque	ADJ
 .	.	PUNCTsent
 Nos	nos	DET
-Parisiens	parisien	NOUN
+Parisiens	Parisiens	NOUN
 ne	ne	ADV
 pouvaient	pouvoir	VERB
 en	en	ADP
@@ -3771,7 +3772,7 @@ volontiers	volontiers	ADV
 leur	leur	DET
 service	service	NOUN
 des	un	ADP_DET
-Chinois	chinois	NOUN
+Chinois	Chinois	NOUN
 du	du	ADP_DET
 Céleste	Céleste	PROPN
 Empire	Empire	PROPN
@@ -4397,9 +4398,9 @@ Le	le	DET
 Haleahala	Haleahala	PROPN
 ,	,	PUNCTclause
 la	le	DET
-Maison	maison	NOUN
+Maison	Maison	NOUN
 du	du	ADP_DET
-Soleil	soleil	NOUN
+Soleil	Soleil	NOUN
 ,	,	PUNCTclause
 y	y	PRON
 pointe	pointer	VERB
@@ -4426,7 +4427,7 @@ côtes	côte	NOUN
 de	de	ADP
 la	le	DET
 grande	grand	ADJ
-Havaï	Havaï	PROPN
+Havaï	Havaï	NOUN
 ,	,	PUNCTclause
 dont	dont	PRON
 les	le	DET
@@ -4531,7 +4532,7 @@ occidentale	occidental	ADJ
 .	.	PUNCTsent
 Cette	ce	DET
 grande	grand	ADJ
-Havaï	Havaï	PROPN
+Havaï	Havaï	NOUN
 possède	posséder	VERB
 cinquante-sept	cinquante-sept	NUM
 kilomètres	mètre	NOUN
@@ -4711,7 +4712,7 @@ cannibales	cannibale	NOUN
 avaient	avoir	AUX
 mangé	manger	VERB
 Ton	ton	DET
-Altesse	altesse	NOUN
+Altesse	Altesse	NOUN
 ?…	?…	PUNCTsent
 fait	faire	VERB
 observer	observer	VERB

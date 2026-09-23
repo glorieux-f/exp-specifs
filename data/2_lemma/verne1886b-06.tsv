@@ -6,7 +6,7 @@
 # title = VI. Que les ingénieurs, les mécaniciens et autres savants feraient, peut-être bien de passer
 
 ↵↵↵	↵↵↵	PUNCTstruct
-VI	VI	ADJ
+		TOKEN
 .	.	PUNCTsent
 Que	que	SCONJ
 les	le	DET
@@ -609,7 +609,8 @@ Panafieu	Panafieu	PROPN
 ,	,	PUNCTclause
 Crosnier	Crosnier	PROPN
 ,	,	PUNCTclause
-etc.	etc.	NOUN
+etc	etc	ADV
+.	.	PUNCTsent
 Enfin	enfin	ADV
 ,	,	PUNCTclause
 en	en	ADP
@@ -622,7 +623,7 @@ de	de	ADP
 Nadar	Nadar	PROPN
 ,	,	PUNCTclause
 une	un	DET
-Société	Société	PROPN
+Société	Société	NOUN
 du	du	ADP_DET
 Plus	Plus	PROPN
 lourd	lourd	ADJ
@@ -923,17 +924,17 @@ l'	le	DET
 air	air	NOUN
 »	»	PUNCTclause
 ,	,	PUNCTclause
-Anglais	anglais	NOUN
+Anglais	Anglais	NOUN
 ,	,	PUNCTclause
-Américains	américain	NOUN
+Américains	Américains	NOUN
 ,	,	PUNCTclause
 Italiens	Italiens	PROPN
 ,	,	PUNCTclause
-Autrichiens	autrichien	NOUN
+Autrichiens	Autrichiens	NOUN
 ,	,	PUNCTclause
-Français	français	NOUN
+Français	Français	NOUN
 ,	,	PUNCTclause
-Français	français	NOUN
+Français	Français	NOUN
 surtout	surtout	ADV
 ,	,	PUNCTclause
 dont	dont	PRON
@@ -1035,7 +1036,7 @@ Ancien	Ancien	PROPN
 et	et	CCONJ
 le	le	DET
 Nouveau	nouveau	ADJ
-Monde	monde	NOUN
+Monde	Monde	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Rien	rien	PRON
@@ -1201,7 +1202,7 @@ Marey	Marey	PROPN
 ,	,	PUNCTclause
 de	de	ADP
 l'	le	DET
-Institut	institut	NOUN
+Institut	Institut	NOUN
 de	de	ADP
 France	France	PROPN
 .	.	PUNCTsent
@@ -1346,7 +1347,7 @@ travaux	travail	NOUN
 les	le	DET
 expériences	expérience	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 Renaud	Renaud	PROPN
 ,	,	PUNCTclause
 en	en	ADP
@@ -1682,7 +1683,7 @@ que	que	SCONJ
 l'	le	DET
 avait	avoir	AUX
 dit	dire	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 Victor	Victor	PROPN
 Tatin	Tatin	PROPN
 ,	,	PUNCTclause
@@ -2413,8 +2414,9 @@ ont	avoir	AUX
 été	être	AUX
 préconisés	préconiser	VERB
 par	par	ADP
-messieurs	messieurs	NOUN
-Cossus	Cossus	PROPN
+		TOKEN
+.	.	PUNCTsent
+Cossus	cossu	ADJ
 ,	,	PUNCTclause
 de	de	ADP
 la	le	DET
@@ -2839,7 +2841,7 @@ entamer	entamer	VERB
 et	et	CCONJ
 dont	dont	PRON
 Uncle	Uncle	PROPN
-Prudent	Prudent	PROPN
+Prudent	Prudent	NOUN
 ne	ne	ADV
 avait	avoir	AUX
 pu	pouvoir	VERB

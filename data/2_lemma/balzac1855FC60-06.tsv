@@ -8,7 +8,7 @@
 
 ↵↵↵	↵↵↵	PUNCTstruct
 Chapitre	chapitre	NOUN
-VI	VI	NUM
+		TOKEN
 Une	un	DET
 histoire	histoire	NOUN
 de	de	ADP
@@ -124,7 +124,7 @@ puissance	puissance	NOUN
 ,	,	PUNCTclause
 appelée	appeler	VERB
 la	le	DET
-Cour	cour	NOUN
+Cour	Cour	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
 fit	faire	VERB
@@ -141,7 +141,7 @@ premières	premier	ADJ
 familles	famille	NOUN
 de	de	ADP
 la	le	DET
-Conquête	conquête	NOUN
+Conquête	Conquête	NOUN
 .	.	PUNCTsent
 Ceci	ceci	PRON
 prouve	prouver	VERB
@@ -192,7 +192,7 @@ part	part	NOUN
 dans	dans	ADP
 la	le	DET
 fameuse	fameux	ADJ
-Compagnie	compagnie	NOUN
+Compagnie	Compagnie	NOUN
 Minoret	Minoret	PROPN
 ,	,	PUNCTclause
 à	à	ADP
@@ -264,17 +264,17 @@ voyant	voir	VERB
 très-effrayée	très-effrayée	PUNCT
 de	de	ADP
 la	le	DET
-Révolution	Révolution	PROPN
+Révolution	Révolution	NOUN
 .	.	PUNCTsent
 l'	le	DET
 ancien	ancien	ADJ
 bailli	bailli	NOUN
 ,	,	PUNCTclause
 devenu	devenir	VERB
-Accusateur	accusateur	NOUN
+Accusateur	Accusateur	NOUN
 public	public	ADJ
 au	au	ADP_DET
-Département	département	NOUN
+Département	Département	NOUN
 ,	,	PUNCTclause
 fut	être	AUX
 le	le	DET
@@ -285,7 +285,7 @@ peureuse	peureux	ADJ
 cantatrice	cantatrice	NOUN
 .	.	PUNCTsent
 Ce	ce	DET
-Fouquier-Tinville	Fouquier-Tinville	PROPN
+Fouquier-Tinville	Fouquier-Tinville	NOUN
 de	de	ADP
 province	province	NOUN
 arrangea	arranger	VERB
@@ -356,7 +356,7 @@ des	un	ADP_DET
 vivres	vivre	NOUN
 de	de	ADP
 la	le	DET
-République	République	PROPN
+République	République	NOUN
 ne	ne	ADV
 avait	avoir	AUX
 pas	pas	ADV
@@ -478,7 +478,7 @@ les	le	DET
 réquisitions	réquisition	NOUN
 de	de	ADP
 la	le	DET
-République	République	PROPN
+République	République	NOUN
 .	.	PUNCTsent
 Le	le	DET
 régisseur	régisseur	NOUN
@@ -827,7 +827,7 @@ ancien	ancien	ADJ
 Premier	premier	ADJ
 Sujet	Sujet	PROPN
 du	du	ADP_DET
-Chant	chant	NOUN
+Chant	Chant	NOUN
 étaient	être	AUX
 si	si	ADV
 fort	fort	ADV
@@ -991,7 +991,7 @@ avec	avec	ADP
 la	le	DET
 facilité	facilité	NOUN
 des	un	ADP_DET
-Impures	impur	NOUN
+Impures	Impures	NOUN
 de	de	ADP
 l'	le	DET
 ancien	ancien	ADJ
@@ -1005,7 +1005,7 @@ vive	vif	ADJ
 ,	,	PUNCTclause
 même	même	ADV
 la	le	DET
-République	République	PROPN
+République	République	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 La	le	DET
@@ -1048,7 +1048,7 @@ lois	loi	NOUN
 révolutionnaires	révolutionnaire	ADJ
 sur	sur	ADP
 l'	le	DET
-Égalité	égalité	NOUN
+Égalité	Égalité	NOUN
 ;	;	PUNCTclause
 mais	mais	CCONJ
 Gaubertin	Gaubertin	PROPN
@@ -1323,7 +1323,7 @@ vaut	valoir	VERB
 l'	le	DET
 amitié	amitié	NOUN
 .	.	PUNCTsent
-Molière	Molière	PROPN
+Molière	molière	ADJ
 est	être	AUX
 mort	mourir	VERB
 trop	trop	ADV
@@ -1665,7 +1665,7 @@ réparations	réparation	NOUN
 détails	détail	NOUN
 que	que	SCONJ
 jamais	jamais	ADV
-Madame	madame	NOUN
+Madame	Madame	NOUN
 ne	ne	ADV
 vérifiait	vérifier	VERB
 et	et	CCONJ
@@ -1705,7 +1705,7 @@ et	et	CCONJ
 les	le	DET
 louanges	louange	NOUN
 de	de	ADP
-Madame	madame	NOUN
+Madame	Madame	NOUN
 sortaient	sortir	VERB
 de	de	ADP
 toutes	tout	ADJ
@@ -1899,8 +1899,9 @@ l'	le	DET
 intérêt	intérêt	NOUN
 même	même	ADJ
 du	du	ADP_DET
-vol.	vol.	NOUN
-Néanmoins	Néanmoins	PROPN
+vol	vol	NOUN
+.	.	PUNCTsent
+Néanmoins	néanmoins	ADV
 ,	,	PUNCTclause
 pendant	pendant	ADP
 les	le	DET
@@ -2141,13 +2142,13 @@ la	le	DET
 table	table	NOUN
 du	du	ADP_DET
 Premier	premier	ADJ
-Sujet	sujet	NOUN
+Sujet	Sujet	NOUN
 de	de	ADP
 l'	le	DET
-Académie	académie	NOUN
+Académie	Académie	NOUN
 Royale	royal	ADJ
 de	de	ADP
-Musique	musique	NOUN
+Musique	Musique	NOUN
 et	et	CCONJ
 de	de	ADP
 Danse	Danse	PROPN
@@ -2217,7 +2218,7 @@ la	le	DET
 cour	cour	NOUN
 de	de	ADP
 Louis	Louis	PROPN
-XVI	XVI	NUM
+		TOKEN
 dans	dans	ADP
 l'	le	DET
 esprit	esprit	NOUN
@@ -2409,7 +2410,7 @@ venait	venir	VERB
 de	de	ADP
 achever	achever	VERB
 son	son	DET
-Droit	droit	NOUN
+Droit	Droit	NOUN
 à	à	ADP
 Paris	Paris	PROPN
 et	et	CCONJ
@@ -2816,7 +2817,7 @@ brûlée	brûler	VERB
 par	par	ADP
 une	un	DET
 flamboyante	flamboyant	ADJ
-Publicité	publicité	NOUN
+Publicité	Publicité	NOUN
 ,	,	PUNCTclause
 les	le	DET
 complices	complice	NOUN
@@ -3157,7 +3158,7 @@ riche	riche	ADJ
 banquier	banquier	NOUN
 de	de	ADP
 l'	le	DET
-Entrepôt	entrepôt	NOUN
+Entrepôt	Entrepôt	NOUN
 ,	,	PUNCTclause
 il	il	PRON
 était	être	AUX
@@ -3210,7 +3211,7 @@ de	de	ADP
 sa	son	DET
 dernière	dernier	ADJ
 fille	fille	NOUN
-Élise	Élise	PROPN
+Élise	Élise	NOUN
 ,	,	PUNCTclause
 à	à	ADP
 laquelle	laquelle	PRON
@@ -3417,7 +3418,7 @@ jours	jour	NOUN
 Or	or	NOUN
 ,	,	PUNCTclause
 l'	le	DET
-Empereur	empereur	NOUN
+Empereur	Empereur	NOUN
 avait	avoir	AUX
 jadis	jadis	ADV
 permis	permettre	VERB
@@ -3489,7 +3490,7 @@ corps	corps	NOUN
 de	de	ADP
 armée	armée	NOUN
 aux	au	ADP_DET
-Bourbons	bourbon	NOUN
+Bourbons	Bourbons	NOUN
 ,	,	PUNCTclause
 ce	ce	DET
 service	service	NOUN
@@ -3519,7 +3520,7 @@ suivi	suivre	VERB
 l'	le	DET
 homme	homme	NOUN
 des	un	ADP_DET
-Cent-Jours	Cent-Jours	PROPN
+Cent-Jours	Cent-Jours	NOUN
 sur	sur	ADP
 son	son	DET
 dernier	dernier	ADJ
@@ -4071,10 +4072,10 @@ Gendrin	Gendrin	PROPN
 longtemps	longtemps	ADV
 juge	juger	VERB
 au	au	ADP_DET
-Tribunal	tribunal	NOUN
+Tribunal	Tribunal	NOUN
 de	de	ADP
 Première	premier	ADJ
-Instance	instance	NOUN
+Instance	Instance	NOUN
 de	de	ADP
 La-Ville-aux-Fayes	La-Ville-aux-Fayes	PROPN
 ,	,	PUNCTclause
@@ -4102,10 +4103,10 @@ et	et	CCONJ
 resté	rester	VERB
 fidèle	fidèle	ADJ
 aux	au	ADP_DET
-Bourbons	bourbon	NOUN
+Bourbons	Bourbons	NOUN
 pendant	pendant	ADP
 les	le	DET
-Cent-Jours	Cent-Jours	PROPN
+Cent-Jours	Cent-Jours	NOUN
 ,	,	PUNCTclause
 monsieur	monsieur	NOUN
 de	de	ADP
@@ -4115,7 +4116,7 @@ demandé	demander	VERB
 cette	ce	DET
 nomination	nomination	NOUN
 au	au	ADP_DET
-Garde-des-sceaux	Garde-des-sceaux	PROPN
+Garde-des-sceaux	Garde-des-sceaux	NOUN
 .	.	PUNCTsent
 Cette	ce	DET
 parenté	parenté	NOUN
@@ -4427,7 +4428,7 @@ que	que	SCONJ
 soi	soi	PRON
 .	.	PUNCTsent
 Le	le	DET
-Fait	fait	NOUN
+Fait	Fait	NOUN
 ,	,	PUNCTclause
 quelque	quelque	DET
 dommageable	dommageable	ADJ
@@ -4467,7 +4468,7 @@ pardonne	pardonner	VERB
 jamais	jamais	ADV
 à	à	ADP
 l'	le	DET
-Idée	idée	NOUN
+Idée	Idée	NOUN
 .	.	PUNCTsent
 La	le	DET
 personnalité	personnalité	NOUN
@@ -4574,7 +4575,7 @@ qui	qui	PRON
 tient	tenir	VERB
 beaucoup	beaucoup	ADV
 du	du	ADP_DET
-Sauvage	sauvage	NOUN
+Sauvage	Sauvage	NOUN
 ,	,	PUNCTclause
 ne	ne	ADV
 parlent	parler	VERB
@@ -4753,7 +4754,7 @@ sa	son	DET
 défaite	défaite	NOUN
 à	à	ADP
 l'	le	DET
-Audience	audience	NOUN
+Audience	Audience	NOUN
 des	un	ADP_DET
 Criées	Criées	PROPN
 ;	;	PUNCTclause
@@ -5130,7 +5131,7 @@ non	non	ADV
 prévus	prévoir	VERB
 par	par	ADP
 le	le	DET
-Code	code	NOUN
+Code	Code	NOUN
 ,	,	PUNCTclause
 se	se	PRON
 croyait	croire	VERB
@@ -5194,7 +5195,7 @@ Puis	puis	CCONJ
 ,	,	PUNCTclause
 légalement	légalement	ADV
 ,	,	PUNCTclause
-Madame	madame	NOUN
+Madame	Madame	NOUN
 ne	ne	ADV
 devait	devoir	VERB
 recevoir	recevoir	VERB
@@ -5486,13 +5487,13 @@ ancien	ancien	ADJ
 Premier	premier	ADJ
 Sujet	Sujet	PROPN
 du	du	ADP_DET
-Chant	chant	NOUN
+Chant	Chant	NOUN
 à	à	ADP
 l'	le	DET
-Académie	académie	NOUN
+Académie	Académie	NOUN
 royale	royal	ADJ
 de	de	ADP
-Musique	musique	NOUN
+Musique	Musique	NOUN
 .	.	PUNCTsent
 Mademoiselle	mademoiselle	NOUN
 Laguerre	Laguerre	PROPN
@@ -5558,7 +5559,7 @@ en	en	ADP
 1400	1400	NUM
 sous	sous	ADP
 Louis	Louis	PROPN
-XI	XI	NUM
+		TOKEN
 ,	,	PUNCTclause
 ni	ni	CCONJ
 en	en	ADP
@@ -5578,7 +5579,7 @@ du	du	ADP_DET
 19e	19e	NUM
 siècle	siècle	NOUN
 au	au	ADP_DET
-Progrès	progrès	NOUN
+Progrès	Progrès	NOUN
 ,	,	PUNCTclause
 la	le	DET
 bourgeoisie	bourgeoisie	NOUN
@@ -5662,7 +5663,7 @@ discipline	discipline	NOUN
 qui	qui	PRON
 rendit	rendre	VERB
 l'	le	DET
-Église	église	NOUN
+Église	Église	NOUN
 un	un	DET
 admirable	admirable	ADJ
 modèle	modèle	NOUN
@@ -5689,7 +5690,7 @@ audace	audace	NOUN
 avec	avec	ADP
 laquelle	laquelle	PRON
 le	le	DET
-Communisme	communisme	NOUN
+Communisme	Communisme	NOUN
 ,	,	PUNCTclause
 cette	ce	DET
 logique	logique	NOUN
@@ -5702,7 +5703,7 @@ Démocratie	Démocratie	PROPN
 ,	,	PUNCTclause
 attaque	attaquer	VERB
 la	le	DET
-Société	Société	PROPN
+Société	Société	NOUN
 dans	dans	ADP
 l'	le	DET
 ordre moral	ordre moral	NOUN

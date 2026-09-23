@@ -6,7 +6,7 @@
 # title = III. Dans lequel se fait l’adjudication des régions du pôle arctique
 
 ↵↵↵	↵↵↵	PUNCTstruct
-III	III	PRON
+		TOKEN
 .	.	PUNCTsent
 Dans	dans	ADP
 lequel	lequel	PRON
@@ -38,7 +38,7 @@ la	le	DET
 salle	salle	NOUN
 ordinaire	ordinaire	ADJ
 des	un	ADP_DET
-Auctions	Auctions	PROPN
+Auctions	Auctions	NOUN
 ,	,	PUNCTclause
 où	où	PRON
 ,	,	PUNCTclause
@@ -280,7 +280,7 @@ dans	dans	ADP
 une	un	DET
 salle	salle	NOUN
 des	un	ADP_DET
-Auctions	Auctions	PROPN
+Auctions	Auctions	NOUN
 ,	,	PUNCTclause
 par	par	ADP
 l'	le	DET
@@ -579,7 +579,7 @@ les	le	DET
 citoyens	citoyen	NOUN
 de	de	ADP
 la	le	DET
-Confédération	confédération	NOUN
+Confédération	Confédération	NOUN
 américaine	américain	ADJ
 ,	,	PUNCTclause
 aussi	aussi	ADV
@@ -591,7 +591,7 @@ Nouvelle-Angleterre	Nouvelle-Angleterre	PROPN
 que	que	SCONJ
 ceux	ceux	PRON
 des	un	ADP_DET
-États	état	NOUN
+États	États	NOUN
 du	du	ADP_DET
 centre	centre	NOUN
 ,	,	PUNCTclause
@@ -812,13 +812,13 @@ paris	pari	NOUN
 proposés	proposer	VERB
 par	par	ADP
 les	le	DET
-Américains	américain	NOUN
+Américains	Américains	NOUN
 ,	,	PUNCTclause
 étaient	être	AUX
 tenus	tenir	VERB
 par	par	ADP
 les	le	DET
-Anglais	anglais	NOUN
+Anglais	Anglais	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 Dean	Dean	PROPN
@@ -833,7 +833,7 @@ dans	dans	ADP
 la	le	DET
 salle	salle	NOUN
 des	un	ADP_DET
-Auctions	Auctions	PROPN
+Auctions	Auctions	NOUN
 .	.	PUNCTsent
 Le	le	DET
 gouvernement	gouvernement	NOUN
@@ -858,7 +858,7 @@ Donellan	Donellan	PROPN
 …	…	PUNCTsent
 À	à	ADP
 l'	le	DET
-Admiralty-Office	Admiralty-Office	PROPN
+Admiralty-Office	Admiralty-Office	NOUN
 ,	,	PUNCTclause
 faisait	faire	VERB
 observer	observer	VERB
@@ -891,7 +891,8 @@ des	un	ADP_DET
 colonies	colonie	NOUN
 anglaises	anglais	ADJ
 ,	,	PUNCTclause
-etc.	etc.	NOUN
+etc	etc	ADV
+.	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 que	que	SCONJ
 y	y	PRON
@@ -976,7 +977,7 @@ cette	ce	DET
 effervescence	effervescence	NOUN
 ,	,	PUNCTclause
 la	le	DET
-Société	Société	PROPN
+Société	Société	NOUN
 nouvelle	nouveau	ADJ
 ,	,	PUNCTclause
 incarnée	incarner	VERB
@@ -1281,7 +1282,7 @@ que	que	SCONJ
 J.-T.	J.-T.	PROPN
 Maston	Maston	PROPN
 et	et	CCONJ
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 Evangélina	Evangélina	PROPN
 Scorbitt	Scorbitt	PROPN
 fussent	être	VERB
@@ -1371,7 +1372,7 @@ dans	dans	ADP
 les	le	DET
 salles	salle	NOUN
 de	de	ADP
-Auctions	Auctions	PROPN
+Auctions	Auctions	NOUN
 ,	,	PUNCTclause
 il	il	PRON
 ne	ne	ADV
@@ -1487,7 +1488,7 @@ Cependant	cependant	ADV
 ,	,	PUNCTclause
 si	si	SCONJ
 le	le	DET
-Pôle	pôle	NOUN
+Pôle	Pôle	NOUN
 ne	ne	ADV
 figurait	figurer	VERB
 pas	pas	ADV
@@ -1523,7 +1524,7 @@ dix-sept	dix-sept	NUM
 degrés	degré	NOUN
 au-dessus	au-dessus	ADV
 du	du	ADP_DET
-Cercle	cercle	NOUN
+Cercle	Cercle	NOUN
 polaire	polaire	ADJ
 ,	,	PUNCTclause
 un	un	DET
@@ -1737,7 +1738,7 @@ pour	pour	ADP
 le	le	DET
 compte	compte	NOUN
 des	un	ADP_DET
-États	état	NOUN
+États	États	NOUN
 qui	qui	PRON
 ne	ne	ADV
 seraient	être	AUX
@@ -1877,7 +1878,7 @@ légèrement	légèrement	ADV
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Messieurs	messieurs	NOUN
+Messieurs	monsieur	NOUN
 ,	,	PUNCTclause
 sur	sur	ADP
 la	le	DET
@@ -1897,16 +1898,16 @@ proposition	proposition	NOUN
 par	par	ADP
 les	le	DET
 divers	divers	ADJ
-États	état	NOUN
+États	États	NOUN
 du	du	ADP_DET
 Nouveau	nouveau	ADJ
-Monde	monde	NOUN
+Monde	Monde	NOUN
 et	et	CCONJ
 même	même	ADV
 de	de	ADP
 l'	le	DET
 Ancien	ancien	ADJ
-Continent	continent	NOUN
+Continent	Continent	NOUN
 ,	,	PUNCTclause
 nous	nous	PRON
 allons	aller	VERB
@@ -1921,7 +1922,7 @@ immeubles	immeuble	NOUN
 situés	situer	VERB
 autour	autour	ADV
 du	du	ADP_DET
-Pôle	pôle	NOUN
+Pôle	Pôle	NOUN
 nord	nord	NOUN
 ,	,	PUNCTclause
 tel	tel	PRON
@@ -2067,7 +2068,7 @@ Un	un	DET
 peu de	peu de	DET
 silence	silence	NOUN
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
@@ -2493,7 +2494,7 @@ dans	dans	ADP
 la	le	DET
 lecture	lecture	NOUN
 du	du	ADP_DET
-Mercurial	Mercurial	PROPN
+Mercurial	Mercurial	NOUN
 of	of	ADJ
 New-Found-Land	New-Found-Land	PROPN
 ,	,	PUNCTclause
@@ -2577,7 +2578,7 @@ taire	taire	VERB
 «	«	PUNCTclause
 Allons	aller	VERB
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 ,	,	PUNCTclause
 reprit	reprendre	VERB
 Andrew	Andrew	PROPN
@@ -2829,7 +2830,7 @@ tête	tête	NOUN
 aux	au	ADP_DET
 sourires	sourire	NOUN
 de	de	ADP
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 Evangélina	Evangélina	PROPN
 Scorbitt	Scorbitt	PROPN
 .	.	PUNCTsent
@@ -2837,7 +2838,7 @@ Scorbitt	Scorbitt	PROPN
 «	«	PUNCTclause
 Allons	aller	VERB
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 ,	,	PUNCTclause
 un	un	DET
 peu de	peu de	DET
@@ -3358,7 +3359,7 @@ impassible	impassible	ADJ
 représentant	représenter	VERB
 de	de	ADP
 la	le	DET
-Compagnie	compagnie	NOUN
+Compagnie	Compagnie	NOUN
 américaine	américain	ADJ
 ,	,	PUNCTclause
 mais	mais	CCONJ
@@ -3450,10 +3451,10 @@ un	un	DET
 défi	défi	NOUN
 aux	au	ADP_DET
 trente-huit	trente-huit	NUM
-États	état	NOUN
+États	États	NOUN
 de	de	ADP
 la	le	DET
-Confédération	confédération	NOUN
+Confédération	Confédération	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 On	on	PRON
@@ -3764,7 +3765,7 @@ tandis que	tandis que	SCONJ
 les	le	DET
 yeux	œil	NOUN
 de	de	ADP
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 Evangélina	Evangélina	PROPN
 Scorbitt	Scorbitt	PROPN
 suivaient	suivre	VERB
@@ -4012,7 +4013,7 @@ Pôle	Pôle	PROPN
 nord	nord	NOUN
 échappât	échapper	VERB
 aux	au	ADP_DET
-Puissances	puissance	NOUN
+Puissances	Puissances	NOUN
 européennes	européen	ADJ
 .	.	PUNCTsent
 Mais	mais	CCONJ
@@ -4117,7 +4118,7 @@ surface	surface	NOUN
 de	de	ADP
 toute	tout	ADJ
 la	le	DET
-Confédération	confédération	NOUN
+Confédération	Confédération	NOUN
 ;	;	PUNCTclause
 puis	puis	CCONJ
 ,	,	PUNCTclause
@@ -4132,7 +4133,7 @@ irruption	irruption	NOUN
 dans	dans	ADP
 l'	le	DET
 Ancien	ancien	ADJ
-Monde	monde	NOUN
+Monde	Monde	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 ce	ce	PRON

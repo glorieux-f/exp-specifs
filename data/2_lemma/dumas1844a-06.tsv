@@ -6,7 +6,7 @@
 # title = VI. Sa majesté le roi Louis treizième
 
 ↵↵↵	↵↵↵	PUNCTstruct
-VI	VI	ADJ
+		TOKEN
 .	.	PUNCTsent
 Sa	son	DET
 majesté	majesté	NOUN
@@ -53,7 +53,7 @@ prévenir	prévenir	VERB
 le	le	DET
 roi	roi	NOUN
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 se	se	PRON
@@ -62,7 +62,7 @@ de	de	ADP
 se	se	PRON
 rendre	rendre	VERB
 au	au	ADP_DET
-Louvre	Louvre	PROPN
+Louvre	Louvre	NOUN
 .	.	PUNCTsent
 Il	il	PRON
 était	être	AUX
@@ -82,7 +82,7 @@ et	et	CCONJ
 l'on	on	PRON
 dit	dire	VERB
 à	à	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 que	que	SCONJ
@@ -100,7 +100,7 @@ moment	moment	NOUN
 Le	le	DET
 soir	soir	NOUN
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 vint	venir	VERB
@@ -116,7 +116,7 @@ gagnait	gagner	VERB
 et	et	CCONJ
 comme	comme	ADP
 Sa	son	DET
-Majesté	majesté	NOUN
+Majesté	Majesté	NOUN
 était	être	AUX
 fort	fort	ADV
 avare	avare	ADJ
@@ -283,7 +283,7 @@ vous	vous	PRON
 les	le	DET
 gardes	garde	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 le	le	DET
 cardinal	cardinal	NOUN
 sont	être	AUX
@@ -315,7 +315,7 @@ défendre	défendre	VERB
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
 Écoutez	écouter	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 !	!	PUNCTsent
@@ -564,7 +564,7 @@ que	que	SCONJ
 je	je	PRON
 parle	parler	VERB
 à	à	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 pour	pour	ADP
@@ -610,7 +610,7 @@ Puis	puis	CCONJ
 se	se	PRON
 retournant	retourner	VERB
 vers	vers	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 et	et	CCONJ
@@ -762,7 +762,8 @@ soldats	soldat	NOUN
 dis	dire	VERB
 je	je	PRON
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+		TOKEN
+.	.	PUNCTsent
 Athos	Athos	PROPN
 ,	,	PUNCTclause
 Porthos	Porthos	PROPN
@@ -814,11 +815,12 @@ elle	elle	PRON
 fut	être	AUX
 troublée	troubler	VERB
 par	par	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Jussac	Jussac	PROPN
 et	et	CCONJ
-messieurs	messieurs	NOUN
+		TOKEN
+.	.	PUNCTsent
 Cahusac	Cahusac	PROPN
 ,	,	PUNCTclause
 Biscarat	Biscarat	PROPN
@@ -883,7 +885,7 @@ mais	mais	CCONJ
 je	je	PRON
 laisse	laisser	VERB
 Votre	votre	DET
-Majesté	majesté	NOUN
+Majesté	Majesté	NOUN
 apprécier	apprécier	VERB
 ce	ce	DET
 que	que	SCONJ
@@ -953,7 +955,7 @@ corps	corps	NOUN
 ;	;	PUNCTclause
 car	car	CCONJ
 Votre	votre	DET
-Majesté	majesté	NOUN
+Majesté	Majesté	NOUN
 ne	ne	ADV
 ignore	ignorer	VERB
 pas	pas	ADV
@@ -981,7 +983,7 @@ gardes	garde	NOUN
 qui	qui	PRON
 sont	être	AUX
 à	à	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 le	le	DET
 cardinal	cardinal	NOUN
 .	.	PUNCTsent
@@ -1094,8 +1096,8 @@ a	avoir	AUX
 fait	faire	VERB
 nommer	nommer	VERB
 Louis	Louis	PROPN
-XIII	XIII	NUM
-le	le	DET
+Xiii	Xiii	PROPN
+le	le:PRON	PRON
 Juste	Juste	PROPN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -1159,7 +1161,7 @@ plus	plus	ADV
 terribles	terrible	ADJ
 gardes	garde	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 le	le	DET
 cardinal	cardinal	NOUN
 ,	,	PUNCTclause
@@ -1343,7 +1345,7 @@ Et	et	CCONJ
 le	le	DET
 roi	roi	NOUN
 Louis	Louis	PROPN
-XIII	XIII	NUM
+Xiii	Xiii	PROPN
 releva	relever	VERB
 fièrement	fièrement	ADV
 sa	son	DET
@@ -1368,7 +1370,7 @@ vous	vous	PRON
 l'	le:PRON	PRON
 ai	avoir	AUX
 dit	dire	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Artagnan	Artagnan	PROPN
 est	être	AUX
@@ -1397,7 +1399,7 @@ bourgeois	bourgeois	ADJ
 les	le	DET
 gardes	garde	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 le	le	DET
 cardinal	cardinal	NOUN
 ,	,	PUNCTclause
@@ -1483,7 +1485,7 @@ et	et	CCONJ
 tout	tout	ADV
 à	à	ADP
 Sa	son	DET
-Majesté	majesté	NOUN
+Majesté	Majesté	NOUN
 ,	,	PUNCTclause
 que	que	SCONJ
 ainsi	ainsi	ADV
@@ -1491,7 +1493,7 @@ donc	donc	ADV
 il	il	PRON
 resterait	rester	VERB
 avec	avec	ADP
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 les	le	DET
 mousquetaires	mousquetaire	NOUN
 .	.	PUNCTsent
@@ -1713,7 +1715,7 @@ Sire	Sire	PROPN
 nous	nous	PRON
 serons	être	VERB
 au	au	ADP_DET
-Louvre	Louvre	PROPN
+Louvre	Louvre	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
@@ -1813,7 +1815,7 @@ mes	mon	DET
 trois	trois	NUM
 mousquetaires	mousquetaire	NOUN
 et	et	CCONJ
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Artagnan	Artagnan	PROPN
 .	.	PUNCTsent
@@ -2291,7 +2293,7 @@ un	un	DET
 garde	garde	NOUN
 de	de	ADP
 Son	son	DET
-Éminence	éminence	NOUN
+Éminence	Éminence	NOUN
 ,	,	PUNCTclause
 lequel	lequel	PRON
 ,	,	PUNCTclause
@@ -2694,7 +2696,7 @@ réprimer	réprimer	VERB
 ↵↵	↵↵	PUNCTstruct
 Porthos	Porthos	PROPN
 et	et	CCONJ
-Aramis	Aramis	PROPN
+Aramis	Aramis	NOUN
 étaient	être	AUX
 si	si	ADV
 occupés	occupé	ADJ
@@ -2870,7 +2872,7 @@ Saint-Germain	Saint-Germain	PROPN
 ou	ou	CCONJ
 dans	dans	ADP
 le	le	DET
-Pré-aux-Clercs	Pré-aux-Clercs	PROPN
+Pré-aux-Clercs	Pré-aux-Clercs	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
@@ -3125,10 +3127,10 @@ du côté de	du côté de	ADP
 l'	le	DET
 hôtel	hôtel	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 La	le	DET
-Trémouille	Trémouille	PROPN
+Trémouille	Trémouille	NOUN
 au	au	ADP_DET
 service	service	NOUN
 duquel	duquel	ADP_PRON
@@ -3339,7 +3341,7 @@ mousquetaires	mousquetaire	NOUN
 ennemis	ennemi	ADJ
 de	de	ADP
 Son	son	DET
-Éminence	éminence	NOUN
+Éminence	Éminence	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 on	on	PRON
@@ -3395,7 +3397,7 @@ de	de	ADP
 la	le	DET
 compagnie	compagnie	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 des	un	ADP_DET
 Essarts	Essarts	PROPN
 qui	qui	PRON
@@ -3417,7 +3419,7 @@ courait	courir	VERB
 l'	le	DET
 hôtel	hôtel	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 ,	,	PUNCTclause
@@ -3440,7 +3442,7 @@ habitude	habitude	NOUN
 l'	le	DET
 hôtel	hôtel	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 était	être	AUX
@@ -3479,7 +3481,7 @@ et	et	CCONJ
 les	le	DET
 gens	gens	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 La	le	DET
 Trémouille	Trémouille	PROPN
@@ -3560,10 +3562,10 @@ eue	avoir	VERB
 les	le	DET
 domestiques	domestique	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 La	le	DET
-Trémouille	Trémouille	PROPN
+Trémouille	Trémouille	NOUN
 de	de	ADP
 faire	faire	VERB
 une	un	DET
@@ -3682,7 +3684,7 @@ vers	vers	ADP
 l'	le	DET
 hôtel	hôtel	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 ,	,	PUNCTclause
@@ -3702,13 +3704,13 @@ algarade	algarade	NOUN
 Vite	vite	ADV
 ,	,	PUNCTclause
 au	au	ADP_DET
-Louvre	Louvre	PROPN
+Louvre	Louvre	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 il	il	PRON
 ,	,	PUNCTclause
 au	au	ADP_DET
-Louvre	Louvre	PROPN
+Louvre	Louvre	NOUN
 sans	sans	ADP
 perdre	perdre	VERB
 un	un	DET
@@ -3765,7 +3767,7 @@ achemina	acheminer	VERB
 donc	donc	ADV
 vers	vers	ADP
 le	le	DET
-Louvre	Louvre	PROPN
+Louvre	Louvre	NOUN
 ;	;	PUNCTclause
 mais	mais	CCONJ
 ,	,	PUNCTclause
@@ -3818,7 +3820,7 @@ rembrunir	rembrunir	VERB
 «	«	PUNCTclause
 est-ce que	est-ce que	ADV
 Sa	son	DET
-Majesté	majesté	NOUN
+Majesté	Majesté	NOUN
 ,	,	PUNCTclause
 demanda	demander	VERB
 il	il	PRON
@@ -3912,7 +3914,7 @@ le	le	DET
 cardinal	cardinal	NOUN
 ?	?	PUNCTsent
 demanda	demander	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 .	.	PUNCTsent
@@ -3938,7 +3940,7 @@ au	au	ADP_DET
 carrosse	carrosse	NOUN
 de	de	ADP
 Son	son	DET
-Éminence	éminence	NOUN
+Éminence	Éminence	NOUN
 ,	,	PUNCTclause
 je	je	PRON
 ai	avoir	AUX
@@ -3963,11 +3965,11 @@ sommes	être	AUX
 prévenus	prévenir	VERB
 ,	,	PUNCTclause
 dit	dire	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 ,	,	PUNCTclause
 je	je	PRON
 verrai	voir	VERB
@@ -4045,7 +4047,7 @@ entrant	entrer	VERB
 son	son	DET
 hôtel	hôtel	NOUN
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 songea	songer	VERB
@@ -4067,7 +4069,7 @@ de	de	ADP
 ses	son	DET
 domestiques	domestique	NOUN
 chez	chez	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 La	le	DET
 Trémouille	Trémouille	PROPN
@@ -4087,7 +4089,7 @@ lui	lui	PRON
 le	le	DET
 garde	garde	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 le	le	DET
 cardinal	cardinal	NOUN
 ,	,	PUNCTclause
@@ -4112,7 +4114,7 @@ les	le	DET
 mousquetaires	mousquetaire	NOUN
 .	.	PUNCTsent
 Mais	mais	CCONJ
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 La	le	DET
 Trémouille	Trémouille	PROPN
@@ -4143,7 +4145,7 @@ ne	ne	ADV
 était	être	AUX
 ni	ni	CCONJ
 à	à	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 ,	,	PUNCTclause
@@ -4196,7 +4198,7 @@ dans	dans	ADP
 son	son	DET
 opinion	opinion	NOUN
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 avisa	aviser	VERB
@@ -4216,7 +4218,7 @@ de	de	ADP
 aller	aller	VERB
 trouver	trouver	VERB
 lui-même	lui-même	PRON
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 La	le	DET
 Trémouille	Trémouille	PROPN
@@ -4271,7 +4273,7 @@ honneur	honneur	NOUN
 ;	;	PUNCTclause
 et	et	CCONJ
 comme	comme	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 La	le	DET
 Trémouille	Trémouille	PROPN
@@ -4321,7 +4323,7 @@ habitude	habitude	NOUN
 Monsieur	monsieur	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 ,	,	PUNCTclause
@@ -4356,7 +4358,7 @@ clair	clair	NOUN
 Volontiers	volontiers	ADV
 ,	,	PUNCTclause
 répondit	répondre	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 La	le	DET
 Trémouille	Trémouille	PROPN
@@ -4395,7 +4397,7 @@ raisonnable	raisonnable	ADJ
 monsieur	monsieur	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 ,	,	PUNCTclause
@@ -4424,7 +4426,7 @@ je	je	PRON
 Comment	comment	ADV
 se	se	PRON
 trouve	trouver	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 Bernajoux	Bernajoux	PROPN
 ,	,	PUNCTclause
 le	le	DET
@@ -4672,7 +4674,7 @@ la	le	DET
 vie	vie	NOUN
 .	.	PUNCTsent
 Alors	alors	ADV
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 ,	,	PUNCTclause
@@ -4691,7 +4693,7 @@ le	le	DET
 malade	malade	NOUN
 ,	,	PUNCTclause
 invita	inviter	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 La	le	DET
 Trémouille	Trémouille	PROPN
@@ -4705,7 +4707,7 @@ Ce	ce	PRON
 que	que	PRON
 avait	avoir	AUX
 prévu	prévoir	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 arriva	arriver	VERB
@@ -4760,7 +4762,7 @@ tout	tout	ADJ
 ce	ce	DET
 que	que	PRON
 voulait	vouloir	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 ;	;	PUNCTclause
@@ -4775,7 +4777,7 @@ convalescence	convalescence	NOUN
 prit	prendre	VERB
 congé	congé	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 La	le	DET
 Trémouille	Trémouille	PROPN
@@ -4834,7 +4836,7 @@ les	le	DET
 gardes	garde	NOUN
 de	de	ADP
 Son	son	DET
-Éminence	éminence	NOUN
+Éminence	Éminence	NOUN
 .	.	PUNCTsent
 Or	or	NOUN
 ,	,	PUNCTclause
@@ -4894,7 +4896,7 @@ Vers	vers	ADP
 six	six	NUM
 heures	heure	NOUN
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 annonça	annoncer	VERB
@@ -4905,7 +4907,7 @@ tenu	tenir	VERB
 de	de	ADP
 aller	aller	VERB
 au	au	ADP_DET
-Louvre	Louvre	PROPN
+Louvre	Louvre	NOUN
 ;	;	PUNCTclause
 mais	mais	CCONJ
 comme	comme	ADP
@@ -4917,7 +4919,7 @@ audience	audience	NOUN
 accordée	accorder	VERB
 par	par	ADP
 Sa	son	DET
-Majesté	majesté	NOUN
+Majesté	Majesté	NOUN
 était	être	AUX
 passée	passer	VERB
 ,	,	PUNCTclause
@@ -4980,7 +4982,7 @@ que	que	SCONJ
 on	on	PRON
 annonça	annoncer	VERB
 Sa	son	DET
-Majesté	majesté	NOUN
+Majesté	Majesté	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 À	à	ADP
@@ -5035,8 +5037,8 @@ le	le	DET
 roi	roi	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Louis	Louis	PROPN
-XIII	XIII	NUM
+Louis	louis	NOUN
+Xiii	Xiii	PROPN
 parut	paraître	VERB
 ,	,	PUNCTclause
 marchant	marcher	VERB
@@ -5094,7 +5096,7 @@ elle	elle	PRON
 était	être	AUX
 chez	chez	ADP
 Sa	son	DET
-Majesté	majesté	NOUN
+Majesté	Majesté	NOUN
 ,	,	PUNCTclause
 ne	ne	ADV
 empêcha	empêcher	VERB
@@ -5189,7 +5191,7 @@ jamais	jamais	ADV
 vus	vu	VERB
 .	.	PUNCTsent
 quant à	quant à	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 ,	,	PUNCTclause
@@ -5231,7 +5233,7 @@ en	en	ADP
 grommelant	grommeler	VERB
 ,	,	PUNCTclause
 Sa	son	DET
-Majesté	majesté	NOUN
+Majesté	Majesté	NOUN
 rentra	rentrer	VERB
 dans	dans	ADP
 son	son	DET
@@ -5270,7 +5272,7 @@ dix	dix	NUM
 minutes	minute	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 ;	;	PUNCTclause
@@ -5321,7 +5323,7 @@ minutes	minute	NOUN
 et	et	CCONJ
 voyant	voir	VERB
 que	que	SCONJ
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 ne	ne	ADV
@@ -5355,7 +5357,7 @@ et	et	CCONJ
 avait	avoir	AUX
 trouvé	trouver	VERB
 Sa	son	DET
-Majesté	majesté	NOUN
+Majesté	Majesté	NOUN
 de	de	ADP
 très	très	ADV
 méchante	méchant	ADJ
@@ -5422,7 +5424,7 @@ pire	pire	ADJ
 maladie	maladie	NOUN
 de	de	ADP
 Louis	Louis	PROPN
-XIII	XIII	NUM
+Xiii	Xiii	PROPN
 ,	,	PUNCTclause
 qui	qui	PRON
 souvent	souvent	ADV
@@ -5461,7 +5463,7 @@ se	se	PRON
 ennuie	ennuyer	VERB
 !	!	PUNCTsent
 dit	dire	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 .	.	PUNCTsent
@@ -5587,7 +5589,8 @@ renoncé	renoncer	VERB
 la	le	DET
 chasse	chasse	NOUN
 au	au	ADP_DET
-vol.	vol.	NOUN
+vol	vol	NOUN
+.	.	PUNCTsent
 ha	ha	INTJ
 !	!	PUNCTsent
 je	je	PRON
@@ -5717,7 +5720,7 @@ des	un	DET
 mais	mais	CCONJ
 oui	oui	INTJ
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 le	le	DET
 cardinal	cardinal	NOUN
 est	être	AUX
@@ -5756,7 +5759,7 @@ Angleterre	Angleterre	PROPN
 ha	ha	INTJ
 !	!	PUNCTsent
 à propos de	à propos de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 le	le	DET
 cardinal	cardinal	NOUN
 ,	,	PUNCTclause
@@ -5844,7 +5847,7 @@ Votre	Votre	PROPN
 Majesté	Majesté	PROPN
 ?	?	PUNCTsent
 demanda	demander	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 en	en	ADP
@@ -5877,7 +5880,7 @@ directement	directement	ADV
 la	le	DET
 question	question	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 ;	;	PUNCTclause
@@ -5958,7 +5961,7 @@ Sire	sire	NOUN
 ,	,	PUNCTclause
 répondit	répondre	VERB
 tranquillement	tranquillement	ADV
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 ,	,	PUNCTclause
@@ -5987,7 +5990,7 @@ les	le	DET
 calomniateurs	calomniateur	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 .	.	PUNCTsent
@@ -6158,7 +6161,7 @@ Sire	Sire	PROPN
 ?	?	PUNCTsent
 demanda	demander	VERB
 tranquillement	tranquillement	ADV
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 .	.	PUNCTsent
@@ -6217,7 +6220,7 @@ Europe	Europe	PROPN
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
 Sa	son	DET
-Majesté	majesté	NOUN
+Majesté	Majesté	NOUN
 veut	vouloir	VERB
 parler	parler	VERB
 de	de	ADP
@@ -6226,7 +6229,7 @@ Dieu	Dieu	PROPN
 sans doute	sans doute	ADV
 ,	,	PUNCTclause
 dit	dire	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 ,	,	PUNCTclause
@@ -6243,7 +6246,7 @@ fort	fort	ADV
 au-dessus	au-dessus	ADV
 de	de	ADP
 Sa	son	DET
-Majesté	majesté	NOUN
+Majesté	Majesté	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
@@ -6257,7 +6260,7 @@ du	du	ADP_DET
 soutien	soutien	NOUN
 de	de	ADP
 l'	le	DET
-État	état	NOUN
+État	État	NOUN
 ,	,	PUNCTclause
 de	de	ADP
 mon	mon	DET
@@ -6270,19 +6273,19 @@ seul	seul	ADJ
 ami	ami	NOUN
 ,	,	PUNCTclause
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 le	le	DET
 cardinal	cardinal	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
 Son	son	DET
-Éminence	éminence	NOUN
+Éminence	Éminence	NOUN
 ne	ne	ADV
 est	être	AUX
 pas	pas	ADV
 Sa	son	DET
-Sainteté	sainteté	NOUN
+Sainteté	Sainteté	NOUN
 ,	,	PUNCTclause
 Sire	Sire	PROPN
 .	.	PUNCTsent
@@ -6545,7 +6548,7 @@ rapporterez	rapporter	VERB
 ce	ce	DET
 que	que	SCONJ
 dira	dire	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 La	le	DET
 Trémouille	Trémouille	PROPN
@@ -6603,7 +6606,7 @@ de	de	ADP
 confiance	confiance	NOUN
 de	de	ADP
 Louis	Louis	PROPN
-XIII	XIII	NUM
+Xiii	Xiii	PROPN
 ,	,	PUNCTclause
 qui	qui	PRON
 se	se	PRON
@@ -6630,10 +6633,10 @@ aille	aller	VERB
 à l'instant même	à l'instant même	ADV
 me	me	PRON
 quérir	quérir	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 La	le	DET
-Trémouille	Trémouille	PROPN
+Trémouille	Trémouille	NOUN
 ;	;	PUNCTclause
 je	je	PRON
 veux	vouloir	VERB
@@ -6656,7 +6659,7 @@ ne	ne	ADV
 verra	voir	VERB
 personne	personne:PRON	PRON
 entre	entre	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 La	le	DET
 Trémouille	Trémouille	PROPN
@@ -6724,7 +6727,7 @@ crains	craindre	VERB
 de	de	ADP
 réveiller	réveiller	VERB
 votre	votre	DET
-Majesté	majesté	NOUN
+Majesté	Majesté	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
@@ -6855,7 +6858,7 @@ demain	demain	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Dieu	Dieu	PROPN
+Dieu	dieu	NOUN
 garde	garder	VERB
 jusque	jusque	ADP
 Votre	votre	DET
@@ -6868,7 +6871,7 @@ dormit	dormir	VERB
 le	le	DET
 roi	roi	NOUN
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 dormit	dormir	VERB
@@ -6990,7 +6993,7 @@ particulière	particulier	ADJ
 du	du	ADP_DET
 roi	roi	NOUN
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 trouva	trouver	VERB
@@ -7029,7 +7032,7 @@ pour	pour	ADP
 se	se	PRON
 présenter	présenter	VERB
 au	au	ADP_DET
-Louvre	Louvre	PROPN
+Louvre	Louvre	NOUN
 ,	,	PUNCTclause
 que	que	SCONJ
 il	il	PRON
@@ -7055,7 +7058,7 @@ circonstance	circonstance	NOUN
 plut	plaire	VERB
 beaucoup	beaucoup	ADV
 à	à	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 ,	,	PUNCTclause
@@ -7078,7 +7081,7 @@ entre	entre	ADP
 la	le	DET
 déposition	déposition	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 La	le	DET
 Trémouille	Trémouille	PROPN
@@ -7104,7 +7107,7 @@ se	se	PRON
 ouvrit	ouvrir	VERB
 et	et	CCONJ
 que	que	SCONJ
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 en	en	ADP
@@ -7131,7 +7134,7 @@ de	de	ADP
 Tréville	Tréville	PROPN
 ,	,	PUNCTclause
 Sa	son	DET
-Majesté	majesté	NOUN
+Majesté	Majesté	NOUN
 vient	venir	VERB
 de	de	ADP
 me	me	PRON
@@ -7204,7 +7207,7 @@ le	le	DET
 duc	duc	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 ,	,	PUNCTclause
@@ -7226,7 +7229,7 @@ pas	pas	ADV
 voulu	vouloir	VERB
 près de	près de	ADP
 Sa	son	DET
-Majesté	majesté	NOUN
+Majesté	Majesté	NOUN
 d'autre	d'autre	ADP
 défenseur	défenseur	NOUN
 que	que	SCONJ
@@ -7404,7 +7407,7 @@ dis	dire	VERB
 point	point	ADV
 cela	cela	PRON
 pour	pour	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Tréville	Tréville	PROPN
 ,	,	PUNCTclause
@@ -7637,7 +7640,7 @@ sept	sept	NUM
 gardes	garde	NOUN
 de	de	ADP
 Son	son	DET
-Éminence	éminence	NOUN
+Éminence	Éminence	NOUN
 mis	mettre	VERB
 hors de	hors de	ADP
 combat	combat	NOUN
@@ -7649,7 +7652,7 @@ ce	ce	PRON
 est	être	AUX
 trop	trop	ADV
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 ,	,	PUNCTclause
 ce	ce	PRON
 est	être	AUX
@@ -7660,7 +7663,7 @@ ce	ce	DET
 compte	compte	NOUN
 ,	,	PUNCTclause
 Son	son	DET
-Éminence	éminence	NOUN
+Éminence	Éminence	NOUN
 serait	être	AUX
 forcée	forcer	VERB
 de	de	ADP
@@ -7906,7 +7909,7 @@ véritable	véritable	ADJ
 démon	démon	NOUN
 que	que	SCONJ
 ce	ce	DET
-Béarnais	béarnais	NOUN
+Béarnais	Béarnais	NOUN
 ,	,	PUNCTclause
 ventre-saint-gris	ventre-saint-gris	NOUN
 !	!	PUNCTsent
@@ -7999,7 +8002,7 @@ que	que	SCONJ
 ce	ce	PRON
 sont	être	AUX
 les	le	DET
-Gascons	gascon	NOUN
+Gascons	Gascons	NOUN
 qui	qui	PRON
 me	me	PRON
 ont	avoir	AUX
@@ -8115,7 +8118,7 @@ il	il	PRON
 à	à	ADP
 voir	voir	VERB
 Sa	son	DET
-Majesté	majesté	NOUN
+Majesté	Majesté	NOUN
 ,	,	PUNCTclause
 il	il	PRON
 était	être	AUX
@@ -8178,7 +8181,7 @@ la	le	DET
 vie	vie	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 La	le	DET
 Trémouille	Trémouille	PROPN
@@ -8244,7 +8247,7 @@ assez	assez	ADV
 comme	comme	ADP
 cela	cela	PRON
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 ,	,	PUNCTclause
 entendez	entendre	VERB
 vous	vous	PRON
@@ -8402,7 +8405,7 @@ tout	tout	ADV
 au contraire	au contraire	ADV
 grandement	grandement	ADV
 Sa	son	DET
-Majesté	majesté	NOUN
+Majesté	Majesté	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
@@ -8451,7 +8454,7 @@ de	de	ADP
 votre	votre	DET
 dévouement	dévouement	NOUN
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 .	.	PUNCTsent
 je	je	PRON
 y	y	PRON
@@ -8558,7 +8561,7 @@ compagnie	compagnie	NOUN
 des	un	ADP_DET
 gardes	garde	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 des	un	ADP_DET
 Essarts	Essarts	PROPN
 ,	,	PUNCTclause
@@ -8641,7 +8644,7 @@ l'	le	DET
 avait	avoir	AUX
 dit	dire	VERB
 Sa	son	DET
-Majesté	majesté	NOUN
+Majesté	Majesté	NOUN
 ,	,	PUNCTclause
 fut	être	AUX
 effectivement	effectivement	ADV

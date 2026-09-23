@@ -6,7 +6,7 @@
 # title = XVI. Le salon de Mme la baronne de Staël, ambassadrice de Suède
 
 ↵↵↵	↵↵↵	PUNCTstruct
-XVI	XVI	NUM
+		TOKEN
 .	.	PUNCTsent
 Le	le	DET
 salon	salon	NOUN
@@ -94,7 +94,7 @@ Staël	Staël	PROPN
 ,	,	PUNCTclause
 fille	fille	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 Necker	Necker	PROPN
 ,	,	PUNCTclause
 femme	femme	NOUN
@@ -230,7 +230,7 @@ de	de	ADP
 évasion	évasion	NOUN
 pour	pour	ADP
 Louis	Louis	PROPN
-XVI	XVI	NUM
+		TOKEN
 ,	,	PUNCTclause
 et	et	CCONJ
 ,	,	PUNCTclause
@@ -261,7 +261,7 @@ de	de	ADP
 guerre	guerre	NOUN
 de	de	ADP
 Gustave	Gustave	PROPN
-IV	IV	NUM
+		TOKEN
 à	à	ADP
 la	le	DET
 Russie	Russie	PROPN
@@ -308,7 +308,7 @@ le	le	DET
 9	9	NUM
 thermidor	thermidor	NOUN
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Staël	Staël	PROPN
 rentra	rentrer	VERB
@@ -341,7 +341,7 @@ de	de	ADP
 la	le	DET
 rue	rue	NOUN
 du	du	ADP_DET
-Bac	bac	NOUN
+Bac	Bac	NOUN
 ,	,	PUNCTclause
 que	que	SCONJ
 elle	elle	PRON
@@ -438,7 +438,7 @@ radiation	radiation	NOUN
 particulièrement	particulièrement	ADV
 celle	celle	PRON
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Narbonne	Narbonne	PROPN
 ,	,	PUNCTclause
@@ -523,7 +523,7 @@ trouble	trouble	NOUN
 régnait	régner	VERB
 à	à	ADP
 la	le	DET
-Convention	convention	NOUN
+Convention	Convention	NOUN
 ,	,	PUNCTclause
 le	le	DET
 salon	salon	NOUN
@@ -1113,7 +1113,7 @@ titre	titre	NOUN
 de	de	ADP
 Valérie	Valérie	PROPN
 ou	ou	CCONJ
-Lettres	lettre	NOUN
+Lettres	Lettres	NOUN
 de	de	ADP
 Gustave	Gustave	PROPN
 de	de	ADP
@@ -1470,7 +1470,7 @@ fermé	fermer	VERB
 ↵↵	↵↵	PUNCTstruct
 Marié	marier	VERB
 en plein	en plein	ADV
-Terreur	terreur	NOUN
+Terreur	Terreur	NOUN
 ,	,	PUNCTclause
 le	le	DET
 24	24	NUM
@@ -1970,11 +1970,11 @@ sur	sur	ADP
 la	le	DET
 nomination	nomination	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Narbonne	Narbonne	PROPN
 au	au	ADP_DET
-Ministère	ministère	NOUN
+Ministère	Ministère	NOUN
 de	de	ADP
 la	le	DET
 guerre	guerre	NOUN
@@ -2229,7 +2229,7 @@ jure	jurer	VERB
 ,	,	PUNCTclause
 mon	mon	DET
 cher	cher	ADJ
-Constant	Constant	PROPN
+Constant	Constant	NOUN
 ,	,	PUNCTclause
 non	non	ADV
 ,	,	PUNCTclause
@@ -2239,7 +2239,7 @@ suis	être	AUX
 pas	pas	ADV
 contre	contre	ADP
 la	le	DET
-République	République	PROPN
+République	République	NOUN
 ;	;	PUNCTclause
 tout	tout	PRON
 au contraire	au contraire	ADV
@@ -2506,7 +2506,7 @@ Ayant	avoir	VERB
 choisir	choisir	VERB
 entre	entre	ADP
 la	le	DET
-Constitution	constitution	NOUN
+Constitution	Constitution	NOUN
 de	de	ADP
 Lycurgue	Lycurgue	PROPN
 et	et	CCONJ
@@ -2527,7 +2527,7 @@ et	et	CCONJ
 encore	encore	ADV
 ,	,	PUNCTclause
 l'	le	DET
-Athènes	Athènes	PROPN
+Athènes	Athènes	NOUN
 de	de	ADP
 Périclès	Périclès	PROPN
 ,	,	PUNCTclause
@@ -2571,7 +2571,7 @@ qui	qui	PRON
 fut	être	AUX
 depuis	depuis	ADP
 Benjamin	Benjamin	PROPN
-Constant	Constant	PROPN
+Constant	constant	VERB
 ,	,	PUNCTclause
 vous	vous	PRON
 avez	avoir	AUX
@@ -2722,7 +2722,7 @@ cents	cents	NUM
 ,	,	PUNCTclause
 comme	comme	ADP
 la	le	DET
-Convention	convention	NOUN
+Convention	Convention	NOUN
 vient	venir	VERB
 de	de	ADP
 le	le	DET
@@ -2754,10 +2754,10 @@ vient	venir	VERB
 de	de	ADP
 battre	battre	VERB
 les	le	DET
-Prussiens	prussien	NOUN
+Prussiens	Prussiens	NOUN
 et	et	CCONJ
 les	le	DET
-Autrichiens	autrichien	NOUN
+Autrichiens	Autrichiens	NOUN
 .	.	PUNCTsent
 Thémistocle	Thémistocle	PROPN
 anéantit	anéantir	VERB
@@ -2772,7 +2772,7 @@ de	de	ADP
 enlever	enlever	VERB
 celle	celle	PRON
 des	un	ADP_DET
-Hollandais	hollandais	NOUN
+Hollandais	Hollandais	NOUN
 par	par	ADP
 une	un	DET
 décharge	décharge	NOUN
@@ -3020,7 +3020,7 @@ cela	cela	PRON
 —	—	PUNCTclause
 De	de	ADP
 la	le	DET
-Convention	convention	NOUN
+Convention	Convention	NOUN
 en	en	ADP
 ligne	ligne	NOUN
 droite	droit	ADJ
@@ -3135,7 +3135,7 @@ les	le	DET
 jours	jour	NOUN
 à	à	ADP
 la	le	DET
-Convention	convention	NOUN
+Convention	Convention	NOUN
 :	:	PUNCTclause
 «	«	PUNCTsent
 Tant	tant	ADV
@@ -3145,7 +3145,7 @@ ne	ne	ADV
 aurez	avoir	VERB
 pas	pas	ADV
 un	un	DET
-Ministère	ministère	NOUN
+Ministère	Ministère	NOUN
 de	de	ADP
 la	le	DET
 police	police	NOUN
@@ -3156,7 +3156,7 @@ un	un	DET
 ministre	ministre	NOUN
 de	de	ADP
 la	le	DET
-Police	police	NOUN
+Police	Police	NOUN
 exerçant	exercer	VERB
 ,	,	PUNCTclause
 non	non	ADV
@@ -3486,7 +3486,7 @@ est	être	AUX
 venu	venir	VERB
 insulter	insulter	VERB
 la	le	DET
-Convention	convention	NOUN
+Convention	Convention	NOUN
 jusque	jusque	ADP
 dans	dans	ADP
 la	le	DET
@@ -3522,7 +3522,7 @@ Fouché	Fouché	PROPN
 ,	,	PUNCTclause
 dit	dire	VERB
 Benjamin	Benjamin	PROPN
-Constant	Constant	PROPN
+Constant	constant	ADJ
 ,	,	PUNCTclause
 vous	vous	PRON
 avez	avoir	VERB
@@ -3557,7 +3557,7 @@ devriez	devoir	VERB
 ministre	ministre	NOUN
 de	de	ADP
 la	le	DET
-Police	police	NOUN
+Police	Police	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
@@ -3761,7 +3761,7 @@ en	en	ADP
 pleurant	pleurer	VERB
 à	à	ADP
 Louis	Louis	PROPN
-XVI	XVI	NUM
+		TOKEN
 sa	son	DET
 sentence	sentence	NOUN
 de	de	ADP
@@ -3806,7 +3806,7 @@ ténor	ténor	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Un	un	DET
-Italien	italien	NOUN
+Italien	Italien	NOUN
 ,	,	PUNCTclause
 nommé	nommer	VERB
 Lamberti	Lamberti	PROPN
@@ -3821,7 +3821,7 @@ Beck	Beck	PROPN
 ,	,	PUNCTclause
 directeur	directeur	NOUN
 du	du	ADP_DET
-Théâtre	théâtre	NOUN
+Théâtre	Théâtre	NOUN
 de	de	ADP
 Bordeaux	Bordeaux	PROPN
 ,	,	PUNCTclause
@@ -4066,7 +4066,7 @@ pardonna	pardonner	VERB
 jusque	jusque	ADP
 à	à	ADP
 la	le	DET
-Révolution	Révolution	PROPN
+Révolution	Révolution	NOUN
 ,	,	PUNCTclause
 Garat	Garat	PROPN
 resta	rester	VERB
@@ -4269,7 +4269,7 @@ que	que	SCONJ
 ce	ce	DET
 était	être	AUX
 Benjamin	Benjamin	PROPN
-Constant	Constant	PROPN
+Constant	constant	VERB
 ,	,	PUNCTclause
 autre	autre	PRON
 incroyable	incroyable	ADJ
@@ -4354,7 +4354,7 @@ pas	pas	ADV
 pu	pouvoir	VERB
 passer	passer	VERB
 au	au	ADP_DET
-Pont-Neuf	Pont-Neuf	PROPN
+Pont-Neuf	Pont-Neuf	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
 est	être	AUX
@@ -4387,7 +4387,7 @@ le	le	DET
 pont	pont	NOUN
 de	de	ADP
 l'	le	DET
-Égalité	égalité	NOUN
+Égalité	Égalité	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
 Il	il	PRON
@@ -4494,7 +4494,7 @@ vient	venir	VERB
 probablement	probablement	ADV
 de	de	ADP
 la	le	DET
-Convention	convention	NOUN
+Convention	Convention	NOUN
 ,	,	PUNCTclause
 à	à	ADP
 moins	moins	ADV
@@ -4527,7 +4527,7 @@ je	je	PRON
 arrive	arriver	VERB
 de	de	ADP
 la	le	DET
-Convention	convention	NOUN
+Convention	Convention	NOUN
 ;	;	PUNCTclause
 mais	mais	CCONJ
 je	je	PRON
@@ -4609,7 +4609,7 @@ répondu	répondre	VERB
 :	:	PUNCTclause
 «	«	PUNCTsent
 La	le	DET
-Convention	convention	NOUN
+Convention	Convention	NOUN
 a	avoir	VERB
 cinq	cinq	NUM
 mille	mille	NUM
@@ -4656,7 +4656,7 @@ comptez	compter	VERB
 vous	vous	PRON
 faire	faire	VERB
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 ?	?	PUNCTsent
 demanda	demander	VERB
 madame	madame	NOUN
@@ -4695,7 +4695,7 @@ Gaulois	Gaulois	PROPN
 se	se	PRON
 emparèrent	emparer	VERB
 du	du	ADP_DET
-Capitole	capitole	NOUN
+Capitole	Capitole	NOUN
 :	:	PUNCTclause
 mourir	mourir	VERB
 sur	sur	ADP
@@ -4711,7 +4711,7 @@ voir	voir	VERB
 cela	cela	PRON
 ?	?	PUNCTsent
 demanda	demander	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 Récamier	Récamier	PROPN
 avec	avec	ADP
 le	le	DET
@@ -4726,7 +4726,7 @@ le	le	DET
 massacre	massacre	NOUN
 de	de	ADP
 la	le	DET
-Convention	convention	NOUN
+Convention	Convention	NOUN
 en	en	ADP
 détail	détail	NOUN
 ,	,	PUNCTclause
@@ -4891,7 +4891,7 @@ Constant	Constant	PROPN
 —	—	PUNCTclause
 il y a	il y a	VERB
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 et	et	CCONJ
 mesdames	madame	NOUN
 —	—	PUNCTclause
@@ -4918,7 +4918,7 @@ Douai	Douai	PROPN
 )	)	PUNCTclause
 ,	,	PUNCTclause
 la	le	DET
-Convention	convention	NOUN
+Convention	Convention	NOUN
 nationale	national	ADJ
 vient	venir	VERB
 de	de	ADP
@@ -4997,10 +4997,10 @@ Barras	Barras	PROPN
 qui	qui	PRON
 défend	défendre	VERB
 la	le	DET
-Convention	convention	NOUN
+Convention	Convention	NOUN
 ,	,	PUNCTclause
 la	le	DET
-Convention	convention	NOUN
+Convention	Convention	NOUN
 est	être	AUX
 sauvée	sauver	VERB
 .	.	PUNCTsent

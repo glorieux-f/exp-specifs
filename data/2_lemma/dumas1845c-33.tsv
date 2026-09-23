@@ -6,14 +6,14 @@
 # title = II. La reconnaissance du roi Charles IX
 
 ↵↵↵	↵↵↵	PUNCTstruct
-II	II	PRON
+		TOKEN
 .	.	PUNCTsent
 La	le	DET
 reconnaissance	reconnaissance	NOUN
 du	du	ADP_DET
 roi	roi	NOUN
 Charles	Charles	PROPN
-IX	IX	NUM
+		TOKEN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Maurevel	Maurevel	PROPN
@@ -28,7 +28,7 @@ dans	dans	ADP
 le	le	DET
 cabinet	cabinet	NOUN
 des	un	ADP_DET
-Armes	arme	NOUN
+Armes	Armes	NOUN
 du	du	ADP_DET
 roi	roi	NOUN
 ;	;	PUNCTclause
@@ -66,7 +66,7 @@ rejoindre	rejoindre	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Charles	Charles	PROPN
-IX	IX	NUM
+		TOKEN
 ,	,	PUNCTclause
 averti	avertir	VERB
 à	à	ADP
@@ -338,7 +338,8 @@ il	il	PRON
 en	en	PRON
 était	être	AUX
 à peine	à peine	ADV
-septembre	septembre	NOUN
+sept	sept	NUM
+.	.	PUNCTsent
 Il	il	PRON
 compta	compter	VERB
 l'un	l'un	PRON
@@ -482,7 +483,7 @@ de	de	ADP
 Marguerite	Marguerite	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Marguerite	Marguerite	PROPN
+Marguerite	marguerite	NOUN
 avait	avoir	AUX
 ramené	ramener	VERB
 chez	chez	ADP
@@ -632,7 +633,7 @@ visage	visage	NOUN
 riant	riant	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Marguerite	Marguerite	PROPN
+Marguerite	marguerite	NOUN
 poussa	pousser	VERB
 un	un	DET
 cri	cri	NOUN
@@ -1133,7 +1134,7 @@ se	se	PRON
 éclaira	éclairer	VERB
 .	.	PUNCTsent
 Charles	Charles	PROPN
-IX	IX	NUM
+		TOKEN
 jeta	jeter	VERB
 autour de	autour de	ADP
 lui	lui	PRON
@@ -1281,7 +1282,7 @@ remue-ménage	remue-ménage	NOUN
 !	!	PUNCTsent
 répéta	répéter	VERB
 Charles	Charles	PROPN
-IX	IX	NUM
+		TOKEN
 .	.	PUNCTsent
 Voilà	voilà	ADP
 ton	ton	DET
@@ -1337,13 +1338,13 @@ te	te	PRON
 emmener	emmener	VERB
 hors	hors	ADV
 du	du	ADP_DET
-Louvre	Louvre	PROPN
+Louvre	Louvre	NOUN
 .	.	PUNCTsent
 Prête	prêter	VERB
 le	le	DET
 moi	moi	PRON
 ,	,	PUNCTclause
-Margot	Margot	PROPN
+Margot	Margot	NOUN
 ,	,	PUNCTclause
 je	je	PRON
 te	te	PRON
@@ -1360,7 +1361,7 @@ mon	mon	DET
 frère	frère	NOUN
 !	!	PUNCTsent
 dit	dire	VERB
-Marguerite	Marguerite	PROPN
+Marguerite	Marguerite	NOUN
 ,	,	PUNCTclause
 vous	vous	PRON
 ne	ne	ADV
@@ -1429,7 +1430,7 @@ Sire	Sire	PROPN
 ,	,	PUNCTclause
 essaya	essayer	VERB
 le	le	DET
-Béarnais	béarnais	NOUN
+Béarnais	Béarnais	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
@@ -1556,7 +1557,7 @@ point	point	NOUN
 ,	,	PUNCTclause
 par hasard	par hasard	ADV
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 La	le	DET
 Mole	Mole	PROPN
@@ -1576,7 +1577,7 @@ se	se	PRON
 demanda	demander	VERB
 tout	tout	ADV
 bas	bas	ADJ
-Marguerite	Marguerite	PROPN
+Marguerite	Marguerite	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
@@ -1587,7 +1588,7 @@ Sire	Sire	PROPN
 répondit	répondre	VERB
 Henri	Henri	PROPN
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 La	le	DET
 Mole	Mole	PROPN
@@ -1612,9 +1613,9 @@ le	le:PRON	PRON
 présenter	présenter	VERB
 à	à	ADP
 Votre	votre	DET
-Majesté	majesté	NOUN
+Majesté	Majesté	NOUN
 en même temps que	en même temps que	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Coconnas	Coconnas	PROPN
 ,	,	PUNCTclause
@@ -1630,7 +1631,7 @@ et	et	CCONJ
 tous deux	tous deux	PRON
 appartiennent	appartenir	VERB
 à	à	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Alençon	Alençon	PROPN
 .	.	PUNCTsent
@@ -1658,7 +1659,7 @@ sourcil	sourcil	NOUN
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
 Ce	ce	DET
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 La	le	DET
 Mole	Mole	PROPN
@@ -1729,7 +1730,7 @@ le	le	DET
 voir	voir	VERB
 ,	,	PUNCTclause
 ce	ce	DET
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 La	le	DET
 Mole	Mole	PROPN
@@ -1774,7 +1775,7 @@ bras	bras	NOUN
 la	le	DET
 porte	porte	NOUN
 du	du	ADP_DET
-Louvre	Louvre	PROPN
+Louvre	Louvre	NOUN
 ,	,	PUNCTclause
 Henri	Henri	PROPN
 voulut	vouloir	VERB
@@ -1808,7 +1809,7 @@ que	que	SCONJ
 l'	le	DET
 air	air	NOUN
 du	du	ADP_DET
-Louvre	Louvre	PROPN
+Louvre	Louvre	NOUN
 ne	ne	ADV
 est	être	AUX
 pas	pas	ADV
@@ -1894,7 +1895,7 @@ que	que	SCONJ
 les	le	DET
 gens	gens	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Alençon	Alençon	PROPN
 fassent	faire	VERB
@@ -1916,7 +1917,7 @@ Sire	Sire	PROPN
 Oui	oui	INTJ
 ,	,	PUNCTclause
 ce	ce	PRON
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Coconnas	Coconnas	PROPN
 ne	ne	ADV
@@ -1958,7 +1959,7 @@ pure	pur	ADJ
 ,	,	PUNCTclause
 Sire	Sire	PROPN
 ;	;	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Coconnas	Coconnas	PROPN
 fait	faire	VERB
@@ -1992,7 +1993,7 @@ puis	puis	CCONJ
 répondre	répondre	VERB
 à	à	ADP
 Votre	votre	DET
-Majesté	majesté	NOUN
+Majesté	Majesté	NOUN
 de	de	ADP
 ce	ce	DET
 que	que	PRON
@@ -2062,12 +2063,12 @@ si	si	SCONJ
 ce	ce	PRON
 est	être	AUX
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Coconnas	Coconnas	PROPN
 ou	ou	CCONJ
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 La	le	DET
 Mole	Mole	PROPN
@@ -2466,7 +2467,7 @@ que	que	SCONJ
 je	je	PRON
 étais	être	VERB
 à	à	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Alençon	Alençon	PROPN
 ,	,	PUNCTclause
@@ -2542,7 +2543,7 @@ du côté de	du côté de	ADP
 la	le	DET
 rue	rue	NOUN
 du	du	ADP_DET
-Roi-de-Sicile	Roi-de-Sicile	PROPN
+Roi-de-Sicile	Roi-de-Sicile	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 que	que	SCONJ
@@ -2706,7 +2707,7 @@ en	en	ADP
 toute	tout	ADJ
 hâte	hâte	NOUN
 chez	chez	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Alençon	Alençon	PROPN
 .	.	PUNCTsent
@@ -2734,7 +2735,7 @@ voilà	voilà	ADP
 bien	bien	ADV
 tard	tard	ADV
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
@@ -2742,7 +2743,7 @@ Dix	Dix	NUM
 heures	heure	NOUN
 à peine	à peine	ADV
 ,	,	PUNCTclause
-Monseigneur	monseigneur	NOUN
+Monseigneur	Monseigneur	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 Coconnas	Coconnas	PROPN
@@ -2766,7 +2767,7 @@ tout le monde	tout le monde	NOUN
 est	être	AUX
 couché	coucher	VERB
 au	au	ADP_DET
-Louvre	Louvre	PROPN
+Louvre	Louvre	NOUN
 ,	,	PUNCTclause
 cependant	cependant	ADV
 .	.	PUNCTsent
@@ -2774,7 +2775,7 @@ cependant	cependant	ADV
 —	—	PUNCTclause
 Oui	oui	INTJ
 ,	,	PUNCTclause
-Monseigneur	monseigneur	NOUN
+Monseigneur	Monseigneur	NOUN
 ,	,	PUNCTclause
 mais	mais	CCONJ
 nous	nous	PRON
@@ -2863,7 +2864,7 @@ travailler	travailler	VERB
 —	—	PUNCTclause
 Non	non	ADV
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 ;	;	PUNCTclause
 vous	vous	PRON
 avez	avoir	AUX
@@ -2942,7 +2943,7 @@ se	se	PRON
 élancèrent	élancer	VERB
 hors	hors	ADV
 du	du	ADP_DET
-Louvre	Louvre	PROPN
+Louvre	Louvre	NOUN
 à	à	ADP
 la	le	DET
 poursuite	poursuite	NOUN

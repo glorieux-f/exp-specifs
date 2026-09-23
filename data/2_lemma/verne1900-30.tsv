@@ -6,7 +6,7 @@
 # title = XXX.
 
 ↵↵↵	↵↵↵	PUNCTstruct
-XXX	XXX	NUM
+		TOKEN
 .	.	PUNCTsent
 ↵↵↵	↵↵↵	PUNCTstruct
 Enfin	enfin	ADV
@@ -121,7 +121,7 @@ français	français	ADJ
 ,	,	PUNCTclause
 Jenny	Jenny	PROPN
 que	que	SCONJ
-M.	M.	PROPN
+M.	M.	NOUN
 et	et	CCONJ
 madame	madame	NOUN
 Zermatt	Zermatt	PROPN
@@ -155,7 +155,7 @@ aux	au	ADP_DET
 de	de	ADP
 Annah	Annah	PROPN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 et	et	CCONJ
 madame	madame	NOUN
 Wolston	Wolston	PROPN
@@ -240,7 +240,7 @@ le	le	DET
 jour	jour	NOUN
 où	où	PRON
 la	le	DET
-Licorne	licorne	NOUN
+Licorne	Licorne	NOUN
 ,	,	PUNCTclause
 emportant	emporter	VERB
 Jenny	Jenny	PROPN
@@ -336,7 +336,7 @@ en effet	en effet	ADV
 ,	,	PUNCTclause
 de	de	ADP
 où	où	PRON
-M.	M.	PROPN
+M.	M.	NOUN
 Zermatt	Zermatt	PROPN
 et	et	CCONJ
 les siens	les siens	PRON
@@ -360,7 +360,7 @@ dut	devoir	VERB
 parler	parler	VERB
 de	de	ADP
 la	le	DET
-Licorne	licorne	NOUN
+Licorne	Licorne	NOUN
 ,	,	PUNCTclause
 demeurée	demeuré	NOUN
 en	en	ADP
@@ -373,7 +373,7 @@ la	le	DET
 révolte	révolte	NOUN
 à bord	à bord	ADV
 du	du	ADP_DET
-Flag	Flag	PROPN
+Flag	Flag	NOUN
 ,	,	PUNCTclause
 de	de	ADP
 l'	le	DET
@@ -456,7 +456,7 @@ terminant	terminer	VERB
 Felsenheim	Felsenheim	PROPN
 ,	,	PUNCTclause
 répondit	répondre	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 Zermatt	Zermatt	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -516,7 +516,7 @@ chère	chère	NOUN
 fille	fille	NOUN
 ,	,	PUNCTclause
 répondit	répondre	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 Zermatt	Zermatt	PROPN
 .	.	PUNCTsent
 dès que	dès que	SCONJ
@@ -542,7 +542,7 @@ vers	vers	ADP
 la	le	DET
 baie	bai	NOUN
 du	du	ADP_DET
-Salut	salut	NOUN
+Salut	Salut	NOUN
 ,	,	PUNCTclause
 nous	nous	PRON
 nous	nous	PRON
@@ -594,7 +594,7 @@ le	le:PRON	PRON
 savent	savoir	VERB
 ,	,	PUNCTclause
 répondit	répondre	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 Zermatt	Zermatt	PROPN
 ,	,	PUNCTclause
 mais	mais	CCONJ
@@ -678,7 +678,7 @@ de	de	ADP
 montagnes	montagne	NOUN
 ,	,	PUNCTclause
 où	où	PRON
-M.	M.	PROPN
+M.	M.	NOUN
 Wolston	Wolston	PROPN
 ,	,	PUNCTclause
 Ernest	Ernest	PROPN
@@ -779,7 +779,7 @@ et	et	CCONJ
 d'autre	d'autre	DET
 !...	!...	PUNCTsent
 Mais	mais	CCONJ
-M.	M.	PROPN
+M.	M.	NOUN
 Wolston	Wolston	PROPN
 et	et	CCONJ
 les	le	DET
@@ -985,7 +985,7 @@ ce	ce	PRON
 est	être	AUX
 que	que	SCONJ
 la	le	DET
-Licorne	licorne	NOUN
+Licorne	Licorne	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
 aurait	avoir	AUX
@@ -1058,7 +1058,7 @@ navire	navire	NOUN
 ,	,	PUNCTclause
 observé	observer	VERB
 par	par	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 Wolston	Wolston	PROPN
 ,	,	PUNCTclause
 Ernest	Ernest	PROPN
@@ -1079,7 +1079,7 @@ Jean-Zermatt	Jean-Zermatt	PROPN
 ce	ce	PRON
 était	être	AUX
 le	le	DET
-Flag	Flag	PROPN
+Flag	Flag	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 cela	cela	PRON
@@ -1161,7 +1161,8 @@ Après	après	ADP
 quinze	quinze	NUM
 mois	mois	NOUN
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+		TOKEN
+.	.	PUNCTsent
 Zermatt	Zermatt	PROPN
 et	et	CCONJ
 Wolston	Wolston	PROPN
@@ -1177,7 +1178,7 @@ espérance	espérance	NOUN
 de	de	ADP
 revoir	revoir	VERB
 la	le	DET
-Licorne	licorne	NOUN
+Licorne	Licorne	NOUN
 .	.	PUNCTsent
 madame	madame	NOUN
 Zermatt	Zermatt	PROPN
@@ -1307,7 +1308,7 @@ en	en	ADP
 doute	doute	NOUN
 que	que	SCONJ
 la	le	DET
-Licorne	licorne	NOUN
+Licorne	Licorne	NOUN
 ne	ne	ADV
 eût	avoir	AUX
 fait	faire	AUX
@@ -1553,7 +1554,8 @@ la	le	DET
 belle	beau	ADJ
 saison	saison	NOUN
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+		TOKEN
+.	.	PUNCTsent
 Zermatt	Zermatt	PROPN
 et	et	CCONJ
 Wolston	Wolston	PROPN
@@ -1653,7 +1655,7 @@ le	le	DET
 cap	cap	NOUN
 de	de	ADP
 l'	le	DET
-Espoir-Trompé	Espoir-Trompé	PROPN
+Espoir-Trompé	Espoir-Trompé	NOUN
 pour	pour	ADP
 aller	aller	VERB
 à	à	ADP
@@ -1691,7 +1693,7 @@ kayak	kayak	NOUN
 la	le	DET
 baie	bai	NOUN
 du	du	ADP_DET
-Salut	salut	NOUN
+Salut	Salut	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 il	il	PRON
@@ -1876,12 +1878,12 @@ vivante	vivant	ADJ
 ↵↵	↵↵	PUNCTstruct
 Et	et	CCONJ
 combien	combien	ADV
-M.	M.	PROPN
+M.	M.	NOUN
 et	et	CCONJ
 madame	madame	NOUN
 Zermatt	Zermatt	PROPN
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 et	et	CCONJ
 madame	madame	NOUN
 Wolston	Wolston	PROPN
@@ -1976,7 +1978,7 @@ ce	ce	PRON
 à	à	ADP
 faire	faire	VERB
 .	.	PUNCTsent
-Jenny	Jenny	PROPN
+Jenny	jenny	NOUN
 avait	avoir	VERB
 pour	pour	ADP
 devoir	devoir	VERB
@@ -1985,7 +1987,7 @@ rejoindre	rejoindre	VERB
 son	son	DET
 père	père	NOUN
 .	.	PUNCTsent
-Fritz	Fritz	PROPN
+Fritz	fritz	NOUN
 avait	avoir	VERB
 pour	pour	ADP
 devoir	devoir	VERB
@@ -2033,7 +2035,7 @@ au	au	ADP_DET
 retour	retour	NOUN
 de	de	ADP
 la	le	DET
-Licorne	licorne	NOUN
+Licorne	Licorne	NOUN
 ,	,	PUNCTclause
 de	de	ADP
 les	le:PRON	PRON
@@ -2043,7 +2045,7 @@ leur	leur	DET
 famille	famille	NOUN
 ...	...	PUNCTsent
 Enfin	enfin	ADV
-M.	M.	PROPN
+M.	M.	NOUN
 Zermatt	Zermatt	PROPN
 avait	avoir	VERB
 le	le	DET
@@ -2119,7 +2121,7 @@ ce	ce	DET
 retard	retard	NOUN
 de	de	ADP
 la	le	DET
-Licorne	licorne	NOUN
+Licorne	Licorne	NOUN
 autrement	autrement	ADV
 que	que	SCONJ
 par	par	ADP
@@ -2226,7 +2228,7 @@ vers	vers	ADP
 la	le	DET
 baie	bai	NOUN
 du	du	ADP_DET
-Salut	salut	NOUN
+Salut	Salut	NOUN
 .	.	PUNCTsent
 D'ailleurs	d'ailleurs	ADV
 ,	,	PUNCTclause
@@ -2440,7 +2442,7 @@ de	de	ADP
 la	le	DET
 baie	bai	NOUN
 du	du	ADP_DET
-Salut	salut	NOUN
+Salut	Salut	NOUN
 ,	,	PUNCTclause
 en	en	ADP
 longeant	longer	VERB
@@ -2529,7 +2531,7 @@ familles	famille	NOUN
 .	.	PUNCTsent
 en outre	en outre	ADV
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 Zermatt	Zermatt	PROPN
 chargerait	charger	VERB
 la	le	DET
@@ -2690,7 +2692,7 @@ l'	le	DET
 La	le	DET
 proposition	proposition	NOUN
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 Wolston	Wolston	PROPN
 acceptée	accepter	VERB
 ,	,	PUNCTclause
@@ -2704,7 +2706,7 @@ instant	instant	NOUN
 à	à	ADP
 perdre	perdre	VERB
 .	.	PUNCTsent
-Jack	Jack	PROPN
+Jack	jack	NOUN
 et	et	CCONJ
 Ernest	Ernest	PROPN
 amenèrent	amener	VERB
@@ -2748,7 +2750,7 @@ et	et	CCONJ
 madame	madame	NOUN
 Zermatt	Zermatt	PROPN
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 et	et	CCONJ
 madame	madame	NOUN
 Wolston	Wolston	PROPN
@@ -2886,7 +2888,7 @@ aux	au	ADP_DET
 avirons	aviron	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
-M.	M.	PROPN
+M.	M.	NOUN
 Zermatt	Zermatt	PROPN
 gouvernait	gouverner	VERB
 de manière à	de manière à	ADP
@@ -2925,7 +2927,7 @@ vers	vers	ADP
 la	le	DET
 baie	bai	NOUN
 du	du	ADP_DET
-Salut	salut	NOUN
+Salut	Salut	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 trois	trois	NUM
@@ -2982,7 +2984,7 @@ le	le	DET
 magasin	magasin	NOUN
 .	.	PUNCTsent
 quant à	quant à	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 Wolston	Wolston	PROPN
 et	et	CCONJ
 à	à	ADP
@@ -3173,7 +3175,7 @@ haut	haut	NOUN
 du	du	ADP_DET
 monticule	monticule	NOUN
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 Zermatt	Zermatt	PROPN
 les	le	DET
 vit	vivre	VERB
@@ -3237,7 +3239,7 @@ traversèrent	traverser	VERB
 la	le	DET
 baie	bai	NOUN
 du	du	ADP_DET
-Salut	salut	NOUN
+Salut	Salut	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 se	se	PRON
@@ -3315,7 +3317,7 @@ retraite	retrait	NOUN
 était	être	AUX
 connue	connaître	VERB
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 Zermatt	Zermatt	PROPN
 avait	avoir	AUX
 rehissé	rehissé	VERB

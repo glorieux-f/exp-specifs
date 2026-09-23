@@ -6,7 +6,7 @@
 # title = IX. On ne passe pas !
 
 ↵↵↵	↵↵↵	PUNCTstruct
-IX	IX	NOUN
+		TOKEN
 .	.	PUNCTsent
 On	on	PRON
 ne	ne	ADV
@@ -49,7 +49,7 @@ par	par	ADP
 la	le	DET
 ligne	ligne	NOUN
 du	du	ADP_DET
-Cercle	cercle	NOUN
+Cercle	Cercle	NOUN
 polaire	polaire	ADJ
 arctique	arctique	ADJ
 ,	,	PUNCTclause
@@ -296,16 +296,16 @@ visitée	visiter	VERB
 d'abord	d'abord	ADV
 par	par	ADP
 les	le	DET
-Russes	russe	NOUN
+Russes	Russes	NOUN
 ,	,	PUNCTclause
 puis	puis	CCONJ
 par	par	ADP
 le	le	DET
-Français	français	NOUN
+Français	Français	NOUN
 La Pérouse	La Pérouse	PROPN
 et	et	CCONJ
 l'	le	DET
-Anglais	anglais	NOUN
+Anglais	Anglais	NOUN
 Vancouver	Vancouver	PROPN
 ,	,	PUNCTclause
 enfin	enfin	ADV
@@ -431,7 +431,7 @@ appartenir	appartenir	VERB
 tout	tout	ADV
 entière	entier	ADJ
 aux	au	ADP_DET
-Américains	américain	NOUN
+Américains	Américains	NOUN
 .	.	PUNCTsent
 Si	si	SCONJ
 les	le	DET
@@ -468,7 +468,7 @@ l'	le	DET
 Alaska	Alaska	PROPN
 à	à	ADP
 l'	le	DET
-Union	union	NOUN
+Union	Union	NOUN
 ,	,	PUNCTclause
 c'est-à-dire	c'est-à-dire	CCONJ
 quarante-cinq	quarante-cinq	NUM
@@ -507,13 +507,13 @@ quelque	quelque	DET
 peu	peu	ADV
 moqué	moquer	VERB
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 Steward	Steward	PROPN
 ,	,	PUNCTclause
 le	le	DET
 secrétaire	secrétaire	NOUN
 de	de	ADP
-État	état	NOUN
+État	État	NOUN
 ,	,	PUNCTclause
 quand	quand	SCONJ
 il	il	PRON
@@ -538,7 +538,7 @@ semblait	sembler	VERB
 bien	bien	ADV
 que	que	SCONJ
 la	le	DET
-République	République	PROPN
+République	République	NOUN
 ne	ne	ADV
 avait	avoir	VERB
 que	que	ADV
@@ -734,7 +734,7 @@ un	un	DET
 joyeux	joyeux	ADJ
 souper	souper	NOUN
 .	.	PUNCTsent
-Jean	Jean	PROPN
+Jean	jean	NOUN
 avait	avoir	AUX
 tué	tuer	VERB
 un	un	DET
@@ -773,7 +773,7 @@ bonne	bon	ADJ
 bouteille	bouteille	NOUN
 !	!	PUNCTsent
 dit	dire	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 Cascabel	Cascabel	PROPN
 .	.	PUNCTsent
 Vrai	vrai	ADJ
@@ -908,7 +908,7 @@ par	par	ADP
 l'	le	DET
 apparition	apparition	NOUN
 de	de	ADP
-Indiens	indien	NOUN
+Indiens	Indiens	NOUN
 nomades	nomade	NOUN
 .	.	PUNCTsent
 Le	le	DET
@@ -1059,9 +1059,10 @@ Baranof	Baranof	PROPN
 de	de	ADP
 Sitka	Sitka	PROPN
 ,	,	PUNCTclause
-etc.	etc.	NOUN
+etc	etc	ADV
+.	.	PUNCTsent
 ce	ce	PRON
-est	être	VERB
+est	être	AUX
 dans	dans	ADP
 cette	ce	DET
 dernière	dernier	ADJ
@@ -1092,7 +1093,7 @@ arrivée	arriver	VERB
 à	à	ADP
 Sitka	Sitka	PROPN
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 Cascabel	Cascabel	PROPN
 comptait	compter	VERB
 y	y	PRON
@@ -1397,7 +1398,7 @@ monsieur	monsieur	NOUN
 ,	,	PUNCTclause
 répliqua	répliquer	VERB
 poliment	poliment	ADV
-M.	M.	PROPN
+M.	M.	NOUN
 Cascabel	Cascabel	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -1512,7 +1513,7 @@ Braves	brave	ADJ
 Moscovites	Moscovites	PROPN
 ,	,	PUNCTclause
 dit	dire	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 Cascabel	Cascabel	PROPN
 ,	,	PUNCTclause
 en	en	ADP
@@ -1536,7 +1537,7 @@ habituel	habituel	ADJ
 nous	nous	PRON
 sommes	être	AUX
 des	un	DET
-Français	français	NOUN
+Français	Français	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
 voyageons	voyager	VERB
@@ -1593,11 +1594,11 @@ le	le	DET
 sol	sol	NOUN
 de	de	ADP
 sa	son	DET
-Majesté	majesté	NOUN
+Majesté	Majesté	NOUN
 le	le	DET
 Tsar	Tsar	PROPN
 ,	,	PUNCTclause
-Empereur	empereur	NOUN
+Empereur	Empereur	NOUN
 de	de	ADP
 toutes	tout	ADJ
 les	le	DET
@@ -1646,7 +1647,7 @@ petite	petit	ADJ
 fois	fois	NOUN
 ?	?	PUNCTsent
 reprit	reprendre	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 Cascabel	Cascabel	PROPN
 de	de	ADP
 une	un	DET
@@ -1682,7 +1683,7 @@ Mais	mais	CCONJ
 enfin	enfin	ADV
 ,	,	PUNCTclause
 demanda	demander	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 Cascabel	Cascabel	PROPN
 ,	,	PUNCTclause
 où	où	PRON
@@ -1776,7 +1777,7 @@ utile	utile	ADJ
 au contraire	au contraire	ADV
 ,	,	PUNCTclause
 reprit	reprendre	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 Cascabel	Cascabel	PROPN
 ,	,	PUNCTclause
 puisque	puisque	SCONJ
@@ -1880,7 +1881,7 @@ droits	droit	NOUN
 …	…	PUNCTsent
 reprit	reprendre	VERB
 alors	alors	ADV
-M.	M.	PROPN
+M.	M.	NOUN
 Cascabel	Cascabel	PROPN
 ,	,	PUNCTclause
 peut-être	peut-être	ADV
@@ -1929,10 +1930,10 @@ conditions	condition	NOUN
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
 Braves	brave	ADJ
-Moscovites	moscovite	NOUN
+Moscovites	Moscovites	NOUN
 ,	,	PUNCTclause
 reprit	reprendre	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 Cascabel	Cascabel	PROPN
 en	en	ADP
 désespoir	désespoir	NOUN
@@ -2029,7 +2030,7 @@ suit	suivre	VERB
 de	de	ADP
 là	là	ADV
 que	que	SCONJ
-M.	M.	PROPN
+M.	M.	NOUN
 Cascabel	Cascabel	PROPN
 se	se	PRON
 retrouva	retrouver	VERB
@@ -2352,7 +2353,7 @@ une	un	DET
 passe	passe	NOUN
 ,	,	PUNCTclause
 répondit	répondre	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 Cascabel	Cascabel	PROPN
 ,	,	PUNCTclause
 ce	ce	PRON
@@ -2451,7 +2452,7 @@ dessus	dessus	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-César	César	PROPN
+César	césar	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 alors	alors	ADV
@@ -2489,7 +2490,7 @@ chef	chef	NOUN
 !	!	PUNCTsent
 se	se	PRON
 écria	écrier	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 Cascabel	Cascabel	PROPN
 .	.	PUNCTsent
 Mais	mais	CCONJ
@@ -2557,7 +2558,7 @@ fit	faire	VERB
 assez	assez	ADV
 judicieusement	judicieusement	ADV
 observer	observer	VERB
-Clou-de-Girofle	Clou-de-Girofle	PROPN
+Clou-de-Girofle	Clou-de-Girofle	NOUN
 ,	,	PUNCTclause
 ces	ce	DET
 policiers	policier	NOUN
@@ -2583,7 +2584,7 @@ a	avoir	AUX
 raison	raison	NOUN
 ,	,	PUNCTclause
 répondit	répondre	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 Cascabel	Cascabel	PROPN
 …	…	PUNCTsent
 ce	ce	PRON
@@ -2647,7 +2648,7 @@ soit	être	AUX
 moi	moi	PRON
 ,	,	PUNCTclause
 reprit	reprendre	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 Cascabel	Cascabel	PROPN
 .	.	PUNCTsent
 est-ce que	est-ce que	ADV
@@ -2708,7 +2709,7 @@ lever	lever	NOUN
 du	du	ADP_DET
 jour	jour	NOUN
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 Cascabel	Cascabel	PROPN
 se	se	PRON
 mit	mettre	VERB
@@ -2759,7 +2760,7 @@ moi	moi	PRON
 !	!	PUNCTsent
 »	»	PUNCTclause
 répondit	répondre	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 Cascabel	Cascabel	PROPN
 avec	avec	ADP
 son	son	DET
@@ -2843,7 +2844,8 @@ dévoué	dévoué	ADJ
 ,	,	PUNCTclause
 qui	qui	PRON
 …	…	PUNCTsent
-etc.	etc.	NOUN
+etc	etc	ADV
+.	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 La	le	DET
 proposition	proposition	NOUN
@@ -3169,7 +3171,7 @@ très	très	ADV
 sérieusement	sérieusement	ADV
 emparé	emparer	VERB
 de	de	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 Cascabel	Cascabel	PROPN
 et	et	CCONJ
 des	un	ADP_DET
@@ -3262,7 +3264,7 @@ parti	parti	NOUN
 »	»	PUNCTclause
 répétait	répéter	VERB
 parfois	parfois	ADV
-M.	M.	PROPN
+M.	M.	NOUN
 Cascabel	Cascabel	PROPN
 en	en	ADP
 se	se	PRON
@@ -3286,7 +3288,7 @@ aurait	avoir	AUX
 point	point	ADV
 dû	devoir	VERB
 embarrasser	embarrasser	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 Cascabel	Cascabel	PROPN
 car	car	CCONJ
 ,	,	PUNCTclause
@@ -3318,7 +3320,7 @@ le	le	DET
 voyage	voyage	NOUN
 par	par	ADP
 l'	le	DET
-Ouest	ouest	NOUN
+Ouest	Ouest	NOUN
 qui	qui	PRON
 avait	avoir	AUX
 été	être	AUX
@@ -3460,7 +3462,7 @@ en	en	ADP
 Turquie	Turquie	PROPN
 ,	,	PUNCTclause
 répétait	répéter	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 Cascabel	Cascabel	PROPN
 ,	,	PUNCTclause
 ce	ce	PRON
@@ -3718,7 +3720,7 @@ jusque	jusque	ADP
 la	le	DET
 frontière	frontière	NOUN
 du	du	ADP_DET
-Territoire	territoire	NOUN
+Territoire	Territoire	NOUN
 de	de	ADP
 Washington	Washington	PROPN
 .	.	PUNCTsent
@@ -3762,7 +3764,7 @@ coups de feu	coups de feu	NOUN
 !…	!…	PUNCTsent
 se	se	PRON
 écria	écrier	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 Cascabel	Cascabel	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct

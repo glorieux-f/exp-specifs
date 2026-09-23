@@ -6,7 +6,7 @@
 # title = VI. Où l’on achève de se connaître
 
 ↵↵↵	↵↵↵	PUNCTstruct
-VI	VI	ADJ
+		TOKEN
 .	.	PUNCTsent
 Où	où	PRON
 l'on	on	PRON
@@ -162,7 +162,7 @@ servir	servir	VERB
 au	au	ADP_DET
 campement	campement	NOUN
 des	un	ADP_DET
-Européens	européen	NOUN
+Européens	Européens	NOUN
 .	.	PUNCTsent
 Le	le	DET
 colonel	colonel	NOUN
@@ -253,7 +253,7 @@ l'autre	l'autre	PRON
 habité	habiter	VERB
 par	par	ADP
 les	le	DET
-Russes	russe	NOUN
+Russes	Russes	NOUN
 ,	,	PUNCTclause
 Mathieu	Mathieu	PROPN
 Strux	Strux	PROPN
@@ -279,20 +279,20 @@ appartenaient	appartenir	VERB
 l'un	l'un	PRON
 aux	au	ADP_DET
 cinq	cinq	NUM
-Anglais	anglais	NOUN
+Anglais	Anglais	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 l'autre	l'autre	PRON
 aux	au	ADP_DET
 cinq	cinq	NUM
-Russes	russe	NOUN
+Russes	Russes	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
 formaient	former	VERB
 l'	le	DET
 équipage	équipage	NOUN
 du	du	ADP_DET
-Queen	Queen	PROPN
+Queen	queen	ADP
 and	and	X
 Tsar	tsar	X
 .	.	PUNCTsent
@@ -1034,7 +1034,7 @@ moment	moment	NOUN
 le	le	DET
 colonel	colonel	NOUN
 et	et	CCONJ
-Mathieu	Mathieu	PROPN
+Mathieu	Mathieu	NOUN
 Strux	Strux	PROPN
 ne	ne	ADV
 pouvaient	pouvoir	VERB
@@ -1137,10 +1137,11 @@ méridienne	méridien	NOUN
 distances	distance	NOUN
 zénithales	zénithal	ADJ
 ,	,	PUNCTclause
-etc.	etc.	NOUN
-Le	le	ADP
+etc	etc	ADV
+.	.	PUNCTsent
+Le	le	DET
 bushman	bushman	NOUN
-le	le	DET
+le	le:PRON	PRON
 laissa	laisser	VERB
 dire	dire	VERB
 pendant	pendant	ADP
@@ -2086,7 +2087,7 @@ de	de	ADP
 ce	ce	DET
 genre	genre	NOUN
 .	.	PUNCTsent
-Dieu	Dieu	PROPN
+Dieu	dieu	NOUN
 veuille	vouloir	VERB
 que	que	SCONJ
 vos	vos	DET
@@ -2158,7 +2159,7 @@ jalousie	jalousie	NOUN
 Mais	mais	CCONJ
 ces	ce	DET
 deux	deux	NUM
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 ne	ne	ADV
 se	se	PRON
 quittent	quitter	VERB
@@ -2289,7 +2290,8 @@ saura	savoir	VERB
 se	se	PRON
 imposer	imposer	VERB
 comme	comme	ADP
-tel.	tel.	PUNCT
+tel	tel	DET
+.	.	PUNCTsent
 Dans	dans	ADP
 cette	ce	DET
 question	question	NOUN
@@ -2346,7 +2348,7 @@ soient	être	AUX
 dirigés	diriger	VERB
 par	par	ADP
 un	un	DET
-Anglais	anglais	NOUN
+Anglais	Anglais	NOUN
 ou	ou	CCONJ
 par	par	ADP
 un	un	DET
@@ -2467,7 +2469,7 @@ ni	ni	CCONJ
 Russe	Russe	PROPN
 ,	,	PUNCTclause
 ni	ni	CCONJ
-Anglais	anglais	NOUN
+Anglais	Anglais	NOUN
 ,	,	PUNCTclause
 ni	ni	CCONJ
 Prussien	Prussien	PROPN
@@ -2515,7 +2517,7 @@ William	William	PROPN
 Emery	Emery	PROPN
 .	.	PUNCTsent
 Son	son	DET
-Honneur	honneur	NOUN
+Honneur	Honneur	NOUN
 est	être	AUX
 un	un	DET
 personnage	personnage	NOUN

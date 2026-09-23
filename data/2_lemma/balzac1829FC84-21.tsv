@@ -8,8 +8,8 @@
 
 ↵↵↵	↵↵↵	PUNCTstruct
 Méditation	méditation	NOUN
-XX	XX	NUM
-Essai	essai	NOUN
+		TOKEN
+Essai	Essai	PROPN
 sur	sur	ADP
 la	le	DET
 police	police	NOUN
@@ -82,7 +82,7 @@ défense	défense	NOUN
 que	que	PRON
 contiennent	contenir	VERB
 les	le	DET
-Méditations	méditation	NOUN
+Méditations	Méditations	NOUN
 précédentes	précédent	ADJ
 .	.	PUNCTsent
 l'	le	DET
@@ -162,23 +162,23 @@ paragraphes	paragraphe	NOUN
 ↵↵	↵↵	PUNCTstruct
 I.	I.	PROPN
 Des	un	DET
-Souricières	souricier	NOUN
+Souricières	Souricières	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-II	II	PRON
+		TOKEN
 .	.	PUNCTsent
 De	de	ADP
 la	le	DET
 Correspondance	Correspondance	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-III	III	PRON
+		TOKEN
 .	.	PUNCTsent
 Des	un	ADP_DET
-Espions	espion	NOUN
+Espions	Espions	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-IV	IV	NOUN
+		TOKEN
 .	.	PUNCTsent
 l'	le	DET
 Index	Index	PROPN
@@ -186,7 +186,7 @@ Index	Index	PROPN
 ↵↵	↵↵	PUNCTstruct
 V.	V.	PROPN
 Du	Du	PROPN
-Budget	budget	NOUN
+Budget	Budget	NOUN
 .	.	PUNCTsent
 ↵↵↵	↵↵↵	PUNCTstruct
 I	I	PROPN
@@ -314,7 +314,7 @@ fortes	fort	ADJ
 sommes	somme	NOUN
 à	à	ADP
 l'	le	DET
-État	état	NOUN
+État	État	NOUN
 .	.	PUNCTsent
 Le	le	DET
 ministre	ministre	NOUN
@@ -711,7 +711,7 @@ dit	dire	VERB
 Mari	mari	NOUN
 A.	A.	PROPN
 (	(	PUNCTclause
-Souriant	sourire	NOUN
+Souriant	Souriant	NOUN
 .	.	PUNCTsent
 )	)	PUNCTclause
 Ne	ne	ADV
@@ -758,7 +758,7 @@ maison	maison	NOUN
 à part	à part	ADP
 à	à	ADP
 la	le	DET
-Femme	femme	NOUN
+Femme	Femme	NOUN
 A.	A.	PROPN
 )	)	PUNCTclause
 Tu	Tu	PROPN
@@ -935,7 +935,7 @@ vos	vos	DET
 amis	ami	NOUN
 de	de	ADP
 la	le	DET
-Chambre	chambre	NOUN
+Chambre	Chambre	NOUN
 ont	avoir	AUX
 écrit	écrire	VERB
 des	un	DET
@@ -995,7 +995,7 @@ L.	L.	PROPN
 l'	le	DET
 auteur	auteur	NOUN
 des	un	ADP_DET
-Rêves	rêve	NOUN
+Rêves	Rêves	NOUN
 de	de	ADP
 une	un	DET
 jeune	jeune	ADJ
@@ -1799,7 +1799,7 @@ de	de	ADP
 souricières	souricier	NOUN
 .	.	PUNCTsent
 ↵↵↵	↵↵↵	PUNCTstruct
-II	II	VERB
+		TOKEN
 —	—	PUNCTclause
 De	de	ADP
 la	le	DET
@@ -1939,7 +1939,7 @@ La	le	DET
 correspondance	correspondance	NOUN
 est	être	AUX
 un	un	DET
-Protée	Protée	PROPN
+Protée	Protée	NOUN
 .	.	PUNCTsent
 il y a	il y a	VERB
 des	un	DET
@@ -2395,10 +2395,10 @@ avons	avoir	AUX
 armés	armer	VERB
 dans	dans	ADP
 la	le	DET
-Méditation	méditation	NOUN
+Méditation	Méditation	NOUN
 de	de	ADP
 la	le	DET
-Douane	douane	NOUN
+Douane	Douane	NOUN
 ?	?	PUNCTsent
 l'	le	DET
 homme	homme	NOUN
@@ -3250,7 +3250,7 @@ lui	lui	PRON
 dit	dire	VERB
 :	:	PUNCTclause
 —	—	PUNCTclause
-Madame	madame	NOUN
+Madame	Madame	NOUN
 vous	vous	PRON
 prie	prier	VERB
 de	de	ADP
@@ -3796,9 +3796,9 @@ de	de	ADP
 Paris	Paris	PROPN
 .	.	PUNCTsent
 ↵↵↵	↵↵↵	PUNCTstruct
-III	III	VERB
+		TOKEN
 —	—	PUNCTclause
-Des	Des	PROPN
+Des	un	ADP_DET
 espions	espion	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -4436,9 +4436,9 @@ sommes	être	AUX
 pas	pas	ADV
 .	.	PUNCTsent
 ↵↵↵	↵↵↵	PUNCTstruct
-IV	IV	NOUN
+		TOKEN
 —	—	PUNCTclause
-l'	le	DET
+l'	le:PRON	PRON
 index	index	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -4548,7 +4548,7 @@ des	un	ADP_DET
 impriment	imprimer	VERB
 à	à	ADP
 ce	ce	DET
-Livre	livre	NOUN
+Livre	Livre	NOUN
 noir	noir	ADJ
 de	de	ADP
 tels	tel	DET
@@ -5256,7 +5256,8 @@ modes	mode	NOUN
 sa	son	DET
 couturière	couturier	NOUN
 ,	,	PUNCTclause
-etc.	etc.	NOUN
+etc	etc	ADV
+.	.	PUNCTsent
 Vous	vous	PRON
 appliquerez	appliquer	VERB
 là	là	ADV
@@ -5264,7 +5265,7 @@ les	le	DET
 règles	règle	NOUN
 de	de	ADP
 la	le	DET
-Douane	douane	NOUN
+Douane	Douane	NOUN
 Conjugale	Conjugale	PROPN
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -5360,7 +5361,7 @@ valide	valide	ADJ
 (	(	PUNCTclause
 Voyez	Voyez	PROPN
 la	le	DET
-Méditation	méditation	NOUN
+Méditation	Méditation	NOUN
 des	un	ADP_DET
 Prédestinés	Prédestinés	PROPN
 )	)	PUNCTclause
@@ -6315,7 +6316,7 @@ comme	comme	ADP
 celle	celle	PRON
 de	de	ADP
 la	le	DET
-Bourse	bourse	NOUN
+Bourse	Bourse	NOUN
 donne	donner	VERB
 la	le	DET
 mesure	mesure	NOUN
@@ -6410,7 +6411,7 @@ Les	le	DET
 ordonnées	ordonner	VERB
 par	par	ADP
 la	le	DET
-Chambre	chambre	NOUN
+Chambre	Chambre	NOUN
 ne	ne	ADV
 frappent	frapper	VERB
 jamais	jamais	ADV
@@ -6461,7 +6462,7 @@ longtemps	longtemps	ADV
 semblable	semblable	ADJ
 à	à	ADP
 Louis	Louis	PROPN
-XV	XV	NUM
+		TOKEN
 qui	qui	PRON
 se	se	PRON
 était	être	AUX

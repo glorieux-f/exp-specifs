@@ -6,7 +6,7 @@
 # title = XV. L’hôtellerie de la Belle-Étoile
 
 ↵↵↵	↵↵↵	PUNCTstruct
-XV	XV	NUM
+		TOKEN
 .	.	PUNCTsent
 l'	le	DET
 hôtellerie	hôtellerie	NOUN
@@ -270,7 +270,8 @@ matinée	matinée	NOUN
 la	le	DET
 chasse	chasse	NOUN
 au	au	ADP_DET
-vol.	vol.	NOUN
+vol	vol	NOUN
+.	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Henri	Henri	PROPN
 se	se	PRON
@@ -499,7 +500,7 @@ porte	porte	NOUN
 de	de	ADP
 maître	maître	NOUN
 La	le	DET
-Hurière	Hurière	PROPN
+Hurière	Hurière	NOUN
 .	.	PUNCTsent
 La	le	DET
 Mole	Mole	PROPN
@@ -609,7 +610,7 @@ hé	hé	INTJ
 !	!	PUNCTsent
 maître	maître	NOUN
 La	le	DET
-Hurière	Hurière	PROPN
+Hurière	Hurière	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 La	le	DET
@@ -721,7 +722,7 @@ Hum	hum	INTJ
 !	!	PUNCTsent
 fit	faire	VERB
 La	le	DET
-Hurière	Hurière	PROPN
+Hurière	Hurière	NOUN
 ,	,	PUNCTclause
 avez	avoir	AUX
 vous	vous	PRON
@@ -876,7 +877,7 @@ du	du	ADP_DET
 bon	bon	ADJ
 vin	vin	NOUN
 de	de	ADP
-Arbois	Arbois	PROPN
+Arbois	Arbois	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
@@ -885,7 +886,7 @@ en	en	PRON
 ai	avoir	VERB
 que	que	SCONJ
 le	le	DET
-Béarnais	béarnais	NOUN
+Béarnais	Béarnais	NOUN
 ne	ne	ADV
 en	en	PRON
 boit	boire	VERB
@@ -1045,7 +1046,7 @@ Mole	Mole	PROPN
 en	en	PRON
 appelant	appeler	VERB
 La	le	DET
-Hurière	Hurière	PROPN
+Hurière	Hurière	NOUN
 ,	,	PUNCTclause
 débarrassez	débarrasser	VERB
 nous	nous	PRON
@@ -1094,7 +1095,7 @@ Hurière	Hurière	PROPN
 .	.	PUNCTsent
 Montez	monter	VERB
 ,	,	PUNCTclause
-messieurs	messieurs	NOUN
+messieurs	monsieur	NOUN
 ,	,	PUNCTclause
 montez	monter	VERB
 .	.	PUNCTsent
@@ -1364,7 +1365,7 @@ ne	ne	ADV
 suis	être	AUX
 plus	plus	ADV
 à	à	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Alençon	Alençon	PROPN
 ;	;	PUNCTclause
@@ -1409,7 +1410,7 @@ dîner	dîner	NOUN
 appela	appeler	VERB
 maître	maître	NOUN
 La	le	DET
-Hurière	Hurière	PROPN
+Hurière	Hurière	NOUN
 pour que	pour que	SCONJ
 il	il	PRON
 les	le	DET
@@ -1670,7 +1671,7 @@ ne	ne	ADV
 connaît	connaître	VERB
 pas	pas	ADV
 Votre	votre	DET
-Majesté	majesté	NOUN
+Majesté	Majesté	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 il	il	PRON
@@ -1722,7 +1723,7 @@ Sire	Sire	PROPN
 ,	,	PUNCTclause
 que	que	SCONJ
 dit	dire	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Alençon	Alençon	PROPN
 ?	?	PUNCTsent
@@ -2147,7 +2148,8 @@ courre	courre	VERB
 ,	,	PUNCTclause
 soit	soit	CCONJ
 au	au	ADP_DET
-vol.	vol.	NOUN
+vol	vol	NOUN
+.	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
 Quand	quand	SCONJ
@@ -2242,7 +2244,7 @@ les	le	DET
 doux	doux	NOUN
 yeux	œil	NOUN
 à	à	ADP
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Alençon	Alençon	PROPN
 :	:	PUNCTclause
@@ -2390,7 +2392,7 @@ et	et	CCONJ
 quand	quand	SCONJ
 vous	vous	PRON
 verrez	voir	VERB
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 La	le	DET
 Mole	Mole	PROPN
@@ -2782,7 +2784,7 @@ affaires	affaire	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 le	le	DET
-Béarnais	béarnais	NOUN
+Béarnais	Béarnais	NOUN
 .	.	PUNCTsent
 À	à	ADP
 propos	propos	NOUN
@@ -3018,7 +3020,7 @@ moi	moi	PRON
 et	et	CCONJ
 si	si	SCONJ
 Votre	votre	DET
-Majesté	majesté	NOUN
+Majesté	Majesté	NOUN
 veut	vouloir	VERB
 me	me	PRON
 suivre	suivre	VERB
@@ -3482,7 +3484,7 @@ Sire	sire	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 La	le	DET
-Mole	mole	NOUN
+Mole	Mole	NOUN
 ,	,	PUNCTclause
 vous	vous	PRON
 voici	voici	ADP
@@ -3794,7 +3796,7 @@ Mole	Mole	PROPN
 —	—	PUNCTclause
 Oui	oui	INTJ
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Coconnas	Coconnas	PROPN
 ,	,	PUNCTclause
@@ -3927,7 +3929,7 @@ tâchons	tâcher	VERB
 de	de	ADP
 regagner	regagner	VERB
 le	le	DET
-Louvre	Louvre	PROPN
+Louvre	Louvre	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
@@ -3937,7 +3939,7 @@ mon Dieu	mon Dieu	NOUN
 ,	,	PUNCTclause
 fit	faire	VERB
 La	le	DET
-Mole	mole	NOUN
+Mole	Mole	NOUN
 ,	,	PUNCTclause
 rien	rien	PRON
 de plus	de plus	ADV
@@ -4039,7 +4041,7 @@ capitaine	capitaine	NOUN
 des	un	ADP_DET
 gardes	garde	NOUN
 ,	,	PUNCTclause
-M.	M.	PROPN
+M.	M.	NOUN
 de	de	ADP
 Nancey	Nancey	PROPN
 .	.	PUNCTsent
@@ -4056,7 +4058,7 @@ on	on	PRON
 le	le:PRON	PRON
 conduit	conduire	VERB
 au	au	ADP_DET
-Louvre	Louvre	PROPN
+Louvre	Louvre	NOUN
 ,	,	PUNCTclause
 à	à	ADP
 ce	ce	PRON
@@ -4116,7 +4118,7 @@ Mole	Mole	PROPN
 ,	,	PUNCTclause
 rentrez	rentrer	VERB
 au	au	ADP_DET
-Louvre	Louvre	PROPN
+Louvre	Louvre	NOUN
 autrement	autrement	ADV
 que	que	SCONJ
 par	par	ADP
@@ -4197,7 +4199,7 @@ respectueuse	respectueux	ADJ
 reconnaissance	reconnaissance	NOUN
 ,	,	PUNCTclause
 Votre	votre	DET
-Majesté	majesté	NOUN
+Majesté	Majesté	NOUN
 lance	lancer	VERB
 si	si	ADV
 bien	bien	ADV
