@@ -77,6 +77,34 @@ class Scorer(ABC):
         )
         return float(scores[0])
 
+    def score_docs(
+        self,
+        term_id: int,
+        doc_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Score one term in several documents.
+
+        The default implementation delegates to :meth:`score_terms` one
+        document at a time. This is fast enough for interactive term queries;
+        scorers can override it later if an experiment needs bulk term ->
+        document scoring.
+        """
+        doc_ids = np.asarray(doc_ids, dtype=np.int64)
+        tf = np.asarray(tf, dtype=np.int64)
+        if doc_ids.shape != tf.shape:
+            raise ValueError("doc_ids and tf must have the same shape")
+
+        scores = np.empty(doc_ids.shape, dtype=np.float64)
+        term_ids = np.asarray([term_id], dtype=np.int64)
+        for i, (doc_id, count) in enumerate(zip(doc_ids, tf, strict=True)):
+            scores[i] = self.score_terms(
+                int(doc_id),
+                term_ids,
+                np.asarray([count], dtype=np.int64),
+            )[0]
+        return scores
+
     @abstractmethod
     def score_terms(
         self,
@@ -615,3 +643,36 @@ def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
         G2(corpus, 1.5),
         G2(corpus, 2.0),
     )
+
+
+def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
+    """Create a scorer from its stable experiment code.
+
+    Supported codes are ``freq``, ``tfidf``, ``bm25``, ``chi2``, ``lafon``,
+    ``logratio``, ``simplemaths`` and ``g2sX`` where ``X`` is a specificity
+    value in ``[0, 2]``.
+    """
+    code = code.strip().lower()
+    factories = {
+        "freq": Freq,
+        "tfidf": LogTfIdf,
+        "bm25": BM25,
+        "chi2": Chi2,
+        "lafon": Lafon,
+        "logratio": LogRatio,
+        "simplemaths": SimpleMaths,
+    }
+    factory = factories.get(code)
+    if factory is not None:
+        return factory(corpus)
+
+    if code.startswith("g2s"):
+        value = code[3:]
+        try:
+            specificity = float(value)
+        except ValueError as error:
+            raise ValueError(f"Invalid G2 scorer code: {code!r}") from error
+        return G2(corpus, specificity)
+
+    known = ", ".join((*factories.keys(), "g2s0", "g2s0.5", "g2s1.0", "g2s1.5", "g2s2.0"))
+    raise ValueError(f"Unknown scorer {code!r}. Known scorer codes: {known}")
