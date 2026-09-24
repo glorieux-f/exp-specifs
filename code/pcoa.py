@@ -165,6 +165,73 @@ def default_title(matrix_path: Path) -> str:
     return matrix_path.name
 
 
+
+def label_offsets(coordinates: np.ndarray) -> list[tuple[float, float, str, str]]:
+    """Return annotation offsets, separating coincident labels.
+
+    Coincident points remain at their exact PCoA coordinates; only their text
+    labels are displaced. Labels are stacked toward the inside of the plot
+    when the common point is close to an edge.
+    """
+    xy = np.asarray(coordinates[:, :2], dtype=np.float64)
+    n = len(xy)
+    offsets: list[tuple[float, float, str, str] | None] = [None] * n
+
+    x_min, x_max = float(xy[:, 0].min()), float(xy[:, 0].max())
+    y_min, y_max = float(xy[:, 1].min()), float(xy[:, 1].max())
+    x_span = max(x_max - x_min, 1e-12)
+    y_span = max(y_max - y_min, 1e-12)
+    tolerance = 1e-10 * max(x_span, y_span, 1.0)
+
+    assigned = np.zeros(n, dtype=bool)
+
+    for i in range(n):
+        if assigned[i]:
+            continue
+
+        group = [
+            j
+            for j in range(i, n)
+            if not assigned[j]
+            and float(np.linalg.norm(xy[j] - xy[i])) <= tolerance
+        ]
+        for j in group:
+            assigned[j] = True
+
+        if len(group) == 1:
+            offsets[group[0]] = (5.0, 4.0, "left", "bottom")
+            continue
+
+        x_value, y_value = xy[i]
+        x_fraction = (x_value - x_min) / x_span
+        y_fraction = (y_value - y_min) / y_span
+
+        # Put labels toward the inside horizontally.
+        if x_fraction > 0.75:
+            dx, ha = -6.0, "right"
+        else:
+            dx, ha = 6.0, "left"
+
+        spacing = 14.0
+
+        if y_fraction < 0.25:
+            # Near the lower border: stack all labels upward.
+            for rank, j in enumerate(group):
+                offsets[j] = (dx, 4.0 + rank * spacing, ha, "bottom")
+        elif y_fraction > 0.75:
+            # Near the upper border: stack all labels downward.
+            for rank, j in enumerate(group):
+                offsets[j] = (dx, -4.0 - rank * spacing, ha, "top")
+        else:
+            # Elsewhere: distribute labels symmetrically around the point.
+            center = (len(group) - 1) / 2.0
+            for rank, j in enumerate(group):
+                dy = (center - rank) * spacing
+                va = "bottom" if dy >= 0.0 else "top"
+                offsets[j] = (dx, dy, ha, va)
+
+    return [offset for offset in offsets if offset is not None]
+
 def plot_pcoa(
     path_png: Path,
     path_svg: Path,
@@ -191,12 +258,17 @@ def plot_pcoa(
     fig, ax = plt.subplots(figsize=(width, height))
     ax.scatter(x, y)
 
-    for label, x_value, y_value in zip(labels, x, y, strict=True):
+    offsets = label_offsets(coordinates)
+    for label, x_value, y_value, (dx, dy, ha, va) in zip(
+        labels, x, y, offsets, strict=True
+    ):
         ax.annotate(
             label,
             (x_value, y_value),
-            xytext=(5, 4),
+            xytext=(dx, dy),
             textcoords="offset points",
+            ha=ha,
+            va=va,
         )
 
     ax.axhline(0.0, linewidth=0.7)
