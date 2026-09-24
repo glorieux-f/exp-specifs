@@ -428,7 +428,7 @@ class Chi2(Scorer):
 
     The focus document is compared with the rest of the corpus. Positive scores
     indicate over-representation in the document; negative scores indicate
-    under-representation. This follows the Alix ``KeynessScorer.Chi2`` formula.
+    under-representation.
     """
 
     @property
