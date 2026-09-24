@@ -32,7 +32,7 @@ from corpus import Corpus, Document
 from scorers import G2, default_scorers
 
 
-TOP_N = 100
+DEFAULT_TOP_N = 100
 KEYWORD_SEPARATOR = ", "
 
 AUTHOR_GLOBS = {
@@ -137,8 +137,11 @@ def generate(
     output_dir: Path,
     exclude_capitalized: bool = False,
     stopwords_path: Path | None = None,
+    top_n: int = DEFAULT_TOP_N,
 ) -> None:
     """Generate one keyword file per author and scorer."""
+    if top_n <= 0:
+        raise ValueError("top_n must be > 0")
     base_corpus = Corpus.load(input_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -192,7 +195,7 @@ def generate(
                         scorer_terms,
                         scorer_tf,
                         scorer_scores,
-                        min(TOP_N, len(scorer_terms)),
+                        min(top_n, len(scorer_terms)),
                     )
                     keywords = KEYWORD_SEPARATOR.join(
                         corpus.lemmas[int(term_id)] for term_id in ranked
@@ -219,14 +222,14 @@ def generate(
 
     print(
         f"Generated {file_count} files for {document_count} documents "
-        f"in {output_dir}; filters: {filter_text}"
+        f"in {output_dir}; top={top_n}; filters: {filter_text}"
     )
 
 
 def parse_args() -> argparse.Namespace:
     """Parse command-line arguments."""
     parser = argparse.ArgumentParser(
-        description="Generate top-100 chapter keywords within each author's corpus."
+        description="Generate ranked chapter keywords within each author's corpus."
     )
     script_dir = Path(__file__).resolve().parent
     default_input = (script_dir / ".." / "data").resolve()
@@ -259,6 +262,12 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         help="One-entry-per-line stopword file, matched case-insensitively",
     )
+    parser.add_argument(
+        "--top",
+        type=int,
+        default=DEFAULT_TOP_N,
+        help=f"Number of keywords per document (default: {DEFAULT_TOP_N})",
+    )
     return parser.parse_args()
 
 
@@ -270,6 +279,7 @@ def main() -> None:
         args.output_dir,
         exclude_capitalized=args.exclude_capitalized,
         stopwords_path=args.stopwords,
+        top_n=args.top,
     )
 
 

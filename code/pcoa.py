@@ -2,22 +2,12 @@
 """Analyse en coordonnées principales (PCoA) d'une matrice de distances.
 
 Le script accepte une matrice carrée TSV ou CSV avec étiquettes de lignes et
-de colonnes, par exemple :
+de colonnes.
 
-    scorer  tf      g2      lafon
-    tf      0       0.42    0.61
-    g2      0.42    0       0.18
-    lafon   0.61    0.18    0
-
-La PCoA est le MDS classique : elle transforme directement une matrice de
-distances en coordonnées euclidiennes par double centrage puis
-décomposition spectrale.
-
-Pour une matrice non euclidienne (par exemple certaines matrices de
-distances de Jaccard), des valeurs propres négatives peuvent apparaître.
-Elles sont conservées dans le fichier des valeurs propres et signalées sur
-la figure ; les coordonnées sont construites à partir des axes de valeur
-propre positive.
+Par défaut :
+- le titre de la figure reprend le nom de la matrice ;
+- aucune zone d'information redondante n'est ajoutée ;
+- les valeurs propres négatives ne sont mentionnées que si elles existent.
 """
 
 from __future__ import annotations
@@ -106,20 +96,13 @@ def read_distance_matrix(path: Path) -> tuple[list[str], np.ndarray]:
             f"La matrice n'est pas symétrique (écart maximal : {delta:g})."
         )
 
-    # Nettoyer les très petites erreurs numériques admissibles.
     matrix = 0.5 * (matrix + matrix.T)
     matrix[np.abs(matrix) < TOLERANCE] = 0.0
     return row_labels, matrix
 
 
-def pcoa(distance: np.ndarray) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
-    """Calculer les coordonnées PCoA et les valeurs propres.
-
-    Retourne :
-      - coordonnées sur tous les axes de valeur propre positive ;
-      - valeurs propres triées par ordre décroissant ;
-      - vecteurs propres correspondants.
-    """
+def pcoa(distance: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+    """Calculer les coordonnées PCoA et les valeurs propres."""
     n = distance.shape[0]
     centering = np.eye(n) - np.ones((n, n), dtype=np.float64) / n
     gram = -0.5 * centering @ (distance * distance) @ centering
@@ -138,7 +121,7 @@ def pcoa(distance: np.ndarray) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
         )
 
     coordinates = eigenvectors[:, positive] * np.sqrt(eigenvalues[positive])
-    return coordinates, eigenvalues, eigenvectors
+    return coordinates, eigenvalues
 
 
 def write_coordinates(
@@ -177,6 +160,11 @@ def write_eigenvalues(path: Path, eigenvalues: np.ndarray) -> None:
             writer.writerow([axis, f"{value:.12g}", f"{pct:.8f}"])
 
 
+def default_title(matrix_path: Path) -> str:
+    """Construire un titre simple à partir du nom du fichier de matrice."""
+    return matrix_path.name
+
+
 def plot_pcoa(
     path_png: Path,
     path_svg: Path,
@@ -184,22 +172,18 @@ def plot_pcoa(
     coordinates: np.ndarray,
     eigenvalues: np.ndarray,
     title: str,
-    source_name: str,
     width: float,
     height: float,
     dpi: int,
 ) -> None:
-    """Tracer les deux premiers axes avec toutes les informations en français."""
+    """Tracer les deux premiers axes avec un habillage minimal."""
     positive = eigenvalues[eigenvalues > 0.0]
     positive_sum = float(positive.sum())
     axis1_pct = 100.0 * float(positive[0]) / positive_sum
     axis2_pct = 100.0 * float(positive[1]) / positive_sum
-    represented_pct = axis1_pct + axis2_pct
 
-    negative = eigenvalues[eigenvalues < -TOLERANCE * max(1.0, np.max(np.abs(eigenvalues)))]
-    negative_abs = float(np.abs(negative).sum())
-    total_abs = float(np.abs(eigenvalues).sum())
-    negative_pct = 100.0 * negative_abs / total_abs if total_abs > 0.0 else 0.0
+    scale = max(1.0, float(np.max(np.abs(eigenvalues))))
+    negative = eigenvalues[eigenvalues < -TOLERANCE * scale]
 
     x = coordinates[:, 0]
     y = coordinates[:, 1]
@@ -221,23 +205,20 @@ def plot_pcoa(
     ax.set_ylabel(f"Axe principal 2 — {axis2_pct:.1f} % de l'inertie positive")
     ax.set_title(title)
 
-    information = (
-        f"Matrice : {source_name}\n"
-        f"Inertie positive représentée par les deux axes : {represented_pct:.1f} %\n"
-        f"Valeurs propres négatives : {len(negative)} "
-        f"({negative_pct:.2f} % de la somme des valeurs absolues)"
-    )
-    ax.text(
-        0.01,
-        0.01,
-        information,
-        transform=ax.transAxes,
-        ha="left",
-        va="bottom",
-        fontsize="small",
-    )
+    if len(negative) > 0:
+        negative_abs = float(np.abs(negative).sum())
+        total_abs = float(np.abs(eigenvalues).sum())
+        negative_pct = 100.0 * negative_abs / total_abs if total_abs > 0.0 else 0.0
+        ax.text(
+            0.01,
+            0.01,
+            f"Valeurs propres négatives : {len(negative)} ({negative_pct:.2f} %)",
+            transform=ax.transAxes,
+            ha="left",
+            va="bottom",
+            fontsize="small",
+        )
 
-    # Même unité graphique sur les deux axes : les distances ne sont pas déformées.
     ax.set_aspect("equal", adjustable="datalim")
     fig.tight_layout()
 
@@ -273,8 +254,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--title",
-        default="Analyse en coordonnées principales (PCoA)",
-        help="Titre de la figure",
+        help="Titre de la figure ; par défaut, nom du fichier de matrice",
     )
     parser.add_argument(
         "--width",
@@ -306,7 +286,7 @@ def main() -> None:
         raise ValueError("--dpi doit être > 0")
 
     labels, distance = read_distance_matrix(args.matrix)
-    coordinates, eigenvalues, _eigenvectors = pcoa(distance)
+    coordinates, eigenvalues = pcoa(distance)
 
     prefix = args.output_prefix or default_prefix(args.matrix)
     coordinates_path = Path(f"{prefix}-coordonnees.tsv")
@@ -325,8 +305,7 @@ def main() -> None:
         labels,
         coordinates,
         eigenvalues,
-        args.title,
-        args.matrix.name,
+        args.title or default_title(args.matrix),
         args.width,
         args.height,
         args.dpi,

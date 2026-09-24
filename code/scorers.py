@@ -135,6 +135,41 @@ class Tf(Scorer):
         return np.asarray(tf, dtype=np.float64)
 
 
+class RawTfIdf(Scorer):
+    """Raw TF-IDF.
+
+    For ``tf > 0``::
+
+        tf * ln(N / df)
+
+    where ``N`` is the number of documents. A zero term frequency scores zero.
+    No document-vector normalization is applied because it would not change the
+    within-document term ranking.
+    """
+
+    def __init__(self, corpus: TermDocCorpus) -> None:
+        super().__init__(corpus)
+        self._idf = np.zeros(len(corpus.df), dtype=np.float64)
+        valid = corpus.df > 0
+        self._idf[valid] = np.log(corpus.n_docs / corpus.df[valid])
+
+    @property
+    def code(self) -> str:
+        """Return the filename code."""
+        return "tfidf"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Score terms with raw TF-IDF."""
+        del doc_id
+        tf_float = np.asarray(tf, dtype=np.float64)
+        return tf_float * self._idf[term_ids]
+
+
 class LogTfIdf(Scorer):
     """SMART-style logarithmic TF-IDF.
 
@@ -637,6 +672,7 @@ Freq = Tf
 
 SCORER_TYPES: tuple[type[Scorer], ...] = (
     Tf,
+    RawTfIdf,
     LogTfIdf,
     BM25,
     Chi2,
@@ -651,6 +687,7 @@ def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
     """Return the scorer configurations used by the current keyword experiment."""
     return (
         Tf(corpus),
+        RawTfIdf(corpus),
         LogTfIdf(corpus),
         LogRatio(corpus),
         SimpleMaths(corpus),
@@ -658,6 +695,8 @@ def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
         Chi2(corpus),
         Lafon(corpus),
         G2(corpus, 0.0),
+        G2(corpus, 0.05),
+        G2(corpus, 0.15),
         G2(corpus, 0.25),
         G2(corpus, 0.5),
         G2(corpus, 0.75),
@@ -671,7 +710,8 @@ def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
 def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
     """Create a scorer from its stable experiment code.
 
-    Supported codes are ``tf`` (legacy alias ``freq``), ``tfidf``, ``bm25``, ``chi2``, ``lafon``,
+    Supported codes are ``tf`` (legacy alias ``freq``), ``tfidf`` (raw TF-IDF),
+    ``tfidflog`` (logarithmic TF-IDF), ``bm25``, ``chi2``, ``lafon``,
     ``logratio``, ``simplemaths`` and ``g2sX`` where ``X`` is a specificity
     value in ``[0, 2]``.
     """
@@ -679,7 +719,8 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
     factories = {
         "tf": Tf,
         "freq": Tf,
-        "tfidf": LogTfIdf,
+        "tfidf": RawTfIdf,
+        "tfidflog": LogTfIdf,
         "bm25": BM25,
         "chi2": Chi2,
         "lafon": Lafon,
