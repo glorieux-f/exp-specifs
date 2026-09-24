@@ -6,9 +6,48 @@ Each scorer exposes:
 - ``score(term_id, doc_id)`` for one cell;
 - ``score_terms(doc_id, term_ids, tf)`` for the vectorized experiment path.
 
-The corpus object is expected to provide the attributes and method described by
-``TermDocCorpus`` below. The concrete corpus loader can be implemented
-separately.
+Notation used consistently in scorer documentation:
+
+- ``tf``: term frequency in the focus document;
+- ``cf``: collection frequency of the term in the active corpus;
+- ``df``: document frequency of the term in the active corpus;
+- ``dl``: length of the focus document in retained term occurrences;
+- ``CL``: collection length in retained term occurrences;
+- ``N``: number of documents in the active corpus;
+- ``avgdl``: mean document length in the active corpus;
+- ``k1``, ``b``: BM25 parameters;
+- ``k``: Simple Maths smoothing parameter.
+
+Unless a base is written explicitly, ``ln`` denotes the natural logarithm.
+For document-vs-rest scores, the reference part is the active corpus minus
+the focus document.
+
+Canonical references used below:
+
+[1] Spärck Jones, K. (1972). "A statistical interpretation of term
+    specificity and its application in retrieval." Journal of Documentation
+    28(1): 11-21. doi:10.1108/eb026526.
+[2] Salton, G. & Buckley, C. (1988). "Term-weighting approaches in
+    automatic text retrieval." Information Processing & Management 24(5):
+    513-523. doi:10.1016/0306-4573(88)90021-0.
+[3] Robertson, S. & Zaragoza, H. (2009). "The Probabilistic Relevance
+    Framework: BM25 and Beyond." Foundations and Trends in Information
+    Retrieval. doi:10.1561/1500000019.
+[4] Dunning, T. (1993). "Accurate Methods for the Statistics of Surprise
+    and Coincidence." Computational Linguistics 19(1): 61-74.
+[5] Pearson, K. (1900). "On the criterion that a given system of deviations
+    from the probable ... has arisen from random sampling." Philosophical
+    Magazine 50: 157-175. doi:10.1080/14786440009463897.
+[6] Lafon, P. (1980). "Sur la variabilité de la fréquence des formes dans
+    un corpus." Mots 1: 127-165. doi:10.3406/mots.1980.1008.
+[7] Hardie, A. (2014). "Log Ratio - an informal introduction." ESRC Centre
+    for Corpus Approaches to Social Science (CASS).
+[8] Kilgarriff, A. (2009). "Simple Maths for Keywords." Proceedings of the
+    Corpus Linguistics Conference CL2009, University of Liverpool.
+
+The G2 ``specificity`` continuum and the support weighting applied to
+``LogRatio`` are experimental extensions in this project; their base
+statistics are referenced separately below.
 """
 
 from __future__ import annotations
@@ -117,7 +156,16 @@ class Scorer(ABC):
 
 
 class Tf(Scorer):
-    """Raw term frequency (TF)."""
+    """Raw term frequency.
+
+    Formula::
+
+        score = tf
+
+    ``tf`` is the number of occurrences of the term in the focus document.
+
+    Reference: basic term-frequency weighting; see Salton & Buckley (1988) [2].
+    """
 
     @property
     def code(self) -> str:
@@ -138,13 +186,17 @@ class Tf(Scorer):
 class RawTfIdf(Scorer):
     """Raw TF-IDF.
 
-    For ``tf > 0``::
+    Formula::
 
-        tf * ln(N / df)
+        score = tf * ln(N / df)
 
-    where ``N`` is the number of documents. A zero term frequency scores zero.
-    No document-vector normalization is applied because it would not change the
-    within-document term ranking.
+    ``tf`` is term frequency in the focus document, ``N`` is the number of
+    documents, and ``df`` is the document frequency of the term.
+
+    No document-vector normalization is applied because it would not change
+    the within-document term ranking.
+
+    References: Spärck Jones (1972) [1]; Salton & Buckley (1988) [2].
     """
 
     def __init__(self, corpus: TermDocCorpus) -> None:
@@ -171,15 +223,19 @@ class RawTfIdf(Scorer):
 
 
 class LogTfIdf(Scorer):
-    """SMART-style logarithmic TF-IDF.
+    """Logarithmic TF-IDF.
 
-    For ``tf > 0``::
+    Formula for ``tf > 0``::
 
-        (1 + ln(tf)) * ln(N / df)
+        score = (1 + ln(tf)) * ln(N / df)
 
-    where ``N`` is the number of documents. A zero term frequency scores zero.
-    No document-vector normalization is applied because it would not change the
-    within-document term ranking.
+    ``tf`` is term frequency in the focus document, ``N`` is the number of
+    documents, and ``df`` is the document frequency of the term.
+
+    No document-vector normalization is applied because it would not change
+    the within-document term ranking.
+
+    Reference: Salton & Buckley (1988) [2].
     """
 
     def __init__(self, corpus: TermDocCorpus) -> None:
@@ -211,17 +267,23 @@ class LogTfIdf(Scorer):
 
 
 class BM25(Scorer):
-    """Single-term contribution of modern Lucene BM25Similarity.
+    """BM25 single-term contribution.
 
-    The implementation follows Lucene's current IDF and TF saturation formulas::
+    Formulas::
 
         idf = ln(1 + (N - df + 0.5) / (df + 0.5))
-        norm = k1 * (1 - b + b * doc_len / avg_doc_len)
-        score = idf * tf / (tf + norm)
+        K = k1 * (1 - b + b * dl / avgdl)
+        score = idf * tf / (tf + K)
 
-    The historical ``k1 + 1`` numerator factor is intentionally absent, matching
-    modern Lucene BM25Similarity. Raw document lengths are used; Lucene's compact
-    norm-byte encoding is not reproduced.
+    ``tf`` is term frequency in the focus document, ``df`` is document
+    frequency, ``N`` is the number of documents, ``dl`` is document length,
+    and ``avgdl`` is mean document length.
+
+    Standard BM25 usually multiplies the numerator by ``k1 + 1``. That factor
+    is constant for a fixed scorer and is omitted here because it does not
+    change rankings.
+
+    Reference: Robertson & Zaragoza (2009) [3].
     """
 
     def __init__(
@@ -287,20 +349,35 @@ class BM25(Scorer):
 
 
 class G2(Scorer):
-    """G² with a continuous frequency-to-specificity control in ``[0, 2]``.
+    """G² log-likelihood ratio with a specificity parameter in ``[0, 2]``.
 
-    Let ``q = tf / cf`` be the share of all corpus occurrences of a term that
-    fall in the focus document.
+    The base 2 x 2 table compares the focus document with the rest of the
+    active corpus. Its observed cells are::
 
-    - ``s = 0``: raw term frequency ``tf``;
-    - ``0 < s < 1``: geometric interpolation ``tf^(1-s) * G²^s``;
-    - ``s = 1``: ordinary non-negative log-likelihood ``G²``;
-    - ``1 < s < 2``: ``G² * q^((s-1)/(2-s))``;
-    - ``s = 2``: exclusive terms only: ``G²`` when ``tf == cf``, else ``0``.
+        O = [tf, dl - tf, cf - tf, CL - dl - cf + tf]
 
-    Thus the upper half of the scale increasingly rewards concentration in one
-    document and has a clear limiting interpretation at ``s = 2``.
-    No enrichment/depletion sign is added.
+    For each cell, ``E`` is obtained from the row and column margins, and::
+
+        G2 = 2 * sum(O * ln(O / E))
+
+    with zero observed cells contributing zero. Define::
+
+        q = tf / cf
+
+    The experimental ``specificity`` parameter ``s`` transforms the base G²::
+
+        s = 0        : score = tf
+        0 < s < 1    : score = tf^(1-s) * G2^s
+        s = 1        : score = G2
+        1 < s < 2    : score = G2 * q^((s-1)/(2-s))
+        s = 2        : score = G2 if tf = cf, otherwise 0
+
+    ``tf`` is term frequency in the focus document, ``cf`` is collection
+    frequency, ``dl`` is focus-document length, and ``CL`` is collection
+    length.
+
+    Reference for the base log-likelihood ratio: Dunning (1993) [4].
+    The ``s`` continuum is an experimental extension used in this project.
     """
 
     def __init__(
@@ -424,11 +501,23 @@ class G2(Scorer):
 
 
 class Chi2(Scorer):
-    """Signed Pearson chi-square X² on a 2 x 2 contingency table.
+    """Signed Pearson chi-square on a 2 x 2 term/document table.
 
-    The focus document is compared with the rest of the corpus. Positive scores
-    indicate over-representation in the document; negative scores indicate
-    under-representation.
+    With the same observed and expected cells as G²::
+
+        X2 = sum((O - E)^2 / E)
+        direction = +1 if tf / dl >= (cf - tf) / (CL - dl), else -1
+        score = direction * X2
+
+    Positive scores indicate over-representation in the focus document;
+    negative scores indicate under-representation.
+
+    ``tf`` is term frequency in the focus document, ``cf`` is collection
+    frequency, ``dl`` is focus-document length, and ``CL`` is collection
+    length.
+
+    Reference for Pearson's chi-square statistic: Pearson (1900) [5].
+    The sign is an implementation convention added to retain direction.
     """
 
     @property
@@ -498,20 +587,29 @@ class Chi2(Scorer):
 
 
 class Lafon(Scorer):
-    """Lafon lexical specificity as used by TXM.
+    """Lafon lexical specificity based on the hypergeometric distribution.
 
-    For one term/document cell, let ``f`` be the observed term frequency in the
-    document, ``F`` its collection frequency, ``t`` the document length, and
-    ``T`` the collection length. Under the hypergeometric model:
+    Let::
 
-    - if ``f >= F * t / T``, score the upper tail ``P(X >= f)``;
-    - otherwise, score the lower tail ``P(X <= f)``.
+        X ~ Hypergeom(CL, cf, dl)
+        expected = cf * dl / CL
 
-    The returned score is the signed base-10 order of magnitude: positive for
-    over-representation and negative for under-representation. TXM's R
-    implementation rounds the displayed score to four decimals; this scorer
-    does the same. As in TXM, probabilities that underflow to zero are represented
-    by the conventional magnitude 1000.
+    The signed specificity score is::
+
+        score = -log10(P(X >= tf))   if tf >= expected
+        score =  log10(P(X <= tf))   if tf < expected
+
+    Thus positive values indicate over-representation and negative values
+    under-representation.
+
+    ``tf`` is term frequency in the focus document, ``cf`` is collection
+    frequency, ``dl`` is focus-document length, and ``CL`` is collection
+    length.
+
+    Implementation convention: scores are rounded to four decimals; a tail
+    probability that underflows to zero is represented by magnitude 1000.
+
+    Reference: Lafon (1980) [6].
     """
 
     MAX_SCORE = 1000.0
@@ -524,7 +622,7 @@ class Lafon(Scorer):
     @property
     def name(self) -> str:
         """Return the human-readable scorer name."""
-        return "Lafon specificity (TXM)"
+        return "Lafon lexical specificity"
 
     def score_terms(
         self,
@@ -532,7 +630,7 @@ class Lafon(Scorer):
         term_ids: IntArray,
         tf: IntArray,
     ) -> FloatArray:
-        """Score terms with TXM-style Lafon specificity."""
+        """Score terms with Lafon lexical specificity."""
         observed = np.asarray(tf, dtype=np.int64)
         corpus_term = np.asarray(self.corpus.cf[term_ids], dtype=np.int64)
         part_size = int(self.corpus.doc_len[doc_id])
@@ -584,11 +682,28 @@ class Lafon(Scorer):
 
 
 class LogRatio(Scorer):
-    """Support-weighted log ratio used by Alix.
+    """Support-weighted log ratio.
 
-    The base-2 ratio of relative frequencies in the focus document and the rest
-    of the corpus is multiplied by ``ln(tf)``. This intentionally reproduces
-    the existing Alix implementation rather than an unweighted log ratio.
+    Define the relative frequencies in the focus document and its complement::
+
+        rf_doc = tf / dl
+        rf_rest = (cf - tf) / (CL - dl)
+
+    The score implemented here is::
+
+        score = log2(rf_doc / rf_rest) * ln(tf)
+
+    ``tf`` is term frequency in the focus document, ``cf`` is collection
+    frequency, ``dl`` is focus-document length, and ``CL`` is collection
+    length.
+
+    The base ``log2(rf_doc / rf_rest)`` is the standard log-ratio effect-size
+    measure described by Hardie (2014) [7]. Multiplication by ``ln(tf)`` is an
+    experimental support weight used in this project and is not part of the
+    standard log-ratio statistic.
+
+    The implementation returns 0 when the term has no occurrence in the
+    reference part, because the unsmoothed ratio would otherwise be infinite.
     """
 
     @property
@@ -626,7 +741,23 @@ class LogRatio(Scorer):
 
 
 class SimpleMaths(Scorer):
-    """Kilgarriff Simple Maths: smoothed ratio of per-million frequencies."""
+    """Kilgarriff's Simple Maths keyness score.
+
+    Define per-million relative frequencies::
+
+        rf_doc = 1_000_000 * tf / dl
+        rf_rest = 1_000_000 * (cf - tf) / (CL - dl)
+
+    Then::
+
+        score = (rf_doc + k) / (rf_rest + k)
+
+    ``tf`` is term frequency in the focus document, ``cf`` is collection
+    frequency, ``dl`` is focus-document length, ``CL`` is collection length,
+    and ``k`` is the smoothing parameter (default 1).
+
+    Reference: Kilgarriff (2009) [8].
+    """
 
     def __init__(self, corpus: TermDocCorpus, k: float = 1.0) -> None:
         if not isfinite(k) or k < 0.0:
