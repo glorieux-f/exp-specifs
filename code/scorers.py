@@ -293,8 +293,8 @@ class BM25(Scorer):
         return scores
 
 
-class G2(Scorer):
-    """G² log-likelihood ratio with a specificity parameter s in [0, 2].
+class Focalex(Scorer):
+    """FocaLex lexical-focus score based on the G² log-likelihood ratio.
 
     The 2 x 2 table compares the document with the rest of the collection:
 
@@ -303,11 +303,11 @@ class G2(Scorer):
 
     G2 = 2 * sum(O * ln(O / E))
 
-    s = 0       : tf
-    0 < s < 1   : tf^(1-s) * G2^s
-    s = 1       : G2
-    1 < s < 2   : G2 * q^((s-1)/(2-s))
-    s = 2       : G2 if tf = cf, otherwise 0
+    focus = 0       : tf
+    0 < focus < 1   : tf^(1-focus) * G2^focus
+    focus = 1       : G2
+    1 < focus < 2   : G2 * q^((focus-1)/(2-focus))
+    focus = 2       : G2 if tf = cf, otherwise 0
 
     q = tf / cf
 
@@ -315,10 +315,14 @@ class G2(Scorer):
     cf : collection frequency of term
     dl : document length
     CL : collection length
-    q : share of collection occurrences in document
-    s : specificity parameter
+    q : share of collection occurrences found in the document
+    focus : lexical-focus parameter
 
-    The parameter s is an experimental extension; G2 itself is the standard log-likelihood ratio.
+    The focus parameter is an experimental extension. It moves continuously
+    from raw term frequency at focus=0, through standard G² at focus=1, toward
+    increasing concentration of a term's occurrences in the focus document.
+    FocaLex is intended as a lexical-salience weighting; G² itself remains the
+    standard log-likelihood ratio statistic.
 
     Dunning, T. (1993). "Accurate Methods for the Statistics of Surprise and Coincidence." Computational Linguistics 19(1): 61-74.
     """
@@ -326,27 +330,27 @@ class G2(Scorer):
     def __init__(
         self,
         corpus: TermDocCorpus,
-        specificity: float = 1.0,
+        focus: float = 1.0,
     ) -> None:
-        if not isfinite(specificity) or not 0.0 <= specificity <= 2.0:
-            raise ValueError("specificity must be finite and in [0, 2]")
+        if not isfinite(focus) or not 0.0 <= focus <= 2.0:
+            raise ValueError("focus must be finite and in [0, 2]")
         super().__init__(corpus)
-        self.specificity = specificity
+        self.focus = focus
 
     @property
     def code(self) -> str:
         """Return the filename code."""
-        if self.specificity == 1.0:
-            return "g2"
-        text = f"{self.specificity:.2f}".rstrip("0")
+        if self.focus == 1.0:
+            return "focalex"
+        text = f"{self.focus:.2f}".rstrip("0")
         if text.endswith("."):
             text += "0"
-        return f"g2s{text}"
+        return f"focalex{text}"
 
     @property
     def name(self) -> str:
         """Return the human-readable scorer name."""
-        return f"G² (specificity={self.specificity:g})"
+        return f"FocaLex (focus={self.focus:g})"
 
     def score_terms(
         self,
@@ -354,10 +358,10 @@ class G2(Scorer):
         term_ids: IntArray,
         tf: IntArray,
     ) -> FloatArray:
-        """Score terms with G² and the configured specificity."""
+        """Score terms with FocaLex at the configured focus."""
         focus_term = np.asarray(tf, dtype=np.float64)
 
-        if self.specificity == 0.0:
+        if self.focus == 0.0:
             return focus_term.copy()
 
         focus_tokens = float(self.corpus.doc_len[doc_id])
@@ -396,17 +400,17 @@ class G2(Scorer):
         g2[degenerate] = 0.0
         g2[invalid] = np.nan
 
-        if self.specificity < 1.0:
+        if self.focus < 1.0:
             scores = np.zeros(g2.shape, dtype=np.float64)
             valid = (g2 > 0.0) & ~invalid
             scores[valid] = (
-                np.power(focus_term[valid], 1.0 - self.specificity)
-                * np.power(g2[valid], self.specificity)
+                np.power(focus_term[valid], 1.0 - self.focus)
+                * np.power(g2[valid], self.focus)
             )
             scores[invalid] = np.nan
             return scores
 
-        if self.specificity == 1.0:
+        if self.focus == 1.0:
             return g2
 
         concentration = np.divide(
@@ -416,14 +420,14 @@ class G2(Scorer):
             where=corpus_term > 0.0,
         )
 
-        if self.specificity == 2.0:
+        if self.focus == 2.0:
             scores = np.zeros(g2.shape, dtype=np.float64)
             exclusive = (focus_term == corpus_term) & (corpus_term > 0.0) & ~invalid
             scores[exclusive] = g2[exclusive]
             scores[invalid] = np.nan
             return scores
 
-        exponent = (self.specificity - 1.0) / (2.0 - self.specificity)
+        exponent = (self.focus - 1.0) / (2.0 - self.focus)
         scores = g2 * np.power(concentration, exponent)
         scores[invalid] = np.nan
         return scores
@@ -718,8 +722,9 @@ class SimpleMaths(Scorer):
         return ppm_focus / ppm_other
 
 
-# Backward-compatible alias for older experiment scripts.
+# Backward-compatible aliases for older experiment scripts.
 Freq = Tf
+G2 = Focalex
 
 
 SCORER_TYPES: tuple[type[Scorer], ...] = (
@@ -731,7 +736,7 @@ SCORER_TYPES: tuple[type[Scorer], ...] = (
     Lafon,
     LogRatio,
     SimpleMaths,
-    G2,
+    Focalex,
 )
 
 
@@ -748,16 +753,16 @@ def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
         BM25(corpus),
         Chi2(corpus),
         Lafon(corpus),
-        G2(corpus, 0.0),
-        G2(corpus, 0.05),
-        G2(corpus, 0.15),
-        G2(corpus, 0.25),
-        G2(corpus, 0.5),
-        G2(corpus, 0.75),
-        G2(corpus, 1.0),
-        G2(corpus, 1.25),
-        G2(corpus, 1.5),
-        G2(corpus, 1.75),
+        Focalex(corpus, 0.0),
+        Focalex(corpus, 0.05),
+        Focalex(corpus, 0.15),
+        Focalex(corpus, 0.25),
+        Focalex(corpus, 0.5),
+        Focalex(corpus, 0.75),
+        Focalex(corpus, 1.0),
+        Focalex(corpus, 1.25),
+        Focalex(corpus, 1.5),
+        Focalex(corpus, 1.75),
     )
     """
     return (
@@ -769,8 +774,9 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
 
     Supported codes are ``tf`` (legacy alias ``freq``), ``tfidf`` (raw TF-IDF),
     ``tfidflog`` (logarithmic TF-IDF), ``bm25``, ``chi2``, ``lafon``,
-    ``logratio``, ``simplemaths`` and ``g2sX`` where ``X`` is a specificity
-    value in ``[0, 2]``.
+    ``logratio``, ``simplemaths`` and ``focalexX`` where ``X`` is a focus value
+    in ``[0, 2]``. ``focalex`` means ``focus=1``. Legacy ``g2`` and ``g2sX``
+    codes are accepted for reproducibility of older experiments.
     """
     code = code.strip().lower()
     factories = {
@@ -783,19 +789,28 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
         "lafon": Lafon,
         "logratio": LogRatio,
         "simplemaths": SimpleMaths,
-        "g2": lambda c: G2(c, 1.0),
+        "focalex": lambda c: Focalex(c, 1.0),
+        "g2": lambda c: Focalex(c, 1.0),
     }
     factory = factories.get(code)
     if factory is not None:
         return factory(corpus)
 
+    if code.startswith("focalex"):
+        value = code[len("focalex"):]
+        try:
+            focus = float(value)
+        except ValueError as error:
+            raise ValueError(f"Invalid FocaLex scorer code: {code!r}") from error
+        return Focalex(corpus, focus)
+
     if code.startswith("g2s"):
         value = code[3:]
         try:
-            specificity = float(value)
+            focus = float(value)
         except ValueError as error:
-            raise ValueError(f"Invalid G2 scorer code: {code!r}") from error
-        return G2(corpus, specificity)
+            raise ValueError(f"Invalid legacy G2 scorer code: {code!r}") from error
+        return Focalex(corpus, focus)
 
-    known = ", ".join((*factories.keys(), "g2s0.0", "g2s0.5", "g2s1.0", "g2s1.5", "g2s2.0"))
+    known = ", ".join((*factories.keys(), "focalex0.0", "focalex0.5", "focalex1.5", "focalex2.0"))
     raise ValueError(f"Unknown scorer {code!r}. Known scorer codes: {known}")
