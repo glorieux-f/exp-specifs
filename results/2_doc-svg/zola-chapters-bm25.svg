@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="position:fixed;inset:0;width:100vw;height:100vh;display:block;background:#fff" role="img">
+<style><![CDATA[
+svg { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.link { stroke-linecap:round; stroke-width:1px; stroke-opacity:.14; }
+.point { fill-opacity:.94; stroke:#fff; stroke-width:.7px; }
+.label { font-size:12px; font-weight:600; fill:#2b2b2b; paint-order:stroke; stroke:#fff; stroke-width:4px; stroke-opacity:.94; }
+.work.hovered .link, .work.pinned .link { stroke-opacity:.88; stroke-width:2px; }
+.work.hovered .point, .work.pinned .point { fill-opacity:1; stroke:#222; stroke-width:1.1px; }
+.work.hovered .label, .work.pinned .label { fill:#111; stroke-width:5px; }
+.meta { pointer-events:none; }
+.meta-title { font-size:14px; font-weight:600; fill:#222; }
+.meta-subtitle { font-size:11px; fill:#666; }
+]]></style>
+<script><![CDATA[
+function workGroup(node){ return node && (node.classList && node.classList.contains("work") ? node : node.closest(".work")); }
+function togglePinned(evt){ var g = workGroup(evt.target); if(!g) return; evt.stopPropagation(); g.classList.toggle("pinned"); }
+function clearPinned(evt){ if(evt.target.id === "bg" || evt.target === evt.currentTarget){ document.querySelectorAll(".work.pinned").forEach(function(g){ g.classList.remove("pinned"); }); } }
+function setHovered(evt,on){ var g = workGroup(evt.target); if(!g) return; if(on){ g.classList.add("hovered"); } else { g.classList.remove("hovered"); } }
+function boxesOverlap(a,b,pad){ return !(a.x+a.width+pad < b.x || b.x+b.width+pad < a.x || a.y+a.height+pad < b.y || b.y+b.height+pad < a.y); }
+function inside(box,w,h,margin){ return box.x >= margin && box.y >= margin && box.x+box.width <= w-margin && box.y+box.height <= h-margin; }
+function placeLabels(){
+  var svg=document.documentElement, root=svg.getBoundingClientRect(), w=root.width, h=root.height;
+  var labels=[].slice.call(document.querySelectorAll("text.label"));
+  labels.sort(function(a,b){ return (parseInt(b.dataset.priority,10)||0) - (parseInt(a.dataset.priority,10)||0); });
+  var placed=[];
+  var rings=[12,18,26,36,48,62,78,96,116];
+  var angles=[0,-20,20,40,-40,60,-60,80,-80,100,-100,120,-120,140,-140,160,-160,180];
+  labels.forEach(function(t){
+    t.style.display="";
+    var px=parseFloat(t.dataset.px)/100*w, py=parseFloat(t.dataset.py)/100*h;
+    var chosen=null, chosenBox=null;
+    for(var r=0; r<rings.length && !chosen; r++){
+      for(var a=0; a<angles.length && !chosen; a++){
+        var rad=angles[a]*Math.PI/180.0;
+        var dx=Math.cos(rad)*rings[r], dy=Math.sin(rad)*rings[r];
+        var tx=px+dx, ty=py+dy;
+        var anchor=(Math.abs(dx) < 8 ? "middle" : (dx < 0 ? "end" : "start"));
+        t.setAttribute("x", tx); t.setAttribute("y", ty); t.setAttribute("text-anchor", anchor);
+        var b=t.getBBox();
+        var box={x:b.x,y:b.y,width:b.width,height:b.height};
+        if(!inside(box,w,h,8)) continue;
+        var collision=false;
+        for(var i=0;i<placed.length;i++){ if(boxesOverlap(box, placed[i], 6)){ collision=true; break; } }
+        if(!collision){ chosen={x:tx,y:ty,anchor:anchor}; chosenBox=box; }
+      }
+    }
+    if(!chosen){ t.style.display="none"; }
+    else { t.setAttribute("x", chosen.x); t.setAttribute("y", chosen.y); t.setAttribute("text-anchor", chosen.anchor); placed.push(chosenBox); }
+  });
+}
+window.addEventListener("load",placeLabels);
+window.addEventListener("resize",placeLabels);
+window.addEventListener("load", function(){ document.querySelectorAll(".work").forEach(function(g){ g.addEventListener("mouseenter", function(evt){ setHovered(evt,true); }); g.addEventListener("mouseleave", function(evt){ setHovered(evt,false); }); }); });
+]]></script>
+<rect id="bg" x="0" y="0" width="100%" height="100%" fill="#fff" onclick="clearPinned(evt)"/>
+<g class="meta">
+<text class="meta-title" x="14" y="22">zola-chapters-bm25.bin</text>
+<text class="meta-subtitle" x="14" y="39">360 chapters · 100D → cosine t-SNE 2D · perplexity 30 · 20 works · 1871–1893</text>
+</g>
+<g class="work" id="work-0" onclick="togglePinned(evt)">
+<line class="link" x1="73.4951%" y1="85.3996%" x2="34.9869%" y2="73.8143%" stroke="#7a78a8"><title>La fortune des Rougon</title></line>
+<line class="link" x1="34.9869%" y1="73.8143%" x2="32.0631%" y2="70.9852%" stroke="#7a78a8"><title>La fortune des Rougon</title></line>
+<line class="link" x1="32.0631%" y1="70.9852%" x2="33.0188%" y2="72.7716%" stroke="#7a78a8"><title>La fortune des Rougon</title></line>
+<line class="link" x1="33.0188%" y1="72.7716%" x2="73.6075%" y2="85.2140%" stroke="#7a78a8"><title>La fortune des Rougon</title></line>
+<line class="link" x1="73.6075%" y1="85.2140%" x2="32.4869%" y2="71.9178%" stroke="#7a78a8"><title>La fortune des Rougon</title></line>
+<line class="link" x1="32.4869%" y1="71.9178%" x2="74.7446%" y2="84.7486%" stroke="#7a78a8"><title>La fortune des Rougon</title></line>
+<circle class="point" cx="73.4951%" cy="85.3996%" r="3.00" fill="#7a78a8"><title>zola1871-01 — La fortune des Rougon — I</title></circle>
+<circle class="point" cx="34.9869%" cy="73.8143%" r="3.00" fill="#7a78a8"><title>zola1871-02 — La fortune des Rougon — II</title></circle>
+<circle class="point" cx="32.0631%" cy="70.9852%" r="3.00" fill="#7a78a8"><title>zola1871-03 — La fortune des Rougon — III</title></circle>
+<circle class="point" cx="33.0188%" cy="72.7716%" r="3.00" fill="#7a78a8"><title>zola1871-04 — La fortune des Rougon — IV</title></circle>
+<circle class="point" cx="73.6075%" cy="85.2140%" r="3.00" fill="#7a78a8"><title>zola1871-05 — La fortune des Rougon — V</title></circle>
+<circle class="point" cx="32.4869%" cy="71.9178%" r="3.00" fill="#7a78a8"><title>zola1871-06 — La fortune des Rougon — VI</title></circle>
+<circle class="point" cx="74.7446%" cy="84.7486%" r="3.00" fill="#7a78a8"><title>zola1871-07 — La fortune des Rougon — VII</title></circle>
+<text class="label" data-px="34.9869" data-py="73.8143" data-priority="7">La fortune des Rougon</text>
+</g>
+<g class="work" id="work-1" onclick="togglePinned(evt)">
+<line class="link" x1="46.4327%" y1="44.2959%" x2="45.7320%" y2="39.7203%" stroke="#6e7dab"><title>La curée</title></line>
+<line class="link" x1="45.7320%" y1="39.7203%" x2="43.7575%" y2="41.7054%" stroke="#6e7dab"><title>La curée</title></line>
+<line class="link" x1="43.7575%" y1="41.7054%" x2="44.6451%" y2="43.3859%" stroke="#6e7dab"><title>La curée</title></line>
+<line class="link" x1="44.6451%" y1="43.3859%" x2="44.3483%" y2="42.9715%" stroke="#6e7dab"><title>La curée</title></line>
+<line class="link" x1="44.3483%" y1="42.9715%" x2="43.1647%" y2="45.4463%" stroke="#6e7dab"><title>La curée</title></line>
+<line class="link" x1="43.1647%" y1="45.4463%" x2="47.3694%" y2="40.6176%" stroke="#6e7dab"><title>La curée</title></line>
+<circle class="point" cx="46.4327%" cy="44.2959%" r="3.00" fill="#6e7dab"><title>zola1872-01 — La curée — I</title></circle>
+<circle class="point" cx="45.7320%" cy="39.7203%" r="3.00" fill="#6e7dab"><title>zola1872-02 — La curée — II</title></circle>
+<circle class="point" cx="43.7575%" cy="41.7054%" r="3.00" fill="#6e7dab"><title>zola1872-03 — La curée — III</title></circle>
+<circle class="point" cx="44.6451%" cy="43.3859%" r="3.00" fill="#6e7dab"><title>zola1872-04 — La curée — IV</title></circle>
+<circle class="point" cx="44.3483%" cy="42.9715%" r="3.00" fill="#6e7dab"><title>zola1872-05 — La curée — V</title></circle>
+<circle class="point" cx="43.1647%" cy="45.4463%" r="3.00" fill="#6e7dab"><title>zola1872-06 — La curée — VI</title></circle>
+<circle class="point" cx="47.3694%" cy="40.6176%" r="3.00" fill="#6e7dab"><title>zola1872-07 — La curée — VII</title></circle>
+<text class="label" data-px="44.6451" data-py="42.9715" data-priority="7">La curée</text>
+</g>
+<g class="work" id="work-2" onclick="togglePinned(evt)">
+<line class="link" x1="38.2121%" y1="86.0532%" x2="34.8194%" y2="83.8839%" stroke="#6182ae"><title>Le ventre de Paris</title></line>
+<line class="link" x1="34.8194%" y1="83.8839%" x2="33.9872%" y2="84.2274%" stroke="#6182ae"><title>Le ventre de Paris</title></line>
+<line class="link" x1="33.9872%" y1="84.2274%" x2="38.4579%" y2="86.1917%" stroke="#6182ae"><title>Le ventre de Paris</title></line>
+<line class="link" x1="38.4579%" y1="86.1917%" x2="35.4720%" y2="82.2251%" stroke="#6182ae"><title>Le ventre de Paris</title></line>
+<line class="link" x1="35.4720%" y1="82.2251%" x2="35.4435%" y2="83.6137%" stroke="#6182ae"><title>Le ventre de Paris</title></line>
+<circle class="point" cx="38.2121%" cy="86.0532%" r="3.00" fill="#6182ae"><title>zola1873-01 — Le ventre de Paris — I</title></circle>
+<circle class="point" cx="34.8194%" cy="83.8839%" r="3.00" fill="#6182ae"><title>zola1873-02 — Le ventre de Paris — II</title></circle>
+<circle class="point" cx="33.9872%" cy="84.2274%" r="3.00" fill="#6182ae"><title>zola1873-03 — Le ventre de Paris — III</title></circle>
+<circle class="point" cx="38.4579%" cy="86.1917%" r="3.00" fill="#6182ae"><title>zola1873-04 — Le ventre de Paris — IV</title></circle>
+<circle class="point" cx="35.4720%" cy="82.2251%" r="3.00" fill="#6182ae"><title>zola1873-05 — Le ventre de Paris — V</title></circle>
+<circle class="point" cx="35.4435%" cy="83.6137%" r="3.00" fill="#6182ae"><title>zola1873-06 — Le ventre de Paris — VI</title></circle>
+<text class="label" data-px="35.4578" data-py="84.0556" data-priority="6">Le ventre de Paris</text>
+</g>
+<g class="work" id="work-3" onclick="togglePinned(evt)">
+<line class="link" x1="44.4971%" y1="63.7124%" x2="45.7039%" y2="63.7320%" stroke="#5587b1"><title>La conquête de Plassans</title></line>
+<line class="link" x1="45.7039%" y1="63.7320%" x2="44.7548%" y2="65.8461%" stroke="#5587b1"><title>La conquête de Plassans</title></line>
+<line class="link" x1="44.7548%" y1="65.8461%" x2="41.0545%" y2="65.1936%" stroke="#5587b1"><title>La conquête de Plassans</title></line>
+<line class="link" x1="41.0545%" y1="65.1936%" x2="42.4719%" y2="65.7113%" stroke="#5587b1"><title>La conquête de Plassans</title></line>
+<line class="link" x1="42.4719%" y1="65.7113%" x2="39.1134%" y2="65.3114%" stroke="#5587b1"><title>La conquête de Plassans</title></line>
+<line class="link" x1="39.1134%" y1="65.3114%" x2="43.5727%" y2="66.9545%" stroke="#5587b1"><title>La conquête de Plassans</title></line>
+<line class="link" x1="43.5727%" y1="66.9545%" x2="42.2451%" y2="69.7166%" stroke="#5587b1"><title>La conquête de Plassans</title></line>
+<line class="link" x1="42.2451%" y1="69.7166%" x2="44.3449%" y2="71.1530%" stroke="#5587b1"><title>La conquête de Plassans</title></line>
+<line class="link" x1="44.3449%" y1="71.1530%" x2="43.7094%" y2="68.4337%" stroke="#5587b1"><title>La conquête de Plassans</title></line>
+<line class="link" x1="43.7094%" y1="68.4337%" x2="41.3198%" y2="67.3634%" stroke="#5587b1"><title>La conquête de Plassans</title></line>
+<line class="link" x1="41.3198%" y1="67.3634%" x2="40.9551%" y2="69.8661%" stroke="#5587b1"><title>La conquête de Plassans</title></line>
+<line class="link" x1="40.9551%" y1="69.8661%" x2="45.0230%" y2="68.0584%" stroke="#5587b1"><title>La conquête de Plassans</title></line>
+<line class="link" x1="45.0230%" y1="68.0584%" x2="39.9656%" y2="66.9498%" stroke="#5587b1"><title>La conquête de Plassans</title></line>
+<line class="link" x1="39.9656%" y1="66.9498%" x2="46.4019%" y2="70.4811%" stroke="#5587b1"><title>La conquête de Plassans</title></line>
+<line class="link" x1="46.4019%" y1="70.4811%" x2="46.5635%" y2="65.7700%" stroke="#5587b1"><title>La conquête de Plassans</title></line>
+<line class="link" x1="46.5635%" y1="65.7700%" x2="49.1615%" y2="67.0539%" stroke="#5587b1"><title>La conquête de Plassans</title></line>
+<line class="link" x1="49.1615%" y1="67.0539%" x2="47.5539%" y2="66.9076%" stroke="#5587b1"><title>La conquête de Plassans</title></line>
+<line class="link" x1="47.5539%" y1="66.9076%" x2="38.3351%" y2="68.1021%" stroke="#5587b1"><title>La conquête de Plassans</title></line>
+<line class="link" x1="38.3351%" y1="68.1021%" x2="46.7995%" y2="68.5002%" stroke="#5587b1"><title>La conquête de Plassans</title></line>
+<line class="link" x1="46.7995%" y1="68.5002%" x2="49.7446%" y2="64.7714%" stroke="#5587b1"><title>La conquête de Plassans</title></line>
+<line class="link" x1="49.7446%" y1="64.7714%" x2="50.9551%" y2="63.5139%" stroke="#5587b1"><title>La conquête de Plassans</title></line>
+<line class="link" x1="50.9551%" y1="63.5139%" x2="48.2838%" y2="63.6758%" stroke="#5587b1"><title>La conquête de Plassans</title></line>
+<circle class="point" cx="44.4971%" cy="63.7124%" r="3.00" fill="#5587b1"><title>zola1874-01 — La conquête de Plassans — I</title></circle>
+<circle class="point" cx="45.7039%" cy="63.7320%" r="3.00" fill="#5587b1"><title>zola1874-02 — La conquête de Plassans — II</title></circle>
+<circle class="point" cx="44.7548%" cy="65.8461%" r="3.00" fill="#5587b1"><title>zola1874-03 — La conquête de Plassans — III</title></circle>
+<circle class="point" cx="41.0545%" cy="65.1936%" r="3.00" fill="#5587b1"><title>zola1874-04 — La conquête de Plassans — IV</title></circle>
+<circle class="point" cx="42.4719%" cy="65.7113%" r="3.00" fill="#5587b1"><title>zola1874-05 — La conquête de Plassans — V</title></circle>
+<circle class="point" cx="39.1134%" cy="65.3114%" r="3.00" fill="#5587b1"><title>zola1874-06 — La conquête de Plassans — VI</title></circle>
+<circle class="point" cx="43.5727%" cy="66.9545%" r="3.00" fill="#5587b1"><title>zola1874-07 — La conquête de Plassans — VII</title></circle>
+<circle class="point" cx="42.2451%" cy="69.7166%" r="3.00" fill="#5587b1"><title>zola1874-08 — La conquête de Plassans — VIII</title></circle>
+<circle class="point" cx="44.3449%" cy="71.1530%" r="3.00" fill="#5587b1"><title>zola1874-09 — La conquête de Plassans — IX</title></circle>
+<circle class="point" cx="43.7094%" cy="68.4337%" r="3.00" fill="#5587b1"><title>zola1874-10 — La conquête de Plassans — X</title></circle>
+<circle class="point" cx="41.3198%" cy="67.3634%" r="3.00" fill="#5587b1"><title>zola1874-11 — La conquête de Plassans — XI</title></circle>
+<circle class="point" cx="40.9551%" cy="69.8661%" r="3.00" fill="#5587b1"><title>zola1874-12 — La conquête de Plassans — XII</title></circle>
+<circle class="point" cx="45.0230%" cy="68.0584%" r="3.00" fill="#5587b1"><title>zola1874-13 — La conquête de Plassans — XIII</title></circle>
+<circle class="point" cx="39.9656%" cy="66.9498%" r="3.00" fill="#5587b1"><title>zola1874-14 — La conquête de Plassans — XIV</title></circle>
+<circle class="point" cx="46.4019%" cy="70.4811%" r="3.00" fill="#5587b1"><title>zola1874-15 — La conquête de Plassans — XV</title></circle>
+<circle class="point" cx="46.5635%" cy="65.7700%" r="3.00" fill="#5587b1"><title>zola1874-16 — La conquête de Plassans — XVI</title></circle>
+<circle class="point" cx="49.1615%" cy="67.0539%" r="3.00" fill="#5587b1"><title>zola1874-17 — La conquête de Plassans — XVII</title></circle>
+<circle class="point" cx="47.5539%" cy="66.9076%" r="3.00" fill="#5587b1"><title>zola1874-18 — La conquête de Plassans — XVIII</title></circle>
+<circle class="point" cx="38.3351%" cy="68.1021%" r="3.00" fill="#5587b1"><title>zola1874-19 — La conquête de Plassans — XIX</title></circle>
+<circle class="point" cx="46.7995%" cy="68.5002%" r="3.00" fill="#5587b1"><title>zola1874-20 — La conquête de Plassans — XX</title></circle>
+<circle class="point" cx="49.7446%" cy="64.7714%" r="3.00" fill="#5587b1"><title>zola1874-21 — La conquête de Plassans — XXI</title></circle>
+<circle class="point" cx="50.9551%" cy="63.5139%" r="3.00" fill="#5587b1"><title>zola1874-22 — La conquête de Plassans — XXII</title></circle>
+<circle class="point" cx="48.2838%" cy="63.6758%" r="3.00" fill="#5587b1"><title>zola1874-23 — La conquête de Plassans — XXIII</title></circle>
+<text class="label" data-px="44.4971" data-py="66.9498" data-priority="23">La conquête de Plassans</text>
+</g>
+<g class="work" id="work-4" onclick="togglePinned(evt)">
+<line class="link" x1="51.7947%" y1="78.2332%" x2="51.2024%" y2="78.9887%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="51.2024%" y1="78.9887%" x2="57.6969%" y2="76.0543%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="57.6969%" y1="76.0543%" x2="55.1557%" y2="84.2756%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="55.1557%" y1="84.2756%" x2="59.8680%" y2="78.8831%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="59.8680%" y1="78.8831%" x2="59.6558%" y2="77.6300%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="59.6558%" y1="77.6300%" x2="60.7817%" y2="81.4186%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="60.7817%" y1="81.4186%" x2="61.8271%" y2="80.7608%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="61.8271%" y1="80.7608%" x2="62.3927%" y2="83.1345%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="62.3927%" y1="83.1345%" x2="58.0048%" y2="74.3730%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="58.0048%" y1="74.3730%" x2="65.4749%" y2="77.1052%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="65.4749%" y1="77.1052%" x2="61.4066%" y2="76.7040%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="61.4066%" y1="76.7040%" x2="56.2907%" y2="78.8094%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="56.2907%" y1="78.8094%" x2="66.2232%" y2="87.9990%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="66.2232%" y1="87.9990%" x2="53.0705%" y2="84.4585%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="53.0705%" y1="84.4585%" x2="65.9427%" y2="79.9533%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="65.9427%" y1="79.9533%" x2="66.0502%" y2="88.0617%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="66.0502%" y1="88.0617%" x2="61.1923%" y2="88.9422%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="61.1923%" y1="88.9422%" x2="62.0660%" y2="91.0474%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="62.0660%" y1="91.0474%" x2="57.4227%" y2="92.1282%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="57.4227%" y1="92.1282%" x2="61.5318%" y2="94.7765%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="61.5318%" y1="94.7765%" x2="60.1811%" y2="91.4339%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="60.1811%" y1="91.4339%" x2="57.1237%" y2="93.7681%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="57.1237%" y1="93.7681%" x2="53.9026%" y2="95.6514%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="53.9026%" y1="95.6514%" x2="61.1473%" y2="92.6840%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="61.1473%" y1="92.6840%" x2="62.2742%" y2="98.0000%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="62.2742%" y1="98.0000%" x2="58.5697%" y2="97.3153%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="58.5697%" y1="97.3153%" x2="60.4033%" y2="93.9905%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="60.4033%" y1="93.9905%" x2="64.0952%" y2="94.7871%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="64.0952%" y1="94.7871%" x2="59.9941%" y2="95.9316%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="59.9941%" y1="95.9316%" x2="58.4680%" y2="90.7448%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="58.4680%" y1="90.7448%" x2="58.8748%" y2="94.7822%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="58.8748%" y1="94.7822%" x2="59.4041%" y2="90.9269%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="59.4041%" y1="90.9269%" x2="58.6697%" y2="83.0368%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="58.6697%" y1="83.0368%" x2="52.0773%" y2="78.8622%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="52.0773%" y1="78.8622%" x2="59.3600%" y2="75.3405%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="59.3600%" y1="75.3405%" x2="59.0041%" y2="73.2951%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="59.0041%" y1="73.2951%" x2="55.8597%" y2="77.4478%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="55.8597%" y1="77.4478%" x2="61.3452%" y2="75.3134%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="61.3452%" y1="75.3134%" x2="55.9055%" y2="75.1623%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="55.9055%" y1="75.1623%" x2="64.4832%" y2="76.9579%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="64.4832%" y1="76.9579%" x2="58.7775%" y2="87.2766%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="58.7775%" y1="87.2766%" x2="57.3346%" y2="85.2437%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="57.3346%" y1="85.2437%" x2="61.8639%" y2="73.9757%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="61.8639%" y1="73.9757%" x2="57.4156%" y2="83.4001%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="57.4156%" y1="83.4001%" x2="59.1758%" y2="92.7741%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="59.1758%" y1="92.7741%" x2="56.5188%" y2="81.5627%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="56.5188%" y1="81.5627%" x2="55.8625%" y2="94.7601%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="55.8625%" y1="94.7601%" x2="62.4960%" y2="81.6552%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<line class="link" x1="62.4960%" y1="81.6552%" x2="65.5762%" y2="74.1621%" stroke="#488bb5"><title>La faute de l’abbé Mouret</title></line>
+<circle class="point" cx="51.7947%" cy="78.2332%" r="3.00" fill="#488bb5"><title>zola1875-01 — La faute de l’abbé Mouret — I</title></circle>
+<circle class="point" cx="51.2024%" cy="78.9887%" r="3.00" fill="#488bb5"><title>zola1875-02 — La faute de l’abbé Mouret — II</title></circle>
+<circle class="point" cx="57.6969%" cy="76.0543%" r="3.00" fill="#488bb5"><title>zola1875-03 — La faute de l’abbé Mouret — III</title></circle>
+<circle class="point" cx="55.1557%" cy="84.2756%" r="3.00" fill="#488bb5"><title>zola1875-04 — La faute de l’abbé Mouret — IV</title></circle>
+<circle class="point" cx="59.8680%" cy="78.8831%" r="3.00" fill="#488bb5"><title>zola1875-05 — La faute de l’abbé Mouret — V</title></circle>
+<circle class="point" cx="59.6558%" cy="77.6300%" r="3.00" fill="#488bb5"><title>zola1875-06 — La faute de l’abbé Mouret — VI</title></circle>
+<circle class="point" cx="60.7817%" cy="81.4186%" r="3.00" fill="#488bb5"><title>zola1875-07 — La faute de l’abbé Mouret — VII</title></circle>
+<circle class="point" cx="61.8271%" cy="80.7608%" r="3.00" fill="#488bb5"><title>zola1875-08 — La faute de l’abbé Mouret — VIII</title></circle>
+<circle class="point" cx="62.3927%" cy="83.1345%" r="3.00" fill="#488bb5"><title>zola1875-09 — La faute de l’abbé Mouret — IX</title></circle>
+<circle class="point" cx="58.0048%" cy="74.3730%" r="3.00" fill="#488bb5"><title>zola1875-10 — La faute de l’abbé Mouret — X</title></circle>
+<circle class="point" cx="65.4749%" cy="77.1052%" r="3.00" fill="#488bb5"><title>zola1875-11 — La faute de l’abbé Mouret — XI</title></circle>
+<circle class="point" cx="61.4066%" cy="76.7040%" r="3.00" fill="#488bb5"><title>zola1875-12 — La faute de l’abbé Mouret — XII</title></circle>
+<circle class="point" cx="56.2907%" cy="78.8094%" r="3.00" fill="#488bb5"><title>zola1875-13 — La faute de l’abbé Mouret — XIII</title></circle>
+<circle class="point" cx="66.2232%" cy="87.9990%" r="3.00" fill="#488bb5"><title>zola1875-14 — La faute de l’abbé Mouret — XIV</title></circle>
+<circle class="point" cx="53.0705%" cy="84.4585%" r="3.00" fill="#488bb5"><title>zola1875-15 — La faute de l’abbé Mouret — XV</title></circle>
+<circle class="point" cx="65.9427%" cy="79.9533%" r="3.00" fill="#488bb5"><title>zola1875-16 — La faute de l’abbé Mouret — XVI</title></circle>
+<circle class="point" cx="66.0502%" cy="88.0617%" r="3.00" fill="#488bb5"><title>zola1875-17 — La faute de l’abbé Mouret — XVII</title></circle>
+<circle class="point" cx="61.1923%" cy="88.9422%" r="3.00" fill="#488bb5"><title>zola1875-18 — La faute de l’abbé Mouret — I</title></circle>
+<circle class="point" cx="62.0660%" cy="91.0474%" r="3.00" fill="#488bb5"><title>zola1875-19 — La faute de l’abbé Mouret — II</title></circle>
+<circle class="point" cx="57.4227%" cy="92.1282%" r="3.00" fill="#488bb5"><title>zola1875-20 — La faute de l’abbé Mouret — III</title></circle>
+<circle class="point" cx="61.5318%" cy="94.7765%" r="3.00" fill="#488bb5"><title>zola1875-21 — La faute de l’abbé Mouret — IV</title></circle>
+<circle class="point" cx="60.1811%" cy="91.4339%" r="3.00" fill="#488bb5"><title>zola1875-22 — La faute de l’abbé Mouret — V</title></circle>
+<circle class="point" cx="57.1237%" cy="93.7681%" r="3.00" fill="#488bb5"><title>zola1875-23 — La faute de l’abbé Mouret — VI</title></circle>
+<circle class="point" cx="53.9026%" cy="95.6514%" r="3.00" fill="#488bb5"><title>zola1875-24 — La faute de l’abbé Mouret — VII</title></circle>
+<circle class="point" cx="61.1473%" cy="92.6840%" r="3.00" fill="#488bb5"><title>zola1875-25 — La faute de l’abbé Mouret — VIII</title></circle>
+<circle class="point" cx="62.2742%" cy="98.0000%" r="3.00" fill="#488bb5"><title>zola1875-26 — La faute de l’abbé Mouret — IX</title></circle>
+<circle class="point" cx="58.5697%" cy="97.3153%" r="3.00" fill="#488bb5"><title>zola1875-27 — La faute de l’abbé Mouret — X</title></circle>
+<circle class="point" cx="60.4033%" cy="93.9905%" r="3.00" fill="#488bb5"><title>zola1875-28 — La faute de l’abbé Mouret — XI</title></circle>
+<circle class="point" cx="64.0952%" cy="94.7871%" r="3.00" fill="#488bb5"><title>zola1875-29 — La faute de l’abbé Mouret — XII</title></circle>
+<circle class="point" cx="59.9941%" cy="95.9316%" r="3.00" fill="#488bb5"><title>zola1875-30 — La faute de l’abbé Mouret — XIII</title></circle>
+<circle class="point" cx="58.4680%" cy="90.7448%" r="3.00" fill="#488bb5"><title>zola1875-31 — La faute de l’abbé Mouret — XIV</title></circle>
+<circle class="point" cx="58.8748%" cy="94.7822%" r="3.00" fill="#488bb5"><title>zola1875-32 — La faute de l’abbé Mouret — XV</title></circle>
+<circle class="point" cx="59.4041%" cy="90.9269%" r="3.00" fill="#488bb5"><title>zola1875-33 — La faute de l’abbé Mouret — XVI</title></circle>
+<circle class="point" cx="58.6697%" cy="83.0368%" r="3.00" fill="#488bb5"><title>zola1875-34 — La faute de l’abbé Mouret — XVII</title></circle>
+<circle class="point" cx="52.0773%" cy="78.8622%" r="3.00" fill="#488bb5"><title>zola1875-35 — La faute de l’abbé Mouret — I</title></circle>
+<circle class="point" cx="59.3600%" cy="75.3405%" r="3.00" fill="#488bb5"><title>zola1875-36 — La faute de l’abbé Mouret — II</title></circle>
+<circle class="point" cx="59.0041%" cy="73.2951%" r="3.00" fill="#488bb5"><title>zola1875-37 — La faute de l’abbé Mouret — III</title></circle>
+<circle class="point" cx="55.8597%" cy="77.4478%" r="3.00" fill="#488bb5"><title>zola1875-38 — La faute de l’abbé Mouret — IV</title></circle>
+<circle class="point" cx="61.3452%" cy="75.3134%" r="3.00" fill="#488bb5"><title>zola1875-39 — La faute de l’abbé Mouret — V</title></circle>
+<circle class="point" cx="55.9055%" cy="75.1623%" r="3.00" fill="#488bb5"><title>zola1875-40 — La faute de l’abbé Mouret — VI</title></circle>
+<circle class="point" cx="64.4832%" cy="76.9579%" r="3.00" fill="#488bb5"><title>zola1875-41 — La faute de l’abbé Mouret — VII</title></circle>
+<circle class="point" cx="58.7775%" cy="87.2766%" r="3.00" fill="#488bb5"><title>zola1875-42 — La faute de l’abbé Mouret — VIII</title></circle>
+<circle class="point" cx="57.3346%" cy="85.2437%" r="3.00" fill="#488bb5"><title>zola1875-43 — La faute de l’abbé Mouret — IX</title></circle>
+<circle class="point" cx="61.8639%" cy="73.9757%" r="3.00" fill="#488bb5"><title>zola1875-44 — La faute de l’abbé Mouret — X</title></circle>
+<circle class="point" cx="57.4156%" cy="83.4001%" r="3.00" fill="#488bb5"><title>zola1875-45 — La faute de l’abbé Mouret — XI</title></circle>
+<circle class="point" cx="59.1758%" cy="92.7741%" r="3.00" fill="#488bb5"><title>zola1875-46 — La faute de l’abbé Mouret — XII</title></circle>
+<circle class="point" cx="56.5188%" cy="81.5627%" r="3.00" fill="#488bb5"><title>zola1875-47 — La faute de l’abbé Mouret — XIII</title></circle>
+<circle class="point" cx="55.8625%" cy="94.7601%" r="3.00" fill="#488bb5"><title>zola1875-48 — La faute de l’abbé Mouret — XIV</title></circle>
+<circle class="point" cx="62.4960%" cy="81.6552%" r="3.00" fill="#488bb5"><title>zola1875-49 — La faute de l’abbé Mouret — XV</title></circle>
+<circle class="point" cx="65.5762%" cy="74.1621%" r="3.00" fill="#488bb5"><title>zola1875-50 — La faute de l’abbé Mouret — XVI</title></circle>
+<text class="label" data-px="59.3821" data-py="83.2673" data-priority="50">La faute de l’abbé Mouret</text>
+</g>
+<g class="work" id="work-5" onclick="togglePinned(evt)">
+<line class="link" x1="28.4950%" y1="55.8556%" x2="30.8397%" y2="58.5945%" stroke="#4090b4"><title>Son excellence Eugène Rougon</title></line>
+<line class="link" x1="30.8397%" y1="58.5945%" x2="35.0924%" y2="57.6914%" stroke="#4090b4"><title>Son excellence Eugène Rougon</title></line>
+<line class="link" x1="35.0924%" y1="57.6914%" x2="25.3209%" y2="52.6009%" stroke="#4090b4"><title>Son excellence Eugène Rougon</title></line>
+<line class="link" x1="25.3209%" y1="52.6009%" x2="34.0034%" y2="55.6839%" stroke="#4090b4"><title>Son excellence Eugène Rougon</title></line>
+<line class="link" x1="34.0034%" y1="55.6839%" x2="32.5734%" y2="59.2059%" stroke="#4090b4"><title>Son excellence Eugène Rougon</title></line>
+<line class="link" x1="32.5734%" y1="59.2059%" x2="38.5021%" y2="54.4001%" stroke="#4090b4"><title>Son excellence Eugène Rougon</title></line>
+<line class="link" x1="38.5021%" y1="54.4001%" x2="30.9656%" y2="58.6339%" stroke="#4090b4"><title>Son excellence Eugène Rougon</title></line>
+<line class="link" x1="30.9656%" y1="58.6339%" x2="29.9531%" y2="59.5246%" stroke="#4090b4"><title>Son excellence Eugène Rougon</title></line>
+<line class="link" x1="29.9531%" y1="59.5246%" x2="34.4218%" y2="63.2463%" stroke="#4090b4"><title>Son excellence Eugène Rougon</title></line>
+<line class="link" x1="34.4218%" y1="63.2463%" x2="27.6495%" y2="59.8878%" stroke="#4090b4"><title>Son excellence Eugène Rougon</title></line>
+<line class="link" x1="27.6495%" y1="59.8878%" x2="31.7943%" y2="57.4002%" stroke="#4090b4"><title>Son excellence Eugène Rougon</title></line>
+<line class="link" x1="31.7943%" y1="57.4002%" x2="30.0209%" y2="62.2037%" stroke="#4090b4"><title>Son excellence Eugène Rougon</title></line>
+<line class="link" x1="30.0209%" y1="62.2037%" x2="24.6923%" y2="58.1595%" stroke="#4090b4"><title>Son excellence Eugène Rougon</title></line>
+<circle class="point" cx="28.4950%" cy="55.8556%" r="3.00" fill="#4090b4"><title>zola1876-01 — Son excellence Eugène Rougon — I</title></circle>
+<circle class="point" cx="30.8397%" cy="58.5945%" r="3.00" fill="#4090b4"><title>zola1876-02 — Son excellence Eugène Rougon — II</title></circle>
+<circle class="point" cx="35.0924%" cy="57.6914%" r="3.00" fill="#4090b4"><title>zola1876-03 — Son excellence Eugène Rougon — III</title></circle>
+<circle class="point" cx="25.3209%" cy="52.6009%" r="3.00" fill="#4090b4"><title>zola1876-04 — Son excellence Eugène Rougon — IV</title></circle>
+<circle class="point" cx="34.0034%" cy="55.6839%" r="3.00" fill="#4090b4"><title>zola1876-05 — Son excellence Eugène Rougon — V</title></circle>
+<circle class="point" cx="32.5734%" cy="59.2059%" r="3.00" fill="#4090b4"><title>zola1876-06 — Son excellence Eugène Rougon — VI</title></circle>
+<circle class="point" cx="38.5021%" cy="54.4001%" r="3.00" fill="#4090b4"><title>zola1876-07 — Son excellence Eugène Rougon — VII</title></circle>
+<circle class="point" cx="30.9656%" cy="58.6339%" r="3.00" fill="#4090b4"><title>zola1876-08 — Son excellence Eugène Rougon — VIII</title></circle>
+<circle class="point" cx="29.9531%" cy="59.5246%" r="3.00" fill="#4090b4"><title>zola1876-09 — Son excellence Eugène Rougon — IX</title></circle>
+<circle class="point" cx="34.4218%" cy="63.2463%" r="3.00" fill="#4090b4"><title>zola1876-10 — Son excellence Eugène Rougon — X</title></circle>
+<circle class="point" cx="27.6495%" cy="59.8878%" r="3.00" fill="#4090b4"><title>zola1876-11 — Son excellence Eugène Rougon — XI</title></circle>
+<circle class="point" cx="31.7943%" cy="57.4002%" r="3.00" fill="#4090b4"><title>zola1876-12 — Son excellence Eugène Rougon — XII</title></circle>
+<circle class="point" cx="30.0209%" cy="62.2037%" r="3.00" fill="#4090b4"><title>zola1876-13 — Son excellence Eugène Rougon — XIII</title></circle>
+<circle class="point" cx="24.6923%" cy="58.1595%" r="3.00" fill="#4090b4"><title>zola1876-14 — Son excellence Eugène Rougon — XIV</title></circle>
+<text class="label" data-px="30.9027" data-py="58.3770" data-priority="14">Son excellence Eugène Rougon</text>
+</g>
+<g class="work" id="work-6" onclick="togglePinned(evt)">
+<line class="link" x1="63.6566%" y1="49.9215%" x2="66.2196%" y2="51.2925%" stroke="#4393a6"><title>L’assommoir</title></line>
+<line class="link" x1="66.2196%" y1="51.2925%" x2="65.4855%" y2="57.4465%" stroke="#4393a6"><title>L’assommoir</title></line>
+<line class="link" x1="65.4855%" y1="57.4465%" x2="63.7591%" y2="52.9648%" stroke="#4393a6"><title>L’assommoir</title></line>
+<line class="link" x1="63.7591%" y1="52.9648%" x2="65.3300%" y2="53.0299%" stroke="#4393a6"><title>L’assommoir</title></line>
+<line class="link" x1="65.3300%" y1="53.0299%" x2="64.3524%" y2="50.9220%" stroke="#4393a6"><title>L’assommoir</title></line>
+<line class="link" x1="64.3524%" y1="50.9220%" x2="65.6483%" y2="55.7415%" stroke="#4393a6"><title>L’assommoir</title></line>
+<line class="link" x1="65.6483%" y1="55.7415%" x2="63.0818%" y2="53.7705%" stroke="#4393a6"><title>L’assommoir</title></line>
+<line class="link" x1="63.0818%" y1="53.7705%" x2="63.0251%" y2="54.6209%" stroke="#4393a6"><title>L’assommoir</title></line>
+<line class="link" x1="63.0251%" y1="54.6209%" x2="60.9039%" y2="56.7984%" stroke="#4393a6"><title>L’assommoir</title></line>
+<line class="link" x1="60.9039%" y1="56.7984%" x2="60.9913%" y2="55.3287%" stroke="#4393a6"><title>L’assommoir</title></line>
+<line class="link" x1="60.9913%" y1="55.3287%" x2="60.3725%" y2="51.7650%" stroke="#4393a6"><title>L’assommoir</title></line>
+<line class="link" x1="60.3725%" y1="51.7650%" x2="60.6305%" y2="58.2417%" stroke="#4393a6"><title>L’assommoir</title></line>
+<circle class="point" cx="63.6566%" cy="49.9215%" r="3.00" fill="#4393a6"><title>zola1877-01 — L’assommoir — I.</title></circle>
+<circle class="point" cx="66.2196%" cy="51.2925%" r="3.00" fill="#4393a6"><title>zola1877-02 — L’assommoir — II.</title></circle>
+<circle class="point" cx="65.4855%" cy="57.4465%" r="3.00" fill="#4393a6"><title>zola1877-03 — L’assommoir — III.</title></circle>
+<circle class="point" cx="63.7591%" cy="52.9648%" r="3.00" fill="#4393a6"><title>zola1877-04 — L’assommoir — IV.</title></circle>
+<circle class="point" cx="65.3300%" cy="53.0299%" r="3.00" fill="#4393a6"><title>zola1877-05 — L’assommoir — V.</title></circle>
+<circle class="point" cx="64.3524%" cy="50.9220%" r="3.00" fill="#4393a6"><title>zola1877-06 — L’assommoir — VI.</title></circle>
+<circle class="point" cx="65.6483%" cy="55.7415%" r="3.00" fill="#4393a6"><title>zola1877-07 — L’assommoir — VII.</title></circle>
+<circle class="point" cx="63.0818%" cy="53.7705%" r="3.00" fill="#4393a6"><title>zola1877-08 — L’assommoir — VIII.</title></circle>
+<circle class="point" cx="63.0251%" cy="54.6209%" r="3.00" fill="#4393a6"><title>zola1877-09 — L’assommoir — IX.</title></circle>
+<circle class="point" cx="60.9039%" cy="56.7984%" r="3.00" fill="#4393a6"><title>zola1877-10 — L’assommoir — X.</title></circle>
+<circle class="point" cx="60.9913%" cy="55.3287%" r="3.00" fill="#4393a6"><title>zola1877-11 — L’assommoir — XI.</title></circle>
+<circle class="point" cx="60.3725%" cy="51.7650%" r="3.00" fill="#4393a6"><title>zola1877-12 — L’assommoir — XII.</title></circle>
+<circle class="point" cx="60.6305%" cy="58.2417%" r="3.00" fill="#4393a6"><title>zola1877-13 — L’assommoir — XIII.</title></circle>
+<text class="label" data-px="63.6566" data-py="53.7705" data-priority="13">L’assommoir</text>
+</g>
+<g class="work" id="work-7" onclick="togglePinned(evt)">
+<line class="link" x1="51.6490%" y1="49.4246%" x2="41.6165%" y2="51.0768%" stroke="#479799"><title>Une page d’amour</title></line>
+<line class="link" x1="41.6165%" y1="51.0768%" x2="49.8460%" y2="53.3180%" stroke="#479799"><title>Une page d’amour</title></line>
+<line class="link" x1="49.8460%" y1="53.3180%" x2="45.3847%" y2="53.1504%" stroke="#479799"><title>Une page d’amour</title></line>
+<line class="link" x1="45.3847%" y1="53.1504%" x2="68.0560%" y2="40.2425%" stroke="#479799"><title>Une page d’amour</title></line>
+<line class="link" x1="68.0560%" y1="40.2425%" x2="52.7689%" y2="55.6504%" stroke="#479799"><title>Une page d’amour</title></line>
+<line class="link" x1="52.7689%" y1="55.6504%" x2="48.9691%" y2="54.0336%" stroke="#479799"><title>Une page d’amour</title></line>
+<line class="link" x1="48.9691%" y1="54.0336%" x2="44.9673%" y2="51.7927%" stroke="#479799"><title>Une page d’amour</title></line>
+<line class="link" x1="44.9673%" y1="51.7927%" x2="41.2963%" y2="53.8693%" stroke="#479799"><title>Une page d’amour</title></line>
+<line class="link" x1="41.2963%" y1="53.8693%" x2="68.4889%" y2="40.0631%" stroke="#479799"><title>Une page d’amour</title></line>
+<line class="link" x1="68.4889%" y1="40.0631%" x2="53.2736%" y2="72.8335%" stroke="#479799"><title>Une page d’amour</title></line>
+<line class="link" x1="53.2736%" y1="72.8335%" x2="50.2913%" y2="48.3520%" stroke="#479799"><title>Une page d’amour</title></line>
+<line class="link" x1="50.2913%" y1="48.3520%" x2="49.3380%" y2="48.9466%" stroke="#479799"><title>Une page d’amour</title></line>
+<line class="link" x1="49.3380%" y1="48.9466%" x2="46.0776%" y2="53.6159%" stroke="#479799"><title>Une page d’amour</title></line>
+<line class="link" x1="46.0776%" y1="53.6159%" x2="69.5213%" y2="40.2628%" stroke="#479799"><title>Une page d’amour</title></line>
+<line class="link" x1="69.5213%" y1="40.2628%" x2="40.2334%" y2="52.2423%" stroke="#479799"><title>Une page d’amour</title></line>
+<line class="link" x1="40.2334%" y1="52.2423%" x2="51.6610%" y2="52.6826%" stroke="#479799"><title>Une page d’amour</title></line>
+<line class="link" x1="51.6610%" y1="52.6826%" x2="48.0141%" y2="49.6616%" stroke="#479799"><title>Une page d’amour</title></line>
+<line class="link" x1="48.0141%" y1="49.6616%" x2="45.7319%" y2="48.7501%" stroke="#479799"><title>Une page d’amour</title></line>
+<line class="link" x1="45.7319%" y1="48.7501%" x2="68.2295%" y2="41.2606%" stroke="#479799"><title>Une page d’amour</title></line>
+<line class="link" x1="68.2295%" y1="41.2606%" x2="51.8300%" y2="53.9261%" stroke="#479799"><title>Une page d’amour</title></line>
+<line class="link" x1="51.8300%" y1="53.9261%" x2="47.8803%" y2="50.8031%" stroke="#479799"><title>Une page d’amour</title></line>
+<line class="link" x1="47.8803%" y1="50.8031%" x2="50.3913%" y2="50.2236%" stroke="#479799"><title>Une page d’amour</title></line>
+<line class="link" x1="50.3913%" y1="50.2236%" x2="43.9321%" y2="54.9537%" stroke="#479799"><title>Une page d’amour</title></line>
+<line class="link" x1="43.9321%" y1="54.9537%" x2="66.5295%" y2="40.2547%" stroke="#479799"><title>Une page d’amour</title></line>
+<circle class="point" cx="51.6490%" cy="49.4246%" r="3.00" fill="#479799"><title>zola1878-01 — Une page d’amour — I</title></circle>
+<circle class="point" cx="41.6165%" cy="51.0768%" r="3.00" fill="#479799"><title>zola1878-02 — Une page d’amour — II</title></circle>
+<circle class="point" cx="49.8460%" cy="53.3180%" r="3.00" fill="#479799"><title>zola1878-03 — Une page d’amour — III</title></circle>
+<circle class="point" cx="45.3847%" cy="53.1504%" r="3.00" fill="#479799"><title>zola1878-04 — Une page d’amour — IV</title></circle>
+<circle class="point" cx="68.0560%" cy="40.2425%" r="3.00" fill="#479799"><title>zola1878-05 — Une page d’amour — V</title></circle>
+<circle class="point" cx="52.7689%" cy="55.6504%" r="3.00" fill="#479799"><title>zola1878-06 — Une page d’amour — I</title></circle>
+<circle class="point" cx="48.9691%" cy="54.0336%" r="3.00" fill="#479799"><title>zola1878-07 — Une page d’amour — II</title></circle>
+<circle class="point" cx="44.9673%" cy="51.7927%" r="3.00" fill="#479799"><title>zola1878-08 — Une page d’amour — III</title></circle>
+<circle class="point" cx="41.2963%" cy="53.8693%" r="3.00" fill="#479799"><title>zola1878-09 — Une page d’amour — IV</title></circle>
+<circle class="point" cx="68.4889%" cy="40.0631%" r="3.00" fill="#479799"><title>zola1878-10 — Une page d’amour — V</title></circle>
+<circle class="point" cx="53.2736%" cy="72.8335%" r="3.00" fill="#479799"><title>zola1878-11 — Une page d’amour — I</title></circle>
+<circle class="point" cx="50.2913%" cy="48.3520%" r="3.00" fill="#479799"><title>zola1878-12 — Une page d’amour — II</title></circle>
+<circle class="point" cx="49.3380%" cy="48.9466%" r="3.00" fill="#479799"><title>zola1878-13 — Une page d’amour — III</title></circle>
+<circle class="point" cx="46.0776%" cy="53.6159%" r="3.00" fill="#479799"><title>zola1878-14 — Une page d’amour — IV</title></circle>
+<circle class="point" cx="69.5213%" cy="40.2628%" r="3.00" fill="#479799"><title>zola1878-15 — Une page d’amour — V</title></circle>
+<circle class="point" cx="40.2334%" cy="52.2423%" r="3.00" fill="#479799"><title>zola1878-16 — Une page d’amour — I</title></circle>
+<circle class="point" cx="51.6610%" cy="52.6826%" r="3.00" fill="#479799"><title>zola1878-17 — Une page d’amour — II</title></circle>
+<circle class="point" cx="48.0141%" cy="49.6616%" r="3.00" fill="#479799"><title>zola1878-18 — Une page d’amour — III</title></circle>
+<circle class="point" cx="45.7319%" cy="48.7501%" r="3.00" fill="#479799"><title>zola1878-19 — Une page d’amour — IV</title></circle>
+<circle class="point" cx="68.2295%" cy="41.2606%" r="3.00" fill="#479799"><title>zola1878-20 — Une page d’amour — V</title></circle>
+<circle class="point" cx="51.8300%" cy="53.9261%" r="3.00" fill="#479799"><title>zola1878-21 — Une page d’amour — I</title></circle>
+<circle class="point" cx="47.8803%" cy="50.8031%" r="3.00" fill="#479799"><title>zola1878-22 — Une page d’amour — II</title></circle>
+<circle class="point" cx="50.3913%" cy="50.2236%" r="3.00" fill="#479799"><title>zola1878-23 — Une page d’amour — III</title></circle>
+<circle class="point" cx="43.9321%" cy="54.9537%" r="3.00" fill="#479799"><title>zola1878-24 — Une page d’amour — IV</title></circle>
+<circle class="point" cx="66.5295%" cy="40.2547%" r="3.00" fill="#479799"><title>zola1878-25 — Une page d’amour — V</title></circle>
+<text class="label" data-px="49.8460" data-py="51.0768" data-priority="25">Une page d’amour</text>
+</g>
+<g class="work" id="work-8" onclick="togglePinned(evt)">
+<line class="link" x1="28.9120%" y1="45.1664%" x2="37.2343%" y2="46.6939%" stroke="#4a9a8b"><title>Nana</title></line>
+<line class="link" x1="37.2343%" y1="46.6939%" x2="37.2323%" y2="50.2276%" stroke="#4a9a8b"><title>Nana</title></line>
+<line class="link" x1="37.2323%" y1="50.2276%" x2="35.7384%" y2="49.8414%" stroke="#4a9a8b"><title>Nana</title></line>
+<line class="link" x1="35.7384%" y1="49.8414%" x2="29.3826%" y2="45.2099%" stroke="#4a9a8b"><title>Nana</title></line>
+<line class="link" x1="29.3826%" y1="45.2099%" x2="38.4337%" y2="47.6615%" stroke="#4a9a8b"><title>Nana</title></line>
+<line class="link" x1="38.4337%" y1="47.6615%" x2="38.4268%" y2="45.1698%" stroke="#4a9a8b"><title>Nana</title></line>
+<line class="link" x1="38.4268%" y1="45.1698%" x2="37.1295%" y2="45.0958%" stroke="#4a9a8b"><title>Nana</title></line>
+<line class="link" x1="37.1295%" y1="45.0958%" x2="31.3607%" y2="44.4529%" stroke="#4a9a8b"><title>Nana</title></line>
+<line class="link" x1="31.3607%" y1="44.4529%" x2="35.5037%" y2="46.5552%" stroke="#4a9a8b"><title>Nana</title></line>
+<line class="link" x1="35.5037%" y1="46.5552%" x2="32.4105%" y2="49.0169%" stroke="#4a9a8b"><title>Nana</title></line>
+<line class="link" x1="32.4105%" y1="49.0169%" x2="33.9396%" y2="44.4730%" stroke="#4a9a8b"><title>Nana</title></line>
+<line class="link" x1="33.9396%" y1="44.4730%" x2="35.5639%" y2="45.0078%" stroke="#4a9a8b"><title>Nana</title></line>
+<line class="link" x1="35.5639%" y1="45.0078%" x2="34.5444%" y2="48.7450%" stroke="#4a9a8b"><title>Nana</title></line>
+<circle class="point" cx="28.9120%" cy="45.1664%" r="3.00" fill="#4a9a8b"><title>zola1880-01 — Nana — I</title></circle>
+<circle class="point" cx="37.2343%" cy="46.6939%" r="3.00" fill="#4a9a8b"><title>zola1880-02 — Nana — II</title></circle>
+<circle class="point" cx="37.2323%" cy="50.2276%" r="3.00" fill="#4a9a8b"><title>zola1880-03 — Nana — III</title></circle>
+<circle class="point" cx="35.7384%" cy="49.8414%" r="3.00" fill="#4a9a8b"><title>zola1880-04 — Nana — IV</title></circle>
+<circle class="point" cx="29.3826%" cy="45.2099%" r="3.00" fill="#4a9a8b"><title>zola1880-05 — Nana — V</title></circle>
+<circle class="point" cx="38.4337%" cy="47.6615%" r="3.00" fill="#4a9a8b"><title>zola1880-06 — Nana — VI</title></circle>
+<circle class="point" cx="38.4268%" cy="45.1698%" r="3.00" fill="#4a9a8b"><title>zola1880-07 — Nana — VII</title></circle>
+<circle class="point" cx="37.1295%" cy="45.0958%" r="3.00" fill="#4a9a8b"><title>zola1880-08 — Nana — VIII</title></circle>
+<circle class="point" cx="31.3607%" cy="44.4529%" r="3.00" fill="#4a9a8b"><title>zola1880-09 — Nana — IX</title></circle>
+<circle class="point" cx="35.5037%" cy="46.5552%" r="3.00" fill="#4a9a8b"><title>zola1880-10 — Nana — X</title></circle>
+<circle class="point" cx="32.4105%" cy="49.0169%" r="3.00" fill="#4a9a8b"><title>zola1880-11 — Nana — XI</title></circle>
+<circle class="point" cx="33.9396%" cy="44.4730%" r="3.00" fill="#4a9a8b"><title>zola1880-12 — Nana — XII</title></circle>
+<circle class="point" cx="35.5639%" cy="45.0078%" r="3.00" fill="#4a9a8b"><title>zola1880-13 — Nana — XIII</title></circle>
+<circle class="point" cx="34.5444%" cy="48.7450%" r="3.00" fill="#4a9a8b"><title>zola1880-14 — Nana — XIV</title></circle>
+<text class="label" data-px="35.5338" data-py="45.8825" data-priority="14">Nana</text>
+</g>
+<g class="work" id="work-9" onclick="togglePinned(evt)">
+<line class="link" x1="41.2247%" y1="35.4717%" x2="34.6563%" y2="39.0549%" stroke="#4d9d7e"><title>Pot-Bouille</title></line>
+<line class="link" x1="34.6563%" y1="39.0549%" x2="33.9571%" y2="36.7587%" stroke="#4d9d7e"><title>Pot-Bouille</title></line>
+<line class="link" x1="33.9571%" y1="36.7587%" x2="39.7965%" y2="37.1095%" stroke="#4d9d7e"><title>Pot-Bouille</title></line>
+<line class="link" x1="39.7965%" y1="37.1095%" x2="31.2532%" y2="35.1941%" stroke="#4d9d7e"><title>Pot-Bouille</title></line>
+<line class="link" x1="31.2532%" y1="35.1941%" x2="39.0694%" y2="38.9870%" stroke="#4d9d7e"><title>Pot-Bouille</title></line>
+<line class="link" x1="39.0694%" y1="38.9870%" x2="35.8644%" y2="35.8694%" stroke="#4d9d7e"><title>Pot-Bouille</title></line>
+<line class="link" x1="35.8644%" y1="35.8694%" x2="34.0355%" y2="33.9562%" stroke="#4d9d7e"><title>Pot-Bouille</title></line>
+<line class="link" x1="34.0355%" y1="33.9562%" x2="39.8388%" y2="34.4176%" stroke="#4d9d7e"><title>Pot-Bouille</title></line>
+<line class="link" x1="39.8388%" y1="34.4176%" x2="37.4883%" y2="31.2807%" stroke="#4d9d7e"><title>Pot-Bouille</title></line>
+<line class="link" x1="37.4883%" y1="31.2807%" x2="37.1100%" y2="33.2795%" stroke="#4d9d7e"><title>Pot-Bouille</title></line>
+<line class="link" x1="37.1100%" y1="33.2795%" x2="36.7275%" y2="38.7200%" stroke="#4d9d7e"><title>Pot-Bouille</title></line>
+<line class="link" x1="36.7275%" y1="38.7200%" x2="38.1135%" y2="37.9464%" stroke="#4d9d7e"><title>Pot-Bouille</title></line>
+<line class="link" x1="38.1135%" y1="37.9464%" x2="38.9340%" y2="37.7453%" stroke="#4d9d7e"><title>Pot-Bouille</title></line>
+<line class="link" x1="38.9340%" y1="37.7453%" x2="37.1383%" y2="35.9473%" stroke="#4d9d7e"><title>Pot-Bouille</title></line>
+<line class="link" x1="37.1383%" y1="35.9473%" x2="36.6486%" y2="38.0662%" stroke="#4d9d7e"><title>Pot-Bouille</title></line>
+<line class="link" x1="36.6486%" y1="38.0662%" x2="37.6199%" y2="34.5011%" stroke="#4d9d7e"><title>Pot-Bouille</title></line>
+<line class="link" x1="37.6199%" y1="34.5011%" x2="30.5555%" y2="35.0831%" stroke="#4d9d7e"><title>Pot-Bouille</title></line>
+<circle class="point" cx="41.2247%" cy="35.4717%" r="3.00" fill="#4d9d7e"><title>zola1882-01 — Pot-Bouille — I</title></circle>
+<circle class="point" cx="34.6563%" cy="39.0549%" r="3.00" fill="#4d9d7e"><title>zola1882-02 — Pot-Bouille — II</title></circle>
+<circle class="point" cx="33.9571%" cy="36.7587%" r="3.00" fill="#4d9d7e"><title>zola1882-03 — Pot-Bouille — III</title></circle>
+<circle class="point" cx="39.7965%" cy="37.1095%" r="3.00" fill="#4d9d7e"><title>zola1882-04 — Pot-Bouille — IV</title></circle>
+<circle class="point" cx="31.2532%" cy="35.1941%" r="3.00" fill="#4d9d7e"><title>zola1882-05 — Pot-Bouille — V</title></circle>
+<circle class="point" cx="39.0694%" cy="38.9870%" r="3.00" fill="#4d9d7e"><title>zola1882-06 — Pot-Bouille — VI</title></circle>
+<circle class="point" cx="35.8644%" cy="35.8694%" r="3.00" fill="#4d9d7e"><title>zola1882-07 — Pot-Bouille — VII</title></circle>
+<circle class="point" cx="34.0355%" cy="33.9562%" r="3.00" fill="#4d9d7e"><title>zola1882-08 — Pot-Bouille — VIII</title></circle>
+<circle class="point" cx="39.8388%" cy="34.4176%" r="3.00" fill="#4d9d7e"><title>zola1882-09 — Pot-Bouille — IX</title></circle>
+<circle class="point" cx="37.4883%" cy="31.2807%" r="3.00" fill="#4d9d7e"><title>zola1882-10 — Pot-Bouille — X</title></circle>
+<circle class="point" cx="37.1100%" cy="33.2795%" r="3.00" fill="#4d9d7e"><title>zola1882-11 — Pot-Bouille — XI</title></circle>
+<circle class="point" cx="36.7275%" cy="38.7200%" r="3.00" fill="#4d9d7e"><title>zola1882-12 — Pot-Bouille — XII</title></circle>
+<circle class="point" cx="38.1135%" cy="37.9464%" r="3.00" fill="#4d9d7e"><title>zola1882-13 — Pot-Bouille — XIII</title></circle>
+<circle class="point" cx="38.9340%" cy="37.7453%" r="3.00" fill="#4d9d7e"><title>zola1882-14 — Pot-Bouille — XIV</title></circle>
+<circle class="point" cx="37.1383%" cy="35.9473%" r="3.00" fill="#4d9d7e"><title>zola1882-15 — Pot-Bouille — XV</title></circle>
+<circle class="point" cx="36.6486%" cy="38.0662%" r="3.00" fill="#4d9d7e"><title>zola1882-16 — Pot-Bouille — XVI</title></circle>
+<circle class="point" cx="37.6199%" cy="34.5011%" r="3.00" fill="#4d9d7e"><title>zola1882-17 — Pot-Bouille — XVII</title></circle>
+<circle class="point" cx="30.5555%" cy="35.0831%" r="3.00" fill="#4d9d7e"><title>zola1882-18 — Pot-Bouille — XVIII</title></circle>
+<text class="label" data-px="37.1241" data-py="35.9083" data-priority="18">Pot-Bouille</text>
+</g>
+<g class="work" id="work-10" onclick="togglePinned(evt)">
+<line class="link" x1="45.6666%" y1="26.1979%" x2="48.4610%" y2="29.3949%" stroke="#5c9d72"><title>Au bonheur des dames</title></line>
+<line class="link" x1="48.4610%" y1="29.3949%" x2="44.3520%" y2="31.2651%" stroke="#5c9d72"><title>Au bonheur des dames</title></line>
+<line class="link" x1="44.3520%" y1="31.2651%" x2="50.7234%" y2="28.6939%" stroke="#5c9d72"><title>Au bonheur des dames</title></line>
+<line class="link" x1="50.7234%" y1="28.6939%" x2="48.9303%" y2="32.1626%" stroke="#5c9d72"><title>Au bonheur des dames</title></line>
+<line class="link" x1="48.9303%" y1="32.1626%" x2="49.6794%" y2="32.0451%" stroke="#5c9d72"><title>Au bonheur des dames</title></line>
+<line class="link" x1="49.6794%" y1="32.0451%" x2="45.1094%" y2="25.5548%" stroke="#5c9d72"><title>Au bonheur des dames</title></line>
+<line class="link" x1="45.1094%" y1="25.5548%" x2="44.4794%" y2="26.4715%" stroke="#5c9d72"><title>Au bonheur des dames</title></line>
+<line class="link" x1="44.4794%" y1="26.4715%" x2="51.3650%" y2="26.7306%" stroke="#5c9d72"><title>Au bonheur des dames</title></line>
+<line class="link" x1="51.3650%" y1="26.7306%" x2="49.8921%" y2="32.3280%" stroke="#5c9d72"><title>Au bonheur des dames</title></line>
+<line class="link" x1="49.8921%" y1="32.3280%" x2="44.3554%" y2="31.2277%" stroke="#5c9d72"><title>Au bonheur des dames</title></line>
+<line class="link" x1="44.3554%" y1="31.2277%" x2="48.2245%" y2="29.6285%" stroke="#5c9d72"><title>Au bonheur des dames</title></line>
+<line class="link" x1="48.2245%" y1="29.6285%" x2="43.9840%" y2="25.9407%" stroke="#5c9d72"><title>Au bonheur des dames</title></line>
+<line class="link" x1="43.9840%" y1="25.9407%" x2="51.6587%" y2="26.4019%" stroke="#5c9d72"><title>Au bonheur des dames</title></line>
+<circle class="point" cx="45.6666%" cy="26.1979%" r="3.00" fill="#5c9d72"><title>zola1883-01 — Au bonheur des dames — I</title></circle>
+<circle class="point" cx="48.4610%" cy="29.3949%" r="3.00" fill="#5c9d72"><title>zola1883-02 — Au bonheur des dames — II</title></circle>
+<circle class="point" cx="44.3520%" cy="31.2651%" r="3.00" fill="#5c9d72"><title>zola1883-03 — Au bonheur des dames — III</title></circle>
+<circle class="point" cx="50.7234%" cy="28.6939%" r="3.00" fill="#5c9d72"><title>zola1883-04 — Au bonheur des dames — IV</title></circle>
+<circle class="point" cx="48.9303%" cy="32.1626%" r="3.00" fill="#5c9d72"><title>zola1883-05 — Au bonheur des dames — V</title></circle>
+<circle class="point" cx="49.6794%" cy="32.0451%" r="3.00" fill="#5c9d72"><title>zola1883-06 — Au bonheur des dames — VI</title></circle>
+<circle class="point" cx="45.1094%" cy="25.5548%" r="3.00" fill="#5c9d72"><title>zola1883-07 — Au bonheur des dames — VII</title></circle>
+<circle class="point" cx="44.4794%" cy="26.4715%" r="3.00" fill="#5c9d72"><title>zola1883-08 — Au bonheur des dames — VIII</title></circle>
+<circle class="point" cx="51.3650%" cy="26.7306%" r="3.00" fill="#5c9d72"><title>zola1883-09 — Au bonheur des dames — IX</title></circle>
+<circle class="point" cx="49.8921%" cy="32.3280%" r="3.00" fill="#5c9d72"><title>zola1883-10 — Au bonheur des dames — X</title></circle>
+<circle class="point" cx="44.3554%" cy="31.2277%" r="3.00" fill="#5c9d72"><title>zola1883-11 — Au bonheur des dames — XI</title></circle>
+<circle class="point" cx="48.2245%" cy="29.6285%" r="3.00" fill="#5c9d72"><title>zola1883-12 — Au bonheur des dames — XII</title></circle>
+<circle class="point" cx="43.9840%" cy="25.9407%" r="3.00" fill="#5c9d72"><title>zola1883-13 — Au bonheur des dames — XIII</title></circle>
+<circle class="point" cx="51.6587%" cy="26.4019%" r="3.00" fill="#5c9d72"><title>zola1883-14 — Au bonheur des dames — XIV</title></circle>
+<text class="label" data-px="48.3428" data-py="29.0444" data-priority="14">Au bonheur des dames</text>
+</g>
+<g class="work" id="work-11" onclick="togglePinned(evt)">
+<line class="link" x1="33.4679%" y1="19.4907%" x2="33.3257%" y2="23.7367%" stroke="#759867"><title>La joie de vivre</title></line>
+<line class="link" x1="33.3257%" y1="23.7367%" x2="35.1641%" y2="25.8606%" stroke="#759867"><title>La joie de vivre</title></line>
+<line class="link" x1="35.1641%" y1="25.8606%" x2="34.9450%" y2="21.2639%" stroke="#759867"><title>La joie de vivre</title></line>
+<line class="link" x1="34.9450%" y1="21.2639%" x2="35.5538%" y2="23.2798%" stroke="#759867"><title>La joie de vivre</title></line>
+<line class="link" x1="35.5538%" y1="23.2798%" x2="38.5040%" y2="22.6111%" stroke="#759867"><title>La joie de vivre</title></line>
+<line class="link" x1="38.5040%" y1="22.6111%" x2="35.7458%" y2="20.3788%" stroke="#759867"><title>La joie de vivre</title></line>
+<line class="link" x1="35.7458%" y1="20.3788%" x2="36.9373%" y2="23.0341%" stroke="#759867"><title>La joie de vivre</title></line>
+<line class="link" x1="36.9373%" y1="23.0341%" x2="36.9280%" y2="23.6687%" stroke="#759867"><title>La joie de vivre</title></line>
+<line class="link" x1="36.9280%" y1="23.6687%" x2="40.4639%" y2="20.6713%" stroke="#759867"><title>La joie de vivre</title></line>
+<line class="link" x1="40.4639%" y1="20.6713%" x2="36.2811%" y2="20.4936%" stroke="#759867"><title>La joie de vivre</title></line>
+<circle class="point" cx="33.4679%" cy="19.4907%" r="3.00" fill="#759867"><title>zola1884-01 — La joie de vivre — I</title></circle>
+<circle class="point" cx="33.3257%" cy="23.7367%" r="3.00" fill="#759867"><title>zola1884-02 — La joie de vivre — II</title></circle>
+<circle class="point" cx="35.1641%" cy="25.8606%" r="3.00" fill="#759867"><title>zola1884-03 — La joie de vivre — III</title></circle>
+<circle class="point" cx="34.9450%" cy="21.2639%" r="3.00" fill="#759867"><title>zola1884-04 — La joie de vivre — IV</title></circle>
+<circle class="point" cx="35.5538%" cy="23.2798%" r="3.00" fill="#759867"><title>zola1884-05 — La joie de vivre — V</title></circle>
+<circle class="point" cx="38.5040%" cy="22.6111%" r="3.00" fill="#759867"><title>zola1884-06 — La joie de vivre — VI</title></circle>
+<circle class="point" cx="35.7458%" cy="20.3788%" r="3.00" fill="#759867"><title>zola1884-07 — La joie de vivre — VII</title></circle>
+<circle class="point" cx="36.9373%" cy="23.0341%" r="3.00" fill="#759867"><title>zola1884-08 — La joie de vivre — VIII</title></circle>
+<circle class="point" cx="36.9280%" cy="23.6687%" r="3.00" fill="#759867"><title>zola1884-09 — La joie de vivre — IX</title></circle>
+<circle class="point" cx="40.4639%" cy="20.6713%" r="3.00" fill="#759867"><title>zola1884-10 — La joie de vivre — X</title></circle>
+<circle class="point" cx="36.2811%" cy="20.4936%" r="3.00" fill="#759867"><title>zola1884-11 — La joie de vivre — XI</title></circle>
+<text class="label" data-px="35.7458" data-py="22.6111" data-priority="11">La joie de vivre</text>
+</g>
+<g class="work" id="work-12" onclick="togglePinned(evt)">
+<line class="link" x1="9.0629%" y1="23.2418%" x2="13.8025%" y2="21.6733%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="13.8025%" y1="21.6733%" x2="5.3699%" y2="21.1717%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="5.3699%" y1="21.1717%" x2="6.8899%" y2="17.5536%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="6.8899%" y1="17.5536%" x2="6.3223%" y2="19.5860%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="6.3223%" y1="19.5860%" x2="9.8986%" y2="22.3452%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="9.8986%" y1="22.3452%" x2="20.6569%" y2="31.5035%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="20.6569%" y1="31.5035%" x2="13.5678%" y2="23.1690%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="13.5678%" y1="23.1690%" x2="14.6541%" y2="22.6955%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="14.6541%" y1="22.6955%" x2="15.6431%" y2="23.1036%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="15.6431%" y1="23.1036%" x2="10.0839%" y2="24.6156%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="10.0839%" y1="24.6156%" x2="15.1445%" y2="29.4697%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="15.1445%" y1="29.4697%" x2="15.6315%" y2="25.4296%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="15.6315%" y1="25.4296%" x2="15.6873%" y2="27.9990%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="15.6873%" y1="27.9990%" x2="14.2190%" y2="28.0675%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="14.2190%" y1="28.0675%" x2="5.0213%" y2="17.8662%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="5.0213%" y1="17.8662%" x2="19.6575%" y2="31.4044%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="19.6575%" y1="31.4044%" x2="17.3768%" y2="30.5428%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="17.3768%" y1="30.5428%" x2="12.2503%" y2="28.9026%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="12.2503%" y1="28.9026%" x2="14.7480%" y2="31.3048%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="14.7480%" y1="31.3048%" x2="12.2851%" y2="26.9343%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="12.2851%" y1="26.9343%" x2="3.3965%" y2="26.9554%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="3.3965%" y1="26.9554%" x2="14.4773%" y2="34.0591%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="14.4773%" y1="34.0591%" x2="7.4237%" y2="23.2452%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="7.4237%" y1="23.2452%" x2="5.8366%" y2="18.7801%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="5.8366%" y1="18.7801%" x2="6.3664%" y2="32.1660%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="6.3664%" y1="32.1660%" x2="6.1033%" y2="32.2599%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="6.1033%" y1="32.2599%" x2="6.7722%" y2="34.6860%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="6.7722%" y1="34.6860%" x2="7.7392%" y2="33.9836%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="7.7392%" y1="33.9836%" x2="6.3752%" y2="27.5358%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="6.3752%" y1="27.5358%" x2="11.0682%" y2="28.8315%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="11.0682%" y1="28.8315%" x2="12.4084%" y2="31.9757%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="12.4084%" y1="31.9757%" x2="6.8856%" y2="27.6247%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="6.8856%" y1="27.6247%" x2="7.8378%" y2="32.6199%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="7.8378%" y1="32.6199%" x2="10.0327%" y2="31.8304%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="10.0327%" y1="31.8304%" x2="2.0000%" y2="22.3046%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="2.0000%" y1="22.3046%" x2="2.6216%" y2="21.8766%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="2.6216%" y1="21.8766%" x2="3.3037%" y2="16.0980%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="3.3037%" y1="16.0980%" x2="5.4623%" y2="16.8802%" stroke="#8f945d"><title>Germinal</title></line>
+<line class="link" x1="5.4623%" y1="16.8802%" x2="7.9101%" y2="21.2592%" stroke="#8f945d"><title>Germinal</title></line>
+<circle class="point" cx="9.0629%" cy="23.2418%" r="3.00" fill="#8f945d"><title>zola1885-01 — Germinal — I</title></circle>
+<circle class="point" cx="13.8025%" cy="21.6733%" r="3.00" fill="#8f945d"><title>zola1885-02 — Germinal — II</title></circle>
+<circle class="point" cx="5.3699%" cy="21.1717%" r="3.00" fill="#8f945d"><title>zola1885-03 — Germinal — III</title></circle>
+<circle class="point" cx="6.8899%" cy="17.5536%" r="3.00" fill="#8f945d"><title>zola1885-04 — Germinal — IV</title></circle>
+<circle class="point" cx="6.3223%" cy="19.5860%" r="3.00" fill="#8f945d"><title>zola1885-05 — Germinal — V</title></circle>
+<circle class="point" cx="9.8986%" cy="22.3452%" r="3.00" fill="#8f945d"><title>zola1885-06 — Germinal — VI</title></circle>
+<circle class="point" cx="20.6569%" cy="31.5035%" r="3.00" fill="#8f945d"><title>zola1885-07 — Germinal — I</title></circle>
+<circle class="point" cx="13.5678%" cy="23.1690%" r="3.00" fill="#8f945d"><title>zola1885-08 — Germinal — II</title></circle>
+<circle class="point" cx="14.6541%" cy="22.6955%" r="3.00" fill="#8f945d"><title>zola1885-09 — Germinal — III</title></circle>
+<circle class="point" cx="15.6431%" cy="23.1036%" r="3.00" fill="#8f945d"><title>zola1885-10 — Germinal — IV</title></circle>
+<circle class="point" cx="10.0839%" cy="24.6156%" r="3.00" fill="#8f945d"><title>zola1885-11 — Germinal — V</title></circle>
+<circle class="point" cx="15.1445%" cy="29.4697%" r="3.00" fill="#8f945d"><title>zola1885-12 — Germinal — I</title></circle>
+<circle class="point" cx="15.6315%" cy="25.4296%" r="3.00" fill="#8f945d"><title>zola1885-13 — Germinal — II</title></circle>
+<circle class="point" cx="15.6873%" cy="27.9990%" r="3.00" fill="#8f945d"><title>zola1885-14 — Germinal — III</title></circle>
+<circle class="point" cx="14.2190%" cy="28.0675%" r="3.00" fill="#8f945d"><title>zola1885-15 — Germinal — IV</title></circle>
+<circle class="point" cx="5.0213%" cy="17.8662%" r="3.00" fill="#8f945d"><title>zola1885-16 — Germinal — V</title></circle>
+<circle class="point" cx="19.6575%" cy="31.4044%" r="3.00" fill="#8f945d"><title>zola1885-17 — Germinal — I</title></circle>
+<circle class="point" cx="17.3768%" cy="30.5428%" r="3.00" fill="#8f945d"><title>zola1885-18 — Germinal — II</title></circle>
+<circle class="point" cx="12.2503%" cy="28.9026%" r="3.00" fill="#8f945d"><title>zola1885-19 — Germinal — III</title></circle>
+<circle class="point" cx="14.7480%" cy="31.3048%" r="3.00" fill="#8f945d"><title>zola1885-20 — Germinal — IV</title></circle>
+<circle class="point" cx="12.2851%" cy="26.9343%" r="3.00" fill="#8f945d"><title>zola1885-21 — Germinal — V</title></circle>
+<circle class="point" cx="3.3965%" cy="26.9554%" r="3.00" fill="#8f945d"><title>zola1885-22 — Germinal — VI</title></circle>
+<circle class="point" cx="14.4773%" cy="34.0591%" r="3.00" fill="#8f945d"><title>zola1885-23 — Germinal — VII</title></circle>
+<circle class="point" cx="7.4237%" cy="23.2452%" r="3.00" fill="#8f945d"><title>zola1885-24 — Germinal — I</title></circle>
+<circle class="point" cx="5.8366%" cy="18.7801%" r="3.00" fill="#8f945d"><title>zola1885-25 — Germinal — II</title></circle>
+<circle class="point" cx="6.3664%" cy="32.1660%" r="3.00" fill="#8f945d"><title>zola1885-26 — Germinal — III</title></circle>
+<circle class="point" cx="6.1033%" cy="32.2599%" r="3.00" fill="#8f945d"><title>zola1885-27 — Germinal — IV</title></circle>
+<circle class="point" cx="6.7722%" cy="34.6860%" r="3.00" fill="#8f945d"><title>zola1885-28 — Germinal — V</title></circle>
+<circle class="point" cx="7.7392%" cy="33.9836%" r="3.00" fill="#8f945d"><title>zola1885-29 — Germinal — VI</title></circle>
+<circle class="point" cx="6.3752%" cy="27.5358%" r="3.00" fill="#8f945d"><title>zola1885-30 — Germinal — I</title></circle>
+<circle class="point" cx="11.0682%" cy="28.8315%" r="3.00" fill="#8f945d"><title>zola1885-31 — Germinal — II</title></circle>
+<circle class="point" cx="12.4084%" cy="31.9757%" r="3.00" fill="#8f945d"><title>zola1885-32 — Germinal — III</title></circle>
+<circle class="point" cx="6.8856%" cy="27.6247%" r="3.00" fill="#8f945d"><title>zola1885-33 — Germinal — IV</title></circle>
+<circle class="point" cx="7.8378%" cy="32.6199%" r="3.00" fill="#8f945d"><title>zola1885-34 — Germinal — V</title></circle>
+<circle class="point" cx="10.0327%" cy="31.8304%" r="3.00" fill="#8f945d"><title>zola1885-35 — Germinal — I</title></circle>
+<circle class="point" cx="2.0000%" cy="22.3046%" r="3.00" fill="#8f945d"><title>zola1885-36 — Germinal — II</title></circle>
+<circle class="point" cx="2.6216%" cy="21.8766%" r="3.00" fill="#8f945d"><title>zola1885-37 — Germinal — III</title></circle>
+<circle class="point" cx="3.3037%" cy="16.0980%" r="3.00" fill="#8f945d"><title>zola1885-38 — Germinal — IV</title></circle>
+<circle class="point" cx="5.4623%" cy="16.8802%" r="3.00" fill="#8f945d"><title>zola1885-39 — Germinal — V</title></circle>
+<circle class="point" cx="7.9101%" cy="21.2592%" r="3.00" fill="#8f945d"><title>zola1885-40 — Germinal — VI</title></circle>
+<text class="label" data-px="9.4807" data-py="26.9448" data-priority="40">Germinal</text>
+</g>
+<g class="work" id="work-13" onclick="togglePinned(evt)">
+<line class="link" x1="61.7296%" y1="37.0859%" x2="57.5183%" y2="38.4592%" stroke="#a89052"><title>L’œuvre</title></line>
+<line class="link" x1="57.5183%" y1="38.4592%" x2="54.8145%" y2="35.7837%" stroke="#a89052"><title>L’œuvre</title></line>
+<line class="link" x1="54.8145%" y1="35.7837%" x2="61.3634%" y2="36.5463%" stroke="#a89052"><title>L’œuvre</title></line>
+<line class="link" x1="61.3634%" y1="36.5463%" x2="57.7689%" y2="41.8524%" stroke="#a89052"><title>L’œuvre</title></line>
+<line class="link" x1="57.7689%" y1="41.8524%" x2="56.6713%" y2="39.5874%" stroke="#a89052"><title>L’œuvre</title></line>
+<line class="link" x1="56.6713%" y1="39.5874%" x2="53.8743%" y2="38.9352%" stroke="#a89052"><title>L’œuvre</title></line>
+<line class="link" x1="53.8743%" y1="38.9352%" x2="59.8553%" y2="34.7202%" stroke="#a89052"><title>L’œuvre</title></line>
+<line class="link" x1="59.8553%" y1="34.7202%" x2="59.9838%" y2="33.9554%" stroke="#a89052"><title>L’œuvre</title></line>
+<line class="link" x1="59.9838%" y1="33.9554%" x2="58.1769%" y2="42.6335%" stroke="#a89052"><title>L’œuvre</title></line>
+<line class="link" x1="58.1769%" y1="42.6335%" x2="53.1957%" y2="40.5723%" stroke="#a89052"><title>L’œuvre</title></line>
+<line class="link" x1="53.1957%" y1="40.5723%" x2="60.0514%" y2="31.9375%" stroke="#a89052"><title>L’œuvre</title></line>
+<circle class="point" cx="61.7296%" cy="37.0859%" r="3.00" fill="#a89052"><title>zola1886-01 — L’œuvre — I</title></circle>
+<circle class="point" cx="57.5183%" cy="38.4592%" r="3.00" fill="#a89052"><title>zola1886-02 — L’œuvre — II</title></circle>
+<circle class="point" cx="54.8145%" cy="35.7837%" r="3.00" fill="#a89052"><title>zola1886-03 — L’œuvre — III</title></circle>
+<circle class="point" cx="61.3634%" cy="36.5463%" r="3.00" fill="#a89052"><title>zola1886-04 — L’œuvre — IV</title></circle>
+<circle class="point" cx="57.7689%" cy="41.8524%" r="3.00" fill="#a89052"><title>zola1886-05 — L’œuvre — V</title></circle>
+<circle class="point" cx="56.6713%" cy="39.5874%" r="3.00" fill="#a89052"><title>zola1886-06 — L’œuvre — VI</title></circle>
+<circle class="point" cx="53.8743%" cy="38.9352%" r="3.00" fill="#a89052"><title>zola1886-07 — L’œuvre — VII</title></circle>
+<circle class="point" cx="59.8553%" cy="34.7202%" r="3.00" fill="#a89052"><title>zola1886-08 — L’œuvre — VIII</title></circle>
+<circle class="point" cx="59.9838%" cy="33.9554%" r="3.00" fill="#a89052"><title>zola1886-09 — L’œuvre — IX</title></circle>
+<circle class="point" cx="58.1769%" cy="42.6335%" r="3.00" fill="#a89052"><title>zola1886-10 — L’œuvre — X</title></circle>
+<circle class="point" cx="53.1957%" cy="40.5723%" r="3.00" fill="#a89052"><title>zola1886-11 — L’œuvre — XI</title></circle>
+<circle class="point" cx="60.0514%" cy="31.9375%" r="3.00" fill="#a89052"><title>zola1886-12 — L’œuvre — XII</title></circle>
+<text class="label" data-px="57.9729" data-py="37.7725" data-priority="12">L’œuvre</text>
+</g>
+<g class="work" id="work-14" onclick="togglePinned(evt)">
+<line class="link" x1="75.1683%" y1="70.3192%" x2="73.1287%" y2="65.1113%" stroke="#c28b48"><title>La terre</title></line>
+<line class="link" x1="73.1287%" y1="65.1113%" x2="71.7411%" y2="65.6107%" stroke="#c28b48"><title>La terre</title></line>
+<line class="link" x1="71.7411%" y1="65.6107%" x2="80.6306%" y2="57.5021%" stroke="#c28b48"><title>La terre</title></line>
+<line class="link" x1="80.6306%" y1="57.5021%" x2="84.0737%" y2="70.8159%" stroke="#c28b48"><title>La terre</title></line>
+<line class="link" x1="84.0737%" y1="70.8159%" x2="76.9925%" y2="72.1854%" stroke="#c28b48"><title>La terre</title></line>
+<line class="link" x1="76.9925%" y1="72.1854%" x2="81.4214%" y2="66.5107%" stroke="#c28b48"><title>La terre</title></line>
+<line class="link" x1="81.4214%" y1="66.5107%" x2="82.4238%" y2="64.2993%" stroke="#c28b48"><title>La terre</title></line>
+<line class="link" x1="82.4238%" y1="64.2993%" x2="79.6982%" y2="62.8080%" stroke="#c28b48"><title>La terre</title></line>
+<line class="link" x1="79.6982%" y1="62.8080%" x2="76.2322%" y2="53.7663%" stroke="#c28b48"><title>La terre</title></line>
+<line class="link" x1="76.2322%" y1="53.7663%" x2="83.6134%" y2="65.4964%" stroke="#c28b48"><title>La terre</title></line>
+<line class="link" x1="83.6134%" y1="65.4964%" x2="67.6912%" y2="60.2403%" stroke="#c28b48"><title>La terre</title></line>
+<line class="link" x1="67.6912%" y1="60.2403%" x2="75.2373%" y2="67.7114%" stroke="#c28b48"><title>La terre</title></line>
+<line class="link" x1="75.2373%" y1="67.7114%" x2="77.5067%" y2="62.8481%" stroke="#c28b48"><title>La terre</title></line>
+<line class="link" x1="77.5067%" y1="62.8481%" x2="78.1265%" y2="57.5595%" stroke="#c28b48"><title>La terre</title></line>
+<line class="link" x1="78.1265%" y1="57.5595%" x2="77.8899%" y2="68.3358%" stroke="#c28b48"><title>La terre</title></line>
+<line class="link" x1="77.8899%" y1="68.3358%" x2="79.8363%" y2="65.1294%" stroke="#c28b48"><title>La terre</title></line>
+<line class="link" x1="79.8363%" y1="65.1294%" x2="62.2452%" y2="68.9810%" stroke="#c28b48"><title>La terre</title></line>
+<line class="link" x1="62.2452%" y1="68.9810%" x2="77.7333%" y2="69.1294%" stroke="#c28b48"><title>La terre</title></line>
+<line class="link" x1="77.7333%" y1="69.1294%" x2="77.1614%" y2="65.2270%" stroke="#c28b48"><title>La terre</title></line>
+<line class="link" x1="77.1614%" y1="65.2270%" x2="76.8993%" y2="60.4644%" stroke="#c28b48"><title>La terre</title></line>
+<line class="link" x1="76.8993%" y1="60.4644%" x2="73.6739%" y2="60.9967%" stroke="#c28b48"><title>La terre</title></line>
+<line class="link" x1="73.6739%" y1="60.9967%" x2="76.4237%" y2="54.5109%" stroke="#c28b48"><title>La terre</title></line>
+<line class="link" x1="76.4237%" y1="54.5109%" x2="75.6314%" y2="64.8230%" stroke="#c28b48"><title>La terre</title></line>
+<line class="link" x1="75.6314%" y1="64.8230%" x2="80.4366%" y2="69.1155%" stroke="#c28b48"><title>La terre</title></line>
+<line class="link" x1="80.4366%" y1="69.1155%" x2="78.0818%" y2="64.0643%" stroke="#c28b48"><title>La terre</title></line>
+<line class="link" x1="78.0818%" y1="64.0643%" x2="76.6785%" y2="67.5778%" stroke="#c28b48"><title>La terre</title></line>
+<line class="link" x1="76.6785%" y1="67.5778%" x2="76.4655%" y2="56.5734%" stroke="#c28b48"><title>La terre</title></line>
+<line class="link" x1="76.4655%" y1="56.5734%" x2="75.3803%" y2="64.0926%" stroke="#c28b48"><title>La terre</title></line>
+<line class="link" x1="75.3803%" y1="64.0926%" x2="68.0814%" y2="71.7517%" stroke="#c28b48"><title>La terre</title></line>
+<circle class="point" cx="75.1683%" cy="70.3192%" r="3.00" fill="#c28b48"><title>zola1887-01 — La terre — I</title></circle>
+<circle class="point" cx="73.1287%" cy="65.1113%" r="3.00" fill="#c28b48"><title>zola1887-02 — La terre — II</title></circle>
+<circle class="point" cx="71.7411%" cy="65.6107%" r="3.00" fill="#c28b48"><title>zola1887-03 — La terre — III</title></circle>
+<circle class="point" cx="80.6306%" cy="57.5021%" r="3.00" fill="#c28b48"><title>zola1887-04 — La terre — IV</title></circle>
+<circle class="point" cx="84.0737%" cy="70.8159%" r="3.00" fill="#c28b48"><title>zola1887-05 — La terre — V</title></circle>
+<circle class="point" cx="76.9925%" cy="72.1854%" r="3.00" fill="#c28b48"><title>zola1887-06 — La terre — I</title></circle>
+<circle class="point" cx="81.4214%" cy="66.5107%" r="3.00" fill="#c28b48"><title>zola1887-07 — La terre — II</title></circle>
+<circle class="point" cx="82.4238%" cy="64.2993%" r="3.00" fill="#c28b48"><title>zola1887-08 — La terre — III</title></circle>
+<circle class="point" cx="79.6982%" cy="62.8080%" r="3.00" fill="#c28b48"><title>zola1887-09 — La terre — IV</title></circle>
+<circle class="point" cx="76.2322%" cy="53.7663%" r="3.00" fill="#c28b48"><title>zola1887-10 — La terre — V</title></circle>
+<circle class="point" cx="83.6134%" cy="65.4964%" r="3.00" fill="#c28b48"><title>zola1887-11 — La terre — VI</title></circle>
+<circle class="point" cx="67.6912%" cy="60.2403%" r="3.00" fill="#c28b48"><title>zola1887-12 — La terre — VII</title></circle>
+<circle class="point" cx="75.2373%" cy="67.7114%" r="3.00" fill="#c28b48"><title>zola1887-13 — La terre — I</title></circle>
+<circle class="point" cx="77.5067%" cy="62.8481%" r="3.00" fill="#c28b48"><title>zola1887-14 — La terre — II</title></circle>
+<circle class="point" cx="78.1265%" cy="57.5595%" r="3.00" fill="#c28b48"><title>zola1887-15 — La terre — III</title></circle>
+<circle class="point" cx="77.8899%" cy="68.3358%" r="3.00" fill="#c28b48"><title>zola1887-16 — La terre — IV</title></circle>
+<circle class="point" cx="79.8363%" cy="65.1294%" r="3.00" fill="#c28b48"><title>zola1887-17 — La terre — V</title></circle>
+<circle class="point" cx="62.2452%" cy="68.9810%" r="3.00" fill="#c28b48"><title>zola1887-18 — La terre — VI</title></circle>
+<circle class="point" cx="77.7333%" cy="69.1294%" r="3.00" fill="#c28b48"><title>zola1887-19 — La terre — I</title></circle>
+<circle class="point" cx="77.1614%" cy="65.2270%" r="3.00" fill="#c28b48"><title>zola1887-20 — La terre — II</title></circle>
+<circle class="point" cx="76.8993%" cy="60.4644%" r="3.00" fill="#c28b48"><title>zola1887-21 — La terre — III</title></circle>
+<circle class="point" cx="73.6739%" cy="60.9967%" r="3.00" fill="#c28b48"><title>zola1887-22 — La terre — IV</title></circle>
+<circle class="point" cx="76.4237%" cy="54.5109%" r="3.00" fill="#c28b48"><title>zola1887-23 — La terre — V</title></circle>
+<circle class="point" cx="75.6314%" cy="64.8230%" r="3.00" fill="#c28b48"><title>zola1887-24 — La terre — VI</title></circle>
+<circle class="point" cx="80.4366%" cy="69.1155%" r="3.00" fill="#c28b48"><title>zola1887-25 — La terre — I</title></circle>
+<circle class="point" cx="78.0818%" cy="64.0643%" r="3.00" fill="#c28b48"><title>zola1887-26 — La terre — II</title></circle>
+<circle class="point" cx="76.6785%" cy="67.5778%" r="3.00" fill="#c28b48"><title>zola1887-27 — La terre — III</title></circle>
+<circle class="point" cx="76.4655%" cy="56.5734%" r="3.00" fill="#c28b48"><title>zola1887-28 — La terre — IV</title></circle>
+<circle class="point" cx="75.3803%" cy="64.0926%" r="3.00" fill="#c28b48"><title>zola1887-29 — La terre — V</title></circle>
+<circle class="point" cx="68.0814%" cy="71.7517%" r="3.00" fill="#c28b48"><title>zola1887-30 — La terre — VI</title></circle>
+<text class="label" data-px="76.9459" data-py="65.1204" data-priority="30">La terre</text>
+</g>
+<g class="work" id="work-15" onclick="togglePinned(evt)">
+<line class="link" x1="70.6857%" y1="22.4077%" x2="71.8395%" y2="30.7101%" stroke="#c38650"><title>Le rêve</title></line>
+<line class="link" x1="71.8395%" y1="30.7101%" x2="74.2499%" y2="23.4348%" stroke="#c38650"><title>Le rêve</title></line>
+<line class="link" x1="74.2499%" y1="23.4348%" x2="68.3918%" y2="29.2421%" stroke="#c38650"><title>Le rêve</title></line>
+<line class="link" x1="68.3918%" y1="29.2421%" x2="68.2893%" y2="27.0834%" stroke="#c38650"><title>Le rêve</title></line>
+<line class="link" x1="68.2893%" y1="27.0834%" x2="73.6766%" y2="24.9282%" stroke="#c38650"><title>Le rêve</title></line>
+<line class="link" x1="73.6766%" y1="24.9282%" x2="69.7837%" y2="27.1678%" stroke="#c38650"><title>Le rêve</title></line>
+<line class="link" x1="69.7837%" y1="27.1678%" x2="78.0567%" y2="26.4055%" stroke="#c38650"><title>Le rêve</title></line>
+<line class="link" x1="78.0567%" y1="26.4055%" x2="70.2366%" y2="26.0078%" stroke="#c38650"><title>Le rêve</title></line>
+<line class="link" x1="70.2366%" y1="26.0078%" x2="72.9783%" y2="27.5911%" stroke="#c38650"><title>Le rêve</title></line>
+<line class="link" x1="72.9783%" y1="27.5911%" x2="71.3788%" y2="25.6288%" stroke="#c38650"><title>Le rêve</title></line>
+<line class="link" x1="71.3788%" y1="25.6288%" x2="70.9592%" y2="27.0972%" stroke="#c38650"><title>Le rêve</title></line>
+<line class="link" x1="70.9592%" y1="27.0972%" x2="74.7634%" y2="29.6184%" stroke="#c38650"><title>Le rêve</title></line>
+<line class="link" x1="74.7634%" y1="29.6184%" x2="78.0508%" y2="27.0512%" stroke="#c38650"><title>Le rêve</title></line>
+<circle class="point" cx="70.6857%" cy="22.4077%" r="3.00" fill="#c38650"><title>zola1888-01 — Le rêve — I</title></circle>
+<circle class="point" cx="71.8395%" cy="30.7101%" r="3.00" fill="#c38650"><title>zola1888-02 — Le rêve — II</title></circle>
+<circle class="point" cx="74.2499%" cy="23.4348%" r="3.00" fill="#c38650"><title>zola1888-03 — Le rêve — III</title></circle>
+<circle class="point" cx="68.3918%" cy="29.2421%" r="3.00" fill="#c38650"><title>zola1888-04 — Le rêve — IV</title></circle>
+<circle class="point" cx="68.2893%" cy="27.0834%" r="3.00" fill="#c38650"><title>zola1888-05 — Le rêve — V</title></circle>
+<circle class="point" cx="73.6766%" cy="24.9282%" r="3.00" fill="#c38650"><title>zola1888-06 — Le rêve — VI</title></circle>
+<circle class="point" cx="69.7837%" cy="27.1678%" r="3.00" fill="#c38650"><title>zola1888-07 — Le rêve — VII</title></circle>
+<circle class="point" cx="78.0567%" cy="26.4055%" r="3.00" fill="#c38650"><title>zola1888-08 — Le rêve — VIII</title></circle>
+<circle class="point" cx="70.2366%" cy="26.0078%" r="3.00" fill="#c38650"><title>zola1888-09 — Le rêve — IX</title></circle>
+<circle class="point" cx="72.9783%" cy="27.5911%" r="3.00" fill="#c38650"><title>zola1888-10 — Le rêve — X</title></circle>
+<circle class="point" cx="71.3788%" cy="25.6288%" r="3.00" fill="#c38650"><title>zola1888-11 — Le rêve — XI</title></circle>
+<circle class="point" cx="70.9592%" cy="27.0972%" r="3.00" fill="#c38650"><title>zola1888-12 — Le rêve — XII</title></circle>
+<circle class="point" cx="74.7634%" cy="29.6184%" r="3.00" fill="#c38650"><title>zola1888-13 — Le rêve — XIII</title></circle>
+<circle class="point" cx="78.0508%" cy="27.0512%" r="3.00" fill="#c38650"><title>zola1888-14 — Le rêve — XIV</title></circle>
+<text class="label" data-px="71.6091" data-py="27.0673" data-priority="14">Le rêve</text>
+</g>
+<g class="work" id="work-16" onclick="togglePinned(evt)">
+<line class="link" x1="34.9323%" y1="6.2688%" x2="33.3232%" y2="8.6501%" stroke="#bb805e"><title>La bête humaine</title></line>
+<line class="link" x1="33.3232%" y1="8.6501%" x2="36.1666%" y2="6.2295%" stroke="#bb805e"><title>La bête humaine</title></line>
+<line class="link" x1="36.1666%" y1="6.2295%" x2="38.1201%" y2="2.1086%" stroke="#bb805e"><title>La bête humaine</title></line>
+<line class="link" x1="38.1201%" y1="2.1086%" x2="36.5021%" y2="4.5612%" stroke="#bb805e"><title>La bête humaine</title></line>
+<line class="link" x1="36.5021%" y1="4.5612%" x2="37.2014%" y2="7.8022%" stroke="#bb805e"><title>La bête humaine</title></line>
+<line class="link" x1="37.2014%" y1="7.8022%" x2="32.2357%" y2="6.8595%" stroke="#bb805e"><title>La bête humaine</title></line>
+<line class="link" x1="32.2357%" y1="6.8595%" x2="34.6240%" y2="7.9737%" stroke="#bb805e"><title>La bête humaine</title></line>
+<line class="link" x1="34.6240%" y1="7.9737%" x2="37.0187%" y2="7.9153%" stroke="#bb805e"><title>La bête humaine</title></line>
+<line class="link" x1="37.0187%" y1="7.9153%" x2="32.5037%" y2="8.0150%" stroke="#bb805e"><title>La bête humaine</title></line>
+<line class="link" x1="32.5037%" y1="8.0150%" x2="34.8390%" y2="9.2967%" stroke="#bb805e"><title>La bête humaine</title></line>
+<line class="link" x1="34.8390%" y1="9.2967%" x2="38.1491%" y2="2.0000%" stroke="#bb805e"><title>La bête humaine</title></line>
+<circle class="point" cx="34.9323%" cy="6.2688%" r="3.00" fill="#bb805e"><title>zola1890-01 — La bête humaine — I</title></circle>
+<circle class="point" cx="33.3232%" cy="8.6501%" r="3.00" fill="#bb805e"><title>zola1890-02 — La bête humaine — II</title></circle>
+<circle class="point" cx="36.1666%" cy="6.2295%" r="3.00" fill="#bb805e"><title>zola1890-03 — La bête humaine — III</title></circle>
+<circle class="point" cx="38.1201%" cy="2.1086%" r="3.00" fill="#bb805e"><title>zola1890-04 — La bête humaine — IV</title></circle>
+<circle class="point" cx="36.5021%" cy="4.5612%" r="3.00" fill="#bb805e"><title>zola1890-05 — La bête humaine — V</title></circle>
+<circle class="point" cx="37.2014%" cy="7.8022%" r="3.00" fill="#bb805e"><title>zola1890-06 — La bête humaine — VI</title></circle>
+<circle class="point" cx="32.2357%" cy="6.8595%" r="3.00" fill="#bb805e"><title>zola1890-07 — La bête humaine — VII</title></circle>
+<circle class="point" cx="34.6240%" cy="7.9737%" r="3.00" fill="#bb805e"><title>zola1890-08 — La bête humaine — VIII</title></circle>
+<circle class="point" cx="37.0187%" cy="7.9153%" r="3.00" fill="#bb805e"><title>zola1890-09 — La bête humaine — IX</title></circle>
+<circle class="point" cx="32.5037%" cy="8.0150%" r="3.00" fill="#bb805e"><title>zola1890-10 — La bête humaine — X</title></circle>
+<circle class="point" cx="34.8390%" cy="9.2967%" r="3.00" fill="#bb805e"><title>zola1890-11 — La bête humaine — XI</title></circle>
+<circle class="point" cx="38.1491%" cy="2.0000%" r="3.00" fill="#bb805e"><title>zola1890-12 — La bête humaine — XII</title></circle>
+<text class="label" data-px="35.5494" data-py="7.3308" data-priority="12">La bête humaine</text>
+</g>
+<g class="work" id="work-17" onclick="togglePinned(evt)">
+<line class="link" x1="45.4159%" y1="12.2757%" x2="52.2664%" y2="8.1735%" stroke="#b47a6c"><title>L’argent</title></line>
+<line class="link" x1="52.2664%" y1="8.1735%" x2="48.0324%" y2="16.6222%" stroke="#b47a6c"><title>L’argent</title></line>
+<line class="link" x1="48.0324%" y1="16.6222%" x2="50.9227%" y2="15.1530%" stroke="#b47a6c"><title>L’argent</title></line>
+<line class="link" x1="50.9227%" y1="15.1530%" x2="48.2884%" y2="8.8774%" stroke="#b47a6c"><title>L’argent</title></line>
+<line class="link" x1="48.2884%" y1="8.8774%" x2="47.8687%" y2="14.2260%" stroke="#b47a6c"><title>L’argent</title></line>
+<line class="link" x1="47.8687%" y1="14.2260%" x2="51.9903%" y2="8.7355%" stroke="#b47a6c"><title>L’argent</title></line>
+<line class="link" x1="51.9903%" y1="8.7355%" x2="49.9492%" y2="13.0181%" stroke="#b47a6c"><title>L’argent</title></line>
+<line class="link" x1="49.9492%" y1="13.0181%" x2="47.0936%" y2="12.9548%" stroke="#b47a6c"><title>L’argent</title></line>
+<line class="link" x1="47.0936%" y1="12.9548%" x2="46.2244%" y2="15.4413%" stroke="#b47a6c"><title>L’argent</title></line>
+<line class="link" x1="46.2244%" y1="15.4413%" x2="48.2021%" y2="12.9943%" stroke="#b47a6c"><title>L’argent</title></line>
+<line class="link" x1="48.2021%" y1="12.9943%" x2="49.4007%" y2="9.7904%" stroke="#b47a6c"><title>L’argent</title></line>
+<circle class="point" cx="45.4159%" cy="12.2757%" r="3.00" fill="#b47a6c"><title>zola1891-01 — L’argent — I</title></circle>
+<circle class="point" cx="52.2664%" cy="8.1735%" r="3.00" fill="#b47a6c"><title>zola1891-02 — L’argent — II</title></circle>
+<circle class="point" cx="48.0324%" cy="16.6222%" r="3.00" fill="#b47a6c"><title>zola1891-03 — L’argent — III</title></circle>
+<circle class="point" cx="50.9227%" cy="15.1530%" r="3.00" fill="#b47a6c"><title>zola1891-04 — L’argent — IV</title></circle>
+<circle class="point" cx="48.2884%" cy="8.8774%" r="3.00" fill="#b47a6c"><title>zola1891-05 — L’argent — V</title></circle>
+<circle class="point" cx="47.8687%" cy="14.2260%" r="3.00" fill="#b47a6c"><title>zola1891-06 — L’argent — VI</title></circle>
+<circle class="point" cx="51.9903%" cy="8.7355%" r="3.00" fill="#b47a6c"><title>zola1891-07 — L’argent — VII</title></circle>
+<circle class="point" cx="49.9492%" cy="13.0181%" r="3.00" fill="#b47a6c"><title>zola1891-08 — L’argent — VIII</title></circle>
+<circle class="point" cx="47.0936%" cy="12.9548%" r="3.00" fill="#b47a6c"><title>zola1891-09 — L’argent — IX</title></circle>
+<circle class="point" cx="46.2244%" cy="15.4413%" r="3.00" fill="#b47a6c"><title>zola1891-10 — L’argent — X</title></circle>
+<circle class="point" cx="48.2021%" cy="12.9943%" r="3.00" fill="#b47a6c"><title>zola1891-11 — L’argent — XI</title></circle>
+<circle class="point" cx="49.4007%" cy="9.7904%" r="3.00" fill="#b47a6c"><title>zola1891-12 — L’argent — XII</title></circle>
+<text class="label" data-px="48.2453" data-py="12.9745" data-priority="12">L’argent</text>
+</g>
+<g class="work" id="work-18" onclick="togglePinned(evt)">
+<line class="link" x1="94.0983%" y1="49.3228%" x2="96.1398%" y2="48.7886%" stroke="#ad757a"><title>La débâcle</title></line>
+<line class="link" x1="96.1398%" y1="48.7886%" x2="98.0000%" y2="43.9149%" stroke="#ad757a"><title>La débâcle</title></line>
+<line class="link" x1="98.0000%" y1="43.9149%" x2="96.5083%" y2="46.7753%" stroke="#ad757a"><title>La débâcle</title></line>
+<line class="link" x1="96.5083%" y1="46.7753%" x2="95.9664%" y2="45.2727%" stroke="#ad757a"><title>La débâcle</title></line>
+<line class="link" x1="95.9664%" y1="45.2727%" x2="94.8885%" y2="45.9190%" stroke="#ad757a"><title>La débâcle</title></line>
+<line class="link" x1="94.8885%" y1="45.9190%" x2="93.1530%" y2="45.1132%" stroke="#ad757a"><title>La débâcle</title></line>
+<line class="link" x1="93.1530%" y1="45.1132%" x2="92.9476%" y2="46.9997%" stroke="#ad757a"><title>La débâcle</title></line>
+<line class="link" x1="92.9476%" y1="46.9997%" x2="92.8170%" y2="42.2034%" stroke="#ad757a"><title>La débâcle</title></line>
+<line class="link" x1="92.8170%" y1="42.2034%" x2="94.1438%" y2="43.0833%" stroke="#ad757a"><title>La débâcle</title></line>
+<line class="link" x1="94.1438%" y1="43.0833%" x2="92.6695%" y2="40.2693%" stroke="#ad757a"><title>La débâcle</title></line>
+<line class="link" x1="92.6695%" y1="40.2693%" x2="91.2595%" y2="42.2489%" stroke="#ad757a"><title>La débâcle</title></line>
+<line class="link" x1="91.2595%" y1="42.2489%" x2="94.2087%" y2="41.2131%" stroke="#ad757a"><title>La débâcle</title></line>
+<line class="link" x1="94.2087%" y1="41.2131%" x2="91.8067%" y2="39.1114%" stroke="#ad757a"><title>La débâcle</title></line>
+<line class="link" x1="91.8067%" y1="39.1114%" x2="89.2749%" y2="43.4681%" stroke="#ad757a"><title>La débâcle</title></line>
+<line class="link" x1="89.2749%" y1="43.4681%" x2="91.5123%" y2="46.7382%" stroke="#ad757a"><title>La débâcle</title></line>
+<line class="link" x1="91.5123%" y1="46.7382%" x2="88.7122%" y2="44.2456%" stroke="#ad757a"><title>La débâcle</title></line>
+<line class="link" x1="88.7122%" y1="44.2456%" x2="88.9916%" y2="48.3301%" stroke="#ad757a"><title>La débâcle</title></line>
+<line class="link" x1="88.9916%" y1="48.3301%" x2="88.1631%" y2="47.6999%" stroke="#ad757a"><title>La débâcle</title></line>
+<line class="link" x1="88.1631%" y1="47.6999%" x2="85.3789%" y2="46.9556%" stroke="#ad757a"><title>La débâcle</title></line>
+<line class="link" x1="85.3789%" y1="46.9556%" x2="86.5886%" y2="49.3517%" stroke="#ad757a"><title>La débâcle</title></line>
+<line class="link" x1="86.5886%" y1="49.3517%" x2="23.1208%" y2="67.2619%" stroke="#ad757a"><title>La débâcle</title></line>
+<line class="link" x1="23.1208%" y1="67.2619%" x2="84.5719%" y2="40.0705%" stroke="#ad757a"><title>La débâcle</title></line>
+<line class="link" x1="84.5719%" y1="40.0705%" x2="84.6235%" y2="39.9937%" stroke="#ad757a"><title>La débâcle</title></line>
+<circle class="point" cx="94.0983%" cy="49.3228%" r="3.00" fill="#ad757a"><title>zola1892-01 — La débâcle — I</title></circle>
+<circle class="point" cx="96.1398%" cy="48.7886%" r="3.00" fill="#ad757a"><title>zola1892-02 — La débâcle — II</title></circle>
+<circle class="point" cx="98.0000%" cy="43.9149%" r="3.00" fill="#ad757a"><title>zola1892-03 — La débâcle — III</title></circle>
+<circle class="point" cx="96.5083%" cy="46.7753%" r="3.00" fill="#ad757a"><title>zola1892-04 — La débâcle — IV</title></circle>
+<circle class="point" cx="95.9664%" cy="45.2727%" r="3.00" fill="#ad757a"><title>zola1892-05 — La débâcle — V</title></circle>
+<circle class="point" cx="94.8885%" cy="45.9190%" r="3.00" fill="#ad757a"><title>zola1892-06 — La débâcle — VI</title></circle>
+<circle class="point" cx="93.1530%" cy="45.1132%" r="3.00" fill="#ad757a"><title>zola1892-07 — La débâcle — VII</title></circle>
+<circle class="point" cx="92.9476%" cy="46.9997%" r="3.00" fill="#ad757a"><title>zola1892-08 — La débâcle — VIII</title></circle>
+<circle class="point" cx="92.8170%" cy="42.2034%" r="3.00" fill="#ad757a"><title>zola1892-09 — La débâcle — I</title></circle>
+<circle class="point" cx="94.1438%" cy="43.0833%" r="3.00" fill="#ad757a"><title>zola1892-10 — La débâcle — II</title></circle>
+<circle class="point" cx="92.6695%" cy="40.2693%" r="3.00" fill="#ad757a"><title>zola1892-11 — La débâcle — III</title></circle>
+<circle class="point" cx="91.2595%" cy="42.2489%" r="3.00" fill="#ad757a"><title>zola1892-12 — La débâcle — IV</title></circle>
+<circle class="point" cx="94.2087%" cy="41.2131%" r="3.00" fill="#ad757a"><title>zola1892-13 — La débâcle — V</title></circle>
+<circle class="point" cx="91.8067%" cy="39.1114%" r="3.00" fill="#ad757a"><title>zola1892-14 — La débâcle — VI</title></circle>
+<circle class="point" cx="89.2749%" cy="43.4681%" r="3.00" fill="#ad757a"><title>zola1892-15 — La débâcle — VII</title></circle>
+<circle class="point" cx="91.5123%" cy="46.7382%" r="3.00" fill="#ad757a"><title>zola1892-16 — La débâcle — VIII</title></circle>
+<circle class="point" cx="88.7122%" cy="44.2456%" r="3.00" fill="#ad757a"><title>zola1892-17 — La débâcle — I</title></circle>
+<circle class="point" cx="88.9916%" cy="48.3301%" r="3.00" fill="#ad757a"><title>zola1892-18 — La débâcle — II</title></circle>
+<circle class="point" cx="88.1631%" cy="47.6999%" r="3.00" fill="#ad757a"><title>zola1892-19 — La débâcle — III</title></circle>
+<circle class="point" cx="85.3789%" cy="46.9556%" r="3.00" fill="#ad757a"><title>zola1892-20 — La débâcle — IV</title></circle>
+<circle class="point" cx="86.5886%" cy="49.3517%" r="3.00" fill="#ad757a"><title>zola1892-21 — La débâcle — V</title></circle>
+<circle class="point" cx="23.1208%" cy="67.2619%" r="3.00" fill="#ad757a"><title>zola1892-22 — La débâcle — VI</title></circle>
+<circle class="point" cx="84.5719%" cy="40.0705%" r="3.00" fill="#ad757a"><title>zola1892-23 — La débâcle — VII</title></circle>
+<circle class="point" cx="84.6235%" cy="39.9937%" r="3.00" fill="#ad757a"><title>zola1892-24 — La débâcle — VIII</title></circle>
+<text class="label" data-px="92.2381" data-py="45.1929" data-priority="24">La débâcle</text>
+</g>
+<g class="work" id="work-19" onclick="togglePinned(evt)">
+<line class="link" x1="59.9257%" y1="13.9749%" x2="65.7177%" y2="17.7855%" stroke="#a66f88"><title>Le docteur Pascal</title></line>
+<line class="link" x1="65.7177%" y1="17.7855%" x2="57.1646%" y2="63.5458%" stroke="#a66f88"><title>Le docteur Pascal</title></line>
+<line class="link" x1="57.1646%" y1="63.5458%" x2="60.6709%" y2="15.2190%" stroke="#a66f88"><title>Le docteur Pascal</title></line>
+<line class="link" x1="60.6709%" y1="15.2190%" x2="64.2551%" y2="13.2133%" stroke="#a66f88"><title>Le docteur Pascal</title></line>
+<line class="link" x1="64.2551%" y1="13.2133%" x2="64.2968%" y2="16.1071%" stroke="#a66f88"><title>Le docteur Pascal</title></line>
+<line class="link" x1="64.2968%" y1="16.1071%" x2="62.3487%" y2="18.0976%" stroke="#a66f88"><title>Le docteur Pascal</title></line>
+<line class="link" x1="62.3487%" y1="18.0976%" x2="63.0606%" y2="19.3140%" stroke="#a66f88"><title>Le docteur Pascal</title></line>
+<line class="link" x1="63.0606%" y1="19.3140%" x2="57.1699%" y2="63.5389%" stroke="#a66f88"><title>Le docteur Pascal</title></line>
+<line class="link" x1="57.1699%" y1="63.5389%" x2="60.9833%" y2="20.1694%" stroke="#a66f88"><title>Le docteur Pascal</title></line>
+<line class="link" x1="60.9833%" y1="20.1694%" x2="60.7296%" y2="18.4790%" stroke="#a66f88"><title>Le docteur Pascal</title></line>
+<line class="link" x1="60.7296%" y1="18.4790%" x2="59.2536%" y2="19.4822%" stroke="#a66f88"><title>Le docteur Pascal</title></line>
+<line class="link" x1="59.2536%" y1="19.4822%" x2="60.5858%" y2="17.6152%" stroke="#a66f88"><title>Le docteur Pascal</title></line>
+<line class="link" x1="60.5858%" y1="17.6152%" x2="61.7652%" y2="14.2163%" stroke="#a66f88"><title>Le docteur Pascal</title></line>
+<circle class="point" cx="59.9257%" cy="13.9749%" r="3.00" fill="#a66f88"><title>zola1893-01 — Le docteur Pascal — I</title></circle>
+<circle class="point" cx="65.7177%" cy="17.7855%" r="3.00" fill="#a66f88"><title>zola1893-02 — Le docteur Pascal — II</title></circle>
+<circle class="point" cx="57.1646%" cy="63.5458%" r="3.00" fill="#a66f88"><title>zola1893-03 — Le docteur Pascal — III</title></circle>
+<circle class="point" cx="60.6709%" cy="15.2190%" r="3.00" fill="#a66f88"><title>zola1893-04 — Le docteur Pascal — IV</title></circle>
+<circle class="point" cx="64.2551%" cy="13.2133%" r="3.00" fill="#a66f88"><title>zola1893-05 — Le docteur Pascal — V</title></circle>
+<circle class="point" cx="64.2968%" cy="16.1071%" r="3.00" fill="#a66f88"><title>zola1893-06 — Le docteur Pascal — VI</title></circle>
+<circle class="point" cx="62.3487%" cy="18.0976%" r="3.00" fill="#a66f88"><title>zola1893-07 — Le docteur Pascal — VII</title></circle>
+<circle class="point" cx="63.0606%" cy="19.3140%" r="3.00" fill="#a66f88"><title>zola1893-08 — Le docteur Pascal — VIII</title></circle>
+<circle class="point" cx="57.1699%" cy="63.5389%" r="3.00" fill="#a66f88"><title>zola1893-09 — Le docteur Pascal — IX</title></circle>
+<circle class="point" cx="60.9833%" cy="20.1694%" r="3.00" fill="#a66f88"><title>zola1893-10 — Le docteur Pascal — X</title></circle>
+<circle class="point" cx="60.7296%" cy="18.4790%" r="3.00" fill="#a66f88"><title>zola1893-11 — Le docteur Pascal — XI</title></circle>
+<circle class="point" cx="59.2536%" cy="19.4822%" r="3.00" fill="#a66f88"><title>zola1893-12 — Le docteur Pascal — XII</title></circle>
+<circle class="point" cx="60.5858%" cy="17.6152%" r="3.00" fill="#a66f88"><title>zola1893-13 — Le docteur Pascal — XIII</title></circle>
+<circle class="point" cx="61.7652%" cy="14.2163%" r="3.00" fill="#a66f88"><title>zola1893-14 — Le docteur Pascal — XIV</title></circle>
+<text class="label" data-px="60.8564" data-py="17.9415" data-priority="14">Le docteur Pascal</text>
+</g>
+</svg>
