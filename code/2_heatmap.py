@@ -13,12 +13,13 @@ switched without regenerating the file:
         loglinear   logarithmic lightening of the normalized linear scale
         rank        direct rank of each off-diagonal chapter pair
         logrank     logarithmic lightening of the normalized rank scale
+        gradient    local gradient magnitude (Sobel edge map)
 
-    smoothing
-        none        no smoothing
-        mean3       3×3 mean filter
+    filters
+        none        no display filter
         gauss1      light Gaussian blur
-        gauss2      medium Gaussian blur
+        bilateral1  light bilateral denoising
+        bilateral2  medium bilateral denoising
 
 Only the display transform changes. The cosine similarities themselves are
 unchanged and remain available in cell tooltips.
@@ -63,6 +64,7 @@ TITLE_Y = 22.0
 SCALE_Y = 49.0
 SCALE_CONTROL_WIDTH = 820.0
 SCALE_BAR_WIDTH = 330.0
+OVERVIEW_SIZE = 88.0
 
 
 @dataclass(frozen=True)
@@ -101,7 +103,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--scale",
-        choices=("linear", "loglinear", "rank", "logrank"),
+        choices=("linear", "loglinear", "rank", "logrank", "gradient"),
         default="linear",
         help=(
             "Initial browser display scale. All modes remain selectable in the "
@@ -109,12 +111,12 @@ def parse_args() -> argparse.Namespace:
         ),
     )
     parser.add_argument(
-        "--smooth",
-        choices=("none", "mean3", "gauss1", "gauss2"),
+        "--filter",
+        choices=("none", "gauss1", "bilateral1", "bilateral2"),
         default="none",
         help=(
-            "Initial browser smoothing filter: none, mean3, gauss1, or gauss2 "
-            "(default: none)."
+            "Initial browser display filter: none, gauss1, bilateral1, "
+            "or bilateral2 (default: none)."
         ),
     )
     parser.add_argument(
@@ -261,9 +263,9 @@ def output_path(model_path: Path, work: str, output_dir: Path) -> Path:
     return output_dir / f"{model_path.stem}--{slug(work)}.svg"
 
 
-def heatmap_signature(scale: str, smooth: str) -> str:
+def heatmap_signature(scale: str, display_filter: str) -> str:
     """Return the configuration signature embedded in each SVG."""
-    return f"scale={scale};smooth={smooth}"
+    return f"scale={scale};filter={display_filter}"
 
 
 def needs_regeneration(
@@ -323,7 +325,7 @@ def build_svg(
     chapters: list[DocMeta],
     vectors: np.ndarray,
     initial_scale: str,
-    initial_smooth: str,
+    initial_filter: str,
 ) -> str:
     """Build one responsive, interactive SVG self-similarity heatmap."""
     similarities = np.clip(vectors @ vectors.T, -1.0, 1.0)
@@ -335,6 +337,8 @@ def build_svg(
     height = TOP + n * CELL + BOTTOM
     matrix_x = LEFT
     matrix_y = TOP
+    overview_x = width - RIGHT - OVERVIEW_SIZE
+    overview_y = 8.0
 
     if n > 1:
         pair_values = similarities[np.triu_indices(n, k=1)]
@@ -343,7 +347,7 @@ def build_svg(
     mean_similarity = float(pair_values.mean())
     median_similarity = float(np.median(pair_values))
 
-    signature = heatmap_signature(initial_scale, initial_smooth)
+    signature = heatmap_signature(initial_scale, initial_filter)
 
     out: list[str] = [
         '<?xml version="1.0" encoding="UTF-8"?>',
@@ -370,6 +374,9 @@ def build_svg(
         'rgb(80,80,80) 75%,rgb(18,18,18) 100%); }',
         '.scale-labels { display:flex; justify-content:space-between; margin-top:3px; '
         'font-size:9px; color:#555; }',
+        '.overview-frame { fill:#fff; stroke:#bbb; stroke-width:.7; }',
+        '.overview-cell { shape-rendering:crispEdges; }',
+        '.overview-label { font-size:9px; fill:#666; }',
         '.chapter-panel { width:100%; height:100%; overflow-x:auto; overflow-y:hidden; '
         'box-sizing:border-box; border:1px solid #ccc; background:#fff; }',
         '.chapter-strip { width:max-content; min-width:100%; }',
@@ -393,20 +400,21 @@ def build_svg(
         ("loglinear", "Log linéaire"),
         ("rank", "Rang"),
         ("logrank", "Log rang"),
+        ("gradient", "Gradient local"),
     ]
-    smooth_options = [
+    filter_options = [
         ("none", "Aucun"),
-        ("mean3", "Moyenne 3×3"),
         ("gauss1", "Gaussien léger"),
-        ("gauss2", "Gaussien moyen"),
+        ("bilateral1", "Bilatéral léger"),
+        ("bilateral2", "Bilatéral moyen"),
     ]
     scale_option_html = "".join(
         f'<option value="{value}"{" selected=\"selected\"" if value == initial_scale else ""}>{label}</option>'
         for value, label in scale_options
     )
-    smooth_option_html = "".join(
-        f'<option value="{value}"{" selected=\"selected\"" if value == initial_smooth else ""}>{label}</option>'
-        for value, label in smooth_options
+    filter_option_html = "".join(
+        f'<option value="{value}"{" selected=\"selected\"" if value == initial_filter else ""}>{label}</option>'
+        for value, label in filter_options
     )
     out.append(
         f'<foreignObject x="{matrix_x:.2f}" y="{SCALE_Y:.2f}" '
@@ -414,8 +422,8 @@ def build_svg(
         '<div xmlns="http://www.w3.org/1999/xhtml" class="scale-control">'
         '<span>Échelle :</span>'
         f'<select id="scale-select">{scale_option_html}</select>'
-        '<span>Lissage :</span>'
-        f'<select id="smooth-select">{smooth_option_html}</select>'
+        '<span>Filtre :</span>'
+        f'<select id="filter-select">{filter_option_html}</select>'
         '<div class="scale-legend">'
         '<div class="scale-bar"></div>'
         '<div class="scale-labels">'
@@ -424,6 +432,26 @@ def build_svg(
         '<span id="legend-right"></span>'
         '</div></div></div></foreignObject>'
     )
+
+    # Small overview thumbnail. It is useful because global block structure
+    # is often easier to perceive at small scale.
+    thumb_cell = OVERVIEW_SIZE / n if n else OVERVIEW_SIZE
+    out.append(
+        f'<rect class="overview-frame" x="{overview_x:.2f}" y="{overview_y:.2f}" '
+        f'width="{OVERVIEW_SIZE:.2f}" height="{OVERVIEW_SIZE:.2f}"/>'
+    )
+    out.append(
+        f'<text class="overview-label" x="{overview_x:.2f}" y="{overview_y - 1:.2f}">aperçu</text>'
+    )
+    for row in range(n):
+        for col in range(n):
+            x = overview_x + col * thumb_cell
+            y = overview_y + row * thumb_cell
+            out.append(
+                f'<rect class="overview-cell" data-row="{row}" data-col="{col}" '
+                f'x="{x:.2f}" y="{y:.2f}" width="{thumb_cell:.2f}" height="{thumb_cell:.2f}" '
+                f'fill="#ccc"/>'
+            )
 
     # Heatmap cells. Store exact values so browser-side scale changes do not
     # require regenerating the SVG.
@@ -486,7 +514,7 @@ def build_svg(
         ]
     )
 
-    # Browser-side scale calculation. For rank, direct ranks 1..M are computed
+    # Browser-side filtering and scale calculation. For rank, direct ranks 1..M are computed
     # on the unordered off-diagonal chapter pairs and normalized only for the
     # grayscale display coordinate.
     script = f'''<script><![CDATA[
@@ -494,8 +522,9 @@ def build_svg(
   "use strict";
 
   const INITIAL_SCALE = {initial_scale!r};
-  const INITIAL_SMOOTH = {initial_smooth!r};
+  const INITIAL_FILTER = {initial_filter!r};
   const cells = Array.from(document.querySelectorAll(".heat-cell"));
+  const thumbCells = Array.from(document.querySelectorAll(".overview-cell"));
   const n = {n};
 
   const palette = [
@@ -585,49 +614,8 @@ def build_svg(
     raw[row][col] = Number(cell.dataset.value);
   }}
 
-  const SMOOTHING = {{
-    none: null,
-    mean3: {{
-      kernel: [
-        [1, 1, 1],
-        [1, 1, 1],
-        [1, 1, 1]
-      ],
-      radius: 1
-    }},
-    gauss1: {{
-      kernel: [
-        [1, 2, 1],
-        [2, 4, 2],
-        [1, 2, 1]
-      ],
-      radius: 1
-    }},
-    gauss2: {{
-      kernel: [
-        [1,  4,  6,  4, 1],
-        [4, 16, 24, 16, 4],
-        [6, 24, 36, 24, 6],
-        [4, 16, 24, 16, 4],
-        [1,  4,  6,  4, 1]
-      ],
-      radius: 2
-    }}
-  }};
-
-  const smoothCache = new Map();
-  smoothCache.set("none", raw);
-
-  function smoothMatrix(mode) {{
-    if (smoothCache.has(mode)) return smoothCache.get(mode);
-
-    const spec = SMOOTHING[mode];
-    if (!spec) return raw;
-
+  function gaussianBlur(matrix, kernel, radius) {{
     const out = makeZeroMatrix(n);
-    const kernel = spec.kernel;
-    const radius = spec.radius;
-
     for (let r = 0; r < n; r++) {{
       for (let c = 0; c < n; c++) {{
         let acc = 0;
@@ -639,15 +627,128 @@ def build_svg(
             const cc = c + kc;
             if (cc < 0 || cc >= n) continue;
             const w = kernel[kr + radius][kc + radius];
-            acc += w * raw[rr][cc];
+            acc += w * matrix[rr][cc];
             wsum += w;
           }}
         }}
-        out[r][c] = wsum ? acc / wsum : raw[r][c];
+        out[r][c] = wsum ? acc / wsum : matrix[r][c];
       }}
     }}
+    return out;
+  }}
 
-    smoothCache.set(mode, out);
+  const GAUSS3 = [
+    [1, 2, 1],
+    [2, 4, 2],
+    [1, 2, 1]
+  ];
+
+  function offDiagonalRange(matrix) {{
+    let min = Infinity;
+    let max = -Infinity;
+    for (let r = 0; r < n; r++) {{
+      for (let c = r + 1; c < n; c++) {{
+        const v = matrix[r][c];
+        if (v < min) min = v;
+        if (v > max) max = v;
+      }}
+    }}
+    if (!Number.isFinite(min) || !Number.isFinite(max)) return 1;
+    return Math.max(1e-12, max - min);
+  }}
+
+  function bilateralFilter(matrix, sigmaSpatial, sigmaRangeFraction, radius) {{
+    const out = makeZeroMatrix(n);
+    const valueRange = offDiagonalRange(matrix);
+    const sigmaRange = Math.max(1e-12, sigmaRangeFraction * valueRange);
+    const spatialDenom = 2 * sigmaSpatial * sigmaSpatial;
+    const rangeDenom = 2 * sigmaRange * sigmaRange;
+
+    for (let r = 0; r < n; r++) {{
+      for (let c = 0; c < n; c++) {{
+        const center = matrix[r][c];
+        let acc = 0;
+        let wsum = 0;
+
+        for (let dr = -radius; dr <= radius; dr++) {{
+          const rr = r + dr;
+          if (rr < 0 || rr >= n) continue;
+          for (let dc = -radius; dc <= radius; dc++) {{
+            const cc = c + dc;
+            if (cc < 0 || cc >= n) continue;
+
+            const neighbor = matrix[rr][cc];
+            const ds2 = dr * dr + dc * dc;
+            const dv = neighbor - center;
+            const spatialWeight = Math.exp(-ds2 / spatialDenom);
+            const rangeWeight = Math.exp(-(dv * dv) / rangeDenom);
+            const w = spatialWeight * rangeWeight;
+
+            acc += w * neighbor;
+            wsum += w;
+          }}
+        }}
+        out[r][c] = wsum ? acc / wsum : center;
+      }}
+    }}
+    return out;
+  }}
+
+  const filterCache = new Map();
+  filterCache.set("none", raw);
+
+  function filteredMatrix(mode) {{
+    if (filterCache.has(mode)) return filterCache.get(mode);
+
+    let out;
+    if (mode === "gauss1") {{
+      out = gaussianBlur(raw, GAUSS3, 1);
+    }} else if (mode === "bilateral1") {{
+      out = bilateralFilter(raw, 1.0, 0.10, 2);
+    }} else if (mode === "bilateral2") {{
+      out = bilateralFilter(raw, 1.4, 0.18, 2);
+    }} else {{
+      out = raw;
+    }}
+
+    filterCache.set(mode, out);
+    return out;
+  }}
+
+  const gradientCache = new Map();
+
+  function gradientMatrix(matrix, cacheKey) {{
+    if (gradientCache.has(cacheKey)) return gradientCache.get(cacheKey);
+
+    const out = makeZeroMatrix(n);
+    const gxKernel = [
+      [-1, 0, 1],
+      [-2, 0, 2],
+      [-1, 0, 1]
+    ];
+    const gyKernel = [
+      [ 1,  2,  1],
+      [ 0,  0,  0],
+      [-1, -2, -1]
+    ];
+
+    for (let r = 0; r < n; r++) {{
+      for (let c = 0; c < n; c++) {{
+        let gx = 0;
+        let gy = 0;
+        for (let dr = -1; dr <= 1; dr++) {{
+          const rr = Math.max(0, Math.min(n - 1, r + dr));
+          for (let dc = -1; dc <= 1; dc++) {{
+            const cc = Math.max(0, Math.min(n - 1, c + dc));
+            const v = matrix[rr][cc];
+            gx += gxKernel[dr + 1][dc + 1] * v;
+            gy += gyKernel[dr + 1][dc + 1] * v;
+          }}
+        }}
+        out[r][c] = Math.sqrt(gx * gx + gy * gy);
+      }}
+    }}
+    gradientCache.set(cacheKey, out);
     return out;
   }}
 
@@ -662,9 +763,31 @@ def build_svg(
     return values.length ? values : [1.0];
   }}
 
-  function applyDisplay(scaleMode, smoothMode) {{
-    const matrix = smoothMatrix(smoothMode);
-    const pairValues = upperTriangleValues(matrix);
+  function allValues(matrix) {{
+    const values = [];
+    for (let r = 0; r < n; r++) {{
+      for (let c = 0; c < n; c++) {{
+        values.push(matrix[r][c]);
+      }}
+    }}
+    values.sort((a, b) => a - b);
+    return values.length ? values : [1.0];
+  }}
+
+  function applyDisplay(scaleMode, filterMode) {{
+    const filtered = filteredMatrix(filterMode);
+    let matrix = filtered;
+    let pairValues;
+    let keepDiagonalBlack = true;
+
+    if (scaleMode === "gradient") {{
+      matrix = gradientMatrix(filtered, filterMode);
+      pairValues = allValues(matrix);
+      keepDiagonalBlack = false;
+    }} else {{
+      pairValues = upperTriangleValues(matrix);
+    }}
+
     const min = pairValues[0];
     const max = pairValues[pairValues.length - 1];
     const rankMax = pairValues.length;
@@ -693,35 +816,49 @@ def build_svg(
       const middleDisplayedRank = 1 + middleU * (rankMax - 1);
       setLegend("1", fmt(middleDisplayedRank), String(rankMax));
 
-    }} else {{
+    }} else if (scaleMode === "rank") {{
       mapper = value => {{
         if (rankMax <= 1) return 1;
         return (directRank(pairValues, value) - 1) / (rankMax - 1);
       }};
       const middleRank = rankMax <= 1 ? 1 : (rankMax + 1) / 2;
       setLegend("1", fmt(middleRank), String(rankMax));
+
+    }} else {{
+      const span = Math.max(1e-15, max - min);
+      mapper = value => lightLogUnit((value - min) / span);
+      const midValue = min + span * invLightLogUnit(0.5);
+      setLegend(fmt(min), fmt(midValue), fmt(max));
     }}
 
     for (const cell of cells) {{
       const row = Number(cell.dataset.row);
       const col = Number(cell.dataset.col);
       const displayValue = matrix[row][col];
-      const t = row === col ? 1 : clamp01(mapper(displayValue));
+      const t = keepDiagonalBlack && row === col ? 1 : clamp01(mapper(displayValue));
+      cell.setAttribute("fill", colorAt(t));
+    }}
+
+    for (const cell of thumbCells) {{
+      const row = Number(cell.dataset.row);
+      const col = Number(cell.dataset.col);
+      const displayValue = matrix[row][col];
+      const t = keepDiagonalBlack && row === col ? 1 : clamp01(mapper(displayValue));
       cell.setAttribute("fill", colorAt(t));
     }}
   }}
 
   const scaleSelector = document.getElementById("scale-select");
-  const smoothSelector = document.getElementById("smooth-select");
+  const filterSelector = document.getElementById("filter-select");
   scaleSelector.value = INITIAL_SCALE;
-  smoothSelector.value = INITIAL_SMOOTH;
+  filterSelector.value = INITIAL_FILTER;
 
   function refresh() {{
-    applyDisplay(scaleSelector.value, smoothSelector.value);
+    applyDisplay(scaleSelector.value, filterSelector.value);
   }}
 
   scaleSelector.addEventListener("change", refresh);
-  smoothSelector.addEventListener("change", refresh);
+  filterSelector.addEventListener("change", refresh);
   refresh();
 }})();
 ]]></script>'''
@@ -743,7 +880,7 @@ def main() -> None:
 
     generated = 0
     skipped = 0
-    signature = heatmap_signature(args.scale, args.smooth)
+    signature = heatmap_signature(args.scale, args.filter)
 
     for model_path in model_paths:
         keys, vectors = read_word2vec_binary(model_path)
@@ -779,7 +916,7 @@ def main() -> None:
                 chapters,
                 work_vectors,
                 args.scale,
-                args.smooth,
+                args.filter,
             )
             destination.write_text(svg, encoding="utf-8", newline="\n")
             print(f"write  {model_path.name} :: {work} -> {destination.name}")
