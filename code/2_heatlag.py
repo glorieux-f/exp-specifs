@@ -292,6 +292,7 @@ def build_svg(
         '--rowborder:#2a2a2a; --rowhover:#2a2a2a; --rowactive:#343434; --legendtext:#c2c2c2; '
         '--controlfg:#e6e6e6; --controlbg:#262626; --controlborder:#656565; --edge:#7a7a7a; '
         '--hypo:#cfcfcf; --guide:#ffffff; }',
+        '.page-bg { fill:var(--bg); }',
         '.title { font-size:14px; font-weight:600; fill:var(--fg); }',
         '.subtitle { font-size:11px; fill:var(--sub); }',
         '.cell,.overview-cell { shape-rendering:crispEdges; }',
@@ -302,8 +303,9 @@ def build_svg(
         '.scale-control { font:11px system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; '
         'color:var(--controlfg); display:flex; align-items:flex-start; gap:12px; white-space:nowrap; }',
         f'.scale-control select {{ font:inherit; width:{SELECT_WIDTH:.0f}px; padding:2px 5px; margin:0; '
-        'color:var(--controlfg); background:var(--controlbg); border:1px solid var(--controlborder); }}',
-        '.control-btn { font:inherit; padding:2px 8px; margin:0; color:var(--controlfg); background:var(--controlbg); '
+        'color:var(--controlfg); background:var(--controlbg); border:1px solid var(--controlborder); }',
+        '.control-btn { font:16px/18px system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; '
+        'width:28px; height:24px; padding:0; margin:0; color:var(--controlfg); background:var(--controlbg); '
         'border:1px solid var(--controlborder); border-radius:3px; cursor:pointer; }',
         f'.scale-legend {{ width:{SCALE_LEGEND_WIDTH:.0f}px; margin-top:1px; }}',
         '.scale-bar { height:10px; width:100%; background:linear-gradient(to right,'
@@ -317,13 +319,14 @@ def build_svg(
         f'.chapter-row {{ height:{CELL:g}px; line-height:{CELL:g}px; white-space:nowrap; '
         'font:11px system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; '
         'color:var(--fg); box-sizing:border-box; padding:0 6px; border-bottom:1px solid var(--rowborder); '
-        'cursor:pointer; user-select:none; }}',
+        'cursor:pointer; user-select:none; }',
         '.chapter-row:hover { background:var(--rowhover); }',
         '.chapter-row.active { background:var(--rowactive); font-weight:600; }',
         '.guide-line { stroke:var(--guide); stroke-width:1.3; opacity:0; pointer-events:none; '
         'shape-rendering:crispEdges; vector-effect:non-scaling-stroke; }',
         '.guide-line.active { opacity:1; }',
         ']]></style>',
+        f'<rect class="page-bg" x="0" y="0" width="{width:.1f}" height="{height:.1f}"/>',
         f'<text class="title" x="{TITLE_X}" y="{TITLE_Y}">{html.escape(work)}</text>',
         (
             f'<text class="subtitle" x="{TITLE_X}" y="{TITLE_Y + 18}">'
@@ -367,7 +370,8 @@ def build_svg(
         '<span id="legend-mid"></span><span id="legend-right"></span>'
         '</div></div>'
         f'<select id="filter-select">{filter_html}</select>'
-        '<button id="theme-toggle" type="button" class="control-btn">Nuit</button>'
+        '<button id="theme-toggle" type="button" class="control-btn" '
+        'title="Mode nuit" aria-label="Mode nuit">☾</button>'
         '</div></foreignObject>'
     )
 
@@ -819,11 +823,30 @@ def build_svg(
 
   const scaleSelector = document.getElementById("scale-select");
   const filterSelector = document.getElementById("filter-select");
+  const themeToggle = document.getElementById("theme-toggle");
+  const root = document.querySelector("svg") || document.documentElement;
+
+  function setNightMode(enabled) {{
+    root.classList.toggle("night", enabled);
+    themeToggle.textContent = enabled ? "☀" : "☾";
+    themeToggle.title = enabled ? "Mode jour" : "Mode nuit";
+    themeToggle.setAttribute("aria-label", enabled ? "Mode jour" : "Mode nuit");
+  }}
+
   scaleSelector.value = INITIAL_SCALE;
   filterSelector.value = INITIAL_FILTER;
-  function refresh() {{ applyDisplay(scaleSelector.value, filterSelector.value); }}
+
+  function refresh() {{
+    applyDisplay(scaleSelector.value, filterSelector.value);
+  }}
+
   scaleSelector.addEventListener("change", refresh);
   filterSelector.addEventListener("change", refresh);
+  themeToggle.addEventListener("click", () => {{
+    setNightMode(!root.classList.contains("night"));
+  }});
+
+  setNightMode(false);
   refresh();
 }})();
 ]]></script>'''
