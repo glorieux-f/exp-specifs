@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
-"""Generate interactive chapter time-lag similarity heatmaps.
+"""Generate interactive triangular chapter similarity heatmaps.
 
-The symmetric chapter similarity matrix is folded into time-lag coordinates:
+The symmetric chapter self-similarity matrix is shown as a single right-aligned
+triangle so that reading time runs from top to bottom. Row i (1-indexed) holds:
 
-    lag 0:   1-1   2-2   3-3   4-4 ...
-    lag 1:         2-1   3-2   4-3 ...
-    lag 2:               3-1   4-2 ...
+    1-i, 2-i, ..., i-i
 
-Horizontal position is narrative progress. Vertical depth is distance into the
-reading past. Every unordered chapter pair appears exactly once.
+The rightmost cell of each row is therefore the chapter's self-similarity,
+aligned just before the chapter table-of-contents on the right.
+
+Visible SVG labels are in French. The browser UI keeps the same spirit as
+2_heatmap.py: linear/rank scales, grayscale rendering, a few denoising filters,
+a small overview, raw cosine tooltips, and clickable chapter-guide overlays.
 """
 
 from __future__ import annotations
@@ -32,13 +35,15 @@ LEFT = 14.0
 TOP = 94.0
 RIGHT = 18.0
 LABEL_PANEL_WIDTH = 300.0
-LABEL_GAP = 16.0
+LABEL_GAP = 0.0
 LABEL_SCROLLBAR_ALLOWANCE = 18.0
 BOTTOM = LABEL_SCROLLBAR_ALLOWANCE + 4.0
 TITLE_X = 14.0
 TITLE_Y = 22.0
 SCALE_Y = 49.0
-SCALE_CONTROL_WIDTH = 820.0
+SCALE_CONTROL_HEIGHT = 38.0
+SCALE_LEGEND_WIDTH = 340.0
+SELECT_WIDTH = 152.0
 OVERVIEW_SIZE = 88.0
 
 
@@ -55,7 +60,7 @@ class DocMeta:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Generate interactive cosine chapter time-lag SVG heatmaps."
+        description="Generate interactive cosine chapter triangular SVG heatmaps."
     )
     parser.add_argument("models", nargs="+", help="Input .bin model glob(s)")
     parser.add_argument("docs_tsv", type=Path, help="docs.tsv metadata file")
@@ -74,8 +79,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--filter",
         choices=(
-            "none", "gauss1", "bilateral1", "bilateral2", "bilateral3",
-            "aniso1", "aniso2", "aniso3",
+            "none",
+            "bilateral1",
+            "bilateral2",
+            "bilateral3",
+            "aniso1",
+            "aniso2",
+            "aniso3",
+            "gauss1",
         ),
         default="none",
     )
@@ -219,18 +230,6 @@ def needs_regeneration(
     return f"<!-- heatlag-config: {signature} -->" not in prefix
 
 
-def tick_step(n: int) -> int:
-    if n <= 40:
-        return 1
-    if n <= 80:
-        return 2
-    if n <= 150:
-        return 5
-    if n <= 300:
-        return 10
-    return 20
-
-
 def chapter_label(index: int, meta: DocMeta) -> str:
     title = " ".join(meta.title.split())
     return f"{index + 1}. {title}" if title else f"chapitre {index + 1}"
@@ -255,13 +254,16 @@ def build_svg(
 
     matrix_width = n * CELL
     matrix_height = n * CELL
-    panel_x = LEFT
-    matrix_x = panel_x + LABEL_PANEL_WIDTH + LABEL_GAP
+    matrix_x = LEFT
     matrix_y = TOP
-    width = matrix_x + matrix_width + RIGHT
+    panel_x = matrix_x + matrix_width + LABEL_GAP
+    panel_y = matrix_y
+    width = panel_x + LABEL_PANEL_WIDTH + RIGHT
     height = TOP + matrix_height + BOTTOM
     overview_x = width - RIGHT - OVERVIEW_SIZE
     overview_y = 8.0
+    controls_x = matrix_x
+    controls_width = panel_x + LABEL_PANEL_WIDTH - matrix_x
 
     if n > 1:
         pair_values = similarities[np.triu_indices(n, k=1)]
@@ -278,42 +280,54 @@ def build_svg(
             f'<svg xmlns="http://www.w3.org/2000/svg" '
             f'viewBox="0 0 {width:.1f} {height:.1f}" width="100%" height="100%" '
             'preserveAspectRatio="xMidYMid meet" '
-            'style="width:100%;height:100%;display:block;background:#fff" role="img">'
+            'style="width:100%;height:100%;display:block" role="img">'
         ),
         '<style><![CDATA[',
-        'svg { font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }',
-        '.title { font-size:14px; font-weight:600; fill:#222; }',
-        '.subtitle { font-size:11px; fill:#666; }',
-        '.tick { font-size:9px; fill:#555; }',
-        '.border { fill:none; stroke:#999; stroke-width:.6; }',
-        '.lag-cell,.overview-cell { shape-rendering:crispEdges; }',
+        'svg { --bg:#ffffff; --fg:#222222; --sub:#666666; --panelbg:#ffffff; --panelborder:#cfcfcf; '
+        '--rowborder:#f0f0f0; --rowhover:#f3f3f3; --rowactive:#e9e9e9; --legendtext:#555555; '
+        '--controlfg:#333333; --controlbg:#ffffff; --controlborder:#bcbcbc; --edge:#9a9a9a; '
+        '--hypo:#585858; --guide:#000000; background:var(--bg); color:var(--fg); '
+        'font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }',
+        'svg.night { --bg:#171717; --fg:#ececec; --sub:#b9b9b9; --panelbg:#1f1f1f; --panelborder:#555555; '
+        '--rowborder:#2a2a2a; --rowhover:#2a2a2a; --rowactive:#343434; --legendtext:#c2c2c2; '
+        '--controlfg:#e6e6e6; --controlbg:#262626; --controlborder:#656565; --edge:#7a7a7a; '
+        '--hypo:#cfcfcf; --guide:#ffffff; }',
+        '.title { font-size:14px; font-weight:600; fill:var(--fg); }',
+        '.subtitle { font-size:11px; fill:var(--sub); }',
+        '.cell,.overview-cell { shape-rendering:crispEdges; }',
+        '.matrix-border { fill:none; stroke:var(--edge); stroke-width:.7; }',
+        '.diag-border { fill:none; stroke:var(--edge); stroke-width:.7; }',
+        '.hypo-border { fill:none; stroke:var(--hypo); stroke-width:1.15; }',
+        '.bottom-border { fill:none; stroke:var(--edge); stroke-width:.9; }',
         '.scale-control { font:11px system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; '
-        'color:#333; display:flex; align-items:flex-start; gap:7px; white-space:nowrap; }',
-        '.scale-control select { font:inherit; width:138px; padding:2px 5px; margin:0; }',
-        '.scale-legend { width:300px; }',
+        'color:var(--controlfg); display:flex; align-items:flex-start; gap:12px; white-space:nowrap; }',
+        f'.scale-control select {{ font:inherit; width:{SELECT_WIDTH:.0f}px; padding:2px 5px; margin:0; '
+        'color:var(--controlfg); background:var(--controlbg); border:1px solid var(--controlborder); }}',
+        '.control-btn { font:inherit; padding:2px 8px; margin:0; color:var(--controlfg); background:var(--controlbg); '
+        'border:1px solid var(--controlborder); border-radius:3px; cursor:pointer; }',
+        f'.scale-legend {{ width:{SCALE_LEGEND_WIDTH:.0f}px; margin-top:1px; }}',
         '.scale-bar { height:10px; width:100%; background:linear-gradient(to right,'
         'rgb(250,250,250) 0%,rgb(205,205,205) 25%,rgb(145,145,145) 50%,'
         'rgb(80,80,80) 75%,rgb(18,18,18) 100%); }',
         '.scale-labels { display:flex; justify-content:space-between; margin-top:3px; '
-        'font-size:9px; color:#555; }',
-        '.overview-frame { fill:#fff; stroke:#bbb; stroke-width:.7; }',
+        'font-size:9px; color:var(--legendtext); }',
         '.chapter-panel { width:100%; height:100%; overflow-x:auto; overflow-y:hidden; '
-        'box-sizing:border-box; border:1px solid #ccc; background:#fff; }',
+        'box-sizing:border-box; background:var(--panelbg); }',
         '.chapter-strip { width:max-content; min-width:100%; }',
         f'.chapter-row {{ height:{CELL:g}px; line-height:{CELL:g}px; white-space:nowrap; '
         'font:11px system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; '
-        'color:#333; box-sizing:border-box; padding:0 6px; border-bottom:1px solid #f2f2f2; '
+        'color:var(--fg); box-sizing:border-box; padding:0 6px; border-bottom:1px solid var(--rowborder); '
         'cursor:pointer; user-select:none; }}',
-        '.chapter-row:hover { background:#f3f3f3; }',
-        '.chapter-row.active { background:#e9e9e9; font-weight:600; }',
-        '.guide-line { stroke:#000; stroke-width:1.5; opacity:0; pointer-events:none; '
+        '.chapter-row:hover { background:var(--rowhover); }',
+        '.chapter-row.active { background:var(--rowactive); font-weight:600; }',
+        '.guide-line { stroke:var(--guide); stroke-width:1.3; opacity:0; pointer-events:none; '
         'shape-rendering:crispEdges; vector-effect:non-scaling-stroke; }',
         '.guide-line.active { opacity:1; }',
         ']]></style>',
         f'<text class="title" x="{TITLE_X}" y="{TITLE_Y}">{html.escape(work)}</text>',
         (
             f'<text class="subtitle" x="{TITLE_X}" y="{TITLE_Y + 18}">'
-            f'{html.escape(model_name)} · {n} chapitres · temps × retard '
+            f'{html.escape(model_name)} · {n} chapitres · triangle temporel '
             f'· similarité cosinus · moyenne {mean_similarity:.3f} '
             f'· médiane {median_similarity:.3f}</text>'
         ),
@@ -327,13 +341,13 @@ def build_svg(
     ]
     filter_options = [
         ("none", "Aucun"),
-        ("gauss1", "Gaussien léger"),
         ("bilateral1", "Bilatéral léger"),
         ("bilateral2", "Bilatéral moyen"),
         ("bilateral3", "Bilatéral fort"),
         ("aniso1", "Anisotrope légère"),
         ("aniso2", "Anisotrope moyenne"),
         ("aniso3", "Anisotrope forte"),
+        ("gauss1", "Gaussien léger"),
     ]
     scale_html = "".join(
         f'<option value="{value}"{" selected=\"selected\"" if value == initial_scale else ""}>{label}</option>'
@@ -344,28 +358,27 @@ def build_svg(
         for value, label in filter_options
     )
     out.append(
-        f'<foreignObject x="{matrix_x:.2f}" y="{SCALE_Y:.2f}" '
-        f'width="{SCALE_CONTROL_WIDTH:.2f}" height="38">'
+        f'<foreignObject x="{controls_x:.2f}" y="{SCALE_Y:.2f}" '
+        f'width="{controls_width:.2f}" height="{SCALE_CONTROL_HEIGHT:.2f}">'
         '<div xmlns="http://www.w3.org/1999/xhtml" class="scale-control">'
-        '<span>Échelle :</span>'
         f'<select id="scale-select">{scale_html}</select>'
-        '<span>Filtre :</span>'
-        f'<select id="filter-select">{filter_html}</select>'
         '<div class="scale-legend"><div class="scale-bar"></div>'
         '<div class="scale-labels"><span id="legend-left"></span>'
         '<span id="legend-mid"></span><span id="legend-right"></span>'
-        '</div></div></div></foreignObject>'
+        '</div></div>'
+        f'<select id="filter-select">{filter_html}</select>'
+        '<button id="theme-toggle" type="button" class="control-btn">Nuit</button>'
+        '</div></foreignObject>'
     )
 
     panel_height = n * CELL + LABEL_SCROLLBAR_ALLOWANCE
     rows_html: list[str] = []
     for index, chapter in enumerate(chapters):
-        label = html.escape(chapter_toc_label(index, chapter))
         rows_html.append(
-            f'<div class="chapter-row" data-index="{index}">{label}</div>'
+            f'<div class="chapter-row" data-index="{index}">{html.escape(chapter_toc_label(index, chapter))}</div>'
         )
     out.extend([
-        f'<foreignObject x="{panel_x:.2f}" y="{matrix_y:.2f}" '
+        f'<foreignObject x="{panel_x:.2f}" y="{panel_y:.2f}" '
         f'width="{LABEL_PANEL_WIDTH:.2f}" height="{panel_height:.2f}">',
         '<div xmlns="http://www.w3.org/1999/xhtml" class="chapter-panel">'
         '<div class="chapter-strip">' + "".join(rows_html) + '</div></div>',
@@ -373,63 +386,116 @@ def build_svg(
     ])
 
     thumb_cell = OVERVIEW_SIZE / n if n else OVERVIEW_SIZE
-    out.append(
-        f'<rect class="overview-frame" x="{overview_x:.2f}" y="{overview_y:.2f}" '
-        f'width="{OVERVIEW_SIZE:.2f}" height="{OVERVIEW_SIZE:.2f}"/>'
-    )
-    for current in range(n):
-        for lag in range(current + 1):
-            x = overview_x + current * thumb_cell
-            y = overview_y + lag * thumb_cell
-            out.append(
-                f'<rect class="overview-cell" data-current="{current}" data-lag="{lag}" '
-                f'x="{x:.2f}" y="{y:.2f}" width="{thumb_cell:.2f}" '
-                f'height="{thumb_cell:.2f}" fill="#ccc"/>'
-            )
+    overview_right_x = overview_x + OVERVIEW_SIZE
+    overview_bottom_y = overview_y + OVERVIEW_SIZE
 
     for current in range(n):
-        for lag in range(current + 1):
-            past = current - lag
+        ty = overview_y + current * thumb_cell
+
+        for past in range(current):
+            x_top_left = overview_right_x - current * thumb_cell + past * thumb_cell
+            points = [
+                (x_top_left, ty),
+                (x_top_left + thumb_cell, ty),
+                (x_top_left, ty + thumb_cell),
+                (x_top_left - thumb_cell, ty + thumb_cell),
+            ]
+            pts = ' '.join(f'{px:.2f},{py:.2f}' for px, py in points)
+            out.append(
+                f'<polygon class="overview-cell" data-current="{current}" data-past="{past}" '
+                f'points="{pts}" fill="#ccc"/>'
+            )
+
+        points = [
+            (overview_right_x, ty),
+            (overview_right_x, ty + thumb_cell),
+            (overview_right_x - thumb_cell, ty + thumb_cell),
+        ]
+        pts = ' '.join(f'{px:.2f},{py:.2f}' for px, py in points)
+        out.append(
+            f'<polygon class="overview-cell" data-current="{current}" data-past="{current}" '
+            f'points="{pts}" fill="#ccc"/>'
+        )
+
+    out.append(
+        f'<line class="hypo-border" x1="{overview_right_x:.2f}" y1="{overview_y:.2f}" '
+        f'x2="{overview_x:.2f}" y2="{overview_bottom_y:.2f}"/>'
+    )
+    out.append(
+        f'<line class="matrix-border" x1="{overview_right_x:.2f}" y1="{overview_y:.2f}" '
+        f'x2="{overview_right_x:.2f}" y2="{overview_bottom_y:.2f}"/>'
+    )
+
+    # Main right-aligned triangle. Each row is tiled by parallelograms
+    # plus one right-edge triangle for self-similarity.
+    right_x = matrix_x + matrix_width
+    bottom_y = matrix_y + matrix_height
+
+    for current in range(n):
+        y = matrix_y + current * CELL
+
+        for past in range(current):
+            x_top_left = right_x - current * CELL + past * CELL
             value = float(similarities[current, past])
-            x = matrix_x + current * CELL
-            y = matrix_y + lag * CELL
             current_text = html.escape(chapter_label(current, chapters[current]))
             past_text = html.escape(chapter_label(past, chapters[past]))
+            points = [
+                (x_top_left, y),
+                (x_top_left + CELL, y),
+                (x_top_left, y + CELL),
+                (x_top_left - CELL, y + CELL),
+            ]
+            pts = ' '.join(f'{px:.2f},{py:.2f}' for px, py in points)
             out.append(
-                f'<rect class="lag-cell" data-current="{current}" data-lag="{lag}" '
-                f'data-past="{past}" data-value="{value:.17g}" '
-                f'x="{x:.2f}" y="{y:.2f}" width="{CELL:.2f}" height="{CELL:.2f}" fill="#ccc">'
-                f'<title>{current_text} × {past_text} — cosinus={value:.4f}</title></rect>'
+                f'<polygon class="cell" data-current="{current}" data-past="{past}" '
+                f'data-value="{value:.17g}" points="{pts}" fill="#ccc">'
+                f'<title>{past_text} × {current_text} — cosinus={value:.4f}</title></polygon>'
             )
 
+        value = float(similarities[current, current])
+        current_text = html.escape(chapter_label(current, chapters[current]))
+        points = [
+            (right_x, y),
+            (right_x, y + CELL),
+            (right_x - CELL, y + CELL),
+        ]
+        pts = ' '.join(f'{px:.2f},{py:.2f}' for px, py in points)
+        out.append(
+            f'<polygon class="cell" data-current="{current}" data-past="{current}" '
+            f'data-value="{value:.17g}" points="{pts}" fill="#ccc">'
+            f'<title>{current_text} × {current_text} — cosinus={value:.4f}</title></polygon>'
+        )
+
     out.append(
-        f'<rect class="border" x="{matrix_x:.2f}" y="{matrix_y:.2f}" '
-        f'width="{matrix_width:.2f}" height="{matrix_height:.2f}"/>'
+        f'<line class="hypo-border" x1="{right_x:.2f}" y1="{matrix_y:.2f}" '
+        f'x2="{matrix_x:.2f}" y2="{bottom_y:.2f}"/>'
+    )
+    out.append(
+        f'<line class="matrix-border" x1="{right_x:.2f}" y1="{matrix_y:.2f}" '
+        f'x2="{right_x:.2f}" y2="{bottom_y:.2f}"/>'
     )
 
     out.append('<g id="guide-lines">')
     for index in range(n):
-        pos = matrix_x + index * CELL
+        y = matrix_y + index * CELL
+        row_start_x = right_x - index * CELL
+        bottom_x = matrix_x + index * CELL
         out.append(
-            f'<line class="guide-line guide-v" data-index="{index}" '
-            f'x1="{pos:.2f}" y1="{matrix_y:.2f}" '
-            f'x2="{pos:.2f}" y2="{matrix_y + matrix_height:.2f}"/>'
+            f'<line class="guide-line guide-h" data-index="{index}" '
+            f'x1="{row_start_x:.2f}" y1="{y:.2f}" '
+            f'x2="{right_x:.2f}" y2="{y:.2f}"/>'
+        )
+        out.append(
+            f'<line class="guide-line guide-d" data-index="{index}" '
+            f'x1="{right_x:.2f}" y1="{y:.2f}" '
+            f'x2="{bottom_x:.2f}" y2="{bottom_y:.2f}"/>'
         )
     out.append('</g>')
 
-    step = tick_step(n)
-    for index in range(0, n, step):
-        x = matrix_x + (index + 0.5) * CELL
-        out.append(
-            f'<text class="tick" x="{x:.2f}" y="{matrix_y - 7:.2f}" '
-            f'text-anchor="middle">{index + 1}</text>'
-        )
-    for lag in range(0, n, step):
-        y = matrix_y + (lag + 0.5) * CELL
-        out.append(
-            f'<text class="tick" x="{matrix_x - 7:.2f}" y="{y + 3:.2f}" '
-            f'text-anchor="end">{lag}</text>'
-        )
+    out.append(
+        f'<line class="bottom-border" x1="{matrix_x:.2f}" y1="{height - BOTTOM:.2f}" '
+        f'x2="{panel_x + LABEL_PANEL_WIDTH:.2f}" y2="{height - BOTTOM:.2f}"/>'
+    )
 
     script = f'''<script><![CDATA[
 (function() {{
@@ -437,7 +503,7 @@ def build_svg(
 
   const INITIAL_SCALE = {initial_scale!r};
   const INITIAL_FILTER = {initial_filter!r};
-  const cells = Array.from(document.querySelectorAll(".lag-cell"));
+  const cells = Array.from(document.querySelectorAll(".cell"));
   const thumbCells = Array.from(document.querySelectorAll(".overview-cell"));
   const tocRows = Array.from(document.querySelectorAll(".chapter-row"));
   const n = {n};
@@ -524,36 +590,37 @@ def build_svg(
 
   function cloneMatrix(matrix) {{ return matrix.map(row => row.slice()); }}
 
+  // Coordinates are [current][past], valid when past <= current.
   const raw = makeMatrix(n);
   for (const cell of cells) {{
     const current = Number(cell.dataset.current);
-    const lag = Number(cell.dataset.lag);
-    raw[lag][current] = Number(cell.dataset.value);
+    const past = Number(cell.dataset.past);
+    raw[current][past] = Number(cell.dataset.value);
   }}
 
-  function isValid(matrix, lag, current) {{
-    return lag >= 0 && current >= 0 && lag < n && current < n
-      && lag <= current && Number.isFinite(matrix[lag][current]);
+  function isValid(matrix, current, past) {{
+    return current >= 0 && past >= 0 && current < n && past < n
+      && past <= current && Number.isFinite(matrix[current][past]);
   }}
 
   function gaussianBlur(matrix, kernel, radius) {{
     const out = makeMatrix(n);
-    for (let lag = 0; lag < n; lag++) {{
-      for (let current = lag; current < n; current++) {{
-        const center = matrix[lag][current];
+    for (let current = 0; current < n; current++) {{
+      for (let past = 0; past <= current; past++) {{
+        const center = matrix[current][past];
         if (!Number.isFinite(center)) continue;
         let acc = 0, wsum = 0;
         for (let dr = -radius; dr <= radius; dr++) {{
-          const rr = lag + dr;
+          const rr = current + dr;
           for (let dc = -radius; dc <= radius; dc++) {{
-            const cc = current + dc;
+            const cc = past + dc;
             if (!isValid(matrix, rr, cc)) continue;
             const w = kernel[dr + radius][dc + radius];
             acc += w * matrix[rr][cc];
             wsum += w;
           }}
         }}
-        out[lag][current] = wsum ? acc / wsum : center;
+        out[current][past] = wsum ? acc / wsum : center;
       }}
     }}
     return out;
@@ -563,9 +630,9 @@ def build_svg(
 
   function offDiagonalRange(matrix) {{
     let min = Infinity, max = -Infinity;
-    for (let lag = 1; lag < n; lag++) {{
-      for (let current = lag; current < n; current++) {{
-        const v = matrix[lag][current];
+    for (let current = 1; current < n; current++) {{
+      for (let past = 0; past < current; past++) {{
+        const v = matrix[current][past];
         if (!Number.isFinite(v)) continue;
         if (v < min) min = v;
         if (v > max) max = v;
@@ -582,15 +649,15 @@ def build_svg(
     const spatialDenom = 2 * sigmaSpatial * sigmaSpatial;
     const rangeDenom = 2 * sigmaRange * sigmaRange;
 
-    for (let lag = 0; lag < n; lag++) {{
-      for (let current = lag; current < n; current++) {{
-        const center = matrix[lag][current];
+    for (let current = 0; current < n; current++) {{
+      for (let past = 0; past <= current; past++) {{
+        const center = matrix[current][past];
         if (!Number.isFinite(center)) continue;
         let acc = 0, wsum = 0;
         for (let dr = -radius; dr <= radius; dr++) {{
-          const rr = lag + dr;
+          const rr = current + dr;
           for (let dc = -radius; dc <= radius; dc++) {{
-            const cc = current + dc;
+            const cc = past + dc;
             if (!isValid(matrix, rr, cc)) continue;
             const neighbor = matrix[rr][cc];
             const ds2 = dr * dr + dc * dc;
@@ -602,7 +669,7 @@ def build_svg(
             wsum += w;
           }}
         }}
-        out[lag][current] = wsum ? acc / wsum : center;
+        out[current][past] = wsum ? acc / wsum : center;
       }}
     }}
     return out;
@@ -612,14 +679,14 @@ def build_svg(
     let u = cloneMatrix(matrix);
     for (let iter = 0; iter < iterations; iter++) {{
       const next = cloneMatrix(u);
-      for (let lag = 0; lag < n; lag++) {{
-        for (let current = lag; current < n; current++) {{
-          const center = u[lag][current];
+      for (let current = 0; current < n; current++) {{
+        for (let past = 0; past <= current; past++) {{
+          const center = u[current][past];
           if (!Number.isFinite(center)) continue;
           let delta = 0;
           const neighbors = [
-            [lag - 1, current], [lag + 1, current],
-            [lag, current - 1], [lag, current + 1]
+            [current - 1, past], [current + 1, past],
+            [current, past - 1], [current, past + 1]
           ];
           for (const [rr, cc] of neighbors) {{
             if (!isValid(u, rr, cc)) continue;
@@ -627,7 +694,7 @@ def build_svg(
             const conductance = Math.exp(-(d * d) / (kappa * kappa));
             delta += conductance * d;
           }}
-          next[lag][current] = center + lambdaStep * delta;
+          next[current][past] = center + lambdaStep * delta;
         }}
       }}
       u = next;
@@ -641,9 +708,7 @@ def build_svg(
   function filteredMatrix(mode) {{
     if (filterCache.has(mode)) return filterCache.get(mode);
     let out;
-    if (mode === "gauss1") {{
-      out = gaussianBlur(raw, GAUSS3, 1);
-    }} else if (mode === "bilateral1") {{
+    if (mode === "bilateral1") {{
       out = bilateralFilter(raw, 1.0, 0.10, 2);
     }} else if (mode === "bilateral2") {{
       out = bilateralFilter(raw, 1.4, 0.18, 2);
@@ -658,6 +723,8 @@ def build_svg(
     }} else if (mode === "aniso3") {{
       const range = offDiagonalRange(raw);
       out = anisotropicDiffusion(raw, 16, 0.18, Math.max(1e-6, 0.14 * range));
+    }} else if (mode === "gauss1") {{
+      out = gaussianBlur(raw, GAUSS3, 1);
     }} else {{
       out = raw;
     }}
@@ -667,9 +734,9 @@ def build_svg(
 
   function pairValues(matrix) {{
     const values = [];
-    for (let lag = 1; lag < n; lag++) {{
-      for (let current = lag; current < n; current++) {{
-        const v = matrix[lag][current];
+    for (let current = 1; current < n; current++) {{
+      for (let past = 0; past < current; past++) {{
+        const v = matrix[current][past];
         if (Number.isFinite(v)) values.push(v);
       }}
     }}
@@ -697,8 +764,7 @@ def build_svg(
     }} else if (scaleMode === "logrank") {{
       mapper = value => {{
         if (rankMax <= 1) return 1;
-        const rank = directRank(values, value);
-        return lightLogUnit((rank - 1) / (rankMax - 1));
+        return lightLogUnit((directRank(values, value) - 1) / (rankMax - 1));
       }};
       const middleU = invLightLogUnit(0.5);
       const middleRank = 1 + middleU * (rankMax - 1);
@@ -714,24 +780,26 @@ def build_svg(
 
     for (const cell of cells) {{
       const current = Number(cell.dataset.current);
-      const lag = Number(cell.dataset.lag);
-      const value = matrix[lag][current];
-      const t = lag === 0 ? 1 : clamp01(mapper(value));
+      const past = Number(cell.dataset.past);
+      const value = matrix[current][past];
+      const t = current === past ? 1 : clamp01(mapper(value));
       cell.setAttribute("fill", colorAt(t));
     }}
     for (const cell of thumbCells) {{
       const current = Number(cell.dataset.current);
-      const lag = Number(cell.dataset.lag);
-      const value = matrix[lag][current];
-      const t = lag === 0 ? 1 : clamp01(mapper(value));
+      const past = Number(cell.dataset.past);
+      const value = matrix[current][past];
+      const t = current === past ? 1 : clamp01(mapper(value));
       cell.setAttribute("fill", colorAt(t));
     }}
   }}
 
   const activeGuides = new Set();
   function setGuideVisibility(index, visible) {{
-    const v = document.querySelector(`.guide-v[data-index="${{index}}"]`);
-    if (v) v.classList.toggle("active", visible);
+    for (const klass of ["guide-h", "guide-d"]) {{
+      const line = document.querySelector(`.${{klass}}[data-index="${{index}}"]`);
+      if (line) line.classList.toggle("active", visible);
+    }}
     const row = document.querySelector(`.chapter-row[data-index="${{index}}"]`);
     if (row) row.classList.toggle("active", visible);
   }}
@@ -790,16 +858,24 @@ def main() -> None:
             chapters, work_vectors = works[work]
             destination = output_path(model_path, work, args.output_dir)
             if not needs_regeneration(
-                destination, model_path, args.docs_tsv, script_path,
-                signature, args.force,
+                destination,
+                model_path,
+                args.docs_tsv,
+                script_path,
+                signature,
+                args.force,
             ):
                 print(f"skip   {model_path.name} :: {work} -> {destination.name}")
                 skipped += 1
                 continue
 
             svg = build_svg(
-                model_path.name, work, chapters, work_vectors,
-                args.scale, args.filter,
+                model_path.name,
+                work,
+                chapters,
+                work_vectors,
+                args.scale,
+                args.filter,
             )
             destination.write_text(svg, encoding="utf-8", newline="\n")
             print(f"write  {model_path.name} :: {work} -> {destination.name}")
