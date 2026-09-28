@@ -293,15 +293,275 @@ class BM25(Scorer):
         return scores
 
 
-class Focalex(Scorer):
-    """FocaLex lexical-focus score based on the G² log-likelihood ratio.
+def _term_doc_table(
+    corpus: TermDocCorpus,
+    doc_id: int,
+    term_ids: IntArray,
+    tf: IntArray,
+) -> tuple[
+    FloatArray,
+    FloatArray,
+    FloatArray,
+    FloatArray,
+    float,
+    float,
+    NDArray[np.bool_],
+]:
+    """Return the document-vs-rest 2 x 2 table for aligned terms.
 
-    The 2 x 2 table compares the document with the rest of the collection:
+    Cells are returned as:
 
-        term            tf                  cf - tf
-        other terms     dl - tf             CL - dl - cf + tf
+        focus_term, other_term, focus_nonterm, other_nonterm
+
+    followed by focus_tokens, other_tokens and an invalid-cell mask.
+    """
+    focus_term = np.asarray(tf, dtype=np.float64)
+    focus_tokens = float(corpus.doc_len[doc_id])
+    other_tokens = float(corpus.collection_len) - focus_tokens
+
+    corpus_term = np.asarray(corpus.cf[term_ids], dtype=np.float64)
+    other_term = corpus_term - focus_term
+    focus_nonterm = focus_tokens - focus_term
+    other_nonterm = other_tokens - other_term
+
+    invalid = (
+        (focus_term < 0.0)
+        | (other_term < 0.0)
+        | (focus_nonterm < 0.0)
+        | (other_nonterm < 0.0)
+    )
+    return (
+        focus_term,
+        other_term,
+        focus_nonterm,
+        other_nonterm,
+        focus_tokens,
+        other_tokens,
+        invalid,
+    )
+
+
+def _g2_values(
+    corpus: TermDocCorpus,
+    doc_id: int,
+    term_ids: IntArray,
+    tf: IntArray,
+) -> tuple[FloatArray, FloatArray, NDArray[np.bool_]]:
+    """Return unsigned G², direction sign, and invalid mask for aligned terms."""
+    (
+        focus_term,
+        other_term,
+        focus_nonterm,
+        other_nonterm,
+        focus_tokens,
+        other_tokens,
+        invalid,
+    ) = _term_doc_table(corpus, doc_id, term_ids, tf)
+
+    if focus_tokens <= 0.0 or other_tokens <= 0.0:
+        zeros = np.zeros(focus_term.shape, dtype=np.float64)
+        return zeros, np.ones(focus_term.shape, dtype=np.float64), invalid
+
+    all_tokens = focus_tokens + other_tokens
+    all_term = focus_term + other_term
+    all_nonterm = focus_nonterm + other_nonterm
+
+    expected_focus_term = focus_tokens * all_term / all_tokens
+    expected_other_term = other_tokens * all_term / all_tokens
+    expected_focus_nonterm = focus_tokens * all_nonterm / all_tokens
+    expected_other_nonterm = other_tokens * all_nonterm / all_tokens
+
+    g2 = np.zeros(focus_term.shape, dtype=np.float64)
+    for observed, expected in (
+        (focus_term, expected_focus_term),
+        (other_term, expected_other_term),
+        (focus_nonterm, expected_focus_nonterm),
+        (other_nonterm, expected_other_nonterm),
+    ):
+        valid = (observed > 0.0) & (expected > 0.0)
+        g2[valid] += 2.0 * observed[valid] * np.log(observed[valid] / expected[valid])
+
+    degenerate = (all_term == 0.0) | (all_nonterm == 0.0)
+    g2[degenerate] = 0.0
+    g2[invalid] = np.nan
+
+    # Compare relative frequencies without division.
+    sign = np.where(
+        focus_term * other_tokens >= other_term * focus_tokens,
+        1.0,
+        -1.0,
+    )
+    sign[invalid] = np.nan
+    return g2, sign, invalid
+
+
+class G2(Scorer):
+    """Unsigned likelihood-ratio G² on a 2 x 2 document-vs-rest table.
 
     G2 = 2 * sum(O * ln(O / E))
+
+    tf : term frequency in document
+    cf : collection frequency of term
+    dl : document length
+    CL : collection length
+
+    G² is non-negative. Direction is deliberately not encoded here; use
+    SignedG2 when over- and under-representation must be distinguished.
+
+    Dunning, T. (1993). "Accurate Methods for the Statistics of Surprise and Coincidence." Computational Linguistics 19(1): 61-74.
+    """
+
+    @property
+    def code(self) -> str:
+        """Return the filename code."""
+        return "g2"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Return ordinary unsigned G² values."""
+        g2, _, _ = _g2_values(self.corpus, doc_id, term_ids, tf)
+        return g2
+
+
+class SignedG2(Scorer):
+    """Directional G² association score.
+
+    The magnitude is ordinary G². The sign is positive when the term relative
+    frequency is at least as high in the focus document as in the rest of the
+    corpus, otherwise negative.
+
+    This is a signed association score built from G²; G² itself remains
+    intrinsically non-negative.
+    """
+
+    @property
+    def code(self) -> str:
+        """Return the filename code."""
+        return "g2signed"
+
+    @property
+    def name(self) -> str:
+        """Return the human-readable scorer name."""
+        return "Signed G²"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Return G² with the direction of association attached."""
+        g2, sign, _ = _g2_values(self.corpus, doc_id, term_ids, tf)
+        return g2 * sign
+
+
+class G2Pos(Scorer):
+    """Positive directional G² only: over-representation magnitude.
+
+    This is the positive part of SignedG2. Under-represented terms are set to 0.
+    """
+
+    @property
+    def code(self) -> str:
+        """Return the filename code."""
+        return "g2pos"
+
+    @property
+    def name(self) -> str:
+        """Return the human-readable scorer name."""
+        return "Positive G²"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Keep only over-represented G² magnitudes."""
+        g2, sign, _ = _g2_values(self.corpus, doc_id, term_ids, tf)
+        scores = np.zeros(g2.shape, dtype=np.float64)
+        positive = sign > 0.0
+        scores[positive] = g2[positive]
+        scores[np.isnan(g2) | np.isnan(sign)] = np.nan
+        return scores
+
+
+class G2Neg(Scorer):
+    """Negative directional G² only: under-representation magnitude.
+
+    Under-represented terms keep their G² magnitude as a positive value;
+    over-represented terms are set to 0.
+    """
+
+    @property
+    def code(self) -> str:
+        """Return the filename code."""
+        return "g2neg"
+
+    @property
+    def name(self) -> str:
+        """Return the human-readable scorer name."""
+        return "Negative G²"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Keep only under-represented G² magnitudes."""
+        g2, sign, _ = _g2_values(self.corpus, doc_id, term_ids, tf)
+        scores = np.zeros(g2.shape, dtype=np.float64)
+        negative = sign < 0.0
+        scores[negative] = g2[negative]
+        scores[np.isnan(g2) | np.isnan(sign)] = np.nan
+        return scores
+
+
+class ExclusiveTf(Scorer):
+    """Raw term frequency restricted to terms exclusive to the focus document.
+
+    tf if tf = cf, otherwise 0
+
+    tf : term frequency in document
+    cf : collection frequency of term
+
+    This is a deliberately simple exclusivity baseline: selection is based only
+    on exclusivity, while ranking among exclusive terms remains raw frequency.
+    """
+
+    @property
+    def code(self) -> str:
+        """Return the filename code."""
+        return "extf"
+
+    @property
+    def name(self) -> str:
+        """Return the human-readable scorer name."""
+        return "Exclusive TF"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Return tf only when all corpus occurrences are in this document."""
+        del doc_id
+        observed = np.asarray(tf, dtype=np.float64)
+        corpus_term = np.asarray(self.corpus.cf[term_ids], dtype=np.float64)
+        scores = np.zeros(observed.shape, dtype=np.float64)
+        exclusive = (observed > 0.0) & (observed == corpus_term)
+        scores[exclusive] = observed[exclusive]
+        return scores
+
+
+class Focalex(Scorer):
+    """FocaLex lexical-focus score based on the G² log-likelihood ratio.
 
     focus = 0       : tf
     0 < focus < 1   : tf^(1-focus) * G2^focus
@@ -313,16 +573,13 @@ class Focalex(Scorer):
 
     tf : term frequency in document
     cf : collection frequency of term
-    dl : document length
-    CL : collection length
     q : share of collection occurrences found in the document
     focus : lexical-focus parameter
 
     The focus parameter is an experimental extension. It moves continuously
-    from raw term frequency at focus=0, through standard G² at focus=1, toward
-    increasing concentration of a term's occurrences in the focus document.
-    FocaLex is intended as a lexical-salience weighting; G² itself remains the
-    standard log-likelihood ratio statistic.
+    from raw term frequency at focus=0, through standard unsigned G² at focus=1,
+    toward increasing concentration of a term's occurrences in the focus
+    document.
 
     Dunning, T. (1993). "Accurate Methods for the Statistics of Surprise and Coincidence." Computational Linguistics 19(1): 61-74.
     """
@@ -364,41 +621,8 @@ class Focalex(Scorer):
         if self.focus == 0.0:
             return focus_term.copy()
 
-        focus_tokens = float(self.corpus.doc_len[doc_id])
-        other_tokens = float(self.corpus.collection_len) - focus_tokens
-        if focus_tokens <= 0.0 or other_tokens <= 0.0:
-            return np.zeros(focus_term.shape, dtype=np.float64)
-
+        g2, _, invalid = _g2_values(self.corpus, doc_id, term_ids, tf)
         corpus_term = np.asarray(self.corpus.cf[term_ids], dtype=np.float64)
-        other_term = corpus_term - focus_term
-
-        invalid = (
-            (focus_term < 0.0)
-            | (other_term < 0.0)
-            | (focus_term > focus_tokens)
-            | (other_term > other_tokens)
-        )
-
-        focus_nonterm = focus_tokens - focus_term
-        other_nonterm = other_tokens - other_term
-        all_tokens = focus_tokens + other_tokens
-        all_term = focus_term + other_term
-        all_nonterm = focus_nonterm + other_nonterm
-
-        expected_focus_term = focus_tokens * all_term / all_tokens
-        expected_other_term = other_tokens * all_term / all_tokens
-        expected_focus_nonterm = focus_tokens * all_nonterm / all_tokens
-        expected_other_nonterm = other_tokens * all_nonterm / all_tokens
-
-        g2 = np.zeros(focus_term.shape, dtype=np.float64)
-        self._add_g2_cell(g2, focus_term, expected_focus_term)
-        self._add_g2_cell(g2, other_term, expected_other_term)
-        self._add_g2_cell(g2, focus_nonterm, expected_focus_nonterm)
-        self._add_g2_cell(g2, other_nonterm, expected_other_nonterm)
-
-        degenerate = (all_term == 0.0) | (all_nonterm == 0.0)
-        g2[degenerate] = 0.0
-        g2[invalid] = np.nan
 
         if self.focus < 1.0:
             scores = np.zeros(g2.shape, dtype=np.float64)
@@ -432,32 +656,15 @@ class Focalex(Scorer):
         scores[invalid] = np.nan
         return scores
 
-    @staticmethod
-    def _add_g2_cell(
-        total: FloatArray,
-        observed: FloatArray,
-        expected: FloatArray,
-    ) -> None:
-        """Add one vectorized cell contribution to G² in place."""
-        valid = (observed > 0.0) & (expected > 0.0)
-        total[valid] += (
-            2.0
-            * observed[valid]
-            * np.log(observed[valid] / expected[valid])
-        )
-
 
 class Chi2(Scorer):
     """Signed Pearson chi-square on a 2 x 2 term/document table.
 
     X2 = sum((O - E)^2 / E)
 
-    The same 2 x 2 table as G² is used. The sign is positive when tf / dl >= (cf - tf) / (CL - dl), otherwise negative.
-
-    tf : term frequency in document
-    cf : collection frequency of term
-    dl : document length
-    CL : collection length
+    The same 2 x 2 table as G² is used. The sign is positive when the term
+    relative frequency is at least as high in the focus document as in the rest
+    of the collection, otherwise negative.
 
     Pearson, K. (1900). "On the criterion that a given system of deviations from the probable in the case of a correlated system of variables is such that it can be reasonably supposed to have arisen from random sampling." Philosophical Magazine 50(302): 157-175. doi:10.1080/14786440009463897.
     """
@@ -474,23 +681,18 @@ class Chi2(Scorer):
         tf: IntArray,
     ) -> FloatArray:
         """Score terms with signed Pearson X²."""
-        focus_term = np.asarray(tf, dtype=np.float64)
-        focus_tokens = float(self.corpus.doc_len[doc_id])
-        other_tokens = float(self.corpus.collection_len) - focus_tokens
+        (
+            focus_term,
+            other_term,
+            focus_nonterm,
+            other_nonterm,
+            focus_tokens,
+            other_tokens,
+            invalid,
+        ) = _term_doc_table(self.corpus, doc_id, term_ids, tf)
+
         if focus_tokens <= 0.0 or other_tokens <= 0.0:
             return np.zeros(focus_term.shape, dtype=np.float64)
-
-        corpus_term = np.asarray(self.corpus.cf[term_ids], dtype=np.float64)
-        other_term = corpus_term - focus_term
-        focus_nonterm = focus_tokens - focus_term
-        other_nonterm = other_tokens - other_term
-
-        invalid = (
-            (focus_term < 0.0)
-            | (other_term < 0.0)
-            | (focus_nonterm < 0.0)
-            | (other_nonterm < 0.0)
-        )
 
         all_tokens = focus_tokens + other_tokens
         all_term = focus_term + other_term
@@ -502,13 +704,18 @@ class Chi2(Scorer):
         expected_other_nonterm = other_tokens * all_nonterm / all_tokens
 
         chi2 = np.zeros(focus_term.shape, dtype=np.float64)
-        self._add_cell(chi2, focus_term, expected_focus_term)
-        self._add_cell(chi2, other_term, expected_other_term)
-        self._add_cell(chi2, focus_nonterm, expected_focus_nonterm)
-        self._add_cell(chi2, other_nonterm, expected_other_nonterm)
+        for observed, expected in (
+            (focus_term, expected_focus_term),
+            (other_term, expected_other_term),
+            (focus_nonterm, expected_focus_nonterm),
+            (other_nonterm, expected_other_nonterm),
+        ):
+            valid = expected > 0.0
+            delta = observed[valid] - expected[valid]
+            chi2[valid] += delta * delta / expected[valid]
 
         sign = np.where(
-            focus_term / focus_tokens >= other_term / other_tokens,
+            focus_term * other_tokens >= other_term * focus_tokens,
             1.0,
             -1.0,
         )
@@ -516,20 +723,9 @@ class Chi2(Scorer):
         chi2[invalid] = np.nan
         return chi2
 
-    @staticmethod
-    def _add_cell(
-        total: FloatArray,
-        observed: FloatArray,
-        expected: FloatArray,
-    ) -> None:
-        """Add one Pearson X² cell contribution in place."""
-        valid = expected > 0.0
-        delta = observed[valid] - expected[valid]
-        total[valid] += delta * delta / expected[valid]
 
-
-class Lafon(Scorer):
-    """Lafon lexical specificity, as used by TXM.
+class Fisher(Scorer):
+    """Fisher lexical specificity, as used in TXM/textometry.
 
     X ~ Hypergeom(CL, cf, dl)
     expected = cf * dl / CL
@@ -542,7 +738,9 @@ class Lafon(Scorer):
     dl : document length
     CL : collection length
 
-    Positive values indicate over-representation; negative values indicate under-representation. The implementation rounds to four decimals and uses magnitude 1000 when a tail probability underflows to zero.
+    Positive values indicate over-representation; negative values indicate
+    under-representation. The implementation rounds to four decimals and uses
+    magnitude 1000 when a tail probability underflows to zero.
 
     Lafon, P. (1980). "Sur la variabilité de la fréquence des formes dans un corpus." Mots 1: 127-165. doi:10.3406/mots.1980.1008.
     """
@@ -552,12 +750,12 @@ class Lafon(Scorer):
     @property
     def code(self) -> str:
         """Return the filename code."""
-        return "lafon"
+        return "fisher"
 
     @property
     def name(self) -> str:
         """Return the human-readable scorer name."""
-        return "Lafon specificity (TXM)"
+        return "Fisher specificity (TXM)"
 
     def score_terms(
         self,
@@ -565,7 +763,7 @@ class Lafon(Scorer):
         term_ids: IntArray,
         tf: IntArray,
     ) -> FloatArray:
-        """Score terms with TXM-style Lafon specificity."""
+        """Score terms with signed Fisher/hypergeometric specificity."""
         observed = np.asarray(tf, dtype=np.int64)
         corpus_term = np.asarray(self.corpus.cf[term_ids], dtype=np.int64)
         part_size = int(self.corpus.doc_len[doc_id])
@@ -614,6 +812,80 @@ class Lafon(Scorer):
         scores = np.round(scores, 4)
         scores[invalid] = np.nan
         return scores
+
+
+class FisherPos(Fisher):
+    """Positive Fisher specificity only: over-representation magnitude."""
+
+    @property
+    def code(self) -> str:
+        """Return the filename code."""
+        return "fisherpos"
+
+    @property
+    def name(self) -> str:
+        """Return the human-readable scorer name."""
+        return "Positive Fisher specificity"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Keep only positive Fisher scores."""
+        return np.maximum(super().score_terms(doc_id, term_ids, tf), 0.0)
+
+
+class FisherNeg(Fisher):
+    """Negative Fisher specificity only: under-representation magnitude.
+
+    Scores are returned as positive magnitudes so that a document vector records
+    strength of deficit rather than a globally negative sign. Multiplying every
+    retained value by -1 would give the same cosine geometry.
+    """
+
+    @property
+    def code(self) -> str:
+        """Return the filename code."""
+        return "fisherneg"
+
+    @property
+    def name(self) -> str:
+        """Return the human-readable scorer name."""
+        return "Negative Fisher specificity"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Keep only under-representation magnitudes."""
+        return np.maximum(-super().score_terms(doc_id, term_ids, tf), 0.0)
+
+
+class FisherAbs(Fisher):
+    """Absolute Fisher specificity: significance magnitude without direction."""
+
+    @property
+    def code(self) -> str:
+        """Return the filename code."""
+        return "fisherabs"
+
+    @property
+    def name(self) -> str:
+        """Return the human-readable scorer name."""
+        return "Absolute Fisher specificity"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Return the absolute magnitude of signed Fisher specificity."""
+        return np.abs(super().score_terms(doc_id, term_ids, tf))
 
 
 class LogRatio(Scorer):
@@ -722,18 +994,21 @@ class SimpleMaths(Scorer):
         return ppm_focus / ppm_other
 
 
-# Backward-compatible aliases for older experiment scripts.
-Freq = Tf
-G2 = Focalex
-
-
 SCORER_TYPES: tuple[type[Scorer], ...] = (
     Tf,
     RawTfIdf,
     LogTfIdf,
     BM25,
+    G2,
+    SignedG2,
+    G2Pos,
+    G2Neg,
     Chi2,
-    Lafon,
+    Fisher,
+    FisherPos,
+    FisherNeg,
+    FisherAbs,
+    ExclusiveTf,
     LogRatio,
     SimpleMaths,
     Focalex,
@@ -742,55 +1017,58 @@ SCORER_TYPES: tuple[type[Scorer], ...] = (
 
 def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
     """Return the scorer configurations used by the current keyword experiment."""
-
-    """
     return (
         Tf(corpus),
         RawTfIdf(corpus),
         LogTfIdf(corpus),
+        BM25(corpus),
+        G2(corpus),
+        SignedG2(corpus),
+        G2Pos(corpus),
+        G2Neg(corpus),
+        Chi2(corpus),
+        Fisher(corpus),
+        FisherPos(corpus),
+        FisherNeg(corpus),
+        FisherAbs(corpus),
+        ExclusiveTf(corpus),
         LogRatio(corpus),
         SimpleMaths(corpus),
-        BM25(corpus),
-        Chi2(corpus),
-        Lafon(corpus),
-        Focalex(corpus, 0.0),
-        Focalex(corpus, 0.05),
-        Focalex(corpus, 0.15),
-        Focalex(corpus, 0.25),
         Focalex(corpus, 0.5),
-        Focalex(corpus, 0.75),
         Focalex(corpus, 1.0),
-        Focalex(corpus, 1.25),
         Focalex(corpus, 1.5),
-        Focalex(corpus, 1.75),
+        Focalex(corpus, 2.0),
     )
-    """
-    return (
-        LogRatio(corpus),
-    )
+
 
 def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
     """Create a scorer from its stable experiment code.
 
-    Supported codes are ``tf`` (legacy alias ``freq``), ``tfidf`` (raw TF-IDF),
-    ``tfidflog`` (logarithmic TF-IDF), ``bm25``, ``chi2``, ``lafon``,
-    ``logratio``, ``simplemaths`` and ``focalexX`` where ``X`` is a focus value
-    in ``[0, 2]``. ``focalex`` means ``focus=1``. Legacy ``g2`` and ``g2sX``
-    codes are accepted for reproducibility of older experiments.
+    Supported codes are ``tf``, ``tfidf``, ``tfidflog``, ``bm25``, ``g2``,
+    ``g2signed``, ``g2pos``, ``g2neg``, ``chi2``, ``fisher``, ``fisherpos``,
+    ``fisherneg``, ``fisherabs``, ``extf``, ``logratio``, ``simplemaths`` and
+    ``focalexX`` where ``X`` is a focus value
+    in ``[0, 2]``. ``focalex`` means ``focus=1``.
     """
     code = code.strip().lower()
     factories = {
         "tf": Tf,
-        "freq": Tf,
         "tfidf": RawTfIdf,
         "tfidflog": LogTfIdf,
         "bm25": BM25,
+        "g2": G2,
+        "g2signed": SignedG2,
+        "g2pos": G2Pos,
+        "g2neg": G2Neg,
         "chi2": Chi2,
-        "lafon": Lafon,
+        "fisher": Fisher,
+        "fisherpos": FisherPos,
+        "fisherneg": FisherNeg,
+        "fisherabs": FisherAbs,
+        "extf": ExclusiveTf,
         "logratio": LogRatio,
         "simplemaths": SimpleMaths,
         "focalex": lambda c: Focalex(c, 1.0),
-        "g2": lambda c: Focalex(c, 1.0),
     }
     factory = factories.get(code)
     if factory is not None:
@@ -804,13 +1082,8 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
             raise ValueError(f"Invalid FocaLex scorer code: {code!r}") from error
         return Focalex(corpus, focus)
 
-    if code.startswith("g2s"):
-        value = code[3:]
-        try:
-            focus = float(value)
-        except ValueError as error:
-            raise ValueError(f"Invalid legacy G2 scorer code: {code!r}") from error
-        return Focalex(corpus, focus)
-
-    known = ", ".join((*factories.keys(), "focalex0.0", "focalex0.5", "focalex1.5", "focalex2.0"))
+    known = ", ".join(
+        (*factories.keys(), "focalex0.0", "focalex0.5", "focalex1.5", "focalex2.0")
+    )
     raise ValueError(f"Unknown scorer {code!r}. Known scorer codes: {known}")
+

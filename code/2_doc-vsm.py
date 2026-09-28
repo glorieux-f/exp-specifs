@@ -13,7 +13,10 @@ corpus statistics or document lengths used by the scorer.
 The second positional argument is an output prefix, not a complete filename.
 Model parameters are appended in this order:
 
-    <select>-<scorer>-dims<N>-vocab<MODE>-dfmin<N>.bin
+    <select>-<scorer>-<vocab>-dims<N>[-dfmin<N>].bin
+
+The default ``dfmin=1`` is omitted from the filename. A non-default minimum
+document frequency is appended after the dimensions.
 
 Vocabulary modes:
 
@@ -31,12 +34,16 @@ Modes involving stopwords use ``stopwords.txt`` next to this script unless
 For example:
 
     python 2_doc-vsm.py ../data ../models/260927- \
-        --select "verne1870a*" --scorer lafon \
-        --vocab stops --dims 47 --dfmin 1
+        --select "verne1870a*" --scorer fisher \
+        --vocab stops --dims 47
 
 generates:
 
-    ../models/260927-verne1870a-lafon-dims47-vocabstops-dfmin1.bin
+    ../models/260927-verne1870a-fisher-stops-dims47.bin
+
+With ``--dfmin 2`` the filename becomes:
+
+    ../models/260927-verne1870a-fisher-stops-dims47-dfmin2.bin
 """
 
 from __future__ import annotations
@@ -229,10 +236,12 @@ def output_path(
 
     model_name = (
         f"{select_tag}-{scorer_tag}"
+        f"-{vocab_mode}"
         f"-dims{actual_dims}"
-        f"-vocab{vocab_mode}"
-        f"-dfmin{min_df}.bin"
     )
+    if min_df != 1:
+        model_name += f"-dfmin{min_df}"
+    model_name += ".bin"
 
     prefix = Path(prefix_arg)
     if prefix_arg.endswith(("/", "\\")) or (prefix.exists() and prefix.is_dir()):
