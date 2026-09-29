@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from abc import ABC, abstractmethod
 from math import isfinite
+import re
 from typing import Protocol
 
 import numpy as np
@@ -951,21 +952,42 @@ class SimpleMaths(Scorer):
     cf : collection frequency of term
     dl : document length
     CL : collection length
-    k : smoothing parameter
+    k : smoothing parameter, per million ("N" in Kilgarriff 2009)
+
+    k chooses the frequency band of the keywords: small k favours rare
+    terms, large k common ones. Kilgarriff's values (1, 10, 100, 1000) are
+    set for corpus-vs-corpus comparison, where a focus corpus has millions of
+    words. In a document of dl tokens a single occurrence is already
+    1_000_000 / dl per million (about 234 for a 4,276-token chapter), so
+    k = 1 leaves every term absent from the rest at a score proportional to
+    its tf: the ranking degenerates into a list of hapaxes tied at tf = 1.
+
+    The default is therefore expressed in document units: half an
+    occurrence in a document of average length,
+    k = 500_000 / avg_doc_len. A single occurrence of a term absent from the
+    rest then scores about 3, so terms with repeated evidence rank first.
+    Pass k explicitly to use a fixed per-million value.
 
     Kilgarriff, A. (2009). "Simple Maths for Keywords." Proceedings of the Corpus Linguistics Conference CL2009, University of Liverpool.
     """
 
-    def __init__(self, corpus: TermDocCorpus, k: float = 1.0) -> None:
-        if not isfinite(k) or k < 0.0:
-            raise ValueError("k must be finite and >= 0")
+    def __init__(self, corpus: TermDocCorpus, k: float | None = None) -> None:
+        if k is None:
+            if corpus.avg_doc_len <= 0.0:
+                raise ValueError("avg_doc_len must be > 0 for the default k")
+            k = 500_000.0 / float(corpus.avg_doc_len)
+            self.auto_k = True
+        else:
+            self.auto_k = False
+        if not isfinite(k) or k <= 0.0:
+            raise ValueError("k must be finite and > 0")
         super().__init__(corpus)
         self.k = k
 
     @property
     def code(self) -> str:
         """Return the filename code."""
-        if self.k == 1.0:
+        if self.auto_k:
             return "simplemaths"
         return f"simplemathsk{self.k:g}"
 
@@ -1022,22 +1044,21 @@ def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
         RawTfIdf(corpus),
         LogTfIdf(corpus),
         BM25(corpus),
+        BM25(corpus, 100.0, 1.0),
         G2(corpus),
         SignedG2(corpus),
-        G2Pos(corpus),
-        G2Neg(corpus),
         Chi2(corpus),
         Fisher(corpus),
-        FisherPos(corpus),
-        FisherNeg(corpus),
-        FisherAbs(corpus),
         ExclusiveTf(corpus),
         LogRatio(corpus),
+        SimpleMaths(corpus, 1.0),
         SimpleMaths(corpus),
+        Focalex(corpus, 0.05),
+        Focalex(corpus, 0.25),
         Focalex(corpus, 0.5),
         Focalex(corpus, 1.0),
         Focalex(corpus, 1.5),
-        Focalex(corpus, 2.0),
+        Focalex(corpus, 1.75),
     )
 
 
@@ -1046,9 +1067,11 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
 
     Supported codes are ``tf``, ``tfidf``, ``tfidflog``, ``bm25``, ``g2``,
     ``g2signed``, ``g2pos``, ``g2neg``, ``chi2``, ``fisher``, ``fisherpos``,
-    ``fisherneg``, ``fisherabs``, ``extf``, ``logratio``, ``simplemaths`` and
-    ``focalexX`` where ``X`` is a focus value
-    in ``[0, 2]``. ``focalex`` means ``focus=1``.
+    ``fisherneg``, ``fisherabs``, ``extf``, ``logratio``, ``simplemaths``,
+    ``bm25kK1bB`` (e.g. ``bm25k100b1``), ``simplemathskK`` with ``K`` per
+    million (e.g. ``simplemathsk1``), and ``focalexX`` where ``X`` is a focus
+    value in ``[0, 2]``. ``focalex`` means ``focus=1``. ``bm25`` keeps the
+    Lucene defaults; ``simplemaths`` uses the document-scale default k.
     """
     code = code.strip().lower()
     factories = {
@@ -1074,6 +1097,18 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
     if factory is not None:
         return factory(corpus)
 
+    bm25_match = re.fullmatch(r"bm25k([0-9.]+)b([0-9.]+)", code)
+    if bm25_match is not None:
+        return BM25(corpus, float(bm25_match.group(1)), float(bm25_match.group(2)))
+
+    if code.startswith("simplemathsk"):
+        value = code[len("simplemathsk"):]
+        try:
+            k = float(value)
+        except ValueError as error:
+            raise ValueError(f"Invalid Simple Maths scorer code: {code!r}") from error
+        return SimpleMaths(corpus, k)
+
     if code.startswith("focalex"):
         value = code[len("focalex"):]
         try:
@@ -1083,7 +1118,15 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
         return Focalex(corpus, focus)
 
     known = ", ".join(
-        (*factories.keys(), "focalex0.0", "focalex0.5", "focalex1.5", "focalex2.0")
+        (
+            *factories.keys(),
+            "bm25k100b1",
+            "simplemathsk1",
+            "focalex0.0",
+            "focalex0.5",
+            "focalex1.5",
+            "focalex2.0",
+        )
     )
     raise ValueError(f"Unknown scorer {code!r}. Known scorer codes: {known}")
 

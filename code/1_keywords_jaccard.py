@@ -30,18 +30,9 @@ KEYWORD_SUFFIX = "-keywords.txt"
 # alphabetically, so the script remains usable for later experiments.
 SCORER_ORDER = (
     "tf",
-    "g2s0.0",
-    "g2s0.25",
-    "g2s0.5",
-    "g2s0.75",
     "g2",
-    "g2s1.25",
-    "g2s1.5",
-    "g2s1.75",
-    "g2s2.0",
-    "lafon",
-    "chi2",
-    "tfidf",
+    "fisher",
+    "simplemaths",
     "bm25",
 )
 
