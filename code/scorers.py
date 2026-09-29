@@ -384,6 +384,12 @@ def _g2_values(
 
     degenerate = (all_term == 0.0) | (all_nonterm == 0.0)
     g2[degenerate] = 0.0
+
+    # G² is mathematically non-negative, but floating-point cancellation can
+    # produce tiny negative values when observed and expected counts are nearly
+    # identical. Clamp those rounding artifacts before fractional powers are
+    # applied by scorers such as FocaLex.
+    g2[~invalid] = np.maximum(g2[~invalid], 0.0)
     g2[invalid] = np.nan
 
     # Compare relative frequencies without division.
@@ -567,20 +573,26 @@ class Focalex(Scorer):
     focus = 0       : tf
     0 < focus < 1   : tf^(1-focus) * G2^focus
     focus = 1       : G2
-    1 < focus < 2   : G2 * q^((focus-1)/(2-focus))
-    focus = 2       : G2 if tf = cf, otherwise 0
+    1 < focus < 2   : G2^(2-focus) * E^(focus-1)
+    focus = 2       : E
 
-    q = tf / cf
+    E = tf                                      if tf = cf
+        1 - 1/tf + 1/(cf * (tf + 1))           if 0 < tf < cf
+        0                                       if tf = 0
 
     tf : term frequency in document
     cf : collection frequency of term
-    q : share of collection occurrences found in the document
+    E : exclusive-TF endpoint
     focus : lexical-focus parameter
+
+    At focus=2, exclusive terms retain their raw tf and therefore score at least
+    1. Shared terms are mapped strictly below 1. Their primary ordering is tf;
+    for equal tf, a lower cf (greater concentration in the focus document) gives
+    the larger score.
 
     The focus parameter is an experimental extension. It moves continuously
     from raw term frequency at focus=0, through standard unsigned G² at focus=1,
-    toward increasing concentration of a term's occurrences in the focus
-    document.
+    to the exclusive-TF endpoint at focus=2.
 
     Dunning, T. (1993). "Accurate Methods for the Statistics of Surprise and Coincidence." Computational Linguistics 19(1): 61-74.
     """
@@ -638,22 +650,26 @@ class Focalex(Scorer):
         if self.focus == 1.0:
             return g2
 
-        concentration = np.divide(
-            focus_term,
-            corpus_term,
-            out=np.zeros_like(focus_term),
-            where=corpus_term > 0.0,
+        endpoint = np.zeros(g2.shape, dtype=np.float64)
+
+        exclusive = (focus_term > 0.0) & (focus_term == corpus_term) & ~invalid
+        endpoint[exclusive] = focus_term[exclusive]
+
+        shared = (focus_term > 0.0) & (focus_term < corpus_term) & ~invalid
+        endpoint[shared] = (
+            1.0
+            - 1.0 / focus_term[shared]
+            + 1.0 / (corpus_term[shared] * (focus_term[shared] + 1.0))
         )
+        endpoint[invalid] = np.nan
 
         if self.focus == 2.0:
-            scores = np.zeros(g2.shape, dtype=np.float64)
-            exclusive = (focus_term == corpus_term) & (corpus_term > 0.0) & ~invalid
-            scores[exclusive] = g2[exclusive]
-            scores[invalid] = np.nan
-            return scores
+            return endpoint
 
-        exponent = (self.focus - 1.0) / (2.0 - self.focus)
-        scores = g2 * np.power(concentration, exponent)
+        scores = (
+            np.power(g2, 2.0 - self.focus)
+            * np.power(endpoint, self.focus - 1.0)
+        )
         scores[invalid] = np.nan
         return scores
 
@@ -1052,7 +1068,7 @@ def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
         LogRatio(corpus),
         SimpleMaths(corpus, 1.0),
         SimpleMaths(corpus),
-        Focalex(corpus, 0.25),
+        Focalex(corpus, 0.05),
         Focalex(corpus, 0.25),
         Focalex(corpus, 0.5),
         Focalex(corpus, 1.25),
