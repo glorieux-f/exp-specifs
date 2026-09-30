@@ -690,6 +690,57 @@ class G2Alpha(Scorer):
         return scores
 
 
+def _chi2_values(
+    corpus: TermDocCorpus,
+    doc_id: int,
+    term_ids: IntArray,
+    tf: IntArray,
+) -> tuple[FloatArray, FloatArray, NDArray[np.bool_]]:
+    """Return unsigned Pearson X², direction sign, and invalid mask."""
+    (
+        focus_term,
+        other_term,
+        focus_nonterm,
+        other_nonterm,
+        focus_tokens,
+        other_tokens,
+        invalid,
+    ) = _term_doc_table(corpus, doc_id, term_ids, tf)
+
+    if focus_tokens <= 0.0 or other_tokens <= 0.0:
+        zeros = np.zeros(focus_term.shape, dtype=np.float64)
+        return zeros, np.ones(focus_term.shape, dtype=np.float64), invalid
+
+    all_tokens = focus_tokens + other_tokens
+    all_term = focus_term + other_term
+    all_nonterm = focus_nonterm + other_nonterm
+
+    expected_focus_term = focus_tokens * all_term / all_tokens
+    expected_other_term = other_tokens * all_term / all_tokens
+    expected_focus_nonterm = focus_tokens * all_nonterm / all_tokens
+    expected_other_nonterm = other_tokens * all_nonterm / all_tokens
+
+    chi2 = np.zeros(focus_term.shape, dtype=np.float64)
+    for observed, expected in (
+        (focus_term, expected_focus_term),
+        (other_term, expected_other_term),
+        (focus_nonterm, expected_focus_nonterm),
+        (other_nonterm, expected_other_nonterm),
+    ):
+        valid = expected > 0.0
+        delta = observed[valid] - expected[valid]
+        chi2[valid] += delta * delta / expected[valid]
+
+    sign = np.where(
+        focus_term * other_tokens >= other_term * focus_tokens,
+        1.0,
+        -1.0,
+    )
+    chi2[invalid] = np.nan
+    sign[invalid] = np.nan
+    return chi2, sign, invalid
+
+
 class Chi2(Scorer):
     """Signed Pearson chi-square on a 2 x 2 term/document table.
 
@@ -699,7 +750,7 @@ class Chi2(Scorer):
     relative frequency is at least as high in the focus document as in the rest
     of the collection, otherwise negative.
 
-    Pearson, K. (1900). "On the criterion that a given system of deviations from the probable in the case of a correlated system of variables is such that it can be reasonably supposed to have arisen from random sampling." Philosophical Magazine 50(302): 157-175. doi:10.1080/14786440009463897.
+    Pearson, K. (1900). "On the criterion that a given system of deviations from the probable in the case of correlated system of variables is such that it can be reasonably supposed to have arisen from random sampling." Philosophical Magazine 50(302): 157-175. doi:10.1080/14786440009463897.
     """
 
     @property
@@ -714,47 +765,68 @@ class Chi2(Scorer):
         tf: IntArray,
     ) -> FloatArray:
         """Score terms with signed Pearson X²."""
-        (
-            focus_term,
-            other_term,
-            focus_nonterm,
-            other_nonterm,
-            focus_tokens,
-            other_tokens,
-            invalid,
-        ) = _term_doc_table(self.corpus, doc_id, term_ids, tf)
+        chi2, sign, _ = _chi2_values(self.corpus, doc_id, term_ids, tf)
+        return chi2 * sign
 
-        if focus_tokens <= 0.0 or other_tokens <= 0.0:
-            return np.zeros(focus_term.shape, dtype=np.float64)
 
-        all_tokens = focus_tokens + other_tokens
-        all_term = focus_term + other_term
-        all_nonterm = focus_nonterm + other_nonterm
+class Chi2Alpha(Scorer):
+    """Parametric positive Pearson chi-square specificity.
 
-        expected_focus_term = focus_tokens * all_term / all_tokens
-        expected_other_term = other_tokens * all_term / all_tokens
-        expected_focus_nonterm = focus_tokens * all_nonterm / all_tokens
-        expected_other_nonterm = other_tokens * all_nonterm / all_tokens
+    Chi2Alpha = tf * (X2 / tf)^alpha
 
-        chi2 = np.zeros(focus_term.shape, dtype=np.float64)
-        for observed, expected in (
-            (focus_term, expected_focus_term),
-            (other_term, expected_other_term),
-            (focus_nonterm, expected_focus_nonterm),
-            (other_nonterm, expected_other_nonterm),
-        ):
-            valid = expected > 0.0
-            delta = observed[valid] - expected[valid]
-            chi2[valid] += delta * delta / expected[valid]
+    X2 : unsigned Pearson chi-square magnitude on the 2 x 2 table
+    tf : observed frequency in the focus
+    alpha : strength of chi-square per observed occurrence
 
-        sign = np.where(
-            focus_term * other_tokens >= other_term * focus_tokens,
-            1.0,
-            -1.0,
-        )
-        chi2 *= sign
-        chi2[invalid] = np.nan
-        return chi2
+    alpha=0 gives raw tf exactly. For alpha>0, only positively associated
+    terms are retained. alpha=1 therefore gives the positive branch of ordinary
+    signed chi-square exactly. Increasing alpha increasingly favours terms with
+    high positive chi-square per observed occurrence.
+
+    Pearson, K. (1900). "On the criterion that a given system of deviations from the probable in the case of correlated system of variables is such that it can be reasonably supposed to have arisen from random sampling." Philosophical Magazine 50(302): 157-175. doi:10.1080/14786440009463897.
+    """
+
+    def __init__(self, corpus: TermDocCorpus, alpha: float = 1.0) -> None:
+        if not isfinite(alpha) or alpha < 0.0:
+            raise ValueError("alpha must be finite and >= 0")
+        super().__init__(corpus)
+        self.alpha = alpha
+
+    @property
+    def code(self) -> str:
+        """Return the filename code."""
+        return f"chi2a{self.alpha:g}"
+
+    @property
+    def name(self) -> str:
+        """Return the human-readable scorer name."""
+        return f"χ² alpha={self.alpha:g}"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Score terms with chi-square alpha at the configured alpha."""
+        observed = np.asarray(tf, dtype=np.float64)
+        if self.alpha == 0.0:
+            return observed.copy()
+
+        chi2, sign, invalid = _chi2_values(self.corpus, doc_id, term_ids, tf)
+        scores = np.zeros(chi2.shape, dtype=np.float64)
+        positive = (sign > 0.0) & ~invalid
+
+        if self.alpha == 1.0:
+            scores[positive] = chi2[positive]
+            scores[invalid] = np.nan
+            return scores
+
+        valid = positive & (observed > 0.0) & (chi2 > 0.0)
+        specificity = np.divide(chi2[valid], observed[valid])
+        scores[valid] = observed[valid] * np.power(specificity, self.alpha)
+        scores[invalid] = np.nan
+        return scores
 
 
 class Fisher(Scorer):
@@ -1160,6 +1232,7 @@ SCORER_TYPES: tuple[type[Scorer], ...] = (
     G2Pos,
     G2Neg,
     Chi2,
+    Chi2Alpha,
     Fisher,
     FisherAlpha,
     FisherPos,
@@ -1191,6 +1264,15 @@ def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
         BM25(corpus, 100.0, 1.0),
         G2(corpus),
         Chi2(corpus),
+        Chi2Alpha(corpus, 0.0),
+        Chi2Alpha(corpus, 0.25),
+        Chi2Alpha(corpus, 0.5),
+        Chi2Alpha(corpus, 0.75),
+        Chi2Alpha(corpus, 1.0),
+        Chi2Alpha(corpus, 2.0),
+        Chi2Alpha(corpus, 4.0),
+        Chi2Alpha(corpus, 8.0),
+        Chi2Alpha(corpus, 16.0),
         Fisher(corpus),
         FisherAlpha(corpus, 0.0),
         FisherAlpha(corpus, 0.25),
@@ -1224,10 +1306,10 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
     ``g2signed``, ``g2pos``, ``g2neg``, ``chi2``, ``fisher``, ``fisherpos``,
     ``fisherneg``, ``fisherabs``, ``extf``, ``logratio``, ``simplemaths``,
     ``tfidfaA`` (e.g. ``tfidfa0.5``), ``g2aA`` (e.g. ``g2a2``),
-    ``fisheraA`` (e.g. ``fishera2``),
+    ``chi2aA`` (e.g. ``chi2a2``), ``fisheraA`` (e.g. ``fishera2``),
     ``bm25kK1bB`` (e.g. ``bm25k100b1``), and ``simplemathskK`` with ``K`` per
-    million (e.g. ``simplemathsk1``). ``g2aA`` and ``fisheraA`` accept any
-    finite alpha >= 0.
+    million (e.g. ``simplemathsk1``). ``g2aA``, ``chi2aA`` and ``fisheraA``
+    accept any finite alpha >= 0.
     ``bm25`` keeps the Lucene defaults; ``simplemaths`` uses the document-scale
     default k.
     """
@@ -1242,6 +1324,7 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
         "g2pos": G2Pos,
         "g2neg": G2Neg,
         "chi2": Chi2,
+        "chi2a": lambda c: Chi2Alpha(c, 1.0),
         "fisher": Fisher,
         "fisherpos": FisherPos,
         "fisherneg": FisherNeg,
@@ -1272,6 +1355,14 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
         except ValueError as error:
             raise ValueError(f"Invalid G² alpha scorer code: {code!r}") from error
         return G2Alpha(corpus, alpha)
+
+    if code.startswith("chi2a"):
+        value = code[len("chi2a"):]
+        try:
+            alpha = float(value)
+        except ValueError as error:
+            raise ValueError(f"Invalid χ² alpha scorer code: {code!r}") from error
+        return Chi2Alpha(corpus, alpha)
 
     if code.startswith("fishera"):
         value = code[len("fishera"):]
@@ -1307,6 +1398,15 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
             "tfidfa4",
             "tfidfa8",
             "tfidfa16",
+            "chi2a0",
+            "chi2a0.25",
+            "chi2a0.5",
+            "chi2a0.75",
+            "chi2a1",
+            "chi2a2",
+            "chi2a4",
+            "chi2a8",
+            "chi2a16",
             "fishera0",
             "fishera0.25",
             "fishera0.5",

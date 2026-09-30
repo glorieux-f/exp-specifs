@@ -41,9 +41,10 @@ Each document is written as a two-line block followed by a blank line::
 
 Only ``[identifier]`` is machine-significant on the metadata line.
 
-Each author's lists are computed in memory for every scorer before any file is
-written, and each file is written to a temporary name then renamed, so an error
-never leaves empty or truncated keyword files.
+Existing output files are skipped before scorer computation, so interrupted runs can
+be resumed without recomputing finished author/scorer combinations. Missing lists are
+computed in memory and written to a temporary name then renamed, so an error never
+leaves empty or truncated keyword files.
 """
 
 from __future__ import annotations
@@ -134,8 +135,31 @@ def generate(
     output_dir.mkdir(parents=True, exist_ok=True)
 
     file_count = 0
+    skipped_count = 0
     for author_code, corpus in corpora.items():
-        scorers = selected_scorers(corpus, scorer_codes)
+        all_scorers = selected_scorers(corpus, scorer_codes)
+        scorers: list[Scorer] = []
+        output_paths: dict[str, Path] = {}
+        skipped_author = 0
+
+        for scorer in all_scorers:
+            path = keyword_output_path(
+                output_dir, author_code, scorer.code, vocab_mode
+            )
+            if path.exists():
+                skipped_count += 1
+                skipped_author += 1
+                continue
+            scorers.append(scorer)
+            output_paths[scorer.code] = path
+
+        if not scorers:
+            print(
+                f"{author_code}: {corpus.n_docs} documents, "
+                f"0 generated, {len(all_scorers)} existing files skipped"
+            )
+            continue
+
         blocks: dict[str, list[str]] = {scorer.code: [] for scorer in scorers}
 
         for doc_id_value in corpus.doc_ids:
@@ -169,15 +193,23 @@ def generate(
                 )
                 blocks[scorer.code].append(f"{header}\n{keywords}\n\n")
 
+        generated_author = 0
         for scorer in scorers:
-            name = (
-                f"{author_code}-{scorer.code}-keywords.txt"
-                if vocab_mode == "all"
-                else f"{author_code}-{scorer.code}-{vocab_mode}-keywords.txt"
-            )
-            write_atomic(output_dir / name, "".join(blocks[scorer.code]))
+            path = output_paths[scorer.code]
+            # Re-check immediately before writing in case another process created
+            # the file while this author's keywords were being computed.
+            if path.exists():
+                skipped_count += 1
+                skipped_author += 1
+                continue
+            write_atomic(path, "".join(blocks[scorer.code]))
             file_count += 1
-        print(f"{author_code}: {corpus.n_docs} documents, {len(scorers)} scorers")
+            generated_author += 1
+
+        print(
+            f"{author_code}: {corpus.n_docs} documents, "
+            f"{generated_author} generated, {skipped_author} existing files skipped"
+        )
 
     stopword_text = (
         str(effective_stopwords_path)
@@ -185,10 +217,25 @@ def generate(
         else "not used"
     )
     print(
-        f"Generated {file_count} files for {base_corpus.n_docs} documents "
-        f"in {output_dir}; top={top_n}; vocab={vocab_mode}; "
-        f"stopwords={stopword_text}"
+        f"Generated {file_count} files; skipped {skipped_count} existing files "
+        f"for {base_corpus.n_docs} documents in {output_dir}; "
+        f"top={top_n}; vocab={vocab_mode}; stopwords={stopword_text}"
     )
+
+
+def keyword_output_path(
+    output_dir: Path,
+    author_code: str,
+    scorer_code: str,
+    vocab_mode: str,
+) -> Path:
+    """Return the keyword output path for one author/scorer combination."""
+    name = (
+        f"{author_code}-{scorer_code}-keywords.txt"
+        if vocab_mode == "all"
+        else f"{author_code}-{scorer_code}-{vocab_mode}-keywords.txt"
+    )
+    return output_dir / name
 
 
 def keyword_mask(
