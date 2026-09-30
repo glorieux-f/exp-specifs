@@ -437,6 +437,12 @@ def _g2_values(
 
     degenerate = (all_term == 0.0) | (all_nonterm == 0.0)
     g2[degenerate] = 0.0
+
+    # G² is mathematically non-negative. Floating-point cancellation can
+    # nevertheless produce tiny negative values near independence; clamp those
+    # artifacts before fractional powers are applied by G2Alpha.
+    finite = ~invalid & np.isfinite(g2)
+    g2[finite] = np.maximum(g2[finite], 0.0)
     g2[invalid] = np.nan
 
     # Compare relative frequencies without division.
@@ -615,23 +621,24 @@ class ExclusiveTf(Scorer):
 
 
 
-class Focalex(Scorer):
-    """FocaLex lexical-focus score based on the G² log-likelihood ratio.
+class G2Alpha(Scorer):
+    """Parametric G² specificity.
 
-    focus = 0       : tf
-    focus = 1       : G2
-    focus > 1       : ???
+    G2alpha = tf * (G2 / tf)^alpha
+            = tf^(1-alpha) * G2^alpha
 
+    tf : observed frequency in the focus
+    G2 : unsigned likelihood-ratio statistic on the 2 x 2 table
+    alpha : strength of the G²-per-occurrence specificity factor
 
-    tf : term frequency in document
-    cf : collection frequency of term
-    q : share of collection occurrences found in the document
-    focus : lexical-focus parameter
+    alpha=0 gives raw tf exactly. alpha=1 gives ordinary G² exactly. Values
+    above 1 continue the same family by increasingly favouring terms with high
+    G² per observed occurrence. No document-frequency statistic is required; the
+    scorer depends only on the 2 x 2 contingency table.
 
-    The focus parameter is an experimental extension. It moves continuously
-    from raw term frequency at focus=0, through standard unsigned G² at focus=1,
-    toward increasing concentration of a term's occurrences in the focus
-    document.
+    G² is unsigned. Consequently, for alpha>1 a very strong under-representation
+    can also receive a large score. Use G2Pos when only positive association is
+    desired.
 
     Dunning, T. (1993). "Accurate Methods for the Statistics of Surprise and Coincidence." Computational Linguistics 19(1): 61-74.
     """
@@ -639,27 +646,22 @@ class Focalex(Scorer):
     def __init__(
         self,
         corpus: TermDocCorpus,
-        focus: float = 1.0,
+        alpha: float = 1.0,
     ) -> None:
-        if not isfinite(focus) or not 0.0 <= focus :
-            raise ValueError("focus must be finite and in [0, …]")
+        if not isfinite(alpha) or alpha < 0.0:
+            raise ValueError("alpha must be finite and >= 0")
         super().__init__(corpus)
-        self.focus = focus
+        self.alpha = alpha
 
     @property
     def code(self) -> str:
         """Return the filename code."""
-        if self.focus == 1.0:
-            return "focalex"
-        text = f"{self.focus:.2f}".rstrip("0")
-        if text.endswith("."):
-            text += "0"
-        return f"focalex{text}"
+        return f"g2a{self.alpha:g}"
 
     @property
     def name(self) -> str:
         """Return the human-readable scorer name."""
-        return f"FocaLex (focus={self.focus:g})"
+        return f"G² alpha={self.alpha:g}"
 
     def score_terms(
         self,
@@ -667,44 +669,23 @@ class Focalex(Scorer):
         term_ids: IntArray,
         tf: IntArray,
     ) -> FloatArray:
-        """Score terms with FocaLex at the configured focus."""
-        focus_term = np.asarray(tf, dtype=np.float64)
+        """Score terms with G² alpha at the configured alpha."""
+        observed = np.asarray(tf, dtype=np.float64)
 
-        if self.focus == 0.0:
-            return focus_term.copy()
+        if self.alpha == 0.0:
+            return observed.copy()
 
         g2, _, invalid = _g2_values(self.corpus, doc_id, term_ids, tf)
-        corpus_term = np.asarray(self.corpus.cf[term_ids], dtype=np.float64)
-
-        if self.focus < 1.0:
-            scores = np.zeros(g2.shape, dtype=np.float64)
-            valid = (g2 > 0.0) & ~invalid
-            scores[valid] = (
-                np.power(focus_term[valid], 1.0 - self.focus)
-                * np.power(g2[valid], self.focus)
-            )
-            scores[invalid] = np.nan
-            return scores
-
-        if self.focus == 1.0:
+        if self.alpha == 1.0:
             return g2
 
-        concentration = np.divide(
-            focus_term,
-            corpus_term,
-            out=np.zeros_like(focus_term),
-            where=corpus_term > 0.0,
+        scores = np.zeros(g2.shape, dtype=np.float64)
+        valid = (observed > 0.0) & (g2 > 0.0) & ~invalid
+        specificity = np.divide(
+            g2[valid],
+            observed[valid],
         )
-
-        if self.focus == 2.0:
-            scores = np.zeros(g2.shape, dtype=np.float64)
-            exclusive = (focus_term == corpus_term) & (corpus_term > 0.0) & ~invalid
-            scores[exclusive] = g2[exclusive]
-            scores[invalid] = np.nan
-            return scores
-
-        exponent = (self.focus - 1.0) / (2.0 - self.focus)
-        scores = g2 * np.power(concentration, exponent)
+        scores[valid] = observed[valid] * np.power(specificity, self.alpha)
         scores[invalid] = np.nan
         return scores
 
@@ -862,6 +843,107 @@ class Fisher(Scorer):
             scores[neg] = neg_scores
 
         scores = np.round(scores, 4)
+        scores[invalid] = np.nan
+        return scores
+
+
+class FisherAlpha(Scorer):
+    """Parametric positive Fisher specificity.
+
+    FisherAlpha = tf * (S / tf)^alpha
+
+    S = -log10(P(X >= tf))
+    X ~ Hypergeom(CL, cf, dl)
+
+    tf : observed frequency in the focus
+    cf : collection frequency of term
+    dl : focus size
+    CL : collection size
+    alpha : strength of Fisher surprisal per observed occurrence
+
+    alpha=0 gives raw tf exactly. alpha=1 gives the unrounded one-sided upper-tail
+    Fisher specificity S. Increasing alpha increasingly favours terms with high
+    Fisher surprisal per observed occurrence. Unlike the signed Fisher scorer, S
+    is defined from the upper tail for every observed term, so the family remains
+    non-negative and continuous in alpha. For over-represented terms, alpha=1 has
+    the same ranking as the positive branch of Fisher, apart from Fisher's
+    four-decimal rounding.
+
+    Tail probabilities that underflow to zero use the same magnitude cap as the
+    Fisher scorer.
+
+    Lafon, P. (1980). "Sur la variabilité de la fréquence des formes dans un corpus." Mots 1: 127-165. doi:10.3406/mots.1980.1008.
+    """
+
+    MAX_SCORE = Fisher.MAX_SCORE
+
+    def __init__(self, corpus: TermDocCorpus, alpha: float = 1.0) -> None:
+        if not isfinite(alpha) or alpha < 0.0:
+            raise ValueError("alpha must be finite and >= 0")
+        super().__init__(corpus)
+        self.alpha = alpha
+
+    @property
+    def code(self) -> str:
+        """Return the filename code."""
+        return f"fishera{self.alpha:g}"
+
+    @property
+    def name(self) -> str:
+        """Return the human-readable scorer name."""
+        return f"Fisher alpha={self.alpha:g}"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Score terms with Fisher alpha at the configured alpha."""
+        observed = np.asarray(tf, dtype=np.float64)
+        if self.alpha == 0.0:
+            return observed.copy()
+
+        observed_int = np.asarray(tf, dtype=np.int64)
+        corpus_term = np.asarray(self.corpus.cf[term_ids], dtype=np.int64)
+        part_size = int(self.corpus.doc_len[doc_id])
+        corpus_size = int(self.corpus.collection_len)
+
+        if part_size <= 0 or corpus_size <= 0 or part_size > corpus_size:
+            return np.zeros(observed.shape, dtype=np.float64)
+
+        invalid = (
+            (observed_int < 0)
+            | (corpus_term < observed_int)
+            | (corpus_term > corpus_size)
+            | (observed_int > part_size)
+        )
+
+        surprisal = np.zeros(observed.shape, dtype=np.float64)
+        valid = (observed_int > 0) & ~invalid
+        if np.any(valid):
+            probability = hypergeom.sf(
+                observed_int[valid] - 1,
+                corpus_size,
+                corpus_term[valid],
+                part_size,
+            )
+            finite = probability > 0.0
+            values = np.full(probability.shape, self.MAX_SCORE, dtype=np.float64)
+            values[finite] = -np.log10(probability[finite])
+            surprisal[valid] = values
+
+        if self.alpha == 1.0:
+            surprisal[invalid] = np.nan
+            return surprisal
+
+        scores = np.zeros(observed.shape, dtype=np.float64)
+        positive = valid & (surprisal > 0.0)
+        specificity = np.divide(
+            surprisal[positive],
+            observed[positive],
+        )
+        scores[positive] = observed[positive] * np.power(specificity, self.alpha)
         scores[invalid] = np.nan
         return scores
 
@@ -1079,13 +1161,14 @@ SCORER_TYPES: tuple[type[Scorer], ...] = (
     G2Neg,
     Chi2,
     Fisher,
+    FisherAlpha,
     FisherPos,
     FisherNeg,
     FisherAbs,
     ExclusiveTf,
     LogRatio,
     SimpleMaths,
-    Focalex,
+    G2Alpha,
 )
 
 
@@ -1109,19 +1192,28 @@ def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
         G2(corpus),
         Chi2(corpus),
         Fisher(corpus),
+        FisherAlpha(corpus, 0.0),
+        FisherAlpha(corpus, 0.25),
+        FisherAlpha(corpus, 0.5),
+        FisherAlpha(corpus, 0.75),
+        FisherAlpha(corpus, 1.0),
+        FisherAlpha(corpus, 2.0),
+        FisherAlpha(corpus, 4.0),
+        FisherAlpha(corpus, 8.0),
+        FisherAlpha(corpus, 16.0),
         ExclusiveTf(corpus),
         LogRatio(corpus),
         SimpleMaths(corpus, 1.0),
         SimpleMaths(corpus),
-        Focalex(corpus, 0.05),
-        Focalex(corpus, 0.25),
-        Focalex(corpus, 0.5),
-        Focalex(corpus, 0.75),
-        Focalex(corpus, 1),
-        Focalex(corpus, 2),
-        Focalex(corpus, 4),
-        Focalex(corpus, 8),
-        Focalex(corpus, 16),
+        G2Alpha(corpus, 0.0),
+        G2Alpha(corpus, 0.25),
+        G2Alpha(corpus, 0.5),
+        G2Alpha(corpus, 0.75),
+        G2Alpha(corpus, 1.0),
+        G2Alpha(corpus, 2.0),
+        G2Alpha(corpus, 4.0),
+        G2Alpha(corpus, 8.0),
+        G2Alpha(corpus, 16.0),
     )
 
 
@@ -1130,11 +1222,14 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
 
     Supported codes are ``tf``, ``tfidf``, ``tfidflog``, ``bm25``, ``g2``,
     ``g2signed``, ``g2pos``, ``g2neg``, ``chi2``, ``fisher``, ``fisherpos``,
-    ``fisherneg``, ``fisherabs``, ``extf``, ``extf2``, ``logratio``,
-    ``simplemaths``, ``tfidfaA`` (e.g. ``tfidfa0.5``), ``bm25kK1bB`` (e.g. ``bm25k100b1``), ``simplemathskK`` with ``K`` per
-    million (e.g. ``simplemathsk1``), and ``focalexX`` where ``X`` is a focus
-    value in ``[0, 2]``. ``focalex`` means ``focus=1``. ``bm25`` keeps the
-    Lucene defaults; ``simplemaths`` uses the document-scale default k.
+    ``fisherneg``, ``fisherabs``, ``extf``, ``logratio``, ``simplemaths``,
+    ``tfidfaA`` (e.g. ``tfidfa0.5``), ``g2aA`` (e.g. ``g2a2``),
+    ``fisheraA`` (e.g. ``fishera2``),
+    ``bm25kK1bB`` (e.g. ``bm25k100b1``), and ``simplemathskK`` with ``K`` per
+    million (e.g. ``simplemathsk1``). ``g2aA`` and ``fisheraA`` accept any
+    finite alpha >= 0.
+    ``bm25`` keeps the Lucene defaults; ``simplemaths`` uses the document-scale
+    default k.
     """
     code = code.strip().lower()
     factories = {
@@ -1151,10 +1246,11 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
         "fisherpos": FisherPos,
         "fisherneg": FisherNeg,
         "fisherabs": FisherAbs,
+        "fishera": lambda c: FisherAlpha(c, 1.0),
         "extf": ExclusiveTf,
         "logratio": LogRatio,
         "simplemaths": SimpleMaths,
-        "focalex": lambda c: Focalex(c, 1.0),
+        "g2a": lambda c: G2Alpha(c, 1.0),
     }
     factory = factories.get(code)
     if factory is not None:
@@ -1169,6 +1265,22 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
             raise ValueError(f"Invalid TF-IDF alpha scorer code: {code!r}") from error
         return TfIdfAlpha(corpus, alpha)
 
+    if code.startswith("g2a"):
+        value = code[len("g2a"):]
+        try:
+            alpha = float(value)
+        except ValueError as error:
+            raise ValueError(f"Invalid G² alpha scorer code: {code!r}") from error
+        return G2Alpha(corpus, alpha)
+
+    if code.startswith("fishera"):
+        value = code[len("fishera"):]
+        try:
+            alpha = float(value)
+        except ValueError as error:
+            raise ValueError(f"Invalid Fisher alpha scorer code: {code!r}") from error
+        return FisherAlpha(corpus, alpha)
+
     bm25_match = re.fullmatch(r"bm25k([0-9.]+)b([0-9.]+)", code)
     if bm25_match is not None:
         return BM25(corpus, float(bm25_match.group(1)), float(bm25_match.group(2)))
@@ -1180,14 +1292,6 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
         except ValueError as error:
             raise ValueError(f"Invalid Simple Maths scorer code: {code!r}") from error
         return SimpleMaths(corpus, k)
-
-    if code.startswith("focalex"):
-        value = code[len("focalex"):]
-        try:
-            focus = float(value)
-        except ValueError as error:
-            raise ValueError(f"Invalid FocaLex scorer code: {code!r}") from error
-        return Focalex(corpus, focus)
 
     known = ", ".join(
         (
@@ -1203,14 +1307,24 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
             "tfidfa4",
             "tfidfa8",
             "tfidfa16",
-            "focalex0.0",
-            "focalex0.25",
-            "focalex0.5",
-            "focalex0.75",
-            "focalex1.25",
-            "focalex1.5",
-            "focalex1.75",
-            "focalex2.0",
+            "fishera0",
+            "fishera0.25",
+            "fishera0.5",
+            "fishera0.75",
+            "fishera1",
+            "fishera2",
+            "fishera4",
+            "fishera8",
+            "fishera16",
+            "g2a0",
+            "g2a0.25",
+            "g2a0.5",
+            "g2a0.75",
+            "g2a1",
+            "g2a2",
+            "g2a4",
+            "g2a8",
+            "g2a16",
         )
     )
     raise ValueError(f"Unknown scorer {code!r}. Known scorer codes: {known}")
