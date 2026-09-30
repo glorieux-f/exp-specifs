@@ -14,7 +14,7 @@ Choix de présentation :
   fin ;
 - l'orientation des axes est déterministe (la coordonnée de plus grande
   valeur absolue est positive) et peut être inversée avec ``--flip`` ;
-- les valeurs propres négatives ne sont mentionnées que si elles existent ;
+- le nombre de valeurs propres négatives reste indiqué dans la sortie console ;
 - aucune couleur n'est imposée : le style courant de matplotlib s'applique ;
 - le texte du SVG reste du texte éditable.
 """
@@ -23,6 +23,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+from fnmatch import fnmatchcase
 from pathlib import Path
 
 import matplotlib
@@ -77,6 +78,8 @@ def main() -> None:
         raise ValueError("--dpi doit être > 0")
 
     labels, distance = read_distance_matrix(args.matrix)
+    if args.select:
+        labels, distance = select_distance_matrix(labels, distance, args.select)
     coordinates, eigenvalues = pcoa(distance)
 
     axis_x, axis_y = args.axes
@@ -191,16 +194,26 @@ def parse_args() -> argparse.Namespace:
         help="Titre de la figure ; par défaut, nom du fichier de matrice",
     )
     parser.add_argument(
+        "--select",
+        nargs="+",
+        metavar="MOTIF",
+        help=(
+            "Sélectionner les lignes/colonnes dont l'étiquette correspond à au moins "
+            "un motif shell (ex. --select tf g2 'bm25*'). La PCoA est recalculée "
+            "sur la sous-matrice sélectionnée."
+        ),
+    )
+    parser.add_argument(
         "--width",
         type=float,
-        default=12.0,
-        help="Largeur de la figure en pouces (défaut : 12)",
+        default=30.0,
+        help="Largeur de la figure en cm (défaut : 30)",
     )
     parser.add_argument(
         "--height",
         type=float,
-        default=7.0,
-        help="Hauteur de la figure en pouces (défaut : 7)",
+        default=18.0,
+        help="Hauteur de la figure en cm (défaut : 18)",
     )
     parser.add_argument(
         "--dpi",
@@ -209,6 +222,44 @@ def parse_args() -> argparse.Namespace:
         help="Résolution du PNG (défaut : 180)",
     )
     return parser.parse_args()
+
+
+
+def select_distance_matrix(
+    labels: list[str],
+    distance: np.ndarray,
+    patterns: list[str],
+) -> tuple[list[str], np.ndarray]:
+    """Sélectionner la même liste d'étiquettes sur les lignes et les colonnes.
+
+    Les motifs utilisent la syntaxe shell de fnmatch (``*``, ``?``, ``[...]``).
+    Plusieurs motifs sont combinés par OU et l'ordre original de la matrice est
+    conservé.
+    """
+    unmatched = [
+        pattern
+        for pattern in patterns
+        if not any(fnmatchcase(label, pattern) for label in labels)
+    ]
+    if unmatched:
+        raise ValueError(
+            "Motif(s) --select sans correspondance : " + ", ".join(unmatched)
+        )
+
+    indices = [
+        i
+        for i, label in enumerate(labels)
+        if any(fnmatchcase(label, pattern) for pattern in patterns)
+    ]
+    if len(indices) < 2:
+        raise ValueError(
+            f"--select doit conserver au moins deux objets ; {len(indices)} sélectionné(s)."
+        )
+
+    selected_labels = [labels[i] for i in indices]
+    selected_distance = distance[np.ix_(indices, indices)].copy()
+    return selected_labels, selected_distance
+
 
 
 def pcoa(distance: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
@@ -359,13 +410,14 @@ def plot_pcoa(
     x_pct = 100.0 * float(positive[axis_x - 1]) / positive_sum
     y_pct = 100.0 * float(positive[axis_y - 1]) / positive_sum
 
-    scale = max(1.0, float(np.max(np.abs(eigenvalues))))
-    negative = eigenvalues[eigenvalues < -TOLERANCE * scale]
-
     x = coordinates[:, axis_x - 1]
     y = coordinates[:, axis_y - 1]
 
-    fig, ax = plt.subplots(figsize=(width, height), dpi=dpi)
+    cm_per_inch = 2.54
+    fig, ax = plt.subplots(
+        figsize=(width / cm_per_inch, height / cm_per_inch),
+        dpi=dpi,
+    )
     marker_size = matplotlib.rcParams["lines.markersize"] ** 2
     ax.scatter(x, y, s=marker_size, zorder=3)
     ax.axhline(0.0, linewidth=0.7, zorder=1)
@@ -373,16 +425,7 @@ def plot_pcoa(
     ax.margins(0.08)
     ax.set_aspect("equal", adjustable="datalim")
 
-    x_label = f"Axe principal {axis_x} — {x_pct:.1f} % de l'inertie positive"
-    if len(negative) > 0:
-        negative_abs = float(np.abs(negative).sum())
-        total_abs = float(np.abs(eigenvalues).sum())
-        negative_pct = 100.0 * negative_abs / total_abs if total_abs > 0.0 else 0.0
-        x_label += (
-            f"\nValeurs propres négatives : {len(negative)} "
-            f"({negative_pct:.2f} % de l'inertie absolue)"
-        )
-    ax.set_xlabel(x_label)
+    ax.set_xlabel(f"Axe principal {axis_x} — {x_pct:.1f} % de l'inertie positive")
     ax.set_ylabel(f"Axe principal {axis_y} — {y_pct:.1f} % de l'inertie positive")
     ax.set_title(title)
     fig.tight_layout()

@@ -264,6 +264,72 @@ class LogTfIdf(Scorer):
         return scores
 
 
+class LogTfIdfAlpha(Scorer):
+    """Parametric logarithmic TF-IDF.
+
+    (1 + ln(tf)) * ln(N / df)^alpha
+
+    tf : term frequency in document
+    N : number of documents
+    df : document frequency of term
+    alpha : strength of the inverse-document-frequency factor
+
+    alpha=0 gives logarithmic TF, 1 + ln(tf), exactly. alpha=1 gives the
+    ordinary logarithmic TF-IDF scorer exactly. Increasing alpha increasingly
+    favours terms with low document frequency; as alpha grows, terms with
+    maximal IDF (df=1) dominate the ranking.
+
+    No document-vector normalization is applied because it would not change the
+    within-document term ranking.
+
+    Salton, G. & Buckley, C. (1988). "Term-weighting approaches in automatic text retrieval." Information Processing & Management 24(5): 513-523. doi:10.1016/0306-4573(88)90021-0.
+    """
+
+    def __init__(self, corpus: TermDocCorpus, alpha: float = 1.0) -> None:
+        if not isfinite(alpha) or alpha < 0.0:
+            raise ValueError("alpha must be finite and >= 0")
+        super().__init__(corpus)
+        self.alpha = alpha
+        self._idf = np.zeros(len(corpus.df), dtype=np.float64)
+        valid = corpus.df > 0
+        self._idf[valid] = np.log(corpus.n_docs / corpus.df[valid])
+
+    @property
+    def code(self) -> str:
+        """Return the filename code."""
+        return f"tfidfloga{self.alpha:g}"
+
+    @property
+    def name(self) -> str:
+        """Return the human-readable scorer name."""
+        return f"Log TF-IDF alpha={self.alpha:g}"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Score terms with parametric logarithmic TF-IDF."""
+        del doc_id
+        tf_float = np.asarray(tf, dtype=np.float64)
+        scores = np.zeros(tf_float.shape, dtype=np.float64)
+        positive = tf_float > 0
+        if not np.any(positive):
+            return scores
+
+        log_tf = 1.0 + np.log(tf_float[positive])
+        if self.alpha == 0.0:
+            scores[positive] = log_tf
+            return scores
+
+        scores[positive] = log_tf * np.power(
+            self._idf[term_ids[positive]],
+            self.alpha,
+        )
+        return scores
+
+
 class BM25(Scorer):
     """Lucene-style BM25 single-term contribution.
 
@@ -1226,6 +1292,7 @@ SCORER_TYPES: tuple[type[Scorer], ...] = (
     RawTfIdf,
     TfIdfAlpha,
     LogTfIdf,
+    LogTfIdfAlpha,
     BM25,
     G2,
     SignedG2,
@@ -1255,17 +1322,34 @@ def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
         TfIdfAlpha(corpus, 0.5),
         TfIdfAlpha(corpus, 0.75),
         TfIdfAlpha(corpus, 1.0),
+        TfIdfAlpha(corpus, 1.5),
         TfIdfAlpha(corpus, 2.0),
         TfIdfAlpha(corpus, 4.0),
         TfIdfAlpha(corpus, 8.0),
         TfIdfAlpha(corpus, 16.0),
         LogTfIdf(corpus),
+        LogTfIdfAlpha(corpus, 0.0),
+        LogTfIdfAlpha(corpus, 0.05),
+        LogTfIdfAlpha(corpus, 0.1),
+        LogTfIdfAlpha(corpus, 0.15),
+        LogTfIdfAlpha(corpus, 0.2),
+        LogTfIdfAlpha(corpus, 0.25),
+        LogTfIdfAlpha(corpus, 0.5),
+        LogTfIdfAlpha(corpus, 0.75),
+        LogTfIdfAlpha(corpus, 1.0),
+        LogTfIdfAlpha(corpus, 2.0),
+        LogTfIdfAlpha(corpus, 4.0),
+        LogTfIdfAlpha(corpus, 8.0),
+        LogTfIdfAlpha(corpus, 16.0),
         BM25(corpus),
         BM25(corpus, 100.0, 1.0),
         G2(corpus),
         Chi2(corpus),
         Chi2Alpha(corpus, 0.0),
+        Chi2Alpha(corpus, 0.05),
+        Chi2Alpha(corpus, 0.15),
         Chi2Alpha(corpus, 0.25),
+        Chi2Alpha(corpus, 0.35),
         Chi2Alpha(corpus, 0.5),
         Chi2Alpha(corpus, 0.75),
         Chi2Alpha(corpus, 1.0),
@@ -1279,6 +1363,7 @@ def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
         FisherAlpha(corpus, 0.5),
         FisherAlpha(corpus, 0.75),
         FisherAlpha(corpus, 1.0),
+        FisherAlpha(corpus, 1.5),
         FisherAlpha(corpus, 2.0),
         FisherAlpha(corpus, 4.0),
         FisherAlpha(corpus, 8.0),
@@ -1292,6 +1377,7 @@ def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
         G2Alpha(corpus, 0.5),
         G2Alpha(corpus, 0.75),
         G2Alpha(corpus, 1.0),
+        G2Alpha(corpus, 1.5),
         G2Alpha(corpus, 2.0),
         G2Alpha(corpus, 4.0),
         G2Alpha(corpus, 8.0),
@@ -1305,11 +1391,12 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
     Supported codes are ``tf``, ``tfidf``, ``tfidflog``, ``bm25``, ``g2``,
     ``g2signed``, ``g2pos``, ``g2neg``, ``chi2``, ``fisher``, ``fisherpos``,
     ``fisherneg``, ``fisherabs``, ``extf``, ``logratio``, ``simplemaths``,
-    ``tfidfaA`` (e.g. ``tfidfa0.5``), ``g2aA`` (e.g. ``g2a2``),
-    ``chi2aA`` (e.g. ``chi2a2``), ``fisheraA`` (e.g. ``fishera2``),
+    ``tfidfaA`` (e.g. ``tfidfa0.5``), ``tfidflogaA`` (e.g. ``tfidfloga2``),
+    ``g2aA`` (e.g. ``g2a2``), ``chi2aA`` (e.g. ``chi2a2``),
+    ``fisheraA`` (e.g. ``fishera2``),
     ``bm25kK1bB`` (e.g. ``bm25k100b1``), and ``simplemathskK`` with ``K`` per
-    million (e.g. ``simplemathsk1``). ``g2aA``, ``chi2aA`` and ``fisheraA``
-    accept any finite alpha >= 0.
+    million (e.g. ``simplemathsk1``). ``tfidfaA``, ``tfidflogaA``, ``g2aA``,
+    ``chi2aA`` and ``fisheraA`` accept any finite alpha >= 0.
     ``bm25`` keeps the Lucene defaults; ``simplemaths`` uses the document-scale
     default k.
     """
@@ -1318,6 +1405,7 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
         "tf": Tf,
         "tfidf": RawTfIdf,
         "tfidflog": LogTfIdf,
+        "tfidfloga": lambda c: LogTfIdfAlpha(c, 1.0),
         "bm25": BM25,
         "g2": G2,
         "g2signed": SignedG2,
@@ -1347,6 +1435,14 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
         except ValueError as error:
             raise ValueError(f"Invalid TF-IDF alpha scorer code: {code!r}") from error
         return TfIdfAlpha(corpus, alpha)
+
+    if code.startswith("tfidfloga"):
+        value = code[len("tfidfloga"):]
+        try:
+            alpha = float(value)
+        except ValueError as error:
+            raise ValueError(f"Invalid log TF-IDF alpha scorer code: {code!r}") from error
+        return LogTfIdfAlpha(corpus, alpha)
 
     if code.startswith("g2a"):
         value = code[len("g2a"):]
@@ -1398,6 +1494,15 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
             "tfidfa4",
             "tfidfa8",
             "tfidfa16",
+            "tfidfloga0",
+            "tfidfloga0.25",
+            "tfidfloga0.5",
+            "tfidfloga0.75",
+            "tfidfloga1",
+            "tfidfloga2",
+            "tfidfloga4",
+            "tfidfloga8",
+            "tfidfloga16",
             "chi2a0",
             "chi2a0.25",
             "chi2a0.5",
