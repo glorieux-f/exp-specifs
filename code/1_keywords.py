@@ -56,7 +56,7 @@ import unicodedata
 import numpy as np
 
 from corpus import Corpus, Document
-from scorers import Scorer, SimpleMaths, default_scorers
+from scorers import Scorer, SimpleMaths, default_scorers, make_scorer
 
 
 DEFAULT_STOPWORDS = Path(__file__).with_name("stopwords.txt")
@@ -337,7 +337,10 @@ def parse_args() -> argparse.Namespace:
         "--scorer",
         action="append",
         default=[],
-        help="Restrict to one default scorer code, e.g. g2signed; may be repeated",
+        help=(
+            "Use one scorer code; may be repeated. Parameterized codes are accepted, "
+            "including any focalexX with X in [0, 2], e.g. focalex1.85"
+        ),
     )
     parser.add_argument(
         "--top",
@@ -366,18 +369,19 @@ def rank_terms(
 
 
 def selected_scorers(corpus: Corpus, scorer_codes: list[str] | None) -> list[Scorer]:
-    """Return the default scorers, restricted to scorer_codes when given."""
-    scorers = list(default_scorers(corpus))
+    """Return default scorers, or instantiate the explicitly requested codes."""
     if not scorer_codes:
-        return scorers
-    by_code = {scorer.code: scorer for scorer in scorers}
-    unknown = [code for code in scorer_codes if code not in by_code]
-    if unknown:
-        raise ValueError(
-            f"Unknown scorer code(s) {', '.join(unknown)}; "
-            f"default scorers are: {', '.join(by_code)}"
-        )
-    return [by_code[code] for code in dict.fromkeys(scorer_codes)]
+        return list(default_scorers(corpus))
+
+    scorers: list[Scorer] = []
+    seen_codes: set[str] = set()
+    for code in scorer_codes:
+        scorer = make_scorer(corpus, code)
+        if scorer.code in seen_codes:
+            continue
+        seen_codes.add(scorer.code)
+        scorers.append(scorer)
+    return scorers
 
 
 def write_atomic(path: Path, text: str) -> None:

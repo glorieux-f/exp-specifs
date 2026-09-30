@@ -169,6 +169,59 @@ class RawTfIdf(Scorer):
         return tf_float * self._idf[term_ids]
 
 
+class TfIdfAlpha(Scorer):
+    """Parametric raw TF-IDF.
+
+    tf * ln(N / df)^alpha
+
+    tf : term frequency in document
+    N : number of documents
+    df : document frequency of term
+    alpha : strength of the inverse-document-frequency factor
+
+    alpha=0 gives raw tf exactly. alpha=1 gives raw TF-IDF exactly. Increasing
+    alpha increasingly favours terms with low document frequency; as alpha grows,
+    terms with maximal IDF (df=1) dominate the ranking.
+
+    No document-vector normalization is applied because it would not change the
+    within-document term ranking.
+
+    Salton, G. & Buckley, C. (1988). "Term-weighting approaches in automatic text retrieval." Information Processing & Management 24(5): 513-523. doi:10.1016/0306-4573(88)90021-0.
+    """
+
+    def __init__(self, corpus: TermDocCorpus, alpha: float = 1.0) -> None:
+        if not isfinite(alpha) or alpha < 0.0:
+            raise ValueError("alpha must be finite and >= 0")
+        super().__init__(corpus)
+        self.alpha = alpha
+        self._idf = np.zeros(len(corpus.df), dtype=np.float64)
+        valid = corpus.df > 0
+        self._idf[valid] = np.log(corpus.n_docs / corpus.df[valid])
+
+    @property
+    def code(self) -> str:
+        """Return the filename code."""
+        return f"tfidfa{self.alpha:g}"
+
+    @property
+    def name(self) -> str:
+        """Return the human-readable scorer name."""
+        return f"TF-IDF alpha={self.alpha:g}"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Score terms with parametric raw TF-IDF."""
+        del doc_id
+        tf_float = np.asarray(tf, dtype=np.float64)
+        if self.alpha == 0.0:
+            return tf_float.copy()
+        return tf_float * np.power(self._idf[term_ids], self.alpha)
+
+
 class LogTfIdf(Scorer):
     """Logarithmic TF-IDF.
 
@@ -561,16 +614,14 @@ class ExclusiveTf(Scorer):
         return scores
 
 
+
 class Focalex(Scorer):
     """FocaLex lexical-focus score based on the G² log-likelihood ratio.
 
     focus = 0       : tf
-    0 < focus < 1   : tf^(1-focus) * G2^focus
     focus = 1       : G2
-    1 < focus < 2   : G2 * q^((focus-1)/(2-focus))
-    focus = 2       : G2 if tf = cf, otherwise 0
+    focus > 1       : ???
 
-    q = tf / cf
 
     tf : term frequency in document
     cf : collection frequency of term
@@ -590,8 +641,8 @@ class Focalex(Scorer):
         corpus: TermDocCorpus,
         focus: float = 1.0,
     ) -> None:
-        if not isfinite(focus) or not 0.0 <= focus <= 2.0:
-            raise ValueError("focus must be finite and in [0, 2]")
+        if not isfinite(focus) or not 0.0 <= focus :
+            raise ValueError("focus must be finite and in [0, …]")
         super().__init__(corpus)
         self.focus = focus
 
@@ -1019,6 +1070,7 @@ class SimpleMaths(Scorer):
 SCORER_TYPES: tuple[type[Scorer], ...] = (
     Tf,
     RawTfIdf,
+    TfIdfAlpha,
     LogTfIdf,
     BM25,
     G2,
@@ -1042,6 +1094,15 @@ def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
     return (
         Tf(corpus),
         RawTfIdf(corpus),
+        TfIdfAlpha(corpus, 0.0),
+        TfIdfAlpha(corpus, 0.25),
+        TfIdfAlpha(corpus, 0.5),
+        TfIdfAlpha(corpus, 0.75),
+        TfIdfAlpha(corpus, 1.0),
+        TfIdfAlpha(corpus, 2.0),
+        TfIdfAlpha(corpus, 4.0),
+        TfIdfAlpha(corpus, 8.0),
+        TfIdfAlpha(corpus, 16.0),
         LogTfIdf(corpus),
         BM25(corpus),
         BM25(corpus, 100.0, 1.0),
@@ -1056,9 +1117,11 @@ def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
         Focalex(corpus, 0.25),
         Focalex(corpus, 0.5),
         Focalex(corpus, 0.75),
-        Focalex(corpus, 1.25),
-        Focalex(corpus, 1.5),
-        Focalex(corpus, 1.75),
+        Focalex(corpus, 1),
+        Focalex(corpus, 2),
+        Focalex(corpus, 4),
+        Focalex(corpus, 8),
+        Focalex(corpus, 16),
     )
 
 
@@ -1067,8 +1130,8 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
 
     Supported codes are ``tf``, ``tfidf``, ``tfidflog``, ``bm25``, ``g2``,
     ``g2signed``, ``g2pos``, ``g2neg``, ``chi2``, ``fisher``, ``fisherpos``,
-    ``fisherneg``, ``fisherabs``, ``extf``, ``logratio``, ``simplemaths``,
-    ``bm25kK1bB`` (e.g. ``bm25k100b1``), ``simplemathskK`` with ``K`` per
+    ``fisherneg``, ``fisherabs``, ``extf``, ``extf2``, ``logratio``,
+    ``simplemaths``, ``tfidfaA`` (e.g. ``tfidfa0.5``), ``bm25kK1bB`` (e.g. ``bm25k100b1``), ``simplemathskK`` with ``K`` per
     million (e.g. ``simplemathsk1``), and ``focalexX`` where ``X`` is a focus
     value in ``[0, 2]``. ``focalex`` means ``focus=1``. ``bm25`` keeps the
     Lucene defaults; ``simplemaths`` uses the document-scale default k.
@@ -1097,6 +1160,15 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
     if factory is not None:
         return factory(corpus)
 
+
+    if code.startswith("tfidfa"):
+        value = code[len("tfidfa"):]
+        try:
+            alpha = float(value)
+        except ValueError as error:
+            raise ValueError(f"Invalid TF-IDF alpha scorer code: {code!r}") from error
+        return TfIdfAlpha(corpus, alpha)
+
     bm25_match = re.fullmatch(r"bm25k([0-9.]+)b([0-9.]+)", code)
     if bm25_match is not None:
         return BM25(corpus, float(bm25_match.group(1)), float(bm25_match.group(2)))
@@ -1122,6 +1194,15 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
             *factories.keys(),
             "bm25k100b1",
             "simplemathsk1",
+            "tfidfa0",
+            "tfidfa0.25",
+            "tfidfa0.5",
+            "tfidfa0.75",
+            "tfidfa1",
+            "tfidfa2",
+            "tfidfa4",
+            "tfidfa8",
+            "tfidfa16",
             "focalex0.0",
             "focalex0.25",
             "focalex0.5",
