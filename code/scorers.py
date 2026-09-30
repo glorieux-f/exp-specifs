@@ -1083,6 +1083,228 @@ class MutualInformation(Scorer):
         return scores
 
 
+class LogDice(Scorer):
+    """Sketch Engine logDice association score.
+
+    Dice = 2 * tf / (cf + dl)
+    logDice = 14 + log2(Dice)
+
+    tf : term frequency in document
+    cf : collection frequency of term
+    dl : document length
+
+    The term is treated as one member of the association and the focus
+    document as the other: tf is their co-occurrence count, cf is the term
+    marginal, and dl is the document marginal. The additive constant 14 is the
+    conventional Sketch Engine scale shift and does not affect ranking.
+
+    Rychlý, P. (2008). "A Lexicographer-Friendly Association Score." RASLAN 2008: 6-9.
+    """
+
+    @property
+    def code(self) -> str:
+        return "logdice"
+
+    @property
+    def name(self) -> str:
+        return "logDice"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        observed = np.asarray(tf, dtype=np.float64)
+        corpus_term = np.asarray(self.corpus.cf[term_ids], dtype=np.float64)
+        part_size = float(self.corpus.doc_len[doc_id])
+
+        scores = np.zeros(observed.shape, dtype=np.float64)
+        invalid = (
+            (observed < 0.0)
+            | (corpus_term < observed)
+            | (part_size < 0.0)
+            | (observed > part_size)
+        )
+        denominator = corpus_term + part_size
+        valid = (observed > 0.0) & (denominator > 0.0) & ~invalid
+        scores[valid] = 14.0 + np.log2(
+            2.0 * observed[valid] / denominator[valid]
+        )
+        scores[invalid] = np.nan
+        return scores
+
+
+class MutualInformation3(Scorer):
+    """Sketch Engine MI3 association score.
+
+    MI3 = log2(tf^3 * CL / (cf * dl))
+
+    tf : term frequency in document
+    cf : collection frequency of term
+    dl : document length
+    CL : collection length
+
+    Relative to MI, MI3 adds 2 * log2(tf), reducing MI's preference for
+    low-frequency events.
+
+    Oakes, M. P. (1998). Statistics for Corpus Linguistics. Edinburgh University Press.
+    """
+
+    @property
+    def code(self) -> str:
+        return "mi3"
+
+    @property
+    def name(self) -> str:
+        return "MI³"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        observed = np.asarray(tf, dtype=np.float64)
+        corpus_term = np.asarray(self.corpus.cf[term_ids], dtype=np.float64)
+        part_size = float(self.corpus.doc_len[doc_id])
+        corpus_size = float(self.corpus.collection_len)
+
+        scores = np.zeros(observed.shape, dtype=np.float64)
+        invalid = (
+            (observed < 0.0)
+            | (corpus_term < observed)
+            | (part_size < 0.0)
+            | (corpus_size <= 0.0)
+            | (part_size > corpus_size)
+            | (corpus_term > corpus_size)
+        )
+        if corpus_size <= 0.0 or part_size <= 0.0:
+            scores[invalid] = np.nan
+            return scores
+
+        valid = (observed > 0.0) & (corpus_term > 0.0) & ~invalid
+        scores[valid] = (
+            np.log2(
+                observed[valid] * corpus_size
+                / (corpus_term[valid] * part_size)
+            )
+            + 2.0 * np.log2(observed[valid])
+        )
+        scores[invalid] = np.nan
+        return scores
+
+
+class MutualInformationLogFrequency(Scorer):
+    """Sketch Engine MI.log-f association score (formerly salience).
+
+    MI.log-f = MI * ln(tf + 1)
+    MI = log2(tf * CL / (cf * dl))
+
+    tf : term frequency in document
+    cf : collection frequency of term
+    dl : document length
+    CL : collection length
+
+    The MI factor uses base 2 and the frequency multiplier the natural
+    logarithm, following the Sketch Engine definition.
+
+    Kilgarriff, A., Rychlý, P., Smrž, P. & Tugwell, D. (2004). "The Sketch Engine." Proceedings of EURALEX 2004: 105-116.
+    """
+
+    @property
+    def code(self) -> str:
+        return "milogf"
+
+    @property
+    def name(self) -> str:
+        return "MI.log-f"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        observed = np.asarray(tf, dtype=np.float64)
+        corpus_term = np.asarray(self.corpus.cf[term_ids], dtype=np.float64)
+        part_size = float(self.corpus.doc_len[doc_id])
+        corpus_size = float(self.corpus.collection_len)
+
+        scores = np.zeros(observed.shape, dtype=np.float64)
+        invalid = (
+            (observed < 0.0)
+            | (corpus_term < observed)
+            | (part_size < 0.0)
+            | (corpus_size <= 0.0)
+            | (part_size > corpus_size)
+            | (corpus_term > corpus_size)
+        )
+        if corpus_size <= 0.0 or part_size <= 0.0:
+            scores[invalid] = np.nan
+            return scores
+
+        valid = (observed > 0.0) & (corpus_term > 0.0) & ~invalid
+        mi = np.log2(
+            observed[valid] * corpus_size
+            / (corpus_term[valid] * part_size)
+        )
+        scores[valid] = mi * np.log1p(observed[valid])
+        scores[invalid] = np.nan
+        return scores
+
+
+class MinimumSensitivity(Scorer):
+    """Sketch Engine minimum-sensitivity association score.
+
+    minimum sensitivity = min(tf / cf, tf / dl)
+
+    tf : term frequency in document
+    cf : collection frequency of term
+    dl : document length
+
+    Pedersen, T. (1998). "Dependent Bigram Identification." Proceedings of AAAI-98: 428-433.
+    """
+
+    @property
+    def code(self) -> str:
+        return "minsens"
+
+    @property
+    def name(self) -> str:
+        return "Minimum sensitivity"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        observed = np.asarray(tf, dtype=np.float64)
+        corpus_term = np.asarray(self.corpus.cf[term_ids], dtype=np.float64)
+        part_size = float(self.corpus.doc_len[doc_id])
+
+        scores = np.zeros(observed.shape, dtype=np.float64)
+        invalid = (
+            (observed < 0.0)
+            | (corpus_term < observed)
+            | (part_size < 0.0)
+            | (observed > part_size)
+        )
+        valid = (
+            (observed > 0.0)
+            & (corpus_term > 0.0)
+            & (part_size > 0.0)
+            & ~invalid
+        )
+        scores[valid] = np.minimum(
+            observed[valid] / corpus_term[valid],
+            observed[valid] / part_size,
+        )
+        scores[invalid] = np.nan
+        return scores
+
+
 class Fisher(Scorer):
     """Fisher lexical specificity, as used in TXM/textometry.
 
@@ -1491,6 +1713,10 @@ SCORER_TYPES: tuple[type[Scorer], ...] = (
     ZScore,
     TScore,
     MutualInformation,
+    LogDice,
+    MutualInformation3,
+    MutualInformationLogFrequency,
+    MinimumSensitivity,
     Fisher,
     FisherAlpha,
     FisherPos,
@@ -1506,8 +1732,8 @@ SCORER_TYPES: tuple[type[Scorer], ...] = (
 def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
     """Return the scorer configurations used by the current keyword experiment."""
     return (
-        BM25(corpus, 100.0, 1.0),
         BM25(corpus),
+        BM25(corpus, 100.0, 1.0),
         Chi2(corpus),
         Chi2Alpha(corpus, 00.0),
         Chi2Alpha(corpus, 00.05),
@@ -1560,7 +1786,10 @@ def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
         LogTfIdfAlpha(corpus, 08.0),
         LogTfIdfAlpha(corpus, 16.0),
         MutualInformation(corpus),
-        MutualInformation(corpus),
+        LogDice(corpus),
+        MutualInformation3(corpus),
+        MutualInformationLogFrequency(corpus),
+        MinimumSensitivity(corpus),
         RawTfIdf(corpus),
         SimpleMaths(corpus, 1.0),
         SimpleMaths(corpus),
@@ -1576,8 +1805,6 @@ def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
         TfIdfAlpha(corpus, 08.0),
         TfIdfAlpha(corpus, 16.0),
         TScore(corpus),
-        TScore(corpus),
-        ZScore(corpus),
         ZScore(corpus),
     )
 
@@ -1586,7 +1813,7 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
     """Create a scorer from its stable experiment code.
 
     Supported codes are ``tf``, ``tfidf``, ``tfidflog``, ``bm25``, ``g2``,
-    ``g2signed``, ``g2pos``, ``g2neg``, ``chi2``, ``zscore``, ``tscore``, ``mi``, ``fisher``, ``fisherpos``,
+    ``g2signed``, ``g2pos``, ``g2neg``, ``chi2``, ``zscore``, ``tscore``, ``mi``, ``logdice``, ``mi3``, ``milogf``, ``minsens``, ``fisher``, ``fisherpos``,
     ``fisherneg``, ``fisherabs``, ``extf``, ``logratio``, ``simplemaths``,
     ``tfidfaA`` (e.g. ``tfidfa0.5``), ``tfidflogaA`` (e.g. ``tfidfloga0.5``), ``g2aA`` (e.g. ``g2a2``),
     ``chi2aA`` (e.g. ``chi2a2``), ``fisheraA`` (e.g. ``fishera2``),
@@ -1611,6 +1838,10 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
         "zscore": ZScore,
         "tscore": TScore,
         "mi": MutualInformation,
+        "logdice": LogDice,
+        "mi3": MutualInformation3,
+        "milogf": MutualInformationLogFrequency,
+        "minsens": MinimumSensitivity,
         "chi2a": lambda c: Chi2Alpha(c, 1.0),
         "fisher": Fisher,
         "fisherpos": FisherPos,
