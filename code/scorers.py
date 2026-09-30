@@ -274,10 +274,9 @@ class LogTfIdfAlpha(Scorer):
     df : document frequency of term
     alpha : strength of the inverse-document-frequency factor
 
-    alpha=0 gives logarithmic TF, 1 + ln(tf), exactly. alpha=1 gives the
-    ordinary logarithmic TF-IDF scorer exactly. Increasing alpha increasingly
-    favours terms with low document frequency; as alpha grows, terms with
-    maximal IDF (df=1) dominate the ranking.
+    alpha=0 gives logarithmic tf, 1 + ln(tf). alpha=1 gives the ordinary
+    logarithmic TF-IDF scorer exactly. Increasing alpha increasingly favours
+    terms with low document frequency.
 
     No document-vector normalization is applied because it would not change the
     within-document term ranking.
@@ -312,21 +311,18 @@ class LogTfIdfAlpha(Scorer):
     ) -> FloatArray:
         """Score terms with parametric logarithmic TF-IDF."""
         del doc_id
-        tf_float = np.asarray(tf, dtype=np.float64)
-        scores = np.zeros(tf_float.shape, dtype=np.float64)
-        positive = tf_float > 0
+        observed = np.asarray(tf, dtype=np.float64)
+        scores = np.zeros(observed.shape, dtype=np.float64)
+        positive = observed > 0.0
         if not np.any(positive):
             return scores
-
-        log_tf = 1.0 + np.log(tf_float[positive])
+        log_tf = 1.0 + np.log(observed[positive])
         if self.alpha == 0.0:
             scores[positive] = log_tf
-            return scores
-
-        scores[positive] = log_tf * np.power(
-            self._idf[term_ids[positive]],
-            self.alpha,
-        )
+        else:
+            scores[positive] = log_tf * np.power(
+                self._idf[term_ids[positive]], self.alpha
+            )
         return scores
 
 
@@ -895,6 +891,198 @@ class Chi2Alpha(Scorer):
         return scores
 
 
+class ZScore(Scorer):
+    """Hypergeometric z-score for a term in the focus document.
+
+    expected = cf * dl / CL
+    variance = dl * (cf / CL) * (1 - cf / CL) * (CL - dl) / (CL - 1)
+    z = (tf - expected) / sqrt(variance)
+
+    tf : term frequency in document
+    cf : collection frequency of term
+    dl : document length
+    CL : collection length
+
+    Positive values indicate over-representation and negative values indicate
+    under-representation. With fixed 2 x 2 margins, z^2 differs from Pearson X^2
+    only by the finite-population factor (CL - 1) / CL.
+    """
+
+    @property
+    def code(self) -> str:
+        """Return the filename code."""
+        return "zscore"
+
+    @property
+    def name(self) -> str:
+        """Return the human-readable scorer name."""
+        return "z-score"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Score terms with the hypergeometric z-score."""
+        observed = np.asarray(tf, dtype=np.float64)
+        corpus_term = np.asarray(self.corpus.cf[term_ids], dtype=np.float64)
+        part_size = float(self.corpus.doc_len[doc_id])
+        corpus_size = float(self.corpus.collection_len)
+
+        scores = np.zeros(observed.shape, dtype=np.float64)
+        invalid = (
+            (observed < 0.0)
+            | (corpus_term < observed)
+            | (part_size < 0.0)
+            | (corpus_size <= 0.0)
+            | (part_size > corpus_size)
+            | (corpus_term > corpus_size)
+        )
+        if corpus_size <= 1.0 or part_size <= 0.0:
+            scores[invalid] = np.nan
+            return scores
+
+        probability = corpus_term / corpus_size
+        expected = corpus_term * part_size / corpus_size
+        variance = (
+            part_size
+            * probability
+            * (1.0 - probability)
+            * (corpus_size - part_size)
+            / (corpus_size - 1.0)
+        )
+        valid = (variance > 0.0) & ~invalid
+        scores[valid] = (observed[valid] - expected[valid]) / np.sqrt(variance[valid])
+        scores[invalid] = np.nan
+        return scores
+
+
+class TScore(Scorer):
+    """Corpus-linguistic t-score association measure.
+
+    expected = cf * dl / CL
+    t = (tf - expected) / sqrt(tf)
+
+    tf : term frequency in document
+    cf : collection frequency of term
+    dl : document length
+    CL : collection length
+
+    This is the conventional collocation t-score heuristic, not Student's
+    t-test. Positive values indicate over-representation. Its sqrt(tf)
+    denominator makes it retain more preference for repeated evidence than MI.
+    """
+
+    @property
+    def code(self) -> str:
+        """Return the filename code."""
+        return "tscore"
+
+    @property
+    def name(self) -> str:
+        """Return the human-readable scorer name."""
+        return "t-score"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Score terms with corpus-linguistic t-score."""
+        observed = np.asarray(tf, dtype=np.float64)
+        corpus_term = np.asarray(self.corpus.cf[term_ids], dtype=np.float64)
+        part_size = float(self.corpus.doc_len[doc_id])
+        corpus_size = float(self.corpus.collection_len)
+
+        scores = np.zeros(observed.shape, dtype=np.float64)
+        invalid = (
+            (observed < 0.0)
+            | (corpus_term < observed)
+            | (part_size < 0.0)
+            | (corpus_size <= 0.0)
+            | (part_size > corpus_size)
+            | (corpus_term > corpus_size)
+        )
+        if corpus_size <= 0.0 or part_size <= 0.0:
+            scores[invalid] = np.nan
+            return scores
+
+        expected = corpus_term * part_size / corpus_size
+        valid = (observed > 0.0) & ~invalid
+        scores[valid] = (observed[valid] - expected[valid]) / np.sqrt(observed[valid])
+        scores[invalid] = np.nan
+        return scores
+
+
+class MutualInformation(Scorer):
+    """Corpus-linguistic Mutual Information (MI) score.
+
+    MI = log2((tf / dl) / (cf / CL))
+       = log2(tf * CL / (cf * dl))
+
+    tf : term frequency in document
+    cf : collection frequency of term
+    dl : document length
+    CL : collection length
+
+    This measure is conventionally called MI in corpus-linguistic collocation
+    interfaces, including Frantext. In information theory the cell-level score
+    is Pointwise Mutual Information (PMI); full mutual information is the
+    probability-weighted sum over all cells of the joint distribution.
+
+    Positive values indicate a term rate above its collection expectation;
+    0 indicates independence at that cell; negative values indicate a lower
+    rate. Base 2 follows the conventional MI/PMI presentation and does not
+    affect ranking.
+
+    Church, K. W. & Hanks, P. (1990). "Word Association Norms, Mutual Information, and Lexicography." Computational Linguistics 16(1): 22-29.
+    """
+
+    @property
+    def code(self) -> str:
+        """Return the filename code."""
+        return "mi"
+
+    @property
+    def name(self) -> str:
+        """Return the human-readable scorer name."""
+        return "Mutual Information (MI)"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Score terms with corpus-linguistic MI (PMI)."""
+        observed = np.asarray(tf, dtype=np.float64)
+        corpus_term = np.asarray(self.corpus.cf[term_ids], dtype=np.float64)
+        part_size = float(self.corpus.doc_len[doc_id])
+        corpus_size = float(self.corpus.collection_len)
+
+        scores = np.zeros(observed.shape, dtype=np.float64)
+        invalid = (
+            (observed < 0.0)
+            | (corpus_term < observed)
+            | (part_size < 0.0)
+            | (corpus_size <= 0.0)
+            | (part_size > corpus_size)
+            | (corpus_term > corpus_size)
+        )
+        if corpus_size <= 0.0 or part_size <= 0.0:
+            scores[invalid] = np.nan
+            return scores
+
+        valid = (observed > 0.0) & (corpus_term > 0.0) & ~invalid
+        scores[valid] = np.log2(
+            observed[valid] * corpus_size / (corpus_term[valid] * part_size)
+        )
+        scores[invalid] = np.nan
+        return scores
+
+
 class Fisher(Scorer):
     """Fisher lexical specificity, as used in TXM/textometry.
 
@@ -1300,6 +1488,9 @@ SCORER_TYPES: tuple[type[Scorer], ...] = (
     G2Neg,
     Chi2,
     Chi2Alpha,
+    ZScore,
+    TScore,
+    MutualInformation,
     Fisher,
     FisherAlpha,
     FisherPos,
@@ -1315,73 +1506,79 @@ SCORER_TYPES: tuple[type[Scorer], ...] = (
 def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
     """Return the scorer configurations used by the current keyword experiment."""
     return (
-        Tf(corpus),
-        RawTfIdf(corpus),
-        TfIdfAlpha(corpus, 0.0),
-        TfIdfAlpha(corpus, 0.25),
-        TfIdfAlpha(corpus, 0.5),
-        TfIdfAlpha(corpus, 0.75),
-        TfIdfAlpha(corpus, 1.0),
-        TfIdfAlpha(corpus, 1.5),
-        TfIdfAlpha(corpus, 2.0),
-        TfIdfAlpha(corpus, 4.0),
-        TfIdfAlpha(corpus, 8.0),
-        TfIdfAlpha(corpus, 16.0),
-        LogTfIdf(corpus),
-        LogTfIdfAlpha(corpus, 0.0),
-        LogTfIdfAlpha(corpus, 0.05),
-        LogTfIdfAlpha(corpus, 0.1),
-        LogTfIdfAlpha(corpus, 0.15),
-        LogTfIdfAlpha(corpus, 0.2),
-        LogTfIdfAlpha(corpus, 0.25),
-        LogTfIdfAlpha(corpus, 0.5),
-        LogTfIdfAlpha(corpus, 0.75),
-        LogTfIdfAlpha(corpus, 1.0),
-        LogTfIdfAlpha(corpus, 2.0),
-        LogTfIdfAlpha(corpus, 4.0),
-        LogTfIdfAlpha(corpus, 8.0),
-        LogTfIdfAlpha(corpus, 16.0),
-        BM25(corpus),
         BM25(corpus, 100.0, 1.0),
-        G2(corpus),
+        BM25(corpus),
         Chi2(corpus),
-        Chi2Alpha(corpus, 0.0),
-        Chi2Alpha(corpus, 0.05),
-        Chi2Alpha(corpus, 0.15),
-        Chi2Alpha(corpus, 0.25),
-        Chi2Alpha(corpus, 0.35),
-        Chi2Alpha(corpus, 0.5),
-        Chi2Alpha(corpus, 0.75),
-        Chi2Alpha(corpus, 1.0),
-        Chi2Alpha(corpus, 2.0),
-        Chi2Alpha(corpus, 4.0),
-        Chi2Alpha(corpus, 8.0),
+        Chi2Alpha(corpus, 00.0),
+        Chi2Alpha(corpus, 00.05),
+        Chi2Alpha(corpus, 00.15),
+        Chi2Alpha(corpus, 00.25),
+        Chi2Alpha(corpus, 00.35),
+        Chi2Alpha(corpus, 00.5),
+        Chi2Alpha(corpus, 00.75),
+        Chi2Alpha(corpus, 01.0),
+        Chi2Alpha(corpus, 02.0),
+        Chi2Alpha(corpus, 04.0),
+        Chi2Alpha(corpus, 08.0),
         Chi2Alpha(corpus, 16.0),
-        Fisher(corpus),
-        FisherAlpha(corpus, 0.0),
-        FisherAlpha(corpus, 0.25),
-        FisherAlpha(corpus, 0.5),
-        FisherAlpha(corpus, 0.75),
-        FisherAlpha(corpus, 1.0),
-        FisherAlpha(corpus, 1.5),
-        FisherAlpha(corpus, 2.0),
-        FisherAlpha(corpus, 4.0),
-        FisherAlpha(corpus, 8.0),
-        FisherAlpha(corpus, 16.0),
         ExclusiveTf(corpus),
+        Fisher(corpus),
+        FisherAlpha(corpus, 00.0),
+        FisherAlpha(corpus, 00.25),
+        FisherAlpha(corpus, 00.5),
+        FisherAlpha(corpus, 00.75),
+        FisherAlpha(corpus, 01.0),
+        FisherAlpha(corpus, 01.5),
+        FisherAlpha(corpus, 02.0),
+        FisherAlpha(corpus, 04.0),
+        FisherAlpha(corpus, 08.0),
+        FisherAlpha(corpus, 16.0),
+        G2(corpus),
+        G2Alpha(corpus, 00.0),
+        G2Alpha(corpus, 00.25),
+        G2Alpha(corpus, 00.5),
+        G2Alpha(corpus, 00.75),
+        G2Alpha(corpus, 01.0),
+        G2Alpha(corpus, 01.5),
+        G2Alpha(corpus, 02.0),
+        G2Alpha(corpus, 04.0),
+        G2Alpha(corpus, 08.0),
+        G2Alpha(corpus, 16.0),
         LogRatio(corpus),
+        LogTfIdf(corpus),
+        LogTfIdfAlpha(corpus, 00.0),
+        LogTfIdfAlpha(corpus, 00.05),
+        LogTfIdfAlpha(corpus, 00.1),
+        LogTfIdfAlpha(corpus, 00.15),
+        LogTfIdfAlpha(corpus, 00.2),
+        LogTfIdfAlpha(corpus, 00.25),
+        LogTfIdfAlpha(corpus, 00.5),
+        LogTfIdfAlpha(corpus, 00.75),
+        LogTfIdfAlpha(corpus, 01.0),
+        LogTfIdfAlpha(corpus, 02.0),
+        LogTfIdfAlpha(corpus, 04.0),
+        LogTfIdfAlpha(corpus, 08.0),
+        LogTfIdfAlpha(corpus, 16.0),
+        MutualInformation(corpus),
+        MutualInformation(corpus),
+        RawTfIdf(corpus),
         SimpleMaths(corpus, 1.0),
         SimpleMaths(corpus),
-        G2Alpha(corpus, 0.0),
-        G2Alpha(corpus, 0.25),
-        G2Alpha(corpus, 0.5),
-        G2Alpha(corpus, 0.75),
-        G2Alpha(corpus, 1.0),
-        G2Alpha(corpus, 1.5),
-        G2Alpha(corpus, 2.0),
-        G2Alpha(corpus, 4.0),
-        G2Alpha(corpus, 8.0),
-        G2Alpha(corpus, 16.0),
+        Tf(corpus),
+        TfIdfAlpha(corpus, 00.0),
+        TfIdfAlpha(corpus, 00.25),
+        TfIdfAlpha(corpus, 00.5),
+        TfIdfAlpha(corpus, 00.75),
+        TfIdfAlpha(corpus, 01.0),
+        TfIdfAlpha(corpus, 01.5),
+        TfIdfAlpha(corpus, 02.0),
+        TfIdfAlpha(corpus, 04.0),
+        TfIdfAlpha(corpus, 08.0),
+        TfIdfAlpha(corpus, 16.0),
+        TScore(corpus),
+        TScore(corpus),
+        ZScore(corpus),
+        ZScore(corpus),
     )
 
 
@@ -1389,14 +1586,13 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
     """Create a scorer from its stable experiment code.
 
     Supported codes are ``tf``, ``tfidf``, ``tfidflog``, ``bm25``, ``g2``,
-    ``g2signed``, ``g2pos``, ``g2neg``, ``chi2``, ``fisher``, ``fisherpos``,
+    ``g2signed``, ``g2pos``, ``g2neg``, ``chi2``, ``zscore``, ``tscore``, ``mi``, ``fisher``, ``fisherpos``,
     ``fisherneg``, ``fisherabs``, ``extf``, ``logratio``, ``simplemaths``,
-    ``tfidfaA`` (e.g. ``tfidfa0.5``), ``tfidflogaA`` (e.g. ``tfidfloga2``),
-    ``g2aA`` (e.g. ``g2a2``), ``chi2aA`` (e.g. ``chi2a2``),
-    ``fisheraA`` (e.g. ``fishera2``),
+    ``tfidfaA`` (e.g. ``tfidfa0.5``), ``tfidflogaA`` (e.g. ``tfidfloga0.5``), ``g2aA`` (e.g. ``g2a2``),
+    ``chi2aA`` (e.g. ``chi2a2``), ``fisheraA`` (e.g. ``fishera2``),
     ``bm25kK1bB`` (e.g. ``bm25k100b1``), and ``simplemathskK`` with ``K`` per
-    million (e.g. ``simplemathsk1``). ``tfidfaA``, ``tfidflogaA``, ``g2aA``,
-    ``chi2aA`` and ``fisheraA`` accept any finite alpha >= 0.
+    million (e.g. ``simplemathsk1``). ``tfidfaA``, ``tfidflogaA``, ``g2aA``, ``chi2aA`` and ``fisheraA``
+    accept any finite alpha >= 0.
     ``bm25`` keeps the Lucene defaults; ``simplemaths`` uses the document-scale
     default k.
     """
@@ -1412,6 +1608,9 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
         "g2pos": G2Pos,
         "g2neg": G2Neg,
         "chi2": Chi2,
+        "zscore": ZScore,
+        "tscore": TScore,
+        "mi": MutualInformation,
         "chi2a": lambda c: Chi2Alpha(c, 1.0),
         "fisher": Fisher,
         "fisherpos": FisherPos,
@@ -1428,14 +1627,6 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
         return factory(corpus)
 
 
-    if code.startswith("tfidfa"):
-        value = code[len("tfidfa"):]
-        try:
-            alpha = float(value)
-        except ValueError as error:
-            raise ValueError(f"Invalid TF-IDF alpha scorer code: {code!r}") from error
-        return TfIdfAlpha(corpus, alpha)
-
     if code.startswith("tfidfloga"):
         value = code[len("tfidfloga"):]
         try:
@@ -1443,6 +1634,15 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
         except ValueError as error:
             raise ValueError(f"Invalid log TF-IDF alpha scorer code: {code!r}") from error
         return LogTfIdfAlpha(corpus, alpha)
+
+
+    if code.startswith("tfidfa"):
+        value = code[len("tfidfa"):]
+        try:
+            alpha = float(value)
+        except ValueError as error:
+            raise ValueError(f"Invalid TF-IDF alpha scorer code: {code!r}") from error
+        return TfIdfAlpha(corpus, alpha)
 
     if code.startswith("g2a"):
         value = code[len("g2a"):]
