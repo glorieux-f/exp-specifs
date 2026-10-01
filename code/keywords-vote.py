@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Merge chapter keyword rankings with Borda, RRF, and Condorcet-fuse.
 
-Input files are those written by keywords.py. Each non-empty block contains a
-metadata line followed by one comma-separated ranked keyword list::
+Input files are those written by keywords.py, including names such as
+``sand-keywords1000-content-tfidfloga0.56.txt``. Each non-empty block contains
+a metadata line followed by one comma-separated ranked keyword list::
 
     [identifier] creator — date — work — title
     keyword1, keyword2, ...
@@ -27,6 +28,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import glob
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -139,16 +141,35 @@ def condorcet(ballots: list[list[str]]) -> list[str]:
     return quicksort(candidates)
 
 
-def input_files(paths: list[Path]) -> list[Path]:
-    """Expand input files and directories into keyword files."""
+def input_files(specs: list[str]) -> list[Path]:
+    """Expand file paths, directories, and glob patterns into keyword files."""
     files: list[Path] = []
-    for path in paths:
-        if path.is_dir():
-            files.extend(sorted(path.glob("*-keywords.txt")))
-        elif path.is_file():
-            files.append(path)
-        else:
-            raise FileNotFoundError(path)
+    seen: set[Path] = set()
+
+    for spec in specs:
+        matches = [Path(value) for value in glob.glob(spec)]
+        if not matches:
+            path = Path(spec)
+            if path.exists():
+                matches = [path]
+            elif glob.has_magic(spec):
+                raise FileNotFoundError(f"No files match pattern: {spec}")
+            else:
+                raise FileNotFoundError(path)
+
+        expanded: list[Path] = []
+        for path in matches:
+            if path.is_dir():
+                expanded.extend(sorted(path.glob("*-keywords*.txt")))
+            elif path.is_file():
+                expanded.append(path)
+
+        for path in expanded:
+            resolved = path.resolve()
+            if resolved not in seen:
+                files.append(path)
+                seen.add(resolved)
+
     if not files:
         raise ValueError("No keyword files found")
     return files
@@ -279,13 +300,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "inputs",
         nargs="+",
-        type=Path,
-        help="Keyword files or directories containing *-keywords.txt files",
+        help="Keyword files, directories, or glob patterns",
     )
     parser.add_argument(
-        "--output-dir",
+        "output_dir",
         type=Path,
-        required=True,
         help="Directory for merged TSV rankings",
     )
     parser.add_argument(
