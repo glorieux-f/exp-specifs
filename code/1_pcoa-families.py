@@ -385,10 +385,12 @@ def plot_families(
         negative_abs = float(np.abs(negative).sum())
         total_abs = float(np.abs(eigenvalues).sum())
         negative_pct = 100.0 * negative_abs / total_abs if total_abs > 0.0 else 0.0
+        """
         x_label += (
             f"\nValeurs propres négatives : {len(negative)} "
             f"({negative_pct:.2f} % de l'inertie absolue)"
         )
+        """
     ax.set_xlabel(x_label)
     ax.set_ylabel(f"Axe principal {axis_y} — {y_pct:.1f} % de l'inertie positive")
     ax.set_title(title)
