@@ -32,8 +32,9 @@ def normalize_word(value: str) -> str:
     return unicodedata.normalize("NFC", value.strip()).casefold()
 
 
-def slugify(value: str) -> str:
-    """Return a filesystem-safe lowercase slug."""
+def author_slug(value: str) -> str:
+    """Return the surname-like first metadata token as a filesystem-safe slug."""
+    value = value.strip().split()[0] if value.strip() else "unknown"
     value = unicodedata.normalize("NFKD", value)
     value = "".join(char for char in value if not unicodedata.combining(char))
     value = re.sub(r"[^a-zA-Z0-9]+", "-", value).strip("-").lower()
@@ -190,7 +191,7 @@ def build(input_dir: Path, output_dir: Path, stopwords_path: Path, top: int) -> 
 
     scopes = ["corpus", *sorted(creator_doc_counts, key=str.casefold)]
     for scope in scopes:
-        prefix = "corpus" if scope == "corpus" else slugify(scope)
+        prefix = "corpus" if scope == "corpus" else author_slug(scope)
         for vocab in VOCABS:
             path = output_dir / f"{prefix}-{vocab}.tsv"
             write_frequency_list(
