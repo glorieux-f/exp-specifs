@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Merge chapter keyword rankings with Borda, RRF, and Condorcet-fuse.
+"""Merge chapter keyword rankings with Borda, RRF, Condorcet-fuse, and mean rank.
 
 Input files are those written by keywords.py, including names such as
 ``sand-keywords1000-content-tfidfloga0.56.txt``. Each non-empty block contains
@@ -11,17 +11,21 @@ a metadata line followed by one comma-separated ranked keyword list::
 Only the ranked keyword lists are used. Metadata, term frequencies, document
 frequencies, and original scorer values are ignored.
 
-For each input file, three TSV rankings are written:
+For each input file, four TSV rankings are written:
 
     <name>-borda.tsv
     <name>-rrf.tsv
     <name>-condorcet.tsv
+    <name>-meanrank.tsv
 
 Borda uses a fixed cutoff K: rank r receives K + 1 - r points and an unlisted
 term receives 0. RRF uses 1 / (k + r), with k=60 by default. Condorcet-fuse
-uses pairwise majority preferences between terms and deterministic QuickSort to
-construct a Condorcet path. On one chapter ballot, a listed term beats an
-unlisted term; two unlisted terms are tied.
+uses pairwise majority preferences between terms and seeded QuickSort to construct
+a Condorcet path. On one chapter ballot, a listed term beats an unlisted term;
+two unlisted terms are tied. Different seeds can produce different valid paths
+inside Condorcet cycles, as in the original Condorcet-fuse method. Mean-rank
+fusion orders terms by their average rank conditional on appearing in a ballot;
+lower mean rank is better.
 """
 
 from __future__ import annotations
@@ -29,6 +33,7 @@ from __future__ import annotations
 import argparse
 import csv
 import glob
+import random
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -36,6 +41,7 @@ KEYWORD_SEPARATOR = ", "
 DEFAULT_CUTOFF = 1000
 DEFAULT_OUTPUT_TOP = 1000
 DEFAULT_RRF_K = 60.0
+DEFAULT_CONDORCET_SEED = 0
 
 
 def borda(ballots: list[list[str]], cutoff: int) -> list[tuple[str, float]]:
@@ -47,21 +53,29 @@ def borda(ballots: list[list[str]], cutoff: int) -> list[tuple[str, float]]:
     return sorted(scores.items(), key=lambda item: (-item[1], sort_key(item[0])))
 
 
-def candidate_counts(ballots: list[list[str]]) -> Counter[str]:
-    """Return the number of ballots containing each term."""
+def candidate_stats(
+    ballots: list[list[str]],
+) -> tuple[Counter[str], dict[str, float]]:
+    """Return ballot counts and mean rank conditional on presence for each term."""
     counts: Counter[str] = Counter()
+    rank_sums: Counter[str] = Counter()
     for ballot in ballots:
-        counts.update(ballot)
-    return counts
+        for rank, term in enumerate(ballot, 1):
+            counts[term] += 1
+            rank_sums[term] += rank
+    mean_ranks = {term: rank_sums[term] / count for term, count in counts.items()}
+    return counts, mean_ranks
 
 
-def condorcet(ballots: list[list[str]]) -> list[str]:
+def condorcet(ballots: list[list[str]], seed: int) -> list[str]:
     """Return a deterministic Condorcet-fuse path for incomplete ranked lists.
 
     Pairwise preferences use ranks only. A listed term is preferred to an
     unlisted term on that ballot; terms absent from the same ballot are tied.
-    Majority ties may be oriented either way in a Condorcet graph, so lexical
-    order is used only to make those ties deterministic.
+    Majority ties correspond to edges in both directions in the Condorcet graph.
+    A seeded pseudo-random order chooses one direction reproducibly. QuickSort
+    pivots are also seeded because different pivot choices may yield different
+    valid Condorcet paths inside strongly connected components.
     """
     ranks: dict[str, dict[int, int]] = defaultdict(dict)
     masks: dict[str, int] = defaultdict(int)
@@ -73,6 +87,10 @@ def condorcet(ballots: list[list[str]]) -> list[str]:
             masks[term] |= bit
 
     candidates = sorted(ranks, key=sort_key)
+    rng = random.Random(seed)
+    tie_order = candidates.copy()
+    rng.shuffle(tie_order)
+    tie_rank = {term: rank for rank, term in enumerate(tie_order)}
 
     def preferred(a: str, b: str) -> bool:
         """Return whether a pairwise majority ranks a ahead of b."""
@@ -104,7 +122,7 @@ def condorcet(ballots: list[list[str]]) -> list[str]:
 
         if votes_a != votes_b:
             return votes_a > votes_b
-        return sort_key(a) < sort_key(b)
+        return tie_rank[a] < tie_rank[b]
 
     def quicksort(items: list[str]) -> list[str]:
         """Sort by pairwise majority, yielding a Condorcet Hamiltonian path."""
@@ -121,7 +139,7 @@ def condorcet(ballots: list[list[str]]) -> list[str]:
                 output.extend(part)
                 continue
 
-            pivot_index = len(part) // 2
+            pivot_index = rng.randrange(len(part))
             pivot = part[pivot_index]
             before: list[str] = []
             after: list[str] = []
@@ -215,6 +233,15 @@ def parse_keyword_file(path: Path, cutoff: int) -> list[list[str]]:
     return ballots
 
 
+
+def meanrank(mean_ranks: dict[str, float]) -> list[tuple[str, float]]:
+    """Return terms ranked by mean rank conditional on ballot presence."""
+    return sorted(
+        mean_ranks.items(),
+        key=lambda item: (item[1], sort_key(item[0])),
+    )
+
+
 def rrf(ballots: list[list[str]], k: float) -> list[tuple[str, float]]:
     """Return terms ranked by Reciprocal Rank Fusion score."""
     scores: defaultdict[str, float] = defaultdict(float)
@@ -234,16 +261,19 @@ def write_ranked(
     ranking: list[str],
     counts: Counter[str],
     output_top: int,
+    mean_ranks: dict[str, float],
     scores: dict[str, float] | None = None,
 ) -> None:
     """Write one merged ranking as TSV."""
     limit = len(ranking) if output_top == 0 else min(output_top, len(ranking))
     with path.open("w", encoding="utf-8", newline="") as stream:
         writer = csv.writer(stream, delimiter="\t", lineterminator="\n")
-        writer.writerow(("rank", "lemma", "score", "ballots"))
+        writer.writerow(("rank", "lemma", "score", "ballots", "mean_rank"))
         for rank, term in enumerate(ranking[:limit], 1):
             score = "" if scores is None else f"{scores[term]:.12g}"
-            writer.writerow((rank, term, score, counts[term]))
+            writer.writerow(
+                (rank, term, score, counts[term], f"{mean_ranks[term]:.6f}")
+            )
 
 
 def merge_file(
@@ -252,10 +282,11 @@ def merge_file(
     cutoff: int,
     output_top: int,
     rrf_k: float,
+    condorcet_seed: int,
 ) -> None:
-    """Merge one keyword file with all three rank-fusion methods."""
+    """Merge one keyword file with all four rank-fusion methods."""
     ballots = parse_keyword_file(path, cutoff)
-    counts = candidate_counts(ballots)
+    counts, mean_ranks = candidate_stats(ballots)
     stem = output_stem(path)
 
     borda_rows = borda(ballots, cutoff)
@@ -265,6 +296,7 @@ def merge_file(
         [term for term, _ in borda_rows],
         counts,
         output_top,
+        mean_ranks,
         borda_scores,
     )
 
@@ -275,27 +307,41 @@ def merge_file(
         [term for term, _ in rrf_rows],
         counts,
         output_top,
+        mean_ranks,
         rrf_scores,
     )
 
-    condorcet_ranking = condorcet(ballots)
+    condorcet_ranking = condorcet(ballots, condorcet_seed)
     write_ranked(
         output_dir / f"{stem}-condorcet.tsv",
         condorcet_ranking,
         counts,
         output_top,
+        mean_ranks,
+    )
+
+    meanrank_rows = meanrank(mean_ranks)
+    meanrank_scores = dict(meanrank_rows)
+    write_ranked(
+        output_dir / f"{stem}-meanrank.tsv",
+        [term for term, _ in meanrank_rows],
+        counts,
+        output_top,
+        mean_ranks,
+        meanrank_scores,
     )
 
     print(
         f"{path.name}: ballots={len(ballots)} candidates={len(counts)} "
-        f"-> {stem}-{{borda,rrf,condorcet}}.tsv"
+        f"condorcet_seed={condorcet_seed} "
+        f"-> {stem}-{{borda,rrf,condorcet,meanrank}}.tsv"
     )
 
 
 def parse_args() -> argparse.Namespace:
     """Parse command-line arguments."""
     parser = argparse.ArgumentParser(
-        description="Merge chapter keyword rankings with Borda, RRF, and Condorcet-fuse."
+        description="Merge chapter keyword rankings with Borda, RRF, Condorcet-fuse, and mean rank."
     )
     parser.add_argument(
         "inputs",
@@ -328,6 +374,15 @@ def parse_args() -> argparse.Namespace:
         default=DEFAULT_RRF_K,
         help=f"RRF rank constant k (default: {DEFAULT_RRF_K:g})",
     )
+    parser.add_argument(
+        "--condorcet-seed",
+        type=int,
+        default=DEFAULT_CONDORCET_SEED,
+        help=(
+            "Seed for Condorcet-fuse pivot and pairwise-tie choices "
+            f"(default: {DEFAULT_CONDORCET_SEED})"
+        ),
+    )
     return parser.parse_args()
 
 
@@ -344,7 +399,14 @@ def main() -> None:
     args.output_dir.mkdir(parents=True, exist_ok=True)
     try:
         for path in input_files(args.inputs):
-            merge_file(path, args.output_dir, args.cutoff, args.output_top, args.rrf_k)
+            merge_file(
+                path,
+                args.output_dir,
+                args.cutoff,
+                args.output_top,
+                args.rrf_k,
+                args.condorcet_seed,
+            )
     except (OSError, ValueError) as exc:
         raise SystemExit(str(exc)) from exc
 
