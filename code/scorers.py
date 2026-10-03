@@ -18,6 +18,8 @@ FloatArray = NDArray[np.float64]
 
 _SCORER_LABELS = {
     "tf": "TF",
+    "df": "DF",
+    "cf": "CF",
     "subtf": "subTF",
     "tfidf": "TF-IDF",
     "subtfidf": "subTF-IDF",
@@ -221,6 +223,70 @@ class Tf(Scorer):
         """Return raw term frequencies as floating-point scores."""
         del doc_id, term_ids
         return np.asarray(tf, dtype=np.float64)
+
+
+class DocumentFrequency(Scorer):
+    """Document frequency.
+
+    df
+
+    df : number of documents containing the term
+
+    The score is corpus-level: for a term occurring in a focus document, the
+    value is the same in every document of the corpus.
+    """
+
+    @property
+    def code(self) -> str:
+        """Return the filename code."""
+        return "df"
+
+    @property
+    def name(self) -> str:
+        """Return the human-readable scorer name."""
+        return "DF"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Return document frequencies as floating-point scores."""
+        del doc_id, tf
+        return np.asarray(self.corpus.df[term_ids], dtype=np.float64)
+
+
+class CollectionFrequency(Scorer):
+    """Collection frequency.
+
+    cf
+
+    cf : number of occurrences of the term in the corpus
+
+    The score is corpus-level: for a term occurring in a focus document, the
+    value is the same in every document of the corpus.
+    """
+
+    @property
+    def code(self) -> str:
+        """Return the filename code."""
+        return "cf"
+
+    @property
+    def name(self) -> str:
+        """Return the human-readable scorer name."""
+        return "CF"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Return collection frequencies as floating-point scores."""
+        del doc_id, tf
+        return np.asarray(self.corpus.cf[term_ids], dtype=np.float64)
 
 
 class SubTf(Scorer):
@@ -1958,47 +2024,49 @@ class SimpleMaths(Scorer):
 
 
 SCORER_TYPES: tuple[type[Scorer], ...] = (
-    Tf,
-    SubTf,
-    TfIdf,
-    TfIdfAlpha,
     BinaryTfIdf,
-    TfIcf,
-    SubTfIdf,
-    SubTfIdfAlpha,
     BM25,
-    G2,
-    SignedG2,
-    G2Pos,
-    G2Neg,
     Chi2,
     Chi2Alpha,
-    ZScore,
-    TScore,
-    MutualInformation,
-    LogDice,
-    MutualInformation3,
-    MutualInformationLogFrequency,
-    MinimumSensitivity,
+    CollectionFrequency,
+    DocumentFrequency,
+    ExclusiveTf,
+    G2,
+    G2Alpha,
+    G2Neg,
+    G2Pos,
     Hgt,
     HgtAlpha,
-    Txm,
-    TxmPos,
-    TxmNeg,
-    TxmAbs,
-    ExclusiveTf,
+    LogDice,
     LogRatio,
+    MinimumSensitivity,
+    MutualInformation,
+    MutualInformation3,
+    MutualInformationLogFrequency,
+    SignedG2,
     SimpleMaths,
-    G2Alpha,
+    SubTf,
+    SubTfIdf,
+    SubTfIdfAlpha,
+    Tf,
+    TfIcf,
+    TfIdf,
+    TfIdfAlpha,
+    TScore,
+    Txm,
+    TxmAbs,
+    TxmNeg,
+    TxmPos,
+    ZScore,
 )
 
 
 def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
     """Return the scorer configurations used by the current keyword experiment."""
     return (
-        BM25(corpus),
-        BM25(corpus, 100.0, 1.0),
         BinaryTfIdf(corpus),
+        BM25(corpus, 100.0, 1.0),
+        BM25(corpus),
         Chi2(corpus),
         Chi2Alpha(corpus, 00.0),
         Chi2Alpha(corpus, 00.05),
@@ -2013,19 +2081,9 @@ def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
         Chi2Alpha(corpus, 04.0),
         Chi2Alpha(corpus, 08.0),
         Chi2Alpha(corpus, 16.0),
+        CollectionFrequency(corpus),
+        DocumentFrequency(corpus),
         ExclusiveTf(corpus),
-        Hgt(corpus),
-        HgtAlpha(corpus, 00.0),
-        HgtAlpha(corpus, 00.25),
-        HgtAlpha(corpus, 00.5),
-        HgtAlpha(corpus, 00.75),
-        HgtAlpha(corpus, 01.0),
-        HgtAlpha(corpus, 01.47),
-        HgtAlpha(corpus, 02.0),
-        HgtAlpha(corpus, 04.0),
-        HgtAlpha(corpus, 08.0),
-        HgtAlpha(corpus, 16.0),
-        Txm(corpus),
         G2(corpus),
         G2Alpha(corpus, 00.0),
         G2Alpha(corpus, 00.25),
@@ -2038,7 +2096,25 @@ def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
         G2Alpha(corpus, 04.0),
         G2Alpha(corpus, 08.0),
         G2Alpha(corpus, 16.0),
+        Hgt(corpus),
+        HgtAlpha(corpus, 00.0),
+        HgtAlpha(corpus, 00.25),
+        HgtAlpha(corpus, 00.5),
+        HgtAlpha(corpus, 00.75),
+        HgtAlpha(corpus, 01.0),
+        HgtAlpha(corpus, 01.47),
+        HgtAlpha(corpus, 02.0),
+        HgtAlpha(corpus, 04.0),
+        HgtAlpha(corpus, 08.0),
+        HgtAlpha(corpus, 16.0),
+        LogDice(corpus),
         LogRatio(corpus),
+        MinimumSensitivity(corpus),
+        MutualInformation(corpus),
+        MutualInformation3(corpus),
+        MutualInformationLogFrequency(corpus),
+        SimpleMaths(corpus, 1.0),
+        SimpleMaths(corpus),
         SubTf(corpus),
         SubTfIdf(corpus),
         SubTfIdfAlpha(corpus, 00.0),
@@ -2054,16 +2130,9 @@ def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
         SubTfIdfAlpha(corpus, 04.0),
         SubTfIdfAlpha(corpus, 08.0),
         SubTfIdfAlpha(corpus, 16.0),
-        MutualInformation(corpus),
-        LogDice(corpus),
-        MutualInformation3(corpus),
-        MutualInformationLogFrequency(corpus),
-        MinimumSensitivity(corpus),
-        TfIdf(corpus),
-        TfIcf(corpus),
-        SimpleMaths(corpus, 1.0),
-        SimpleMaths(corpus),
         Tf(corpus),
+        TfIcf(corpus),
+        TfIdf(corpus),
         TfIdfAlpha(corpus, 00.0),
         TfIdfAlpha(corpus, 00.25),
         TfIdfAlpha(corpus, 00.5),
@@ -2083,7 +2152,7 @@ def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
 def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
     """Create a scorer from its stable experiment code.
 
-    Canonical codes include ``tf``, ``subtf``, ``tfidf``, ``subtfidf``,
+    Canonical codes include ``tf``, ``df``, ``cf``, ``subtf``, ``tfidf``, ``subtfidf``,
     ``btfidf``, ``tficf``, ``hgt``, ``txm``, ``bm25``, ``g2``, ``chi2``,
     ``zscore``, ``tscore``, ``mi``, ``logdice``, ``mi3``, ``milogf``,
     ``minsens``, ``extf``, ``logratio`` and ``simplemaths``.
@@ -2094,6 +2163,8 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
     code = code.strip().lower()
     factories = {
         "tf": Tf,
+        "df": DocumentFrequency,
+        "cf": CollectionFrequency,
         "subtf": SubTf,
         "tfidf": TfIdf,
         "subtfidf": SubTfIdf,

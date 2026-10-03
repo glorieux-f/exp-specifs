@@ -51,11 +51,11 @@ Each document is written as a two-line block followed by a blank line::
 Only ``[identifier]`` is machine-significant on the metadata line.
 
 Existing output files are skipped before scorer computation, so interrupted runs can
-be resumed without recomputing finished author/scorer combinations. Scorers are
-processed one at a time. The console shows one in-place status line per scorer, with
-a spinner while it runs and DONE when it finishes. Each completed scorer is written
-immediately to a temporary name then renamed, so an error never leaves an empty or
-truncated final keyword file.
+be resumed without recomputing finished author/scorer combinations. ``--force``
+recomputes and overwrites existing files. Scorers are processed one at a time. The
+console shows one in-place status line per scorer, with a spinner while it runs and DONE
+when it finishes. Each completed scorer is written immediately to a temporary name then
+renamed, so an error never leaves an empty or truncated final keyword file.
 """
 
 from __future__ import annotations
@@ -124,6 +124,7 @@ def generate(
     top_n: int = DEFAULT_TOP_N,
     scorer_codes: list[str] | None = None,
     min_doc_len: int = 0,
+    force: bool = False,
 ) -> None:
     """Generate one keyword file per author and scorer with progress logging."""
     if top_n <= 0:
@@ -198,7 +199,7 @@ def generate(
                 min_doc_len,
             )
             prefix = f"{author_code} [{scorer_index}/{scorer_count}] {scorer.code}"
-            if path.exists():
+            if path.exists() and not force:
                 skipped_count += 1
                 skipped_author += 1
                 continue
@@ -257,7 +258,7 @@ def generate(
 
             # Re-check immediately before writing in case another process created
             # the file while this scorer was being computed.
-            if path.exists():
+            if path.exists() and not force:
                 skipped_count += 1
                 skipped_author += 1
                 print(flush=True)
@@ -370,6 +371,7 @@ def main() -> None:
         top_n=args.top,
         scorer_codes=args.scorer or None,
         min_doc_len=args.min_doc_len,
+        force=args.force,
     )
 
 
@@ -478,6 +480,11 @@ def parse_args() -> argparse.Namespace:
             "Write only documents with doc_len >= this value; scorer statistics "
             "still use the complete author corpus (default: 0)"
         ),
+    )
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Recompute and overwrite existing keyword files.",
     )
     return parser.parse_args()
 
