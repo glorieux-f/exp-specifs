@@ -17,6 +17,7 @@ Choix de présentation :
 - le nombre de valeurs propres négatives reste indiqué dans la sortie console ;
 - aucune couleur n'est imposée : le style courant de matplotlib s'applique ;
 - le texte du SVG reste du texte éditable.
+- ``--include`` et ``--exclude`` filtrent simultanément lignes et colonnes par motifs shell.
 """
 
 from __future__ import annotations
@@ -78,8 +79,10 @@ def main() -> None:
         raise ValueError("--dpi doit être > 0")
 
     labels, distance = read_distance_matrix(args.matrix)
-    if args.select:
-        labels, distance = select_distance_matrix(labels, distance, args.select)
+    if args.include or args.exclude:
+        labels, distance = filter_distance_matrix(
+            labels, distance, args.include, args.exclude
+        )
     coordinates, eigenvalues = pcoa(distance)
 
     axis_x, axis_y = args.axes
@@ -194,13 +197,24 @@ def parse_args() -> argparse.Namespace:
         help="Titre de la figure ; par défaut, nom du fichier de matrice",
     )
     parser.add_argument(
-        "--select",
+        "--include",
         nargs="+",
         metavar="MOTIF",
         help=(
-            "Sélectionner les lignes/colonnes dont l'étiquette correspond à au moins "
-            "un motif shell (ex. --select tf g2 'bm25*'). La PCoA est recalculée "
-            "sur la sous-matrice sélectionnée."
+            "Ne conserver que les lignes/colonnes dont l'étiquette correspond à au "
+            "moins un motif shell. Plusieurs motifs sont combinés par OU "
+            "(ex. --include 'G²*' 'χ²*')."
+        ),
+    )
+    parser.add_argument(
+        "--exclude",
+        nargs="+",
+        default=[],
+        metavar="MOTIF",
+        help=(
+            "Retirer les lignes/colonnes dont l'étiquette correspond à au moins un "
+            "motif shell. Plusieurs motifs sont combinés par OU "
+            "(ex. --exclude '*α*')."
         ),
     )
     parser.add_argument(
@@ -225,35 +239,59 @@ def parse_args() -> argparse.Namespace:
 
 
 
-def select_distance_matrix(
+def filter_distance_matrix(
     labels: list[str],
     distance: np.ndarray,
-    patterns: list[str],
+    include: list[str] | None,
+    exclude: list[str],
 ) -> tuple[list[str], np.ndarray]:
-    """Sélectionner la même liste d'étiquettes sur les lignes et les colonnes.
+    """Filtrer simultanément les lignes et colonnes par motifs d'étiquette.
 
     Les motifs utilisent la syntaxe shell de fnmatch (``*``, ``?``, ``[...]``).
-    Plusieurs motifs sont combinés par OU et l'ordre original de la matrice est
-    conservé.
+    Les motifs ``--include`` sont combinés par OU ; en leur absence, tous les
+    objets sont inclus. Les motifs ``--exclude`` sont ensuite appliqués, eux aussi
+    par OU. L'ordre original de la matrice est conservé.
     """
-    unmatched = [
-        pattern
-        for pattern in patterns
-        if not any(fnmatchcase(label, pattern) for label in labels)
-    ]
-    if unmatched:
-        raise ValueError(
-            "Motif(s) --select sans correspondance : " + ", ".join(unmatched)
-        )
+    if include:
+        unmatched_include = [
+            pattern
+            for pattern in include
+            if not any(fnmatchcase(label, pattern) for label in labels)
+        ]
+        if unmatched_include:
+            raise ValueError(
+                "Motif(s) --include sans correspondance : "
+                + ", ".join(unmatched_include)
+            )
+        keep = [
+            any(fnmatchcase(label, pattern) for pattern in include)
+            for label in labels
+        ]
+    else:
+        keep = [True] * len(labels)
 
-    indices = [
-        i
-        for i, label in enumerate(labels)
-        if any(fnmatchcase(label, pattern) for pattern in patterns)
-    ]
+    if exclude:
+        unmatched_exclude = [
+            pattern
+            for pattern in exclude
+            if not any(fnmatchcase(label, pattern) for label in labels)
+        ]
+        if unmatched_exclude:
+            raise ValueError(
+                "Motif(s) --exclude sans correspondance : "
+                + ", ".join(unmatched_exclude)
+            )
+        keep = [
+            selected
+            and not any(fnmatchcase(label, pattern) for pattern in exclude)
+            for selected, label in zip(keep, labels, strict=True)
+        ]
+
+    indices = [i for i, selected in enumerate(keep) if selected]
     if len(indices) < 2:
         raise ValueError(
-            f"--select doit conserver au moins deux objets ; {len(indices)} sélectionné(s)."
+            "Les filtres --include/--exclude doivent conserver au moins deux objets ; "
+            f"{len(indices)} sélectionné(s)."
         )
 
     selected_labels = [labels[i] for i in indices]
