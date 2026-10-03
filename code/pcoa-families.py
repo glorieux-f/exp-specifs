@@ -1,20 +1,22 @@
 #!/usr/bin/env python3
 """PCoA plot for parameterized specificity families.
 
-The input is a square labelled TSV/CSV distance matrix. A full symmetric
-matrix is accepted; an upper- or lower-triangular matrix with blank cells is
-also accepted and is completed from the opposite triangle.
+The input is a square labelled TSV/CSV distance matrix whose row and column
+labels are publication labels, for example ``G²α(1.4)``, ``HGTα(1.47)`` or
+``subTF-IDFα(0.56)``. A full symmetric matrix is accepted; an upper- or
+lower-triangular matrix with blank cells is also accepted and is completed
+from the opposite triangle.
 
-Only scorer labels belonging to the requested parameterized families are
-kept. For example::
+Parameterized families are detected directly from labels of the form
+``<family>α(<value>)``. With no ``--families`` option, every detected family is
+plotted. A subset can be requested with the publication family names, e.g.::
 
-    python 1_pcoa-families.py distances.tsv \
-        --families g2a fishera chi2a tfidfa tfidfloga
+    python pcoa-families.py distances.tsv \
+        --families "TF-IDF" "subTF-IDF" HGT "G²" "χ²"
 
-A scorer belongs to a family when its label is exactly ``<family><alpha>``,
-for example ``g2a0.5`` or ``tfidfloga8``. PCoA is computed on the selected
-submatrix only. Within each family, points are ordered by numeric alpha and
-linked by straight segments. Point labels show alpha only.
+PCoA is computed on the selected submatrix only. Within each family, points
+are ordered by numeric alpha and linked by straight segments. Point labels
+show alpha only. The script does not depend on ``scorers.py``.
 """
 
 from __future__ import annotations
@@ -49,8 +51,11 @@ DIRECTIONS = (
 # The first five entries of tab10 are deliberately well separated in hue.
 COLOR_ORDER = (0, 1, 2, 3, 4, 8, 9, 5, 6, 7)
 
-# Decimal/scientific notation accepted after a family prefix.
-ALPHA_RE = r"([+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?)"
+# Publication labels use FAMILYα(value), with a numeric alpha value.
+ALPHA_NUMBER_RE = r"[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?"
+FAMILY_LABEL_RE = re.compile(
+    rf"^(?P<family>.+?)α\((?P<alpha>{ALPHA_NUMBER_RE})\)$"
+)
 
 
 def default_prefix(matrix_path: Path) -> Path:
@@ -87,9 +92,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--families",
         nargs="+",
-        required=True,
         metavar="FAMILY",
-        help="Parameterized scorer prefixes, e.g. g2a fishera chi2a tfidfa tfidfloga",
+        help=(
+            "Publication family names to plot, e.g. --families 'TF-IDF' "
+            "'subTF-IDF' HGT 'G²' 'χ²'. Default: every α family found."
+        ),
     )
     parser.add_argument(
         "--output-prefix",
@@ -134,6 +141,11 @@ def parse_args() -> argparse.Namespace:
         default=180,
         help="PNG resolution (default: 180)",
     )
+    parser.add_argument(
+        "--coordinates",
+        action="store_true",
+        help="Also write selected PCoA coordinates to <prefix>-coordinates.tsv",
+    )
     return parser.parse_args()
 
 
@@ -146,7 +158,7 @@ def main() -> None:
         raise ValueError("--dpi must be > 0")
 
     labels, distance = read_distance_matrix(args.matrix)
-    selected_labels, selected_distance, family_of, alpha_of = select_families(
+    selected_labels, selected_distance, families, family_of, alpha_of = select_families(
         labels,
         distance,
         args.families,
@@ -177,7 +189,7 @@ def main() -> None:
         coordinates,
         eigenvalues,
         (axis_x, axis_y),
-        args.families,
+        families,
         family_of,
         alpha_of,
         args.title or default_title(args.matrix),
@@ -185,13 +197,14 @@ def main() -> None:
         args.height,
         args.dpi,
     )
-    write_coordinates(
-        coordinates_path,
-        selected_labels,
-        coordinates,
-        family_of,
-        alpha_of,
-    )
+    if args.coordinates:
+        write_coordinates(
+            coordinates_path,
+            selected_labels,
+            coordinates,
+            family_of,
+            alpha_of,
+        )
 
     scale = max(1.0, float(np.max(np.abs(eigenvalues))))
     positive = eigenvalues[eigenvalues > TOLERANCE * scale]
@@ -208,14 +221,19 @@ def main() -> None:
     )
 
     print(f"Selected scorers: {len(selected_labels)}")
-    for family in args.families:
-        alphas = sorted(alpha_of[label] for label in selected_labels if family_of[label] == family)
+    for family in families:
+        alphas = sorted(
+            alpha_of[label]
+            for label in selected_labels
+            if family_of[label] == family
+        )
         print(f"{family}: " + ", ".join(f"{alpha:g}" for alpha in alphas))
     print(f"Positive axes: {len(positive)}")
     print(f"Negative eigenvalues: {negative_count}")
     print(f"Positive inertia of axes {axis_x} and {axis_y}: {plane_pct:.2f} %")
     print(f"Original / planar distance correlation: {fit:.3f}")
-    print(f"Coordinates: {coordinates_path}")
+    if args.coordinates:
+        print(f"Coordinates: {coordinates_path}")
     print(f"PNG: {png_path}")
     print(f"SVG: {svg_path}")
 
@@ -223,53 +241,84 @@ def main() -> None:
 def select_families(
     labels: list[str],
     distance: np.ndarray,
-    families: list[str],
-) -> tuple[list[str], np.ndarray, dict[str, str], dict[str, float]]:
-    """Select labels of the form FAMILY + numeric alpha, preserving matrix order."""
-    if not families:
-        raise ValueError("At least one family is required")
-    if len(set(families)) != len(families):
-        raise ValueError("--families contains duplicates")
+    requested_families: list[str] | None,
+) -> tuple[
+    list[str],
+    np.ndarray,
+    list[str],
+    dict[str, str],
+    dict[str, float],
+]:
+    """Select publication labels of the form FAMILYα(value).
 
-    patterns = {
-        family: re.compile(rf"^{re.escape(family)}{ALPHA_RE}$")
-        for family in families
-    }
+    Families are detected from the matrix labels themselves. If
+    requested_families is given, only those exact publication family names are
+    retained, in command-line order. Otherwise every detected family is kept in
+    first-occurrence order.
+    """
+    parsed: dict[str, tuple[str, float]] = {}
+    detected_families: list[str] = []
+
+    for label in labels:
+        match = FAMILY_LABEL_RE.fullmatch(label)
+        if match is None:
+            continue
+        family = match.group("family")
+        alpha = float(match.group("alpha"))
+        if not np.isfinite(alpha):
+            raise ValueError(f"Non-finite alpha in scorer label {label!r}")
+        parsed[label] = (family, alpha)
+        if family not in detected_families:
+            detected_families.append(family)
+
+    if not detected_families:
+        raise ValueError(
+            "No parameterized scorer labels of the form FAMILYα(value) were found"
+        )
+
+    if requested_families:
+        if len(set(requested_families)) != len(requested_families):
+            raise ValueError("--families contains duplicates")
+        missing = [
+            family
+            for family in requested_families
+            if family not in detected_families
+        ]
+        if missing:
+            raise ValueError(
+                "Unknown family/families: "
+                + ", ".join(missing)
+                + "; available: "
+                + ", ".join(detected_families)
+            )
+        families = list(requested_families)
+    else:
+        families = detected_families
+
+    family_set = set(families)
     family_of: dict[str, str] = {}
     alpha_of: dict[str, float] = {}
     indices: list[int] = []
 
     for index, label in enumerate(labels):
-        matches: list[tuple[str, re.Match[str]]] = []
-        for family, pattern in patterns.items():
-            match = pattern.fullmatch(label)
-            if match is not None:
-                matches.append((family, match))
-        if len(matches) > 1:
-            names = ", ".join(family for family, _ in matches)
-            raise ValueError(f"Scorer {label!r} matches several families: {names}")
-        if not matches:
+        parsed_label = parsed.get(label)
+        if parsed_label is None:
             continue
-
-        family, match = matches[0]
-        alpha = float(match.group(1))
-        if not np.isfinite(alpha):
-            raise ValueError(f"Non-finite alpha in scorer label {label!r}")
+        family, alpha = parsed_label
+        if family not in family_set:
+            continue
         family_of[label] = family
         alpha_of[label] = alpha
         indices.append(index)
 
-    for family in families:
-        count = sum(1 for value in family_of.values() if value == family)
-        if count == 0:
-            raise ValueError(f"No scorer found for family {family!r}")
-
     if len(indices) < 3:
-        raise ValueError("At least three selected scorers are required for a 2D PCoA")
+        raise ValueError(
+            "At least three parameterized scorers are required for a 2D PCoA"
+        )
 
     selected_labels = [labels[index] for index in indices]
-    selected_distance = distance[np.ix_(indices, indices)]
-    return selected_labels, selected_distance, family_of, alpha_of
+    selected_distance = distance[np.ix_(indices, indices)].copy()
+    return selected_labels, selected_distance, families, family_of, alpha_of
 
 
 def pcoa(distance: np.ndarray) -> tuple[np.ndarray, np.ndarray]:

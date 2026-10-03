@@ -1,23 +1,23 @@
 #!/usr/bin/env python3
-"""Analyse en coordonnées principales (PCoA) d'une matrice de distances.
+"""Principal Coordinates Analysis (PCoA) of a distance matrix.
 
-Le script accepte une matrice carrée TSV ou CSV avec étiquettes de lignes et
-de colonnes. Il écrit les coordonnées de tous les axes positifs, toutes les
-valeurs propres, et une figure PNG et SVG de deux axes choisis (1 et 2 par
-défaut).
+The script accepts a square TSV or CSV distance matrix with row and column
+labels. It always writes the eigenvalues and PNG/SVG figures for two selected
+axes (1 and 2 by default). Coordinates for all positive axes are written only
+when ``--coordinates`` is requested.
 
-Choix de présentation :
-- le titre de la figure reprend le nom de la matrice ;
-- les étiquettes sont placées autour de leur point en évitant les
-  chevauchements entre étiquettes, avec les autres points et avec le bord
-  du cadre ; une étiquette éloignée de son point y est reliée par un trait
-  fin ;
-- l'orientation des axes est déterministe (la coordonnée de plus grande
-  valeur absolue est positive) et peut être inversée avec ``--flip`` ;
-- le nombre de valeurs propres négatives reste indiqué dans la sortie console ;
-- aucune couleur n'est imposée : le style courant de matplotlib s'applique ;
-- le texte du SVG reste du texte éditable.
-- ``--include`` et ``--exclude`` filtrent simultanément lignes et colonnes par motifs shell.
+Presentation choices:
+- the figure title defaults to the matrix filename;
+- labels are placed around their points while avoiding overlaps with other
+  labels, markers, and the plot frame; labels placed far from their point are
+  connected with a thin leader line;
+- axis orientation is deterministic (the coordinate with the largest absolute
+  value is made positive) and can be reversed with ``--flip``;
+- the number of negative eigenvalues is reported in the console;
+- no colors are imposed: the current matplotlib style is used;
+- SVG text remains editable text;
+- ``--include`` and ``--exclude`` filter rows and columns together using shell
+  patterns.
 """
 
 from __future__ import annotations
@@ -50,17 +50,17 @@ DIRECTIONS = (
 
 
 def default_prefix(matrix_path: Path) -> Path:
-    """Construire le préfixe de sortie à côté de la matrice."""
+    """Return the default output prefix next to the matrix."""
     return matrix_path.with_name(f"{matrix_path.stem}-pcoa")
 
 
 def default_title(matrix_path: Path) -> str:
-    """Construire un titre simple à partir du nom du fichier de matrice."""
+    """Return a simple default title derived from the matrix filename."""
     return matrix_path.name
 
 
 def detect_delimiter(path: Path) -> str:
-    """Détecter tabulation, virgule ou point-virgule."""
+    """Detect tab, comma, or semicolon as the field delimiter."""
     sample = path.read_text(encoding="utf-8-sig")[:8192]
     try:
         return csv.Sniffer().sniff(sample, delimiters="\t,;").delimiter
@@ -71,12 +71,12 @@ def detect_delimiter(path: Path) -> str:
 
 
 def main() -> None:
-    """Exécuter la PCoA et produire coordonnées, valeurs propres et figure."""
+    """Run PCoA and write the requested outputs."""
     args = parse_args()
     if args.width <= 0.0 or args.height <= 0.0:
-        raise ValueError("--width et --height doivent être > 0")
+        raise ValueError("--width and --height must be > 0")
     if args.dpi <= 0:
-        raise ValueError("--dpi doit être > 0")
+        raise ValueError("--dpi must be > 0")
 
     labels, distance = read_distance_matrix(args.matrix)
     if args.include or args.exclude:
@@ -89,15 +89,15 @@ def main() -> None:
     n_axes = coordinates.shape[1]
     if not (1 <= axis_x <= n_axes and 1 <= axis_y <= n_axes) or axis_x == axis_y:
         raise ValueError(
-            f"--axes doit désigner deux axes distincts parmi 1..{n_axes}"
+            f"--axes must name two distinct axes in 1..{n_axes}"
         )
     for axis in args.flip:
         if not 1 <= axis <= n_axes:
-            raise ValueError(f"--flip {axis} : axe hors de 1..{n_axes}")
+            raise ValueError(f"--flip {axis}: axis outside 1..{n_axes}")
         coordinates[:, axis - 1] *= -1.0
 
     prefix = args.output_prefix or default_prefix(args.matrix)
-    coordinates_path = Path(f"{prefix}-coordonnees.tsv")
+    coordinates_path = Path(f"{prefix}-coordinates.tsv")
     eigenvalues_path = Path(f"{prefix}-valeurs-propres.tsv")
     png_path = Path(f"{prefix}.png")
     svg_path = Path(f"{prefix}.svg")
@@ -105,7 +105,8 @@ def main() -> None:
     scale = max(1.0, float(np.max(np.abs(eigenvalues))))
     positive = eigenvalues[eigenvalues > TOLERANCE * scale]
 
-    write_coordinates(coordinates_path, labels, coordinates, positive)
+    if args.coordinates:
+        write_coordinates(coordinates_path, labels, coordinates, positive)
     write_eigenvalues(eigenvalues_path, eigenvalues)
     plot_pcoa(
         png_path,
@@ -125,22 +126,23 @@ def main() -> None:
     negative_count = int(np.count_nonzero(eigenvalues < -TOLERANCE * scale))
     fit = plane_fit(distance, coordinates[:, [axis_x - 1, axis_y - 1]])
 
-    print(f"Objets : {len(labels)}")
-    print(f"Axes positifs : {len(positive)}")
-    print(f"Valeurs propres négatives : {negative_count}")
-    print(f"Inertie positive des axes {axis_x} et {axis_y} : {plane_pct:.2f} %")
-    print(f"Corrélation distances originales / distances du plan : {fit:.3f}")
-    print(f"Coordonnées : {coordinates_path}")
-    print(f"Valeurs propres : {eigenvalues_path}")
-    print(f"Figure PNG : {png_path}")
-    print(f"Figure SVG : {svg_path}")
+    print(f"Objects: {len(labels)}")
+    print(f"Positive axes: {len(positive)}")
+    print(f"Negative eigenvalues: {negative_count}")
+    print(f"Positive inertia of axes {axis_x} and {axis_y}: {plane_pct:.2f} %")
+    print(f"Original distances / plane distances correlation: {fit:.3f}")
+    if args.coordinates:
+        print(f"Coordinates: {coordinates_path}")
+    print(f"Eigenvalues: {eigenvalues_path}")
+    print(f"PNG figure: {png_path}")
+    print(f"SVG figure: {svg_path}")
 
 
 def orient_axes(coordinates: np.ndarray) -> np.ndarray:
-    """Rendre positive, sur chaque axe, la coordonnée de plus grande valeur absolue.
+    """Make the largest absolute coordinate positive on each axis.
 
-    Le signe d'un vecteur propre est arbitraire ; cette règle rend la figure
-    reproductible d'une exécution ou d'une version de NumPy à l'autre.
+    The sign of an eigenvector is arbitrary; this rule makes the figure
+    reproducible across runs and NumPy versions.
     """
     oriented = coordinates.copy()
     for axis in range(oriented.shape[1]):
@@ -151,29 +153,28 @@ def orient_axes(coordinates: np.ndarray) -> np.ndarray:
 
 
 def overlap_area(a: tuple[float, float, float, float], b: tuple[float, float, float, float]) -> float:
-    """Aire commune de deux boîtes (x0, y0, x1, y1)."""
+    """Return the intersection area of two boxes (x0, y0, x1, y1)."""
     width = min(a[2], b[2]) - max(a[0], b[0])
     height = min(a[3], b[3]) - max(a[1], b[1])
     return width * height if width > 0.0 and height > 0.0 else 0.0
 
 
 def parse_args() -> argparse.Namespace:
-    """Analyser les arguments de ligne de commande."""
+    """Parse command-line arguments."""
     parser = argparse.ArgumentParser(
-        description="PCoA (MDS classique) d'une matrice carrée de distances."
+        description="PCoA (classical MDS) of a square distance matrix."
     )
     parser.add_argument(
         "matrix",
         type=Path,
-        help="Matrice de distances TSV ou CSV avec étiquettes de lignes et colonnes",
+        help="TSV or CSV distance matrix with row and column labels",
     )
     parser.add_argument(
         "output_prefix",
         nargs="?",
         type=Path,
         help=(
-            "Préfixe des fichiers de sortie ; par défaut, '<matrice>-pcoa' "
-            "à côté de la matrice"
+            "Output file prefix; default: '<matrix>-pcoa' next to the matrix"
         ),
     )
     parser.add_argument(
@@ -182,58 +183,62 @@ def parse_args() -> argparse.Namespace:
         nargs=2,
         default=(1, 2),
         metavar=("X", "Y"),
-        help="Axes à représenter (défaut : 1 2)",
+        help="Axes to plot (default: 1 2)",
     )
     parser.add_argument(
         "--flip",
         type=int,
         action="append",
         default=[],
-        metavar="AXE",
-        help="Inverser le signe d'un axe ; répétable (ex. --flip 2)",
+        metavar="AXIS",
+        help="Reverse the sign of one axis; repeatable (e.g. --flip 2)",
     )
     parser.add_argument(
         "--title",
-        help="Titre de la figure ; par défaut, nom du fichier de matrice",
+        help="Figure title; default: matrix filename",
     )
     parser.add_argument(
         "--include",
         nargs="+",
-        metavar="MOTIF",
+        metavar="PATTERN",
         help=(
-            "Ne conserver que les lignes/colonnes dont l'étiquette correspond à au "
-            "moins un motif shell. Plusieurs motifs sont combinés par OU "
-            "(ex. --include 'G²*' 'χ²*')."
+            "Keep only rows/columns whose label matches at least one shell pattern. "
+            "Multiple patterns are combined with OR "
+            "(e.g. --include 'G²*' 'χ²*')."
         ),
     )
     parser.add_argument(
         "--exclude",
         nargs="+",
         default=[],
-        metavar="MOTIF",
+        metavar="PATTERN",
         help=(
-            "Retirer les lignes/colonnes dont l'étiquette correspond à au moins un "
-            "motif shell. Plusieurs motifs sont combinés par OU "
-            "(ex. --exclude '*α*')."
+            "Remove rows/columns whose label matches at least one shell pattern. "
+            "Multiple patterns are combined with OR (e.g. --exclude '*α*')."
         ),
+    )
+    parser.add_argument(
+        "--coordinates",
+        action="store_true",
+        help="Write coordinates for all positive axes to '<prefix>-coordinates.tsv'",
     )
     parser.add_argument(
         "--width",
         type=float,
         default=30.0,
-        help="Largeur de la figure en cm (défaut : 30)",
+        help="Figure width in cm (default: 30)",
     )
     parser.add_argument(
         "--height",
         type=float,
         default=18.0,
-        help="Hauteur de la figure en cm (défaut : 18)",
+        help="Figure height in cm (default: 18)",
     )
     parser.add_argument(
         "--dpi",
         type=int,
         default=180,
-        help="Résolution du PNG (défaut : 180)",
+        help="PNG resolution (default: 180)",
     )
     return parser.parse_args()
 
@@ -245,12 +250,12 @@ def filter_distance_matrix(
     include: list[str] | None,
     exclude: list[str],
 ) -> tuple[list[str], np.ndarray]:
-    """Filtrer simultanément les lignes et colonnes par motifs d'étiquette.
+    """Filter rows and columns together using label patterns.
 
-    Les motifs utilisent la syntaxe shell de fnmatch (``*``, ``?``, ``[...]``).
-    Les motifs ``--include`` sont combinés par OU ; en leur absence, tous les
-    objets sont inclus. Les motifs ``--exclude`` sont ensuite appliqués, eux aussi
-    par OU. L'ordre original de la matrice est conservé.
+    Patterns use fnmatch shell syntax (``*``, ``?``, ``[...]``). ``--include``
+    patterns are combined with OR; without them all objects are included.
+    ``--exclude`` patterns are then applied, also with OR. The original matrix
+    order is preserved.
     """
     if include:
         unmatched_include = [
@@ -260,7 +265,7 @@ def filter_distance_matrix(
         ]
         if unmatched_include:
             raise ValueError(
-                "Motif(s) --include sans correspondance : "
+                "Unmatched --include pattern(s): "
                 + ", ".join(unmatched_include)
             )
         keep = [
@@ -278,7 +283,7 @@ def filter_distance_matrix(
         ]
         if unmatched_exclude:
             raise ValueError(
-                "Motif(s) --exclude sans correspondance : "
+                "Unmatched --exclude pattern(s): "
                 + ", ".join(unmatched_exclude)
             )
         keep = [
@@ -290,8 +295,8 @@ def filter_distance_matrix(
     indices = [i for i, selected in enumerate(keep) if selected]
     if len(indices) < 2:
         raise ValueError(
-            "Les filtres --include/--exclude doivent conserver au moins deux objets ; "
-            f"{len(indices)} sélectionné(s)."
+            "--include/--exclude must keep at least two objects; "
+            f"{len(indices)} selected."
         )
 
     selected_labels = [labels[i] for i in indices]
@@ -301,7 +306,7 @@ def filter_distance_matrix(
 
 
 def pcoa(distance: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
-    """Calculer les coordonnées PCoA (axes positifs, orientés) et les valeurs propres."""
+    """Return oriented PCoA coordinates for positive axes and all eigenvalues."""
     n = distance.shape[0]
     centering = np.eye(n) - np.ones((n, n), dtype=np.float64) / n
     gram = -0.5 * centering @ (distance * distance) @ centering
@@ -316,7 +321,7 @@ def pcoa(distance: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
 
     if np.count_nonzero(positive) < 2:
         raise ValueError(
-            "La matrice ne fournit pas deux axes PCoA de valeur propre positive."
+            "The matrix does not provide two PCoA axes with positive eigenvalues."
         )
 
     coordinates = eigenvectors[:, positive] * np.sqrt(eigenvalues[positive])
@@ -331,15 +336,13 @@ def place_labels(
     y: np.ndarray,
     marker_radius_pt: float,
 ) -> None:
-    """Placer chaque étiquette à la meilleure des positions candidates.
+    """Place each label at the best candidate position around its point.
 
-    Les candidates entourent le point (8 directions, plusieurs distances en
-    points typographiques). Le coût d'une candidate additionne, en pixels
-    carrés, ses recouvrements avec les étiquettes déjà placées, avec les
-    marqueurs et avec l'extérieur du cadre, plus une pénalité croissant avec
-    la distance au point. Les points les plus entourés sont traités d'abord.
-    Au-delà de ``LEADER_RADIUS`` points, un trait fin relie l'étiquette à son
-    point.
+    Candidates surround the point in eight directions at several typographic
+    distances. Candidate cost combines overlap with already placed labels,
+    markers, and the plot frame, plus a penalty that increases with distance
+    from the point. The most crowded points are handled first. Beyond
+    ``LEADER_RADIUS`` points, a thin leader line connects the label to its point.
     """
     fig.canvas.draw()
     renderer = fig.canvas.get_renderer()
@@ -420,7 +423,7 @@ def place_labels(
 
 
 def plane_fit(distance: np.ndarray, plane: np.ndarray) -> float:
-    """Corrélation de Pearson entre distances originales et distances du plan."""
+    """Return the Pearson correlation between original and planar distances."""
     upper = np.triu_indices(distance.shape[0], 1)
     planar = np.linalg.norm(plane[:, None, :] - plane[None, :, :], axis=2)
     if np.std(distance[upper]) == 0.0 or np.std(planar[upper]) == 0.0:
@@ -440,7 +443,7 @@ def plot_pcoa(
     height: float,
     dpi: int,
 ) -> None:
-    """Tracer deux axes avec un habillage minimal et des étiquettes placées."""
+    """Plot two PCoA axes with minimal decoration and placed labels."""
     matplotlib.rcParams["svg.fonttype"] = "none"
     axis_x, axis_y = axes
     positive = eigenvalues[eigenvalues > 0.0]
@@ -477,7 +480,7 @@ def plot_pcoa(
 
 
 def read_distance_matrix(path: Path) -> tuple[list[str], np.ndarray]:
-    """Lire et valider une matrice carrée de distances avec étiquettes."""
+    """Read and validate a square labelled distance matrix."""
     delimiter = detect_delimiter(path)
 
     with path.open("r", encoding="utf-8-sig", newline="") as stream:
@@ -485,12 +488,12 @@ def read_distance_matrix(path: Path) -> tuple[list[str], np.ndarray]:
 
     rows = [row for row in rows if any(cell.strip() for cell in row)]
     if len(rows) < 3:
-        raise ValueError("La matrice doit contenir au moins deux objets.")
+        raise ValueError("The matrix must contain at least two objects.")
 
     header = [cell.strip() for cell in rows[0]]
     column_labels = header[1:]
     if not column_labels:
-        raise ValueError("La première ligne doit contenir les étiquettes de colonnes.")
+        raise ValueError("The first row must contain column labels.")
 
     row_labels: list[str] = []
     values: list[list[float]] = []
@@ -498,44 +501,43 @@ def read_distance_matrix(path: Path) -> tuple[list[str], np.ndarray]:
     for line_no, row in enumerate(rows[1:], 2):
         if len(row) != len(header):
             raise ValueError(
-                f"{path}:{line_no}: {len(row)} colonnes, "
-                f"{len(header)} attendues."
+                f"{path}:{line_no}: {len(row)} columns, "
+                f"{len(header)} expected."
             )
 
         label = row[0].strip()
         if not label:
-            raise ValueError(f"{path}:{line_no}: étiquette de ligne vide.")
+            raise ValueError(f"{path}:{line_no}: empty row label.")
         row_labels.append(label)
 
         try:
             values.append([float(cell.strip()) for cell in row[1:]])
         except ValueError as error:
             raise ValueError(
-                f"{path}:{line_no}: valeur de distance non numérique."
+                f"{path}:{line_no}: non-numeric distance value."
             ) from error
 
     if row_labels != column_labels:
         raise ValueError(
-            "Les étiquettes de lignes et de colonnes doivent être identiques "
-            "et dans le même ordre."
+            "Row and column labels must be identical and in the same order."
         )
 
     matrix = np.asarray(values, dtype=np.float64)
     n = len(row_labels)
     if matrix.shape != (n, n):
         raise ValueError(
-            f"Matrice non carrée : forme {matrix.shape}, {(n, n)} attendue."
+            f"Non-square matrix: shape {matrix.shape}, expected {(n, n)}."
         )
     if not np.all(np.isfinite(matrix)):
-        raise ValueError("La matrice contient NaN ou une valeur infinie.")
+        raise ValueError("The matrix contains NaN or an infinite value.")
     if np.any(matrix < -TOLERANCE):
-        raise ValueError("Une matrice de distances ne peut pas contenir de valeur négative.")
+        raise ValueError("A distance matrix cannot contain negative values.")
     if not np.allclose(np.diag(matrix), 0.0, atol=TOLERANCE, rtol=0.0):
-        raise ValueError("La diagonale de la matrice doit être nulle.")
+        raise ValueError("The distance-matrix diagonal must be zero.")
     if not np.allclose(matrix, matrix.T, atol=TOLERANCE, rtol=1e-10):
         delta = float(np.max(np.abs(matrix - matrix.T)))
         raise ValueError(
-            f"La matrice n'est pas symétrique (écart maximal : {delta:g})."
+            f"The matrix is not symmetric (maximum difference: {delta:g})."
         )
 
     matrix = 0.5 * (matrix + matrix.T)
@@ -549,7 +551,7 @@ def write_coordinates(
     coordinates: np.ndarray,
     positive_eigenvalues: np.ndarray,
 ) -> None:
-    """Écrire toutes les coordonnées correspondant aux axes positifs."""
+    """Write coordinates for all positive axes."""
     path.parent.mkdir(parents=True, exist_ok=True)
     positive_sum = float(positive_eigenvalues.sum())
 
@@ -558,7 +560,7 @@ def write_coordinates(
         headers = ["label"]
         for axis, eigenvalue in enumerate(positive_eigenvalues, 1):
             pct = 100.0 * float(eigenvalue) / positive_sum
-            headers.append(f"axe{axis}_{pct:.4f}%")
+            headers.append(f"axis{axis}_{pct:.4f}%")
         writer.writerow(headers)
 
         for label, row in zip(labels, coordinates, strict=True):
@@ -566,7 +568,7 @@ def write_coordinates(
 
 
 def write_eigenvalues(path: Path, eigenvalues: np.ndarray) -> None:
-    """Écrire toutes les valeurs propres, positives, nulles et négatives."""
+    """Write all positive, zero, and negative eigenvalues."""
     path.parent.mkdir(parents=True, exist_ok=True)
     positive_sum = float(eigenvalues[eigenvalues > 0.0].sum())
 
