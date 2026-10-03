@@ -121,6 +121,11 @@ class Tf(Scorer):
         """Return the filename code."""
         return "tf"
 
+    @property
+    def name(self) -> str:
+        """Return the human-readable scorer name."""
+        return "TF"
+
     def score_terms(
         self,
         doc_id: int,
@@ -132,8 +137,43 @@ class Tf(Scorer):
         return np.asarray(tf, dtype=np.float64)
 
 
-class RawTfIdf(Scorer):
-    """Raw TF-IDF.
+class SubTf(Scorer):
+    """Sublinear term frequency.
+
+    1 + ln(tf) if tf > 0, else 0
+
+    tf : term frequency in document
+
+    Salton, G. & Buckley, C. (1988). "Term-weighting approaches in automatic text retrieval." Information Processing & Management 24(5): 513-523. doi:10.1016/0306-4573(88)90021-0.
+    """
+
+    @property
+    def code(self) -> str:
+        """Return the filename code."""
+        return "subtf"
+
+    @property
+    def name(self) -> str:
+        """Return the human-readable scorer name."""
+        return "subTF"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Score terms with sublinear term-frequency scaling."""
+        del doc_id, term_ids
+        observed = np.asarray(tf, dtype=np.float64)
+        scores = np.zeros(observed.shape, dtype=np.float64)
+        positive = observed > 0.0
+        scores[positive] = 1.0 + np.log(observed[positive])
+        return scores
+
+
+class TfIdf(Scorer):
+    """TF-IDF with raw term frequency.
 
     tf * ln(N / df)
 
@@ -157,20 +197,25 @@ class RawTfIdf(Scorer):
         """Return the filename code."""
         return "tfidf"
 
+    @property
+    def name(self) -> str:
+        """Return the human-readable scorer name."""
+        return "TF-IDF"
+
     def score_terms(
         self,
         doc_id: int,
         term_ids: IntArray,
         tf: IntArray,
     ) -> FloatArray:
-        """Score terms with raw TF-IDF."""
+        """Score terms with TF-IDF."""
         del doc_id
-        tf_float = np.asarray(tf, dtype=np.float64)
-        return tf_float * self._idf[term_ids]
+        observed = np.asarray(tf, dtype=np.float64)
+        return observed * self._idf[term_ids]
 
 
 class TfIdfAlpha(Scorer):
-    """Parametric raw TF-IDF.
+    """TF-IDF with a parametric IDF exponent.
 
     tf * ln(N / df)^alpha
 
@@ -179,12 +224,11 @@ class TfIdfAlpha(Scorer):
     df : document frequency of term
     alpha : strength of the inverse-document-frequency factor
 
-    alpha=0 gives raw tf exactly. alpha=1 gives raw TF-IDF exactly. Increasing
+    alpha=0 gives raw tf exactly. alpha=1 gives TF-IDF exactly. Increasing
     alpha increasingly favours terms with low document frequency; as alpha grows,
     terms with maximal IDF (df=1) dominate the ranking.
 
-    No document-vector normalization is applied because it would not change the
-    within-document term ranking.
+    This is an experimental parametric extension, not a standard named TF-IDF variant.
 
     Salton, G. & Buckley, C. (1988). "Term-weighting approaches in automatic text retrieval." Information Processing & Management 24(5): 513-523. doi:10.1016/0306-4573(88)90021-0.
     """
@@ -206,7 +250,7 @@ class TfIdfAlpha(Scorer):
     @property
     def name(self) -> str:
         """Return the human-readable scorer name."""
-        return f"TF-IDF alpha={self.alpha:g}"
+        return f"TF-IDF (IDF alpha={self.alpha:g})"
 
     def score_terms(
         self,
@@ -214,24 +258,104 @@ class TfIdfAlpha(Scorer):
         term_ids: IntArray,
         tf: IntArray,
     ) -> FloatArray:
-        """Score terms with parametric raw TF-IDF."""
+        """Score terms with TF-IDF at the configured IDF exponent."""
         del doc_id
-        tf_float = np.asarray(tf, dtype=np.float64)
+        observed = np.asarray(tf, dtype=np.float64)
         if self.alpha == 0.0:
-            return tf_float.copy()
-        return tf_float * np.power(self._idf[term_ids], self.alpha)
+            return observed.copy()
+        return observed * np.power(self._idf[term_ids], self.alpha)
 
 
-class LogTfIdf(Scorer):
-    """Logarithmic TF-IDF.
+class BinaryTfIdf(Scorer):
+    """Binary term frequency-inverse document frequency (BTF-IDF).
 
-    (1 + ln(tf)) * ln(N / df)
+    1(tf > 0) * ln(N / df)
 
     tf : term frequency in document
     N : number of documents
     df : document frequency of term
 
-    No document-vector normalization is applied because it would not change the within-document term ranking.
+    Ahmed, Z., Sheridan, P., McIsaac, M. & Farooque, A. A. (2026). "Common TF-IDF variants arise as key components in the test statistic of a penalized likelihood-ratio test for word burstiness." Discover Computing 29:274. doi:10.1007/s10791-026-10090-4.
+    """
+
+    def __init__(self, corpus: TermDocCorpus) -> None:
+        super().__init__(corpus)
+        self._idf = np.zeros(len(corpus.df), dtype=np.float64)
+        valid = corpus.df > 0
+        self._idf[valid] = np.log(corpus.n_docs / corpus.df[valid])
+
+    @property
+    def code(self) -> str:
+        """Return the filename code."""
+        return "btfidf"
+
+    @property
+    def name(self) -> str:
+        """Return the human-readable scorer name."""
+        return "BTF-IDF"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Score terms with binary TF-IDF."""
+        del doc_id
+        observed = np.asarray(tf, dtype=np.float64)
+        return (observed > 0.0).astype(np.float64) * self._idf[term_ids]
+
+
+class TfIcf(Scorer):
+    """Term frequency-inverse collection frequency (TF-ICF).
+
+    tf * ln(CL / cf)
+
+    tf : term frequency in document
+    cf : collection frequency of term
+    CL : collection length
+
+    Kwok, K. L. (1990). "Experiments with a component theory of probabilistic information retrieval based on single terms as document components." ACM Transactions on Information Systems 8(4): 363-386.
+    """
+
+    def __init__(self, corpus: TermDocCorpus) -> None:
+        if corpus.collection_len <= 0:
+            raise ValueError("collection_len must be > 0")
+        super().__init__(corpus)
+        self._icf = np.zeros(len(corpus.cf), dtype=np.float64)
+        valid = corpus.cf > 0
+        self._icf[valid] = np.log(corpus.collection_len / corpus.cf[valid])
+
+    @property
+    def code(self) -> str:
+        """Return the filename code."""
+        return "tficf"
+
+    @property
+    def name(self) -> str:
+        """Return the human-readable scorer name."""
+        return "TF-ICF"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Score terms with TF-ICF."""
+        del doc_id
+        observed = np.asarray(tf, dtype=np.float64)
+        return observed * self._icf[term_ids]
+
+
+class SubTfIdf(Scorer):
+    """TF-IDF with sublinear term-frequency scaling.
+
+    (1 + ln(tf)) * ln(N / df) if tf > 0, else 0
+
+    tf : term frequency in document
+    N : number of documents
+    df : document frequency of term
 
     Salton, G. & Buckley, C. (1988). "Term-weighting approaches in automatic text retrieval." Information Processing & Management 24(5): 513-523. doi:10.1016/0306-4573(88)90021-0.
     """
@@ -245,7 +369,12 @@ class LogTfIdf(Scorer):
     @property
     def code(self) -> str:
         """Return the filename code."""
-        return "tfidflog"
+        return "subtfidf"
+
+    @property
+    def name(self) -> str:
+        """Return the human-readable scorer name."""
+        return "subTF-IDF"
 
     def score_terms(
         self,
@@ -253,33 +382,31 @@ class LogTfIdf(Scorer):
         term_ids: IntArray,
         tf: IntArray,
     ) -> FloatArray:
-        """Score terms with logarithmic TF-IDF."""
+        """Score terms with sublinear TF-IDF."""
         del doc_id
-        tf_float = np.asarray(tf, dtype=np.float64)
-        scores = np.zeros(tf_float.shape, dtype=np.float64)
-        positive = tf_float > 0
+        observed = np.asarray(tf, dtype=np.float64)
+        scores = np.zeros(observed.shape, dtype=np.float64)
+        positive = observed > 0.0
         scores[positive] = (
-            1.0 + np.log(tf_float[positive])
+            1.0 + np.log(observed[positive])
         ) * self._idf[term_ids[positive]]
         return scores
 
 
-class LogTfIdfAlpha(Scorer):
-    """Parametric logarithmic TF-IDF.
+class SubTfIdfAlpha(Scorer):
+    """Sublinear TF-IDF with a parametric IDF exponent.
 
-    (1 + ln(tf)) * ln(N / df)^alpha
+    (1 + ln(tf)) * ln(N / df)^alpha if tf > 0, else 0
 
     tf : term frequency in document
     N : number of documents
     df : document frequency of term
     alpha : strength of the inverse-document-frequency factor
 
-    alpha=0 gives logarithmic tf, 1 + ln(tf). alpha=1 gives the ordinary
-    logarithmic TF-IDF scorer exactly. Increasing alpha increasingly favours
-    terms with low document frequency.
+    alpha=0 gives subTF exactly. alpha=1 gives subTF-IDF exactly. Increasing
+    alpha increasingly favours terms with low document frequency.
 
-    No document-vector normalization is applied because it would not change the
-    within-document term ranking.
+    This is an experimental parametric extension, not a standard named TF-IDF variant.
 
     Salton, G. & Buckley, C. (1988). "Term-weighting approaches in automatic text retrieval." Information Processing & Management 24(5): 513-523. doi:10.1016/0306-4573(88)90021-0.
     """
@@ -296,12 +423,12 @@ class LogTfIdfAlpha(Scorer):
     @property
     def code(self) -> str:
         """Return the filename code."""
-        return f"tfidfloga{self.alpha:g}"
+        return f"subtfidfa{self.alpha:g}"
 
     @property
     def name(self) -> str:
         """Return the human-readable scorer name."""
-        return f"Log TF-IDF alpha={self.alpha:g}"
+        return f"subTF-IDF (IDF alpha={self.alpha:g})"
 
     def score_terms(
         self,
@@ -309,21 +436,27 @@ class LogTfIdfAlpha(Scorer):
         term_ids: IntArray,
         tf: IntArray,
     ) -> FloatArray:
-        """Score terms with parametric logarithmic TF-IDF."""
+        """Score terms with sublinear TF-IDF at the configured IDF exponent."""
         del doc_id
         observed = np.asarray(tf, dtype=np.float64)
         scores = np.zeros(observed.shape, dtype=np.float64)
         positive = observed > 0.0
         if not np.any(positive):
             return scores
-        log_tf = 1.0 + np.log(observed[positive])
+        sub_tf = 1.0 + np.log(observed[positive])
         if self.alpha == 0.0:
-            scores[positive] = log_tf
+            scores[positive] = sub_tf
         else:
-            scores[positive] = log_tf * np.power(
+            scores[positive] = sub_tf * np.power(
                 self._idf[term_ids[positive]], self.alpha
             )
         return scores
+
+
+# Backward-compatible class aliases for earlier experiment scripts.
+RawTfIdf = TfIdf
+LogTfIdf = SubTfIdf
+LogTfIdfAlpha = SubTfIdfAlpha
 
 
 class BM25(Scorer):
@@ -1305,38 +1438,34 @@ class MinimumSensitivity(Scorer):
         return scores
 
 
-class Fisher(Scorer):
-    """Fisher lexical specificity, as used in TXM/textometry.
+class Hgt(Scorer):
+    """One-sided hypergeometric-test term weight (HGT).
 
+    HGT = -ln(P(X >= tf))
     X ~ Hypergeom(CL, cf, dl)
-    expected = cf * dl / CL
-
-    -log10(P(X >= tf)) if tf >= expected
-     log10(P(X <= tf)) if tf < expected
 
     tf : term frequency in document
     cf : collection frequency of term
     dl : document length
     CL : collection length
 
-    Positive values indicate over-representation; negative values indicate
-    under-representation. The implementation rounds to four decimals and uses
-    magnitude 1000 when a tail probability underflows to zero.
+    The natural logarithm follows the TF-IDF comparison used by Sheridan and
+    Onsjö. This scorer measures over-representation only and is non-negative.
 
-    Lafon, P. (1980). "Sur la variabilité de la fréquence des formes dans un corpus." Mots 1: 127-165. doi:10.3406/mots.1980.1008.
+    Sheridan, P. & Onsjö, M. (2024). "The hypergeometric test performs comparably to TF-IDF on standard text analysis tasks." Multimedia Tools and Applications 83: 28875-28890. doi:10.1007/s11042-023-16615-z.
     """
 
-    MAX_SCORE = 1000.0
+    MAX_SCORE = 1000.0 * np.log(10.0)
 
     @property
     def code(self) -> str:
         """Return the filename code."""
-        return "fisher"
+        return "hgt"
 
     @property
     def name(self) -> str:
         """Return the human-readable scorer name."""
-        return "Fisher specificity (TXM)"
+        return "HGT"
 
     def score_terms(
         self,
@@ -1344,14 +1473,142 @@ class Fisher(Scorer):
         term_ids: IntArray,
         tf: IntArray,
     ) -> FloatArray:
-        """Score terms with signed Fisher/hypergeometric specificity."""
+        """Score terms by upper-tail hypergeometric surprisal."""
         observed = np.asarray(tf, dtype=np.int64)
         corpus_term = np.asarray(self.corpus.cf[term_ids], dtype=np.int64)
         part_size = int(self.corpus.doc_len[doc_id])
         corpus_size = int(self.corpus.collection_len)
 
+        scores = np.zeros(observed.shape, dtype=np.float64)
         if part_size <= 0 or corpus_size <= 0 or part_size > corpus_size:
-            return np.zeros(observed.shape, dtype=np.float64)
+            return scores
+
+        invalid = (
+            (observed < 0)
+            | (corpus_term < observed)
+            | (corpus_term > corpus_size)
+            | (observed > part_size)
+        )
+        valid = (observed > 0) & ~invalid
+        if np.any(valid):
+            log_probability = hypergeom.logsf(
+                observed[valid] - 1,
+                corpus_size,
+                corpus_term[valid],
+                part_size,
+            )
+            values = -log_probability
+            values[~np.isfinite(values)] = self.MAX_SCORE
+            scores[valid] = values
+
+        scores[invalid] = np.nan
+        return scores
+
+
+class HgtAlpha(Scorer):
+    """Parametric extension of the positive HGT score.
+
+    HgtAlpha = tf * (HGT / tf)^alpha
+    HGT = -ln(P(X >= tf))
+
+    tf : term frequency in document
+    alpha : strength of HGT surprisal per observed occurrence
+
+    alpha=0 gives raw tf exactly. alpha=1 gives HGT exactly. This is an
+    experimental parametric extension, not a standard named weighting scheme.
+    """
+
+    def __init__(self, corpus: TermDocCorpus, alpha: float = 1.0) -> None:
+        if not isfinite(alpha) or alpha < 0.0:
+            raise ValueError("alpha must be finite and >= 0")
+        super().__init__(corpus)
+        self.alpha = alpha
+        self._hgt = Hgt(corpus)
+
+    @property
+    def code(self) -> str:
+        """Return the filename code."""
+        return f"hgta{self.alpha:g}"
+
+    @property
+    def name(self) -> str:
+        """Return the human-readable scorer name."""
+        return f"HGT alpha={self.alpha:g}"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Score terms with HGT alpha at the configured alpha."""
+        observed = np.asarray(tf, dtype=np.float64)
+        if self.alpha == 0.0:
+            return observed.copy()
+
+        hgt = self._hgt.score_terms(doc_id, term_ids, tf)
+        scores = np.zeros(observed.shape, dtype=np.float64)
+        invalid = np.isnan(hgt)
+        positive = (observed > 0.0) & (hgt > 0.0) & ~invalid
+        scores[positive] = observed[positive] * np.power(
+            hgt[positive] / observed[positive],
+            self.alpha,
+        )
+        scores[invalid] = np.nan
+        return scores
+
+
+class Txm(Scorer):
+    """Signed TXM/Lafon lexical specificity.
+
+    X ~ Hypergeom(CL, cf, dl)
+    mode = floor((cf + 1) * (dl + 1) / (CL + 2))
+
+    -log10(P(X >= tf)) if tf > mode
+     log10(P(X <= tf)) if tf < mode
+     0                         if tf == mode
+
+    tf : term frequency in document
+    cf : collection frequency of term
+    dl : document length
+    CL : collection length
+
+    TXM determines over- versus under-representation from the mode of the
+    hypergeometric distribution, not from its mean. Floating-point log10 scores
+    are retained for numerical experiments; display formatting is left to the
+    caller.
+
+    Lafon, P. (1980). "Sur la variabilité de la fréquence des formes dans un corpus." Mots 1: 127-165. doi:10.3406/mots.1980.1008.
+    TXM User Manual, section "Spécificités".
+    """
+
+    MAX_SCORE = 1000.0
+
+    @property
+    def code(self) -> str:
+        """Return the filename code."""
+        return "txm"
+
+    @property
+    def name(self) -> str:
+        """Return the human-readable scorer name."""
+        return "TXM"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Score terms with signed TXM/Lafon hypergeometric specificity."""
+        observed = np.asarray(tf, dtype=np.int64)
+        corpus_term = np.asarray(self.corpus.cf[term_ids], dtype=np.int64)
+        part_size = int(self.corpus.doc_len[doc_id])
+        corpus_size = int(self.corpus.collection_len)
+
+        scores = np.zeros(observed.shape, dtype=np.float64)
+        if part_size <= 0 or corpus_size <= 0 or part_size > corpus_size:
+            return scores
 
         invalid = (
             (observed < 0)
@@ -1360,86 +1617,52 @@ class Fisher(Scorer):
             | (observed > part_size)
         )
 
-        expected = corpus_term.astype(np.float64) * part_size / corpus_size
-        positive = observed >= expected
-        scores = np.zeros(observed.shape, dtype=np.float64)
+        mode = np.floor(
+            (corpus_term.astype(np.float64) + 1.0)
+            * (part_size + 1.0)
+            / (corpus_size + 2.0)
+        ).astype(np.int64)
 
-        pos = positive & ~invalid
-        if np.any(pos):
-            probability = hypergeom.sf(
-                observed[pos] - 1,
+        positive = (observed > mode) & ~invalid
+        if np.any(positive):
+            log_probability = hypergeom.logsf(
+                observed[positive] - 1,
                 corpus_size,
-                corpus_term[pos],
+                corpus_term[positive],
                 part_size,
             )
-            finite = probability > 0.0
-            pos_scores = np.full(probability.shape, self.MAX_SCORE, dtype=np.float64)
-            pos_scores[finite] = -np.log10(probability[finite])
-            scores[pos] = pos_scores
+            values = -log_probability / np.log(10.0)
+            values[~np.isfinite(values)] = self.MAX_SCORE
+            scores[positive] = values
 
-        neg = ~positive & ~invalid
-        if np.any(neg):
-            probability = hypergeom.cdf(
-                observed[neg],
+        negative = (observed < mode) & ~invalid
+        if np.any(negative):
+            log_probability = hypergeom.logcdf(
+                observed[negative],
                 corpus_size,
-                corpus_term[neg],
+                corpus_term[negative],
                 part_size,
             )
-            finite = probability > 0.0
-            neg_scores = np.full(probability.shape, -self.MAX_SCORE, dtype=np.float64)
-            neg_scores[finite] = np.log10(probability[finite])
-            scores[neg] = neg_scores
+            values = log_probability / np.log(10.0)
+            values[~np.isfinite(values)] = -self.MAX_SCORE
+            scores[negative] = values
 
-        scores = np.round(scores, 4)
         scores[invalid] = np.nan
         return scores
 
 
-class FisherAlpha(Scorer):
-    """Parametric positive Fisher specificity.
-
-    FisherAlpha = tf * (S / tf)^alpha
-
-    S = -log10(P(X >= tf))
-    X ~ Hypergeom(CL, cf, dl)
-
-    tf : observed frequency in the focus
-    cf : collection frequency of term
-    dl : focus size
-    CL : collection size
-    alpha : strength of Fisher surprisal per observed occurrence
-
-    alpha=0 gives raw tf exactly. alpha=1 gives the unrounded one-sided upper-tail
-    Fisher specificity S. Increasing alpha increasingly favours terms with high
-    Fisher surprisal per observed occurrence. Unlike the signed Fisher scorer, S
-    is defined from the upper tail for every observed term, so the family remains
-    non-negative and continuous in alpha. For over-represented terms, alpha=1 has
-    the same ranking as the positive branch of Fisher, apart from Fisher's
-    four-decimal rounding.
-
-    Tail probabilities that underflow to zero use the same magnitude cap as the
-    Fisher scorer.
-
-    Lafon, P. (1980). "Sur la variabilité de la fréquence des formes dans un corpus." Mots 1: 127-165. doi:10.3406/mots.1980.1008.
-    """
-
-    MAX_SCORE = Fisher.MAX_SCORE
-
-    def __init__(self, corpus: TermDocCorpus, alpha: float = 1.0) -> None:
-        if not isfinite(alpha) or alpha < 0.0:
-            raise ValueError("alpha must be finite and >= 0")
-        super().__init__(corpus)
-        self.alpha = alpha
+class TxmPos(Txm):
+    """Positive TXM specificity only: over-representation magnitude."""
 
     @property
     def code(self) -> str:
         """Return the filename code."""
-        return f"fishera{self.alpha:g}"
+        return "txmpos"
 
     @property
     def name(self) -> str:
         """Return the human-readable scorer name."""
-        return f"Fisher alpha={self.alpha:g}"
+        return "TXM positive"
 
     def score_terms(
         self,
@@ -1447,95 +1670,22 @@ class FisherAlpha(Scorer):
         term_ids: IntArray,
         tf: IntArray,
     ) -> FloatArray:
-        """Score terms with Fisher alpha at the configured alpha."""
-        observed = np.asarray(tf, dtype=np.float64)
-        if self.alpha == 0.0:
-            return observed.copy()
-
-        observed_int = np.asarray(tf, dtype=np.int64)
-        corpus_term = np.asarray(self.corpus.cf[term_ids], dtype=np.int64)
-        part_size = int(self.corpus.doc_len[doc_id])
-        corpus_size = int(self.corpus.collection_len)
-
-        if part_size <= 0 or corpus_size <= 0 or part_size > corpus_size:
-            return np.zeros(observed.shape, dtype=np.float64)
-
-        invalid = (
-            (observed_int < 0)
-            | (corpus_term < observed_int)
-            | (corpus_term > corpus_size)
-            | (observed_int > part_size)
-        )
-
-        surprisal = np.zeros(observed.shape, dtype=np.float64)
-        valid = (observed_int > 0) & ~invalid
-        if np.any(valid):
-            probability = hypergeom.sf(
-                observed_int[valid] - 1,
-                corpus_size,
-                corpus_term[valid],
-                part_size,
-            )
-            finite = probability > 0.0
-            values = np.full(probability.shape, self.MAX_SCORE, dtype=np.float64)
-            values[finite] = -np.log10(probability[finite])
-            surprisal[valid] = values
-
-        if self.alpha == 1.0:
-            surprisal[invalid] = np.nan
-            return surprisal
-
-        scores = np.zeros(observed.shape, dtype=np.float64)
-        positive = valid & (surprisal > 0.0)
-        specificity = np.divide(
-            surprisal[positive],
-            observed[positive],
-        )
-        scores[positive] = observed[positive] * np.power(specificity, self.alpha)
-        scores[invalid] = np.nan
-        return scores
-
-
-class FisherPos(Fisher):
-    """Positive Fisher specificity only: over-representation magnitude."""
-
-    @property
-    def code(self) -> str:
-        """Return the filename code."""
-        return "fisherpos"
-
-    @property
-    def name(self) -> str:
-        """Return the human-readable scorer name."""
-        return "Positive Fisher specificity"
-
-    def score_terms(
-        self,
-        doc_id: int,
-        term_ids: IntArray,
-        tf: IntArray,
-    ) -> FloatArray:
-        """Keep only positive Fisher scores."""
+        """Keep only positive TXM scores."""
         return np.maximum(super().score_terms(doc_id, term_ids, tf), 0.0)
 
 
-class FisherNeg(Fisher):
-    """Negative Fisher specificity only: under-representation magnitude.
-
-    Scores are returned as positive magnitudes so that a document vector records
-    strength of deficit rather than a globally negative sign. Multiplying every
-    retained value by -1 would give the same cosine geometry.
-    """
+class TxmNeg(Txm):
+    """Negative TXM specificity only, returned as positive magnitudes."""
 
     @property
     def code(self) -> str:
         """Return the filename code."""
-        return "fisherneg"
+        return "txmneg"
 
     @property
     def name(self) -> str:
         """Return the human-readable scorer name."""
-        return "Negative Fisher specificity"
+        return "TXM negative"
 
     def score_terms(
         self,
@@ -1547,18 +1697,18 @@ class FisherNeg(Fisher):
         return np.maximum(-super().score_terms(doc_id, term_ids, tf), 0.0)
 
 
-class FisherAbs(Fisher):
-    """Absolute Fisher specificity: significance magnitude without direction."""
+class TxmAbs(Txm):
+    """Absolute TXM specificity: significance magnitude without direction."""
 
     @property
     def code(self) -> str:
         """Return the filename code."""
-        return "fisherabs"
+        return "txmabs"
 
     @property
     def name(self) -> str:
         """Return the human-readable scorer name."""
-        return "Absolute Fisher specificity"
+        return "TXM absolute"
 
     def score_terms(
         self,
@@ -1566,8 +1716,16 @@ class FisherAbs(Fisher):
         term_ids: IntArray,
         tf: IntArray,
     ) -> FloatArray:
-        """Return the absolute magnitude of signed Fisher specificity."""
+        """Return the absolute magnitude of signed TXM specificity."""
         return np.abs(super().score_terms(doc_id, term_ids, tf))
+
+
+# Backward-compatible class aliases for earlier experiment scripts.
+Fisher = Txm
+FisherAlpha = HgtAlpha
+FisherPos = TxmPos
+FisherNeg = TxmNeg
+FisherAbs = TxmAbs
 
 
 class LogRatio(Scorer):
@@ -1699,10 +1857,13 @@ class SimpleMaths(Scorer):
 
 SCORER_TYPES: tuple[type[Scorer], ...] = (
     Tf,
-    RawTfIdf,
+    SubTf,
+    TfIdf,
     TfIdfAlpha,
-    LogTfIdf,
-    LogTfIdfAlpha,
+    BinaryTfIdf,
+    TfIcf,
+    SubTfIdf,
+    SubTfIdfAlpha,
     BM25,
     G2,
     SignedG2,
@@ -1717,11 +1878,12 @@ SCORER_TYPES: tuple[type[Scorer], ...] = (
     MutualInformation3,
     MutualInformationLogFrequency,
     MinimumSensitivity,
-    Fisher,
-    FisherAlpha,
-    FisherPos,
-    FisherNeg,
-    FisherAbs,
+    Hgt,
+    HgtAlpha,
+    Txm,
+    TxmPos,
+    TxmNeg,
+    TxmAbs,
     ExclusiveTf,
     LogRatio,
     SimpleMaths,
@@ -1734,6 +1896,7 @@ def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
     return (
         BM25(corpus),
         BM25(corpus, 100.0, 1.0),
+        BinaryTfIdf(corpus),
         Chi2(corpus),
         Chi2Alpha(corpus, 00.0),
         Chi2Alpha(corpus, 00.05),
@@ -1749,17 +1912,18 @@ def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
         Chi2Alpha(corpus, 08.0),
         Chi2Alpha(corpus, 16.0),
         ExclusiveTf(corpus),
-        Fisher(corpus),
-        FisherAlpha(corpus, 00.0),
-        FisherAlpha(corpus, 00.25),
-        FisherAlpha(corpus, 00.5),
-        FisherAlpha(corpus, 00.75),
-        FisherAlpha(corpus, 01.0),
-        FisherAlpha(corpus, 01.47),
-        FisherAlpha(corpus, 02.0),
-        FisherAlpha(corpus, 04.0),
-        FisherAlpha(corpus, 08.0),
-        FisherAlpha(corpus, 16.0),
+        Hgt(corpus),
+        HgtAlpha(corpus, 00.0),
+        HgtAlpha(corpus, 00.25),
+        HgtAlpha(corpus, 00.5),
+        HgtAlpha(corpus, 00.75),
+        HgtAlpha(corpus, 01.0),
+        HgtAlpha(corpus, 01.47),
+        HgtAlpha(corpus, 02.0),
+        HgtAlpha(corpus, 04.0),
+        HgtAlpha(corpus, 08.0),
+        HgtAlpha(corpus, 16.0),
+        Txm(corpus),
         G2(corpus),
         G2Alpha(corpus, 00.0),
         G2Alpha(corpus, 00.25),
@@ -1773,26 +1937,28 @@ def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
         G2Alpha(corpus, 08.0),
         G2Alpha(corpus, 16.0),
         LogRatio(corpus),
-        LogTfIdf(corpus),
-        LogTfIdfAlpha(corpus, 00.0),
-        LogTfIdfAlpha(corpus, 00.05),
-        LogTfIdfAlpha(corpus, 00.1),
-        LogTfIdfAlpha(corpus, 00.15),
-        LogTfIdfAlpha(corpus, 00.2),
-        LogTfIdfAlpha(corpus, 00.25),
-        LogTfIdfAlpha(corpus, 00.56),
-        LogTfIdfAlpha(corpus, 00.75),
-        LogTfIdfAlpha(corpus, 01.0),
-        LogTfIdfAlpha(corpus, 02.0),
-        LogTfIdfAlpha(corpus, 04.0),
-        LogTfIdfAlpha(corpus, 08.0),
-        LogTfIdfAlpha(corpus, 16.0),
+        SubTf(corpus),
+        SubTfIdf(corpus),
+        SubTfIdfAlpha(corpus, 00.0),
+        SubTfIdfAlpha(corpus, 00.05),
+        SubTfIdfAlpha(corpus, 00.1),
+        SubTfIdfAlpha(corpus, 00.15),
+        SubTfIdfAlpha(corpus, 00.2),
+        SubTfIdfAlpha(corpus, 00.25),
+        SubTfIdfAlpha(corpus, 00.56),
+        SubTfIdfAlpha(corpus, 00.75),
+        SubTfIdfAlpha(corpus, 01.0),
+        SubTfIdfAlpha(corpus, 02.0),
+        SubTfIdfAlpha(corpus, 04.0),
+        SubTfIdfAlpha(corpus, 08.0),
+        SubTfIdfAlpha(corpus, 16.0),
         MutualInformation(corpus),
         LogDice(corpus),
         MutualInformation3(corpus),
         MutualInformationLogFrequency(corpus),
         MinimumSensitivity(corpus),
-        RawTfIdf(corpus),
+        TfIdf(corpus),
+        TfIcf(corpus),
         SimpleMaths(corpus, 1.0),
         SimpleMaths(corpus),
         Tf(corpus),
@@ -1814,23 +1980,29 @@ def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
 def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
     """Create a scorer from its stable experiment code.
 
-    Supported codes are ``tf``, ``tfidf``, ``tfidflog``, ``bm25``, ``g2``,
-    ``g2signed``, ``g2pos``, ``g2neg``, ``chi2``, ``zscore``, ``tscore``, ``mi``, ``logdice``, ``mi3``, ``milogf``, ``minsens``, ``fisher``, ``fisherpos``,
-    ``fisherneg``, ``fisherabs``, ``extf``, ``logratio``, ``simplemaths``,
-    ``tfidfaA`` (e.g. ``tfidfa0.5``), ``tfidflogaA`` (e.g. ``tfidfloga0.5``), ``g2aA`` (e.g. ``g2a2``),
-    ``chi2aA`` (e.g. ``chi2a2``), ``fisheraA`` (e.g. ``fishera2``),
-    ``bm25kK1bB`` (e.g. ``bm25k100b1``), and ``simplemathskK`` with ``K`` per
-    million (e.g. ``simplemathsk1``). ``tfidfaA``, ``tfidflogaA``, ``g2aA``, ``chi2aA`` and ``fisheraA``
-    accept any finite alpha >= 0.
-    ``bm25`` keeps the Lucene defaults; ``simplemaths`` uses the document-scale
-    default k.
+    Canonical codes include ``tf``, ``subtf``, ``tfidf``, ``subtfidf``,
+    ``btfidf``, ``tficf``, ``hgt``, ``txm``, ``bm25``, ``g2``, ``chi2``,
+    ``zscore``, ``tscore``, ``mi``, ``logdice``, ``mi3``, ``milogf``,
+    ``minsens``, ``extf``, ``logratio`` and ``simplemaths``.
+
+    Parametric families include ``tfidfaA``, ``subtfidfaA``, ``hgtaA``,
+    ``g2aA`` and ``chi2aA``. Earlier codes ``tfidflog``, ``tfidflogaA``,
+    ``fisher``, ``fisheraA``, ``fisherpos``, ``fisherneg`` and ``fisherabs``
+    remain accepted as backward-compatible aliases.
     """
     code = code.strip().lower()
     factories = {
         "tf": Tf,
-        "tfidf": RawTfIdf,
-        "tfidflog": LogTfIdf,
-        "tfidfloga": lambda c: LogTfIdfAlpha(c, 1.0),
+        "subtf": SubTf,
+        "tfidf": TfIdf,
+        "subtfidf": SubTfIdf,
+        "btfidf": BinaryTfIdf,
+        "tficf": TfIcf,
+        "hgt": Hgt,
+        "txm": Txm,
+        "txmpos": TxmPos,
+        "txmneg": TxmNeg,
+        "txmabs": TxmAbs,
         "bm25": BM25,
         "g2": G2,
         "g2signed": SignedG2,
@@ -1845,29 +2017,41 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
         "milogf": MutualInformationLogFrequency,
         "minsens": MinimumSensitivity,
         "chi2a": lambda c: Chi2Alpha(c, 1.0),
-        "fisher": Fisher,
-        "fisherpos": FisherPos,
-        "fisherneg": FisherNeg,
-        "fisherabs": FisherAbs,
-        "fishera": lambda c: FisherAlpha(c, 1.0),
         "extf": ExclusiveTf,
         "logratio": LogRatio,
         "simplemaths": SimpleMaths,
         "g2a": lambda c: G2Alpha(c, 1.0),
+        "tfidfa": lambda c: TfIdfAlpha(c, 1.0),
+        "subtfidfa": lambda c: SubTfIdfAlpha(c, 1.0),
+        "hgta": lambda c: HgtAlpha(c, 1.0),
+        # Backward-compatible aliases.
+        "tfidflog": SubTfIdf,
+        "fisher": Txm,
+        "fisherpos": TxmPos,
+        "fisherneg": TxmNeg,
+        "fisherabs": TxmAbs,
+        "fishera": lambda c: HgtAlpha(c, 1.0),
+        "tfidfloga": lambda c: SubTfIdfAlpha(c, 1.0),
     }
     factory = factories.get(code)
     if factory is not None:
         return factory(corpus)
 
+    if code.startswith("subtfidfa"):
+        value = code[len("subtfidfa"):]
+        try:
+            alpha = float(value)
+        except ValueError as error:
+            raise ValueError(f"Invalid subTF-IDF alpha scorer code: {code!r}") from error
+        return SubTfIdfAlpha(corpus, alpha)
 
     if code.startswith("tfidfloga"):
         value = code[len("tfidfloga"):]
         try:
             alpha = float(value)
         except ValueError as error:
-            raise ValueError(f"Invalid log TF-IDF alpha scorer code: {code!r}") from error
-        return LogTfIdfAlpha(corpus, alpha)
-
+            raise ValueError(f"Invalid legacy log TF-IDF alpha scorer code: {code!r}") from error
+        return SubTfIdfAlpha(corpus, alpha)
 
     if code.startswith("tfidfa"):
         value = code[len("tfidfa"):]
@@ -1876,6 +2060,22 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
         except ValueError as error:
             raise ValueError(f"Invalid TF-IDF alpha scorer code: {code!r}") from error
         return TfIdfAlpha(corpus, alpha)
+
+    if code.startswith("hgta"):
+        value = code[len("hgta"):]
+        try:
+            alpha = float(value)
+        except ValueError as error:
+            raise ValueError(f"Invalid HGT alpha scorer code: {code!r}") from error
+        return HgtAlpha(corpus, alpha)
+
+    if code.startswith("fishera"):
+        value = code[len("fishera"):]
+        try:
+            alpha = float(value)
+        except ValueError as error:
+            raise ValueError(f"Invalid legacy Fisher alpha scorer code: {code!r}") from error
+        return HgtAlpha(corpus, alpha)
 
     if code.startswith("g2a"):
         value = code[len("g2a"):]
@@ -1892,14 +2092,6 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
         except ValueError as error:
             raise ValueError(f"Invalid χ² alpha scorer code: {code!r}") from error
         return Chi2Alpha(corpus, alpha)
-
-    if code.startswith("fishera"):
-        value = code[len("fishera"):]
-        try:
-            alpha = float(value)
-        except ValueError as error:
-            raise ValueError(f"Invalid Fisher alpha scorer code: {code!r}") from error
-        return FisherAlpha(corpus, alpha)
 
     bm25_match = re.fullmatch(r"bm25k([0-9.]+)b([0-9.]+)", code)
     if bm25_match is not None:
@@ -1918,52 +2110,11 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
             *factories.keys(),
             "bm25k100b1",
             "simplemathsk1",
-            "tfidfa0",
-            "tfidfa0.25",
             "tfidfa0.5",
-            "tfidfa0.75",
-            "tfidfa1",
-            "tfidfa2",
-            "tfidfa4",
-            "tfidfa8",
-            "tfidfa16",
-            "tfidfloga0",
-            "tfidfloga0.25",
-            "tfidfloga0.5",
-            "tfidfloga0.75",
-            "tfidfloga1",
-            "tfidfloga2",
-            "tfidfloga4",
-            "tfidfloga8",
-            "tfidfloga16",
-            "chi2a0",
-            "chi2a0.25",
-            "chi2a0.5",
-            "chi2a0.75",
-            "chi2a1",
-            "chi2a2",
-            "chi2a4",
-            "chi2a8",
-            "chi2a16",
-            "fishera0",
-            "fishera0.25",
-            "fishera0.5",
-            "fishera0.75",
-            "fishera1",
-            "fishera2",
-            "fishera4",
-            "fishera8",
-            "fishera16",
-            "g2a0",
-            "g2a0.25",
-            "g2a0.5",
-            "g2a0.75",
-            "g2a1",
+            "subtfidfa0.5",
+            "hgta0.5",
             "g2a2",
-            "g2a4",
-            "g2a8",
-            "g2a16",
+            "chi2a2",
         )
     )
     raise ValueError(f"Unknown scorer {code!r}. Known scorer codes: {known}")
-
