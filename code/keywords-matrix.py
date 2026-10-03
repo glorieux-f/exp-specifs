@@ -41,7 +41,7 @@ from fnmatch import fnmatchcase
 from pathlib import Path
 import re
 
-from keyword_metrics import METRICS, Metric, make_metric
+from keyword-metrics import METRICS, Metric, make_metric
 
 
 DEFAULT_TOP_N = 100

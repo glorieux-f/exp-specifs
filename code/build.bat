@@ -8,4 +8,6 @@ setlocal EnableExtensions EnableDelayedExpansion
 :: plot formulas without parameters
 :: python .\pcoa.py ..\results\romans19e-100motscles-rbo.tsv ..\results\romans19e-100motscles-specifs --exclude "CF" "DF" "*α*" --flip 2 --title "Balzac, Dumas, Sand, Verne, Zola ; plus de 7000 chapitres ; 100 mots clés. Distances entre formules de spécificité."
 :: plots formulas with parameters
-python .\pcoa-families.py ..\results\romans19e-100motscles-rbo.tsv --output-prefix ..\results\romans19e-100motscles-spec-families --families "subTF-IDF" "TF-IDF" HGT "G²" "χ²" --flip 2 --title "Balzac, Dumas, Sand, Verne, Zola ; plus de 7000 chapitres ; 100 mots clés. Distances entre formules paramétrables de spécificité."
+:: python .\pcoa-families.py ..\results\romans19e-100motscles-rbo.tsv --output-prefix ..\results\romans19e-100motscles-spec-families --families "subTF-IDF" "TF-IDF" HGT "G²" "χ²" --flip 2 --title "Balzac, Dumas, Sand, Verne, Zola ; plus de 7000 chapitres ; 100 mots clés. Distances entre formules paramétrables de spécificité."
+:: 1000 keywords 
+python .\keywords.py ..\data\3_contingency\ ..\results\keywords1000 --vocab content --top 1000 --min-doc-len 1000 --scorer txm g2 g2a1.4 chi2a0.43 subtfidfa0.56 tfidfa1.14 hgta1.47
