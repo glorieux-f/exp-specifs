@@ -16,6 +16,87 @@ IntArray = NDArray[np.integer]
 FloatArray = NDArray[np.float64]
 
 
+_SCORER_LABELS = {
+    "tf": "TF",
+    "subtf": "subTF",
+    "tfidf": "TF-IDF",
+    "subtfidf": "subTF-IDF",
+    "btfidf": "BTF-IDF",
+    "tficf": "TF-ICF",
+    "bm25": "BM25",
+    "g2": "G²",
+    "g2signed": "signed G²",
+    "g2pos": "G²+",
+    "g2neg": "G²−",
+    "chi2": "χ²",
+    "zscore": "z-score",
+    "tscore": "t-score",
+    "mi": "MI",
+    "logdice": "logDice",
+    "mi3": "MI³",
+    "milogf": "MI.log-f",
+    "minsens": "MinSens",
+    "hgt": "HGT",
+    "txm": "TXM",
+    "txmpos": "TXM+",
+    "txmneg": "TXM−",
+    "txmabs": "|TXM|",
+    "extf": "extf",
+    "logratio": "LogRatio",
+    "simplemaths": "SimpleMaths",
+}
+
+
+def scorer_label(code: str) -> str:
+    """Return the publication label for a canonical scorer code.
+
+    Labels are plain Unicode text, not HTML or Matplotlib MathText. This keeps
+    scorer typography independent of the rendering backend. Method names are
+    upright text; lowercase symbols such as tf and alpha remain reserved for
+    variables in formulas and prose.
+    """
+    code = code.strip().lower()
+    fixed = _SCORER_LABELS.get(code)
+    if fixed is not None:
+        return fixed
+
+    alpha_families = (
+        ("subtfidfa", "subTF-IDF"),
+        ("tfidfa", "TF-IDF"),
+        ("hgta", "HGT"),
+        ("g2a", "G²"),
+        ("chi2a", "χ²"),
+    )
+    for prefix, label in alpha_families:
+        if code.startswith(prefix):
+            value = code[len(prefix):]
+            try:
+                alpha = float(value)
+            except ValueError as error:
+                raise ValueError(f"Invalid scorer code: {code!r}") from error
+            if not isfinite(alpha) or alpha < 0.0:
+                raise ValueError(f"Invalid scorer code: {code!r}")
+            return f"{label}α({alpha:g})"
+
+    bm25_match = re.fullmatch(r"bm25k([0-9.]+)b([0-9.]+)", code)
+    if bm25_match is not None:
+        k1 = float(bm25_match.group(1))
+        b = float(bm25_match.group(2))
+        return f"BM25(k₁={k1:g},b={b:g})"
+
+    if code.startswith("simplemathsk"):
+        value = code[len("simplemathsk"):]
+        try:
+            k = float(value)
+        except ValueError as error:
+            raise ValueError(f"Invalid scorer code: {code!r}") from error
+        if not isfinite(k) or k <= 0.0:
+            raise ValueError(f"Invalid scorer code: {code!r}")
+        return f"SimpleMaths({k:g})"
+
+    raise ValueError(f"Unknown scorer code: {code!r}")
+
+
 class TermDocCorpus(Protocol):
     """Minimal corpus contract required by the scorers.
 
@@ -52,6 +133,11 @@ class Scorer(ABC):
     def name(self) -> str:
         """Return a human-readable scorer name."""
         return self.__class__.__name__
+
+    @property
+    def label(self) -> str:
+        """Return the publication label for this scorer."""
+        return scorer_label(self.code)
 
     def score(self, term_id: int, doc_id: int) -> float:
         """Score one term/document cell.
@@ -451,12 +537,6 @@ class SubTfIdfAlpha(Scorer):
                 self._idf[term_ids[positive]], self.alpha
             )
         return scores
-
-
-# Backward-compatible class aliases for earlier experiment scripts.
-RawTfIdf = TfIdf
-LogTfIdf = SubTfIdf
-LogTfIdfAlpha = SubTfIdfAlpha
 
 
 class BM25(Scorer):
@@ -1720,14 +1800,6 @@ class TxmAbs(Txm):
         return np.abs(super().score_terms(doc_id, term_ids, tf))
 
 
-# Backward-compatible class aliases for earlier experiment scripts.
-Fisher = Txm
-FisherAlpha = HgtAlpha
-FisherPos = TxmPos
-FisherNeg = TxmNeg
-FisherAbs = TxmAbs
-
-
 class LogRatio(Scorer):
     """Hardie's Log Ratio.
 
@@ -1985,10 +2057,8 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
     ``zscore``, ``tscore``, ``mi``, ``logdice``, ``mi3``, ``milogf``,
     ``minsens``, ``extf``, ``logratio`` and ``simplemaths``.
 
-    Parametric families include ``tfidfaA``, ``subtfidfaA``, ``hgtaA``,
-    ``g2aA`` and ``chi2aA``. Earlier codes ``tfidflog``, ``tfidflogaA``,
-    ``fisher``, ``fisheraA``, ``fisherpos``, ``fisherneg`` and ``fisherabs``
-    remain accepted as backward-compatible aliases.
+    Parametric families use an explicit numeric suffix: ``tfidfaA``,
+    ``subtfidfaA``, ``hgtaA``, ``g2aA`` and ``chi2aA``.
     """
     code = code.strip().lower()
     factories = {
@@ -2016,22 +2086,9 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
         "mi3": MutualInformation3,
         "milogf": MutualInformationLogFrequency,
         "minsens": MinimumSensitivity,
-        "chi2a": lambda c: Chi2Alpha(c, 1.0),
         "extf": ExclusiveTf,
         "logratio": LogRatio,
         "simplemaths": SimpleMaths,
-        "g2a": lambda c: G2Alpha(c, 1.0),
-        "tfidfa": lambda c: TfIdfAlpha(c, 1.0),
-        "subtfidfa": lambda c: SubTfIdfAlpha(c, 1.0),
-        "hgta": lambda c: HgtAlpha(c, 1.0),
-        # Backward-compatible aliases.
-        "tfidflog": SubTfIdf,
-        "fisher": Txm,
-        "fisherpos": TxmPos,
-        "fisherneg": TxmNeg,
-        "fisherabs": TxmAbs,
-        "fishera": lambda c: HgtAlpha(c, 1.0),
-        "tfidfloga": lambda c: SubTfIdfAlpha(c, 1.0),
     }
     factory = factories.get(code)
     if factory is not None:
@@ -2043,14 +2100,6 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
             alpha = float(value)
         except ValueError as error:
             raise ValueError(f"Invalid subTF-IDF alpha scorer code: {code!r}") from error
-        return SubTfIdfAlpha(corpus, alpha)
-
-    if code.startswith("tfidfloga"):
-        value = code[len("tfidfloga"):]
-        try:
-            alpha = float(value)
-        except ValueError as error:
-            raise ValueError(f"Invalid legacy log TF-IDF alpha scorer code: {code!r}") from error
         return SubTfIdfAlpha(corpus, alpha)
 
     if code.startswith("tfidfa"):
@@ -2067,14 +2116,6 @@ def make_scorer(corpus: TermDocCorpus, code: str) -> Scorer:
             alpha = float(value)
         except ValueError as error:
             raise ValueError(f"Invalid HGT alpha scorer code: {code!r}") from error
-        return HgtAlpha(corpus, alpha)
-
-    if code.startswith("fishera"):
-        value = code[len("fishera"):]
-        try:
-            alpha = float(value)
-        except ValueError as error:
-            raise ValueError(f"Invalid legacy Fisher alpha scorer code: {code!r}") from error
         return HgtAlpha(corpus, alpha)
 
     if code.startswith("g2a"):
