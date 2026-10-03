@@ -1571,13 +1571,25 @@ class Hgt(Scorer):
         )
         valid = (observed > 0) & ~invalid
         if np.any(valid):
-            log_probability = hypergeom.logsf(
+            # scipy.stats.hypergeom.logsf is much slower than sf for vector
+            # inputs. Compute the ordinary survival probability first and only
+            # fall back to logsf for values that underflow to zero.
+            probability = hypergeom.sf(
                 observed[valid] - 1,
                 corpus_size,
                 corpus_term[valid],
                 part_size,
             )
-            values = -log_probability
+            values = np.empty(probability.shape, dtype=np.float64)
+            finite = probability > 0.0
+            values[finite] = -np.log(probability[finite])
+            if np.any(~finite):
+                values[~finite] = -hypergeom.logsf(
+                    observed[valid][~finite] - 1,
+                    corpus_size,
+                    corpus_term[valid][~finite],
+                    part_size,
+                )
             values[~np.isfinite(values)] = self.MAX_SCORE
             scores[valid] = values
 
@@ -1705,25 +1717,43 @@ class Txm(Scorer):
 
         positive = (observed > mode) & ~invalid
         if np.any(positive):
-            log_probability = hypergeom.logsf(
+            probability = hypergeom.sf(
                 observed[positive] - 1,
                 corpus_size,
                 corpus_term[positive],
                 part_size,
             )
-            values = -log_probability / np.log(10.0)
+            values = np.empty(probability.shape, dtype=np.float64)
+            finite = probability > 0.0
+            values[finite] = -np.log10(probability[finite])
+            if np.any(~finite):
+                values[~finite] = -hypergeom.logsf(
+                    observed[positive][~finite] - 1,
+                    corpus_size,
+                    corpus_term[positive][~finite],
+                    part_size,
+                ) / np.log(10.0)
             values[~np.isfinite(values)] = self.MAX_SCORE
             scores[positive] = values
 
         negative = (observed < mode) & ~invalid
         if np.any(negative):
-            log_probability = hypergeom.logcdf(
+            probability = hypergeom.cdf(
                 observed[negative],
                 corpus_size,
                 corpus_term[negative],
                 part_size,
             )
-            values = log_probability / np.log(10.0)
+            values = np.empty(probability.shape, dtype=np.float64)
+            finite = probability > 0.0
+            values[finite] = np.log10(probability[finite])
+            if np.any(~finite):
+                values[~finite] = hypergeom.logcdf(
+                    observed[negative][~finite],
+                    corpus_size,
+                    corpus_term[negative][~finite],
+                    part_size,
+                ) / np.log(10.0)
             values[~np.isfinite(values)] = -self.MAX_SCORE
             scores[negative] = values
 
@@ -2045,6 +2075,7 @@ def default_scorers(corpus: TermDocCorpus) -> tuple[Scorer, ...]:
         TfIdfAlpha(corpus, 08.0),
         TfIdfAlpha(corpus, 16.0),
         TScore(corpus),
+        Txm(corpus),
         ZScore(corpus),
     )
 

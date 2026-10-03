@@ -52,9 +52,10 @@ Only ``[identifier]`` is machine-significant on the metadata line.
 
 Existing output files are skipped before scorer computation, so interrupted runs can
 be resumed without recomputing finished author/scorer combinations. Scorers are
-processed one at a time and progress is printed to the console. Each completed scorer
-is written immediately to a temporary name then renamed, so an error never leaves an
-empty or truncated final keyword file.
+processed one at a time. The console shows one in-place status line per scorer, with
+a spinner while it runs and DONE when it finishes. Each completed scorer is written
+immediately to a temporary name then renamed, so an error never leaves an empty or
+truncated final keyword file.
 """
 
 from __future__ import annotations
@@ -73,7 +74,6 @@ from scorers import Scorer, SimpleMaths, default_scorers, make_scorer
 
 DEFAULT_STOPWORDS = Path(__file__).with_name("stopwords.txt")
 DEFAULT_TOP_N = 100
-DEFAULT_PROGRESS_EVERY = 100
 KEYWORD_SEPARATOR = ", "
 
 AUTHOR_GLOBS = {
@@ -124,15 +124,12 @@ def generate(
     top_n: int = DEFAULT_TOP_N,
     scorer_codes: list[str] | None = None,
     min_doc_len: int = 0,
-    progress_every: int = DEFAULT_PROGRESS_EVERY,
 ) -> None:
     """Generate one keyword file per author and scorer with progress logging."""
     if top_n <= 0:
         raise ValueError("top_n must be > 0")
     if min_doc_len < 0:
         raise ValueError("min_doc_len must be >= 0")
-    if progress_every <= 0:
-        raise ValueError("progress_every must be > 0")
     if vocab_mode not in VOCAB_MODES:
         raise ValueError(f"Unknown vocabulary mode: {vocab_mode}")
 
@@ -204,61 +201,66 @@ def generate(
             if path.exists():
                 skipped_count += 1
                 skipped_author += 1
-                log(f"{prefix}: SKIP existing {path.name}")
                 continue
 
             scorer_start = perf_counter()
-            log(f"{prefix}: START -> {path.name}")
+            status = f"{prefix}: START -> {path.name}"
+            print(f"{status} | 0.0s", end="", flush=True)
+            spinner = "|/-\\"
+            spinner_index = 0
+            last_update = scorer_start
             blocks: list[str] = []
 
-            for doc_index, doc_id in enumerate(eligible_doc_ids, start=1):
-                document = corpus.document(doc_id)
-                term_ids, tf = corpus.terms(doc_id)
-                keep = candidates[term_ids]
-                candidate_terms = term_ids[keep]
-                candidate_tf = tf[keep]
+            try:
+                for doc_id in eligible_doc_ids:
+                    document = corpus.document(doc_id)
+                    term_ids, tf = corpus.terms(doc_id)
+                    keep = candidates[term_ids]
+                    candidate_terms = term_ids[keep]
+                    candidate_tf = tf[keep]
 
-                scores = np.asarray(
-                    scorer.score_terms(doc_id, candidate_terms, candidate_tf),
-                    dtype=np.float64,
-                )
-                if not np.all(np.isfinite(scores)):
-                    raise ValueError(
-                        f"{scorer.code} returned a non-finite score "
-                        f"for {document.identifier}"
+                    scores = np.asarray(
+                        scorer.score_terms(doc_id, candidate_terms, candidate_tf),
+                        dtype=np.float64,
                     )
+                    if not np.all(np.isfinite(scores)):
+                        raise ValueError(
+                            f"{scorer.code} returned a non-finite score "
+                            f"for {document.identifier}"
+                        )
 
-                keyword = scores > neutral_score(scorer)
-                ranked = rank_terms(
-                    candidate_terms[keyword],
-                    candidate_tf[keyword],
-                    scores[keyword],
-                    top_n,
-                )
-                keywords = KEYWORD_SEPARATOR.join(
-                    corpus.lemmas[int(term_id)] for term_id in ranked
-                )
-                blocks.append(f"{metadata_line(document)}\n{keywords}\n\n")
-
-                if (
-                    doc_index == 1
-                    or doc_index % progress_every == 0
-                    or doc_index == eligible_count
-                ):
-                    elapsed = perf_counter() - scorer_start
-                    rate = doc_index / elapsed if elapsed > 0.0 else 0.0
-                    log(
-                        f"{prefix}: {doc_index}/{eligible_count} documents "
-                        f"({100.0 * doc_index / eligible_count:.1f}%), "
-                        f"{elapsed:.1f}s, {rate:.1f} doc/s; "
-                        f"last={document.identifier}"
+                    keyword = scores > neutral_score(scorer)
+                    ranked = rank_terms(
+                        candidate_terms[keyword],
+                        candidate_tf[keyword],
+                        scores[keyword],
+                        top_n,
                     )
+                    keywords = KEYWORD_SEPARATOR.join(
+                        corpus.lemmas[int(term_id)] for term_id in ranked
+                    )
+                    blocks.append(f"{metadata_line(document)}\n{keywords}\n\n")
+
+                    now = perf_counter()
+                    if now - last_update >= 0.2:
+                        spinner_index = (spinner_index + 1) % len(spinner)
+                        print(
+                            f"\r{status} {spinner[spinner_index]} "
+                            f"{now - scorer_start:.1f}s",
+                            end="",
+                            flush=True,
+                        )
+                        last_update = now
+            except Exception:
+                print(flush=True)
+                raise
 
             # Re-check immediately before writing in case another process created
             # the file while this scorer was being computed.
             if path.exists():
                 skipped_count += 1
                 skipped_author += 1
+                print(flush=True)
                 log(f"{prefix}: SKIP created by another process: {path.name}")
                 continue
 
@@ -266,7 +268,7 @@ def generate(
             elapsed = perf_counter() - scorer_start
             file_count += 1
             generated_author += 1
-            log(f"{prefix}: DONE in {elapsed:.1f}s -> {path.name}")
+            print(f"\r{status} DONE ({elapsed:.1f}s)", flush=True)
 
         log(
             f"{author_code}: DONE; {generated_author} generated, "
@@ -368,7 +370,6 @@ def main() -> None:
         top_n=args.top,
         scorer_codes=args.scorer or None,
         min_doc_len=args.min_doc_len,
-        progress_every=args.progress_every,
     )
 
 
@@ -453,11 +454,14 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--scorer",
-        action="append",
+        action="extend",
+        nargs="+",
         default=[],
+        metavar="SCORER",
         help=(
-            "Use one scorer code; may be repeated. Parameterized codes are accepted, "
-            "e.g. g2a1.4, chi2a0.43, hgta1.47, tfidfa1.14"
+            "Use one or more scorer codes; the option may also be repeated. "
+            "Parameterized codes are accepted, e.g. "
+            "--scorer txm hgt g2a1.4 chi2a0.43"
         ),
     )
     parser.add_argument(
@@ -465,15 +469,6 @@ def parse_args() -> argparse.Namespace:
         type=int,
         default=DEFAULT_TOP_N,
         help=f"Maximum number of keywords per document (default: {DEFAULT_TOP_N})",
-    )
-    parser.add_argument(
-        "--progress-every",
-        type=int,
-        default=DEFAULT_PROGRESS_EVERY,
-        help=(
-            "Print scorer progress every N documents, plus the first and last "
-            f"document (default: {DEFAULT_PROGRESS_EVERY})"
-        ),
     )
     parser.add_argument(
         "--min-doc-len",
