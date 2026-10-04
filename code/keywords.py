@@ -231,11 +231,17 @@ def generate(
                         )
 
                     keyword = scores > neutral_score(scorer)
+                    tie_cf = (
+                        -corpus.cf[candidate_terms[keyword]]
+                        if scorer.code == "tf"
+                        else None
+                    )
                     ranked = rank_terms(
                         candidate_terms[keyword],
                         candidate_tf[keyword],
                         scores[keyword],
                         top_n,
+                        cf=tie_cf,
                     )
                     keywords = KEYWORD_SEPARATOR.join(
                         corpus.lemmas[int(term_id)] for term_id in ranked
@@ -494,15 +500,36 @@ def rank_terms(
     tf: np.ndarray,
     scores: np.ndarray,
     top_n: int,
+    cf: np.ndarray | None = None,
 ) -> np.ndarray:
-    """Return at most top_n term IDs ordered by score, tf, then term ID."""
-    order = np.lexsort(
-        (
+    """Return at most top_n term IDs in deterministic score order.
+
+    Default ordering is score descending, tf descending, then term_id ascending.
+    For raw TF only, caller supplies author-internal cf, producing:
+    tf descending, cf descending, then term_id ascending.
+    """
+    term_ids = np.asarray(term_ids, dtype=np.int64)
+    tf = np.asarray(tf, dtype=np.int64)
+    scores = np.asarray(scores, dtype=np.float64)
+
+    if cf is None:
+        keys = (
             term_ids,
-            -np.asarray(tf, dtype=np.int64),
-            -np.asarray(scores, dtype=np.float64),
+            -tf,
+            -scores,
         )
-    )
+    else:
+        cf = np.asarray(cf, dtype=np.int64)
+        if cf.shape != term_ids.shape:
+            raise ValueError("cf must have the same shape as term_ids")
+        keys = (
+            term_ids,
+            -cf,
+            -tf,
+            -scores,
+        )
+
+    order = np.lexsort(keys)
     return term_ids[order[:top_n]]
 
 

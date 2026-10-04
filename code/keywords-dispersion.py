@@ -183,49 +183,68 @@ def decimal_alpha(value: str) -> str:
 
 def infer_label(path: Path) -> str:
     """
-    Infer a compact display label from common scorer tokens in the filename.
-    Falls back to the file stem.
+    Infer the display label from the scorer code at the END of the filename.
+
+    The scorer code is the final hyphen-delimited component, e.g.:
+        ...-subtfidfa0.3.txt -> subtfidfa0.3
+
+    Matching is anchored to this component with fullmatch(), so
+    ``tfidfa0.3`` cannot accidentally match inside ``subtfidfa0.3``.
     """
     stem = path.stem
-    low = stem.lower()
+    code = stem.rsplit("-", 1)[-1].lower()
 
-    patterns = [
-        (r"tfidfloga([0-9]+(?:\.[0-9]+)?)",
-         lambda m: f"subTF-IDFα({decimal_alpha(m.group(1))})"),
-        (r"tfidfa([0-9]+(?:\.[0-9]+)?)",
-         lambda m: f"TF-IDFα({decimal_alpha(m.group(1))})"),
-        (r"(?:fishera|hgta)([0-9]+(?:\.[0-9]+)?)",
-         lambda m: f"HGTα({decimal_alpha(m.group(1))})"),
-        (r"g2a([0-9]+(?:\.[0-9]+)?)",
-         lambda m: f"G²α({decimal_alpha(m.group(1))})"),
-        (r"chi2a([0-9]+(?:\.[0-9]+)?)",
-         lambda m: f"χ²α({decimal_alpha(m.group(1))})"),
+    parameterized = [
+        (
+            r"subtfidfa([0-9]+(?:\.[0-9]+)?)",
+            lambda m: f"subTF-IDFα({decimal_alpha(m.group(1))})",
+        ),
+        # Backward-compatible older code name.
+        (
+            r"tfidfloga([0-9]+(?:\.[0-9]+)?)",
+            lambda m: f"subTF-IDFα({decimal_alpha(m.group(1))})",
+        ),
+        (
+            r"tfidfa([0-9]+(?:\.[0-9]+)?)",
+            lambda m: f"TF-IDFα({decimal_alpha(m.group(1))})",
+        ),
+        (
+            r"(?:fishera|hgta)([0-9]+(?:\.[0-9]+)?)",
+            lambda m: f"HGTα({decimal_alpha(m.group(1))})",
+        ),
+        (
+            r"g2a([0-9]+(?:\.[0-9]+)?)",
+            lambda m: f"G²α({decimal_alpha(m.group(1))})",
+        ),
+        (
+            r"chi2a([0-9]+(?:\.[0-9]+)?)",
+            lambda m: f"χ²α({decimal_alpha(m.group(1))})",
+        ),
     ]
 
-    for pattern, formatter in patterns:
-        match = re.search(pattern, low)
+    for pattern, formatter in parameterized:
+        match = re.fullmatch(pattern, code)
         if match:
             return formatter(match)
 
-    # Natural (non-parametric) scorer codes.  Put the more specific
-    # names first: e.g. ``subtfidf`` must not fall through to ``tfidf``.
-    simple = [
-        ("subtfidf", "subTF-IDF"),
-        ("tfidflog", "subTF-IDF"),
-        ("tfidf", "TF-IDF"),
-        ("txm", "TXM"),
-        ("lafon", "TXM"),
-        ("fisher", "HGT"),
-        ("hgta", "HGTα"),
-        ("hgt", "HGT"),
-        ("chi2", "χ²"),
-        ("g2", "G²"),
-    ]
-    for token, label in simple:
-        if re.search(rf"(?:^|[-_]){re.escape(token)}(?:[-_]|$)", low):
-            return label
+    simple = {
+        "subtfidf": "subTF-IDF",
+        # Backward-compatible older code name.
+        "tfidflog": "subTF-IDF",
+        "tfidf": "TF-IDF",
+        "txm": "TXM",
+        "lafon": "TXM",
+        "fisher": "HGT",
+        "hgt": "HGT",
+        "chi2": "χ²",
+        "g2": "G²",
+    }
 
-    return stem
+    if code in simple:
+        return simple[code]
+
+    # Unknown scorer: expose only the scorer-code suffix.
+    return code
 
 
 def decade_ticks(maximum: float) -> list[float]:

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Merge chapter keyword rankings with Borda, RRF, Condorcet-fuse, and mean rank.
+"""Merge chapter keyword rankings with Borda, RRF, and Condorcet-fuse.
 
 Input files are those written by keywords.py, including names such as
 ``sand-keywords1000-content-tfidfloga0.56.txt``. Each non-empty block contains
@@ -11,21 +11,19 @@ a metadata line followed by one comma-separated ranked keyword list::
 Only the ranked keyword lists are used. Metadata, term frequencies, document
 frequencies, and original scorer values are ignored.
 
-For each input file, four TSV rankings are written:
+For each input file, three TSV rankings are written:
 
     <name>-borda.tsv
     <name>-rrf.tsv
     <name>-condorcet.tsv
-    <name>-meanrank.tsv
 
 Borda uses a fixed cutoff K: rank r receives K + 1 - r points and an unlisted
 term receives 0. RRF uses 1 / (k + r), with k=60 by default. Condorcet-fuse
 uses pairwise majority preferences between terms and seeded QuickSort to construct
 a Condorcet path. On one chapter ballot, a listed term beats an unlisted term;
 two unlisted terms are tied. Different seeds can produce different valid paths
-inside Condorcet cycles, as in the original Condorcet-fuse method. Mean-rank
-fusion orders terms by their average rank conditional on appearing in a ballot;
-lower mean rank is better.
+inside Condorcet cycles, as in the original Condorcet-fuse method. The mean rank
+conditional on ballot presence is retained as a diagnostic TSV column.
 """
 
 from __future__ import annotations
@@ -234,14 +232,6 @@ def parse_keyword_file(path: Path, cutoff: int) -> list[list[str]]:
 
 
 
-def meanrank(mean_ranks: dict[str, float]) -> list[tuple[str, float]]:
-    """Return terms ranked by mean rank conditional on ballot presence."""
-    return sorted(
-        mean_ranks.items(),
-        key=lambda item: (item[1], sort_key(item[0])),
-    )
-
-
 def rrf(ballots: list[list[str]], k: float) -> list[tuple[str, float]]:
     """Return terms ranked by Reciprocal Rank Fusion score."""
     scores: defaultdict[str, float] = defaultdict(float)
@@ -276,6 +266,16 @@ def write_ranked(
             )
 
 
+def outputs_are_fresh(source: Path, outputs: list[Path]) -> bool:
+    """Return whether all output files exist and are at least as new as the source."""
+    source_mtime = source.stat().st_mtime_ns
+    return all(
+        output.is_file() and output.stat().st_mtime_ns >= source_mtime
+        for output in outputs
+    )
+
+
+
 def merge_file(
     path: Path,
     output_dir: Path,
@@ -284,10 +284,19 @@ def merge_file(
     rrf_k: float,
     condorcet_seed: int,
 ) -> None:
-    """Merge one keyword file with all four rank-fusion methods."""
+    """Merge one keyword file with all three rank-fusion methods."""
+    stem = output_stem(path)
+    output_paths = [
+        output_dir / f"{stem}-borda.tsv",
+        output_dir / f"{stem}-rrf.tsv",
+        output_dir / f"{stem}-condorcet.tsv",
+    ]
+    if outputs_are_fresh(path, output_paths):
+        print(f"{path.name}: up to date; skipped")
+        return
+
     ballots = parse_keyword_file(path, cutoff)
     counts, mean_ranks = candidate_stats(ballots)
-    stem = output_stem(path)
 
     borda_rows = borda(ballots, cutoff)
     borda_scores = dict(borda_rows)
@@ -320,28 +329,17 @@ def merge_file(
         mean_ranks,
     )
 
-    meanrank_rows = meanrank(mean_ranks)
-    meanrank_scores = dict(meanrank_rows)
-    write_ranked(
-        output_dir / f"{stem}-meanrank.tsv",
-        [term for term, _ in meanrank_rows],
-        counts,
-        output_top,
-        mean_ranks,
-        meanrank_scores,
-    )
-
     print(
         f"{path.name}: ballots={len(ballots)} candidates={len(counts)} "
         f"condorcet_seed={condorcet_seed} "
-        f"-> {stem}-{{borda,rrf,condorcet,meanrank}}.tsv"
+        f"-> {stem}-{{borda,rrf,condorcet}}.tsv"
     )
 
 
 def parse_args() -> argparse.Namespace:
     """Parse command-line arguments."""
     parser = argparse.ArgumentParser(
-        description="Merge chapter keyword rankings with Borda, RRF, Condorcet-fuse, and mean rank."
+        description="Merge chapter keyword rankings with Borda, RRF, and Condorcet-fuse."
     )
     parser.add_argument(
         "inputs",

@@ -12,6 +12,7 @@ setlocal EnableExtensions EnableDelayedExpansion
 :: plots formulas with parameters
 :: python .\pcoa-families.py ..\results\romans19e-100motscles-rbo.tsv --output-prefix ..\results\romans19e-100motscles-spec-families --families "subTF-IDF" "TF-IDF" HGT "G²" "χ²" --flip 2 --title "Balzac, Dumas, Sand, Verne, Zola ; plus de 7000 chapitres ; 100 mots clés. Distances entre formules paramétrables de spécificité."
 :: 1000 keywords 
-:: python .\keywords.py ..\data\3_contingency\ ..\results\keywords1000 --vocab content --top 1000 --min-doc-len 1000 --scorer chi2 chi2a0.43 g2 g2a1.4 hgt hgta1.47 subtfidf subtfidfa0.3 subtfidfa0.56 tfidf tfidfa1.14
+python .\keywords.py ..\data\3_contingency\ ..\results\keywords1000 --vocab content --top 1000 --min-doc-len 1000 --scorer tf cf df tfidfa16 chi2 chi2a0.43 g2 g2a1.4 hgt hgta1.47 subtfidf subtfidfa0.3 subtfidfa0.56 tfidf tfidfa1.14
 :: plot keywords dispersion
-python .\keywords-dispersion.py ..\results\freqlists\verne-content.tsv "..\results\keywords1000\verne*content*.txt" verne1870a-42 --output-dir ..\results\keywords-dispersion\ --freq cf 
+:: python .\keywords-dispersion.py ..\results\freqlists\verne-content.tsv "..\results\keywords-verne\*.txt" verne1870a-42 --output-dir ..\results\keywords-verne\ --freq cf 
+:: python .\keywords-head.py ..\data\3_contingency\ "..\results\keywords-verne\*.txt" verne1870a-42 --output-dir ..\results\keywords-verne\ --freq df  --top 820 --cmap inferno_r
