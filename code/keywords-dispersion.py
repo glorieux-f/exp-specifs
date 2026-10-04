@@ -207,7 +207,12 @@ def infer_label(path: Path) -> str:
         if match:
             return formatter(match)
 
+    # Natural (non-parametric) scorer codes.  Put the more specific
+    # names first: e.g. ``subtfidf`` must not fall through to ``tfidf``.
     simple = [
+        ("subtfidf", "subTF-IDF"),
+        ("tfidflog", "subTF-IDF"),
+        ("tfidf", "TF-IDF"),
         ("txm", "TXM"),
         ("lafon", "TXM"),
         ("fisher", "HGT"),
@@ -215,7 +220,6 @@ def infer_label(path: Path) -> str:
         ("hgt", "HGT"),
         ("chi2", "χ²"),
         ("g2", "G²"),
-        ("tfidf", "TF-IDF"),
     ]
     for token, label in simple:
         if re.search(rf"(?:^|[-_]){re.escape(token)}(?:[-_]|$)", low):
