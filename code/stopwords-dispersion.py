@@ -1,26 +1,19 @@
 #!/usr/bin/env python3
-"""Small-multiple stopword-dispersion plots, one panel per scorer.
+"""Small-multiple plots of stopword dispersion, one panel per scorer.
 
-Each input keyword file contains complete ranked keyword lists (typically
-produced with ``keywords.py --top 0``). Files are grouped by scorer code.
-Several files can therefore contribute to the same scorer panel.
+Inputs are keyword-list files, typically produced with ``keywords.py --top 0``.
+Files are grouped by scorer code inferred from the final dash-delimited part of
+filename stem.
 
-For the black dots (stopwords only):
-- x = mean relative position in the chapter keyword lists, from 0% (first
-  keyword) to 100% (last keyword);
-- y = global corpus rank by cf among stopwords only, rank 1 = most frequent
-  stopword in the whole corpus;
-- a stopword absent from a chapter contributes 100% for that chapter.
+Black dots:
+- one dot per stopword present in the global corpus stopword ranking;
+- x = mean relative rank in keyword lists, with absence counted as 100%;
+- y = rank of the stopword among corpus stopwords by global cf.
 
-For the yellow segment (all words, not only stopwords):
-- select keywords whose global corpus cf is exactly 1;
-- in each chapter list, find the first and last such keyword;
-- convert both to relative x positions;
-- draw the segment from mean(first position) to mean(last position), near the
-  lower edge of the panel.
-
-Visual style follows keywords-dispersion.py: gray figure background, white
-panels, French labels.
+Red marker:
+- x = mean relative rank of the *first* corpus hapax (global cf = 1) found in
+  each keyword list;
+- one chapter with no corpus hapax is ignored for this particular mean.
 """
 
 from __future__ import annotations
@@ -36,7 +29,6 @@ from pathlib import Path
 import matplotlib
 import matplotlib.pyplot as plt
 import pandas as pd
-from matplotlib import colormaps
 from matplotlib.colors import to_rgba
 from matplotlib.ticker import PercentFormatter
 
@@ -44,6 +36,8 @@ matplotlib.rcParams["svg.fonttype"] = "none"
 
 DEFAULT_STOPWORDS = Path(__file__).with_name("stopwords.txt")
 
+
+# ---------- utilities ----------
 
 def brace_expand(pattern: str) -> list[str]:
     match = re.search(r"\{([^{}]+)\}", pattern)
@@ -81,6 +75,15 @@ def expand_inputs(arguments: list[str]) -> list[Path]:
     return files
 
 
+def normalize(text: str) -> str:
+    return unicodedata.normalize("NFC", text)
+
+
+def infer_scorer_code(path: Path) -> str:
+    stem = re.sub(r"\(\d+\)$", "", path.stem)
+    return stem.rsplit("-", 1)[-1].lower()
+
+
 def infer_label(code: str) -> str:
     parameterized = [
         (r"subtfidfa([0-9]+(?:\.[0-9]+)?)", lambda m: f"subTF-IDFα({m.group(1).replace('.', ',')})"),
@@ -113,75 +116,71 @@ def infer_label(code: str) -> str:
     return simple.get(code, code)
 
 
-def infer_scorer_code(path: Path) -> str:
-    stem = re.sub(r"\(\d+\)$", "", path.stem)
-    return stem.rsplit("-", 1)[-1].lower()
-
-
 def load_stopwords(path: Path) -> set[str]:
     if not path.is_file():
         raise FileNotFoundError(f"Stopword list not found: {path}")
-    words: set[str] = set()
+    out: set[str] = set()
     with path.open("r", encoding="utf-8-sig") as stream:
         for line in stream:
             value = line.strip()
             if not value or value.startswith("#") or value == "__STOPWORDS":
                 continue
-            words.add(unicodedata.normalize("NFC", value))
-    return words
+            out.add(normalize(value))
+    return out
 
 
 def read_keyword_file(path: Path) -> list[tuple[str, list[str]]]:
     lines = path.read_text(encoding="utf-8").splitlines()
-    documents: list[tuple[str, list[str]]] = []
-    index = 0
-    while index < len(lines):
-        line = lines[index].strip()
+    docs: list[tuple[str, list[str]]] = []
+    i = 0
+    while i < len(lines):
+        line = lines[i].strip()
         if not line:
-            index += 1
+            i += 1
             continue
         if not line.startswith("["):
-            raise ValueError(f"{path}:{index + 1}: expected metadata line, got {line!r}")
+            raise ValueError(f"{path}:{i + 1}: expected metadata line, got {line!r}")
         match = re.match(r"^\[([^\]]+)\]", line)
         if not match:
-            raise ValueError(f"{path}:{index + 1}: malformed metadata line")
+            raise ValueError(f"{path}:{i + 1}: malformed metadata line")
         identifier = match.group(1)
-        index += 1
-        while index < len(lines) and not lines[index].strip():
-            index += 1
-        if index >= len(lines) or lines[index].lstrip().startswith("["):
+        i += 1
+        while i < len(lines) and not lines[i].strip():
+            i += 1
+        if i >= len(lines) or lines[i].lstrip().startswith("["):
             raise ValueError(f"{path}: no keyword line after [{identifier}]")
-        words = [word.strip() for word in lines[index].split(",") if word.strip()]
-        documents.append((identifier, words))
-        index += 1
-    return documents
+        words = [normalize(word.strip()) for word in lines[i].split(",") if word.strip()]
+        docs.append((identifier, words))
+        i += 1
+    return docs
 
+
+# ---------- corpus data ----------
 
 def load_terms_data(terms_tsv: Path, stopwords: set[str]) -> tuple[pd.DataFrame, set[str]]:
     terms = pd.read_csv(terms_tsv, sep="\t", usecols=["term_id", "lemma", "cf"])
-    terms["lemma"] = terms["lemma"].astype(str).map(lambda value: unicodedata.normalize("NFC", value))
+    terms["lemma"] = terms["lemma"].astype(str).map(normalize)
+
     stop_df = terms.loc[terms["lemma"].isin(stopwords)].copy()
     if stop_df.empty:
-        raise ValueError(f"No stopwords from {terms_tsv} match {len(stopwords)} stopword-list entries")
+        raise ValueError(f"No stopwords from {terms_tsv} match the stopword list")
     stop_df.sort_values(["cf", "term_id"], ascending=[False, True], inplace=True)
     stop_df["stopword_rank"] = range(1, len(stop_df) + 1)
-    hapax_lemmas = set(
-        terms.loc[terms["cf"] == 1, "lemma"].astype(str).map(
-            lambda value: unicodedata.normalize("NFC", value)
-        )
-    )
+
+    hapax_lemmas = set(terms.loc[terms["cf"] == 1, "lemma"].astype(str).map(normalize))
     return stop_df, hapax_lemmas
 
 
+# ---------- scorer stats ----------
+
 class ScorerStats:
-    def __init__(self, stopwords: set[str]) -> None:
-        self.stopword_totals: dict[str, float] = {word: 0.0 for word in stopwords}
-        self.doc_count = 0
-        self.hapax_start_total = 0.0
-        self.hapax_end_total = 0.0
-        self.hapax_count_total = 0
-        self.hapax_doc_count = 0
+    def __init__(self, ranked_stopwords: set[str]) -> None:
+        self.stopword_totals = {word: 0.0 for word in ranked_stopwords}
         self.seen_documents: set[str] = set()
+        self.doc_count = 0
+        self.first_hapax_total = 0.0
+        self.first_hapax_doc_count = 0
+        self.hapax_count_total = 0
 
     def add_document(self, identifier: str, words: list[str], hapax_lemmas: set[str]) -> None:
         if identifier in self.seen_documents:
@@ -189,36 +188,43 @@ class ScorerStats:
         self.seen_documents.add(identifier)
         self.doc_count += 1
 
+        # Absence counts as 100% for all ranked stopwords.
         for word in self.stopword_totals:
             self.stopword_totals[word] += 100.0
 
         denominator = len(words) - 1
-        hapax_positions: list[float] = []
+        first_hapax: float | None = None
+        hapax_count = 0
+
         for index, word in enumerate(words):
             relative = 0.0 if denominator <= 0 else 100.0 * index / denominator
             if word in self.stopword_totals:
                 self.stopword_totals[word] += relative - 100.0
             if word in hapax_lemmas:
-                hapax_positions.append(relative)
+                hapax_count += 1
+                if first_hapax is None:
+                    first_hapax = relative
 
-        self.hapax_count_total += len(hapax_positions)
-        if hapax_positions:
-            self.hapax_start_total += min(hapax_positions)
-            self.hapax_end_total += max(hapax_positions)
-            self.hapax_doc_count += 1
+        self.hapax_count_total += hapax_count
+        if first_hapax is not None:
+            self.first_hapax_total += first_hapax
+            self.first_hapax_doc_count += 1
 
     def stopword_means(self) -> dict[str, float]:
         if self.doc_count == 0:
             return {}
         return {word: total / self.doc_count for word, total in self.stopword_totals.items()}
 
-    def hapax_segment(self) -> tuple[float, float] | None:
-        if self.hapax_doc_count == 0:
+    def first_hapax_mean(self) -> float | None:
+        if self.first_hapax_doc_count == 0:
             return None
-        return (
-            self.hapax_start_total / self.hapax_doc_count,
-            self.hapax_end_total / self.hapax_doc_count,
-        )
+        return self.first_hapax_total / self.first_hapax_doc_count
+
+    def mean_hapax_per_chapter(self) -> float:
+        return 0.0 if self.doc_count == 0 else self.hapax_count_total / self.doc_count
+
+    def hapax_presence_pct(self) -> float:
+        return 0.0 if self.doc_count == 0 else 100.0 * self.first_hapax_doc_count / self.doc_count
 
 
 def collect_stats(paths: list[Path], ranked_stopwords: set[str], hapax_lemmas: set[str]) -> ScorerStats:
@@ -228,6 +234,8 @@ def collect_stats(paths: list[Path], ranked_stopwords: set[str], hapax_lemmas: s
             stats.add_document(identifier, words, hapax_lemmas)
     return stats
 
+
+# ---------- plotting ----------
 
 def rank_ticks(rank_max: int) -> list[int]:
     if rank_max <= 100:
@@ -240,10 +248,6 @@ def rank_ticks(rank_max: int) -> list[int]:
     if rank_max not in ticks:
         ticks.append(rank_max)
     return sorted(set(ticks))
-
-
-def hapax_color() -> str:
-    return "#f2c318"
 
 
 def plot_grid(
@@ -260,21 +264,40 @@ def plot_grid(
     ranked_stopwords = set(rank_by_word)
     max_rank = len(stopword_ranks)
 
-    prepared: list[tuple[str, list[tuple[float, int]], tuple[float, float] | None, int, float, float]] = []
+    prepared: list[tuple[str, list[tuple[float, int]], float | None, int, float, float]] = []
     for code in order:
         stats = collect_stats(groups[code], ranked_stopwords, hapax_lemmas)
         if stats.doc_count == 0:
             raise ValueError(f"{code}: no chapter keyword lists found in the supplied files")
         means = stats.stopword_means()
         points = [(means[word], rank_by_word[word]) for word in stopword_ranks["lemma"]]
-        mean_hapax = stats.hapax_count_total / stats.doc_count
-        hapax_presence = stats.hapax_doc_count / stats.doc_count
-        prepared.append((code, points, stats.hapax_segment(), stats.doc_count, mean_hapax, hapax_presence))
+        first_hapax_mean = stats.first_hapax_mean()
+        mean_hapax = stats.mean_hapax_per_chapter()
+        hapax_presence = stats.hapax_presence_pct()
+        prepared.append((code, points, first_hapax_mean, stats.doc_count, mean_hapax, hapax_presence))
+
+        if first_hapax_mean is None:
+            print(
+                f"{code}: chapters={stats.doc_count}; mean cf=1 words/chapter={mean_hapax:.3f}; "
+                f"chapters with cf=1={hapax_presence:.1f}%; first-hapax mean=NA"
+            )
+        else:
+            print(
+                f"{code}: chapters={stats.doc_count}; mean cf=1 words/chapter={mean_hapax:.3f}; "
+                f"chapters with cf=1={hapax_presence:.1f}%; "
+                f"mean rank of first hapax={first_hapax_mean:.3f}%"
+            )
 
     n = len(prepared)
     nrows = math.ceil(n / ncols)
-    width_cm = ncols * panel_size_cm + 2.5
-    height_cm = nrows * panel_size_cm + 2.8
+    # Use absolute margins in cm. Fractional top/bottom margins scale badly
+    # when the figure has many rows and create large empty bands.
+    header_cm = 2.15
+    bottom_cm = 0.45
+    left_cm = 0.85
+    right_cm = 0.30
+    width_cm = ncols * panel_size_cm + left_cm + right_cm
+    height_cm = nrows * panel_size_cm + header_cm + bottom_cm
 
     fig, axes = plt.subplots(
         nrows,
@@ -283,10 +306,17 @@ def plot_grid(
         squeeze=False,
         facecolor="#e6e6e6",
     )
-    fig.subplots_adjust(left=0.08, right=0.98, bottom=0.16, top=0.89, wspace=0.18, hspace=0.28)
+    fig.subplots_adjust(
+        left=left_cm / width_cm,
+        right=1.0 - right_cm / width_cm,
+        bottom=bottom_cm / height_cm,
+        top=1.0 - header_cm / height_cm,
+        wspace=0.24,
+        hspace=0.30,
+    )
 
-    dot_color = to_rgba("black", alpha=0.5)
-    yellow = hapax_color()
+    dot_color = to_rgba("black", alpha=0.20)
+    hapax_color = "#d62828"
     ticks = rank_ticks(max_rank)
 
     for idx, ax in enumerate(axes.flat):
@@ -295,92 +325,58 @@ def plot_grid(
             ax.set_facecolor("#e6e6e6")
             continue
 
-        code, points, hapax_segment, doc_count, mean_hapax, hapax_presence = prepared[idx]
+        code, points, first_hapax_mean, _, _, _ = prepared[idx]
         ax.set_facecolor("white")
-        ax.grid(axis="y", linewidth=0.6, color="#cfcfcf", zorder=1)
+        ax.grid(axis="y", linewidth=0.6, color="#c9c9c9", zorder=1)
 
         xs = [x for x, _ in points]
         ys = [y for _, y in points]
-        ax.scatter(xs, ys, s=18, c=[dot_color], linewidths=0, zorder=3)
+        ax.scatter(xs, ys, s=16, c=[dot_color], linewidths=0, zorder=3)
 
-        if hapax_segment is not None:
-            x_start, x_end = hapax_segment
-            if x_end < x_start:
-                x_start, x_end = x_end, x_start
-            center = 0.5 * (x_start + x_end)
-            half = 0.5 * (x_end - x_start)
-            y_hapax = max_rank + 0.22
-            ax.errorbar(
-                center,
-                y_hapax,
-                xerr=half,
-                fmt="none",
-                ecolor=yellow,
-                elinewidth=4.0,
-                capsize=6.0,
-                capthick=3.0,
-                alpha=1.0,
+        if first_hapax_mean is not None:
+            y_marker = max_rank + 0.15
+            ax.plot(
+                [first_hapax_mean],
+                [y_marker],
+                marker="|",
+                markersize=13,
+                markeredgewidth=5.0,
+                color=hapax_color,
+                linestyle="None",
                 zorder=5,
+                clip_on=False,
             )
 
         ax.set_xlim(0, 100)
-        ax.set_ylim(max_rank + 0.6, 0.5)
+        ax.set_ylim(max_rank + 0.5, 0.5)
         ax.set_xticks([0, 25, 50, 75, 100])
         ax.xaxis.set_major_formatter(PercentFormatter(xmax=100, decimals=0))
         ax.set_yticks(ticks)
-        ax.tick_params(labelsize=8)
-        ax.set_title(infer_label(code), fontsize=11, pad=4)
-
-        if hapax_segment is None:
-            print(
-                f"{code}: chapters={doc_count}; mean cf=1 words/chapter={mean_hapax:.3f}; "
-                f"chapters with cf=1={100.0 * hapax_presence:.1f}%; no cf=1 segment"
-            )
-        else:
-            x_start, x_end = hapax_segment
-            print(
-                f"{code}: chapters={doc_count}; mean cf=1 words/chapter={mean_hapax:.3f}; "
-                f"chapters with cf=1={100.0 * hapax_presence:.1f}%; "
-                f"mean start={x_start:.3f}%; mean end={x_end:.3f}%; "
-                f"span={x_end - x_start:.3f}%"
-            )
+        ax.tick_params(labelsize=7.2)
+        ax.set_title(infer_label(code), fontsize=10.5, pad=5, fontweight="bold")
+        if idx % ncols != 0:
+            ax.tick_params(axis="y", labelleft=False)
 
         for spine in ax.spines.values():
             spine.set_visible(False)
 
-        ax.set_xlabel("")
-        ax.set_ylabel("")
-
     chapter_counts = {item[3] for item in prepared}
     if len(chapter_counts) == 1:
-        chapter_text = f"{next(iter(chapter_counts))} chapitres"
+        title = f"{next(iter(chapter_counts))} chapitres, {n} formules, score des mots-outils"
     else:
-        chapter_text = "nombre de chapitres variable selon le scoreur"
+        title = f"{n} formules, score des mots-outils"
 
-    fig.suptitle(
-        "Dispersion des mots-outils selon le scoreur\n"
-        f"{chapter_text} — points noirs : mots-outils ; "
-        "segment jaune : intervalle moyen des hapax (cf = 1)",
-        fontsize=13,
-        y=0.965,
-    )
+    title_y = 1.0 - 0.30 / height_cm
+    guide_y = 1.0 - 0.92 / height_cm
+    fig.suptitle(title, fontsize=11.6, y=title_y)
     fig.text(
-        0.5,
-        0.060,
-        "Lecture de x : 0 % = tête du classement ; 100 % = fin du classement ou absence.",
-        ha="center", va="center", fontsize=9,
-    )
-    fig.text(
-        0.5,
-        0.030,
-        "Lecture de y : rang parmi les mots-outils du corpus ; 1 = le plus fréquent, les rangs augmentent vers le bas.",
-        ha="center", va="center", fontsize=9,
-    )
-    fig.text(
-        0.025,
-        0.5,
-        "Rang du mot-outil dans le corpus",
-        ha="center", va="center", rotation="vertical", fontsize=10,
+        left_cm / width_cm,
+        guide_y,
+        "haut gauche : mot outil très fréquent, rang élevé ; haut droite : mot outil très fréquent, rang bas\n"
+        "bas droite : mot outil plus rare, rang bas ; repère rouge : rang moyen des premiers hapax (mots uniques dans le corpus)",
+        ha="left",
+        va="top",
+        fontsize=7.0,
     )
 
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -394,12 +390,14 @@ def plot_grid(
     return svg_path, png_path
 
 
+# ---------- CLI ----------
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "Trace des petits multiples carrés de dispersion des mots-outils, une case "
-            "par scoreur. Les absences comptent pour 100% ; un segment jaune indique "
-            "la zone moyenne des hapax (cf = 1)."
+            "Trace une grille de dispersion des mots-outils, une case par scoreur. "
+            "Les absences comptent pour 100%. Un repère rouge indique le rang moyen "
+            "des premiers hapax (cf = 1)."
         )
     )
     parser.add_argument("terms_tsv", type=Path, help="terms.tsv global contenant term_id, lemma et cf.")
@@ -410,8 +408,7 @@ def parse_args() -> argparse.Namespace:
                         help="Ordre explicite des scoreurs à tracer, par ex. --scorer tf txm g2 subtfidfa0.56")
     parser.add_argument("--output-dir", type=Path, default=Path("."), help="Répertoire de sortie.")
     parser.add_argument("--cols", type=int, default=4, help="Nombre de colonnes de la grille (défaut : 4).")
-    parser.add_argument("--panel-size", type=float, default=6.0,
-                        help="Taille d'une case en cm (défaut : 6).")
+    parser.add_argument("--panel-size", type=float, default=5.8, help="Taille d'une case en cm (défaut : 5.8).")
     parser.add_argument("--dpi", type=int, default=180, help="Résolution PNG (défaut : 180).")
     args = parser.parse_args()
     if args.cols < 1:
