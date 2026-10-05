@@ -41,7 +41,8 @@ chapter rankings written to the output; scorer statistics are still computed on
 the complete author corpus. A keyword list only contains terms the scorer marks
 as keywords: scores above the scorer's neutral value, which is 1 for the Simple
 Maths ratio and 0 for every other scorer. Lists can therefore be shorter than
-``--top`` when a document has few over-represented terms.
+``--top`` when a document has few over-represented terms. With ``--top 0``, no
+truncation is applied and all eligible over-represented terms are written.
 
 Each document is written as a two-line block followed by a blank line::
 
@@ -127,8 +128,8 @@ def generate(
     force: bool = False,
 ) -> None:
     """Generate one keyword file per author and scorer with progress logging."""
-    if top_n <= 0:
-        raise ValueError("top_n must be > 0")
+    if top_n < 0:
+        raise ValueError("top_n must be >= 0")
     if min_doc_len < 0:
         raise ValueError("min_doc_len must be >= 0")
     if vocab_mode not in VOCAB_MODES:
@@ -476,7 +477,10 @@ def parse_args() -> argparse.Namespace:
         "--top",
         type=int,
         default=DEFAULT_TOP_N,
-        help=f"Maximum number of keywords per document (default: {DEFAULT_TOP_N})",
+        help=(
+            f"Maximum number of keywords per document; 0 means no truncation "
+            f"(default: {DEFAULT_TOP_N})"
+        ),
     )
     parser.add_argument(
         "--min-doc-len",
@@ -502,8 +506,9 @@ def rank_terms(
     top_n: int,
     cf: np.ndarray | None = None,
 ) -> np.ndarray:
-    """Return at most top_n term IDs in deterministic score order.
+    """Return ranked term IDs in deterministic score order.
 
+    ``top_n == 0`` means no truncation; otherwise return at most ``top_n`` terms.
     Default ordering is score descending, tf descending, then term_id ascending.
     For raw TF only, caller supplies author-internal cf, producing:
     tf descending, cf descending, then term_id ascending.
@@ -530,6 +535,8 @@ def rank_terms(
         )
 
     order = np.lexsort(keys)
+    if top_n == 0:
+        return term_ids[order]
     return term_ids[order[:top_n]]
 
 
