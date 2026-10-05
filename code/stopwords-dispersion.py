@@ -165,7 +165,11 @@ def load_terms_data(terms_tsv: Path, stopwords: set[str]) -> tuple[pd.DataFrame,
         raise ValueError(f"No stopwords from {terms_tsv} match {len(stopwords)} stopword-list entries")
     stop_df.sort_values(["cf", "term_id"], ascending=[False, True], inplace=True)
     stop_df["stopword_rank"] = range(1, len(stop_df) + 1)
-    hapax_lemmas = set(terms.loc[terms["cf"] == 1, "lemma"].astype(str))
+    hapax_lemmas = set(
+        terms.loc[terms["cf"] == 1, "lemma"].astype(str).map(
+            lambda value: unicodedata.normalize("NFC", value)
+        )
+    )
     return stop_df, hapax_lemmas
 
 
@@ -175,6 +179,7 @@ class ScorerStats:
         self.doc_count = 0
         self.hapax_start_total = 0.0
         self.hapax_end_total = 0.0
+        self.hapax_count_total = 0
         self.hapax_doc_count = 0
         self.seen_documents: set[str] = set()
 
@@ -196,6 +201,7 @@ class ScorerStats:
             if word in hapax_lemmas:
                 hapax_positions.append(relative)
 
+        self.hapax_count_total += len(hapax_positions)
         if hapax_positions:
             self.hapax_start_total += min(hapax_positions)
             self.hapax_end_total += max(hapax_positions)
@@ -224,15 +230,20 @@ def collect_stats(paths: list[Path], ranked_stopwords: set[str], hapax_lemmas: s
 
 
 def rank_ticks(rank_max: int) -> list[int]:
-    preferred = [1, 10, 20, 30, 50, 100, 200, 500, 1000]
-    ticks = [tick for tick in preferred if tick <= rank_max]
+    if rank_max <= 100:
+        step = 20
+    elif rank_max <= 300:
+        step = 50
+    else:
+        step = 100
+    ticks = [1] + list(range(step, rank_max + 1, step))
     if rank_max not in ticks:
         ticks.append(rank_max)
-    return ticks
+    return sorted(set(ticks))
 
 
-def hapax_color() -> tuple[float, float, float, float]:
-    return colormaps["inferno_r"](0.12)
+def hapax_color() -> str:
+    return "#f2c318"
 
 
 def plot_grid(
@@ -249,14 +260,16 @@ def plot_grid(
     ranked_stopwords = set(rank_by_word)
     max_rank = len(stopword_ranks)
 
-    prepared: list[tuple[str, list[tuple[float, int]], tuple[float, float] | None, int, int]] = []
+    prepared: list[tuple[str, list[tuple[float, int]], tuple[float, float] | None, int, float, float]] = []
     for code in order:
         stats = collect_stats(groups[code], ranked_stopwords, hapax_lemmas)
         if stats.doc_count == 0:
             raise ValueError(f"{code}: no chapter keyword lists found in the supplied files")
         means = stats.stopword_means()
         points = [(means[word], rank_by_word[word]) for word in stopword_ranks["lemma"]]
-        prepared.append((code, points, stats.hapax_segment(), stats.doc_count, len(groups[code])))
+        mean_hapax = stats.hapax_count_total / stats.doc_count
+        hapax_presence = stats.hapax_doc_count / stats.doc_count
+        prepared.append((code, points, stats.hapax_segment(), stats.doc_count, mean_hapax, hapax_presence))
 
     n = len(prepared)
     nrows = math.ceil(n / ncols)
@@ -270,7 +283,7 @@ def plot_grid(
         squeeze=False,
         facecolor="#e6e6e6",
     )
-    fig.subplots_adjust(left=0.08, right=0.98, bottom=0.09, top=0.90, wspace=0.18, hspace=0.28)
+    fig.subplots_adjust(left=0.08, right=0.98, bottom=0.16, top=0.89, wspace=0.18, hspace=0.28)
 
     dot_color = to_rgba("black", alpha=0.5)
     yellow = hapax_color()
@@ -282,7 +295,7 @@ def plot_grid(
             ax.set_facecolor("#e6e6e6")
             continue
 
-        code, points, hapax_segment, doc_count, file_count = prepared[idx]
+        code, points, hapax_segment, doc_count, mean_hapax, hapax_presence = prepared[idx]
         ax.set_facecolor("white")
         ax.grid(axis="y", linewidth=0.6, color="#cfcfcf", zorder=1)
 
@@ -292,8 +305,23 @@ def plot_grid(
 
         if hapax_segment is not None:
             x_start, x_end = hapax_segment
+            if x_end < x_start:
+                x_start, x_end = x_end, x_start
+            center = 0.5 * (x_start + x_end)
+            half = 0.5 * (x_end - x_start)
             y_hapax = max_rank + 0.22
-            ax.hlines(y_hapax, x_start, x_end, linewidth=5.0, color=yellow, zorder=4)
+            ax.errorbar(
+                center,
+                y_hapax,
+                xerr=half,
+                fmt="none",
+                ecolor=yellow,
+                elinewidth=4.0,
+                capsize=6.0,
+                capthick=3.0,
+                alpha=1.0,
+                zorder=5,
+            )
 
         ax.set_xlim(0, 100)
         ax.set_ylim(max_rank + 0.6, 0.5)
@@ -303,27 +331,56 @@ def plot_grid(
         ax.tick_params(labelsize=8)
         ax.set_title(infer_label(code), fontsize=11, pad=4)
 
-        subtitle = f"{doc_count} ch., {file_count} fich."
-        ax.text(0.98, 0.96, subtitle, transform=ax.transAxes, ha="right", va="top", fontsize=7.5)
+        if hapax_segment is None:
+            print(
+                f"{code}: chapters={doc_count}; mean cf=1 words/chapter={mean_hapax:.3f}; "
+                f"chapters with cf=1={100.0 * hapax_presence:.1f}%; no cf=1 segment"
+            )
+        else:
+            x_start, x_end = hapax_segment
+            print(
+                f"{code}: chapters={doc_count}; mean cf=1 words/chapter={mean_hapax:.3f}; "
+                f"chapters with cf=1={100.0 * hapax_presence:.1f}%; "
+                f"mean start={x_start:.3f}%; mean end={x_end:.3f}%; "
+                f"span={x_end - x_start:.3f}%"
+            )
 
         for spine in ax.spines.values():
             spine.set_visible(False)
 
-        if idx // ncols == nrows - 1:
-            ax.set_xlabel("Rang relatif moyen (absent = 100%)", fontsize=9)
-        else:
-            ax.set_xlabel("")
+        ax.set_xlabel("")
+        ax.set_ylabel("")
 
-        if idx % ncols == 0:
-            ax.set_ylabel("Rang corpus (cf)", fontsize=9)
-        else:
-            ax.set_ylabel("")
+    chapter_counts = {item[3] for item in prepared}
+    if len(chapter_counts) == 1:
+        chapter_text = f"{next(iter(chapter_counts))} chapitres"
+    else:
+        chapter_text = "nombre de chapitres variable selon le scoreur"
 
     fig.suptitle(
         "Dispersion des mots-outils selon le scoreur\n"
-        "Points noirs : mots-outils ; segment jaune : zone moyenne des hapax (cf = 1)",
+        f"{chapter_text} — points noirs : mots-outils ; "
+        "segment jaune : intervalle moyen des hapax (cf = 1)",
         fontsize=13,
         y=0.965,
+    )
+    fig.text(
+        0.5,
+        0.060,
+        "Lecture de x : 0 % = tête du classement ; 100 % = fin du classement ou absence.",
+        ha="center", va="center", fontsize=9,
+    )
+    fig.text(
+        0.5,
+        0.030,
+        "Lecture de y : rang parmi les mots-outils du corpus ; 1 = le plus fréquent, les rangs augmentent vers le bas.",
+        ha="center", va="center", fontsize=9,
+    )
+    fig.text(
+        0.025,
+        0.5,
+        "Rang du mot-outil dans le corpus",
+        ha="center", va="center", rotation="vertical", fontsize=10,
     )
 
     output_dir.mkdir(parents=True, exist_ok=True)
