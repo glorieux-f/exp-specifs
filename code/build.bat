@@ -16,5 +16,5 @@ setlocal EnableExtensions EnableDelayedExpansion
 :: plot keywords dispersion
 :: python .\keywords-dispersion.py ..\data\3_contingency\ "..\results\keywords-verne\*.txt" verne1870a-42 --output-dir ..\results\keywords-verne\ --freq cf  --top 820 --cmap inferno_r
 :: for stopwords dispersion
-:: python .\keywords.py ..\data\3_contingency\ ..\results\keywords-stops --vocab nocaps --top 0 --min-doc-len 1000 --scorer logdice tscore tf cf df tfidfa16 chi2 chi2a0.43 g2 g2a1.4 hgt txm hgta1.47 subtfidf subtfidfa0.3 subtfidfa0.56 tfidf tfidfa1.14
-python .\stopwords-dispersion.py ..\data\3_contingency\terms.tsv ..\results\keywords-stops\*.txt --output-dir ..\results\stops-plot/
+:: python .\keywords.py ..\data\3_contingency\ ..\results\keywords-stops --vocab nocaps --top 0 --min-doc-len 1000 --scorer logdice tscore tf cf df tfidfa16 tfidfa0.75 chi2 chi2a0.43 g2 g2a1.4 hgt txm hgta1.47 subtfidf subtfidfa0.3 subtfidfa0.56 tfidf tfidfa1.14
+python .\stopwords-dispersion.py ..\data\3_contingency\terms.tsv ..\results\keywords-stops\*.txt --output-dir ..\results\stops-plot\ --cols 4 --scorer tfidfa16 chi2 chi2a0.43 tfidfa1.14 tfidf tfidfa0.75 subtfidf subtfidfa0.56 subtfidfa0.3 g2 g2a1.4 txm hgta1.47 tscore logdice tf
