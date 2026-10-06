@@ -296,7 +296,8 @@ def plot_grid(
     bottom_cm = 0.45
     left_cm = 0.85
     right_cm = 0.30
-    width_cm = ncols * panel_size_cm + left_cm + right_cm
+    panel_width_cm = panel_size_cm * 1.5
+    width_cm = ncols * panel_width_cm + left_cm + right_cm
     height_cm = nrows * panel_size_cm + header_cm + bottom_cm
 
     fig, axes = plt.subplots(
