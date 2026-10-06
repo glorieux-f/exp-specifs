@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import argparse
+import glob
 from collections import defaultdict
 from pathlib import Path
 
@@ -73,10 +74,8 @@ def main() -> None:
         description="Extract average top keywords from ranked chapter keyword files."
     )
     parser.add_argument(
-        "files",
-        nargs="+",
-        type=Path,
-        help="Keyword files to process.",
+        "pattern",
+        help='Glob pattern for keyword files, e.g. "balzac-keywords*.txt".',
     )
     parser.add_argument(
         "-o",
@@ -97,8 +96,15 @@ def main() -> None:
     if args.top < 1:
         parser.error("--top must be >= 1")
 
+    paths = sorted(Path(match) for match in glob.glob(args.pattern))
+
+    if not paths:
+        parser.error(f"No files match pattern: {args.pattern}")
+
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+
     with args.output.open("w", encoding="utf-8", newline="\n") as output:
-        for path in args.files:
+        for path in paths:
             keywords = merge_keywords(path, args.top)
 
             output.write(f"{path.name}\n")

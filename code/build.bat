@@ -12,9 +12,12 @@ setlocal EnableExtensions EnableDelayedExpansion
 :: plots formulas with parameters
 :: python .\pcoa-families.py ..\results\romans19e-100motscles-rbo.tsv --output-prefix ..\results\romans19e-100motscles-spec-families --families "subTF-IDF" "TF-IDF" HGT "G²" "χ²" --flip 2 --title "Balzac, Dumas, Sand, Verne, Zola ; plus de 7000 chapitres ; 100 mots clés. Distances entre formules paramétrables de spécificité."
 :: 1000 keywords 
-:: python .\keywords.py ..\data\3_contingency\ ..\results\keywords1000 --vocab content --top 1000 --min-doc-len 1000 --scorer logdice tscore tf cf df tfidfa16 chi2 chi2a0.43 g2 g2a1.4 hgt hgta1.47 subtfidf subtfidfa0.3 subtfidfa0.56 tfidf tfidfa1.14
+python .\keywords.py ..\data\3_contingency\ ..\results\keywords-content --vocab content --top 0 --min-doc-len 1000 --scorer hgta3 hgta2 hgta1.47 txm hgta0.75   g2a1.4 g2 g2a0.76  tfidf tfidfa3  tfidfa1.14 tfidfa0.77 tfidfa0.57  subtfidf subtfidfa0.56 subtfidfa0.4 subtfidfa0.3 subtfidfa0.2   tfidfa16 logdice tf  chi2 chi2a2 chi2a1.5
+python .\keywords-average.py -o ..\results\keywords-average\keywords-content-average.txt ..\results\keywords-content\*.txt
 :: plot keywords dispersion
 :: python .\keywords-dispersion.py ..\data\3_contingency\ "..\results\keywords-verne\*.txt" verne1870a-42 --output-dir ..\results\keywords-verne\ --freq cf  --top 820 --cmap inferno_r
 :: for stopwords dispersion
-:: python .\keywords.py ..\data\3_contingency\ ..\results\keywords-stops --vocab nocaps --top 0 --min-doc-len 1000 --scorer hgta1.47 txm hgta0.75   g2a1.4 g2 g2a0.76    tfidfa1.14 tfidfa0.77 tfidfa0.57   subtfidfa0.56 subtfidfa0.3 subtfidfa0.2   tfidfa16 logdice tf 
-python .\stopwords-dispersion.py ..\data\3_contingency\terms.tsv ..\results\keywords-stops\*.txt --output-dir ..\results\stops-plot\ --cols 3 --scorer   hgta1.47 txm hgta0.75   g2a1.4 g2 g2a0.76   tfidfa1.14 tfidfa0.77 tfidfa0.57   subtfidfa0.56 subtfidfa0.3 subtfidfa0.2   tfidfa16 logdice tf 
+:: python .\keywords.py ..\data\3_contingency\ ..\results\keywords-stops --vocab nocaps --top 0 --min-doc-len 1000 --scorer hgta3 hgta2 hgta1.47 txm hgta0.75   g2a1.4 g2 g2a0.76  tfidfa3  tfidfa1.14 tfidfa0.77 tfidfa0.57   subtfidfa0.56 subtfidfa0.4 subtfidfa0.3 subtfidfa0.2   tfidfa16 logdice tf  chi2 chi2a2 chi2a1.5
+:: python .\stopwords-dispersion.py ..\data\3_contingency\terms.tsv ..\results\keywords-stops\*.txt --output-dir ..\results\stops-plot\ --cols 3 --scorer  hgta1.47 txm hgta0.75   g2a1.4 g2 g2a0.76   tfidfa1.14 tfidfa0.77 tfidfa0.57   subtfidfa0.56 subtfidfa0.3 subtfidfa0.2   tfidfa16 logdice tf 
+:: keywords for an author
+:: python .\keywords-average.py -o ..\results\keywords-average\keywords-all-average.txt ..\results\keywords-stops\*.txt

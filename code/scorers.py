@@ -558,8 +558,6 @@ class SubTfIdfAlpha(Scorer):
     alpha=0 gives subTF exactly. alpha=1 gives subTF-IDF exactly. Increasing
     alpha increasingly favours terms with low document frequency.
 
-    This is an experimental parametric extension, not a standard named TF-IDF variant.
-
     Salton, G. & Buckley, C. (1988). "Term-weighting approaches in automatic text retrieval." Information Processing & Management 24(5): 513-523. doi:10.1016/0306-4573(88)90021-0.
     """
 
