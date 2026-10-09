@@ -6,7 +6,7 @@ Files are grouped by scorer code inferred from the final dash-delimited part of
 filename stem.
 
 For each selected common word:
-- x = mean relative rank in keyword lists;
+- x = median relative rank in keyword lists;
 - absences are handled by ``--absent`` (ignored by default, or counted as
   100%);
 - y = global rank of the word by document frequency (df) or collection
@@ -33,6 +33,12 @@ from matplotlib.lines import Line2D
 from matplotlib.ticker import PercentFormatter
 
 matplotlib.rcParams["svg.fonttype"] = "none"
+
+# Figure-layout constants. Keep label gutters absolute so narrow figures do not
+# squeeze common-word labels into unreadable slivers.
+LABEL_GUTTER_CM = 1.70
+LABEL_FONT_SIZE = 6.1
+
 
 
 # ---------- utilities ----------
@@ -193,11 +199,10 @@ def load_terms_data(terms_tsv: Path, word_count: int, freq: str) -> pd.DataFrame
 # ---------- scorer stats ----------
 
 class ScorerStats:
-    """Accumulate mean relative ranks for one scorer."""
+    """Accumulate median relative ranks for one scorer."""
 
     def __init__(self, ranked_words: set[str], absent_mode: str) -> None:
-        self.word_totals = {word: 0.0 for word in ranked_words}
-        self.word_counts = {word: 0 for word in ranked_words}
+        self.word_values = {word: [] for word in ranked_words}
         self.seen_documents: set[str] = set()
         self.doc_count = 0
         self.absent_mode = absent_mode
@@ -206,7 +211,7 @@ class ScorerStats:
         """Add one ranked chapter list.
 
         With ``--absent 100``, words missing from the chapter count as 100%.
-        With ``--absent ignore``, they do not contribute to the mean.
+        With ``--absent ignore``, they do not contribute to the median.
         """
         if identifier in self.seen_documents:
             raise ValueError(f"Duplicate document for one scorer: {identifier}")
@@ -214,27 +219,23 @@ class ScorerStats:
         self.seen_documents.add(identifier)
         self.doc_count += 1
 
-        if self.absent_mode == "100":
-            for word in self.word_totals:
-                self.word_totals[word] += 100.0
-                self.word_counts[word] += 1
-
+        present_values: dict[str, float] = {}
         denominator = len(words) - 1
         for index, word in enumerate(words):
-            relative = 0.0 if denominator <= 0 else 100.0 * index / denominator
-            if word in self.word_totals:
-                if self.absent_mode == "100":
-                    self.word_totals[word] += relative - 100.0
-                else:
-                    self.word_totals[word] += relative
-                    self.word_counts[word] += 1
+            if word in self.word_values:
+                present_values[word] = 0.0 if denominator <= 0 else 100.0 * index / denominator
 
-    def word_means(self) -> dict[str, float]:
-        """Return mean relative rank for every tracked common word."""
+        for word, values in self.word_values.items():
+            if word in present_values:
+                values.append(present_values[word])
+            elif self.absent_mode == "100":
+                values.append(100.0)
+
+    def word_medians(self) -> dict[str, float]:
+        """Return median relative rank for every tracked common word."""
         out: dict[str, float] = {}
-        for word, total in self.word_totals.items():
-            count = self.word_counts[word]
-            out[word] = float("nan") if count == 0 else total / count
+        for word, values in self.word_values.items():
+            out[word] = float("nan") if not values else float(pd.Series(values).median())
         return out
 
 
@@ -308,27 +309,27 @@ def draw_side_labels(ax_left: plt.Axes, ax_right: plt.Axes, words: list[str], ma
             # Odd rows: left grey label aligned to the plot edge, with white separators.
             ax_left.hlines([y0, y1], 0.0, 1.0, colors="white", linewidth=0.8, zorder=1)
             ax_left.text(
-                0.965,
+                0.97,
                 rank,
                 word,
                 ha="right",
                 va="center",
-                fontsize=6.4,
+                fontsize=LABEL_FONT_SIZE,
                 zorder=2,
-                clip_on=True,
+                clip_on=False,
             )
         else:
             # Even rows: right white label aligned to the plot edge, with grey separators.
             ax_right.hlines([y0, y1], 0.0, 1.0, colors=right_separator, linewidth=0.8, zorder=1)
             ax_right.text(
-                0.035,
+                0.03,
                 rank,
                 word,
                 ha="left",
                 va="center",
-                fontsize=6.4,
+                fontsize=LABEL_FONT_SIZE,
                 zorder=2,
-                clip_on=True,
+                clip_on=False,
             )
 
 
@@ -357,8 +358,8 @@ def plot_compare(
         stats = collect_stats(groups[code], ranked_words, absent_mode)
         if stats.doc_count == 0:
             raise ValueError(f"{code}: no chapter keyword lists found in the supplied files")
-        means = stats.word_means()
-        prepared.append((code, infer_label(code), means, stats.doc_count))
+        medians = stats.word_medians()
+        prepared.append((code, infer_label(code), medians, stats.doc_count))
         chapter_counts.add(stats.doc_count)
         print(f"{code}: chapters={stats.doc_count}")
 
@@ -368,14 +369,24 @@ def plot_compare(
         figsize=(width_cm / 2.54, height_cm / 2.54),
         facecolor="#e6e6e6",
     )
+    left_fraction = 0.03
+    right_fraction = 0.99
+    usable_width_cm = width_cm * (right_fraction - left_fraction)
+    plot_width_cm = usable_width_cm - 2.0 * LABEL_GUTTER_CM
+    if plot_width_cm <= 0:
+        raise ValueError(
+            f"--width {width_cm:g} cm is too small for two "
+            f"{LABEL_GUTTER_CM:g} cm label gutters"
+        )
+
     gs = fig.add_gridspec(
         1,
         3,
-        width_ratios=[2.6, 6.6, 2.6],
-        left=0.035,
-        right=0.985,
-        bottom=0.09,
-        top=0.915,
+        width_ratios=[LABEL_GUTTER_CM, plot_width_cm, LABEL_GUTTER_CM],
+        left=left_fraction,
+        right=right_fraction,
+        bottom=0.095,
+        top=0.885,
         wspace=0.0,
     )
     ax_left = fig.add_subplot(gs[0, 0])
@@ -397,8 +408,8 @@ def plot_compare(
 
     handles: list[Line2D] = []
     ys = [rank_by_word[word] for word in words]
-    for color, (code, label, means, _) in zip(colors, prepared):
-        xs = [means[word] for word in words]
+    for color, (code, label, medians, _) in zip(colors, prepared):
+        xs = [medians[word] for word in words]
         ax.scatter(
             xs,
             ys,
@@ -415,34 +426,43 @@ def plot_compare(
 
     ax.set_xlim(0, 100)
     ax.set_ylim(max_rank + 0.5, 0.5)
-    ax.set_xticks([0, 10, 25, 50, 75, 90, 100])
+    x_ticks = [0, 25, 50, 75, 100]
+    ax.set_xticks(x_ticks)
     ax.xaxis.set_major_formatter(PercentFormatter(xmax=100, decimals=0))
+
+    xlabel = "Mot-clé, rang relatif médian"
+    top_axis = ax.secondary_xaxis("top")
+    top_axis.set_xticks(x_ticks)
+    top_axis.xaxis.set_major_formatter(PercentFormatter(xmax=100, decimals=0))
+    top_axis.tick_params(axis="x", labelsize=8, pad=2, length=3)
+    top_axis.spines["top"].set_visible(False)
+    top_axis.set_xlabel(xlabel, fontsize=10, labelpad=3)
     ax.set_yticks([])
     ax.tick_params(axis="y", left=False, right=False, labelleft=False, labelright=False)
     ax.tick_params(axis="x", labelsize=8)
-    ax.set_xlabel("Rang relatif moyen dans les listes de mots-clés", fontsize=10)
+    ax.set_xlabel(xlabel, fontsize=8, labelpad=5)
 
     for spine in ax.spines.values():
         spine.set_visible(False)
 
     if len(chapter_counts) == 1:
         title = (
-            f"{next(iter(chapter_counts))} chapitres — "
-            f"{max_rank} mots-clés fréquents — rangs moyens"
+            f"{next(iter(chapter_counts))} chapitres, "
+            f"{max_rank} mots fréquents"
         )
     else:
         minimum = min(chapter_counts)
         maximum = max(chapter_counts)
         title = (
-            f"{minimum}–{maximum} chapitres — "
-            f"{max_rank} mots-clés fréquents — rangs moyens"
+            f"{minimum}–{maximum} chapitres, "
+            f"{max_rank} mots fréquents"
         )
 
-    fig.suptitle(title, fontsize=13, y=0.975)
+    fig.suptitle(title, fontsize=12.0, y=0.975)
     fig.legend(
         handles=handles,
         loc="upper center",
-        bbox_to_anchor=(0.64, 0.947),
+        bbox_to_anchor=(0.5, 0.948),
         ncol=len(handles),
         fontsize=8.2,
         frameon=False,
@@ -473,7 +493,7 @@ def parse_args() -> argparse.Namespace:
         description=(
             "Compare plusieurs scoreurs sur un même nuage de dispersion : "
             "une couleur par scoreur, un axe vertical commun des mots fréquents, "
-            "des étiquettes sur les côtés, et un choix pour le traitement des absences."
+            "des étiquettes sur les côtés, et une agrégation médiane des rangs."
         )
     )
     parser.add_argument(
@@ -504,7 +524,7 @@ def parse_args() -> argparse.Namespace:
         default="ignore",
         help=(
             "Traitement des mots absents d'un chapitre : "
-            "ignore = moyenne sur les seules présences ; "
+            "ignore = médiane sur les seules présences ; "
             "100 = une absence compte pour 100%% (défaut : ignore)."
         ),
     )
