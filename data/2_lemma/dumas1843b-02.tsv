@@ -5,17 +5,17 @@
 # isPartOf = Ascanio
 # title = II. Un orfèvre au seizième siècle
 
-↵↵↵	↵↵↵	PUNCTstruct
-		TOKEN
+↵↵	↵↵	PUNCTstruct
+II	II	PRON
 .	.	PUNCTsent
-Un	un	DET
+un	un	DET
 orfèvre	orfèvre	NOUN
 au	au	ADP_DET
 16e	16e	NUM
 siècle	siècle	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Puisque	puisque	SCONJ
+puisque	puisque	SCONJ
 nous	nous	PRON
 avons	avoir	AUX
 fait	faire	VERB
@@ -91,7 +91,7 @@ cette	ce	DET
 histoire	histoire	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 auparavant	auparavant	ADV
 disons	dire	VERB
 ce	ce	PRON
@@ -136,7 +136,7 @@ de	de	ADP
 orfèvrerie	orfèvrerie	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 pas	pas	ADV
 de	de	ADP
 orfèvrerie	orfèvrerie	NOUN
@@ -160,10 +160,9 @@ l'	le	DET
 orfèvrerie	orfèvrerie	NOUN
 était	être	AUX
 un	un	DET
-art	art	NOUN
-.	.	PUNCTsent
+article	article	NOUN
 ↵↵	↵↵	PUNCTstruct
-Aussi	aussi	ADV
+aussi	aussi	ADV
 rien	rien	PRON
 ne	ne	ADV
 était	être	AUX
@@ -177,7 +176,7 @@ comme	comme	ADP
 les	le	DET
 objets	objet	NOUN
 qui	qui	PRON
-les	le:PRON	PRON
+les	le_PRON	PRON
 garnissaient	garnir	VERB
 :	:	PUNCTclause
 ce	ce	DET
@@ -429,7 +428,7 @@ déesses	déesse	NOUN
 ,	,	PUNCTclause
 tout	tout	ADV
 un	un	DET
-Olympe	Olympe	NOUN
+Olympe	Olympe	PROPN
 resplendissant	resplendissant	ADJ
 ,	,	PUNCTclause
 mêlé	mêler	VERB
@@ -449,10 +448,10 @@ des	un	DET
 mater dolorosa	mater dolorosa	NOUN
 et	et	CCONJ
 des	un	DET
-Vénus	Vénus	NOUN
+Vénus	Vénus	PROPN
 ,	,	PUNCTclause
 des	un	DET
-Christs	Christs	PROPN
+christs	christ	UNKNOWN
 et	et	CCONJ
 des	un	ADP_DET
 Apollons	Apollons	PROPN
@@ -513,7 +512,7 @@ une	un	DET
 nation	nation	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 est	être	AUX
 vrai	vrai	ADJ
 que	que	SCONJ
@@ -534,7 +533,7 @@ Benvenuto	Benvenuto	PROPN
 Cellini	Cellini	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Or	or	NOUN
+or	or	NOUN
 ,	,	PUNCTclause
 Benvenuto	Benvenuto	PROPN
 Cellini	Cellini	PROPN
@@ -594,7 +593,7 @@ poison	poison	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 quand	quand	SCONJ
-Cosme	Cosme	PROPN
+Cosme	Cosme	DET
 1er	1er	ADJ
 se	se	PRON
 enfermait	enfermer	VERB
@@ -612,7 +611,7 @@ le	le	DET
 porphyre	porphyre	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Nous	nous	PRON
+nous	nous	PRON
 ne	ne	ADV
 prendrons	prendre	VERB
 donc	donc	ADV
@@ -630,13 +629,13 @@ vie	vie	NOUN
 :	:	PUNCTclause
 celui	celui	PRON
 qui	qui	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 conduisit	conduire	VERB
 en	en	ADP
 France	France	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Benvenuto	Benvenuto	PROPN
+Benvenuto	Benvenuto	NOUN
 était	être	AUX
 à	à	ADP
 Rome	Rome	PROPN
@@ -645,8 +644,8 @@ où	où	PRON
 le	le	DET
 pape	pape	NOUN
 Clément	Clément	PROPN
-		TOKEN
-l'	le	DET
+VII	VII	NUM
+l'	le_PRON	PRON
 avait	avoir	AUX
 fait	faire	AUX
 appeler	appeler	VERB
@@ -660,8 +659,8 @@ au	au	ADP_DET
 beau	beau	ADJ
 calice	calice	NOUN
 que	que	SCONJ
-Sa	son	DET
-Sainteté	Sainteté	PROPN
+sa	son	DET
+sainteté	sainteté	UNKNOWN
 lui	lui	PRON
 avait	avoir	AUX
 commandé	commander	VERB
@@ -686,13 +685,13 @@ que	que	ADV
 bien	bien	ADV
 lentement	lentement	ADV
 .	.	PUNCTsent
-Or	or	NOUN
+or	or	NOUN
 ,	,	PUNCTclause
 Benvenuto	Benvenuto	PROPN
 ,	,	PUNCTclause
 comme	comme	ADP
 on	on	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 pense	penser	VERB
 bien	bien	ADV
 ,	,	PUNCTclause
@@ -731,7 +730,7 @@ exécutait	exécuter	VERB
 ces	ce	DET
 commandes	commande	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 en	en	PRON
 résultait	résulter	VERB
 que	que	SCONJ
@@ -816,11 +815,11 @@ au détriment de	au détriment de	ADP
 ceux	ceux	PRON
 commandés	commander	VERB
 par	par	ADP
-Sa	son	DET
-Sainteté	Sainteté	PROPN
+sa	son	DET
+sainteté	sainteté	UNKNOWN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 dit	dire	VERB
 et	et	CCONJ
 fit	faire	VERB
@@ -834,7 +833,7 @@ que	que	SCONJ
 un	un	DET
 jour	jour	NOUN
 en	en	ADP
-le	le:PRON	PRON
+le	le_PRON	PRON
 voyant	voir	VERB
 entrer	entrer	VERB
 dans	dans	ADP
@@ -878,8 +877,8 @@ une	un	DET
 lourde	lourd	ADJ
 obligation	obligation	NOUN
 :	:	PUNCTclause
-Sa	son	DET
-Sainteté	Sainteté	PROPN
+sa	son	DET
+sainteté	sainteté	UNKNOWN
 a	avoir	AUX
 bien	bien	ADV
 vu	voir	VERB
@@ -905,7 +904,7 @@ mais	mais	CCONJ
 faute de	faute de	ADP
 temps	temps	NOUN
 .	.	PUNCTsent
-Elle	elle	PRON
+elle	elle	PRON
 a	avoir	AUX
 pensé	penser	VERB
 en	en	ADP
@@ -935,7 +934,7 @@ de	de	ADP
 graveur	graveur	NOUN
 de	de	ADP
 la	le	DET
-Monnaie	Monnaie	NOUN
+monnaie	monnaie	NOUN
 .	.	PUNCTsent
 ce	ce	PRON
 est	être	AUX
@@ -963,7 +962,7 @@ aurez	avoir	VERB
 de plus	de plus	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Benvenuto	Benvenuto	PROPN
+Benvenuto	Benvenuto	NOUN
 Cellini	Cellini	PROPN
 se	se	PRON
 sentit	sentir	VERB
@@ -1030,8 +1029,8 @@ en	en	ADP
 votre	votre	DET
 faveur	faveur	NOUN
 ,	,	PUNCTclause
-Sa	son	DET
-Sainteté	Sainteté	NOUN
+sa	son	DET
+sainteté	sainteté	NOUN
 vous	vous	PRON
 redemande	redemander	VERB
 son	son	DET
@@ -1103,7 +1102,7 @@ par	par	ADP
 un	un	DET
 serpent	serpent	NOUN
 .	.	PUNCTsent
-Mon	mon	DET
+mon	mon	DET
 calice	calice	NOUN
 est	être	VERB
 à	à	ADP
@@ -1113,13 +1112,13 @@ l'	le	DET
 office	office	NOUN
 de	de	ADP
 la	le	DET
-Monnaie	Monnaie	PROPN
+monnaie	monnaie	UNKNOWN
 est	être	AUX
 au	au	ADP_DET
 pape	pape	NOUN
 .	.	PUNCTsent
-Sa	son	DET
-Sainteté	Sainteté	PROPN
+sa	son	DET
+sainteté	sainteté	UNKNOWN
 ne	ne	ADV
 a	avoir	VERB
 d'autre	d'autre	ADP
@@ -1154,7 +1153,7 @@ semblera	sembler	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Prenez	prendre	VERB
+prenez	prendre	VERB
 garde	garde	NOUN
 ,	,	PUNCTclause
 mon	mon	DET
@@ -1175,7 +1174,7 @@ refus	refus	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Monsieur	monsieur	NOUN
+monsieur	monsieur	NOUN
 Pompeo	Pompeo	PROPN
 ,	,	PUNCTclause
 vous	vous	PRON
@@ -1188,12 +1187,12 @@ Benvenuto	Benvenuto	PROPN
 Cellini	Cellini	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pompeo	Pompeo	PROPN
+Pompeo	Pompeo	VERB
 sortit	sortir	VERB
 furieux	furieux	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 lendemain	lendemain	NOUN
 ,	,	PUNCTclause
 deux	deux	NUM
@@ -1207,7 +1206,7 @@ Cellini	Cellini	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Le	le:PRON	PRON
+le	le_PRON	PRON
 pape	pape	NOUN
 nous	nous	PRON
 mande	mander	VERB
@@ -1235,7 +1234,7 @@ prison	prison	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Messeigneurs	messeigneurs	NOUN
+messeigneurs	messeigneurs	NOUN
 ,	,	PUNCTclause
 répondit	répondre	VERB
 Benvenuto	Benvenuto	PROPN
@@ -1254,7 +1253,7 @@ archers	archer	NOUN
 comme	comme	ADP
 vous	vous	PRON
 .	.	PUNCTsent
-Menez	mener	VERB
+menez	mener	VERB
 moi	moi	PRON
 en	en	ADP
 prison	prison	NOUN
@@ -1262,7 +1261,7 @@ prison	prison	NOUN
 me	me	PRON
 voilà	voilà	ADP
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 je	je	PRON
 vous	vous	PRON
@@ -1284,7 +1283,7 @@ du	du	ADP_DET
 pape	pape	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 Benvenuto	Benvenuto	PROPN
 se	se	PRON
 en	en	ADP
@@ -1315,9 +1314,9 @@ table	table	NOUN
 avec	avec	ADP
 lui	lui	PRON
 .	.	PUNCTsent
-Pendant	pendant	ADP
+pendant	pendant	ADP
 tout	tout	DET
-le	le:PRON	PRON
+le	le_PRON	PRON
 dîner	dîner	VERB
 le	le	DET
 gouverneur	gouverneur	NOUN
@@ -1350,7 +1349,7 @@ cette	ce	DET
 soumission	soumission	NOUN
 ,	,	PUNCTclause
 Clément	Clément	PROPN
-		TOKEN
+VII	VII	NUM
 ,	,	PUNCTclause
 tout	tout	ADV
 violent	violent	ADJ
@@ -1402,8 +1401,8 @@ que	que	SCONJ
 d'ailleurs	d'ailleurs	ADV
 il	il	PRON
 connaissait	connaître	VERB
-Sa	son	DET
-Sainteté	Sainteté	NOUN
+sa	son	DET
+sainteté	sainteté	NOUN
 ,	,	PUNCTclause
 que	que	SCONJ
 il	il	PRON
@@ -1426,7 +1425,7 @@ de	de	ADP
 ce	ce	PRON
 que	que	PRON
 elle	elle	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 tenait	tenir	VERB
 à	à	ADP
 sa	son	DET
@@ -1437,7 +1436,7 @@ reprendre	reprendre	VERB
 son	son	DET
 calice	calice	NOUN
 et	et	CCONJ
-le	le:PRON	PRON
+le	le_PRON	PRON
 donner	donner	VERB
 à	à	ADP
 finir	finir	VERB
@@ -1445,7 +1444,7 @@ finir	finir	VERB
 quelque	quelque	DET
 imbécile	imbécile	NOUN
 qui	qui	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 gâterait	gâter	VERB
 .	.	PUNCTsent
 en revanche	en revanche	ADV
@@ -1470,7 +1469,7 @@ avait	avoir	AUX
 avancés	avancé	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cela	cela	PRON
+cela	cela	PRON
 dit	dire	VERB
 ,	,	PUNCTclause
 Benvenuto	Benvenuto	PROPN
@@ -1495,7 +1494,7 @@ ses	son	DET
 vins	vin	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Après	après	ADP
+après	après	ADP
 le	le	DET
 dîner	dîner	NOUN
 ,	,	PUNCTclause
@@ -1532,7 +1531,7 @@ tenant	tenir	VERB
 tête	tête	NOUN
 à	à	ADP
 Clément	Clément	PROPN
-		TOKEN
+VII	VII	NUM
 ;	;	PUNCTclause
 mais	mais	CCONJ
 Benvenuto	Benvenuto	PROPN
@@ -1593,7 +1592,7 @@ présentât	présenter	VERB
 plus	plus	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ses	son	DET
+ses	son	DET
 compatriotes	compatriote	NOUN
 se	se	PRON
 retirèrent	retirer	VERB
@@ -1617,7 +1616,7 @@ en	en	ADP
 pleurant	pleurer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Heureusement	heureusement	ADV
+heureusement	heureusement	ADV
 Pompeo	Pompeo	PROPN
 ne	ne	ADV
 oubliait	oublier	VERB
@@ -1635,7 +1634,7 @@ pape	pape	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Très	très	ADV
+très	très	ADV
 saint-père	saint-père	NOUN
 ,	,	PUNCTclause
 laissez	laisser	VERB
@@ -1700,8 +1699,8 @@ le	le	DET
 calice	calice	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Clément	clément	ADJ
-		TOKEN
+Clément	Clément	PROPN
+VII	VII	NUM
 trouva	trouver	VERB
 le	le	DET
 moyen	moyen	NOUN
@@ -1718,7 +1717,7 @@ il	il	PRON
 l'	le	DET
 entendrait	entendre	VERB
 .	.	PUNCTsent
-En	en	ADP
+en	en	ADP
 conséquence	conséquence	NOUN
 ,	,	PUNCTclause
 le	le	DET
@@ -1749,8 +1748,8 @@ disant	dire	VERB
 l'	le	DET
 orfèvre	orfèvre	NOUN
 que	que	SCONJ
-Sa	son	DET
-Sainteté	Sainteté	PROPN
+sa	son	DET
+sainteté	sainteté	UNKNOWN
 acceptait	accepter	VERB
 son	son	DET
 ultimatum	ultimatum	NOUN
@@ -1767,7 +1766,7 @@ le	le	DET
 calice	calice	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Benvenuto	Benvenuto	PROPN
+Benvenuto	Benvenuto	NOUN
 répondit	répondre	VERB
 que	que	SCONJ
 on	on	PRON
@@ -1775,7 +1774,7 @@ ne	ne	ADV
 avait	avoir	VERB
 que	que	ADV
 à	à	ADP
-le	le:PRON	PRON
+le	le_PRON	PRON
 ramener	ramener	VERB
 à	à	ADP
 sa	son	DET
@@ -1791,7 +1790,7 @@ cents	cents	NUM
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Quatre	Quatre	NUM
-Suisses	Suisses	PROPN
+suisses	suisse	UNKNOWN
 reconduisirent	reconduire	VERB
 chez	chez	ADP
 lui	lui	PRON
@@ -1801,7 +1800,7 @@ suivi	suivre	VERB
 du	du	ADP_DET
 cameriere	cameriere	NOUN
 .	.	PUNCTsent
-Arrivé	arriver	VERB
+arrivé	arriver	VERB
 dans	dans	ADP
 sa	son	DET
 chambre à coucher	chambre à coucher	NOUN
@@ -1848,7 +1847,7 @@ au	au	ADP_DET
 cameriere	cameriere	NOUN
 ,	,	PUNCTclause
 il	il	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 mit	mettre	VERB
 à	à	ADP
 la	le	DET
@@ -1857,10 +1856,10 @@ lui	lui	PRON
 et	et	CCONJ
 les	le	DET
 quatre	quatre	NUM
-Suisses	Suisses	PROPN
+suisses	suisse	UNKNOWN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ceux	ceux	PRON
+ceux	ceux	PRON
 reçurent	recevoir	VERB
 même	même	ADV
 ,	,	PUNCTclause
@@ -1903,10 +1902,10 @@ dire	dire	NOUN
 la	le	DET
 louange	louange	NOUN
 des	un	ADP_DET
-Suisses	Suisses	PROPN
+suisses	suisse	UNKNOWN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 cameriere	cameriere	NOUN
 retourna	retourner	VERB
 aussitôt	aussitôt	ADV
@@ -1923,8 +1922,8 @@ cents	cents	NUM
 ,	,	PUNCTclause
 sur	sur	ADP
 quoi	quoi	PRON
-Sa	son	DET
-Sainteté	Sainteté	NOUN
+sa	son	DET
+sainteté	sainteté	NOUN
 désespérée	désespéré	ADJ
 entra	entrer	VERB
 dans	dans	ADP
@@ -1940,7 +1939,7 @@ Pompeo	Pompeo	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Va	aller	VERB
+va	aller	VERB
 trouver	trouver	VERB
 toi-même	toi-même	PRON
 mon	mon	DET
@@ -1994,10 +1993,10 @@ demandera	demander	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
-Votre	Votre	PROPN
-Sainteté	Sainteté	PROPN
+votre	votre	UNKNOWN
+sainteté	sainteté	UNKNOWN
 ,	,	PUNCTclause
 dit	dire	VERB
 Pompeo	Pompeo	PROPN
@@ -2012,7 +2011,7 @@ matin	matin	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Il	il	PRON
+il	il	PRON
 est	être	AUX
 déjà	déjà	ADV
 trop	trop	ADV
@@ -2056,7 +2055,7 @@ bonne	bon	ADJ
 réponse	réponse	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 Pompeo	Pompeo	PROPN
 sortit	sortir	VERB
 donc	donc	ADV
@@ -2081,7 +2080,7 @@ elle	elle	PRON
 fermée	fermer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 regarda	regarder	VERB
 à travers	à travers	ADP
 le	le	DET
@@ -2101,7 +2100,7 @@ passa	passer	VERB
 en	en	ADP
 revue	revoir	VERB
 toutes	toutes	DET
-les	le:PRON	PRON
+les	le_PRON	PRON
 fenêtres	fenêtre	NOUN
 pour	pour	ADP
 voir	voir	VERB
@@ -2150,7 +2149,7 @@ la	le	DET
 seconde	second	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Alors	alors	ADV
+alors	alors	ADV
 une	un	DET
 croisée	croisé	NOUN
 du	du	ADP_DET
@@ -2172,7 +2171,7 @@ main	main	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Qui	qui	PRON
+qui	qui	PRON
 va	aller	VERB
 là	là	ADV
 ?	?	PUNCTsent
@@ -2181,7 +2180,7 @@ Benvenuto	Benvenuto	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Moi	moi	PRON
+moi	moi	PRON
 ,	,	PUNCTclause
 répondit	répondre	VERB
 le	le	DET
@@ -2189,7 +2188,7 @@ messager	messager	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Qui	qui	PRON
+qui	qui	PRON
 ,	,	PUNCTclause
 toi	toi	PRON
 ?	?	PUNCTsent
@@ -2206,13 +2205,13 @@ homme	homme	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Moi	moi	PRON
+moi	moi	PRON
 ,	,	PUNCTclause
 Pompeo	Pompeo	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Tu	tu	PRON
+tu	tu	PRON
 mens	mentir	VERB
 ,	,	PUNCTclause
 dit	dire	VERB
@@ -2244,7 +2243,7 @@ Rome	Rome	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 mon	mon	DET
 cher	cher	ADJ
@@ -2256,7 +2255,7 @@ jure	jurer	VERB
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Tais	taire	VERB
+tais	taire	VERB
 toi	toi	PRON
 ;	;	PUNCTclause
 tu	tu	PRON
@@ -2284,7 +2283,7 @@ voler	voler	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Maître	maître	NOUN
+maître	maître	NOUN
 Benvenuto	Benvenuto	PROPN
 ,	,	PUNCTclause
 je	je	PRON
@@ -2293,7 +2292,7 @@ mourir	mourir	VERB
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Dis	dire	VERB
+dis	dire	VERB
 encore	encore	ADV
 un	un	DET
 mot	mot	NOUN
@@ -2319,7 +2318,7 @@ sera	être	AUX
 exaucé	exaucer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pompeo	Pompeo	PROPN
+Pompeo	Pompeo	VERB
 se	se	PRON
 enfuit	enfuir	VERB
 à	à	ADP
@@ -2342,7 +2341,7 @@ prochaine	prochain	ADJ
 rue	rue	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Quand	quand	SCONJ
+quand	quand	SCONJ
 il	il	PRON
 eut	avoir	AUX
 disparu	disparaître	VERB
@@ -2379,7 +2378,7 @@ pauvre	pauvre	NOUN
 Pompeo	Pompeo	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 lendemain	lendemain	NOUN
 ,	,	PUNCTclause
 au moment où	au moment où	ADP
@@ -2425,7 +2424,7 @@ il	il	PRON
 descendît	descendre	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-En	en	ADP
+en	en	ADP
 apercevant	apercevoir	VERB
 Cellini	Cellini	PROPN
 ,	,	PUNCTclause
@@ -2464,7 +2463,7 @@ mon	mon	DET
 cher	cher	ADJ
 Pompeo	Pompeo	PROPN
 .	.	PUNCTsent
-Ma	mon	DET
+ma	mon	DET
 foi	foi	NOUN
 !	!	PUNCTsent
 je	je	PRON
@@ -2478,7 +2477,7 @@ cher	cher	ADV
 à	à	ADP
 un	un	DET
 drôle	drôle	ADJ
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 insolence	insolence	NOUN
 que	que	SCONJ
 il	il	PRON
@@ -2491,7 +2490,7 @@ nom	nom	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Vraiment	vraiment	ADV
+vraiment	vraiment	ADV
 ,	,	PUNCTclause
 dit	dire	VERB
 Pompeo	Pompeo	PROPN
@@ -2514,14 +2513,14 @@ comment	comment	ADV
 cela	cela	PRON
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Benvenuto	Benvenuto	PROPN
+Benvenuto	Benvenuto	NOUN
 raconta	raconter	VERB
 alors	alors	ADV
 au	au	ADP_DET
 messager	messager	NOUN
 de	de	ADP
-Sa	son	DET
-Sainteté	Sainteté	NOUN
+sa	son	DET
+sainteté	sainteté	NOUN
 ce	ce	PRON
 qui	qui	PRON
 se	se	PRON
@@ -2537,7 +2536,7 @@ nocturne	nocturne	ADJ
 son	son	DET
 ami	ami	NOUN
 Benvenuto	Benvenuto	PROPN
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avait	avoir	AUX
 traité	traiter	VERB
 de	de	ADP
@@ -2553,14 +2552,14 @@ ce	ce	PRON
 à	à	ADP
 lui	lui	PRON
 en	en	ADP
-personne	personne:PRON	PRON
+personne	personne_PRON	PRON
 que	que	SCONJ
 Benvenuto	Benvenuto	PROPN
 avait	avoir	AUX
 eu	avoir	VERB
 affaire	affaire	NOUN
 .	.	PUNCTsent
-Puis	puis	CCONJ
+puis	puis	CCONJ
 ,	,	PUNCTclause
 ce	ce	DET
 récit	récit	NOUN
@@ -2585,7 +2584,7 @@ aimable	aimable	ADJ
 visite	visite	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Alors	alors	ADV
+alors	alors	ADV
 Pompeo	Pompeo	PROPN
 se	se	PRON
 acquitta	acquitter	VERB
@@ -2602,8 +2601,8 @@ la	le	DET
 commission	commission	NOUN
 dont	dont	PRON
 Clément	Clément	PROPN
-		TOKEN
-l'	le	DET
+VII	VII	NUM
+l'	le_PRON	PRON
 avait	avoir	AUX
 chargé	charger	VERB
 près de	près de	ADP
@@ -2611,7 +2610,7 @@ son	son	DET
 orfèvre	orfèvre	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-À	à	ADP
+à	à	ADP
 mesure	mesure	NOUN
 que	que	SCONJ
 il	il	PRON
@@ -2625,8 +2624,8 @@ Cellini	Cellini	PROPN
 se	se	PRON
 épanouissait	épanouir	VERB
 .	.	PUNCTsent
-Clément	clément	ADJ
-		TOKEN
+Clément	Clément	PROPN
+VII	VII	NUM
 cédait	céder	VERB
 donc	donc	ADV
 .	.	PUNCTsent
@@ -2651,10 +2650,10 @@ discours	discours	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Répondez	répondre	VERB
+répondez	répondre	VERB
 à	à	ADP
-Sa	son	DET
-Sainteté	Sainteté	PROPN
+sa	son	DET
+sainteté	sainteté	UNKNOWN
 ,	,	PUNCTclause
 dit	dire	VERB
 Benvenuto	Benvenuto	PROPN
@@ -2783,7 +2782,7 @@ votre	votre	DET
 César	César	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pompeo	Pompeo	PROPN
+Pompeo	Pompeo	NOUN
 ne	ne	ADV
 demanda	demander	VERB
 point	point	ADV
@@ -2796,7 +2795,7 @@ alla	aller	VERB
 reporter	reporter	VERB
 à	à	ADP
 Clément	Clément	PROPN
-		TOKEN
+VII	VII	NUM
 la	le	DET
 réponse	réponse	NOUN
 de	de	ADP
@@ -2810,7 +2809,7 @@ la	le	DET
 péroraison	péroraison	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-À	à	ADP
+à	à	ADP
 quelque	quelque	DET
 temps	temps	NOUN
 de	de	ADP
@@ -2826,13 +2825,13 @@ avec	avec	ADP
 Benvenuto	Benvenuto	PROPN
 ,	,	PUNCTclause
 Clément	Clément	PROPN
-		TOKEN
+VII	VII	NUM
 lui	lui	PRON
 commanda	commander	VERB
 sa	son	DET
 médaille	médaille	NOUN
 .	.	PUNCTsent
-Benvenuto	Benvenuto	PROPN
+Benvenuto	Benvenuto	ADP
 la	le	DET
 lui	lui	PRON
 frappa	frapper	VERB
@@ -2847,11 +2846,11 @@ or	or	NOUN
 ,	,	PUNCTclause
 puis	puis	CCONJ
 il	il	PRON
-la	le:PRON	PRON
+la	le_PRON	PRON
 lui	lui	PRON
 porta	porter	VERB
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 pape	pape	NOUN
 en	en	ADP
 fut	être	AUX
@@ -2881,8 +2880,8 @@ médaille	médaille	NOUN
 hé	hé	INTJ
 bien	bien	ADV
 !	!	PUNCTsent
-Votre	votre	DET
-Sainteté	Sainteté	PROPN
+votre	votre	DET
+sainteté	sainteté	UNKNOWN
 ,	,	PUNCTclause
 dit	dire	VERB
 Benvenuto	Benvenuto	PROPN
@@ -2924,7 +2923,7 @@ un	un	DET
 serviteur	serviteur	NOUN
 dévoué	dévoué	ADJ
 .	.	PUNCTsent
-Voyez	voir	VERB
+voyez	voir	VERB
 vous	vous	PRON
 très	très	ADV
 Saint-Père	Saint-Père	PROPN
@@ -2936,8 +2935,8 @@ manière	manière	NOUN
 de	de	ADP
 avis	avis	NOUN
 ,	,	PUNCTclause
-Votre	Votre	PROPN
-Sainteté	Sainteté	PROPN
+votre	votre	UNKNOWN
+sainteté	sainteté	UNKNOWN
 ne	ne	ADV
 ferait	faire	VERB
 pas	pas	ADV
@@ -3009,7 +3008,7 @@ très	très	ADV
 Saint-Père	Saint-Père	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ce	ce	PRON
+ce	ce	PRON
 fut	être	AUX
 ainsi	ainsi	ADV
 que	que	SCONJ
@@ -3017,7 +3016,7 @@ Benvenuto	Benvenuto	PROPN
 pardonna	pardonner	VERB
 à	à	ADP
 Clément	Clément	PROPN
-		TOKEN
+VII	VII	NUM
 ,	,	PUNCTclause
 ce	ce	PRON
 que	que	SCONJ
@@ -3047,7 +3046,7 @@ attaché	attacher	VERB
 lui	lui	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Aussi	aussi	ADV
+aussi	aussi	ADV
 sa	son	DET
 désolation	désolation	NOUN
 fut	être	AUX
@@ -3071,7 +3070,7 @@ mourut	mourir	VERB
 presque	presque	ADV
 subitement	subitement	ADV
 .	.	PUNCTsent
-Cet	ce	DET
+cet	ce	DET
 homme	homme	NOUN
 de	de	ADP
 fer	fer	NOUN
@@ -3093,7 +3092,7 @@ un	un	DET
 enfant	enfant	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Au	au	ADP_DET
+au	au	ADP_DET
 reste	reste	NOUN
 ,	,	PUNCTclause
 cette	ce	DET
@@ -3130,7 +3129,7 @@ le	le	DET
 moment	moment	NOUN
 où	où	PRON
 il	il	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avait	avoir	AUX
 invité	inviter	VERB
 à	à	ADP
@@ -3142,7 +3141,7 @@ fréquente	fréquent	ADJ
 présence	présence	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 faut	falloir	VERB
 dire	dire	VERB
 que	que	SCONJ
@@ -3244,11 +3243,11 @@ parti	parti	NOUN
 ;	;	PUNCTclause
 mais	mais	CCONJ
 Clément	Clément	PROPN
-		TOKEN
+VII	VII	NUM
 ,	,	PUNCTclause
 comme	comme	ADP
 nous	nous	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avons	avoir	AUX
 dit	dire	VERB
 ,	,	PUNCTclause
@@ -3266,7 +3265,7 @@ hardiesse	hardiesse	NOUN
 Pompeo	Pompeo	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Benvenuto	Benvenuto	PROPN
+Benvenuto	Benvenuto	NOUN
 était	être	AUX
 allé	aller	VERB
 à	à	ADP
@@ -3306,7 +3305,7 @@ ses	son	DET
 douze	douze	NUM
 hommes	homme	NOUN
 .	.	PUNCTsent
-À	à	ADP
+à	à	ADP
 l'	le	DET
 apparition	apparition	NOUN
 de	de	ADP
@@ -3411,7 +3410,7 @@ lutte	lutte	NOUN
 si	si	ADV
 inégale	inégal	ADJ
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 lui	lui	PRON
 mit	mettre	VERB
 la	le	DET
@@ -3457,7 +3456,7 @@ avait	avoir	AUX
 aucunement	aucunement	ADV
 blessé	blesser	VERB
 .	.	PUNCTsent
-Ascanio	Ascanio	PROPN
+Ascanio	Ascanio	NOUN
 ne	ne	ADV
 reconnaissait	reconnaître	VERB
 pas	pas	ADV
@@ -3479,7 +3478,7 @@ avec	avec	ADP
 lui	lui	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pompeo	Pompeo	PROPN
+Pompeo	Pompeo	NOUN
 ,	,	PUNCTclause
 triomphant	triompher	VERB
 ,	,	PUNCTclause
@@ -3506,7 +3505,7 @@ ses	son	DET
 bravades	bravade	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Benvenuto	Benvenuto	PROPN
+Benvenuto	Benvenuto	NOUN
 se	se	PRON
 mordait	mordre	VERB
 ,	,	PUNCTclause
@@ -3548,7 +3547,7 @@ illustre	illustre	ADJ
 orfèvre	orfèvre	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 à peine	à peine	ADV
 eut	avoir	VERB
 il	il	PRON
@@ -3603,7 +3602,7 @@ et	et	CCONJ
 leur	leur	DET
 promettant	promettre	VERB
 de	de	ADP
-les	le:PRON	PRON
+les	le_PRON	PRON
 rejoindre	rejoindre	VERB
 dans	dans	ADP
 quelques	quelque	DET
@@ -3613,9 +3612,9 @@ la	le	DET
 boutique	boutique	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Comme	comme	SCONJ
+comme	comme	SCONJ
 on	on	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 comprend	comprendre	VERB
 bien	bien	ADV
 ,	,	PUNCTclause
@@ -3656,7 +3655,7 @@ que	que	SCONJ
 son	son	DET
 courage	courage	NOUN
 ne	ne	ADV
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 emporterait	emporter	VERB
 pas	pas	ADV
 trop	trop	ADV
@@ -3680,7 +3679,7 @@ la	le	DET
 planche	planche	NOUN
 où	où	PRON
 il	il	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avait	avoir	AUX
 trouvé	trouver	VERB
 ,	,	PUNCTclause
@@ -3692,7 +3691,7 @@ la	le	DET
 maison	maison	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-En	en	ADP
+en	en	ADP
 trois	trois	NUM
 bonds	bond	NOUN
 Benvenuto	Benvenuto	PROPN
@@ -3775,7 +3774,7 @@ sa	son	DET
 trace	trace	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pompeo	Pompeo	PROPN
+Pompeo	Pompeo	NOUN
 se	se	PRON
 était	être	AUX
 arrêté	arrêter	VERB
@@ -3798,7 +3797,7 @@ racontait	raconter	VERB
 au	au	ADP_DET
 digne	digne	ADJ
 apothicaire	apothicaire	NOUN
-les	le:PRON	PRON
+les	le_PRON	PRON
 prouesses	prouesse	NOUN
 auxquelles	auxquelles	ADP_PRON
 il	il	PRON
@@ -3836,7 +3835,7 @@ le	le	DET
 front	front	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Benvenuto	Benvenuto	PROPN
+Benvenuto	Benvenuto	NOUN
 jeta	jeter	VERB
 un	un	DET
 cri de joie	cri de joie	NOUN
@@ -3853,7 +3852,7 @@ sa	son	DET
 phrase	phrase	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 était	être	AUX
 évident	évident	ADJ
 que	que	SCONJ
@@ -3866,7 +3865,7 @@ de	de	ADP
 terrible	terrible	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Les	le	DET
+les	le	DET
 bravis	bravis	NOUN
 se	se	PRON
 rangèrent	ranger	VERB
@@ -3898,7 +3897,7 @@ Benvenuto	Benvenuto	PROPN
 ,	,	PUNCTclause
 comme	comme	ADP
 nous	nous	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avons	avoir	AUX
 dit	dire	VERB
 ,	,	PUNCTclause
@@ -3914,7 +3913,7 @@ pas	pas	ADV
 leurs	leur	DET
 ennemis	ennemi	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 tira	tirer	VERB
 ,	,	PUNCTclause
 contre	contre	ADP
@@ -3922,7 +3921,7 @@ ces	ce	DET
 treize	treize	NUM
 épées	épée	NOUN
 qui	qui	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 menaçaient	menacer	VERB
 ,	,	PUNCTclause
 un	un	DET
@@ -3987,7 +3986,7 @@ sur	sur	ADP
 lui	lui	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Alors	alors	ADV
+alors	alors	ADV
 on	on	PRON
 ne	ne	ADV
 vit	vivre	VERB
@@ -4012,7 +4011,7 @@ agitaient	agiter	VERB
 des	un	ADP_DET
 épées	épée	NOUN
 .	.	PUNCTsent
-Pendant	pendant	ADP
+pendant	pendant	ADP
 un	un	DET
 instant	instant	NOUN
 ce	ce	PRON
@@ -4072,7 +4071,7 @@ Benvenuto	Benvenuto	PROPN
 Cellini	Cellini	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Un	un	DET
+un	un	DET
 autre	autre	PRON
 resta	rester	VERB
 couché	coucher	VERB
@@ -4088,7 +4087,7 @@ de	de	ADP
 l'	le	DET
 agonie	agonie	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 avait	avoir	AUX
 reçu	recevoir	VERB
 deux	deux	NUM
@@ -4131,7 +4130,7 @@ ce	ce	DET
 Pompeo	Pompeo	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Un	un	DET
+un	un	DET
 autre	autre	ADJ
 que	que	SCONJ
 Benvenuto	Benvenuto	PROPN
@@ -4175,7 +4174,7 @@ douze	douze	NUM
 sbires	sbire	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 les	le	DET
 sbires	sbire	NOUN
 ne	ne	ADV
@@ -4187,9 +4186,9 @@ faire	faire	VERB
 à	à	ADP
 Benvenuto	Benvenuto	PROPN
 .	.	PUNCTsent
-Celui	celui	PRON
+celui	celui	PRON
 qui	qui	PRON
-les	le:PRON	PRON
+les	le_PRON	PRON
 payait	payer	VERB
 était	être	AUX
 mort	mourir	VERB
@@ -4201,7 +4200,7 @@ plus	plus	ADV
 les	le	DET
 payer	payer	VERB
 .	.	PUNCTsent
-Ils	ils	PRON
+ils	ils	PRON
 se	se	PRON
 sauvèrent	sauver	VERB
 comme	comme	ADP
@@ -4218,7 +4217,7 @@ de	de	ADP
 Pompeo	Pompeo	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-En	en	ADP
+en	en	ADP
 ce	ce	DET
 moment	moment	NOUN
 Ascanio	Ascanio	PROPN

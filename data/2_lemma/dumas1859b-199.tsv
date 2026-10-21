@@ -5,14 +5,14 @@
 # isPartOf = Les Mohicans de Paris
 # title = CXCIX. La lettre S.
 
-↵↵↵	↵↵↵	PUNCTstruct
-Cxcix	Cxcix	PROPN
-.	.	PUNCTsent
-La	le	DET
-lettre	lettre	NOUN
-S.	S.	PROPN
 ↵↵	↵↵	PUNCTstruct
-Roland	Roland	PROPN
+Cxcix	Cxcix	NOUN
+.	.	PUNCTsent
+la	le	DET
+lettre	lettre	NOUN
+S.	S.	ADJ
+↵↵	↵↵	PUNCTstruct
+Roland	Roland	ADJ
 avait	avoir	AUX
 flairé	flairer	VERB
 son	son	DET
@@ -25,7 +25,7 @@ jeunes	jeune	ADJ
 gens	gens	NOUN
 trouvèrent	trouver	VERB
 ils	ils	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 chien	chien	NOUN
 au	au	ADP_DET
 premier	premier	ADJ
@@ -42,7 +42,7 @@ leur	leur	DET
 appartement	appartement	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 dîner	dîner	NOUN
 était	être	AUX
 prêt	prêt	ADJ
@@ -67,7 +67,7 @@ six	six	NUM
 heures	heure	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Quoique	quoique	SCONJ
+quoique	quoique	SCONJ
 grave	grave	ADJ
 ,	,	PUNCTclause
 le	le	DET
@@ -78,7 +78,7 @@ hommes	homme	NOUN
 était	être	AUX
 calme	calme	ADJ
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 se	se	PRON
 était	être	AUX
@@ -90,7 +90,7 @@ réellement	réellement	ADV
 fâcheux	fâcheux	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Fragola	Fragola	PROPN
+Fragola	Fragola	DET
 interrogea	interroger	VERB
 Salvator	Salvator	PROPN
 du	du	ADP_DET
@@ -98,7 +98,7 @@ regard	regard	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Tout	tout	PRON
+tout	tout	PRON
 va	aller	VERB
 bien	bien	ADV
 !	!	PUNCTsent
@@ -127,16 +127,16 @@ Fragola	Fragola	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Oui	oui	INTJ
+oui	oui	INTJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 Fragola	Fragola	PROPN
 disparut	disparaître	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Maintenant	maintenant	ADV
+maintenant	maintenant	ADV
 ,	,	PUNCTclause
 dit	dire	VERB
 Salvator	Salvator	PROPN
@@ -150,7 +150,7 @@ mon	mon	DET
 frère	frère	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 moine	moine	NOUN
 tira	tirer	VERB
 de	de	ADP
@@ -161,7 +161,7 @@ passeport	passeport	NOUN
 plié	plier	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Salvator	Salvator	PROPN
+Salvator	Salvator	ADP
 le	le	DET
 déplia	déplier	VERB
 ,	,	PUNCTclause
@@ -185,10 +185,10 @@ de	de	ADP
 suspect	suspect	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Enfin	enfin	ADV
+enfin	enfin	ADV
 ,	,	PUNCTclause
 il	il	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 appliqua	appliquer	VERB
 contre	contre	ADP
 une	un	DET
@@ -223,7 +223,7 @@ dessina	dessiner	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Tenez	tenir	VERB
+tenez	tenir	VERB
 ,	,	PUNCTclause
 dit	dire	VERB
 Salvator	Salvator	PROPN
@@ -233,7 +233,7 @@ vous	vous	PRON
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Quoi	quoi	PRON
+quoi	quoi	PRON
 ?	?	PUNCTsent
 demanda	demander	VERB
 l'	le	DET
@@ -241,11 +241,11 @@ abbé	abbé	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Cette	ce	DET
+cette	ce	DET
 lettre	lettre	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 il	il	PRON
 montra	montrer	VERB
 la	le	DET
@@ -255,12 +255,12 @@ doigt	doigt	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Une	un	PRON
+une	un	PRON
 S	S	PROPN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Oui	oui	INTJ
+oui	oui	INTJ
 ,	,	PUNCTclause
 une	un	DET
 S	S	NOUN
@@ -270,11 +270,11 @@ vous	vous	PRON
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	non	ADV
+non	non	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Une	un	PRON
+une	un	PRON
 S	S	PROPN
 est	être	AUX
 la	le	DET
@@ -299,7 +299,7 @@ veut	vouloir	VERB
 dire	dire	VERB
 :	:	PUNCTclause
 «	«	PUNCTsent
-Au	au	ADP_DET
+au	au	ADP_DET
 nom	nom	NOUN
 du	du	ADP_DET
 roi	roi	NOUN
@@ -332,8 +332,8 @@ dans	dans	ADP
 l'	le	DET
 intérêt	intérêt	NOUN
 de	de	ADP
-Sa	son	DET
-Majesté	Majesté	NOUN
+sa	son	DET
+majesté	majesté	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 à	à	ADP
@@ -405,7 +405,7 @@ police	police	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Que	que	SCONJ
+que	que	SCONJ
 me	me	PRON
 importe	importer	VERB
 ,	,	PUNCTclause
@@ -510,7 +510,7 @@ roi	roi	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Croyez	croire	VERB
+croyez	croire	VERB
 vous	vous	PRON
 que	que	PRON
 le	le	DET
@@ -522,7 +522,7 @@ parole	parole	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	non	ADV
+non	non	ADV
 ;	;	PUNCTclause
 mais	mais	CCONJ
 vous	vous	PRON
@@ -556,7 +556,7 @@ revenir	revenir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Si	si	SCONJ
+si	si	SCONJ
 l'on	on	PRON
 ne	ne	ADV
 vous	vous	PRON
@@ -614,7 +614,7 @@ voir	voir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 croyais	croire	VERB
 que	que	SCONJ
 tout	tout	DET
@@ -677,7 +677,7 @@ ouvert	ouvert	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mon	mon	DET
+mon	mon	DET
 frère	frère	NOUN
 ,	,	PUNCTclause
 vous	vous	PRON
@@ -743,7 +743,7 @@ beau	beau	ADJ
 jour	jour	NOUN
 lui-même	lui-même	PRON
 …	…	PUNCTsent
-Mon	mon	DET
+mon	mon	DET
 frère	frère	NOUN
 ,	,	PUNCTclause
 ils	ils	PRON
@@ -777,7 +777,7 @@ roi	roi	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Surprise	surprise	NOUN
+surprise	surprise	NOUN
 !	!	PUNCTsent
 se	se	PRON
 écria	écrier	VERB
@@ -789,13 +789,13 @@ Salvator	Salvator	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Surprise	surprise	NOUN
+surprise	surprise	NOUN
 ,	,	PUNCTclause
 à	à	ADP
 leur	leur	DET
 point de vue	point de vue	NOUN
 …	…	PUNCTsent
-Voyons	voir	VERB
+voyons	voir	VERB
 ,	,	PUNCTclause
 comment	comment	ADV
 pensez	penser	VERB
@@ -875,12 +875,12 @@ aviser	aviser	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mais	mais	CCONJ
+mais	mais	CCONJ
 comment	comment	ADV
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-En	en	PRON
+en	en	PRON
 brûlant	brûler	VERB
 ce	ce	DET
 passeport	passeport	NOUN
@@ -894,7 +894,7 @@ que	que	ADV
 nuisible	nuisible	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 Salvator	Salvator	PROPN
 déchira	déchirer	VERB
 le	le	DET
@@ -908,7 +908,7 @@ morceaux	morceau	NOUN
 au	au	ADP_DET
 poêle	poêle	NOUN
 .	.	PUNCTsent
-Dominique	Dominique	PROPN
+Dominique	Dominique	VERB
 le	le	DET
 regardait	regarder	VERB
 avec	avec	ADP
@@ -916,7 +916,7 @@ anxiété	anxiété	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mais	mais	ADV
+mais	mais	ADV
 ,	,	PUNCTclause
 maintenant	maintenant	ADV
 ,	,	PUNCTclause
@@ -933,7 +933,7 @@ devenir	devenir	VERB
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-D'abord	d'abord	ADV
+d'abord	d'abord	ADV
 ,	,	PUNCTclause
 croyez	croire	VERB
 moi	moi	PRON
@@ -961,7 +961,7 @@ passeport	passeport	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Qui	qui	PRON
+qui	qui	PRON
 me	me	PRON
 en	en	PRON
 donnera	donner	VERB
@@ -969,13 +969,13 @@ un	un	DET
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Moi	moi	PRON
+moi	moi	PRON
 !	!	PUNCTsent
 dit	dire	VERB
 Salvator	Salvator	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ouvrant	ouvrer	VERB
+ouvrant	ouvrer	VERB
 alors	alors	ADV
 un	un	DET
 petit	petit	ADJ
@@ -1016,7 +1016,7 @@ en	en	ADP
 blanc	blanc	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 remplit	remplir	VERB
 ces	ce	DET
 noms	nom	NOUN
@@ -1040,7 +1040,7 @@ Sarranti	Sarranti	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mais	mais	CCONJ
+mais	mais	CCONJ
 le	le	DET
 visa	visa	NOUN
 ?	?	PUNCTsent
@@ -1049,7 +1049,7 @@ Dominique	Dominique	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Il	il	PRON
+il	il	PRON
 est	être	AUX
 visé	viser	VERB
 par	par	ADP
@@ -1059,7 +1059,7 @@ sarde	sarde	ADJ
 pour	pour	ADP
 Turin	Turin	PROPN
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 croyais	croire	VERB
 aller	aller	VERB
 en	en	ADP
@@ -1086,13 +1086,13 @@ servira	servir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mais	mais	CCONJ
+mais	mais	CCONJ
 à	à	ADP
 Turin	Turin	PROPN
 ?…	?…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-À	à	ADP
+à	à	ADP
 Turin	Turin	PROPN
 ,	,	PUNCTclause
 vous	vous	PRON
@@ -1117,7 +1117,7 @@ passeport	passeport	NOUN
 sans	sans	ADP
 difficulté	difficulté	NOUN
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 moine	moine	NOUN
 saisit	saisir	VERB
 et	et	CCONJ
@@ -1156,9 +1156,9 @@ dois	devoir	VERB
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 vous	vous	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 ai	avoir	AUX
 dit	dire	VERB
 ,	,	PUNCTclause
@@ -1184,7 +1184,7 @@ votre	votre	DET
 débiteur	débiteur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Fragola	Fragola	PROPN
+Fragola	Fragola	DET
 rentra	rentrer	VERB
 ;	;	PUNCTclause
 elle	elle	PRON
@@ -1195,7 +1195,7 @@ mots	mot	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Répète	répéter	VERB
+répète	répéter	VERB
 à	à	ADP
 notre	notre	DET
 ami	ami	NOUN
@@ -1221,7 +1221,7 @@ fille	fille	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Il	il	PRON
+il	il	PRON
 vous	vous	PRON
 doit	devoir	VERB
 la	le	DET
@@ -1256,7 +1256,7 @@ peut-être	peut-être	ADV
 sa	son	DET
 délivrance	délivrance	NOUN
 .	.	PUNCTsent
-Vous	vous	PRON
+vous	vous	PRON
 voyez	voir	VERB
 bien	bien	ADV
 que	que	SCONJ
@@ -1265,14 +1265,14 @@ dette	dette	NOUN
 est	être	AUX
 immense	immense	ADJ
 .	.	PUNCTsent
-Ainsi	ainsi	ADV
+ainsi	ainsi	ADV
 ,	,	PUNCTclause
 disposez	disposer	VERB
 de	de	ADP
 nous	nous	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 moine	moine	NOUN
 regarda	regarder	VERB
 les	le	DET
@@ -1283,7 +1283,7 @@ gens	gens	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Vous	vous	PRON
+vous	vous	PRON
 faites	faire	VERB
 le	le	DET
 bien	bien	NOUN
@@ -1303,7 +1303,7 @@ miséricordieuse	miséricordieux	ADJ
 indulgence	indulgence	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Fragola	Fragola	PROPN
+Fragola	Fragola	VERB
 montra	montrer	VERB
 la	le	DET
 table	table	NOUN
@@ -1311,7 +1311,7 @@ toute	tout	ADJ
 servie	servir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 moine	moine	NOUN
 se	se	PRON
 y	y	PRON
@@ -1325,7 +1325,7 @@ gens	gens	NOUN
 dit	dire	VERB
 gravement	gravement	ADV
 le	le	DET
-Bénédicité	Bénédicité	NOUN
+bénédicité	bénédicité	NOUN
 ,	,	PUNCTclause
 que	que	SCONJ
 ils	ils	PRON
@@ -1347,7 +1347,7 @@ monte	monter	VERB
 Dieu	Dieu	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-On	on	PRON
+on	on	PRON
 mangea	manger	VERB
 vite	vite	ADV
 et	et	CCONJ
@@ -1376,7 +1376,7 @@ leva	lever	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Me	me	PRON
+me	me	PRON
 voici	voici	ADP
 à	à	ADP
 vos	vos	DET
@@ -1401,7 +1401,7 @@ un	un	DET
 talisman	talisman	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-Fragola	Fragola	PROPN
+Fragola	Fragola	NOUN
 ,	,	PUNCTclause
 apporte	apporter	VERB
 la	le	DET
@@ -1410,12 +1410,12 @@ aux	au	ADP_DET
 lettres	lettre	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Fragola	Fragola	PROPN
+Fragola	Fragola	DET
 sortit	sortir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Un	un	DET
+un	un	DET
 talisman	talisman	NOUN
 ?	?	PUNCTsent
 répéta	répéter	VERB
@@ -1463,7 +1463,7 @@ saint-père	saint-père	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Oui	oui	INTJ
+oui	oui	INTJ
 ,	,	PUNCTclause
 pouvez	pouvoir	VERB
 vous	vous	PRON
@@ -1476,7 +1476,7 @@ là-bas	là-bas	ADV
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Peut-être	peut-être	ADV
+peut-être	peut-être	ADV
 !	!	PUNCTsent
 fit	faire	AUX
 Salvator	Salvator	PROPN
@@ -1484,7 +1484,7 @@ en	en	PRON
 souriant	sourire	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Puis	puis	CCONJ
+puis	puis	CCONJ
 ,	,	PUNCTclause
 comme	comme	SCONJ
 Fragola	Fragola	PROPN
@@ -1496,7 +1496,7 @@ demandée	demander	VERB
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Une	un	DET
+une	un	DET
 bougie	bougie	NOUN
 ,	,	PUNCTclause
 de	de	ADP
@@ -1527,7 +1527,7 @@ sortit	sortir	VERB
 de nouveau	de nouveau	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Salvator	Salvator	PROPN
+Salvator	Salvator	NOUN
 ouvrit	ouvrir	VERB
 la	le	DET
 cassette	cassette	NOUN
@@ -1549,7 +1549,7 @@ une	un	DET
 chaîne	chaîne	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Elle	elle	PRON
+elle	elle	PRON
 contenait	contenir	VERB
 une	un	DET
 vingtaine	vingtaine	NOUN
@@ -1569,7 +1569,7 @@ au	au	ADP_DET
 hasard	hasard	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Fragola	Fragola	PROPN
+Fragola	Fragola	DET
 rentrait	rentrer	VERB
 en	en	ADP
 ce	ce	DET
@@ -1585,7 +1585,7 @@ le	le	DET
 cachet	cachet	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Salvator	Salvator	PROPN
+Salvator	Salvator	NOUN
 inséra	insérer	VERB
 la	le	DET
 lettre	lettre	NOUN
@@ -1608,7 +1608,7 @@ cette	ce	DET
 suscription	suscription	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-À	à	ADP
+à	à	ADP
 monsieur	monsieur	NOUN
 le	le	DET
 vicomte	vicomte	NOUN
@@ -1620,7 +1620,7 @@ Rome	Rome	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Tenez	tenir	VERB
+tenez	tenir	VERB
 ,	,	PUNCTclause
 dit	dire	VERB
 il	il	PRON
@@ -1658,7 +1658,7 @@ Rome	Rome	PROPN
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
 «	«	PUNCTclause
-À	à	ADP
+à	à	ADP
 monsieur	monsieur	NOUN
 le	le	DET
 vicomte	vicomte	NOUN
@@ -1672,7 +1672,7 @@ moine	moine	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Oui	oui	INTJ
+oui	oui	INTJ
 ;	;	PUNCTclause
 devant	devant	ADP
 un	un	DET
@@ -1686,7 +1686,7 @@ portes	porte	NOUN
 se	se	PRON
 ouvriront	ouvrir	VERB
 .	.	PUNCTsent
-Si	si	SCONJ
+si	si	SCONJ
 vous	vous	PRON
 croyez	croire	VERB
 les	le	DET
@@ -1712,7 +1712,7 @@ fils	fils	NOUN
 de	de	ADP
 celui	celui	PRON
 qui	qui	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 a	avoir	AUX
 écrite	écrire	VERB
 ,	,	PUNCTclause
@@ -1728,7 +1728,7 @@ souvenirs	souvenir	NOUN
 de	de	ADP
 émigration	émigration	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 marchera	marcher	VERB
 devant	devant	ADP
 vous	vous	PRON
@@ -1742,7 +1742,7 @@ que	que	ADV
 le	le	DET
 suivre	suivre	VERB
 .	.	PUNCTsent
-Cependant	cependant	ADV
+cependant	cependant	ADV
 ,	,	PUNCTclause
 ne	ne	ADV
 employez	employer	VERB
@@ -1786,7 +1786,7 @@ faisons	faire	VERB
 que	que	ADV
 un	un	DET
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 suivrai	suivre	VERB
 aveuglément	aveuglément	ADV
 vos	vos	DET
@@ -1814,7 +1814,7 @@ vous	vous	PRON
 dire	dire	VERB
 .	.	PUNCTsent
 —	—	PUNCTclause
-Baisez	baiser	VERB
+baisez	baiser	VERB
 la	le	DET
 main	main	NOUN
 de	de	ADP
@@ -1827,7 +1827,7 @@ Fragola	Fragola	PROPN
 moi	moi	PRON
 ,	,	PUNCTclause
 je	je	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 conduis	conduire	VERB
 jusque	jusque	ADP
 à	à	ADP
@@ -1839,7 +1839,7 @@ la	le	DET
 ville	ville	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Fragola	Fragola	PROPN
+Fragola	Fragola	DET
 se	se	PRON
 approcha	approcher	VERB
 et	et	CCONJ
@@ -1850,7 +1850,7 @@ du	du	ADP_DET
 moine	moine	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
-la	le:PRON	PRON
+la	le_PRON	PRON
 regarda	regarder	VERB
 faire	faire	VERB
 avec	avec	ADP
@@ -1860,7 +1860,7 @@ sourire	sourire	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 vous	vous	PRON
 renouvelle	renouveler	VERB
 ma	mon	DET
@@ -1885,7 +1885,7 @@ et	et	CCONJ
 belle	beau	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Puis	puis	CCONJ
+puis	puis	CCONJ
 ,	,	PUNCTclause
 comme	comme	SCONJ
 si	si	SCONJ
@@ -1913,7 +1913,7 @@ chien	chien	NOUN
 et	et	CCONJ
 sortit	sortir	VERB
 .	.	PUNCTsent
-Salvator	Salvator	PROPN
+Salvator	Salvator	NOUN
 ,	,	PUNCTclause
 resté	rester	VERB
 en arrière	en arrière	ADV
@@ -1942,7 +1942,7 @@ et	et	CCONJ
 belle	beau	ADJ
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 il	il	PRON
 suivit	suivre	VERB
 l'	le	DET

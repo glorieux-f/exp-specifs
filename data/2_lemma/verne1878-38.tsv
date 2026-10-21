@@ -5,12 +5,12 @@
 # isPartOf = Un capitaine de quinze ans
 # title = II.20. Conclusion
 
-↵↵↵	↵↵↵	PUNCTstruct
-		TOKEN
+↵↵	↵↵	PUNCTstruct
+II	II	PRON
 .	.	PUNCTsent
 20	20	NUM
 .	.	PUNCTsent
-Conclusion	conclusion	NOUN
+conclusion	conclusion	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Deux	Deux	NUM
@@ -23,7 +23,7 @@ juillet	juillet	NOUN
 ,	,	PUNCTclause
 messieurs	monsieur	NOUN
 .	.	PUNCTsent
-Weldon	Weldon	PROPN
+Weldon	Weldon	NOUN
 et	et	CCONJ
 ses	son	DET
 compagnons	compagnon	NOUN
@@ -42,7 +42,7 @@ embouchure	embouchure	NOUN
 du	du	ADP_DET
 Congo	Congo	PROPN
 .	.	PUNCTsent
-Ce	ce	DET
+ce	ce	DET
 ne	ne	ADV
 étaient	être	AUX
 point	point	ADV
@@ -64,7 +64,7 @@ de	de	ADP
 l'	le	DET
 ivoire	ivoire	NOUN
 .	.	PUNCTsent
-Un	un	DET
+un	un	DET
 excellent	excellent	ADJ
 accueil	accueil	NOUN
 fut	être	AUX
@@ -87,7 +87,7 @@ conditions	condition	NOUN
 supportables	supportable	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-La	le	DET
+la	le	DET
 rencontre	rencontre	NOUN
 de	de	ADP
 cette	ce	DET
@@ -100,7 +100,7 @@ faveur	faveur	NOUN
 du	du	ADP_DET
 ciel	ciel	NOUN
 .	.	PUNCTsent
-Dick	Dick	PROPN
+Dick	Dick	VERB
 Sand	Sand	PROPN
 ne	ne	ADV
 aurait	avoir	AUX
@@ -114,7 +114,7 @@ descente	descente	NOUN
 du	du	ADP_DET
 Zaïre	Zaïre	PROPN
 .	.	PUNCTsent
-Depuis	depuis	ADP
+depuis	depuis	ADP
 les	le	DET
 chutes	chute	NOUN
 de	de	ADP
@@ -137,7 +137,7 @@ et	et	CCONJ
 de	de	ADP
 cataractes	cataracte	NOUN
 .	.	PUNCTsent
-Stanley	Stanley	PROPN
+Stanley	Stanley	NOUN
 en	en	PRON
 a	avoir	AUX
 compté	compter	VERB
@@ -206,13 +206,13 @@ la	le	DET
 mort	mort	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 11	11	NUM
 août	août	NOUN
 ,	,	PUNCTclause
 messieurs	monsieur	NOUN
 .	.	PUNCTsent
-Weldon	Weldon	PROPN
+Weldon	Weldon	NOUN
 ,	,	PUNCTclause
 Dick	Dick	PROPN
 Sand	Sand	PROPN
@@ -229,10 +229,9 @@ arrivaient	arriver	VERB
 Emboma	Emboma	PROPN
 ,	,	PUNCTclause
 où	où	PRON
-		TOKEN
-.	.	PUNCTsent
-Motta	motter	NOUN
-Viega	Viega	PROPN
+messieurs	monsieur	NOUN
+motta	motter	X
+Viega	Viega	X
 et	et	CCONJ
 Harrisson	Harrisson	PROPN
 les	le	DET
@@ -242,7 +241,7 @@ une	un	DET
 généreuse	généreux	ADJ
 hospitalité	hospitalité	NOUN
 .	.	PUNCTsent
-Un	un	DET
+un	un	DET
 steamer	steamer	NOUN
 était	être	AUX
 en	en	ADP
@@ -255,7 +254,7 @@ Panama	Panama	PROPN
 .	.	PUNCTsent
 messieurs	monsieur	NOUN
 .	.	PUNCTsent
-Weldon	Weldon	PROPN
+Weldon	Weldon	NOUN
 et	et	CCONJ
 ses	son	DET
 compagnons	compagnon	NOUN
@@ -270,7 +269,7 @@ terre	terre	NOUN
 américaine	américain	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Une	un	DET
+une	un	DET
 dépêche	dépêche	NOUN
 ,	,	PUNCTclause
 lancée	lancer	VERB
@@ -316,7 +315,7 @@ le	le	DET
 Pilgrim	Pilgrim	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 25	25	NUM
 août	août	NOUN
 ,	,	PUNCTclause
@@ -349,7 +348,7 @@ avec	avec	ADP
 eux	eux	PRON
 !...	!...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Que	que	ADV
+que	que	ADV
 dire	dire	VERB
 maintenant	maintenant	ADV
 de	de	ADP
@@ -371,7 +370,7 @@ de	de	ADP
 la	le	DET
 maison	maison	NOUN
 .	.	PUNCTsent
-James	James	PROPN
+James	James	ADJ
 Weldon	Weldon	PROPN
 savait	savoir	VERB
 tout	tout	ADJ
@@ -392,7 +391,7 @@ au	au	ADP_DET
 brave	brave	NOUN
 noir	noir	ADJ
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 était	être	AUX
 heureux	heureux	ADJ
 ,	,	PUNCTclause
@@ -426,7 +425,7 @@ de	de	ADP
 son	son	DET
 fils	fils	NOUN
 !	!	PUNCTsent
-Il	il	PRON
+il	il	PRON
 serait	être	AUX
 parti	partir	VERB
 pour	pour	ADP
@@ -454,14 +453,14 @@ eût	avoir	AUX
 exposé	exposer	VERB
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Un	un	DET
+un	un	DET
 seul	seul	ADJ
 mot	mot	NOUN
 sur	sur	ADP
 cousin	cousin	NOUN
 Bénédict	Bénédict	PROPN
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 jour	jour	NOUN
 même	même	ADV
 de	de	ADP
@@ -503,7 +502,7 @@ interrompue	interrompre	VERB
 la	le	DET
 veille	veille	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 méditait	méditer	VERB
 un	un	DET
 énorme	énorme	ADJ
@@ -511,8 +510,8 @@ ouvrage	ouvrage	NOUN
 sur	sur	ADP
 l	l	DET
 «	«	PUNCTclause
-Hexapodes	Hexapodes	PROPN
-Benedictus	Benedictus	PROPN
+hexapodes	hexapode	UNKNOWN
+benedictus	benedictus	UNKNOWN
 »	»	PUNCTclause
 ,	,	PUNCTclause
 un	un	DET
@@ -524,7 +523,7 @@ science	science	NOUN
 entomologique	entomologique	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Là	là	ADV
+là	là	ADV
 ,	,	PUNCTclause
 dans	dans	ADP
 son	son	DET
@@ -544,9 +543,9 @@ et	et	CCONJ
 des	un	DET
 lunettes	lunette	NOUN
 ...	...	PUNCTsent
-Juste ciel	Juste ciel	NOUN
+juste ciel	juste ciel	NOUN
 !	!	PUNCTsent
-Quel	quel	DET
+quel	quel	DET
 cri	cri	NOUN
 de	de	ADP
 désespoir	désespoir	NOUN
@@ -573,10 +572,10 @@ entomologie	entomologie	NOUN
 africaine	africain	ADJ
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-L	L	PROPN
+L	L	DET
 «	«	PUNCTclause
-Hexapodes	Hexapodes	PROPN
-Benedictus	Benedictus	PROPN
+hexapodes	hexapode	UNKNOWN
+benedictus	benedictus	UNKNOWN
 »	»	PUNCTclause
 ne	ne	ADV
 était	être	AUX
@@ -590,7 +589,7 @@ une	un	DET
 vulgaire	vulgaire	NOUN
 araignée	araignée	NOUN
 !	!	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 si	si	SCONJ
 elle	elle	PRON
 ne	ne	ADV
@@ -612,7 +611,7 @@ devant	devant	ADP
 lui	lui	PRON
 manquaient	manquer	VERB
 !	!	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 si	si	SCONJ
 elles	elles	PRON
 lui	lui	PRON
@@ -628,13 +627,13 @@ en	en	ADP
 la	le	DET
 prenant	prenant	ADJ
 .	.	PUNCTsent
-Hercule	hercule	NOUN
+Hercule	Hercule	PROPN
 les	le	DET
 avait	avoir	AUX
 malencontreusement	malencontreusement	ADV
 cassées	casser	VERB
 !	!	PUNCTsent
-Or	or	NOUN
+or	or	NOUN
 ,	,	PUNCTclause
 cette	ce	DET
 mutilation	mutilation	NOUN
@@ -642,8 +641,8 @@ réduisait	réduire	VERB
 le	le	DET
 prétendu	prétendu	ADJ
 «	«	PUNCTclause
-Hexapodes	Hexapodes	PROPN
-Benedictus	Benedictus	PROPN
+hexapodes	hexapode	UNKNOWN
+benedictus	benedictus	UNKNOWN
 »	»	PUNCTclause
 à	à	ADP
 l'	le	DET
@@ -678,7 +677,7 @@ reconnaître	reconnaître	VERB
 plus	plus	ADV
 tôt	tôt	ADV
 !	!	PUNCTsent
-Il	il	PRON
+il	il	PRON
 en	en	PRON
 fit	faire	VERB
 une	un	DET
@@ -764,13 +763,13 @@ tâche	tâche	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Oui	oui	INTJ
+oui	oui	INTJ
 !	!	PUNCTsent
 répétait	répéter	VERB
 il	il	PRON
 souvent	souvent	ADV
 .	.	PUNCTsent
-Si	si	SCONJ
+si	si	SCONJ
 ,	,	PUNCTclause
 à bord	à bord	ADV
 du	du	ADP_DET
@@ -796,12 +795,12 @@ auraient	avoir	AUX
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Ainsi	ainsi	ADV
+ainsi	ainsi	ADV
 parlait	parler	VERB
 Dick	Dick	PROPN
 Sand	Sand	PROPN
 .	.	PUNCTsent
-Aussi	aussi	ADV
+aussi	aussi	ADV
 ,	,	PUNCTclause
 à	à	ADP
 dix-huit	dix-huit	NUM
@@ -837,7 +836,7 @@ W.	W.	PROPN
 Weldon	Weldon	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Voilà	voilà	ADP
+voilà	voilà	ADP
 où	où	PRON
 en	en	PRON
 était	être	AUX
@@ -860,7 +859,7 @@ pointe	pointe	NOUN
 de	de	ADP
 Sandy-Hook	Sandy-Hook	PROPN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 était	être	AUX
 ,	,	PUNCTclause
 malgré	malgré	ADP
@@ -899,7 +898,7 @@ en	en	ADP
 doutait	douter	VERB
 guère	guère	ADV
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 soupçonnait	soupçonner	VERB
 même	même	ADV
@@ -945,14 +944,14 @@ de	de	ADP
 héros	héros	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cependant	cependant	ADV
+cependant	cependant	ADV
 ,	,	PUNCTclause
 une	un	DET
 pensée	pensée	NOUN
 l'	le	DET
 obsédait	obséder	VERB
 .	.	PUNCTsent
-Dans	dans	ADP
+dans	dans	ADP
 les	le	DET
 rares	rare	ADJ
 loisirs	loisir	NOUN
@@ -970,7 +969,7 @@ vieux	vieux	ADJ
 Tom	Tom	PROPN
 ,	,	PUNCTclause
 à	à	ADP
-Bat	Bat	PROPN
+bat	battre	UNKNOWN
 ,	,	PUNCTclause
 à	à	ADP
 Austin	Austin	PROPN
@@ -997,7 +996,7 @@ tristesse	tristesse	NOUN
 pour	pour	ADP
 messieurs	monsieur	NOUN
 .	.	PUNCTsent
-Weldon	Weldon	PROPN
+Weldon	Weldon	NOUN
 ,	,	PUNCTclause
 que	que	SCONJ
 la	le	DET
@@ -1010,7 +1009,7 @@ compagnons	compagnon	NOUN
 de	de	ADP
 misère	misère	NOUN
 !	!	PUNCTsent
-Aussi	aussi	ADV
+aussi	aussi	ADV
 ,	,	PUNCTclause
 James	James	PROPN
 Weldon	Weldon	PROPN
@@ -1029,7 +1028,7 @@ retrouver	retrouver	VERB
 leurs	leur	DET
 traces	trace	NOUN
 .	.	PUNCTsent
-Ils	ils	PRON
+ils	ils	PRON
 y	y	PRON
 réussirent	réussir	VERB
 enfin	enfin	ADV
@@ -1073,7 +1072,7 @@ avaient	avoir	AUX
 été	être	AUX
 vendus	vendre	VERB
 .	.	PUNCTsent
-Dick	Dick	PROPN
+Dick	Dick	VERB
 Sand	Sand	PROPN
 voulait	vouloir	VERB
 consacrer	consacrer	VERB
@@ -1089,12 +1088,12 @@ James	James	PROPN
 W.	W.	PROPN
 Weldon	Weldon	PROPN
 ne	ne	ADV
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 entendit	entendre	VERB
 pas	pas	ADV
 ainsi	ainsi	ADV
 .	.	PUNCTsent
-Un	un	PRON
+un	un	PRON
 de	de	ADP
 ses	son	DET
 correspondants	correspondant	NOUN
@@ -1128,13 +1127,13 @@ le	le	DET
 vieux	vieux	ADJ
 Tom	Tom	PROPN
 ,	,	PUNCTclause
-Bat	Bat	PROPN
+bat	battre	UNKNOWN
 ,	,	PUNCTclause
 Actéon	Actéon	PROPN
 ,	,	PUNCTclause
 Austin	Austin	PROPN
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 braves	brave	ADJ
 gens	gens	NOUN
 ,	,	PUNCTclause
@@ -1160,7 +1159,7 @@ leurs	leur	DET
 amis	ami	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 manquait	manquer	VERB
 donc	donc	ADV
@@ -1182,7 +1181,7 @@ côte	côte	NOUN
 de	de	ADP
 Afrique	Afrique	PROPN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 la	le	DET
 vieille	vieux	ADJ
@@ -1191,16 +1190,16 @@ servante	servant	NOUN
 on	on	PRON
 ne	ne	ADV
 pouvait	pouvoir	VERB
-la	le:PRON	PRON
+la	le_PRON	PRON
 rendre	rendre	VERB
 à	à	ADP
 la	le	DET
 vie	vie	NOUN
 ,	,	PUNCTclause
 non plus que	non plus que	ADP
-Dingo	Dingo	PROPN
+dingo	dingo	UNKNOWN
 .	.	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 ,	,	PUNCTclause
 certes	certes	ADV
 ,	,	PUNCTclause
@@ -1220,7 +1219,7 @@ telles	tel	PRON
 aventures	aventurer	VERB
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ce	ce	DET
+ce	ce	DET
 jour	jour	NOUN
 ,	,	PUNCTclause
 cela	cela	PRON
@@ -1253,7 +1252,7 @@ que	que	SCONJ
 porta	porter	VERB
 messieurs	monsieur	NOUN
 .	.	PUNCTsent
-Weldon	Weldon	PROPN
+Weldon	Weldon	NOUN
 à	à	ADP
 Dick	Dick	PROPN
 Sand	Sand	PROPN

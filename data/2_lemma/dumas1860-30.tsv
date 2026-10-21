@@ -5,15 +5,15 @@
 # isPartOf = La marquise d’Escoman
 # title = XXX. Dédains et regrets
 
-↵↵↵	↵↵↵	PUNCTstruct
-		TOKEN
+↵↵	↵↵	PUNCTstruct
+XXX	XXX	NUM
 .	.	PUNCTsent
-Dédains	dédain	NOUN
+dédains	dédain	NOUN
 et	et	CCONJ
 regrets	regret	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Un	un	DET
+un	un	DET
 soir	soir	NOUN
 ,	,	PUNCTclause
 Louis	Louis	PROPN
@@ -36,7 +36,7 @@ se	se	PRON
 rendit	rendre	VERB
 à	à	ADP
 l'	le	DET
-Opéra	Opéra	PROPN
+opéra	opéra	UNKNOWN
 ,	,	PUNCTclause
 où	où	PRON
 l'on	on	PRON
@@ -45,10 +45,10 @@ le	le	DET
 Dieu	Dieu	PROPN
 et	et	CCONJ
 la	le	DET
-Bayadère	Bayadère	PROPN
+bayadère	bayadère	UNKNOWN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Au	au	ADP_DET
+au	au	ADP_DET
 milieu	milieu	NOUN
 du	du	ADP_DET
 premier	premier	ADJ
@@ -68,7 +68,7 @@ tourner	tourner	VERB
 la	le	DET
 tête	tête	NOUN
 .	.	PUNCTsent
-Dans	dans	ADP
+dans	dans	ADP
 une	un	DET
 loge	loge	NOUN
 des	un	ADP_DET
@@ -87,7 +87,7 @@ débarrassant	débarrasser	VERB
 du	du	ADP_DET
 châle	châle	NOUN
 qui	qui	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 enveloppait	envelopper	VERB
 ,	,	PUNCTclause
 narguait	narguer	VERB
@@ -107,7 +107,7 @@ jusque	jusque	ADP
 à	à	ADP
 elle	elle	PRON
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 reconnut	reconnaître	VERB
 Marguerite	Marguerite	PROPN
 et	et	CCONJ
@@ -116,7 +116,7 @@ cœur	cœur	NOUN
 palpita	palpiter	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Comme	comme	SCONJ
+comme	comme	SCONJ
 toutes	tout	ADJ
 les	le	DET
 ivresses	ivresse	NOUN
@@ -154,7 +154,7 @@ lui	lui	PRON
 était	être	AUX
 chère	cher	ADJ
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 se	se	PRON
 étonna	étonner	VERB
 de	de	ADP
@@ -206,7 +206,7 @@ moindre	moindre	ADJ
 attention	attention	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Malgré	malgré	ADP
+malgré	malgré	ADP
 ces	ce	DET
 dédains	dédain	NOUN
 fortement	fortement	ADV
@@ -251,10 +251,10 @@ de	de	ADP
 tout	tout	ADJ
 ce	ce	PRON
 qui	qui	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 entourait	entourer	VERB
 .	.	PUNCTsent
-Ses	son	DET
+ses	son	DET
 idées	idée	NOUN
 étaient	être	AUX
 confuses	confus	ADJ
@@ -272,7 +272,7 @@ parois	paroi	NOUN
 du	du	ADP_DET
 cerveau	cerveau	NOUN
 qui	qui	PRON
-les	le:PRON	PRON
+les	le_PRON	PRON
 avait	avoir	AUX
 vues	voir	VERB
 naître	naître	VERB
@@ -295,7 +295,7 @@ sur	sur	ADP
 l'	le	DET
 enclume	enclume	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 crut	croire	VERB
 ne	ne	ADV
 pas	pas	ADV
@@ -328,7 +328,7 @@ et	et	CCONJ
 lui	lui	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Elle	elle	PRON
+elle	elle	PRON
 était	être	AUX
 belle	beau	ADJ
 à	à	ADP
@@ -382,7 +382,7 @@ de	de	ADP
 grappes	grappe	NOUN
 dorées	doré	ADJ
 .	.	PUNCTsent
-En	en	ADP
+en	en	ADP
 avançant	avancer	VERB
 dans	dans	ADP
 la	le	DET
@@ -453,7 +453,7 @@ aux	au	ADP_DET
 baisers	baiser	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Louis	louis	NOUN
+Louis	Louis	PROPN
 de	de	ADP
 Fontanieu	Fontanieu	PROPN
 fit	faire	AUX
@@ -474,12 +474,12 @@ la	le	DET
 retrouva	retrouver	VERB
 partout	partout	ADV
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 loges	loge	NOUN
 se	se	PRON
 peuplèrent	peupler	VERB
 de	de	ADP
-Marguerites	Marguerites	NOUN
+marguerites	marguerite	NOUN
 ,	,	PUNCTclause
 toutes	toutes	PRON
 aussi	aussi	ADV
@@ -488,7 +488,7 @@ que	que	SCONJ
 la	le	DET
 véritable	véritable	ADJ
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 bayadère	bayadère	NOUN
 qui	qui	PRON
 sur	sur	ADP
@@ -532,7 +532,7 @@ formes	forme	NOUN
 provocantes	provocant	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 se	se	PRON
 leva	lever	VERB
 brusquement	brusquement	ADV
@@ -555,7 +555,7 @@ du	du	ADP_DET
 théâtre	théâtre	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 avait	avoir	AUX
 pas	pas	ADV
@@ -591,7 +591,7 @@ acte	acte	NOUN
 était	être	AUX
 terminé	terminer	VERB
 .	.	PUNCTsent
-Marguerite	marguerite	NOUN
+Marguerite	Marguerite	PROPN
 ne	ne	ADV
 était	être	AUX
 plus	plus	ADV
@@ -606,12 +606,12 @@ au	au	ADP_DET
 foyer	foyer	NOUN
 et	et	CCONJ
 ne	ne	ADV
-la	le:PRON	PRON
+la	le_PRON	PRON
 vit	vivre	VERB
 pas	pas	ADV
 ;	;	PUNCTclause
 il	il	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 aperçut	apercevoir	VERB
 enfin	enfin	ADV
 dans	dans	ADP
@@ -634,7 +634,7 @@ petite	petit	ADJ
 cour	cour	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Elle	elle	PRON
+elle	elle	PRON
 paraissait	paraître	VERB
 fort	fort	ADV
 gaie	gai	ADJ
@@ -658,14 +658,14 @@ lèvres	lèvre	NOUN
 car	car	CCONJ
 ceux	ceux	PRON
 qui	qui	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 entouraient	entourer	VERB
 riaient	rire	VERB
 à	à	ADP
 gorge	gorge	NOUN
 déployée	déployer	VERB
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 façon	façon	NOUN
 la	le	DET
 plus	plus	ADV
@@ -707,10 +707,10 @@ des	un	ADP_DET
 siècles	siècle	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Louis	louis	NOUN
+Louis	Louis	PROPN
 de	de	ADP
 Fontanieu	Fontanieu	PROPN
-les	le:PRON	PRON
+les	le_PRON	PRON
 embrassa	embrasser	VERB
 tous	tout	ADJ
 du	du	ADP_DET
@@ -752,7 +752,7 @@ ses	son	DET
 plaisanteries	plaisanterie	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 se	se	PRON
 approcha	approcher	VERB
 du	du	ADP_DET
@@ -780,7 +780,7 @@ en	en	ADP
 ce	ce	DET
 moment	moment	NOUN
 .	.	PUNCTsent
-Marguerite	marguerite	NOUN
+Marguerite	Marguerite	PROPN
 l'	le	DET
 aperçut	apercevoir	VERB
 et	et	CCONJ
@@ -860,7 +860,7 @@ pour	pour	ADP
 elle	elle	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 essaya	essayer	VERB
 de	de	ADP
 la	le	DET
@@ -896,7 +896,7 @@ il	il	PRON
 là	là	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Quelque	quelque	DET
+quelque	quelque	DET
 peu de	peu de	DET
 prix	prix	NOUN
 que	que	SCONJ
@@ -946,12 +946,12 @@ cœur	cœur	NOUN
 ;	;	PUNCTclause
 le	le	DET
 contraire	contraire	NOUN
-le	le:PRON	PRON
+le	le_PRON	PRON
 surprend	surprendre	VERB
 toujours	toujours	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-La	le	DET
+la	le	DET
 conscience	conscience	NOUN
 de	de	ADP
 la	le	DET
@@ -997,7 +997,7 @@ Louis	Louis	PROPN
 de	de	ADP
 Fontanieu	Fontanieu	PROPN
 .	.	PUNCTsent
-Un	un	DET
+un	un	DET
 profond	profond	ADJ
 sentiment	sentiment	NOUN
 de	de	ADP
@@ -1006,7 +1006,7 @@ prit	prendre	VERB
 leur	leur	DET
 place	place	NOUN
 .	.	PUNCTsent
-En	en	ADP
+en	en	ADP
 y	y	PRON
 cédant	céder	VERB
 ,	,	PUNCTclause
@@ -1024,7 +1024,7 @@ son	son	DET
 ancienne	ancien	ADJ
 maîtresse	maître	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 regagna	regagner	VERB
 sa	son	DET
 maison	maison	NOUN
@@ -1058,7 +1058,7 @@ des	un	ADP_DET
 exceptions	exception	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Tout	tout	PRON
+tout	tout	PRON
 en	en	ADP
 marchant	marcher	VERB
 ,	,	PUNCTclause
@@ -1090,7 +1090,7 @@ le	le	DET
 bonheur	bonheur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ce	ce	PRON
+ce	ce	PRON
 qui	qui	PRON
 ne	ne	ADV
 l'	le	DET
@@ -1127,7 +1127,7 @@ l'	le	DET
 ombre	ombre	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Emma	Emma	PROPN
+Emma	Emma	VERB
 était	être	AUX
 assise	asseoir	VERB
 sur	sur	ADP
@@ -1150,7 +1150,7 @@ son	son	DET
 compagnon	compagnon	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Malgré	malgré	ADP
+malgré	malgré	ADP
 les	le	DET
 superbes	superbe	NOUN
 assurances	assurance	NOUN
@@ -1189,7 +1189,7 @@ les	le	DET
 tourments	tourment	NOUN
 ,	,	PUNCTclause
 en	en	ADP
-la	le:PRON	PRON
+la	le_PRON	PRON
 voyant	voir	VERB
 sous	sous	ADP
 cet	ce	DET
@@ -1224,7 +1224,7 @@ de	de	ADP
 soupirer	soupirer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Emma	Emma	PROPN
+Emma	Emma	VERB
 réunit	réunir	VERB
 ses	son	DET
 deux	deux	NUM
@@ -1246,13 +1246,13 @@ tête	tête	NOUN
 chérie	chérir	VERB
 ,	,	PUNCTclause
 elle	elle	PRON
-la	le:PRON	PRON
+la	le_PRON	PRON
 baisa	baiser	VERB
 sur	sur	ADP
 le	le	DET
 front	front	NOUN
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 lèvres	lèvre	NOUN
 de	de	ADP
 madame	madame	NOUN
@@ -1273,7 +1273,7 @@ de	de	ADP
 une	un	DET
 morte	mort	NOUN
 .	.	PUNCTsent
-Une	un	DET
+une	un	DET
 comparaison	comparaison	NOUN
 soudaine	soudain	ADJ
 traversa	traverser	VERB

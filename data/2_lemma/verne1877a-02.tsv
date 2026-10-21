@@ -5,11 +5,11 @@
 # isPartOf = Hector Servadac – Voyages et aventures à travers le monde solaire
 # title = Chapitre II. Dans lequel on photographie physiquement et moralement le capitaine Servadac et son ordonnance Ben-Zouf
 
-↵↵↵	↵↵↵	PUNCTstruct
-Chapitre	chapitre	NOUN
-		TOKEN
+↵↵	↵↵	PUNCTstruct
+chapitre	chapitre	NOUN
+II	II	NUM
 .	.	PUNCTsent
-Dans	dans	ADP
+dans	dans	ADP
 lequel	lequel	PRON
 on	on	PRON
 photographie	photographier	VERB
@@ -25,7 +25,7 @@ ordonnance	ordonnance	NOUN
 Ben-Zouf	Ben-Zouf	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cette	ce	DET
+cette	ce	DET
 année	année	NOUN
 et	et	CCONJ
 à	à	ADP
@@ -45,11 +45,11 @@ au	au	ADP_DET
 ministère	ministère	NOUN
 de	de	ADP
 la	le	DET
-Guerre	Guerre	NOUN
+guerre	guerre	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Servadac	Servadac	PROPN
+Servadac	Servadac	NOUN
 (	(	PUNCTclause
 Hector	Hector	PROPN
 )	)	PUNCTclause
@@ -78,9 +78,9 @@ Gironde	Gironde	PROPN
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Fortune	fortune	NOUN
+fortune	fortune	NOUN
 :	:	PUNCTclause
-Douze	Douze	NOUN
+douze	douze	NOUN
 cents	cents	NUM
 francs	franc	NOUN
 de	de	ADP
@@ -89,7 +89,7 @@ rente	rente	NOUN
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Durée	durée	NOUN
+durée	durée	NOUN
 des	un	ADP_DET
 services	service	NOUN
 :	:	PUNCTclause
@@ -103,28 +103,28 @@ jours	jour	NOUN
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Détail	détail	NOUN
+détail	détail	NOUN
 des	un	ADP_DET
 services	service	NOUN
 et	et	CCONJ
 des	un	DET
 campagnes	campagne	NOUN
 :	:	PUNCTclause
-École	École	NOUN
+école	école	NOUN
 de	de	ADP
 Saint-Cyr	Saint-Cyr	PROPN
 :	:	PUNCTclause
 2	2	NUM
 ans	an	NOUN
 .	.	PUNCTsent
-École	école	NOUN
+école	école	NOUN
 de	de	ADP
 application	application	NOUN
 :	:	PUNCTclause
 2	2	NUM
 ans	an	NOUN
 .	.	PUNCTsent
-Au	au	ADP_DET
+au	au	ADP_DET
 87	87	NUM
 e	e	NOUN
 de	de	ADP
@@ -133,7 +133,7 @@ ligne	ligne	NOUN
 2	2	NUM
 ans	an	NOUN
 .	.	PUNCTsent
-Au	au	ADP_DET
+au	au	ADP_DET
 3	3	NUM
 e	e	NOUN
 chasseurs	chasseur	NOUN
@@ -141,25 +141,25 @@ chasseurs	chasseur	NOUN
 2	2	NUM
 ans	an	NOUN
 .	.	PUNCTsent
-Algérie	Algérie	PROPN
+Algérie	Algérie	NOUN
 :	:	PUNCTclause
 7	7	NUM
 ans	an	NOUN
 .	.	PUNCTsent
-Campagne	campagne	NOUN
+campagne	campagne	NOUN
 du	du	ADP_DET
 Soudan	Soudan	PROPN
 .	.	PUNCTsent
-Campagne	campagne	NOUN
+campagne	campagne	NOUN
 du	du	ADP_DET
 Japon	Japon	PROPN
 .	.	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Position	position	NOUN
+position	position	NOUN
 :	:	PUNCTclause
-Capitaine	Capitaine	NOUN
+capitaine	capitaine	NOUN
 de	de	ADP
 état-major	état-major	NOUN
 à	à	ADP
@@ -168,9 +168,9 @@ Mostaganem	Mostaganem	PROPN
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Décorations	décoration	NOUN
+décorations	décoration	NOUN
 :	:	PUNCTclause
-Chevalier	Chevalier	PROPN
+chevalier	chevalier	UNKNOWN
 de	de	ADP
 la	le	DET
 légion d'honneur	légion d'honneur	NOUN
@@ -181,13 +181,13 @@ mars	mars	NOUN
 ..	..	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Hector	Hector	PROPN
+Hector	Hector	NOUN
 Servadac	Servadac	PROPN
 avait	avoir	VERB
 trente	trente	NUM
 ans	an	NOUN
 .	.	PUNCTsent
-Orphelin	orphelin	NOUN
+orphelin	orphelin	NOUN
 ,	,	PUNCTclause
 sans	sans	ADP
 famille	famille	NOUN
@@ -324,7 +324,7 @@ bonnes	bon	ADJ
 chances	chance	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Au	au	ADP_DET
+au	au	ADP_DET
 physique	physique	NOUN
 ,	,	PUNCTclause
 Hector	Hector	PROPN
@@ -392,7 +392,7 @@ en	en	ADP
 douter	douter	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 faut	falloir	VERB
 convenir	convenir	VERB
 que	que	SCONJ
@@ -416,7 +416,7 @@ ne	ne	ADV
 fallait	falloir	VERB
 .	.	PUNCTsent
 «	«	PUNCTclause
-Nous	nous	PRON
+nous	nous	PRON
 ne	ne	ADV
 sabotons	saboter	VERB
 pas	pas	ADV
@@ -442,7 +442,7 @@ jamais	jamais	ADV
 la	le	DET
 besogne	besogne	NOUN
 .	.	PUNCTsent
-Hector	Hector	PROPN
+Hector	Hector	NOUN
 Servadac	Servadac	PROPN
 ,	,	PUNCTclause
 lui	lui	PRON
@@ -491,7 +491,7 @@ dans	dans	ADP
 l'	le	DET
 état-major	état-major	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 dessinait	dessiner	VERB
 bien	bien	ADV
 ,	,	PUNCTclause
@@ -516,7 +516,7 @@ le	le	DET
 successeur	successeur	NOUN
 du	du	ADP_DET
 fameux	fameux	ADJ
-Oncle	Oncle	NOUN
+oncle	oncle	NOUN
 Tom	Tom	PROPN
 ,	,	PUNCTclause
 avait	avoir	AUX
@@ -526,7 +526,7 @@ lui	lui	PRON
 son	son	DET
 maître	maître	NOUN
 .	.	PUNCTsent
-Ses	son	DET
+ses	son	DET
 états	état	NOUN
 de	de	ADP
 service	service	NOUN
@@ -552,7 +552,7 @@ que	que	ADV
 justice	justice	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-On	on	PRON
+on	on	PRON
 citait	citer	VERB
 de	de	ADP
 lui	lui	PRON
@@ -574,7 +574,7 @@ chasseurs	chasseur	NOUN
 à	à	ADP
 pied	pied	NOUN
 .	.	PUNCTsent
-À	à	ADP
+à	à	ADP
 un	un	DET
 certain	certain	ADJ
 endroit	endroit	NOUN
@@ -609,10 +609,10 @@ qui	qui	PRON
 sifflait	siffler	VERB
 drue	dru	ADJ
 .	.	PUNCTsent
-Ceux	ceux	PRON
+ceux	ceux	PRON
 hésitèrent	hésiter	VERB
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 capitaine	capitaine	NOUN
 Servadac	Servadac	PROPN
 monta	monter	VERB
@@ -639,14 +639,14 @@ tout	tout	ADV
 entière	entier	ADJ
 :	:	PUNCTclause
 «	«	PUNCTsent
-Passez	passer	VERB
+passez	passer	VERB
 maintenant	maintenant	ADV
 »	»	PUNCTclause
 ,	,	PUNCTclause
 dit	dire	VERB
 il	il	PRON
 .	.	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 la	le	DET
 compagnie	compagnie	NOUN
 passa	passer	VERB
@@ -667,12 +667,12 @@ de	de	ADP
 état-major	état-major	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Depuis	depuis	ADP
+depuis	depuis	ADP
 sa	son	DET
 sortie	sortie	NOUN
 de	de	ADP
 l'	le	DET
-École	École	NOUN
+école	école	NOUN
 de	de	ADP
 application	application	NOUN
 ,	,	PUNCTclause
@@ -699,7 +699,7 @@ détaché	détacher	VERB
 en	en	ADP
 Algérie	Algérie	PROPN
 .	.	PUNCTsent
-À	à	ADP
+à	à	ADP
 cette	ce	DET
 époque	époque	NOUN
 ,	,	PUNCTclause
@@ -717,7 +717,7 @@ subdivision	subdivision	NOUN
 de	de	ADP
 Mostaganem	Mostaganem	PROPN
 .	.	PUNCTsent
-Spécialement	spécialement	ADV
+spécialement	spécialement	ADV
 chargé	charger	VERB
 de	de	ADP
 travaux	travail	NOUN
@@ -729,7 +729,7 @@ du	du	ADP_DET
 littoral	littoral	NOUN
 comprise	comprendre	VERB
 entre	entre	ADP
-Tenez	Tenez	PROPN
+tenez	tenir	UNKNOWN
 et	et	CCONJ
 l'	le	DET
 embouchure	embouchure	NOUN
@@ -741,14 +741,14 @@ habitait	habiter	VERB
 un	un	DET
 gourbi	gourbi	NOUN
 qui	qui	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 abritait	abriter	VERB
 tant	tant	ADV
 bien	bien	ADV
 que	que	SCONJ
 mal	mal	NOUN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 il	il	PRON
 ne	ne	ADV
 était	être	AUX
@@ -761,7 +761,7 @@ de	de	ADP
 si	si	ADV
 peu	peu	ADV
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 aimait	aimer	VERB
 à	à	ADP
 vivre	vivre	VERB
@@ -780,7 +780,7 @@ officier	officier	NOUN
 peut	pouvoir	VERB
 avoir	avoir	VERB
 .	.	PUNCTsent
-Tantôt	tantôt	ADV
+tantôt	tantôt	ADV
 arpentant	arpenter	VERB
 à	à	ADP
 pied	pied	NOUN
@@ -813,7 +813,7 @@ il	il	PRON
 chargé	charger	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cette	ce	DET
+cette	ce	DET
 vie	vie	NOUN
 ,	,	PUNCTclause
 à	à	ADP
@@ -823,12 +823,12 @@ indépendante	indépendant	ADJ
 lui	lui	PRON
 allait	aller	VERB
 .	.	PUNCTsent
-D'ailleurs	d'ailleurs	ADV
+d'ailleurs	d'ailleurs	ADV
 ,	,	PUNCTclause
 ses	son	DET
 occupations	occupation	NOUN
 ne	ne	ADV
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 absorbaient	absorber	VERB
 pas	pas	ADV
 au	au	ADP_DET
@@ -867,7 +867,7 @@ gouverneur	gouverneur	NOUN
 Alger	Alger	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ce	ce	PRON
+ce	ce	PRON
 fut	être	AUX
 même	même	ADV
 dans	dans	ADP
@@ -891,7 +891,7 @@ le	le	DET
 fameux	fameux	ADJ
 rondeau	rondeau	NOUN
 dont	dont	PRON
-les	le:PRON	PRON
+les	le_PRON	PRON
 quatre	quatre	NUM
 premiers	premier	ADJ
 vers	vers	ADP
@@ -938,7 +938,7 @@ elle	elle	PRON
 l'	le	DET
 objet	objet	NOUN
 .	.	PUNCTsent
-Aussi	aussi	ADV
+aussi	aussi	ADV
 le	le	DET
 capitaine	capitaine	NOUN
 Servadac	Servadac	PROPN
@@ -951,7 +951,7 @@ osé	oser	VERB
 se	se	PRON
 déclarer	déclarer	VERB
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 se	se	PRON
 connaissait	connaître	VERB
 des	un	ADP_DET
@@ -1002,10 +1002,10 @@ en	en	ADP
 aucune	aucun	DET
 façon	façon	NOUN
 .	.	PUNCTsent
-D'ailleurs	d'ailleurs	ADV
+d'ailleurs	d'ailleurs	ADV
 ,	,	PUNCTclause
 on	on	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 sait	savoir	VERB
 ,	,	PUNCTclause
 son	son	DET
@@ -1022,7 +1022,7 @@ pas	pas	ADV
 prononcé	prononcer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Avec	avec	ADP
+avec	avec	ADP
 le	le	DET
 capitaine	capitaine	NOUN
 Hector	Hector	PROPN
@@ -1035,7 +1035,7 @@ ordonnance	ordonnance	NOUN
 Ben-Zouf	Ben-Zouf	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ce	ce	PRON
+ce	ce	PRON
 Ben-Zouf	Ben-Zouf	PROPN
 était	être	AUX
 dévoué	dévoué	ADJ
@@ -1055,7 +1055,7 @@ de	de	ADP
 brosser	brosser	VERB
 »	»	PUNCTclause
 .	.	PUNCTsent
-Entre	entre	ADP
+entre	entre	ADP
 les	le	DET
 fonctions	fonction	NOUN
 de	de	ADP
@@ -1083,7 +1083,7 @@ même	même	ADV
 un	un	DET
 instant	instant	NOUN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 si	si	SCONJ
 il	il	PRON
@@ -1095,7 +1095,7 @@ personnelle	personnel	ADJ
 en	en	ADP
 ce	ce	PRON
 qui	qui	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 concernait	concerner	VERB
 ,	,	PUNCTclause
 ce	ce	PRON
@@ -1140,7 +1140,7 @@ de	de	ADP
 état-major	état-major	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ce	ce	DET
+ce	ce	DET
 nom	nom	NOUN
 de	de	ADP
 Ben-Zouf	Ben-Zouf	PROPN
@@ -1158,13 +1158,13 @@ de	de	ADP
 l'	le	DET
 Algérie	Algérie	PROPN
 .	.	PUNCTsent
-Pas	pas	ADV
+pas	pas	ADV
 le	le	DET
 moins	moins	NOUN
 du	du	ADP_DET
 monde	monde	NOUN
 .	.	PUNCTsent
-Ce	ce	DET
+ce	ce	DET
 nom	nom	NOUN
 ne	ne	ADV
 était	être	AUX
@@ -1172,7 +1172,7 @@ que	que	ADV
 un	un	DET
 surnom	surnom	NOUN
 .	.	PUNCTsent
-Maintenant	maintenant	ADV
+maintenant	maintenant	ADV
 pourquoi	pourquoi	ADV
 ,	,	PUNCTclause
 ce	ce	DET
@@ -1221,7 +1221,7 @@ pas	pas	ADV
 expliquer	expliquer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Or	or	NOUN
+or	or	NOUN
 ,	,	PUNCTclause
 non seulement	non seulement	ADV
 Ben-Zouf	Ben-Zouf	PROPN
@@ -1254,9 +1254,9 @@ le	le	DET
 moulin	moulin	NOUN
 de	de	ADP
 la	le	DET
-Galette	Galette	PROPN
+galette	galette	UNKNOWN
 .	.	PUNCTsent
-Or	or	NOUN
+or	or	NOUN
 ,	,	PUNCTclause
 lorsque	lorsque	SCONJ
 on	on	PRON
@@ -1297,7 +1297,7 @@ magnifique	magnifique	ADJ
 au	au	ADP_DET
 monde	monde	NOUN
 .	.	PUNCTsent
-Aussi	aussi	ADV
+aussi	aussi	ADV
 ,	,	PUNCTclause
 aux	au	ADP_DET
 yeux	œil	NOUN
@@ -1340,11 +1340,11 @@ merveilles	merveille	NOUN
 du	du	ADP_DET
 globe	globe	NOUN
 .	.	PUNCTsent
-Ben-Zouf	Ben-Zouf	PROPN
+Ben-Zouf	Ben-Zouf	ADP
 avait	avoir	AUX
 voyagé	voyager	VERB
 .	.	PUNCTsent
-À	à	ADP
+à	à	ADP
 l'	le	DET
 entendre	entendre	VERB
 ,	,	PUNCTclause
@@ -1372,7 +1372,7 @@ mais	mais	CCONJ
 moins	moins	ADV
 pittoresques	pittoresque	ADJ
 .	.	PUNCTsent
-Montmartre	Montmartre	PROPN
+Montmartre	Montmartre	NOUN
 ,	,	PUNCTclause
 en effet	en effet	ADV
 ,	,	PUNCTclause
@@ -1454,7 +1454,7 @@ avant	avant	ADP
 l'	le	DET
 invasion	invasion	NOUN
 des	un	ADP_DET
-Celtes	Celtes	NOUN
+celtes	celte	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 enfin	enfin	ADV
@@ -1480,7 +1480,7 @@ de	de	ADP
 butte	butte	NOUN
 »	»	PUNCTclause
 ?	?	PUNCTsent
-On	on	PRON
+on	on	PRON
 eût	avoir	VERB
 haché	hacher	VERB
 Ben-Zouf	Ben-Zouf	PROPN
@@ -1505,7 +1505,7 @@ de	de	ADP
 hauteur	hauteur	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Où	où	PRON
+où	où	PRON
 rencontrerait	rencontrer	VERB
 on	on	PRON
 donc	donc	ADV
@@ -1541,7 +1541,7 @@ légèrement	légèrement	ADV
 exagérée	exagéré	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Innocente	innocent	ADJ
+innocente	innocent	ADJ
 manie	manier	VERB
 ,	,	PUNCTclause
 après	après	ADP
@@ -1588,7 +1588,7 @@ va	aller	VERB
 sans	sans	ADP
 dire	dire	VERB
 .	.	PUNCTsent
-Aussi	aussi	ADV
+aussi	aussi	ADV
 Hector	Hector	PROPN
 Servadac	Servadac	PROPN
 avait	avoir	AUX
@@ -1619,7 +1619,7 @@ en	en	ADP
 horreur	horreur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cependant	cependant	ADV
+cependant	cependant	ADV
 ,	,	PUNCTclause
 Ben-Zouf	Ben-Zouf	PROPN
 ne	ne	ADV
@@ -1642,12 +1642,12 @@ le	le	DET
 jamais	jamais	ADV
 quitter	quitter	VERB
 .	.	PUNCTsent
-Son	son	DET
+son	son	DET
 temps	temps	NOUN
 était	être	AUX
 fini	finir	VERB
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 avait	avoir	AUX
 même	même	ADV
 fait	faire	VERB
@@ -1691,14 +1691,14 @@ de	de	ADP
 Hector	Hector	PROPN
 Servadac	Servadac	PROPN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 fit	faire	AUX
 campagne	campagne	NOUN
 avec	avec	ADP
 son	son	DET
 officier	officier	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 se	se	PRON
 battit	battre	VERB
 à	à	ADP
@@ -1733,7 +1733,7 @@ de	de	ADP
 son	son	DET
 capitaine	capitaine	NOUN
 .	.	PUNCTsent
-Si	si	SCONJ
+si	si	SCONJ
 Hector	Hector	PROPN
 Servadac	Servadac	PROPN
 sauva	sauver	VERB
@@ -1755,7 +1755,7 @@ campagne	campagne	NOUN
 du	du	ADP_DET
 Soudan	Soudan	PROPN
 .	.	PUNCTsent
-Ce	ce	PRON
+ce	ce	PRON
 sont	être	AUX
 là	là	ADV
 de	de	ADP
@@ -1768,7 +1768,7 @@ oublient	oublier	VERB
 jamais	jamais	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Bref	bref	ADJ
+bref	bref	ADJ
 ,	,	PUNCTclause
 voilà	voilà	ADP
 pourquoi	pourquoi	ADV
@@ -1843,7 +1843,7 @@ tout	tout	PRON
 faire	faire	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 faut	falloir	VERB
 ajouter	ajouter	VERB
 que	que	SCONJ
@@ -1882,7 +1882,7 @@ coq-à-l'âne	coq-à-l'âne	NOUN
 du	du	ADP_DET
 troupier	troupier	NOUN
 .	.	PUNCTsent
-Sur	sur	ADP
+sur	sur	ADP
 ce	ce	DET
 chapitre	chapitre	NOUN
 ,	,	PUNCTclause
@@ -1906,7 +1906,7 @@ la	le	DET
 douzaine	douzaine	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 capitaine	capitaine	NOUN
 Servadac	Servadac	PROPN
 savait	savoir	VERB
@@ -1916,7 +1916,7 @@ valait	valoir	VERB
 l'	le	DET
 homme	homme	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 l'	le	DET
 appréciait	apprécier	VERB
 ,	,	PUNCTclause
@@ -1959,7 +1959,7 @@ son	son	DET
 maître	maître	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Une	un	DET
+une	un	DET
 fois	fois	NOUN
 ,	,	PUNCTclause
 entre	entre	ADP
@@ -1984,7 +1984,7 @@ arrondissement	arrondissement	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Ben-Zouf	Ben-Zouf	PROPN
+Ben-Zouf	Ben-Zouf	NOUN
 ,	,	PUNCTclause
 lui	lui	PRON
 dit	dire	VERB
@@ -2020,11 +2020,11 @@ haute	haut	ADJ
 que	que	SCONJ
 le	le	DET
 mont	mont	NOUN
-Blanc	blanc	ADJ
+blanc	blanc	ADJ
 ?	?	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-À	à	ADP
+à	à	ADP
 cette	ce	DET
 observation	observation	NOUN
 ,	,	PUNCTclause

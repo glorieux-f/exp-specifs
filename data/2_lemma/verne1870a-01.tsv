@@ -5,9 +5,9 @@
 # isPartOf = Vingt mille lieues sous les mers
 # title = I. Un écueil fuyant
 
-↵↵↵	↵↵↵	PUNCTstruct
+↵↵	↵↵	PUNCTstruct
 I.	I.	PUNCT
-Un	un	DET
+un	un	DET
 écueil	écueil	NOUN
 fuyant	fuyant	ADJ
 .	.	PUNCTsent
@@ -28,13 +28,13 @@ inexpliqué	inexpliqué	ADJ
 et	et	CCONJ
 inexplicable	inexplicable	ADJ
 que	que	SCONJ
-personne	personne:PRON	PRON
+personne	personne_PRON	PRON
 ne	ne	ADV
 a	avoir	AUX
 sans doute	sans doute	ADV
 oublié	oublier	VERB
 .	.	PUNCTsent
-Sans	sans	ADP
+sans	sans	ADP
 parler	parler	VERB
 des	un	DET
 rumeurs	rumeur	NOUN
@@ -63,7 +63,7 @@ furent	être	AUX
 particulièrement	particulièrement	ADV
 émus	ému	ADJ
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 négociants	négociant	NOUN
 ,	,	PUNCTclause
 armateurs	armateur	NOUN
@@ -100,7 +100,7 @@ les	le	DET
 gouvernements	gouvernement	NOUN
 des	un	ADP_DET
 divers	divers	ADJ
-États	États	NOUN
+états	état	NOUN
 des	un	ADP_DET
 deux	deux	NUM
 continents	continent	NOUN
@@ -155,7 +155,7 @@ une	un	DET
 baleine	baleine	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Les	le	DET
+les	le	DET
 faits	fait	NOUN
 relatifs	relatif	ADJ
 à	à	ADP
@@ -181,7 +181,7 @@ l'	le	DET
 objet	objet	NOUN
 ou	ou	CCONJ
 de	de	ADP
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 être	être	AUX
 en	en	ADP
 question	question	NOUN
@@ -208,7 +208,7 @@ il	il	PRON
 semblait	sembler	VERB
 doué	doué	ADJ
 .	.	PUNCTsent
-Si	si	SCONJ
+si	si	SCONJ
 ce	ce	PRON
 était	être	AUX
 un	un	DET
@@ -228,7 +228,7 @@ classés	classer	VERB
 jusque	jusque	ADP
 alors	alors	ADV
 .	.	PUNCTsent
-Ni	ni	CCONJ
+ni	ni	CCONJ
 Cuvier	Cuvier	PROPN
 ,	,	PUNCTclause
 ni	ni	CCONJ
@@ -273,7 +273,7 @@ de	de	ADP
 savants	savant	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-À	à	ADP
+à	à	ADP
 prendre	prendre	VERB
 la	le	DET
 moyenne	moyenne	NOUN
@@ -308,7 +308,7 @@ les	le	DET
 opinions	opinion	NOUN
 exagérées	exagéré	ADJ
 qui	qui	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 disaient	dire	VERB
 large	large	ADJ
 de	de	ADP
@@ -352,7 +352,7 @@ existait	exister	VERB
 toutefois	toutefois	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Or	or	NOUN
+or	or	NOUN
 ,	,	PUNCTclause
 il	il	PRON
 existait	exister	VERB
@@ -442,7 +442,7 @@ de	de	ADP
 l'	le	DET
 Australie	Australie	PROPN
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 capitaine	capitaine	NOUN
 Baker	Baker	PROPN
 se	se	PRON
@@ -491,7 +491,7 @@ dans	dans	ADP
 l'	le	DET
 air	air	NOUN
 .	.	PUNCTsent
-Donc	donc	ADV
+donc	donc	ADV
 ,	,	PUNCTclause
 à	à	ADP
 moins	moins	ADV
@@ -541,7 +541,7 @@ de	de	ADP
 vapeur	vapeur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pareil	pareil	NOUN
+pareil	pareil	NOUN
 fait	faire	AUX
 fut	être	AUX
 également	également	ADV
@@ -558,7 +558,7 @@ dans	dans	ADP
 les	le	DET
 mers	mer	NOUN
 du	du	ADP_DET
-Pacifique	Pacifique	PROPN
+pacifique	pacifique	UNKNOWN
 ,	,	PUNCTclause
 par	par	ADP
 le	le	DET
@@ -573,7 +573,7 @@ steam	steam	X
 navigation	navigation	NOUN
 Company	Company	PROPN
 .	.	PUNCTsent
-Donc	donc	ADV
+donc	donc	ADV
 ,	,	PUNCTclause
 ce	ce	DET
 cétacé	cétacé	NOUN
@@ -604,7 +604,7 @@ Governor-Higginson	Governor-Higginson	PROPN
 et	et	CCONJ
 le	le	DET
 Cristobal-Colon	Cristobal-Colon	PROPN
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avaient	avoir	AUX
 observé	observer	VERB
 en	en	ADP
@@ -640,8 +640,8 @@ Helvetia	Helvetia	PROPN
 ,	,	PUNCTclause
 de	de	ADP
 la	le	DET
-Compagnie	Compagnie	NOUN
-Nationale	national	ADJ
+compagnie	compagnie	NOUN
+nationale	national	ADJ
 ,	,	PUNCTclause
 et	et	CCONJ
 le	le	DET
@@ -658,7 +658,7 @@ cette	ce	DET
 portion	portion	NOUN
 de	de	ADP
 l'	le	DET
-Atlantique	Atlantique	PROPN
+atlantique	atlantique	UNKNOWN
 comprise	comprendre	VERB
 entre	entre	ADP
 les	le	DET
@@ -692,7 +692,7 @@ méridien	méridien	NOUN
 de	de	ADP
 Greenwich	Greenwich	PROPN
 .	.	PUNCTsent
-Dans	dans	ADP
+dans	dans	ADP
 cette	ce	DET
 observation	observation	NOUN
 simultanée	simultané	ADJ
@@ -741,7 +741,7 @@ l'	le	DET
 l'	le	DET
 étambot	étambot	NOUN
 .	.	PUNCTsent
-Or	or	NOUN
+or	or	NOUN
 ,	,	PUNCTclause
 les	le	DET
 plus	plus	ADV
@@ -755,7 +755,7 @@ les	le	DET
 parages	parage	NOUN
 des	un	ADP_DET
 îles	île	NOUN
-Aléoutiennes	aléoutien	ADJ
+aléoutiennes	aléoutien	ADJ
 ,	,	PUNCTclause
 le	le	DET
 Kulammak	Kulammak	PROPN
@@ -781,7 +781,7 @@ l'	le	DET
 atteignent	atteindre	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ces	ce	DET
+ces	ce	DET
 rapports	rapport	NOUN
 arrivés	arriver	VERB
 coup sur coup	coup sur coup	ADV
@@ -843,7 +843,7 @@ profondément	profondément	ADV
 l'	le	DET
 opinion publique	opinion publique	NOUN
 .	.	PUNCTsent
-Dans	dans	ADP
+dans	dans	ADP
 les	le	DET
 pays	pays	NOUN
 de	de	ADP
@@ -877,7 +877,7 @@ préoccupèrent	préoccuper	VERB
 vivement	vivement	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Partout	partout	ADV
+partout	partout	ADV
 dans	dans	ADP
 les	le	DET
 grands	grand	ADJ
@@ -891,27 +891,27 @@ la	le	DET
 mode	mode	NOUN
 ;	;	PUNCTclause
 on	on	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 chanta	chanter	VERB
 dans	dans	ADP
 les	le	DET
 cafés	café	NOUN
 ,	,	PUNCTclause
 on	on	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 bafoua	bafouer	VERB
 dans	dans	ADP
 les	le	DET
 journaux	journal	NOUN
 ,	,	PUNCTclause
 on	on	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 joua	jouer	VERB
 sur	sur	ADP
 les	le	DET
 théâtres	théâtre	NOUN
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 canards	canard	NOUN
 eurent	avoir	VERB
 là	là	ADV
@@ -926,7 +926,7 @@ de	de	ADP
 toute	toute	DET
 couleur	couleur	NOUN
 .	.	PUNCTsent
-On	on	PRON
+on	on	PRON
 vit	vivre	VERB
 réapparaître	réapparaître	VERB
 dans	dans	ADP
@@ -964,7 +964,7 @@ hyperboréennes	hyperboréen	ADJ
 ,	,	PUNCTclause
 jusque	jusque	ADP
 au	au	ADP_DET
-Kraken	Kraken	PROPN
+kraken	kraken	UNKNOWN
 démesuré	démesuré	ADJ
 ,	,	PUNCTclause
 dont	dont	PRON
@@ -986,9 +986,9 @@ les	le	DET
 abîmes	abîme	NOUN
 de	de	ADP
 l'	le	DET
-Océan	Océan	PROPN
+océan	océan	UNKNOWN
 .	.	PUNCTsent
-On	on	PRON
+on	on	PRON
 reproduisit	reproduire	VERB
 même	même	ADV
 les	le	DET
@@ -1052,7 +1052,7 @@ vu	voir	VERB
 étant	être	AUX
 à bord	à bord	ADV
 du	du	ADP_DET
-Castillan	Castillan	PROPN
+castillan	castillan	UNKNOWN
 ,	,	PUNCTclause
 en	en	ADP
 1857	1857	NUM
@@ -1072,10 +1072,10 @@ mers	mer	NOUN
 de	de	ADP
 l'	le	DET
 ancien	ancien	ADJ
-Constitutionnel	Constitutionnel	NOUN
+constitutionnel	constitutionnel	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Alors	alors	ADV
+alors	alors	ADV
 éclata	éclater	VERB
 l'	le	DET
 interminable	interminable	ADJ
@@ -1094,7 +1094,7 @@ les	le	DET
 journaux	journal	NOUN
 scientifiques	scientifique	ADJ
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 «	«	PUNCTclause
 question	question	NOUN
 du	du	ADP_DET
@@ -1104,7 +1104,7 @@ enflamma	enflammer	VERB
 les	le	DET
 esprits	esprit	NOUN
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 journalistes	journaliste	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
@@ -1171,20 +1171,20 @@ des	un	DET
 chances	chance	NOUN
 diverses	divers	ADJ
 .	.	PUNCTsent
-Aux	au	ADP_DET
+aux	au	ADP_DET
 articles	article	NOUN
 de	de	ADP
 fond	fond	NOUN
 de	de	ADP
 l'	le	DET
-Institut	Institut	NOUN
+institut	institut	NOUN
 géographique	géographique	ADJ
 du	du	ADP_DET
 Brésil	Brésil	PROPN
 ,	,	PUNCTclause
 de	de	ADP
 l'	le	DET
-Académie	Académie	NOUN
+académie	académie	NOUN
 royale	royal	ADJ
 des	un	ADP_DET
 sciences	science	NOUN
@@ -1193,12 +1193,12 @@ Berlin	Berlin	PROPN
 ,	,	PUNCTclause
 de	de	ADP
 l'	le	DET
-Association	Association	NOUN
-Britannique	Britannique	PROPN
+association	association	NOUN
+britannique	britannique	UNKNOWN
 ,	,	PUNCTclause
 de	de	ADP
 l'	le	DET
-Institution	Institution	NOUN
+institution	institution	NOUN
 Smithsonnienne	Smithsonnienne	PROPN
 de	de	ADP
 Washington	Washington	PROPN
@@ -1211,7 +1211,7 @@ Indian	Indian	PROPN
 Archipelago	Archipelago	PROPN
 ,	,	PUNCTclause
 du	du	ADP_DET
-Cosmos	Cosmos	NOUN
+cosmos	cosmos	NOUN
 de	de	ADP
 l'	le	DET
 abbé	abbé	NOUN
@@ -1245,7 +1245,7 @@ une	un	DET
 verve	verve	NOUN
 intarissable	intarissable	ADJ
 .	.	PUNCTsent
-Ses	son	DET
+ses	son	DET
 spirituels	spirituel	ADJ
 écrivains	écrivain	NOUN
 parodiant	parodier	VERB
@@ -1294,7 +1294,7 @@ admettant	admettre	VERB
 l'	le	DET
 existence	existence	NOUN
 des	un	ADP_DET
-Krakens	Krakens	PROPN
+krakens	kraken	UNKNOWN
 ,	,	PUNCTclause
 des	un	DET
 serpents	serpent	NOUN
@@ -1315,7 +1315,7 @@ marins	marin	NOUN
 en	en	ADP
 délire	délirer	VERB
 .	.	PUNCTsent
-Enfin	enfin	ADV
+enfin	enfin	ADV
 ,	,	PUNCTclause
 dans	dans	ADP
 un	un	DET
@@ -1366,7 +1366,7 @@ la	le	DET
 science	science	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pendant	pendant	ADP
+pendant	pendant	ADP
 les	le	DET
 premiers	premier	ADJ
 mois	mois	NOUN
@@ -1401,7 +1401,7 @@ connaissance	connaissance	NOUN
 du	du	ADP_DET
 public	public	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 se	se	PRON
 agit	agir	VERB
@@ -1424,7 +1424,7 @@ sérieux	sérieux	ADJ
 à	à	ADP
 éviter	éviter	VERB
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 question	question	NOUN
 prit	prendre	VERB
 une	un	DET
@@ -1432,7 +1432,7 @@ tout	tout	ADV
 autre	autre	ADJ
 face	face	NOUN
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 monstre	monstre	NOUN
 redevint	redevenir	VERB
 îlot	îlot	NOUN
@@ -1450,7 +1450,7 @@ indéterminable	indéterminable	ADJ
 insaisissable	insaisissable	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 5	5	NUM
 mars	mars	NOUN
 1867	1867	NUM
@@ -1460,7 +1460,7 @@ Moravian	Moravian	PROPN
 ,	,	PUNCTclause
 de	de	ADP
 Montréal	Montréal	PROPN
-Océan	Océan	PROPN
+océan	océan	UNKNOWN
 Company	Company	PROPN
 ,	,	PUNCTclause
 se	se	PRON
@@ -1496,7 +1496,7 @@ dans	dans	ADP
 ces	ce	DET
 parages	parage	NOUN
 .	.	PUNCTsent
-Sous	sous	ADP
+sous	sous	ADP
 l'	le	DET
 effort	effort	NOUN
 combiné	combiner	VERB
@@ -1518,7 +1518,7 @@ de	de	ADP
 treize	treize	NUM
 nœuds	nœud	NOUN
 .	.	PUNCTsent
-Nul	nul	ADJ
+nul	nul	ADJ
 doute	doute	NOUN
 que	que	SCONJ
 sans	sans	ADP
@@ -1570,7 +1570,7 @@ commençait	commencer	VERB
 à	à	ADP
 poindre	poindre	VERB
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 officiers	officier	NOUN
 de	de	ADP
 quart	quart	NOUN
@@ -1582,17 +1582,17 @@ arrière	arrière	NOUN
 du	du	ADP_DET
 bâtiment	bâtiment	NOUN
 .	.	PUNCTsent
-Ils	ils	PRON
+ils	ils	PRON
 examinèrent	examiner	VERB
 l'	le	DET
-Océan	Océan	PROPN
+océan	océan	UNKNOWN
 avec	avec	ADP
 la	le	DET
 plus	plus	ADV
 scrupuleuse	scrupuleux	ADJ
 attention	attention	NOUN
 .	.	PUNCTsent
-Ils	ils	PRON
+ils	ils	PRON
 ne	ne	ADV
 virent	voir	VERB
 rien	rien	PRON
@@ -1620,7 +1620,7 @@ eussent	avoir	VERB
 violemment	violemment	ADV
 battues	battre	VERB
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 relèvement	relèvement	NOUN
 du	du	ADP_DET
 lieu	lieu	NOUN
@@ -1638,7 +1638,7 @@ sans	sans	ADP
 avaries	avarie	NOUN
 apparentes	apparent	ADJ
 .	.	PUNCTsent
-Avait	avoir	VERB
+avait	avoir	VERB
 il	il	PRON
 heurté	heurter	VERB
 une	un	DET
@@ -1653,7 +1653,7 @@ de	de	ADP
 un	un	DET
 naufrage	naufrage	NOUN
 ?	?	PUNCTsent
-On	on	PRON
+on	on	PRON
 ne	ne	ADV
 put	pouvoir	VERB
 le	le	DET
@@ -1686,7 +1686,7 @@ avait	avoir	AUX
 brisée	briser	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ce	ce	PRON
+ce	ce	PRON
 fait	faire	VERB
 ,	,	PUNCTclause
 extrêmement	extrêmement	ADV
@@ -1718,7 +1718,7 @@ des	un	DET
 conditions	condition	NOUN
 identiques	identique	ADJ
 .	.	PUNCTsent
-Seulement	seulement	ADV
+seulement	seulement	ADV
 ,	,	PUNCTclause
 grâce à	grâce à	ADP
 la	le	DET
@@ -1736,7 +1736,7 @@ la	le	DET
 réputation	réputation	NOUN
 de	de	ADP
 la	le	DET
-Compagnie	Compagnie	NOUN
+compagnie	compagnie	NOUN
 à	à	ADP
 laquelle	laquelle	PRON
 ce	ce	DET
@@ -1751,7 +1751,7 @@ retentissement	retentissement	NOUN
 immense	immense	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Personne	personne:PRON	PRON
+personne	personne_PRON	PRON
 ne	ne	ADV
 ignore	ignorer	VERB
 le	le	DET
@@ -1762,7 +1762,7 @@ armateur	armateur	NOUN
 anglais	anglais	ADJ
 Cunard	Cunard	PROPN
 .	.	PUNCTsent
-Cet	ce	DET
+cet	ce	DET
 intelligent	intelligent	ADJ
 industriel	industriel	NOUN
 fonda	fonder	VERB
@@ -1812,7 +1812,7 @@ le	le	DET
 matériel	matériel	NOUN
 de	de	ADP
 la	le	DET
-Compagnie	Compagnie	NOUN
+compagnie	compagnie	NOUN
 se	se	PRON
 accroissait	accroître	VERB
 de	de	ADP
@@ -1847,7 +1847,7 @@ et	et	CCONJ
 en	en	ADP
 tonnage	tonnage	NOUN
 .	.	PUNCTsent
-En	en	ADP
+en	en	ADP
 1853	1853	NUM
 ,	,	PUNCTclause
 la	le	DET
@@ -1885,7 +1885,7 @@ le	le	DET
 Scotia	Scotia	PROPN
 ,	,	PUNCTclause
 le	le	DET
-Java	Java	PROPN
+java	java	UNKNOWN
 ,	,	PUNCTclause
 le	le	DET
 Russia	Russia	PROPN
@@ -1912,14 +1912,14 @@ sillonné	sillonner	VERB
 les	le	DET
 mers	mer	NOUN
 .	.	PUNCTsent
-Ainsi	ainsi	ADV
+ainsi	ainsi	ADV
 donc	donc	ADV
 ,	,	PUNCTclause
 en	en	ADP
 1867	1867	NUM
 ,	,	PUNCTclause
 la	le	DET
-Compagnie	Compagnie	NOUN
+compagnie	compagnie	NOUN
 possédait	posséder	VERB
 douze	douze	NUM
 navires	navire	NOUN
@@ -1934,7 +1934,7 @@ quatre	quatre	NUM
 hélices	hélice	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Si	si	SCONJ
+si	si	SCONJ
 je	je	PRON
 donne	donner	VERB
 ces	ce	DET
@@ -1966,7 +1966,7 @@ son	son	DET
 intelligente	intelligent	ADJ
 gestion	gestion	NOUN
 .	.	PUNCTsent
-Nulle	nul	ADJ
+nulle	nul	ADJ
 entreprise	entreprise	NOUN
 de	de	ADP
 navigation	navigation	NOUN
@@ -1990,7 +1990,7 @@ de plus	de plus	ADV
 de	de	ADP
 succès	succès	NOUN
 .	.	PUNCTsent
-Depuis	depuis	ADP
+depuis	depuis	ADP
 vingt-six	vingt-six	NUM
 ans	an	NOUN
 ,	,	PUNCTclause
@@ -2003,7 +2003,7 @@ deux	deux	NUM
 mille	mille	NUM
 fois	fois	NOUN
 l'	le	DET
-Atlantique	Atlantique	PROPN
+atlantique	atlantique	UNKNOWN
 ,	,	PUNCTclause
 et	et	CCONJ
 jamais	jamais	ADV
@@ -2039,7 +2039,7 @@ ont	avoir	AUX
 été	être	AUX
 perdus	perdre	VERB
 .	.	PUNCTsent
-Aussi	aussi	ADV
+aussi	aussi	ADV
 ,	,	PUNCTclause
 les	le	DET
 passagers	passager	NOUN
@@ -2080,10 +2080,10 @@ des	un	ADP_DET
 dernières	dernier	ADJ
 années	année	NOUN
 .	.	PUNCTsent
-Ceci	ceci	PRON
+ceci	ceci	PRON
 dit	dire	VERB
 ,	,	PUNCTclause
-personne	personne:PRON	PRON
+personne	personne_PRON	PRON
 ne	ne	ADV
 se	se	PRON
 étonnera	étonner	VERB
@@ -2103,7 +2103,7 @@ beaux	beau	ADJ
 steamers	steamer	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 13	13	NUM
 avril	avril	NOUN
 1867	1867	NUM
@@ -2132,7 +2132,7 @@ et	et	CCONJ
 de	de	ADP
 latitude	latitude	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 marchait	marcher	VERB
 avec	avec	ADP
 une	un	DET
@@ -2150,7 +2150,7 @@ ses	son	DET
 mille	mille	NUM
 chevaux-vapeur	cheval-vapeur	NOUN
 .	.	PUNCTsent
-Ses	son	DET
+ses	son	DET
 roues	roue	NOUN
 battaient	battre	VERB
 la	le	DET
@@ -2160,7 +2160,7 @@ une	un	DET
 régularité	régularité	NOUN
 parfaite	parfait	ADJ
 .	.	PUNCTsent
-Son	son	DET
+son	son	DET
 tirant	tirant	NOUN
 de	de	ADP
 eau	eau	NOUN
@@ -2185,7 +2185,7 @@ mètres	mètre	NOUN
 cubes	cube	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-À	à	ADP
+à	à	ADP
 quatre	quatre	NUM
 heures	heure	NOUN
 dix-sept	dix-sept	NUM
@@ -2233,7 +2233,7 @@ de	de	ADP
 babord	babord	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 Scotia	Scotia	PROPN
 ne	ne	ADV
 avait	avoir	AUX
@@ -2263,7 +2263,7 @@ semblé	sembler	VERB
 si	si	ADV
 léger	léger	ADJ
 que	que	SCONJ
-personne	personne:PRON	PRON
+personne	personne_PRON	PRON
 ne	ne	ADV
 se	se	PRON
 en	en	ADP
@@ -2287,7 +2287,7 @@ se	se	PRON
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Nous	nous	PRON
+nous	nous	PRON
 coulons	couler	VERB
 !	!	PUNCTsent
 nous	nous	PRON
@@ -2295,7 +2295,7 @@ coulons	couler	VERB
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Tout	tout	PRON
+tout	tout	PRON
 d'abord	d'abord	ADV
 ,	,	PUNCTclause
 les	le	DET
@@ -2322,7 +2322,7 @@ pouvait	pouvoir	VERB
 être	être	AUX
 imminent	imminent	ADJ
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 Scotia	Scotia	PROPN
 ,	,	PUNCTclause
 divisé	diviser	VERB
@@ -2343,7 +2343,7 @@ de	de	ADP
 eau	eau	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 capitaine	capitaine	NOUN
 Anderson	Anderson	PROPN
 se	se	PRON
@@ -2353,7 +2353,7 @@ dans	dans	ADP
 la	le	DET
 cale	cale	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 reconnut	reconnaître	VERB
 que	que	SCONJ
 le	le	DET
@@ -2381,7 +2381,7 @@ eau	eau	NOUN
 était	être	AUX
 considérable	considérable	ADJ
 .	.	PUNCTsent
-Fort	fort	ADV
+fort	fort	ADV
 heureusement	heureusement	ADV
 ,	,	PUNCTclause
 ce	ce	DET
@@ -2401,7 +2401,7 @@ subitement	subitement	ADV
 éteints	éteindre	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 capitaine	capitaine	NOUN
 Anderson	Anderson	PROPN
 fit	faire	AUX
@@ -2418,7 +2418,7 @@ reconnaître	reconnaître	VERB
 l'	le	DET
 avarie	avarie	NOUN
 .	.	PUNCTsent
-Quelques	quelque	DET
+quelques	quelque	DET
 instants	instant	NOUN
 après	après	ADV
 ,	,	PUNCTclause
@@ -2439,7 +2439,7 @@ carène	carène	NOUN
 du	du	ADP_DET
 steamer	steamer	NOUN
 .	.	PUNCTsent
-Une	un	DET
+une	un	DET
 telle	tel	PRON
 voie	voir	VERB
 de	de	ADP
@@ -2465,7 +2465,7 @@ ainsi	ainsi	ADV
 son	son	DET
 voyage	voyage	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 se	se	PRON
 trouvait	trouver	VERB
 alors	alors	ADV
@@ -2496,10 +2496,10 @@ les	le	DET
 bassins	bassin	NOUN
 de	de	ADP
 la	le	DET
-Compagnie	Compagnie	NOUN
+compagnie	compagnie	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Les	le	DET
+les	le	DET
 ingénieurs	ingénieur	NOUN
 procédèrent	procéder	VERB
 alors	alors	ADV
@@ -2516,7 +2516,7 @@ en	en	ADP
 cale	cale	NOUN
 sèche	sec	ADJ
 .	.	PUNCTsent
-Ils	ils	PRON
+ils	ils	PRON
 ne	ne	ADV
 purent	pouvoir	VERB
 en	en	ADP
@@ -2524,7 +2524,7 @@ croire	croire	VERB
 leurs	leur	DET
 yeux	œil	NOUN
 .	.	PUNCTsent
-À	à	ADP
+à	à	ADP
 deux	deux	NUM
 mètres	mètre	NOUN
 et	et	CCONJ
@@ -2541,7 +2541,7 @@ régulière	régulier	ADJ
 en forme de	en forme de	ADP
 triangle isocèle	triangle isocèle	NOUN
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 cassure	cassure	NOUN
 de	de	ADP
 la	le	DET
@@ -2565,7 +2565,7 @@ sûrement	sûrement	ADV
 l'	le	DET
 emporte-pièce	emporte-pièce	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 fallait	falloir	VERB
 donc	donc	ADV
 que	que	SCONJ
@@ -2573,7 +2573,7 @@ l'	le	DET
 outil	outil	NOUN
 perforant	perforant	ADJ
 qui	qui	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avait	avoir	AUX
 produite	produire	VERB
 fût	fût	NOUN
@@ -2619,7 +2619,7 @@ vraiment	vraiment	ADV
 inexplicable	inexplicable	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Tel	tel	PRON
+tel	tel	PRON
 était	être	AUX
 ce	ce	DET
 dernier	dernier	ADJ
@@ -2635,7 +2635,7 @@ passionner	passionner	VERB
 l'	le	DET
 opinion publique	opinion publique	NOUN
 .	.	PUNCTsent
-Depuis	depuis	ADP
+depuis	depuis	ADP
 ce	ce	DET
 moment	moment	NOUN
 ,	,	PUNCTclause
@@ -2659,7 +2659,7 @@ compte	compte	NOUN
 du	du	ADP_DET
 monstre	monstre	NOUN
 .	.	PUNCTsent
-Ce	ce	PRON
+ce	ce	PRON
 fantastique	fantastique	ADJ
 animal	animal	NOUN
 endossa	endosser	VERB
@@ -2722,7 +2722,7 @@ deux	deux	NUM
 cents	cents	NUM
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Or	or	NOUN
+or	or	NOUN
 ,	,	PUNCTclause
 ce	ce	PRON
 fut	être	AUX

@@ -5,15 +5,15 @@
 # isPartOf = Mademoiselle La Quintinie
 # title = Chapitre VII. — M*** À Mademoiselle La Quintinie, au château de Turdy.
 
-↵↵↵	↵↵↵	PUNCTstruct
-Chapitre	chapitre	NOUN
-		TOKEN
+↵↵	↵↵	PUNCTstruct
+chapitre	chapitre	NOUN
+VII	VII	NUM
 .	.	PUNCTsent
 —	—	PUNCTclause
-M	M	PROPN
-À	à	ADP
-Mademoiselle	Mademoiselle	PROPN
-La	le	DET
+M	M	VERB
+à	à	ADP
+mademoiselle	mademoiselle	UNKNOWN
+la	le	DET
 Quintinie	Quintinie	PROPN
 ,	,	PUNCTclause
 au	au	ADP_DET
@@ -22,16 +22,16 @@ de	de	ADP
 Turdy	Turdy	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Chambéry	Chambéry	PROPN
+Chambéry	Chambéry	NOUN
 ,	,	PUNCTclause
 8	8	NUM
 juin	juin	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mademoiselle	mademoiselle	NOUN
+mademoiselle	mademoiselle	NOUN
 ,	,	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Si	si	SCONJ
+si	si	SCONJ
 je	je	PRON
 avais	avoir	VERB
 une	un	DET
@@ -96,7 +96,7 @@ la	le	DET
 prospérité	prospérité	NOUN
 de	de	ADP
 l'	le	DET
-Église	Église	NOUN
+église	église	NOUN
 .	.	PUNCTsent
 ne	ne	ADV
 essayez	essayer	VERB
@@ -164,7 +164,7 @@ les	le	DET
 plus	plus	ADV
 méritoires	méritoire	ADJ
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 premiers	premier	ADJ
 chrétiens	chrétien	NOUN
 célébraient	célébrer	VERB
@@ -178,7 +178,7 @@ catacombes	catacombe	NOUN
 de	de	ADP
 Rome	Rome	PROPN
 .	.	PUNCTsent
-Étaient	être	AUX
+étaient	être	AUX
 ils	ils	PRON
 des	un	ADP_DET
 conspirateurs	conspirateur	NOUN
@@ -187,7 +187,7 @@ des	un	DET
 traîtres	traître	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 je	je	PRON
 ne	ne	ADV
 ai	avoir	VERB
@@ -200,7 +200,7 @@ publique	public	ADJ
 rassurez	rassurer	VERB
 vous	vous	PRON
 .	.	PUNCTsent
-Un	un	DET
+un	un	DET
 scrupule	scrupule	NOUN
 qui	qui	PRON
 vous	vous	PRON
@@ -227,7 +227,7 @@ Dieu	Dieu	PROPN
 et	et	CCONJ
 de	de	ADP
 l'	le	DET
-Église	Église	NOUN
+église	église	NOUN
 ,	,	PUNCTclause
 je	je	PRON
 vous	vous	PRON
@@ -240,7 +240,7 @@ conscience	conscience	NOUN
 ;	;	PUNCTclause
 il	il	PRON
 ne	ne	ADV
-le	le:PRON	PRON
+le	le_PRON	PRON
 faut	falloir	VERB
 pas	pas	ADV
 cependant	cependant	ADV
@@ -261,7 +261,7 @@ mademoiselle	mademoiselle	NOUN
 de	de	ADP
 Turdy	Turdy	PROPN
 .	.	PUNCTsent
-Elle	elle	PRON
+elle	elle	PRON
 sait	savoir	VERB
 maintenant	maintenant	ADV
 qui	qui	PRON
@@ -309,7 +309,7 @@ ouvrir	ouvrir	VERB
 lui	lui	PRON
 aussi	aussi	ADV
 .	.	PUNCTsent
-Mademoiselle	mademoiselle	NOUN
+mademoiselle	mademoiselle	NOUN
 votre	votre	DET
 tante	tante	NOUN
 me	me	PRON
@@ -333,7 +333,7 @@ ses	son	DET
 lettres	lettre	NOUN
 témoignent	témoigner	VERB
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 compte	compter	VERB
 lui	lui	PRON
 être	être	AUX
@@ -346,7 +346,7 @@ viendra	venir	VERB
 la	le	DET
 voir	voir	VERB
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 reste	rester	VERB
 donc	donc	ADV
@@ -360,7 +360,7 @@ ses	son	DET
 préventions	prévention	NOUN
 particulières	particulier	ADJ
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 crois	croire	VERB
 que	que	SCONJ
 nous	nous	PRON
@@ -384,7 +384,7 @@ toute	toute	DET
 souffrance	souffrance	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Vous	vous	PRON
+vous	vous	PRON
 me	me	PRON
 trouvez	trouver	VERB
 changé	changer	VERB
@@ -395,10 +395,10 @@ n'est-ce	n'est-ce	PRON
 point	point	ADV
 vous	vous	PRON
 qui	qui	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 êtes	être	VERB
 ?	?	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 ,	,	PUNCTclause
 d'ailleurs	d'ailleurs	ADV
 ,	,	PUNCTclause
@@ -423,7 +423,7 @@ vous	vous	PRON
 et	et	CCONJ
 Dieu	Dieu	PROPN
 ?	?	PUNCTsent
-Vous	vous	PRON
+vous	vous	PRON
 avez	avoir	VERB
 cru	cru	NOUN
 découvrir	découvrir	VERB
@@ -452,7 +452,7 @@ plein	plein	ADJ
 de	de	ADP
 dévouement	dévouement	NOUN
 .	.	PUNCTsent
-Toute	toute	DET
+toute	toute	DET
 ma	mon	DET
 sagesse	sagesse	NOUN
 consistait	consister	VERB
@@ -477,12 +477,12 @@ et	et	CCONJ
 aussi	aussi	ADV
 pure	pur	ADJ
 .	.	PUNCTsent
-Ma	mon	DET
+ma	mon	DET
 tâche	tâche	NOUN
 était	être	AUX
 facile	facile	ADJ
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 y	y	PRON
 avait	avoir	AUX
@@ -524,7 +524,7 @@ et	et	CCONJ
 de	de	ADP
 approuver	approuver	VERB
 .	.	PUNCTsent
-Votre	votre	DET
+votre	votre	DET
 foi	foi	NOUN
 était	être	AUX
 si	si	ADV
@@ -536,7 +536,7 @@ large	large	ADJ
 si	si	ADV
 tranquille	tranquille	ADJ
 !	!	PUNCTsent
-Elle	elle	PRON
+elle	elle	PRON
 paraissait	paraître	VERB
 assurée	assurer	VERB
 à	à	ADP
@@ -570,9 +570,9 @@ tolérant	tolérer	VERB
 par	par	ADP
 nature	nature	NOUN
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
-le	le:PRON	PRON
+le	le_PRON	PRON
 suis	être	AUX
 pas	pas	ADV
 ,	,	PUNCTclause
@@ -621,7 +621,7 @@ conscience	conscience	NOUN
 vraiment	vraiment	ADV
 chrétienne	chrétien	ADJ
 .	.	PUNCTsent
-Pécheur	pécheur	NOUN
+pécheur	pécheur	NOUN
 entre	entre	ADP
 tous	tous	PRON
 ,	,	PUNCTclause
@@ -663,7 +663,7 @@ de	de	ADP
 vos	vos	DET
 vertus	vertu	NOUN
 .	.	PUNCTsent
-Hélas	hélas	INTJ
+hélas	hélas	INTJ
 !	!	PUNCTsent
 dois	devoir	VERB
 je	je	PRON
@@ -674,7 +674,7 @@ joie	joie	NOUN
 si	si	SCONJ
 sainte	saint	ADJ
 ?	?	PUNCTsent
-Suis	être	AUX
+suis	être	AUX
 je	je	PRON
 destiné	destiner	VERB
 à	à	ADP
@@ -697,7 +697,7 @@ bien	bien	NOUN
 éternel	éternel	ADJ
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Quelques	quelque	DET
+quelques	quelque	DET
 expressions	expression	NOUN
 de	de	ADP
 ma	mon	DET
@@ -711,7 +711,7 @@ de	de	ADP
 vous	vous	PRON
 déplaire	déplaire	VERB
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 sais	savoir	VERB
 lesquelles	lesquelles	PRON
@@ -735,13 +735,13 @@ ai	avoir	AUX
 voué	vouer	VERB
 ,	,	PUNCTclause
 je	je	PRON
-les	le:PRON	PRON
+les	le_PRON	PRON
 retire	retirer	VERB
 et	et	CCONJ
 les	le	DET
 désavoue	désavouer	VERB
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 faut	falloir	VERB
 me	me	PRON
 pardonner	pardonner	VERB
@@ -789,7 +789,7 @@ vaines	vain	ADJ
 convenances	convenance	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 puis	puis	CCONJ
 cette	ce	DET
 langue	langue	NOUN
@@ -819,7 +819,7 @@ dans	dans	ADP
 ses	son	DET
 allures	allure	NOUN
 .	.	PUNCTsent
-Elle	elle	PRON
+elle	elle	PRON
 définit	définir	VERB
 mieux	mieux	ADV
 les	le	DET
@@ -865,7 +865,7 @@ de	de	ADP
 premier	premier	ADJ
 mouvement	mouvement	NOUN
 .	.	PUNCTsent
-Pardonnez	pardonner	VERB
+pardonnez	pardonner	VERB
 moi	moi	PRON
 donc	donc	ADV
 ,	,	PUNCTclause
@@ -898,7 +898,7 @@ salut	salut	NOUN
 éternel	éternel	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Votre	votre	DET
+votre	votre	DET
 ami	ami	NOUN
 M	M	PROPN
 …	…	PUNCTsent

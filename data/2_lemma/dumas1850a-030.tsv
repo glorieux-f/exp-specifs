@@ -5,23 +5,23 @@
 # isPartOf = Le Vicomte de Bragelonne
 # title = XXX. Les actions de la société Planchet et Compagnie remontent au pair
 
-↵↵↵	↵↵↵	PUNCTstruct
-		TOKEN
+↵↵	↵↵	PUNCTstruct
+XXX	XXX	NUM
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 actions	action	NOUN
 de	de	ADP
 la	le	DET
 société	société	NOUN
 Planchet	Planchet	PROPN
 et	et	CCONJ
-Compagnie	Compagnie	PROPN
+compagnie	compagnie	UNKNOWN
 remontent	remonter	VERB
 au	au	ADP_DET
 pair	pair	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pendant	pendant	ADP
+pendant	pendant	ADP
 la	le	DET
 traversée	traversée	NOUN
 ,	,	PUNCTclause
@@ -39,11 +39,11 @@ de	de	ADP
 urgente	urgent	ADJ
 nécessité	nécessité	NOUN
 .	.	PUNCTsent
-Ainsi	ainsi	ADV
+ainsi	ainsi	ADV
 ,	,	PUNCTclause
 lorsque	lorsque	SCONJ
 le	le	DET
-Français	Français	NOUN
+français	français	NOUN
 tardait	tarder	VERB
 à	à	ADP
 venir	venir	VERB
@@ -65,7 +65,7 @@ de	de	ADP
 genièvre	genièvre	NOUN
 ,	,	PUNCTclause
 Monck	Monck	PROPN
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 appelait	appeler	VERB
 et	et	CCONJ
 lui	lui	PRON
@@ -73,7 +73,7 @@ disait	dire	VERB
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-À	à	ADP
+à	à	ADP
 table	table	NOUN
 ,	,	PUNCTclause
 monsieur	monsieur	NOUN
@@ -113,7 +113,7 @@ de	de	ADP
 sa	son	DET
 mission	mission	NOUN
 .	.	PUNCTsent
-Or	or	NOUN
+or	or	NOUN
 ,	,	PUNCTclause
 comme	comme	SCONJ
 il	il	PRON
@@ -138,7 +138,7 @@ Athos	Athos	PROPN
 avait	avoir	AUX
 vu	voir	VERB
 Charles	Charles	PROPN
-		TOKEN
+II	II	NUM
 ,	,	PUNCTclause
 comment	comment	ADV
 il	il	PRON
@@ -161,7 +161,7 @@ de	de	ADP
 Monck	Monck	PROPN
 ;	;	PUNCTclause
 et	et	CCONJ
-le	le:PRON	PRON
+le	le_PRON	PRON
 pauvre	pauvre	ADJ
 lieutenant	lieutenant	NOUN
 de	de	ADP
@@ -193,7 +193,7 @@ de	de	ADP
 l'	le	DET
 enlèvement	enlèvement	NOUN
 .	.	PUNCTsent
-Enfin	enfin	ADV
+enfin	enfin	ADV
 ,	,	PUNCTclause
 après	après	ADP
 deux	deux	NUM
@@ -249,7 +249,7 @@ choisi	choisir	VERB
 son	son	DET
 habitation	habitation	NOUN
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 jour	jour	NOUN
 baissait	baisser	VERB
 ;	;	PUNCTclause
@@ -280,7 +280,7 @@ de	de	ADP
 la	le	DET
 mer	mer	NOUN
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 felouque	felouque	NOUN
 cinglait	cingler	VERB
 toujours	toujours	ADV
@@ -345,7 +345,7 @@ suivait	suivre	VERB
 Monck	Monck	PROPN
 absolument	absolument	ADV
 comme	comme	SCONJ
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 ours	ours	NOUN
 enchaîné	enchaîné	ADJ
 suit	suivre	VERB
@@ -355,7 +355,7 @@ maître	maître	NOUN
 mais	mais	CCONJ
 sa	son	DET
 position	position	NOUN
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 humiliait	humilier	VERB
 fort	fort	ADV
 ,	,	PUNCTclause
@@ -387,13 +387,13 @@ vaut	valoir	VERB
 rien	rien	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Monck	Monck	PROPN
+Monck	Monck	VERB
 marchait	marcher	VERB
 à	à	ADP
 grands	grand	ADJ
 pas	pas	NOUN
 .	.	PUNCTsent
-On	on	PRON
+on	on	PRON
 eût	avoir	AUX
 dit	dire	VERB
 que	que	SCONJ
@@ -435,7 +435,7 @@ humble	humble	ADJ
 port	port	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Tout	tout	PRON
+tout	tout	PRON
 à coup de	à coup de	ADP
 Artagnan	Artagnan	PROPN
 se	se	PRON
@@ -458,7 +458,7 @@ qui	qui	PRON
 brûle	brûler	VERB
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Monck	Monck	PROPN
+Monck	Monck	VERB
 leva	lever	VERB
 les	le	DET
 yeux	œil	NOUN
@@ -475,7 +475,7 @@ dévorer	dévorer	VERB
 une	un	DET
 maison	maison	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 avait	avoir	AUX
 été	être	AUX
 mis	mettre	VERB
@@ -496,7 +496,7 @@ ronger	ronger	VERB
 la	le	DET
 toiture	toiture	NOUN
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 vent	vent	NOUN
 frais	frais	ADJ
 du	du	ADP_DET
@@ -508,7 +508,7 @@ aide	aide	NOUN
 l'	le	DET
 incendie	incendie	NOUN
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 deux	deux	NUM
 voyageurs	voyageur	NOUN
 hâtèrent	hâter	VERB
@@ -557,7 +557,7 @@ signaler	signaler	VERB
 la	le	DET
 felouque	felouque	NOUN
 .	.	PUNCTsent
-Monck	Monck	PROPN
+Monck	Monck	VERB
 se	se	PRON
 arrêta	arrêter	VERB
 court	courir	VERB
@@ -595,7 +595,7 @@ de	de	ADP
 Lambert	Lambert	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ces	ce	DET
+ces	ce	DET
 mots	mot	NOUN
 renfermaient	renfermer	VERB
 tout	tout	ADV
@@ -654,7 +654,7 @@ plus	plus	ADV
 ferme	ferme	ADJ
 appui	appui	NOUN
 .	.	PUNCTsent
-À	à	ADP
+à	à	ADP
 ce	ce	DET
 doute	doute	NOUN
 qui	qui	PRON
@@ -674,7 +674,7 @@ ce	ce	DET
 raisonnement	raisonnement	NOUN
 :	:	PUNCTclause
 «	«	PUNCTsent
-Il	il	PRON
+il	il	PRON
 va	aller	VERB
 arriver	arriver	VERB
 de	de	ADP
@@ -754,7 +754,7 @@ représailles	représailles	NOUN
 .	.	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Tout	tout	PRON
+tout	tout	PRON
 en	en	ADP
 pensant	penser	VERB
 de	de	ADP
@@ -799,7 +799,7 @@ menaces	menace	NOUN
 des	un	ADP_DET
 soldats	soldat	NOUN
 .	.	PUNCTsent
-Monck	Monck	PROPN
+Monck	Monck	VERB
 se	se	PRON
 adressa	adresser	VERB
 à	à	ADP
@@ -810,7 +810,7 @@ marins	marin	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Que	que	SCONJ
+que	que	SCONJ
 se	se	PRON
 passe	passer	VERB
 il	il	PRON
@@ -821,7 +821,7 @@ il	il	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Monsieur	monsieur	NOUN
+monsieur	monsieur	NOUN
 ,	,	PUNCTclause
 répondit	répondre	VERB
 cet	ce	DET
@@ -839,7 +839,7 @@ l'	le	DET
 épais	épais	ADJ
 manteau	manteau	NOUN
 qui	qui	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 enveloppait	envelopper	VERB
 ,	,	PUNCTclause
 il y a	il y a	VERB
@@ -862,7 +862,7 @@ suspect	suspect	NOUN
 aux	au	ADP_DET
 soldats	soldat	NOUN
 .	.	PUNCTsent
-Alors	alors	ADV
+alors	alors	ADV
 ils	ils	PRON
 ont	avoir	AUX
 voulu	vouloir	VERB
@@ -870,7 +870,7 @@ pénétrer	pénétrer	VERB
 chez	chez	ADP
 lui	lui	PRON
 sous prétexte de	sous prétexte de	ADP
-le	le:PRON	PRON
+le	le_PRON	PRON
 conduire	conduire	VERB
 au	au	ADP_DET
 camp	camp	NOUN
@@ -916,8 +916,8 @@ la	le	DET
 chose	chose	NOUN
 ,	,	PUNCTclause
 le	le	DET
-Français	Français	NOUN
-l'	le:PRON	PRON
+français	français	NOUN
+l'	le_PRON	PRON
 a	avoir	AUX
 étendu	étendre	VERB
 à	à	ADP
@@ -933,7 +933,7 @@ ha	ha	INTJ
 ce	ce	PRON
 est	être	AUX
 un	un	DET
-Français	Français	NOUN
+français	français	NOUN
 ?	?	PUNCTsent
 dit	dire	VERB
 de	de	ADP
@@ -944,11 +944,11 @@ frottant	frotter	VERB
 les	le	DET
 mains	main	NOUN
 .	.	PUNCTsent
-Bon	bon	ADJ
+bon	bon	ADJ
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Comment	comment	ADV
+comment	comment	ADV
 ,	,	PUNCTclause
 bon	bon	ADJ
 ?	?	PUNCTsent
@@ -958,7 +958,7 @@ pêcheur	pêcheur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	non	ADV
+non	non	ADV
 ,	,	PUNCTclause
 je	je	PRON
 voulais	vouloir	VERB
@@ -974,7 +974,7 @@ fourché	fourcher	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Après	après	ADV
+après	après	ADV
 ,	,	PUNCTclause
 monsieur	monsieur	NOUN
 ?	?	PUNCTsent
@@ -1002,7 +1002,7 @@ maison	maison	NOUN
 ;	;	PUNCTclause
 mais	mais	CCONJ
 le	le	DET
-Français	Français	NOUN
+français	français	NOUN
 était	être	AUX
 à	à	ADP
 l'	le	DET
@@ -1047,7 +1047,7 @@ pistolet	pistolet	NOUN
 du	du	ADP_DET
 maître	maître	NOUN
 .	.	PUNCTsent
-Comptez	compter	VERB
+comptez	compter	VERB
 ,	,	PUNCTclause
 il y a	il y a	VERB
 sept	sept	NUM
@@ -1088,7 +1088,7 @@ canaille	canaille	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Un	un	DET
+un	un	DET
 instant	instant	NOUN
 ,	,	PUNCTclause
 monsieur	monsieur	NOUN
@@ -1100,11 +1100,11 @@ attendez	attendre	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Longtemps	longtemps	ADV
+longtemps	longtemps	ADV
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	non	ADV
+non	non	ADV
 ,	,	PUNCTclause
 le	le	DET
 temps	temps	NOUN
@@ -1114,7 +1114,7 @@ une	un	DET
 question	question	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Puis	puis	CCONJ
+puis	puis	CCONJ
 se	se	PRON
 retournant	retourner	VERB
 vers	vers	ADP
@@ -1123,7 +1123,7 @@ marin	marin	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mon	mon	DET
+mon	mon	DET
 ami	ami	NOUN
 ,	,	PUNCTclause
 demanda	demander	VERB
@@ -1155,7 +1155,7 @@ prie	prier	VERB
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 à	à	ADP
 qui	qui	PRON
 voulez	vouloir	VERB
@@ -1175,7 +1175,7 @@ Monck	Monck	PROPN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 y	y	PRON
 a	avoir	AUX
@@ -1206,7 +1206,7 @@ neige	neige	NOUN
 en	en	ADP
 avril	avril	NOUN
 .	.	PUNCTsent
-Tout	tout	PRON
+tout	tout	PRON
 vient	venir	VERB
 à	à	ADP
 Monck	Monck	PROPN
@@ -1215,7 +1215,7 @@ officiers	officier	NOUN
 et	et	CCONJ
 soldats	soldat	NOUN
 .	.	PUNCTsent
-Dans	dans	ADP
+dans	dans	ADP
 huit	huit	NUM
 jours	jour	NOUN
 ,	,	PUNCTclause
@@ -1227,7 +1227,7 @@ cinquante	cinquante	NUM
 hommes	homme	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 pêcheur	pêcheur	NOUN
 fut	être	AUX
 interrompu	interrompre	VERB
@@ -1261,7 +1261,7 @@ entreprenant	entreprendre	VERB
 des	un	ADP_DET
 agresseurs	agresseur	NOUN
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 colère	colère	NOUN
 des	un	ADP_DET
 soldats	soldat	NOUN
@@ -1269,7 +1269,7 @@ fut	être	AUX
 au	au	ADP_DET
 comble	comble	NOUN
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 feu	feu	NOUN
 montait	monter	VERB
 toujours	toujours	ADV
@@ -1299,7 +1299,7 @@ longtemps	longtemps	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mordioux	Mordioux	PROPN
+Mordioux	Mordioux	NOUN
 !	!	PUNCTsent
 dit	dire	VERB
 il	il	PRON
@@ -1345,7 +1345,7 @@ de	de	ADP
 l'	le	DET
 incendie	incendie	NOUN
 !	!	PUNCTsent
-Mordioux	Mordioux	PROPN
+Mordioux	Mordioux	ADJ
 !	!	PUNCTsent
 vous	vous	PRON
 ne	ne	ADV
@@ -1356,7 +1356,7 @@ homme	homme	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Patience	patience	NOUN
+patience	patience	NOUN
 ,	,	PUNCTclause
 monsieur	monsieur	NOUN
 ,	,	PUNCTclause
@@ -1369,7 +1369,7 @@ souriant	sourire	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Patience	patience	NOUN
+patience	patience	NOUN
 !	!	PUNCTsent
 patience	patience	NOUN
 !	!	PUNCTsent
@@ -1384,7 +1384,7 @@ rôti	rôtir	VERB
 n'est-ce pas	n'est-ce pas	ADV
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 de	de	ADP
 Artagnan	Artagnan	PROPN
 se	se	PRON
@@ -1392,7 +1392,7 @@ se	se	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Restez	rester	VERB
+restez	rester	VERB
 ,	,	PUNCTclause
 monsieur	monsieur	NOUN
 ,	,	PUNCTclause
@@ -1401,7 +1401,7 @@ impérieusement	impérieusement	ADV
 Monck	Monck	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 il	il	PRON
 se	se	PRON
 avança	avancer	VERB
@@ -1409,7 +1409,7 @@ vers	vers	ADP
 la	le	DET
 maison	maison	NOUN
 .	.	PUNCTsent
-Justement	justement	ADV
+justement	justement	ADV
 un	un	DET
 officier	officier	NOUN
 venait	venir	VERB
@@ -1425,7 +1425,7 @@ assiégé	assiégé	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-La	le	DET
+la	le	DET
 maison	maison	NOUN
 brûle	brûler	VERB
 ,	,	PUNCTclause
@@ -1437,7 +1437,7 @@ dans	dans	ADP
 une	un	DET
 heure	heure	NOUN
 !	!	PUNCTsent
-Il	il	PRON
+il	il	PRON
 est	être	AUX
 encore	encore	ADV
 temps	temps	NOUN
@@ -1464,7 +1464,7 @@ la	le	DET
 vie	vie	NOUN
 sauve	sauf	ADJ
 .	.	PUNCTsent
-Réponds	répondre	VERB
+réponds	répondre	VERB
 ,	,	PUNCTclause
 ou	ou	CCONJ
 par	par	ADP
@@ -1487,7 +1487,7 @@ pistolet	pistolet	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-On	on	PRON
+on	on	PRON
 est	être	AUX
 allé	aller	VERB
 chercher	chercher	VERB
@@ -1510,14 +1510,14 @@ maison	maison	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 veux	vouloir	VERB
 pour	pour	ADP
 répondre	répondre	VERB
 ,	,	PUNCTclause
 dit	dire	VERB
 le	le	DET
-Français	Français	NOUN
+français	français	NOUN
 ,	,	PUNCTclause
 que	que	SCONJ
 tout le monde	tout le monde	NOUN
@@ -1566,7 +1566,7 @@ ha	ha	INTJ
 canailles	canaille	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 l'	le	DET
 épée	épée	NOUN
 de	de	ADP
@@ -1577,7 +1577,7 @@ hors	hors	ADV
 du	du	ADP_DET
 fourreau	fourreau	NOUN
 .	.	PUNCTsent
-Monck	Monck	PROPN
+Monck	Monck	VERB
 l'	le	DET
 arrêta	arrêter	VERB
 et	et	CCONJ
@@ -1593,14 +1593,14 @@ sonore	sonore	ADJ
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Holà	holà	INTJ
+holà	holà	INTJ
 !	!	PUNCTsent
 que	que	SCONJ
 fait	faire	AUX
 on	on	PRON
 ici	ici	ADV
 ?	?	PUNCTsent
-Digby	Digby	PROPN
+Digby	Digby	DET
 ,	,	PUNCTclause
 pourquoi	pourquoi	ADV
 ce	ce	DET
@@ -1612,7 +1612,7 @@ cris	cri	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Le	le:PRON	PRON
+le	le_PRON	PRON
 général	général	ADJ
 !	!	PUNCTsent
 cria	crier	VERB
@@ -1625,7 +1625,7 @@ son	son	DET
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Le	le:PRON	PRON
+le	le_PRON	PRON
 général	général	ADJ
 !	!	PUNCTsent
 répétèrent	répéter	VERB
@@ -1652,7 +1652,7 @@ voix	voix	NOUN
 calme	calme	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Puis	puis	CCONJ
+puis	puis	CCONJ
 le	le	DET
 silence	silence	NOUN
 étant	être	AUX
@@ -1660,7 +1660,7 @@ rétabli	rétablir	VERB
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Voyons	voir	VERB
+voyons	voir	VERB
 ,	,	PUNCTclause
 dit	dire	VERB
 il	il	PRON
@@ -1672,7 +1672,7 @@ ce	ce	DET
 feu	feu	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Les	le	DET
+les	le	DET
 soldats	soldat	NOUN
 baissèrent	baisser	VERB
 la	le	DET
@@ -1680,7 +1680,7 @@ tête	tête	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Quoi	quoi	PRON
+quoi	quoi	PRON
 !	!	PUNCTsent
 je	je	PRON
 demande	demander	VERB
@@ -1694,7 +1694,7 @@ pas	pas	ADV
 dit	dire	VERB
 Monck	Monck	PROPN
 .	.	PUNCTsent
-Quoi	quoi	PRON
+quoi	quoi	PRON
 !	!	PUNCTsent
 je	je	PRON
 reproche	reprocher	VERB
@@ -1705,7 +1705,7 @@ ne	ne	ADV
 répare	réparer	VERB
 pas	pas	ADV
 !	!	PUNCTsent
-Ce	ce	DET
+ce	ce	DET
 feu	feu	NOUN
 brûle	brûler	VERB
 encore	encore	ADV
@@ -1714,7 +1714,7 @@ je	je	PRON
 crois	croire	VERB
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Aussitôt	aussitôt	ADV
+aussitôt	aussitôt	ADV
 les	le	DET
 vingt	vingt	NUM
 hommes	homme	NOUN
@@ -1748,7 +1748,7 @@ le	le	DET
 propager	propager	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 déjà	déjà	ADV
 ,	,	PUNCTclause
 avant	avant	ADP
@@ -1772,7 +1772,7 @@ criant	crier	VERB
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Athos	Athos	PROPN
+Athos	Athos	NOUN
 !	!	PUNCTsent
 ce	ce	PRON
 est	être	AUX
@@ -1783,7 +1783,7 @@ moi	moi	PRON
 de	de	ADP
 Artagnan	Artagnan	PROPN
 !	!	PUNCTsent
-Ne	ne	ADV
+ne	ne	ADV
 me	me	PRON
 tuez	tuer	VERB
 pas	pas	ADV
@@ -1792,7 +1792,7 @@ cher	cher	ADJ
 ami	ami	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 quelques	quelque	DET
 minutes	minute	NOUN
 après	après	ADP
@@ -1805,7 +1805,7 @@ ses	son	DET
 bras	bras	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pendant	pendant	ADP
+pendant	pendant	ADP
 ce	ce	DET
 temps	temps	NOUN
 ,	,	PUNCTclause
@@ -1839,7 +1839,7 @@ sur	sur	ADP
 le	le	DET
 seuil	seuil	NOUN
 .	.	PUNCTsent
-Seulement	seulement	ADV
+seulement	seulement	ADV
 ,	,	PUNCTclause
 à	à	ADP
 la	le	DET
@@ -1856,7 +1856,7 @@ exclamation	exclamation	NOUN
 de	de	ADP
 surprise	surprise	NOUN
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 feu	feu	NOUN
 éteint	éteindre	VERB
 ,	,	PUNCTclause
@@ -1872,7 +1872,7 @@ tête	tête	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Général	général	NOUN
+général	général	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 celui	celui	PRON
@@ -1880,7 +1880,7 @@ celui	celui	PRON
 excusez	excuser	VERB
 nous	nous	PRON
 .	.	PUNCTsent
-Ce	ce	PRON
+ce	ce	PRON
 que	que	PRON
 nous	nous	PRON
 avons	avoir	AUX
@@ -1891,8 +1891,8 @@ est	être	AUX
 par	par	ADP
 amour	amour	NOUN
 pour	pour	ADP
-Votre	votre	DET
-Honneur	Honneur	NOUN
+votre	votre	DET
+honneur	honneur	NOUN
 ,	,	PUNCTclause
 que	que	PRON
 l'on	on	PRON
@@ -1901,13 +1901,13 @@ perdu	perdre	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Vous	vous	PRON
+vous	vous	PRON
 êtes	être	AUX
 fous	fou	NOUN
 ,	,	PUNCTclause
 messieurs	monsieur	NOUN
 .	.	PUNCTsent
-Perdu	perdre	VERB
+perdu	perdre	VERB
 !	!	PUNCTsent
 est-ce que	est-ce que	ADV
 un	un	DET
@@ -1944,7 +1944,7 @@ un	un	DET
 bourgeois	bourgeois	NOUN
 de	de	ADP
 la	le	DET
-Cité	Cité	NOUN
+cité	cité	NOUN
 ?	?	PUNCTsent
 est-ce que	est-ce que	ADV
 un	un	DET
@@ -1968,7 +1968,7 @@ mort	mort	NOUN
 ,	,	PUNCTclause
 parce que	parce que	SCONJ
 on	on	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 soupçonne	soupçonner	VERB
 ?	?	PUNCTsent
 qu'est-ce que	qu'est-ce que	ADV
@@ -1978,7 +1978,7 @@ mot	mot	NOUN
 ,	,	PUNCTclause
 soupçonner	soupçonner	VERB
 ?	?	PUNCTsent
-Dieu	dieu	NOUN
+Dieu	Dieu	PROPN
 me	me	PRON
 damne	damner	VERB
 !	!	PUNCTsent
@@ -2002,7 +2002,7 @@ ici	ici	ADV
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Général	général	NOUN
+général	général	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 piteusement	piteusement	ADV
@@ -2027,7 +2027,7 @@ M.	M.	NOUN
 le	le	DET
 comte	comte	NOUN
 de	de	ADP
-La	le	DET
+la	le	DET
 Fère	Fère	PROPN
 à	à	ADP
 envoyer	envoyer	VERB
@@ -2042,7 +2042,7 @@ dit	dire	VERB
 Monck	Monck	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 il	il	PRON
 tendit	tendre	VERB
 la	le	DET
@@ -2061,7 +2061,7 @@ camp	camp	NOUN
 dit	dire	VERB
 Monck	Monck	PROPN
 .	.	PUNCTsent
-Monsieur	monsieur	NOUN
+monsieur	monsieur	NOUN
 Digby	Digby	PROPN
 ,	,	PUNCTclause
 vous	vous	PRON
@@ -2074,11 +2074,11 @@ mois	mois	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Général	général	NOUN
+général	général	NOUN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Cela	cela	PRON
+cela	cela	PRON
 vous	vous	PRON
 apprendra	apprendre	VERB
 ,	,	PUNCTclause
@@ -2105,7 +2105,7 @@ général	général	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Le	le	DET
+le	le	DET
 lieutenant	lieutenant	NOUN
 ne	ne	ADV
 a	avoir	AUX
@@ -2142,7 +2142,7 @@ gentilhomme	gentilhomme	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 a	avoir	AUX
 pas	pas	ADV
@@ -2173,7 +2173,7 @@ suivre	suivre	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 ai	avoir	AUX
 pas	pas	ADV
@@ -2196,13 +2196,13 @@ Monck	Monck	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 vous	vous	PRON
 avez	avoir	AUX
 bien	bien	ADV
 fait	faire	VERB
 .	.	PUNCTsent
-Au	au	ADP_DET
+au	au	ADP_DET
 camp	camp	NOUN
 ,	,	PUNCTclause
 vous	vous	PRON
@@ -2210,7 +2210,7 @@ dis	dire	VERB
 je	je	PRON
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Les	le	DET
+les	le	DET
 soldats	soldat	NOUN
 se	se	PRON
 éloignèrent	éloigner	VERB
@@ -2219,7 +2219,7 @@ baissée	baisser	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Maintenant	maintenant	ADV
+maintenant	maintenant	ADV
 que	que	SCONJ
 nous	nous	PRON
 sommes	être	AUX
@@ -2253,7 +2253,7 @@ felouque	felouque	NOUN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 vous	vous	PRON
 attendais	attendre	VERB
 ,	,	PUNCTclause
@@ -2262,8 +2262,8 @@ général	général	NOUN
 dit	dire	VERB
 Athos	Athos	PROPN
 ;	;	PUNCTclause
-Votre	Votre	PROPN
-Honneur	Honneur	PROPN
+votre	votre	UNKNOWN
+honneur	honneur	UNKNOWN
 ne	ne	ADV
 me	me	PRON
 avait	avoir	AUX
@@ -2276,7 +2276,7 @@ huit	huit	NUM
 jours	jour	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Un	un	DET
+un	un	DET
 regard	regard	NOUN
 éloquent	éloquent	ADJ
 de	de	ADP
@@ -2304,14 +2304,14 @@ pour	pour	ADP
 son	son	DET
 enlèvement	enlèvement	NOUN
 .	.	PUNCTsent
-Il	il	PRON
-le	le:PRON	PRON
+il	il	PRON
+le	le_PRON	PRON
 savait	savoir	VERB
 déjà	déjà	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Monsieur	monsieur	NOUN
+monsieur	monsieur	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 il	il	PRON
@@ -2324,7 +2324,7 @@ aviez	avoir	VERB
 parfaitement	parfaitement	ADV
 raison	raison	NOUN
 .	.	PUNCTsent
-Veuillez	vouloir	VERB
+veuillez	vouloir	VERB
 me	me	PRON
 laisser	laisser	VERB
 causer	causer	VERB
@@ -2335,7 +2335,7 @@ M.	M.	NOUN
 le	le	DET
 comte	comte	NOUN
 de	de	ADP
-La	le	DET
+la	le	DET
 Fère	Fère	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -2352,11 +2352,11 @@ bonjour	bonjour	NOUN
 Grimaud	Grimaud	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Monck	Monck	PROPN
+Monck	Monck	VERB
 pria	prier	VERB
 Athos	Athos	PROPN
 de	de	ADP
-le	le:PRON	PRON
+le	le_PRON	PRON
 conduire	conduire	VERB
 à	à	ADP
 la	le	DET
@@ -2365,7 +2365,7 @@ que	que	SCONJ
 il	il	PRON
 habitait	habiter	VERB
 .	.	PUNCTsent
-Cette	ce	DET
+cette	ce	DET
 chambre	chambre	NOUN
 était	être	AUX
 pleine	plein	ADJ
@@ -2376,7 +2376,7 @@ et	et	CCONJ
 de	de	ADP
 débris	débris	NOUN
 .	.	PUNCTsent
-Plus	plus	ADV
+plus	plus	ADV
 de	de	ADP
 cinquante	cinquante	NUM
 balles	balle	NOUN
@@ -2391,7 +2391,7 @@ mutilé	mutiler	VERB
 les	le	DET
 murailles	muraille	NOUN
 .	.	PUNCTsent
-On	on	PRON
+on	on	PRON
 y	y	PRON
 trouva	trouver	VERB
 une	un	DET
@@ -2408,7 +2408,7 @@ faut	falloir	VERB
 pour	pour	ADP
 écrire	écrire	VERB
 .	.	PUNCTsent
-Monck	Monck	PROPN
+Monck	Monck	VERB
 prit	prendre	VERB
 une	un	DET
 plume	plume	NOUN
@@ -2447,7 +2447,7 @@ disant	dire	VERB
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Monsieur	monsieur	NOUN
+monsieur	monsieur	NOUN
 ,	,	PUNCTclause
 portez	porter	VERB
 ,	,	PUNCTclause
@@ -2461,7 +2461,7 @@ lettre	lettre	NOUN
 au	au	ADP_DET
 roi	roi	NOUN
 Charles	Charles	PROPN
-		TOKEN
+II	II	NUM
 ,	,	PUNCTclause
 et	et	CCONJ
 partez	partir	VERB
@@ -2476,7 +2476,7 @@ ici	ici	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 les	le	DET
 barils	baril	NOUN
 ?	?	PUNCTsent
@@ -2485,7 +2485,7 @@ Athos	Athos	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Les	le:PRON	PRON
+les	le_PRON	PRON
 pêcheurs	pêcheur	NOUN
 qui	qui	PRON
 me	me	PRON
@@ -2499,7 +2499,7 @@ les	le	DET
 transporter	transporter	VERB
 à bord	à bord	ADV
 .	.	PUNCTsent
-Soyez	être	AUX
+soyez	être	AUX
 parti	partir	VERB
 si	si	SCONJ
 il	il	PRON
@@ -2511,7 +2511,7 @@ heure	heure	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Oui	oui	INTJ
+oui	oui	INTJ
 ,	,	PUNCTclause
 général	général	ADJ
 ,	,	PUNCTclause
@@ -2520,7 +2520,7 @@ Athos	Athos	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Monsieur	monsieur	NOUN
+monsieur	monsieur	NOUN
 de	de	ADP
 Artagnan	Artagnan	PROPN
 !	!	PUNCTsent
@@ -2538,7 +2538,7 @@ précipitamment	précipitamment	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Embrassez	embrasser	VERB
+embrassez	embrasser	VERB
 votre	votre	DET
 ami	ami	NOUN
 et	et	CCONJ
@@ -2556,7 +2556,7 @@ Hollande	Hollande	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-En	en	PRON
+en	en	PRON
 Hollande	Hollande	PROPN
 !	!	PUNCTsent
 se	se	PRON
@@ -2569,7 +2569,7 @@ moi	moi	PRON
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Vous	vous	PRON
+vous	vous	PRON
 êtes	être	AUX
 libre	libre	ADJ
 de	de	ADP
@@ -2588,7 +2588,7 @@ rester	rester	VERB
 dit	dire	VERB
 Monck	Monck	PROPN
 .	.	PUNCTsent
-Me	me	PRON
+me	me	PRON
 refusez	refuser	VERB
 vous	vous	PRON
 ?	?	PUNCTsent
@@ -2623,12 +2623,12 @@ dire	dire	VERB
 adieu	adieu	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Monck	Monck	PROPN
+Monck	Monck	VERB
 les	le	DET
 observait	observer	VERB
 tous deux	tous deux	PRON
 .	.	PUNCTsent
-Puis	puis	CCONJ
+puis	puis	CCONJ
 il	il	PRON
 surveilla	surveiller	VERB
 lui-même	lui-même	PRON
@@ -2662,12 +2662,12 @@ tout	tout	PRON
 ému	émouvoir	VERB
 ,	,	PUNCTclause
 il	il	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 emmena	emmener	VERB
 vers	vers	ADP
 Newcastle	Newcastle	PROPN
 .	.	PUNCTsent
-Tout	tout	PRON
+tout	tout	PRON
 en	en	ADP
 allant	aller	VERB
 au	au	ADP_DET
@@ -2683,7 +2683,7 @@ bas	bas	ADJ
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Allons	aller	VERB
+allons	aller	VERB
 ,	,	PUNCTclause
 allons	aller	VERB
 ,	,	PUNCTclause

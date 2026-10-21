@@ -5,16 +5,16 @@
 # isPartOf = La petite Fadette
 # title = XIX
 
-↵↵↵	↵↵↵	PUNCTstruct
-		TOKEN
+↵↵	↵↵	PUNCTstruct
+XIX	XIX	NUM
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Landry	Landry	PROPN
+Landry	Landry	NOUN
 écoutait	écouter	VERB
 toujours	toujours	ADV
 la	le	DET
 petite	petit	ADJ
-Fadette	Fadette	NOUN
+fadette	fadette	NOUN
 avec	avec	ADP
 une	un	DET
 grande	grand	ADJ
@@ -85,7 +85,7 @@ tout le monde	tout le monde	NOUN
 —	—	PUNCTclause
 cette fois ci	cette fois ci	PRON
 ,	,	PUNCTclause
-Fadette	Fadette	PROPN
+fadette	fadette	UNKNOWN
 ,	,	PUNCTclause
 dit	dire	VERB
 il	il	PRON
@@ -116,7 +116,7 @@ bien	bien	ADV
 dit	dire	VERB
 ,	,	PUNCTclause
 et	et	CCONJ
-personne	personne:PRON	PRON
+personne	personne_PRON	PRON
 ne	ne	ADV
 se	se	PRON
 douterait	douter	VERB
@@ -129,7 +129,7 @@ ton	ton	DET
 bon	bon	ADJ
 raisonnement	raisonnement	NOUN
 .	.	PUNCTsent
-Pourquoi	pourquoi	ADV
+pourquoi	pourquoi	ADV
 ne	ne	ADV
 te	te	PRON
 fais	faire	AUX
@@ -162,9 +162,9 @@ justice	justice	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 te	te	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 ai	avoir	AUX
 bien	bien	ADV
 dit	dire	VERB
@@ -174,7 +174,7 @@ Landry	Landry	PROPN
 reprit	reprendre	VERB
 elle	elle	PRON
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 ai	avoir	VERB
 pas	pas	ADV
@@ -190,11 +190,11 @@ point	point	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mais	mais	CCONJ
+mais	mais	CCONJ
 si	si	SCONJ
 tu	tu	PRON
 me	me	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 dis	dire	VERB
 à	à	ADP
 moi	moi	PRON
@@ -205,7 +205,7 @@ donc	donc	ADV
 que	que	ADV
 ...	...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Là-dessus	là-dessus	ADV
+là-dessus	là-dessus	ADV
 Landry	Landry	PROPN
 se	se	PRON
 arrêta	arrêter	VERB
@@ -248,7 +248,7 @@ pour	pour	ADP
 un	un	DET
 autre	autre	ADJ
 ?	?	PUNCTsent
-Je	je	PRON
+je	je	PRON
 croyais	croire	VERB
 pourtant	pourtant	ADV
 que	que	SCONJ
@@ -283,7 +283,7 @@ peu	peu	ADV
 répondit	répondre	VERB
 la	le	DET
 petite	petit	ADJ
-Fadette	Fadette	NOUN
+fadette	fadette	NOUN
 ;	;	PUNCTclause
 mais	mais	CCONJ
 si	si	SCONJ
@@ -307,14 +307,14 @@ pourquoi	pourquoi	ADV
 ,	,	PUNCTclause
 Landry	Landry	PROPN
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 te	te	PRON
 croyais	croire	VERB
 fier	fier	ADJ
 ,	,	PUNCTclause
 et	et	CCONJ
 tu	tu	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 es	être	AUX
 ;	;	PUNCTclause
 mais	mais	CCONJ
@@ -337,7 +337,7 @@ plus	plus	ADV
 de	de	ADP
 mérite	mérite	NOUN
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 te	te	PRON
 croyais	croire	VERB
 ingrat	ingrat	NOUN
@@ -425,7 +425,7 @@ fait	faire	VERB
 pas	pas	ADV
 défaut	défaut	NOUN
 .	.	PUNCTsent
-Tu	tu	PRON
+tu	tu	PRON
 me	me	PRON
 as	avoir	AUX
 fait	faire	VERB
@@ -439,7 +439,7 @@ fusses	être	VERB
 bien	bien	ADV
 humilié	humilier	VERB
 .	.	PUNCTsent
-Tu	tu	PRON
+tu	tu	PRON
 es	être	AUX
 même	même	ADJ
 venu	venir	VERB
@@ -477,7 +477,7 @@ plus	plus	ADV
 te	te	PRON
 tourmenter	tourmenter	VERB
 .	.	PUNCTsent
-Tu	tu	PRON
+tu	tu	PRON
 me	me	PRON
 as	avoir	AUX
 défendue	défendre	VERB
@@ -502,7 +502,7 @@ me	me	PRON
 auraient	avoir	AUX
 maltraitée	maltraiter	VERB
 .	.	PUNCTsent
-Enfin	enfin	ADV
+enfin	enfin	ADV
 ,	,	PUNCTclause
 ce	ce	DET
 soir	soir	NOUN
@@ -524,7 +524,7 @@ et	et	CCONJ
 me	me	PRON
 consoler	consoler	VERB
 .	.	PUNCTsent
-Ne	ne	ADV
+ne	ne	ADV
 crois	croire	VERB
 point	point	ADV
 ,	,	PUNCTclause
@@ -537,7 +537,7 @@ jamais	jamais	ADV
 ces	ce	DET
 choses	chose	NOUN
 .	.	PUNCTsent
-Tu	tu	PRON
+tu	tu	PRON
 auras	avoir	AUX
 toute	tout	ADJ
 ta	ton	DET
@@ -575,7 +575,7 @@ que	que	SCONJ
 ce	ce	DET
 soit	être	AUX
 .	.	PUNCTsent
-Ainsi	ainsi	ADV
+ainsi	ainsi	ADV
 ,	,	PUNCTclause
 pour	pour	ADP
 commencer	commencer	VERB
@@ -592,10 +592,10 @@ une	un	DET
 grosse	gros	ADJ
 peine	peine	NOUN
 .	.	PUNCTsent
-Oui	oui	INTJ
+oui	oui	INTJ
 ,	,	PUNCTclause
 je	je	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 sais	savoir	VERB
 ,	,	PUNCTclause
 Landry	Landry	PROPN
@@ -622,7 +622,7 @@ en	en	ADP
 doutais	douter	VERB
 point	point	ADV
 .	.	PUNCTsent
-Va	aller	VERB
+va	aller	VERB
 ,	,	PUNCTclause
 sois	être	AUX
 certain	certain	ADJ
@@ -660,7 +660,7 @@ elle	elle	PRON
 ,	,	PUNCTclause
 comme	comme	SCONJ
 je	je	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 ai	avoir	AUX
 fait	faire	VERB
 en	en	ADP
@@ -671,7 +671,7 @@ danser	danser	VERB
 avec	avec	ADP
 moi	moi	PRON
 .	.	PUNCTsent
-Cela	cela	PRON
+cela	cela	PRON
 me	me	PRON
 amusait	amuser	VERB
 ,	,	PUNCTclause
@@ -713,7 +713,7 @@ piqûre	piqûre	NOUN
 ton	ton	DET
 amour-propre	amour-propre	NOUN
 .	.	PUNCTsent
-Quand	quand	SCONJ
+quand	quand	SCONJ
 je	je	PRON
 ai	avoir	AUX
 peu à peu	peu à peu	ADV
@@ -780,7 +780,7 @@ larmes	larme	NOUN
 de	de	ADP
 repentance	repentance	NOUN
 .	.	PUNCTsent
-Voilà	voilà	ADP
+voilà	voilà	ADP
 pourquoi	pourquoi	ADV
 je	je	PRON
 pleurais	pleurer	VERB
@@ -825,7 +825,7 @@ es	être	AUX
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 ,	,	PUNCTclause
 en	en	ADP
 supposant	supposer	VERB
@@ -879,7 +879,7 @@ accord	accord	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Fie	fier	VERB
+fie	fier	VERB
 toi	toi	PRON
 à	à	ADP
 moi	moi	PRON
@@ -889,9 +889,9 @@ Landry	Landry	PROPN
 répondit	répondre	VERB
 la	le	DET
 petite	petit	ADJ
-Fadette	Fadette	NOUN
+fadette	fadette	NOUN
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 suis	suivre	VERB
 pas	pas	ADV
@@ -906,7 +906,7 @@ comme	comme	SCONJ
 il	il	PRON
 faut	falloir	VERB
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 Madelon	Madelon	PROPN
 saura	savoir	VERB
 que	que	SCONJ
@@ -918,7 +918,7 @@ venu	venir	VERB
 de	de	ADP
 moi	moi	PRON
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 me	me	PRON
 confesserai	confesser	VERB
 à	à	ADP
@@ -931,7 +931,7 @@ blanc	blanc	NOUN
 comme	comme	ADP
 neige	neige	NOUN
 .	.	PUNCTsent
-Si	si	SCONJ
+si	si	SCONJ
 elle	elle	PRON
 ne	ne	ADV
 te	te	PRON
@@ -954,7 +954,7 @@ et	et	CCONJ
 ...	...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 que	que	SCONJ
 je	je	PRON
 ne	ne	ADV
@@ -982,8 +982,8 @@ une	un	DET
 peine	peine	NOUN
 inutile	inutile	ADJ
 .	.	PUNCTsent
-Ne	ne	ADV
-le	le:PRON	PRON
+ne	ne	ADV
+le	le_PRON	PRON
 fais	faire	VERB
 donc	donc	ADV
 pas	pas	ADV
@@ -1008,7 +1008,7 @@ guéri	guérir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Ces	ce	DET
+ces	ce	DET
 peines	peine	NOUN
 ne	ne	ADV
 guérissent	guérir	VERB
@@ -1019,7 +1019,7 @@ vite	vite	ADV
 répondit	répondre	VERB
 la	le	DET
 petite	petit	ADJ
-Fadette	Fadette	NOUN
+fadette	fadette	NOUN
 ;	;	PUNCTclause
 et	et	CCONJ
 puis	puis	CCONJ
@@ -1028,7 +1028,7 @@ se	se	PRON
 ravisant	raviser	VERB
 :	:	PUNCTclause
 —	—	PUNCTclause
-Du	Du	PROPN
+du	du	UNKNOWN
 moins	moins	ADV
 à	à	ADP
 ce	ce	PRON
@@ -1050,7 +1050,7 @@ parler	parler	VERB
 ,	,	PUNCTclause
 Landry	Landry	PROPN
 .	.	PUNCTsent
-Quand	quand	SCONJ
+quand	quand	SCONJ
 tu	tu	PRON
 auras	avoir	AUX
 dormi	dormir	VERB
@@ -1075,7 +1075,7 @@ belle-fille	belle-fille	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Peut-être	peut-être	ADV
+peut-être	peut-être	ADV
 bien	bien	ADV
 ,	,	PUNCTclause
 dit	dire	VERB
@@ -1106,7 +1106,7 @@ y	y	PRON
 pense	penser	VERB
 point	point	ADV
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 me	me	PRON
 imagine	imaginer	VERB
 que	que	SCONJ
@@ -1160,7 +1160,7 @@ drôle	drôle	ADJ
 dit	dire	VERB
 la	le	DET
 petite	petit	ADJ
-Fadette	Fadette	NOUN
+fadette	fadette	NOUN
 en	en	ADP
 soupirant	soupirant	NOUN
 ,	,	PUNCTclause
@@ -1180,7 +1180,7 @@ garçons	garçon	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Dame	dame	NOUN
+dame	dame	NOUN
 !	!	PUNCTsent
 vous	vous	PRON
 autres	autre	PRON
@@ -1210,7 +1210,7 @@ le	le	DET
 premier	premier	ADJ
 venu	venir	VERB
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 nous	nous	PRON
 parlons	parler	VERB
 là	là	ADV
@@ -1230,7 +1230,7 @@ toi	toi	PRON
 ,	,	PUNCTclause
 ma	mon	DET
 petite	petit	ADJ
-Fadette	Fadette	NOUN
+fadette	fadette	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
 vas	aller	VERB
@@ -1240,7 +1240,7 @@ gaussant	gausser	VERB
 des	un	DET
 amoureux	amoureux	NOUN
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 crois	croire	VERB
 bien	bien	ADV
 que	que	SCONJ
@@ -1263,8 +1263,8 @@ avec	avec	ADP
 la	le	DET
 Madelon	Madelon	PROPN
 .	.	PUNCTsent
-Ne	ne	ADV
-le	le:PRON	PRON
+ne	ne	ADV
+le	le_PRON	PRON
 fais	faire	VERB
 pas	pas	ADV
 ,	,	PUNCTclause
@@ -1288,7 +1288,7 @@ elle	elle	PRON
 se	se	PRON
 tromperait	tromper	VERB
 .	.	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 puis	puis	CCONJ
 ça	ça	PRON
 la	le	DET
@@ -1361,7 +1361,7 @@ par	par	ADP
 mes	mon	DET
 paroles	parole	NOUN
 .	.	PUNCTsent
-Par	par	ADP
+par	par	ADP
 ainsi	ainsi	ADV
 ,	,	PUNCTclause
 laissons	laisser	VERB
@@ -1398,7 +1398,7 @@ point	point	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 sais	savoir	VERB
 mieux	mieux	ADV
 ce	ce	PRON
@@ -1414,9 +1414,9 @@ Landry	Landry	PROPN
 reprit	reprendre	VERB
 la	le	DET
 petite	petit	ADJ
-Fadette	Fadette	NOUN
+fadette	fadette	NOUN
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 te	te	PRON
 crois	croire	VERB
 quand	quand	SCONJ
@@ -1449,7 +1449,7 @@ bien	bien	ADV
 simple	simple	ADJ
 pour	pour	ADP
 ne	ne	ADV
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avoir	avoir	AUX
 pas	pas	ADV
 connue	connaître	VERB
@@ -1460,7 +1460,7 @@ yeux	œil	NOUN
 aujourd'hui	aujourd'hui	ADV
 surtout	surtout	ADV
 .	.	PUNCTsent
-Puisque	puisque	SCONJ
+puisque	puisque	SCONJ
 je	je	PRON
 ai	avoir	AUX
 été	être	AUX
@@ -1504,7 +1504,7 @@ le	le	DET
 faire	faire	AUX
 et	et	CCONJ
 je	je	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 ferai	faire	VERB
 si	si	SCONJ
 finement	finement	ADV
@@ -1526,7 +1526,7 @@ y	y	PRON
 avoir	avoir	VERB
 provoquée	provoquer	VERB
 .	.	PUNCTsent
-Fie	fier	VERB
+fie	fier	VERB
 toi	toi	PRON
 ,	,	PUNCTclause
 Landry	Landry	PROPN
@@ -1534,7 +1534,7 @@ Landry	Landry	PROPN
 à	à	ADP
 la	le	DET
 petite	petit	ADJ
-Fadette	Fadette	NOUN
+fadette	fadette	NOUN
 ,	,	PUNCTclause
 au	au	ADP_DET
 pauvre	pauvre	NOUN
@@ -1571,7 +1571,7 @@ un	un	DET
 grand	grand	ADJ
 bien	bien	NOUN
 .	.	PUNCTsent
-Tu	tu	PRON
+tu	tu	PRON
 connaîtras	connaître	VERB
 que	que	SCONJ
 si	si	SCONJ
@@ -1614,7 +1614,7 @@ rancune	rancune	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Que	que	SCONJ
+que	que	SCONJ
 tu	tu	PRON
 sois	être	AUX
 belle	beau	ADJ
@@ -1659,13 +1659,13 @@ mauvaise	mauvais	ADJ
 en	en	ADP
 comparaison	comparaison	NOUN
 .	.	PUNCTsent
-Tu	tu	PRON
+tu	tu	PRON
 as	avoir	AUX
 beaucoup de	beaucoup de	DET
 bonté	bonté	NOUN
 ,	,	PUNCTclause
 je	je	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 connais	connaître	VERB
 à présent	à présent	ADV
 ;	;	PUNCTclause
@@ -1713,13 +1713,13 @@ malhonnêtement	malhonnêtement	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Comment	comment	ADV
+comment	comment	ADV
 donc	donc	CCONJ
 ça	ça	PRON
 ,	,	PUNCTclause
 Landry	Landry	PROPN
 ?	?	PUNCTsent
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 sais	savoir	VERB
 pas	pas	ADV
@@ -1762,7 +1762,7 @@ est	être	AUX
 la	le	DET
 coutume	coutume	NOUN
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 te	te	PRON
 ai	avoir	AUX
 traitée	traiter	VERB
@@ -1806,7 +1806,7 @@ an	an	NOUN
 de	de	ADP
 différence	différence	NOUN
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 te	te	PRON
 ai	avoir	AUX
 donc	donc	ADV
@@ -1833,7 +1833,7 @@ aperçue	apercevoir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 y	y	PRON
 ai	avoir	AUX
@@ -1844,7 +1844,7 @@ pensé	penser	VERB
 dit	dire	VERB
 la	le	DET
 petite	petit	ADJ
-Fadette	Fadette	NOUN
+fadette	fadette	NOUN
 ;	;	PUNCTclause
 et	et	CCONJ
 elle	elle	PRON
@@ -1863,11 +1863,11 @@ elle	elle	PRON
 ne	ne	ADV
 voulait	vouloir	VERB
 pas	pas	ADV
-le	le:PRON	PRON
+le	le_PRON	PRON
 faire	faire	AUX
 paraître	paraître	VERB
 .	.	PUNCTsent
-Tiens	tien	NOUN
+tiens	tien	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 elle	elle	PRON
@@ -1918,8 +1918,8 @@ ciel	ciel	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
-l'	le:PRON	PRON
+je	je	PRON
+l'	le_PRON	PRON
 entends	entendre	VERB
 bien	bien	ADV
 aussi	aussi	ADV
@@ -1941,7 +1941,7 @@ te	te	PRON
 dise	dire	VERB
 adieu	adieu	NOUN
 ,	,	PUNCTclause
-Fadette	Fadette	PROPN
+fadette	fadette	UNKNOWN
 ,	,	PUNCTclause
 est-ce que	est-ce que	ADV
 tu	tu	PRON
@@ -1953,7 +1953,7 @@ pardonner	pardonner	VERB
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mais	mais	CCONJ
+mais	mais	CCONJ
 je	je	PRON
 ne	ne	ADV
 te	te	PRON
@@ -1976,7 +1976,7 @@ faire	faire	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Si	si	SCONJ
+si	si	SCONJ
 fait	fait	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
@@ -2025,7 +2025,7 @@ paraissait	paraître	VERB
 dure	dur	ADJ
 auprès	auprès	ADV
 .	.	PUNCTsent
-Si	si	SCONJ
+si	si	SCONJ
 fait	faire	VERB
 ,	,	PUNCTclause
 tu	tu	PRON
@@ -2058,9 +2058,9 @@ le	le	DET
 jour	jour	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-La	le	DET
+la	le	DET
 petite	petit	ADJ
-Fadette	Fadette	NOUN
+fadette	fadette	NOUN
 trembla	trembler	VERB
 un	un	DET
 peu	peu	ADV
@@ -2075,7 +2075,7 @@ bonne humeur	bonne humeur	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Tu	tu	PRON
+tu	tu	PRON
 veux	vouloir	VERB
 ,	,	PUNCTclause
 Landry	Landry	PROPN
@@ -2122,12 +2122,12 @@ vertu	vertu	NOUN
 que	que	SCONJ
 de	de	ADP
 vouloir	vouloir	VERB
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 embrasser	embrasser	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Tiens	tien	NOUN
+tiens	tien	NOUN
 !	!	PUNCTsent
 ne	ne	ADV
 dis	dire	VERB
@@ -2179,7 +2179,7 @@ de	de	ADP
 moi	moi	PRON
 ...	...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 quand	quand	SCONJ
 il	il	PRON
 eut	avoir	AUX
@@ -2195,7 +2195,7 @@ de	de	ADP
 embrasser	embrasser	VERB
 la	le	DET
 petite	petit	ADJ
-Fadette	Fadette	NOUN
+fadette	fadette	NOUN
 ,	,	PUNCTclause
 que	que	SCONJ
 il	il	PRON
@@ -2249,7 +2249,7 @@ comme	comme	ADP
 en	en	ADP
 cachette	cachette	NOUN
 .	.	PUNCTsent
-Si	si	SCONJ
+si	si	SCONJ
 je	je	PRON
 étais	être	AUX
 coquette	coquet	NOUN
@@ -2291,7 +2291,7 @@ de	de	ADP
 ta	ton	DET
 fantaisie	fantaisie	NOUN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 comme	comme	SCONJ
 je	je	PRON
@@ -2309,7 +2309,7 @@ je	je	PRON
 te	te	PRON
 dis	dire	VERB
 :	:	PUNCTclause
-Serre	Serre	PROPN
+serre	serrer	UNKNOWN
 moi	moi	PRON
 la	le	DET
 main	main	NOUN
@@ -2346,7 +2346,7 @@ d'autre	d'autre	PUNCT
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Oui	oui	INTJ
+oui	oui	INTJ
 ,	,	PUNCTclause
 dit	dire	VERB
 Landry	Landry	PROPN
@@ -2363,9 +2363,9 @@ cœur	cœur	NOUN
 entends	entendre	VERB
 tu	tu	PRON
 ,	,	PUNCTclause
-Fadette	Fadette	PROPN
+fadette	fadette	UNKNOWN
 ?	?	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 la	le	DET
 plus	plus	ADV
 honnête	honnête	ADJ
@@ -2388,7 +2388,7 @@ on	on	PRON
 se	se	PRON
 embrasse	embrasser	VERB
 .	.	PUNCTsent
-Si	si	SCONJ
+si	si	SCONJ
 tu	tu	PRON
 me	me	PRON
 dénies	dénier	VERB
@@ -2406,7 +2406,7 @@ contre	contre	ADP
 moi	moi	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 il	il	PRON
 tenta	tenter	VERB
 de	de	ADP
@@ -2439,7 +2439,7 @@ disant	dire	VERB
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Laisse	laisser	VERB
+laisse	laisser	VERB
 moi	moi	PRON
 ,	,	PUNCTclause
 Landry	Landry	PROPN
@@ -2451,7 +2451,7 @@ beaucoup de	beaucoup de	DET
 peine	peine	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Landry	Landry	PROPN
+Landry	Landry	NOUN
 se	se	PRON
 arrêta	arrêter	VERB
 tout	tout	ADV
@@ -2478,7 +2478,7 @@ dépit	dépit	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 vois	voir	VERB
 bien	bien	ADV
 ,	,	PUNCTclause
@@ -2507,7 +2507,7 @@ tu	tu	PRON
 veuilles	vouloir	VERB
 avoir	avoir	AUX
 .	.	PUNCTsent
-Tu	tu	PRON
+tu	tu	PRON
 en	en	ADP
 as	as	NOUN
 une	un	DET
@@ -2522,7 +2522,7 @@ embrasser	embrasser	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	non	ADV
+non	non	ADV
 ,	,	PUNCTclause
 Landry	Landry	PROPN
 ,	,	PUNCTclause
@@ -2582,7 +2582,7 @@ pas	pas	ADV
 ,	,	PUNCTclause
 à présent	à présent	ADV
 ?	?	PUNCTsent
-Tiens	tien	NOUN
+tiens	tien	NOUN
 ,	,	PUNCTclause
 viens	venir	VERB
 un	un	DET
@@ -2621,10 +2621,10 @@ voilà	voilà	ADP
 tout	tout	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 puis	puis	CCONJ
 il	il	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 embrassa	embrasser	VERB
 ,	,	PUNCTclause
 d'abord	d'abord	ADV
@@ -2656,9 +2656,9 @@ repoussant	repoussant	ADJ
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Assez	assez	ADV
+assez	assez	ADV
 !	!	PUNCTsent
-Landry	Landry	PROPN
+Landry	Landry	NOUN
 ,	,	PUNCTclause
 assez	assez	ADV
 !	!	PUNCTsent
@@ -2677,7 +2677,7 @@ penses	penser	VERB
 à	à	ADP
 Madelon	Madelon	PROPN
 .	.	PUNCTsent
-Apaise	apaiser	VERB
+apaise	apaiser	VERB
 toi	toi	PRON
 ,	,	PUNCTclause
 je	je	PRON
@@ -2688,7 +2688,7 @@ demain	demain	ADV
 et	et	CCONJ
 demain	demain	ADV
 tu	tu	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 embrasseras	embrasser	VERB
 avec	avec	ADP
 plus	plus	ADV
@@ -2703,7 +2703,7 @@ en	en	PRON
 donner	donner	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Là-dessus	là-dessus	ADV
+là-dessus	là-dessus	ADV
 ,	,	PUNCTclause
 elle	elle	PRON
 sortit	sortir	VERB
@@ -2722,7 +2722,7 @@ pied	pied	NOUN
 léger	léger	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Landry	Landry	PROPN
+Landry	Landry	PRON
 était	être	AUX
 comme	comme	ADP
 affolé	affoler	VERB
@@ -2736,7 +2736,7 @@ courir	courir	VERB
 après	après	ADP
 elle	elle	PRON
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 se	se	PRON
 y	y	PRON
 reprit	reprendre	VERB
@@ -2751,7 +2751,7 @@ du côté de	du côté de	ADP
 la	le	DET
 rivière	rivière	NOUN
 .	.	PUNCTsent
-Enfin	enfin	ADV
+enfin	enfin	ADV
 ,	,	PUNCTclause
 sentant	sentir	VERB
 que	que	SCONJ
@@ -2777,7 +2777,7 @@ la	le	DET
 Priche	Priche	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 lendemain	lendemain	NOUN
 ,	,	PUNCTclause
 quand	quand	SCONJ
@@ -2821,7 +2821,7 @@ Chaumois	Chaumois	PROPN
 avec	avec	ADP
 la	le	DET
 petite	petit	ADJ
-Fadette	Fadette	NOUN
+fadette	fadette	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 qui	qui	PRON
@@ -2832,7 +2832,7 @@ comme	comme	ADP
 un	un	DET
 instant	instant	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 avait	avoir	VERB
 encore	encore	ADV
 la	le	DET
@@ -2860,7 +2860,7 @@ aurait	avoir	AUX
 dû	devoir	VERB
 passer	passer	VERB
 .	.	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 il	il	PRON
 se	se	PRON
 sentait	sentir	VERB
@@ -2894,12 +2894,12 @@ tenue	tenue	NOUN
 ,	,	PUNCTclause
 comme	comme	ADP
 il	il	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avait	avoir	VERB
 toujours	toujours	ADV
 connue	connaître	VERB
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 se	se	PRON
 imaginait	imaginer	VERB
 par	par	ADP
@@ -2965,7 +2965,7 @@ terre	terre	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Il	il	PRON
+il	il	PRON
 faut	falloir	VERB
 que	que	SCONJ
 elle	elle	PRON
@@ -2973,7 +2973,7 @@ soit	être	AUX
 charmeuse	charmeur	ADJ
 comme	comme	SCONJ
 on	on	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 dit	dire	VERB
 ,	,	PUNCTclause
 bien	bien	ADV
@@ -3086,7 +3086,7 @@ par	par	ADP
 la	le	DET
 jalousie	jalousie	NOUN
 .	.	PUNCTsent
-Car	car	CCONJ
+car	car	CCONJ
 l'	le	DET
 attache	attache	NOUN
 que	que	PRON
@@ -3119,7 +3119,7 @@ et	et	CCONJ
 enflambé	enflambé	VERB
 comme	comme	SCONJ
 je	je	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 ai	avoir	AUX
 été	être	AUX
 pour	pour	ADP
@@ -3127,7 +3127,7 @@ un	un	DET
 moment	moment	NOUN
 à côté de	à côté de	ADP
 cette	ce	DET
-Fadette	Fadette	PROPN
+fadette	fadette	UNKNOWN
 ,	,	PUNCTclause
 je	je	PRON
 en	en	PRON
@@ -3145,7 +3145,7 @@ le	le	DET
 monde	monde	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 Landry	Landry	PROPN
 se	se	PRON
 sentait	sentir	VERB
@@ -3160,7 +3160,7 @@ et	et	CCONJ
 de	de	ADP
 impatience	impatience	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 se	se	PRON
 asseyait	asseoir	VERB
 sur	sur	ADP
@@ -3190,7 +3190,7 @@ la	le	DET
 santé	santé	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 quand	quand	SCONJ
 le	le	DET
@@ -3225,7 +3225,7 @@ grelet	grelet	ADJ
 ,	,	PUNCTclause
 et	et	CCONJ
 ils	ils	PRON
-la	le:PRON	PRON
+la	le_PRON	PRON
 tirent	tirer	VERB
 si	si	ADV
 laide	laid	ADJ
@@ -3276,7 +3276,7 @@ faire	faire	AUX
 connaître	connaître	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 se	se	PRON
 fâcha	fâcher	VERB
@@ -3304,7 +3304,7 @@ dans	dans	ADP
 leurs	leur	DET
 taquineries	taquinerie	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 eut	avoir	VERB
 même	même	ADV
 le	le	DET
@@ -3315,7 +3315,7 @@ dire	dire	NOUN
 que	que	SCONJ
 la	le	DET
 petite	petit	ADJ
-Fadette	Fadette	NOUN
+fadette	fadette	NOUN
 ne	ne	ADV
 était	être	AUX
 pas	pas	ADV
@@ -3342,15 +3342,15 @@ de	de	ADP
 grands	grand	ADJ
 services	service	NOUN
 .	.	PUNCTsent
-Là-dessus	là-dessus	ADV
+là-dessus	là-dessus	ADV
 on	on	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 railla	railler	VERB
 encore	encore	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Sa	son	DET
+sa	son	DET
 mère	mère	NOUN
 ,	,	PUNCTclause
 je	je	PRON
@@ -3407,7 +3407,7 @@ secret	secret	NOUN
 pour	pour	ADP
 guérir	guérir	VERB
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 elle	elle	PRON
 a	avoir	AUX
 celui	celui	PRON
@@ -3425,7 +3425,7 @@ paraît	paraître	VERB
 puisque	puisque	SCONJ
 tu	tu	PRON
 ne	ne	ADV
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 as	avoir	VERB
 guère	guère	ADV
 quittée	quitter	VERB
@@ -3461,16 +3461,16 @@ le	le	DET
 follet	follet	NOUN
 de	de	ADP
 la	le	DET
-Fadette	Fadette	PROPN
+fadette	fadette	UNKNOWN
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 diable	diable	NOUN
 se	se	PRON
 mettrait	mettre	VERB
 après	après	ADP
 toi	toi	PRON
 .	.	PUNCTsent
-Georgeon	Georgeon	PROPN
+Georgeon	Georgeon	NOUN
 viendrait	venir	VERB
 tirer	tirer	VERB
 nos	nos	DET
@@ -3485,7 +3485,7 @@ de	de	ADP
 notre	notre	DET
 chevaline	chevalin	ADJ
 .	.	PUNCTsent
-Nous	nous	PRON
+nous	nous	PRON
 serions	être	AUX
 obligés	obliger	VERB
 de	de	ADP
@@ -3495,7 +3495,7 @@ exorciser	exorciser	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 crois	croire	VERB
 bien	bien	ADV
 ,	,	PUNCTclause
@@ -3526,7 +3526,7 @@ sorciers	sorcier	NOUN
 et	et	CCONJ
 la	le	DET
 petite	petit	ADJ
-Fadette	Fadette	NOUN
+fadette	fadette	NOUN
 se	se	PRON
 en	en	ADP
 est	être	AUX

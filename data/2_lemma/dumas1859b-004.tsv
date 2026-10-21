@@ -5,14 +5,14 @@
 # isPartOf = Les Mohicans de Paris
 # title = IV. Jean Taureau.
 
-↵↵↵	↵↵↵	PUNCTstruct
-		TOKEN
+↵↵	↵↵	PUNCTstruct
+IV	IV	NOUN
 .	.	PUNCTsent
-Jean	jean	NOUN
-Taureau	Taureau	PROPN
+Jean	Jean	PROPN
+taureau	taureau	UNKNOWN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Nous	nous	PRON
+nous	nous	PRON
 avons	avoir	AUX
 dit	dire	VERB
 que	que	SCONJ
@@ -36,7 +36,7 @@ du	du	ADP_DET
 nom	nom	NOUN
 de	de	ADP
 Jean	Jean	PROPN
-Taureau	Taureau	PROPN
+taureau	taureau	UNKNOWN
 —	—	PUNCTclause
 lequel	lequel	PRON
 nom	nom	NOUN
@@ -74,7 +74,7 @@ se	se	PRON
 présenter	présenter	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Nous	nous	PRON
+nous	nous	PRON
 espérons	espérer	VERB
 que	que	SCONJ
 le	le	DET
@@ -147,7 +147,7 @@ un	un	DET
 air	air	NOUN
 pur	pur	ADJ
 .	.	PUNCTsent
-Selon	selon	ADP
+selon	selon	ADP
 toute	toute	DET
 probabilité	probabilité	NOUN
 ,	,	PUNCTclause
@@ -212,7 +212,7 @@ l'	le	DET
 air	air	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pétrus	Pétrus	PROPN
+Pétrus	Pétrus	VERB
 y	y	PRON
 arriva	arriver	VERB
 le	le	DET
@@ -237,7 +237,7 @@ la	le	DET
 soutenir	soutenir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-La	le	DET
+la	le	DET
 fenêtre	fenêtre	NOUN
 était	être	AUX
 ce	ce	PRON
@@ -250,8 +250,8 @@ fenêtre	fenêtre	NOUN
 guillotine	guillotine	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Jean	jean	NOUN
-Taureau	Taureau	PROPN
+Jean	Jean	PROPN
+taureau	taureau	UNKNOWN
 avait	avoir	AUX
 trouvé	trouver	VERB
 l'	le	DET
@@ -261,7 +261,7 @@ il	il	PRON
 cherchait	chercher	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 se	se	PRON
 leva	lever	VERB
 de	de	ADP
@@ -280,7 +280,7 @@ table	table	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Ces	ce	DET
+ces	ce	DET
 messieurs	monsieur	NOUN
 ouvrent	ouvrir	VERB
 la	le	DET
@@ -311,7 +311,7 @@ Pétrus	Pétrus	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Comme	comme	SCONJ
+comme	comme	SCONJ
 vous	vous	PRON
 voyez	voir	VERB
 ,	,	PUNCTclause
@@ -323,7 +323,7 @@ celui	celui	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 suis	être	AUX
 pas	pas	ADV
@@ -332,7 +332,7 @@ ami	ami	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 Jean	Jean	PROPN
-Taureau	Taureau	PROPN
+taureau	taureau	UNKNOWN
 ;	;	PUNCTclause
 fermez	fermer	VERB
 la	le	DET
@@ -340,9 +340,9 @@ fenêtre	fenêtre	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Monsieur	monsieur	NOUN
+monsieur	monsieur	NOUN
 Jean	Jean	PROPN
-Taureau	Taureau	PROPN
+taureau	taureau	UNKNOWN
 ,	,	PUNCTclause
 reprit	reprendre	VERB
 Pétrus	Pétrus	PROPN
@@ -386,7 +386,7 @@ respirable	respirable	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Que	que	PRON
+que	que	PRON
 chante	chanter	VERB
 il	il	PRON
 donc	donc	ADV
@@ -399,12 +399,12 @@ ses	son	DET
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Il	il	PRON
+il	il	PRON
 dit	dire	VERB
 ,	,	PUNCTclause
 monsieur	monsieur	NOUN
 Jean	Jean	PROPN
-Taureau	Taureau	PROPN
+taureau	taureau	UNKNOWN
 ,	,	PUNCTclause
 répondit	répondre	VERB
 Ludovic	Ludovic	PROPN
@@ -415,7 +415,7 @@ de	de	ADP
 politesse	politesse	NOUN
 qui	qui	PRON
 ne	ne	ADV
-le	le:PRON	PRON
+le	le_PRON	PRON
 cédait	céder	VERB
 en	en	ADP
 rien	rien	PRON
@@ -489,11 +489,11 @@ moins	moins	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Dis	dire	VERB
+dis	dire	VERB
 donc	donc	ADV
 ,	,	PUNCTclause
 Jean	Jean	PROPN
-Taureau	Taureau	PROPN
+taureau	taureau	UNKNOWN
 ,	,	PUNCTclause
 interrompit	interrompre	VERB
 à	à	ADP
@@ -516,7 +516,7 @@ latin	latin	ADJ
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Bon	bon	ADJ
+bon	bon	ADJ
 !	!	PUNCTsent
 alors	alors	ADV
 ,	,	PUNCTclause
@@ -530,7 +530,7 @@ français	français	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 si	si	SCONJ
 il	il	PRON
 ne	ne	ADV
@@ -539,15 +539,15 @@ pas	pas	ADV
 ?…	?…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-On	on	PRON
+on	on	PRON
 bûchera	bûcher	VERB
 ,	,	PUNCTclause
 alors	alors	ADV
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 Jean	Jean	PROPN
-Taureau	Taureau	PROPN
+taureau	taureau	UNKNOWN
 montra	montrer	VERB
 deux	deux	NUM
 poings	poing	NOUN
@@ -562,7 +562,7 @@ un	un	DET
 enfant	enfant	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Puis	puis	CCONJ
+puis	puis	CCONJ
 ,	,	PUNCTclause
 de	de	ADP
 une	un	DET
@@ -590,7 +590,7 @@ opposition	opposition	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Allons	aller	VERB
+allons	aller	VERB
 ,	,	PUNCTclause
 dit	dire	VERB
 il	il	PRON
@@ -615,7 +615,7 @@ avis	avis	NOUN
 ,	,	PUNCTclause
 maître	maître	NOUN
 Jean	Jean	PROPN
-Taureau	Taureau	PROPN
+taureau	taureau	UNKNOWN
 ,	,	PUNCTclause
 dit	dire	VERB
 tranquillement	tranquillement	ADV
@@ -639,7 +639,7 @@ les miens	les miens	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Comment	comment	ADV
+comment	comment	ADV
 ,	,	PUNCTclause
 ce	ce	DET
 ne	ne	ADV
@@ -657,7 +657,7 @@ toi	toi	PRON
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Pourquoi	pourquoi	ADV
+pourquoi	pourquoi	ADV
 donc	donc	ADV
 un	un	DET
 homme	homme	NOUN
@@ -678,14 +678,14 @@ un	un	DET
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Dis	dire	VERB
+dis	dire	VERB
 donc	donc	ADV
 ,	,	PUNCTclause
-Croc-en-Jambe	Croc-en-Jambe	PROPN
+croc-en-jambe	croc-en-jambe	UNKNOWN
 ,	,	PUNCTclause
 fit	faire	AUX
 Jean	Jean	PROPN
-Taureau	Taureau	PROPN
+taureau	taureau	UNKNOWN
 en	en	ADP
 fronçant	froncer	VERB
 le	le	DET
@@ -747,7 +747,7 @@ semble	sembler	VERB
 aussi	aussi	ADV
 ,	,	PUNCTclause
 répondit	répondre	VERB
-Croc-en-Jambe	Croc-en-Jambe	PROPN
+croc-en-jambe	croc-en-jambe	UNKNOWN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
@@ -784,7 +784,7 @@ ensuite	ensuite	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Bon	bon	ADJ
+bon	bon	ADJ
 !	!	PUNCTsent
 voilà	voilà	ADP
 qui	qui	PRON
@@ -792,7 +792,7 @@ est	être	AUX
 parler	parler	VERB
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Puis	puis	CCONJ
+puis	puis	CCONJ
 ,	,	PUNCTclause
 comme	comme	SCONJ
 si	si	SCONJ
@@ -807,7 +807,7 @@ sommation	sommation	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Allons	aller	VERB
+allons	aller	VERB
 ,	,	PUNCTclause
 tonnerre	tonnerre	NOUN
 !	!	PUNCTsent
@@ -838,8 +838,8 @@ restera	rester	VERB
 ouverte	ouvert	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Jean	jean	NOUN
-Taureau	Taureau	NOUN
+Jean	Jean	PROPN
+taureau	taureau	NOUN
 emplit	emplir	VERB
 si	si	ADV
 brusquement	brusquement	ADV
@@ -874,7 +874,7 @@ le	le	DET
 nom	nom	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Robert	robert	NOUN
+Robert	Robert	PROPN
 sentit	sentir	VERB
 la	le	DET
 querelle	querelle	NOUN
@@ -894,7 +894,7 @@ ce	ce	PRON
 impossible	impossible	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Au	au	ADP_DET
+au	au	ADP_DET
 reste	reste	NOUN
 ,	,	PUNCTclause
 si	si	SCONJ
@@ -919,7 +919,7 @@ de	de	ADP
 sang-froid	sang-froid	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 alla	aller	VERB
 de	de	ADP
 un	un	DET
@@ -928,7 +928,7 @@ calme	calme	ADJ
 au-devant	au-devant	ADV
 de	de	ADP
 Jean	Jean	PROPN
-Taureau	Taureau	PROPN
+taureau	taureau	UNKNOWN
 ,	,	PUNCTclause
 et	et	CCONJ
 ,	,	PUNCTclause
@@ -938,7 +938,7 @@ composer	composer	VERB
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Monsieur	monsieur	NOUN
+monsieur	monsieur	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 il	il	PRON
@@ -963,7 +963,7 @@ suffoqués	suffoquer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 crois	croire	VERB
 bien	bien	ADV
 ,	,	PUNCTclause
@@ -982,7 +982,7 @@ carbonique	carbonique	ADJ
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Permettez	permettre	VERB
+permettez	permettre	VERB
 nous	nous	PRON
 donc	donc	ADV
 de	de	ADP
@@ -999,14 +999,14 @@ l'	le	DET
 air	air	NOUN
 ;	;	PUNCTclause
 nous	nous	PRON
-la	le:PRON	PRON
+la	le_PRON	PRON
 fermerons	fermer	VERB
 ensuite	ensuite	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Vous	vous	PRON
-l'	le:PRON	PRON
+vous	vous	PRON
+l'	le_PRON	PRON
 avez	avoir	VERB
 ouverte	ouvrir	VERB
 sans	sans	ADP
@@ -1015,7 +1015,7 @@ permission	permission	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 Jean	Jean	PROPN
-Taureau	Taureau	PROPN
+taureau	taureau	UNKNOWN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
@@ -1029,7 +1029,7 @@ Pétrus	Pétrus	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Il	il	PRON
+il	il	PRON
 fallait	falloir	VERB
 la	le	DET
 demander	demander	VERB
@@ -1037,7 +1037,7 @@ demander	demander	VERB
 et	et	CCONJ
 peut-être	peut-être	ADV
 vous	vous	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 aurait	avoir	AUX
 on	on	PRON
 accordée	accorder	VERB
@@ -1047,7 +1047,7 @@ permission	permission	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Allons	aller	VERB
+allons	aller	VERB
 ,	,	PUNCTclause
 assez	assez	ADV
 !	!	PUNCTsent
@@ -1055,7 +1055,7 @@ dit	dire	VERB
 Pétrus	Pétrus	PROPN
 ;	;	PUNCTclause
 je	je	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 ai	avoir	AUX
 ouverte	ouvrir	VERB
 parce que	parce que	SCONJ
@@ -1076,7 +1076,7 @@ plaira	plaire	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Tais	taire	VERB
+tais	taire	VERB
 toi	toi	PRON
 ,	,	PUNCTclause
 Pétrus	Pétrus	PROPN
@@ -1087,7 +1087,7 @@ Robert	Robert	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	non	ADV
+non	non	ADV
 ,	,	PUNCTclause
 je	je	PRON
 ne	ne	ADV
@@ -1095,7 +1095,7 @@ me	me	PRON
 tairai	taire	VERB
 pas	pas	ADV
 …	…	PUNCTsent
-Crois	croire	VERB
+crois	croire	VERB
 tu	tu	PRON
 donc	donc	ADV
 que	que	PRON
@@ -1115,7 +1115,7 @@ cette	ce	DET
 espèce	espèce	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Au	au	ADP_DET
+au	au	ADP_DET
 mot	mot	NOUN
 de	de	ADP
 drôles	drôle	NOUN
@@ -1125,7 +1125,7 @@ quatre	quatre	NUM
 camarades	camarade	NOUN
 de	de	ADP
 Jean	Jean	PROPN
-Taureau	Taureau	PROPN
+taureau	taureau	UNKNOWN
 se	se	PRON
 levèrent	lever	VERB
 de	de	ADP
@@ -1150,7 +1150,7 @@ du	du	ADP_DET
 provocateur	provocateur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-À	à	ADP
+à	à	ADP
 en	en	PRON
 juger	juger	VERB
 par	par	ADP
@@ -1226,7 +1226,7 @@ de	de	ADP
 carnaval	carnaval	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Au	au	ADP_DET
+au	au	ADP_DET
 reste	reste	NOUN
 ,	,	PUNCTclause
 il	il	PRON
@@ -1243,13 +1243,13 @@ ces	ce	DET
 hommes	homme	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Celui	celui	PRON
+celui	celui	PRON
 que	que	PRON
 Jean	Jean	PROPN
-Taureau	Taureau	PROPN
+taureau	taureau	UNKNOWN
 avait	avoir	AUX
 appelé	appeler	VERB
-Croc-en-Jambe	Croc-en-Jambe	PROPN
+croc-en-jambe	croc-en-jambe	UNKNOWN
 était	être	AUX
 évidemment	évidemment	ADV
 ,	,	PUNCTclause
@@ -1262,7 +1262,7 @@ proprement dit	proprement dit	ADV
 comme	comme	ADP
 aurait	avoir	AUX
 pu	pouvoir	VERB
-le	le:PRON	PRON
+le	le_PRON	PRON
 faire	faire	VERB
 croire	croire	VERB
 la	le	DET
@@ -1282,7 +1282,7 @@ le	le	DET
 nom	nom	NOUN
 caractéristique	caractéristique	ADJ
 de	de	ADP
-Croc-en-Jambe	Croc-en-Jambe	PROPN
+croc-en-jambe	croc-en-jambe	UNKNOWN
 ;	;	PUNCTclause
 mais	mais	CCONJ
 un	un	DET
@@ -1338,7 +1338,7 @@ du	du	ADP_DET
 ruisseau	ruisseau	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pour	pour	ADP
+pour	pour	ADP
 cette	ce	DET
 classe	classe	NOUN
 de	de	ADP
@@ -1373,7 +1373,7 @@ se	se	PRON
 transformait	transformer	VERB
 parfois	parfois	ADV
 en	en	ADP
-Pactole	Pactole	PROPN
+pactole	pactole	UNKNOWN
 ,	,	PUNCTclause
 et	et	CCONJ
 plus	plus	ADV
@@ -1411,7 +1411,7 @@ comme	comme	SCONJ
 ,	,	PUNCTclause
 dans	dans	ADP
 mes	mon	DET
-Mémoires	Mémoires	NOUN
+mémoires	mémoire	NOUN
 ,	,	PUNCTclause
 je	je	PRON
 ai	avoir	AUX
@@ -1454,13 +1454,13 @@ les	le	DET
 ravageurs	ravageur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 second	second	ADJ
 buveur	buveur	NOUN
 ,	,	PUNCTclause
 que	que	SCONJ
 Jean	Jean	PROPN
-Taureau	Taureau	PROPN
+taureau	taureau	UNKNOWN
 ne	ne	ADV
 avait	avoir	AUX
 pas	pas	ADV
@@ -1515,7 +1515,7 @@ et	et	CCONJ
 ses	son	DET
 mains	main	NOUN
 ne	ne	ADV
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 eussent	avoir	VERB
 pas	pas	ADV
 présenté	présenter	VERB
@@ -1531,7 +1531,7 @@ ses	son	DET
 ennemis	ennemi	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Parmi	parmi	ADP
+parmi	parmi	ADP
 les	le	DET
 premiers	premier	ADJ
 ,	,	PUNCTclause
@@ -1542,7 +1542,7 @@ meilleurs	meilleur	ADJ
 ,	,	PUNCTclause
 était	être	AUX
 Jean	Jean	PROPN
-Taureau	Taureau	PROPN
+taureau	taureau	UNKNOWN
 :	:	PUNCTclause
 la	le	DET
 manière	manière	NOUN
@@ -1612,11 +1612,11 @@ sans	sans	ADP
 importance	importance	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Une	un	DET
+une	un	DET
 maison	maison	NOUN
 de	de	ADP
 la	le	DET
-Cité	Cité	NOUN
+cité	cité	NOUN
 brûlait	brûler	VERB
 ;	;	PUNCTclause
 l'	le	DET
@@ -1641,7 +1641,7 @@ enfant	enfant	NOUN
 criaient	crier	VERB
 :	:	PUNCTclause
 «	«	PUNCTsent
-Au	au	ADP_DET
+au	au	ADP_DET
 secours	secours	NOUN
 »	»	PUNCTclause
 de	de	ADP
@@ -1687,7 +1687,7 @@ son	son	DET
 enfant	enfant	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 les	le	DET
 assistants	assistant	NOUN
 perdaient	perdre	VERB
@@ -1716,7 +1716,7 @@ trois	trois	NUM
 personnes	personne	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 feu	feu	NOUN
 gagnait	gagner	VERB
 ;	;	PUNCTclause
@@ -1741,12 +1741,12 @@ les	le	DET
 lueurs	lueur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Jean	jean	NOUN
-Taureau	Taureau	PROPN
+Jean	Jean	PROPN
+taureau	taureau	UNKNOWN
 passait	passer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 se	se	PRON
 arrêta	arrêter	VERB
 .	.	PUNCTsent
@@ -1769,7 +1769,7 @@ cordes	corde	NOUN
 ni	ni	CCONJ
 échelles	échelle	NOUN
 ?	?	PUNCTsent
-Vous	vous	PRON
+vous	vous	PRON
 voyez	voir	VERB
 bien	bien	ADV
 que	que	SCONJ
@@ -1779,7 +1779,7 @@ vont	aller	VERB
 brûler	brûler	VERB
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 ,	,	PUNCTclause
 en effet	en effet	ADV
 ,	,	PUNCTclause
@@ -1789,8 +1789,8 @@ danger	danger	NOUN
 imminent	imminent	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Jean	jean	NOUN
-Taureau	Taureau	PROPN
+Jean	Jean	PROPN
+taureau	taureau	UNKNOWN
 regarda	regarder	VERB
 autour de	autour de	ADP
 lui	lui	PRON
@@ -1808,7 +1808,7 @@ arrivait	arriver	VERB
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Allons	aller	VERB
+allons	aller	VERB
 ,	,	PUNCTclause
 dit	dire	VERB
 il	il	PRON
@@ -1824,7 +1824,7 @@ enfant	enfant	NOUN
 Sac-à-Plâtre	Sac-à-Plâtre	PROPN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 maçon	maçon	NOUN
 ,	,	PUNCTclause
 interpellé	interpeller	VERB
@@ -1856,7 +1856,7 @@ le	le	DET
 jeta	jeter	VERB
 à	à	ADP
 Jean	Jean	PROPN
-Taureau	Taureau	PROPN
+taureau	taureau	UNKNOWN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 il y a	il y a	VERB
@@ -1869,8 +1869,8 @@ les	le	DET
 assistants	assistant	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Jean	jean	NOUN
-Taureau	Taureau	PROPN
+Jean	Jean	PROPN
+taureau	taureau	UNKNOWN
 reçut	recevoir	VERB
 l'	le	DET
 enfant	enfant	NOUN
@@ -1891,7 +1891,7 @@ lui	lui	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Maintenant	maintenant	ADV
+maintenant	maintenant	ADV
 ,	,	PUNCTclause
 dit	dire	VERB
 il	il	PRON
@@ -1901,7 +1901,7 @@ la	le	DET
 femme	femme	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 maçon	maçon	NOUN
 prit	prendre	VERB
 la	le	DET
@@ -1933,8 +1933,8 @@ l'	le	DET
 enfant	enfant	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Jean	jean	NOUN
-Taureau	Taureau	PROPN
+Jean	Jean	PROPN
+taureau	taureau	UNKNOWN
 reçut	recevoir	VERB
 la	le	DET
 femme	femme	NOUN
@@ -1981,7 +1981,7 @@ acclamations	acclamation	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Maintenant	maintenant	ADV
+maintenant	maintenant	ADV
 ,	,	PUNCTclause
 cria	crier	VERB
 il	il	PRON
@@ -2010,7 +2010,7 @@ ton	ton	DET
 tour	tour	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Des	un	ADP_DET
+des	un	ADP_DET
 deux	deux	NUM
 mille	mille	NUM
 personnes	personne	NOUN
@@ -2040,7 +2040,7 @@ qui	qui	PRON
 suivirent	suivre	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 maçon	maçon	NOUN
 monta	monter	VERB
 sur	sur	ADP
@@ -2067,7 +2067,7 @@ murmurant	murmurer	VERB
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-À	à	ADP
+à	à	ADP
 la	le	DET
 grâce	grâce	NOUN
 de	de	ADP
@@ -2082,7 +2082,7 @@ fut	être	AUX
 terrible	terrible	ADJ
 :	:	PUNCTclause
 Jean	Jean	PROPN
-Taureau	Taureau	PROPN
+taureau	taureau	UNKNOWN
 plia	plier	VERB
 sur	sur	ADP
 ses	son	DET
@@ -2136,7 +2136,7 @@ arrivé	arriver	VERB
 lui	lui	PRON
 ,	,	PUNCTclause
 Jean	Jean	PROPN
-Taureau	Taureau	PROPN
+taureau	taureau	UNKNOWN
 avait	avoir	AUX
 desserré	desserrer	VERB
 les	le	DET
@@ -2156,7 +2156,7 @@ le	le	DET
 sang	sang	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ni	ni	CCONJ
+ni	ni	CCONJ
 l'	le	DET
 enfant	enfant	NOUN
 ,	,	PUNCTclause
@@ -2175,8 +2175,8 @@ seule	seul	ADJ
 égratignure	égratignure	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Jean	jean	NOUN
-Taureau	Taureau	PROPN
+Jean	Jean	PROPN
+taureau	taureau	UNKNOWN
 avait	avoir	AUX
 une	un	DET
 veine	veine	NOUN
@@ -2185,8 +2185,8 @@ poumon	poumon	NOUN
 rompue	rompu	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-On	on	PRON
-le	le:PRON	PRON
+on	on	PRON
+le	le_PRON	PRON
 transporta	transporter	VERB
 à	à	ADP
 l'	le	DET
@@ -2200,7 +2200,7 @@ le	le	DET
 surlendemain	surlendemain	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 troisième	troisième	ADJ
 compagnon	compagnon	NOUN
 ,	,	PUNCTclause
@@ -2212,7 +2212,7 @@ aussi	aussi	ADV
 noire	noir	ADJ
 que	que	SCONJ
 Sac-à-Plâtre	Sac-à-Plâtre	PROPN
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avait	avoir	AUX
 blanche	blanc	ADJ
 ,	,	PUNCTclause
@@ -2231,8 +2231,8 @@ se	se	PRON
 appelait	appeler	VERB
 Toussaint	Toussaint	PROPN
 .	.	PUNCTsent
-Jean	jean	NOUN
-Taureau	Taureau	PROPN
+Jean	Jean	PROPN
+taureau	taureau	UNKNOWN
 ,	,	PUNCTclause
 qui	qui	PRON
 ,	,	PUNCTclause
@@ -2266,7 +2266,7 @@ révolution	révolution	NOUN
 Saint-Domingue	Saint-Domingue	PROPN
 ;	;	PUNCTclause
 Jean	Jean	PROPN
-Taureau	Taureau	PROPN
+taureau	taureau	UNKNOWN
 ,	,	PUNCTclause
 qui	qui	PRON
 ne	ne	ADV
@@ -2278,14 +2278,14 @@ certain	certain	ADJ
 esprit	esprit	NOUN
 naturel	naturel	ADJ
 ,	,	PUNCTclause
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avait	avoir	AUX
 surnommé	surnommer	VERB
 Toussaint	Toussaint	PROPN
 Louverture	Louverture	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 4e	4e	ADJ
 était	être	AUX
 un	un	DET
@@ -2354,8 +2354,8 @@ intimité	intimité	NOUN
 ,	,	PUNCTclause
 au nom de	au nom de	ADP
 père	père	NOUN
-La	le	DET
-Gibelotte	Gibelotte	PROPN
+la	le	DET
+gibelotte	gibelotte	UNKNOWN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 ce	ce	PRON
@@ -2448,8 +2448,7 @@ ou	ou	CCONJ
 1835	1835	NUM
 ,	,	PUNCTclause
 le	le	DET
-compte	compte	NOUN
-rendu	rendre	VERB
+compte rendu	compte rendu	NOUN
 de	de	ADP
 un	un	DET
 procès	procès	NOUN
@@ -2458,8 +2457,8 @@ un	un	DET
 confrère	confrère	NOUN
 du	du	ADP_DET
 père	père	NOUN
-La	le	DET
-Gibelotte	Gibelotte	PROPN
+la	le	DET
+gibelotte	gibelotte	UNKNOWN
 fut	être	AUX
 condamné	condamner	VERB
 à	à	ADP
@@ -2492,10 +2491,10 @@ gastronomique	gastronomique	ADJ
 la	le	DET
 manière	manière	NOUN
 de	de	ADP
-Carême	Carême	PROPN
+carême	carême	UNKNOWN
 et	et	CCONJ
 de	de	ADP
-Brillat-Savarin	Brillat-Savarin	PROPN
+brillat-savarin	brillat-savarin	UNKNOWN
 ,	,	PUNCTclause
 essayé	essayer	VERB
 de	de	ADP
@@ -2516,7 +2515,7 @@ du	du	ADP_DET
 lapin	lapin	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 5e	5e	ADJ
 acolyte	acolyte	NOUN
 —	—	PUNCTclause
@@ -2531,7 +2530,7 @@ cet	ce	DET
 axiome	axiome	NOUN
 évangélique	évangélique	ADJ
 :	:	PUNCTclause
-Les	le	DET
+les	le	DET
 premiers	premier	ADJ
 seront	être	AUX
 les	le	DET
@@ -2542,7 +2541,7 @@ le	le	DET
 5e	5e	ADJ
 était	être	AUX
 Jean	Jean	PROPN
-Taureau	Taureau	PROPN
+taureau	taureau	UNKNOWN
 lui-même	lui-même	PRON
 ,	,	PUNCTclause
 lequel	lequel	PRON
@@ -2585,7 +2584,7 @@ exact	exact	ADJ
 que	que	SCONJ
 possible	possible	ADJ
 ,	,	PUNCTclause
-le	le:PRON	PRON
+le	le_PRON	PRON
 développement	développement	NOUN
 moral	moral	ADJ
 de	de	ADP
@@ -2601,8 +2600,8 @@ ayons	avoir	VERB
 connus	connaître	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Jean	jean	NOUN
-Taureau	Taureau	PROPN
+Jean	Jean	PROPN
+taureau	taureau	UNKNOWN
 était	être	AUX
 un	un	DET
 homme	homme	NOUN
@@ -2685,7 +2684,7 @@ du	du	ADP_DET
 doigt	doigt	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Maintenant	maintenant	ADV
+maintenant	maintenant	ADV
 ,	,	PUNCTclause
 si	si	SCONJ
 nous	nous	PRON
@@ -2803,13 +2802,13 @@ et	et	CCONJ
 brutale	brutal	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ajoutons	ajouter	VERB
+ajoutons	ajouter	VERB
 un	un	DET
 détail	détail	NOUN
 oublié	oublier	VERB
 :	:	PUNCTclause
 Jean	Jean	PROPN
-Taureau	Taureau	PROPN
+taureau	taureau	UNKNOWN
 était	être	AUX
 vêtu	vêtir	VERB
 de	de	ADP
@@ -2834,7 +2833,7 @@ verdâtre	verdâtre	ADJ
 côtes	côte	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-De	de	ADP
+de	de	ADP
 la	le	DET
 poche	poche	NOUN
 de	de	ADP
@@ -2893,7 +2892,7 @@ en	en	ADP
 dehors	dehors	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Tels	tel	PRON
+tels	tel	PRON
 étaient	être	AUX
 les	le	DET
 cinq	cinq	NUM

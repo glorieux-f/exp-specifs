@@ -5,19 +5,19 @@
 # isPartOf = Le docteur mystérieux
 # title = XXXIV. La veille de Jemmapes
 
-↵↵↵	↵↵↵	PUNCTstruct
-Xxxiv	Xxxiv	PROPN
+↵↵	↵↵	PUNCTstruct
+XXXIV	XXXIV	NOUN
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 veille	veille	NOUN
 de	de	ADP
 Jemmapes	Jemmapes	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Dumouriez	Dumouriez	PROPN
+Dumouriez	Dumouriez	VERB
 ,	,	PUNCTclause
 nous	nous	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avons	avoir	AUX
 dit	dire	VERB
 ,	,	PUNCTclause
@@ -40,7 +40,7 @@ la	le	DET
 Belgique	Belgique	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Dumouriez	Dumouriez	PROPN
+Dumouriez	Dumouriez	VERB
 avait	avoir	AUX
 pris	prendre	VERB
 ses	son	DET
@@ -61,30 +61,30 @@ ce	ce	DET
 parti	parti	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 avait	avoir	AUX
 Santerre	Santerre	PROPN
 à	à	ADP
 la	le	DET
-Commune	Commune	NOUN
+commune	commun	NOUN
 ;	;	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 avait	avoir	AUX
 Danton	Danton	PROPN
 à	à	ADP
 la	le	DET
-Montagne	Montagne	PROPN
+montagne	montagne	UNKNOWN
 ;	;	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 avait	avoir	AUX
 Gensonné	Gensonné	PROPN
 aux	au	ADP_DET
-Girondins	Girondins	PROPN
+girondins	girondin	UNKNOWN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ce	ce	PRON
+ce	ce	PRON
 fut	être	AUX
 d'abord	d'abord	ADV
 Santerre	Santerre	PROPN
@@ -100,7 +100,7 @@ fit	faire	VERB
 agir	agir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Par	par	ADP
+par	par	ADP
 Santerre	Santerre	PROPN
 ,	,	PUNCTclause
 il	il	PRON
@@ -116,7 +116,7 @@ serait	être	AUX
 abandonnée	abandonner	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Que	que	SCONJ
+que	que	SCONJ
 tous	tout	ADJ
 les	le	DET
 rassemblements	rassemblement	NOUN
@@ -189,7 +189,7 @@ dans	dans	ADP
 les	le	DET
 Pays-Bas	Pays-Bas	PROPN
 .	.	PUNCTsent
-Une	un	DET
+une	un	DET
 fois	fois	NOUN
 là	là	ADV
 ,	,	PUNCTclause
@@ -200,12 +200,12 @@ la	le	DET
 guerre	guerre	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Dumouriez	Dumouriez	PROPN
+Dumouriez	Dumouriez	VERB
 était	être	AUX
 un	un	DET
 stratégiste	stratégiste	NOUN
 .	.	PUNCTsent
-Quoique	quoique	SCONJ
+quoique	quoique	SCONJ
 le	le	DET
 premier	premier	ADJ
 il	il	PRON
@@ -263,7 +263,7 @@ la	le	DET
 reine	reine	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Donc	donc	ADV
+donc	donc	ADV
 son	son	DET
 plan	plan	NOUN
 embrassait	embrasser	VERB
@@ -280,11 +280,11 @@ la	le	DET
 Moselle	Moselle	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Montesquiou	Montesquiou	PROPN
+Montesquiou	Montesquiou	VERB
 se	se	PRON
 maintiendrait	maintenir	VERB
 le long des	le long des	ADP
-Alpes	Alpes	PROPN
+alpes	alpe	UNKNOWN
 ,	,	PUNCTclause
 tout	tout	PRON
 en	en	PRON
@@ -316,7 +316,7 @@ depuis	depuis	ADP
 Bâle	Bâle	PROPN
 jusque	jusque	ADP
 à	à	ADP
-Landau	Landau	PROPN
+landau	landau	UNKNOWN
 .	.	PUNCTsent
 Douze	Douze	NUM
 mille	mille	NUM
@@ -325,7 +325,7 @@ aux	au	ADP_DET
 ordres	ordre	NOUN
 du	du	ADP_DET
 général	général	NOUN
-Meunier	Meunier	PROPN
+meunier	meunier	UNKNOWN
 soutiendraient	soutenir	VERB
 Custine	Custine	PROPN
 ,	,	PUNCTclause
@@ -433,11 +433,11 @@ avait	avoir	AUX
 dit	dire	VERB
 à	à	ADP
 la	le	DET
-Convention	Convention	NOUN
+convention	convention	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 serai	être	AUX
 le	le	DET
 15	15	NUM
@@ -447,11 +447,11 @@ et	et	CCONJ
 le	le	DET
 30	30	NUM
 à	à	ADP
-Liège	Liège	PROPN
+liège	liège	UNKNOWN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Il	il	PRON
+il	il	PRON
 se	se	PRON
 trompa	tromper	VERB
 ,	,	PUNCTclause
@@ -466,7 +466,7 @@ le	le	DET
 14	14	NUM
 et	et	CCONJ
 à	à	ADP
-Liège	Liège	PROPN
+liège	liège	UNKNOWN
 le	le	DET
 28	28	NUM
 .	.	PUNCTsent
@@ -510,13 +510,13 @@ grands	grand	ADJ
 chênes	chêne	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Elle	elle	PRON
+elle	elle	PRON
 commença	commencer	VERB
 par	par	ADP
 un	un	DET
 revers	revers	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 y	y	PRON
 eût	avoir	VERB
 eu	avoir	VERB
@@ -538,7 +538,7 @@ de	de	ADP
 la	le	DET
 discipline	discipline	NOUN
 .	.	PUNCTsent
-Celle	celle	PRON
+celle	celle	PRON
 marchait	marcher	VERB
 à	à	ADP
 la	le	DET
@@ -555,7 +555,7 @@ de	de	ADP
 la	le	DET
 France	France	PROPN
 qui	qui	PRON
-la	le:PRON	PRON
+la	le_PRON	PRON
 poussait	pousser	VERB
 en	en	ADP
 avant	avant	ADV
@@ -568,7 +568,7 @@ pas	pas	ADV
 compte	compte	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-On	on	PRON
+on	on	PRON
 avait	avoir	AUX
 mis	mettre	VERB
 des	un	ADP_DET
@@ -635,12 +635,12 @@ attaquèrent	attaquer	VERB
 les	le	DET
 avant-postes	avant-poste	NOUN
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 avant-postes	avant-poste	NOUN
 reculèrent	reculer	VERB
 .	.	PUNCTsent
-Les	le	DET
-Belges	Belges	PROPN
+les	le	DET
+belges	belge	UNKNOWN
 se	se	PRON
 crurent	croire	VERB
 victorieux	victorieux	ADJ
@@ -648,7 +648,7 @@ victorieux	victorieux	ADJ
 ils	ils	PRON
 poursuivirent	poursuivre	VERB
 les	le	DET
-Autrichiens	Autrichiens	NOUN
+autrichiens	autrichien	NOUN
 et	et	CCONJ
 descendirent	descendre	VERB
 des	un	ADP_DET
@@ -657,7 +657,7 @@ dans	dans	ADP
 la	le	DET
 plaine	plaine	NOUN
 .	.	PUNCTsent
-Dumouriez	Dumouriez	PROPN
+Dumouriez	Dumouriez	VERB
 vit	vivre	VERB
 la	le	DET
 faute	faute	NOUN
@@ -686,12 +686,12 @@ les	le	DET
 soutenir	soutenir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ce	ce	PRON
+ce	ce	PRON
 fut	être	AUX
 un	un	DET
 bonheur	bonheur	NOUN
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 cavalerie	cavalerie	NOUN
 impériale	impérial	ADJ
 les	le	DET
@@ -710,7 +710,7 @@ deux	deux	NUM
 braves	brave	ADJ
 enfants	enfant	NOUN
 qui	qui	PRON
-les	le:PRON	PRON
+les	le_PRON	PRON
 conduisaient	conduire	VERB
 ,	,	PUNCTclause
 la	le	DET
@@ -728,7 +728,7 @@ sur	sur	ADP
 eux	eux	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Beurnonville	Beurnonville	PROPN
+Beurnonville	Beurnonville	NOUN
 et	et	CCONJ
 Dumouriez	Dumouriez	PROPN
 ,	,	PUNCTclause
@@ -743,7 +743,7 @@ l'	le	DET
 échauffourée	échauffourée	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Beurnonville	Beurnonville	PROPN
+Beurnonville	Beurnonville	NOUN
 voulait	vouloir	VERB
 se	se	PRON
 replier	replier	VERB
@@ -756,12 +756,12 @@ dispersée	disperser	VERB
 en	en	ADP
 désordre	désordre	NOUN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 Dumouriez	Dumouriez	PROPN
 cria	crier	VERB
 :	:	PUNCTclause
 «	«	PUNCTsent
-En	en	ADP
+en	en	ADP
 avant	avant	NOUN
 !	!	PUNCTsent
 »	»	PUNCTclause
@@ -776,7 +776,7 @@ avec	avec	ADP
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Il	il	PRON
+il	il	PRON
 faut	falloir	VERB
 ,	,	PUNCTclause
 dit	dire	VERB
@@ -808,7 +808,7 @@ serons	être	AUX
 perdus	perdre	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Les	le	DET
+les	le	DET
 craintes	crainte	NOUN
 de	de	ADP
 Beurnonville	Beurnonville	PROPN
@@ -860,7 +860,7 @@ aise	aise	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Ils	ils	PRON
+ils	ils	PRON
 veulent	vouloir	VERB
 nous	nous	PRON
 avoir	avoir	VERB
@@ -875,8 +875,8 @@ Dumouriez	Dumouriez	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
-le	le:PRON	PRON
+je	je	PRON
+le	le_PRON	PRON
 sais	savoir	VERB
 bien	bien	ADV
 ,	,	PUNCTclause
@@ -885,7 +885,7 @@ celui	celui	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Ils	ils	PRON
+ils	ils	PRON
 ont	avoir	AUX
 préparé	préparer	VERB
 leur	leur	DET
@@ -896,8 +896,8 @@ Beurnonville	Beurnonville	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
-le	le:PRON	PRON
+je	je	PRON
+le	le_PRON	PRON
 connais	connaître	VERB
 de	de	ADP
 avance	avance	NOUN
@@ -907,7 +907,7 @@ Dumouriez	Dumouriez	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Ils	ils	PRON
+ils	ils	PRON
 veulent	vouloir	VERB
 une	un	DET
 grande	grand	ADJ
@@ -919,7 +919,7 @@ avis	avis	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 au	au	ADP_DET
 vôtre	vôtre	PRON
 aussi	aussi	ADV
@@ -928,7 +928,7 @@ n'est-ce pas	n'est-ce pas	ADV
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Oui	oui	INTJ
+oui	oui	INTJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
@@ -936,7 +936,7 @@ hé	hé	INTJ
 bien	bien	ADV
 !	!	PUNCTsent
 ils	ils	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 auront	avoir	VERB
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -947,12 +947,12 @@ appellera	appeler	VERB
 Jemmapes	Jemmapes	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 ,	,	PUNCTclause
 en effet	en effet	ADV
 ,	,	PUNCTclause
 les	le	DET
-Autrichiens	Autrichiens	NOUN
+autrichiens	autrichien	NOUN
 considéraient	considérer	VERB
 Jemmapes	Jemmapes	PROPN
 comme	comme	ADP
@@ -980,7 +980,7 @@ l'	le	DET
 armée	armée	NOUN
 impériale	impérial	ADJ
 .	.	PUNCTsent
-Beaulieu	Beaulieu	PROPN
+Beaulieu	Beaulieu	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
 se	se	PRON
@@ -1024,7 +1024,7 @@ et	et	CCONJ
 la	le	DET
 disperser	disperser	VERB
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 de	de	ADP
 pareils	pareil	NOUN
 coups de main	coups de main	NOUN
@@ -1105,7 +1105,7 @@ les	le	DET
 frontières	frontière	NOUN
 ennemies	ennemi	ADJ
 .	.	PUNCTsent
-On	on	PRON
+on	on	PRON
 se	se	PRON
 attendait	attendre	VERB
 toujours	toujours	ADV
@@ -1132,7 +1132,7 @@ l'on	on	PRON
 avait	avoir	AUX
 suivi	suivre	VERB
 les	le	DET
-Prussiens	Prussiens	NOUN
+prussiens	prussien	NOUN
 dans	dans	ADP
 leur	leur	DET
 retraite	retrait	NOUN
@@ -1144,7 +1144,7 @@ vu	voir	VERB
 Custine	Custine	PROPN
 envahir	envahir	VERB
 le	le	DET
-Palatinat	Palatinat	PROPN
+palatinat	palatinat	UNKNOWN
 et	et	CCONJ
 pousser	pousser	VERB
 une	un	DET
@@ -1213,25 +1213,25 @@ leurs	leur	DET
 gibernes	giberne	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Dumouriez	Dumouriez	PROPN
+Dumouriez	Dumouriez	VERB
 ,	,	PUNCTclause
 lui	lui	PRON
 aussi	aussi	ADV
 ,	,	PUNCTclause
 comme	comme	SCONJ
 les	le	DET
-Autrichiens	Autrichiens	NOUN
+autrichiens	autrichien	NOUN
 ,	,	PUNCTclause
 voulait	vouloir	VERB
 une	un	DET
 grande	grand	ADJ
 bataille	bataille	NOUN
 .	.	PUNCTsent
-Depuis	depuis	ADP
+depuis	depuis	ADP
 cinquante	cinquante	NUM
 ans	an	NOUN
 les	le	DET
-Français	Français	NOUN
+français	français	NOUN
 avaient	avoir	VERB
 la	le	DET
 réputation	réputation	NOUN
@@ -1249,7 +1249,7 @@ pour	pour	ADP
 un	un	DET
 coups de main	coups de main	NOUN
 .	.	PUNCTsent
-Depuis	depuis	ADP
+depuis	depuis	ADP
 cinquante	cinquante	NUM
 ans	an	NOUN
 ,	,	PUNCTclause
@@ -1266,7 +1266,7 @@ grande	grand	ADJ
 bataille	bataille	NOUN
 rangée	ranger	VERB
 .	.	PUNCTsent
-Valmy	Valmy	PROPN
+Valmy	Valmy	NOUN
 ouvrait	ouvrir	VERB
 la	le	DET
 série	série	NOUN
@@ -1293,7 +1293,7 @@ au	au	ADP_DET
 bras	bras	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 5	5	NUM
 au	au	ADP_DET
 soir	soir	NOUN
@@ -1303,7 +1303,7 @@ Dumouriez	Dumouriez	PROPN
 à	à	ADP
 Valenciennes	Valenciennes	PROPN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 le	le	DET
 5	5	NUM
 au	au	ADP_DET
@@ -1321,7 +1321,7 @@ ne	ne	ADV
 était	être	AUX
 arrivé	arriver	VERB
 .	.	PUNCTsent
-Servan	Servan	PROPN
+Servan	Servan	PRON
 ,	,	PUNCTclause
 le	le	DET
 ministre de la guerre	ministre de la guerre	NOUN
@@ -1360,9 +1360,9 @@ homme	homme	NOUN
 simple	simple	ADJ
 comme	comme	ADP
 un	un	DET
-Spartiate	Spartiate	PROPN
+spartiate	spartiate	UNKNOWN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 partait	partir	VERB
 de	de	ADP
 chez	chez	ADP
@@ -1395,7 +1395,7 @@ pour	pour	ADP
 manger	manger	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 2	2	NUM
 novembre	novembre	NOUN
 ,	,	PUNCTclause
@@ -1464,7 +1464,7 @@ il	il	PRON
 consommerait	consommer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pache	Pache	PROPN
+Pache	Pache	NOUN
 donna	donner	VERB
 des	un	ADP_DET
 ordres	ordre	NOUN
@@ -1516,7 +1516,7 @@ ni	ni	CCONJ
 eau-de-vie	eau-de-vie	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ils	ils	PRON
+ils	ils	PRON
 avaient	avoir	VERB
 bien	bien	ADV
 envie	envie	NOUN
@@ -1563,11 +1563,11 @@ où	où	PRON
 étaient	être	AUX
 campés	camper	VERB
 les	le	DET
-Autrichiens	Autrichiens	NOUN
+autrichiens	autrichien	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Silence	silence	NOUN
+silence	silence	NOUN
 !	!	PUNCTsent
 enfants	enfant	NOUN
 !	!	PUNCTsent
@@ -1580,7 +1580,7 @@ vous	vous	PRON
 entendrait	entendre	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 alors	alors	ADV
 ,	,	PUNCTclause
 pour	pour	ADP
@@ -1615,7 +1615,7 @@ leur	leur	PRON
 manquait	manquer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Les	le	DET
+les	le	DET
 soldats	soldat	NOUN
 battirent	battre	VERB
 des	un	DET
@@ -1626,7 +1626,7 @@ de	de	ADP
 attendre	attendre	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 cependant	cependant	ADV
 ,	,	PUNCTclause
 de	de	ADP
@@ -1652,7 +1652,7 @@ enlever	enlever	VERB
 le	le	DET
 lendemain	lendemain	NOUN
 .	.	PUNCTsent
-Lorsque	lorsque	SCONJ
+lorsque	lorsque	SCONJ
 l'on	on	PRON
 arrive	arriver	VERB
 par	par	ADP
@@ -1690,7 +1690,7 @@ conduit	conduire	VERB
 à	à	ADP
 Mons	Mons	PROPN
 .	.	PUNCTsent
-Cet	ce	DET
+cet	ce	DET
 amphithéâtre	amphithéâtre	NOUN
 ,	,	PUNCTclause
 en effet	en effet	ADV
@@ -1709,7 +1709,7 @@ venons	venir	VERB
 de	de	ADP
 nommer	nommer	VERB
 .	.	PUNCTsent
-Jemmapes	Jemmapes	PROPN
+Jemmapes	Jemmapes	NOUN
 est	être	AUX
 à	à	ADP
 gauche	gauche	NOUN
@@ -1719,7 +1719,7 @@ est	être	AUX
 à	à	ADP
 droite	droite	NOUN
 .	.	PUNCTsent
-Jemmapes	Jemmapes	PROPN
+Jemmapes	Jemmapes	NOUN
 est	être	AUX
 bâti	bâtir	VERB
 au	au	ADP_DET
@@ -1733,7 +1733,7 @@ couvre	couvrir	VERB
 en	en	ADP
 partie	partie	NOUN
 .	.	PUNCTsent
-Cuesmes	Cuesmes	PROPN
+Cuesmes	Cuesmes	NOUN
 ,	,	PUNCTclause
 au	au	ADP_DET
 pied	pied	NOUN
@@ -1767,7 +1767,7 @@ passait	passer	VERB
 une	un	DET
 forêt	forêt	NOUN
 .	.	PUNCTsent
-Elle	elle	PRON
+elle	elle	PRON
 était	être	AUX
 palissadée	palissader	VERB
 ,	,	PUNCTclause
@@ -1777,7 +1777,7 @@ abatis	abatis	NOUN
 de	de	ADP
 arbres	arbre	NOUN
 .	.	PUNCTsent
-Derrière	derrière	ADP
+derrière	derrière	ADP
 les	le	DET
 derniers	dernier	ADJ
 abatis	abatis	NOUN
@@ -1845,7 +1845,7 @@ par	par	ADP
 colonnes	colonne	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Or	or	NOUN
+or	or	NOUN
 tout	tout	PRON
 dépendait	dépendre	VERB
 de	de	ADP
@@ -1903,7 +1903,7 @@ si	si	SCONJ
 souvent	souvent	ADV
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Dumouriez	Dumouriez	PROPN
+Dumouriez	Dumouriez	VERB
 avait	avoir	AUX
 porté	porter	VERB
 son	son	DET
@@ -1914,7 +1914,7 @@ village	village	NOUN
 de	de	ADP
 Rasme	Rasme	PROPN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 était	être	AUX
 défendu	défendre	VERB
 de	de	ADP
@@ -1947,7 +1947,7 @@ Boussu	Boussu	PROPN
 élevés	élever	VERB
 par	par	ADP
 les	le	DET
-Autrichiens	Autrichiens	NOUN
+autrichiens	autrichien	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 qui	qui	PRON
@@ -1955,7 +1955,7 @@ qui	qui	PRON
 ainsi	ainsi	ADV
 que	que	SCONJ
 nous	nous	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avons	avoir	AUX
 dit	dire	VERB
 ,	,	PUNCTclause
@@ -1966,7 +1966,7 @@ notre	notre	DET
 pouvoir	pouvoir	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 venait	venir	VERB
 de	de	ADP
 se	se	PRON
@@ -2023,7 +2023,7 @@ criant	crier	VERB
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Place	place	NOUN
+place	place	NOUN
 ce	ce	DET
 soir	soir	NOUN
 à	à	ADP
@@ -2037,7 +2037,7 @@ la	le	DET
 bataille	bataille	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cet	ce	DET
+cet	ce	DET
 homme	homme	NOUN
 ,	,	PUNCTclause
 ce	ce	DET
@@ -2049,7 +2049,7 @@ qui	qui	PRON
 ,	,	PUNCTclause
 comme	comme	SCONJ
 il	il	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avait	avoir	AUX
 dit	dire	VERB
 ,	,	PUNCTclause
@@ -2059,7 +2059,7 @@ le	le	DET
 5	5	NUM
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Dumouriez	Dumouriez	PROPN
+Dumouriez	Dumouriez	VERB
 jeta	jeter	VERB
 un	un	DET
 cri de joie	cri de joie	NOUN
@@ -2071,7 +2071,7 @@ bras	bras	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Ma	mon	DET
+ma	mon	DET
 foi	foi	NOUN
 !	!	PUNCTsent
 dit	dire	VERB
@@ -2103,7 +2103,7 @@ vous	vous	PRON
 chargerez	charger	VERB
 pour	pour	ADP
 la	le	DET
-Convention	Convention	NOUN
+convention	convention	NOUN
 des	un	ADP_DET
 drapeaux	drapeau	NOUN
 de	de	ADP
@@ -2120,7 +2120,7 @@ de	de	ADP
 Valmy	Valmy	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Jacques	jacques	NOUN
+Jacques	Jacques	PROPN
 Mérey	Mérey	PROPN
 se	se	PRON
 mit	mettre	VERB
@@ -2158,7 +2158,7 @@ du	du	ADP_DET
 jour	jour	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Une	un	DET
+une	un	DET
 heure	heure	NOUN
 avant	avant	ADP
 le	le	DET
@@ -2236,7 +2236,7 @@ allumer	allumer	VERB
 leur	leur	DET
 feu	feu	NOUN
 .	.	PUNCTsent
-Aussi	aussi	ADV
+aussi	aussi	ADV
 ,	,	PUNCTclause
 pendant	pendant	ADP
 cette	ce	DET
@@ -2271,7 +2271,7 @@ les	le	DET
 anéantir	anéantir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Comme	comme	ADP
+comme	comme	ADP
 la première fois	la première fois	ADV
 ,	,	PUNCTclause
 le	le	DET
@@ -2280,7 +2280,7 @@ avait	avoir	AUX
 refusé	refuser	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pour	pour	ADP
+pour	pour	ADP
 les	le	DET
 vieilles	vieux	ADJ
 troupes	troupe	NOUN
@@ -2309,7 +2309,7 @@ une	un	DET
 nuit	nuit	NOUN
 terrible	terrible	ADJ
 .	.	PUNCTsent
-Lorsque	lorsque	SCONJ
+lorsque	lorsque	SCONJ
 Dumouriez	Dumouriez	PROPN
 vit	vivre	VERB
 ces	ce	DET
@@ -2350,7 +2350,7 @@ la	le	DET
 trouver	trouver	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Son	son	DET
+son	son	DET
 étonnement	étonnement	NOUN
 fut	être	AUX
 grand	grand	ADJ
@@ -2362,14 +2362,14 @@ et	et	CCONJ
 chanter	chanter	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 leva	lever	VERB
 les	le	DET
 yeux	œil	NOUN
 au	au	ADP_DET
 ciel	ciel	NOUN
 .	.	PUNCTsent
-Jacques	jacques	NOUN
+Jacques	Jacques	PROPN
 Mérey	Mérey	PROPN
 lui	lui	PRON
 posa	poser	VERB
@@ -2406,7 +2406,7 @@ ce	ce	DET
 miracle	miracle	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 ,	,	PUNCTclause
 lorsque	lorsque	SCONJ
 ils	ils	PRON
@@ -2439,7 +2439,7 @@ vigoureux	vigoureux	ADJ
 et	et	CCONJ
 ce	ce	PRON
 qui	qui	PRON
-les	le:PRON	PRON
+les	le_PRON	PRON
 glaçait	glacer	VERB
 encore	encore	ADV
 plus	plus	ADV
@@ -2483,7 +2483,7 @@ blancs	blanc	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Tout	tout	ADJ
+tout	tout	ADJ
 cela	cela	PRON
 est	être	VERB
 à	à	ADP
@@ -2523,7 +2523,7 @@ déjeuné	déjeuner	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Bon	bon	ADJ
+bon	bon	ADJ
 !	!	PUNCTsent
 dit	dire	VERB
 Dumouriez	Dumouriez	PROPN
@@ -2567,7 +2567,7 @@ les	le	DET
 volontaires	volontaire	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ô	ô	INTJ
+ô	ô	INTJ
 bienheureuse	bienheureux	ADJ
 époque	époque	NOUN
 où	où	PRON
@@ -2610,7 +2610,7 @@ an	an	NOUN
 1er	1er	ADJ
 de	de	ADP
 la	le	DET
-République	République	NOUN
+République	République	PROPN
 ,	,	PUNCTclause
 pour	pour	ADP
 conquérir	conquérir	VERB

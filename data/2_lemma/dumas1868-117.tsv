@@ -5,14 +5,14 @@
 # isPartOf = Les Blancs et les Bleus
 # title = XV. Rêves évanouis
 
-↵↵↵	↵↵↵	PUNCTstruct
-		TOKEN
+↵↵	↵↵	PUNCTstruct
+XV	XV	NUM
 .	.	PUNCTsent
-Rêves	rêve	NOUN
+rêves	rêve	NOUN
 évanouis	évanouir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Napoléon	napoléon	NOUN
+Napoléon	Napoléon	PROPN
 a	avoir	AUX
 dit	dire	VERB
 à	à	ADP
@@ -25,17 +25,17 @@ Saint-Jean-d'Acre	Saint-Jean-d'Acre	PROPN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Le	le	DET
+le	le	DET
 sort	sort	NOUN
 de	de	ADP
 l'	le	DET
-Orient	Orient	PROPN
+orient	orient	UNKNOWN
 était	être	AUX
 dans	dans	ADP
 cette	ce	DET
 bicoque	bicoque	NOUN
 .	.	PUNCTsent
-Si	si	SCONJ
+si	si	SCONJ
 Saint-Jean-d'Acre	Saint-Jean-d'Acre	PROPN
 fût	être	AUX
 tombé	tomber	VERB
@@ -49,7 +49,7 @@ monde	monde	NOUN
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Ce	ce	DET
+ce	ce	DET
 regret	regret	NOUN
 ,	,	PUNCTclause
 exprimé	exprimer	VERB
@@ -90,7 +90,7 @@ l'	le	DET
 armée	armée	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ce	ce	PRON
+ce	ce	PRON
 fut	être	AUX
 ,	,	PUNCTclause
 comme	comme	ADP
@@ -98,17 +98,17 @@ toujours	toujours	ADV
 ,	,	PUNCTclause
 Bourrienne	Bourrienne	PROPN
 qui	qui	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 écrivit	écrire	VERB
 sous	sous	ADP
 sa	son	DET
 dictée	dictée	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Soldats	soldat	NOUN
+soldats	soldat	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Vous	vous	PRON
+vous	vous	PRON
 avez	avoir	AUX
 traversé	traverser	VERB
 le	le	DET
@@ -128,7 +128,7 @@ que	que	SCONJ
 une	un	DET
 armée	armée	NOUN
 de	de	ADP
-Arabes	Arabes	PROPN
+arabes	arabe	UNKNOWN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 l'	le	DET
@@ -144,7 +144,7 @@ l'	le	DET
 est	être	AUX
 détruite	détruire	VERB
 .	.	PUNCTsent
-Vous	vous	PRON
+vous	vous	PRON
 avez	avoir	AUX
 pris	prendre	VERB
 son	son	DET
@@ -165,7 +165,7 @@ ses	son	DET
 chameaux	chameau	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Vous	vous	PRON
+vous	vous	PRON
 vous	vous	PRON
 êtes	être	AUX
 emparés	emparer	VERB
@@ -182,7 +182,7 @@ du	du	ADP_DET
 désert	désert	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Vous	vous	PRON
+vous	vous	PRON
 avez	avoir	AUX
 dispersé	disperser	VERB
 ,	,	PUNCTclause
@@ -213,7 +213,7 @@ l'	le	DET
 Égypte	Égypte	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Enfin	enfin	ADV
+enfin	enfin	ADV
 ,	,	PUNCTclause
 après	après	ADP
 avoir	avoir	AUX
@@ -255,10 +255,10 @@ rasé	raser	VERB
 les	le	DET
 fortifications	fortification	NOUN
 de	de	ADP
-Gaza	Gaza	PROPN
+gaza	gazer	UNKNOWN
 ,	,	PUNCTclause
 de	de	ADP
-Jaffa	Jaffa	PROPN
+jaffa	jaffer	UNKNOWN
 ,	,	PUNCTclause
 de	de	ADP
 Kaïffa	Kaïffa	PROPN
@@ -281,7 +281,7 @@ y	y	PRON
 rappelle	rappeler	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Encore	encore	ADV
+encore	encore	ADV
 quelques	quelque	DET
 jours	jour	NOUN
 ,	,	PUNCTclause
@@ -339,7 +339,7 @@ opérations	opération	NOUN
 essentielles	essentiel	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Soldats	soldat	NOUN
+soldats	soldat	NOUN
 ,	,	PUNCTclause
 nous	nous	PRON
 avons	avoir	AUX
@@ -353,11 +353,11 @@ dangers	danger	NOUN
 à	à	ADP
 parcourir	parcourir	VERB
 .	.	PUNCTsent
-Après	après	ADP
+après	après	ADP
 avoir	avoir	AUX
 mis	mettre	VERB
 l'	le	DET
-Orient	Orient	PROPN
+orient	orient	UNKNOWN
 hors de	hors de	ADP
 état	état	NOUN
 de	de	ADP
@@ -381,10 +381,10 @@ une	un	DET
 partie	partie	NOUN
 de	de	ADP
 l'	le	DET
-Occident	Occident	PROPN
+occident	occident	UNKNOWN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Vous	vous	PRON
+vous	vous	PRON
 y	y	PRON
 trouverez	trouver	VERB
 de	de	DET
@@ -443,7 +443,7 @@ la	le	DET
 victoire	victoire	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-En	en	ADP
+en	en	ADP
 achevant	achever	VERB
 de	de	ADP
 dicter	dicter	VERB
@@ -465,13 +465,13 @@ pour	pour	ADP
 respirer	respirer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Bourrienne	Bourrienne	PROPN
+Bourrienne	Bourrienne	ADJ
 le	le	DET
 suivit	suivre	VERB
 ,	,	PUNCTclause
 inquiet	inquiet	ADJ
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 événements	événement	NOUN
 ne	ne	ADV
 avaient	avoir	AUX
@@ -490,7 +490,7 @@ si	si	SCONJ
 profonde	profond	ADJ
 empreinte	empreinte	NOUN
 .	.	PUNCTsent
-Bonaparte	Bonaparte	PROPN
+Bonaparte	Bonaparte	NOUN
 gravit	gravir	VERB
 la	le	DET
 petite	petit	ADJ
@@ -531,7 +531,7 @@ immense	immense	ADJ
 horizon	horizon	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Enfin	enfin	ADV
+enfin	enfin	ADV
 ,	,	PUNCTclause
 au bout de	au bout de	ADP
 un	un	DET
@@ -541,7 +541,7 @@ silence	silence	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Les	le	DET
+les	le	DET
 gens	gens	NOUN
 qui	qui	PRON
 écriront	écrire	VERB
@@ -570,17 +570,17 @@ ha	ha	INTJ
 !	!	PUNCTsent
 si	si	SCONJ
 je	je	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avais	avoir	AUX
 prise	prendre	VERB
 ,	,	PUNCTclause
 comme	comme	SCONJ
 je	je	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 espérais	espérer	VERB
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 laissa	laisser	VERB
 tomber	tomber	VERB
 sa	son	DET
@@ -591,9 +591,9 @@ main	main	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Si	si	SCONJ
+si	si	SCONJ
 vous	vous	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 aviez	avoir	VERB
 prise	prise	NOUN
 ?	?	PUNCTsent
@@ -602,9 +602,9 @@ Bourrienne	Bourrienne	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Si	si	SCONJ
+si	si	SCONJ
 je	je	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avais	avoir	AUX
 prise	prendre	VERB
 ,	,	PUNCTclause
@@ -647,7 +647,7 @@ Syrie	Syrie	PROPN
 je	je	PRON
 marchais	marcher	VERB
 sur	sur	ADP
-Damas	Damas	PROPN
+damas	damas	UNKNOWN
 et	et	CCONJ
 sur	sur	ADP
 Alep	Alep	PROPN
@@ -695,7 +695,7 @@ turc	turc	ADJ
 je	je	PRON
 fondais	fonder	VERB
 en	en	ADP
-Orient	Orient	PROPN
+orient	orient	UNKNOWN
 un	un	DET
 nouvel	nouveau	ADJ
 et	et	CCONJ
@@ -716,7 +716,7 @@ je	je	PRON
 à	à	ADP
 Paris	Paris	PROPN
 par	par	ADP
-Andrinople	Andrinople	PROPN
+andrinople	andrinople	UNKNOWN
 et	et	CCONJ
 par	par	ADP
 Vienne	Vienne	PROPN
@@ -735,7 +735,7 @@ ce	ce	PRON
 ,	,	PUNCTclause
 comme	comme	ADP
 on	on	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 voit	voir	VERB
 ,	,	PUNCTclause
 tout	tout	ADV
@@ -760,7 +760,7 @@ guerre	guerre	NOUN
 commencée	commencer	VERB
 chez	chez	ADP
 les	le	DET
-Parthes	Parthes	PROPN
+parthes	parthe	UNKNOWN
 et	et	CCONJ
 qui	qui	PRON
 ne	ne	ADV
@@ -772,7 +772,7 @@ en	en	ADP
 Germanie	Germanie	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Autant	autant	ADV
+autant	autant	ADV
 il y a	il y a	VERB
 loin de	loin de	ADP
 l'	le	DET
@@ -798,10 +798,10 @@ Italie	Italie	PROPN
 au	au	ADP_DET
 conquérant	conquérant	NOUN
 des	un	ADP_DET
-Pyramides	Pyramides	PROPN
+pyramides	pyramide	UNKNOWN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Proclamé	proclamer	VERB
+proclamé	proclamer	VERB
 en	en	ADP
 Europe	Europe	PROPN
 le	le	DET
@@ -856,7 +856,7 @@ faire	faire	AUX
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Que	que	PRON
+que	que	PRON
 serait	être	AUX
 il	il	PRON
 arrivé	arriver	VERB
@@ -888,7 +888,7 @@ entrailles	entrailles	NOUN
 ?	?	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Que	que	PRON
+que	que	PRON
 serait	être	AUX
 il	il	PRON
 arrivé	arriver	VERB
@@ -912,7 +912,7 @@ son	son	DET
 chemin	chemin	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 rêvait	rêver	VERB
 à	à	ADP
 ce	ce	DET
@@ -979,7 +979,7 @@ aux	au	ADP_DET
 fugitifs	fugitif	NOUN
 »	»	PUNCTclause
 .	.	PUNCTsent
-Cet	ce	DET
+cet	ce	DET
 homme	homme	NOUN
 venait	venir	VERB
 au	au	ADP_DET
@@ -992,7 +992,7 @@ sa	son	DET
 monture	monture	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Bonaparte	Bonaparte	PROPN
+Bonaparte	Bonaparte	NOUN
 tira	tirer	VERB
 sa	son	DET
 lunette	lunette	NOUN
@@ -1010,7 +1010,7 @@ instant	instant	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Bon	bon	ADJ
+bon	bon	ADJ
 !	!	PUNCTsent
 dit	dire	VERB
 il	il	PRON
@@ -1025,14 +1025,14 @@ nous	nous	PRON
 arrivent	arriver	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 il	il	PRON
 se	se	PRON
 tint	tenir	VERB
 debout	debout	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 messager	messager	NOUN
 le	le	DET
 reconnut	reconnaître	VERB
@@ -1057,7 +1057,7 @@ côté	côté	NOUN
 du	du	ADP_DET
 camp	camp	NOUN
 .	.	PUNCTsent
-Bonaparte	Bonaparte	PROPN
+Bonaparte	Bonaparte	NOUN
 descendit	descendre	VERB
 alors	alors	ADV
 ,	,	PUNCTclause
@@ -1070,7 +1070,7 @@ et	et	CCONJ
 attendit	attendre	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 soldat	soldat	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
@@ -1084,7 +1084,7 @@ dromadaire	dromadaire	NOUN
 au	au	ADP_DET
 galop	galop	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 portait	porter	VERB
 les	le	DET
 insignes	insigne	NOUN
@@ -1116,7 +1116,7 @@ entendre	entendre	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-De	de	ADP
+de	de	ADP
 la	le	DET
 Haute-Égypte	Haute-Égypte	PROPN
 ,	,	PUNCTclause
@@ -1127,32 +1127,32 @@ maréchal des logis	maréchal des logis	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Quelles	quel	DET
+quelles	quel	DET
 nouvelles	nouveau	ADJ
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mauvaises	mauvais	ADJ
+mauvaises	mauvais	ADJ
 ,	,	PUNCTclause
 mon	mon	DET
 général	général	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Bonaparte	Bonaparte	PROPN
+Bonaparte	Bonaparte	NOUN
 frappa	frapper	VERB
 du	du	ADP_DET
 pied	pied	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Viens	venir	VERB
+viens	venir	VERB
 ici	ici	ADV
 ,	,	PUNCTclause
 dit	dire	VERB
 il	il	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-En	en	ADP
+en	en	ADP
 quelques	quelque	DET
 secondes	second	NOUN
 ,	,	PUNCTclause
@@ -1180,7 +1180,7 @@ terre	terre	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Tiens	tien	NOUN
+tiens	tien	NOUN
 ,	,	PUNCTclause
 citoyen	citoyen	NOUN
 général	général	ADJ
@@ -1190,7 +1190,7 @@ dit	dire	VERB
 il	il	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 il	il	PRON
 lui	lui	PRON
 remit	remettre	VERB
@@ -1198,7 +1198,7 @@ une	un	DET
 dépêche	dépêche	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Bonaparte	Bonaparte	PROPN
+Bonaparte	Bonaparte	NOUN
 la	le	DET
 passa	passer	VERB
 à	à	ADP
@@ -1206,22 +1206,22 @@ Bourrienne	Bourrienne	PROPN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Lisez	lire	VERB
+lisez	lire	VERB
 ,	,	PUNCTclause
 dit	dire	VERB
 il	il	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Bourrienne	Bourrienne	PROPN
+Bourrienne	Bourrienne	ADJ
 lut	lire	VERB
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Au	au	ADP_DET
+au	au	ADP_DET
 général en chef	général en chef	NOUN
 Bonaparte	Bonaparte	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 sais	savoir	VERB
 si	si	SCONJ
@@ -1317,7 +1317,7 @@ le	le	DET
 vent	vent	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-La	le	DET
+la	le	DET
 flottille	flottille	NOUN
 va	aller	VERB
 être	être	AUX
@@ -1336,7 +1336,7 @@ quatre	quatre	NUM
 mille	mille	NUM
 hommes	homme	NOUN
 .	.	PUNCTsent
-Nous	nous	PRON
+nous	nous	PRON
 ne	ne	ADV
 sommes	être	AUX
 pas	pas	ADV
@@ -1349,7 +1349,7 @@ nous	nous	PRON
 résisterons	résister	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Seulement	seulement	ADV
+seulement	seulement	ADV
 ,	,	PUNCTclause
 à	à	ADP
 moins	moins	ADV
@@ -1366,7 +1366,7 @@ la	le	DET
 mort	mort	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Je	je	PRON
+je	je	PRON
 prépare	préparer	VERB
 cette	ce	DET
 dépêche	dépêche	NOUN
@@ -1386,7 +1386,7 @@ la	le	DET
 bataille	bataille	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 chérif	chérif	NOUN
 nous	nous	PRON
 attaque	attaquer	VERB
@@ -1412,7 +1412,7 @@ après-midi	après-midi	NOUN
 Trois	Trois	NUM
 heures	heure	NOUN
 .	.	PUNCTsent
-Après	après	ADP
+après	après	ADP
 un	un	DET
 carnage	carnage	NOUN
 horrible	horrible	ADJ
@@ -1422,7 +1422,7 @@ notre	notre	DET
 artillerie	artillerie	NOUN
 ,	,	PUNCTclause
 les	le	DET
-Arabes	Arabes	PROPN
+arabes	arabe	UNKNOWN
 reviennent	revenir	VERB
 pour	pour	ADP
 la	le	DET
@@ -1445,8 +1445,8 @@ hommes	homme	NOUN
 Quatre	Quatre	NUM
 heures	heure	NOUN
 .	.	PUNCTsent
-Les	le	DET
-Arabes	Arabes	PROPN
+les	le	DET
+arabes	arabe	UNKNOWN
 se	se	PRON
 jettent	jeter	VERB
 dans	dans	ADP
@@ -1459,7 +1459,7 @@ des	un	ADP_DET
 petits	petit	ADJ
 bateaux	bateau	NOUN
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 ai	avoir	AUX
 plus	plus	ADV
@@ -1479,7 +1479,7 @@ je	je	PRON
 attendrai	attendre	VERB
 que	que	SCONJ
 les	le	DET
-Arabes	Arabes	NOUN
+arabes	arabe	NOUN
 encombrent	encombrer	VERB
 l'	le	DET
 Italie	Italie	PROPN
@@ -1492,7 +1492,7 @@ avec	avec	ADP
 eux	eux	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Je	je	PRON
+je	je	PRON
 remets	remettre	VERB
 cette	ce	DET
 dépêche	dépêche	NOUN
@@ -1521,7 +1521,7 @@ vous	vous	PRON
 serez	être	AUX
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Dans	dans	ADP
+dans	dans	ADP
 dix	dix	NUM
 minutes	minute	NOUN
 ,	,	PUNCTclause
@@ -1530,20 +1530,20 @@ sera	être	AUX
 fini	finir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 capitaine	capitaine	NOUN
 Morandi	Morandi	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Après	après	ADV
+après	après	ADV
 ?	?	PUNCTsent
 demanda	demander	VERB
 Bonaparte	Bonaparte	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Voilà	voilà	ADP
+voilà	voilà	ADP
 tout	tout	PRON
 ,	,	PUNCTclause
 dit	dire	VERB
@@ -1551,7 +1551,7 @@ Bourrienne	Bourrienne	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mais	mais	CCONJ
+mais	mais	CCONJ
 Morandi	Morandi	PROPN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -1569,12 +1569,12 @@ messager	messager	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 toi	toi	PRON
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Moi	moi	PRON
+moi	moi	PRON
 ,	,	PUNCTclause
 je	je	PRON
 ne	ne	ADV
@@ -1626,7 +1626,7 @@ de	de	DET
 grandes	grand	ADJ
 herbes	herbe	NOUN
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 nuit	nuit	NOUN
 venue	venir	VERB
 ,	,	PUNCTclause
@@ -1652,11 +1652,11 @@ je	je	PRON
 parvins	parvenir	VERB
 près de	près de	ADP
 un	un	DET
-Arabe	Arabe	NOUN
+arabe	arabe	NOUN
 endormi	endormi	ADJ
 ;	;	PUNCTclause
 je	je	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 poignardai	poignarder	VERB
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -1675,7 +1675,7 @@ galop	galop	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 tu	tu	PRON
 arrives	arriver	VERB
 de	de	ADP
@@ -1683,19 +1683,19 @@ Beyrouth	Beyrouth	PROPN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Oui	oui	INTJ
+oui	oui	INTJ
 ,	,	PUNCTclause
 citoyen	citoyen	NOUN
 général	général	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Sans	sans	ADP
+sans	sans	ADP
 accident	accident	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Si	si	SCONJ
+si	si	SCONJ
 tu	tu	PRON
 appelles	appeler	VERB
 des	un	ADP_DET
@@ -1724,7 +1724,7 @@ mon	mon	DET
 chameau	chameau	NOUN
 aussi	aussi	ADV
 .	.	PUNCTsent
-Nous	nous	PRON
+nous	nous	PRON
 avons	avoir	AUX
 reçu	recevoir	VERB
 à	à	ADP
@@ -1772,12 +1772,12 @@ mangé	manger	VERB
 du	du	DET
 cheval	cheval	NOUN
 .	.	PUNCTsent
-Enfin	enfin	ADV
+enfin	enfin	ADV
 ,	,	PUNCTclause
 nous	nous	PRON
 voilà	voilà	ADP
 .	.	PUNCTsent
-Tu	tu	PRON
+tu	tu	PRON
 te	te	PRON
 portes	porter	VERB
 bien	bien	ADV
@@ -1795,7 +1795,7 @@ faut	falloir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mais	mais	CCONJ
+mais	mais	CCONJ
 Morandi	Morandi	PROPN
 ?	?	PUNCTsent
 demanda	demander	VERB
@@ -1803,7 +1803,7 @@ Bonaparte	Bonaparte	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Dame	dame	NOUN
+dame	dame	NOUN
 !	!	PUNCTsent
 comme	comme	SCONJ
 il	il	PRON
@@ -1833,7 +1833,7 @@ noix	noix	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 l'	le	DET
 Italie	Italie	PROPN
 ?	?	PUNCTsent
@@ -1859,7 +1859,7 @@ allumettes	allumette	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Tu	tu	PRON
+tu	tu	PRON
 avais	avoir	AUX
 raison	raison	NOUN
 ,	,	PUNCTclause
@@ -1873,7 +1873,7 @@ de	de	ADP
 mauvaises	mauvais	ADJ
 nouvelles	nouvelle	NOUN
 !	!	PUNCTsent
-Bourrienne	Bourrienne	PROPN
+Bourrienne	Bourrienne	ADJ
 ,	,	PUNCTclause
 tu	tu	PRON
 diras	dire	VERB
@@ -1930,14 +1930,14 @@ trompent	tromper	VERB
 jamais	jamais	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Bourrienne	Bourrienne	PROPN
+Bourrienne	Bourrienne	ADJ
 haussa	hausser	VERB
 les	le	DET
 épaules	épaule	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Quel	quel	DET
+quel	quel	DET
 rapport	rapport	NOUN
 voulez	vouloir	VERB
 vous	vous	PRON
@@ -1984,7 +1984,7 @@ tu	tu	PRON
 verras	voir	VERB
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Puis	puis	CCONJ
+puis	puis	CCONJ
 après	après	ADP
 un	un	DET
 instant	instant	NOUN
@@ -1993,7 +1993,7 @@ silence	silence	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Emmène	emmener	VERB
+emmène	emmener	VERB
 ce	ce	DET
 garçon	garçon	NOUN
 ,	,	PUNCTclause
@@ -2025,7 +2025,7 @@ Beyrouth	Beyrouth	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Si	si	SCONJ
+si	si	SCONJ
 ,	,	PUNCTclause
 au lieu de	au lieu de	ADP
 trente	trente	NUM
@@ -2055,7 +2055,7 @@ reconnaissant	reconnaître	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Tu	tu	PRON
+tu	tu	PRON
 auras	avoir	AUX
 tes	ton	DET
 trente	trente	NUM
@@ -2090,7 +2090,7 @@ Pichegru	Pichegru	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Il	il	PRON
+il	il	PRON
 me	me	PRON
 a	avoir	AUX
 reconnu	reconnaître	VERB
@@ -2102,7 +2102,7 @@ maréchal des logis	maréchal des logis	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-On	on	PRON
+on	on	PRON
 ne	ne	ADV
 oublie	oublier	VERB
 pas	pas	ADV

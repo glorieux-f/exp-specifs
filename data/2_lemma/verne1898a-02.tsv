@@ -5,12 +5,12 @@
 # isPartOf = Le secret de Wilhelm Storitz
 # title = Chapitre II.
 
-↵↵↵	↵↵↵	PUNCTstruct
-Chapitre	chapitre	NOUN
-		TOKEN
+↵↵	↵↵	PUNCTstruct
+chapitre	chapitre	NOUN
+II	II	NUM
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Je	je	PRON
+je	je	PRON
 quittai	quitter	VERB
 Paris	Paris	PROPN
 le	le	DET
@@ -32,9 +32,9 @@ train	train	NOUN
 gare	gare	NOUN
 de	de	ADP
 l'	le	DET
-Est	Est	PROPN
+est	être	UNKNOWN
 .	.	PUNCTsent
-En	en	ADP
+en	en	ADP
 moins	moins	ADV
 de	de	ADP
 trente	trente	NUM
@@ -51,7 +51,7 @@ l'	le	DET
 Autriche	Autriche	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Sur	sur	ADP
+sur	sur	ADP
 le	le	DET
 territoire	territoire	NOUN
 français	français	ADJ
@@ -63,7 +63,7 @@ Châlons-sur-Marne	Châlons-sur-Marne	PROPN
 et	et	CCONJ
 Nancy	Nancy	PROPN
 .	.	PUNCTsent
-En	en	ADP
+en	en	ADP
 traversant	traverser	VERB
 la	le	DET
 regrettée	regretter	VERB
@@ -101,7 +101,7 @@ sentir	sentir	VERB
 au milieu de	au milieu de	ADP
 compatriotes	compatriote	NOUN
 .	.	PUNCTsent
-Lorsque	lorsque	SCONJ
+lorsque	lorsque	SCONJ
 je	je	PRON
 fus	être	VERB
 hors de	hors de	ADP
@@ -151,7 +151,7 @@ la	le	DET
 France	France	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-La	le	DET
+la	le	DET
 nuit	nuit	NOUN
 se	se	PRON
 passa	passer	VERB
@@ -185,7 +185,7 @@ temps	temps	NOUN
 de	de	ADP
 arrêt	arrêt	NOUN
 .	.	PUNCTsent
-Parfois	parfois	ADV
+parfois	parfois	ADV
 ,	,	PUNCTclause
 à	à	ADP
 intervalles	intervalle	NOUN
@@ -201,7 +201,7 @@ de	de	ADP
 Oos	Oos	PROPN
 ,	,	PUNCTclause
 de	de	ADP
-Bade	Bade	PROPN
+bade	bader	UNKNOWN
 ,	,	PUNCTclause
 de	de	ADP
 Carlsruhe	Carlsruhe	PROPN
@@ -217,7 +217,7 @@ glapissante	glapissant	ADJ
 des	un	ADP_DET
 conducteurs	conducteur	NOUN
 .	.	PUNCTsent
-Puis	puis	CCONJ
+puis	puis	CCONJ
 ,	,	PUNCTclause
 dans	dans	ADP
 la	le	DET
@@ -260,7 +260,7 @@ Augsbourg	Augsbourg	PROPN
 et	et	CCONJ
 Munich	Munich	PROPN
 .	.	PUNCTsent
-Puis	puis	CCONJ
+puis	puis	CCONJ
 ,	,	PUNCTclause
 près de	près de	ADP
 la	le	DET
@@ -278,7 +278,7 @@ train	train	NOUN
 Salzbourg	Salzbourg	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Enfin	enfin	ADV
+enfin	enfin	ADV
 ,	,	PUNCTclause
 l'	le	DET
 après-midi	après-midi	NOUN
@@ -318,7 +318,7 @@ de	de	ADP
 Vienne	Vienne	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 restai	rester	VERB
 que	que	ADV
@@ -355,7 +355,7 @@ visiter	visiter	VERB
 en	en	ADP
 détail	détail	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 faut	falloir	VERB
 sérier	sérier	VERB
 les	le	DET
@@ -381,7 +381,7 @@ de	de	ADP
 gouvernement	gouvernement	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Vienne	venir	VERB
+Vienne	Vienne	PROPN
 ne	ne	ADV
 est	être	AUX
 ni	ni	CCONJ
@@ -392,7 +392,7 @@ par	par	ADP
 le	le	DET
 Danube	Danube	PROPN
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 dus	devoir	VERB
 faire	faire	VERB
 environ	environ	ADV
@@ -413,7 +413,7 @@ jusque	jusque	ADP
 à	à	ADP
 Ragz	Ragz	PROPN
 .	.	PUNCTsent
-Nous	nous	PRON
+nous	nous	PRON
 ne	ne	ADV
 étions	être	AUX
 plus	plus	ADV
@@ -439,7 +439,7 @@ rien	rien	PRON
 désirer	désirer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Sur	sur	ADP
+sur	sur	ADP
 le	le	DET
 pont	pont	NOUN
 du	du	ADP_DET
@@ -467,21 +467,21 @@ tout	tout	ADJ
 monde	monde	NOUN
 ,	,	PUNCTclause
 des	un	DET
-Allemands	Allemands	NOUN
+allemands	allemand	NOUN
 ,	,	PUNCTclause
 des	un	DET
-Autrichiens	Autrichiens	NOUN
+autrichiens	autrichien	NOUN
 ,	,	PUNCTclause
 des	un	ADP_DET
-Hongrois	Hongrois	NOUN
+hongrois	hongrois	NOUN
 ,	,	PUNCTclause
 des	un	DET
-Russes	Russes	NOUN
+russes	russe	NOUN
 ,	,	PUNCTclause
 des	un	DET
-Anglais	Anglais	NOUN
+anglais	anglais	NOUN
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 passagers	passager	NOUN
 occupaient	occuper	VERB
 l'	le	DET
@@ -497,14 +497,14 @@ avant	avant	NOUN
 au	au	ADP_DET
 point	point	NOUN
 que	que	SCONJ
-personne	personne:PRON	PRON
+personne	personne_PRON	PRON
 ne	ne	ADV
 y	y	PRON
 eût	avoir	VERB
 trouvé	trouver	VERB
 place	place	NOUN
 .	.	PUNCTsent
-Parmi	parmi	ADP
+parmi	parmi	ADP
 ces	ce	DET
 passagers	passager	NOUN
 ,	,	PUNCTclause
@@ -518,7 +518,7 @@ sans doute	sans doute	ADV
 rencontré	rencontrer	VERB
 de	de	ADP
 ces	ce	DET
-Polonais	Polonais	NOUN
+polonais	polonais	NOUN
 ,	,	PUNCTclause
 en	en	ADP
 costume	costume	NOUN
@@ -551,7 +551,7 @@ et	et	CCONJ
 Bucharest	Bucharest	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 dampfschiff	dampfschiff	NOUN
 descendait	descendre	VERB
 rapidement	rapidement	ADV
@@ -585,7 +585,7 @@ dise	dire	VERB
 la	le	DET
 légende	légende	NOUN
 .	.	PUNCTsent
-De	de	DET
+de	de	DET
 nombreux	nombreux	ADJ
 bateaux	bateau	NOUN
 le	le	DET
@@ -613,7 +613,7 @@ les	le	DET
 deux	deux	NUM
 rives	rive	NOUN
 .	.	PUNCTsent
-On	on	PRON
+on	on	PRON
 passe	passer	VERB
 également	également	ADV
 près de	près de	ADP
@@ -659,7 +659,7 @@ de	de	ADP
 l'	le	DET
 Amazone	Amazone	PROPN
 .	.	PUNCTsent
-Puis	puis	CCONJ
+puis	puis	CCONJ
 ,	,	PUNCTclause
 les	le	DET
 îles	île	NOUN
@@ -693,7 +693,7 @@ les	le	DET
 eût	avoir	AUX
 submergées	submergé	ADJ
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 regard	regard	NOUN
 se	se	PRON
 réjouissait	réjouir	VERB
@@ -729,7 +729,7 @@ couleurs	couleur	NOUN
 vives	vif	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Nous	nous	PRON
+nous	nous	PRON
 longions	longer	VERB
 aussi	aussi	ADV
 des	un	DET
@@ -743,7 +743,7 @@ accore	accore	ADJ
 des	un	ADP_DET
 rives	rive	NOUN
 .	.	PUNCTsent
-En	en	ADP
+en	en	ADP
 filant	filer	VERB
 à	à	ADP
 toute	toute	DET
@@ -754,14 +754,14 @@ semble	sembler	VERB
 que	que	SCONJ
 le	le	DET
 dampfschiff	dampfschiff	NOUN
-les	le:PRON	PRON
+les	le_PRON	PRON
 fasse	faire	VERB
 osciller	osciller	VERB
 sur	sur	ADP
 leurs	leur	DET
 pilotis	pilotis	NOUN
 .	.	PUNCTsent
-Puis	puis	CCONJ
+puis	puis	CCONJ
 ,	,	PUNCTclause
 il	il	PRON
 passait	passer	VERB
@@ -875,7 +875,7 @@ où	où	PRON
 cent	cent	NUM
 cinquante	cinquante	NUM
 mille	mille	NUM
-Français	Français	NOUN
+français	français	NOUN
 effectuèrent	effectuer	VERB
 le	le	DET
 passage	passage	NOUN
@@ -883,7 +883,7 @@ du	du	ADP_DET
 Danube	Danube	PROPN
 avant que	avant que	SCONJ
 Napoléon	Napoléon	PROPN
-les	le:PRON	PRON
+les	le_PRON	PRON
 conduisît	conduire	VERB
 aux	au	ADP_DET
 victoires	victoire	NOUN
@@ -894,7 +894,7 @@ de	de	ADP
 Wagram	Wagram	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pendant	pendant	ADP
+pendant	pendant	ADP
 cette	ce	DET
 journée	journée	NOUN
 nous	nous	PRON
@@ -978,17 +978,17 @@ au	au	ADP_DET
 siècle	siècle	NOUN
 ,	,	PUNCTclause
 les	le	DET
-Français	Français	NOUN
+français	français	NOUN
 et	et	CCONJ
 les	le	DET
-Turcs	Turcs	NOUN
+turcs	turc	NOUN
 se	se	PRON
 battirent	battre	VERB
 avec	avec	ADP
 tant de	tant de	DET
 acharnement	acharnement	NOUN
 .	.	PUNCTsent
-Enfin	enfin	ADV
+enfin	enfin	ADV
 ,	,	PUNCTclause
 après	après	ADP
 avoir	avoir	AUX
@@ -1013,7 +1013,7 @@ le	le	DET
 défilé	défilé	NOUN
 de	de	ADP
 la	le	DET
-Porte	Porte	NOUN
+porte	porte	NOUN
 de	de	ADP
 Hongrie	Hongrie	PROPN
 ,	,	PUNCTclause
@@ -1037,7 +1037,7 @@ de	de	ADP
 Presbourg	Presbourg	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cette	ce	DET
+cette	ce	DET
 relâche	relâche	NOUN
 de	de	ADP
 vingt-quatre	vingt-quatre	NUM
@@ -1074,7 +1074,7 @@ attention	attention	NOUN
 des	un	ADP_DET
 touristes	touriste	NOUN
 .	.	PUNCTsent
-Elle	elle	PRON
+elle	elle	PRON
 a	avoir	AUX
 véritablement	véritablement	ADV
 l'	le	DET
@@ -1086,7 +1086,7 @@ sur	sur	ADP
 un	un	DET
 promontoire	promontoire	NOUN
 .	.	PUNCTsent
-Ce	ce	PRON
+ce	ce	PRON
 serait	être	AUX
 la	le	DET
 mer	mer	NOUN
@@ -1126,7 +1126,7 @@ en	en	ADP
 être	être	AUX
 surpris	surprendre	VERB
 .	.	PUNCTsent
-Au-dessus	au-dessus	ADV
+au-dessus	au-dessus	ADV
 de	de	ADP
 la	le	DET
 ligne	ligne	NOUN
@@ -1150,7 +1150,7 @@ de	de	ADP
 beau	beau	ADJ
 style	style	NOUN
 .	.	PUNCTsent
-À	à	ADP
+à	à	ADP
 l'	le	DET
 extrémité	extrémité	NOUN
 du	du	ADP_DET
@@ -1198,7 +1198,7 @@ le	le	DET
 château	château	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Après	après	ADP
+après	après	ADP
 la	le	DET
 cathédrale	cathédrale	NOUN
 ,	,	PUNCTclause
@@ -1229,7 +1229,7 @@ l'	le	DET
 aristocratie	aristocratie	NOUN
 hongroise	hongrois	ADJ
 .	.	PUNCTsent
-Puis	puis	CCONJ
+puis	puis	CCONJ
 je	je	PRON
 fis	faire	VERB
 l'	le	DET
@@ -1257,7 +1257,7 @@ une	un	DET
 ruine	ruine	NOUN
 totale	total	ADJ
 .	.	PUNCTsent
-Peut-être	peut-être	ADV
+peut-être	peut-être	ADV
 pourrait	pouvoir	VERB
 on	on	PRON
 regretter	regretter	VERB
@@ -1290,7 +1290,7 @@ le	le	DET
 Danube	Danube	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Presbourg	Presbourg	PROPN
+Presbourg	Presbourg	NOUN
 ,	,	PUNCTclause
 où	où	PRON
 se	se	PRON
@@ -1312,7 +1312,7 @@ le	le	DET
 siège	siège	NOUN
 de	de	ADP
 la	le	DET
-Diète	Diète	PROPN
+diète	diète	UNKNOWN
 ,	,	PUNCTclause
 la	le	DET
 Saoupchtina	Saoupchtina	PROPN
@@ -1340,7 +1340,7 @@ entre	entre	ADP
 et	et	CCONJ
 1686	1686	NUM
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 bien	bien	ADV
 que	que	SCONJ
 elle	elle	PRON
@@ -1360,7 +1360,7 @@ la	le	DET
 session	session	NOUN
 de	de	ADP
 la	le	DET
-Diète	Diète	PROPN
+diète	diète	UNKNOWN
 ,	,	PUNCTclause
 alors que	alors que	CCONJ
 y	y	PRON
@@ -1371,13 +1371,13 @@ du	du	ADP_DET
 royaume	royaume	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Je	je	PRON
+je	je	PRON
 dois	devoir	VERB
 ajouter	ajouter	VERB
 que	que	SCONJ
 pour	pour	ADP
 un	un	DET
-Français	Français	NOUN
+français	français	NOUN
 le	le	DET
 nom	nom	NOUN
 de	de	ADP
@@ -1444,7 +1444,7 @@ la	le	DET
 Hongrie	Hongrie	PROPN
 centrale	central	ADJ
 .	.	PUNCTsent
-Un	un	DET
+un	un	DET
 territoire	territoire	NOUN
 véritablement	véritablement	ADV
 curieux	curieux	ADJ
@@ -1491,7 +1491,7 @@ de	de	ADP
 têtes	tête	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Là	là	ADV
+là	là	ADV
 se	se	PRON
 développe	développer	VERB
 en	en	ADP
@@ -1503,7 +1503,7 @@ véritable	véritable	ADJ
 Danube	Danube	PROPN
 hongrois	hongrois	ADJ
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 y	y	PRON
 prend	prendre	VERB
 des	un	DET
@@ -1519,11 +1519,11 @@ puissants	puissant	ADJ
 tributaires	tributaire	ADJ
 venus	venir	VERB
 des	un	ADP_DET
-Petites	petit	ADJ
+petites	petit	ADJ
 Carpates	Carpates	NOUN
 ou	ou	CCONJ
 des	un	ADP_DET
-Alpes	Alpes	NOUN
+alpes	alpe	NOUN
 styriennes	styriennes	ADJ
 ,	,	PUNCTclause
 après	après	ADP
@@ -1541,7 +1541,7 @@ l'	le	DET
 Autriche	Autriche	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 je	je	PRON
 ne	ne	ADV
 pouvais	pouvoir	VERB
@@ -1554,7 +1554,7 @@ dans	dans	ADP
 le	le	DET
 grand-duché	grand-duché	NOUN
 de	de	ADP
-Bade	Bade	PROPN
+bade	bader	UNKNOWN
 ,	,	PUNCTclause
 presque	presque	ADV
 à	à	ADP
@@ -1568,7 +1568,7 @@ limitait	limiter	VERB
 notre	notre	DET
 Alsace-Lorraine	Alsace-Lorraine	NOUN
 !	!	PUNCTsent
-À	à	ADP
+à	à	ADP
 cette	ce	DET
 époque	époque	NOUN
 ,	,	PUNCTclause
@@ -1590,7 +1590,7 @@ son	son	DET
 cours	cours	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Arrivé	arriver	VERB
+arrivé	arriver	VERB
 le	le	DET
 soir	soir	NOUN
 à	à	ADP
@@ -1628,7 +1628,7 @@ cité	cité	NOUN
 le	le	DET
 Györ	Györ	PROPN
 des	un	ADP_DET
-Magyars	Magyars	PROPN
+magyars	magyar	UNKNOWN
 ,	,	PUNCTclause
 plus	plus	ADV
 forteresse	forteresse	NOUN
@@ -1660,7 +1660,7 @@ de	de	ADP
 1849	1849	NUM
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-À	à	ADP
+à	à	ADP
 une	un	DET
 dizaine	dizaine	NOUN
 de	de	ADP
@@ -1710,7 +1710,7 @@ au	au	ADP_DET
 siècle	siècle	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 sais	savoir	VERB
 rien	rien	PRON
@@ -1731,7 +1731,7 @@ du	du	ADP_DET
 territoire	territoire	NOUN
 magyar	magyar	ADJ
 .	.	PUNCTsent
-Toujours	toujours	ADV
+toujours	toujours	ADV
 les	le	DET
 méandres	méandre	NOUN
 capricieux	capricieux	ADJ
@@ -1782,7 +1782,7 @@ ondulent	onduler	VERB
 l'	le	DET
 horizon	horizon	NOUN
 .	.	PUNCTsent
-Là	là	ADV
+là	là	ADV
 prospèrent	prospérer	VERB
 les	le	DET
 vignobles	vignoble	NOUN
@@ -1820,7 +1820,7 @@ hectolitres	litre	NOUN
 —	—	PUNCTclause
 et	et	CCONJ
 le	le	DET
-Tokay	Tokay	PROPN
+tokay	tokay	UNKNOWN
 en	en	PRON
 a	avoir	VERB
 sa	son	DET
@@ -1840,7 +1840,7 @@ consommée	consommer	VERB
 sur	sur	ADP
 place	place	NOUN
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 cache	cacher	VERB
 point	point	ADV
@@ -1863,7 +1863,7 @@ soit	être	AUX
 du	du	ADP_DET
 dampfschiff	dampfschiff	NOUN
 .	.	PUNCTsent
-Autant	autant	ADV
+autant	autant	ADV
 de	de	ADP
 moins	moins	ADV
 pour	pour	ADP
@@ -1872,7 +1872,7 @@ gosiers	gosier	NOUN
 magyars	magyar	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-À	à	ADP
+à	à	ADP
 noter	noter	VERB
 que	que	SCONJ
 les	le	DET
@@ -1889,7 +1889,7 @@ dans	dans	ADP
 la	le	DET
 Puszta	Puszta	PROPN
 .	.	PUNCTsent
-Des	un	ADP_DET
+des	un	ADP_DET
 canaux	canal	NOUN
 de	de	ADP
 irrigation	irrigation	NOUN
@@ -1907,7 +1907,7 @@ une	un	DET
 extrême	extrême	ADJ
 fertilité	fertilité	NOUN
 .	.	PUNCTsent
-On	on	PRON
+on	on	PRON
 y	y	PRON
 a	avoir	AUX
 planté	planter	VERB
@@ -1934,7 +1934,7 @@ les	le	DET
 mauvais	mauvais	ADJ
 vents	vent	NOUN
 .	.	PUNCTsent
-Aussi	aussi	ADV
+aussi	aussi	ADV
 le	le	DET
 temps	temps	NOUN
 ne	ne	ADV
@@ -1956,7 +1956,7 @@ leurs	leur	DET
 rendements	rendement	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Par	par	ADP
+par	par	ADP
 malheur	malheur	NOUN
 ,	,	PUNCTclause
 la	le	DET
@@ -1970,7 +1970,7 @@ divisée	diviser	VERB
 en	en	ADP
 Hongrie	Hongrie	PROPN
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 biens	bien	NOUN
 de	de	ADP
 mainmorte	mainmorte	NOUN
@@ -1978,7 +1978,7 @@ y	y	PRON
 sont	être	AUX
 considérables	considérable	ADJ
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 est	être	AUX
 tel	tel	DET
 domaine	domaine	NOUN
@@ -2015,7 +2015,7 @@ vaste	vaste	ADJ
 territoire	territoire	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cet	ce	DET
+cet	ce	DET
 état de choses	état de choses	NOUN
 ,	,	PUNCTclause
 si	si	ADV
@@ -2027,7 +2027,7 @@ changera	changer	VERB
 graduellement	graduellement	ADV
 ,	,	PUNCTclause
 je	je	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 répète	répéter	VERB
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -2042,7 +2042,7 @@ possède	posséder	VERB
 l'	le	DET
 avenir	avenir	NOUN
 .	.	PUNCTsent
-D'ailleurs	d'ailleurs	ADV
+d'ailleurs	d'ailleurs	ADV
 ,	,	PUNCTclause
 le	le	DET
 paysan	paysan	NOUN
@@ -2067,10 +2067,10 @@ et	et	CCONJ
 de	de	ADP
 intelligence	intelligence	NOUN
 .	.	PUNCTsent
-Peut-être	peut-être	ADV
+peut-être	peut-être	ADV
 ,	,	PUNCTclause
 on	on	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 a	avoir	AUX
 observé	observer	VERB
 ,	,	PUNCTclause
@@ -2093,7 +2093,7 @@ le	le	DET
 paysan	paysan	NOUN
 germanique	germanique	ADJ
 .	.	PUNCTsent
-Entre	entre	ADP
+entre	entre	ADP
 eux	eux	PRON
 ,	,	PUNCTclause
 il y a	il y a	VERB
@@ -2117,7 +2117,7 @@ tout	tout	PRON
 savoir	savoir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ce	ce	PRON
+ce	ce	PRON
 fut	être	AUX
 à	à	ADP
 Gran	Gran	PROPN
@@ -2137,7 +2137,7 @@ l'	le	DET
 aspect	aspect	NOUN
 général	général	ADJ
 .	.	PUNCTsent
-Aux	au	ADP_DET
+aux	au	ADP_DET
 plaines	plaine	NOUN
 de	de	ADP
 la	le	DET
@@ -2155,7 +2155,7 @@ des	un	ADP_DET
 Carpates	Carpates	PROPN
 ou	ou	CCONJ
 des	un	ADP_DET
-Alpes	Alpes	NOUN
+alpes	alpe	NOUN
 nordiques	nordique	ADJ
 ,	,	PUNCTclause
 qui	qui	PRON
@@ -2182,7 +2182,7 @@ plus	plus	ADV
 considérable	considérable	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Gran	Gran	PROPN
+Gran	Gran	PRON
 est	être	AUX
 le	le	DET
 siège	siège	NOUN
@@ -2236,7 +2236,7 @@ légat	légat	NOUN
 prince	prince	NOUN
 de	de	ADP
 l'	le	DET
-Empire	Empire	NOUN
+empire	empire	NOUN
 et	et	CCONJ
 chancelier	chancelier	NOUN
 du	du	ADP_DET
@@ -2259,7 +2259,7 @@ un	un	DET
 million	million	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Après	après	ADP
+après	après	ADP
 Gran	Gran	PROPN
 recommence	recommencer	VERB
 la	le	DET
@@ -2276,7 +2276,7 @@ est	être	AUX
 très	très	ADV
 artiste	artiste	ADJ
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 loi	loi	NOUN
 des	un	ADP_DET
 contrastes	contraste	NOUN
@@ -2296,7 +2296,7 @@ que	que	PRON
 elle	elle	PRON
 fait	faire	VERB
 .	.	PUNCTsent
-Ici	ici	ADV
+ici	ici	ADV
 ,	,	PUNCTclause
 elle	elle	PRON
 a	avoir	AUX
@@ -2361,7 +2361,7 @@ chagrin	chagrin	NOUN
 monotone	monotone	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-En	en	ADP
+en	en	ADP
 cet	ce	DET
 endroit	endroit	NOUN
 ,	,	PUNCTclause
@@ -2386,7 +2386,7 @@ praticables	praticable	ADJ
 la	le	DET
 navigation	navigation	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 prend	prendre	VERB
 celui	celui	PRON
 de	de	ADP
@@ -2436,7 +2436,7 @@ de	de	ADP
 verdure	verdure	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Au-delà	au-delà	ADV
+au-delà	au-delà	ADV
 ,	,	PUNCTclause
 l'	le	DET
 aspect	aspect	NOUN
@@ -2447,7 +2447,7 @@ commence	commencer	VERB
 se	se	PRON
 modifier	modifier	VERB
 .	.	PUNCTsent
-Sur	sur	ADP
+sur	sur	ADP
 la	le	DET
 plaine	plaine	NOUN
 se	se	PRON
@@ -2475,7 +2475,7 @@ succède	succéder	VERB
 au	au	ADP_DET
 calme	calme	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 est	être	AUX
 visible	visible	ADJ
 que	que	SCONJ
@@ -2517,7 +2517,7 @@ constellation	constellation	NOUN
 hongroise	hongrois	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 dampfschiff	dampfschiff	NOUN
 a	avoir	AUX
 contourné	contourner	VERB
@@ -2526,7 +2526,7 @@ dernière	dernier	ADJ
 île	île	NOUN
 boisée	boiser	VERB
 .	.	PUNCTsent
-Bude	Bude	PROPN
+Bude	Bude	NOUN
 apparaît	apparaître	VERB
 d'abord	d'abord	ADV
 ,	,	PUNCTclause
@@ -2567,7 +2567,7 @@ touriste	touriste	NOUN
 consciencieux	consciencieux	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-De	de	ADP
+de	de	ADP
 Bude	Bude	PROPN
 à	à	ADP
 Pest	Pest	PROPN
@@ -2585,7 +2585,7 @@ suspendu	suspendre	VERB
 tel	tel	DET
 que	que	SCONJ
 devait	devoir	VERB
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 être	être	AUX
 ce	ce	DET
 trait	trait	NOUN
@@ -2608,7 +2608,7 @@ Pest	Pest	PROPN
 la	le	DET
 seconde	second	ADJ
 .	.	PUNCTsent
-Sous	sous	ADP
+sous	sous	ADP
 les	le	DET
 arches	arche	NOUN
 passent	passer	VERB
@@ -2680,7 +2680,7 @@ et	et	CCONJ
 clochers	clocher	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Bude	Bude	PROPN
+Bude	Bude	NOUN
 est	être	AUX
 située	situer	VERB
 sur	sur	ADP
@@ -2718,7 +2718,7 @@ la	le	DET
 cité	cité	NOUN
 hongroise	hongrois	ADJ
 .	.	PUNCTsent
-De	de	ADP
+de	de	ADP
 son	son	DET
 côté	côté	NOUN
 ,	,	PUNCTclause
@@ -2753,7 +2753,7 @@ la	le	DET
 citadelle	citadelle	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cependant	cependant	ADV
+cependant	cependant	ADV
 ,	,	PUNCTclause
 de	de	ADP
 turque	turc	NOUN
@@ -2803,7 +2803,7 @@ soixante	soixante	NUM
 mille	mille	NUM
 pour sa part	pour sa part	ADP
 .	.	PUNCTsent
-Plus	plus	ADV
+plus	plus	ADV
 militaire	militaire	ADJ
 que	que	SCONJ
 commerçante	commerçant	ADJ
@@ -2834,14 +2834,14 @@ encadre	encadrer	VERB
 ses	son	DET
 trottoirs	trottoir	NOUN
 .	.	PUNCTsent
-Pour	pour	ADP
+pour	pour	ADP
 passants	passant	NOUN
 ,	,	PUNCTclause
 surtout	surtout	ADV
 des	un	DET
 soldats	soldat	NOUN
 .	.	PUNCTsent
-On	on	PRON
+on	on	PRON
 dirait	dire	VERB
 que	que	SCONJ
 ils	ils	PRON
@@ -2852,7 +2852,7 @@ ville	ville	NOUN
 en	en	ADP
 état de siège	état de siège	NOUN
 .	.	PUNCTsent
-En	en	ADP
+en	en	ADP
 maint	maint	DET
 endroit	endroit	NOUN
 flotte	flotter	VERB
@@ -2873,7 +2873,7 @@ déroule	dérouler	VERB
 la	le	DET
 brise	brise	NOUN
 .	.	PUNCTsent
-Enfin	enfin	ADV
+enfin	enfin	ADV
 ,	,	PUNCTclause
 une	un	DET
 cité	cité	NOUN
@@ -2889,7 +2889,7 @@ si	si	SCONJ
 vivante	vivant	ADJ
 Pest	Pest	PROPN
 .	.	PUNCTsent
-Ici	ici	ADV
+ici	ici	ADV
 ,	,	PUNCTclause
 pourrait	pouvoir	VERB
 on	on	PRON
@@ -2906,7 +2906,7 @@ le	le	DET
 passé	passé	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cependant	cependant	ADV
+cependant	cependant	ADV
 ,	,	PUNCTclause
 si	si	SCONJ
 Bude	Bude	PROPN
@@ -2978,7 +2978,7 @@ terrasses	terrasse	NOUN
 ,	,	PUNCTclause
 comme	comme	ADP
 en	en	ADP
-Orient	Orient	PROPN
+orient	orient	UNKNOWN
 ,	,	PUNCTclause
 sont	être	AUX
 entourées	entourer	VERB
@@ -2992,9 +2992,9 @@ les	le	DET
 salles	salle	NOUN
 de	de	ADP
 la	le	DET
-Maison	Maison	NOUN
+maison	maison	NOUN
 de	de	ADP
-Ville	Ville	NOUN
+ville	ville	NOUN
 ,	,	PUNCTclause
 ceinte	ceindre	VERB
 de	de	ADP
@@ -3029,7 +3029,7 @@ pèlerins	pèlerin	NOUN
 turcs	turc	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 ainsi	ainsi	ADV
 que	que	SCONJ
@@ -3099,7 +3099,7 @@ des	un	ADP_DET
 deux	deux	NUM
 villes	ville	NOUN
 .	.	PUNCTsent
-Entre	entre	ADP
+entre	entre	ADP
 elles	elles	PRON
 descend	descendre	VERB
 le	le	DET
@@ -3116,7 +3116,7 @@ quatre	quatre	NUM
 cents	cents	NUM
 mètres	mètre	NOUN
 .	.	PUNCTsent
-Plusieurs	plusieurs	DET
+plusieurs	plusieurs	DET
 ponts	pont	NOUN
 le	le	DET
 traversent	traverser	VERB
@@ -3160,7 +3160,7 @@ belle	beau	ADJ
 disposition	disposition	NOUN
 architecturale	architectural	ADJ
 .	.	PUNCTsent
-Au-delà	au-delà	ADV
+au-delà	au-delà	ADV
 se	se	PRON
 étend	étendre	VERB
 toute	tout	ADJ
@@ -3192,7 +3192,7 @@ mille	mille	NUM
 son	son	DET
 compte	compte	NOUN
 .	.	PUNCTsent
-Çà	çà	ADV
+çà	çà	ADV
 et	et	CCONJ
 là	là	ADV
 ,	,	PUNCTclause
@@ -3238,7 +3238,7 @@ de	de	ADP
 Vienne	Vienne	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Dans	dans	ADP
+dans	dans	ADP
 la	le	DET
 campagne	campagne	NOUN
 environnante	environnant	ADJ
@@ -3270,7 +3270,7 @@ diètes	diète	NOUN
 nationales	national	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Non	non	ADV
+non	non	ADV
 !	!	PUNCTsent
 ce	ce	PRON
 ne	ne	ADV
@@ -3291,11 +3291,11 @@ noble	noble	NOUN
 cité	citer	VERB
 universitaire	universitaire	ADJ
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 temps	temps	NOUN
 manquerait	manquer	VERB
 .	.	PUNCTsent
-Pourrait	pouvoir	VERB
+pourrait	pouvoir	VERB
 on	on	PRON
 négliger	négliger	VERB
 de	de	ADP
@@ -3303,7 +3303,7 @@ voir	voir	VERB
 avec	avec	ADP
 soin	soin	NOUN
 son	son	DET
-Musée	Musée	NOUN
+musée	musée	NOUN
 national	national	ADJ
 ,	,	PUNCTclause
 les	le	DET
@@ -3350,7 +3350,7 @@ une	un	DET
 incontestable	incontestable	ADJ
 valeur	valeur	NOUN
 .	.	PUNCTsent
-Puis	puis	CCONJ
+puis	puis	CCONJ
 ,	,	PUNCTclause
 il	il	PRON
 faut	falloir	VERB
@@ -3376,7 +3376,7 @@ thermale	thermal	ADJ
 et	et	CCONJ
 aussi	aussi	ADV
 le	le	DET
-Jardin	Jardin	NOUN
+jardin	jardin	NOUN
 public	public	ADJ
 ,	,	PUNCTclause
 le	le	DET
@@ -3435,7 +3435,7 @@ couleurs	couleur	NOUN
 voyantes	voyant	ADJ
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-La	le	DET
+la	le	DET
 veille	veille	NOUN
 de	de	ADP
 mon	mon	DET
@@ -3491,11 +3491,11 @@ surtout	surtout	ADV
 des	un	DET
 lauriers-roses	lauriers-roses	NOUN
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 boisson	boisson	NOUN
 favorite	favori	ADJ
 des	un	ADP_DET
-Magyars	Magyars	PROPN
+magyars	magyar	UNKNOWN
 ,	,	PUNCTclause
 vin	vin	NOUN
 blanc	blanc	ADJ
@@ -3530,7 +3530,7 @@ un	un	DET
 journal	journal	NOUN
 déployé	déployer	VERB
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 le	le	DET
 pris	prendre	VERB
 machinalement	machinalement	ADV
@@ -3560,12 +3560,12 @@ gothiques	gothique	ADJ
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Anniversaire	anniversaire	NOUN
+anniversaire	anniversaire	NOUN
 Storitz	Storitz	PROPN
 .	.	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Ce	ce	DET
+ce	ce	DET
 nom	nom	NOUN
 attira	attirer	VERB
 aussitôt	aussitôt	ADV
@@ -3583,10 +3583,10 @@ le	le	DET
 secrétaire	secrétaire	NOUN
 de	de	ADP
 la	le	DET
-Compagnie	Compagnie	NOUN
+compagnie	compagnie	NOUN
 de	de	ADP
 l'	le	DET
-Est	Est	PROPN
+est	être	UNKNOWN
 ,	,	PUNCTclause
 le	le	DET
 nom	nom	NOUN
@@ -3606,7 +3606,7 @@ fameux	fameux	ADJ
 chimiste	chimiste	NOUN
 allemand	allemand	ADJ
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 pouvait	pouvoir	VERB
 y	y	PRON
@@ -3615,7 +3615,7 @@ doute	doute	NOUN
 à cet égard	à cet égard	ADP
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 voici	voici	ADP
 ce	ce	DET
 que	que	SCONJ
@@ -3624,7 +3624,7 @@ lus	lire	VERB
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Dans	dans	ADP
+dans	dans	ADP
 une	un	DET
 vingtaine	vingtaine	NOUN
 de	de	ADP
@@ -3666,8 +3666,8 @@ natale	natal	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-On	on	PRON
-le	le:PRON	PRON
+on	on	PRON
+le	le_PRON	PRON
 sait	savoir	VERB
 ,	,	PUNCTclause
 ce	ce	DET
@@ -3703,7 +3703,7 @@ physiques	physique	ADJ
 .	.	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 ,	,	PUNCTclause
 en effet	en effet	ADV
 ,	,	PUNCTclause
@@ -3716,7 +3716,7 @@ ne	ne	ADV
 exagérait	exagérer	VERB
 pas	pas	ADV
 .	.	PUNCTsent
-Otto	Otto	PROPN
+Otto	Otto	ADJ
 Storitz	Storitz	PROPN
 était	être	AUX
 justement	justement	ADV
@@ -3748,7 +3748,7 @@ dénomination	dénomination	NOUN
 première	premier	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 ce	ce	PRON
 qui	qui	PRON
@@ -3767,7 +3767,7 @@ suivantes	suivant	ADJ
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Personne	personne:PRON	PRON
+personne	personne_PRON	PRON
 ne	ne	ADV
 ignore	ignorer	VERB
 que	que	ADV
@@ -3826,7 +3826,7 @@ en	en	ADP
 place	place	NOUN
 publique	public	ADJ
 .	.	PUNCTsent
-Nous	nous	PRON
+nous	nous	PRON
 ajouterons	ajouter	VERB
 que	que	SCONJ
 depuis	depuis	ADP
@@ -3857,7 +3857,7 @@ des	un	DET
 connaissances	connaissance	NOUN
 surhumaines	surhumain	ADJ
 .	.	PUNCTsent
-Par	par	ADP
+par	par	ADP
 bonheur	bonheur	NOUN
 ,	,	PUNCTclause
 se	se	PRON
@@ -3898,7 +3898,7 @@ de	de	ADP
 son	son	DET
 père	père	NOUN
 .	.	PUNCTsent
-Or	or	NOUN
+or	or	NOUN
 ,	,	PUNCTclause
 il	il	PRON
 ne	ne	ADV
@@ -3975,7 +3975,7 @@ cette	ce	DET
 rivalité	rivalité	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 reporter	reporter	NOUN
 du	du	ADP_DET
 Wienner	Wienner	PROPN
@@ -4022,7 +4022,7 @@ de	de	ADP
 Otto	Otto	PROPN
 Storitz	Storitz	PROPN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 est	être	AUX
 pas	pas	ADV
@@ -4053,7 +4053,7 @@ en	en	ADP
 être	être	AUX
 témoin	témoin	NOUN
 .	.	PUNCTsent
-D'après	d'après	ADP
+d'après	d'après	ADP
 ce	ce	PRON
 que	que	PRON
 l'on	on	PRON
@@ -4079,7 +4079,7 @@ de	de	ADP
 ordre	ordre	NOUN
 supérieur	supérieur	ADJ
 .	.	PUNCTsent
-On	on	PRON
+on	on	PRON
 ne	ne	ADV
 se	se	PRON
 étonnerait	étonner	VERB
@@ -4109,7 +4109,7 @@ toute	toute	DET
 sa	son	DET
 gloire	gloire	NOUN
 .	.	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 qui	qui	PRON
 sait	savoir	VERB
 ,	,	PUNCTclause
@@ -4121,14 +4121,14 @@ il	il	PRON
 la	le	DET
 cité	cité	NOUN
 qui	qui	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 a	avoir	AUX
 vu	voir	VERB
 naître	naître	VERB
 !…	!…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Pour	pour	ADP
+pour	pour	ADP
 achever	achever	VERB
 ,	,	PUNCTclause
 nous	nous	PRON
@@ -4162,7 +4162,7 @@ jour	jour	NOUN
 des	un	ADP_DET
 obsèques	obsèques	NOUN
 .	.	PUNCTsent
-Bien	bien	ADV
+bien	bien	ADV
 des	un	ADP_DET
 années	année	NOUN
 se	se	PRON
@@ -4179,7 +4179,7 @@ légendes	légende	NOUN
 »	»	PUNCTclause
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Après	après	ADP
+après	après	ADP
 la	le	DET
 lecture	lecture	NOUN
 de	de	ADP
@@ -4207,7 +4207,7 @@ rien	rien	PRON
 de plus	de plus	ADV
 certain	certain	ADJ
 .	.	PUNCTsent
-Que	que	SCONJ
+que	que	SCONJ
 son	son	DET
 tombeau	tombeau	NOUN
 dût	devoir	VERB
@@ -4243,7 +4243,7 @@ arrêter	arrêter	VERB
 un	un	DET
 instant	instant	NOUN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 si	si	SCONJ
 le	le	DET
 décès	décès	NOUN
@@ -4276,7 +4276,7 @@ la	le	DET
 famille	famille	NOUN
 Roderich	Roderich	PROPN
 .	.	PUNCTsent
-Est	être	AUX
+est	être	AUX
 ce	ce	DET
 donc	donc	ADV
 pour	pour	ADP
@@ -4293,7 +4293,7 @@ mariage	mariage	NOUN
 ?…	?…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Bon	bon	ADJ
+bon	bon	ADJ
 !	!	PUNCTsent
 fis	faire	VERB
 je	je	PRON
@@ -4307,7 +4307,7 @@ que	que	PRON
 je	je	PRON
 déraisonne	déraisonner	VERB
 !	!	PUNCTsent
-Wilhelm	Wilhelm	PROPN
+Wilhelm	Wilhelm	NOUN
 Storitz	Storitz	PROPN
 a	avoir	AUX
 demandé	demander	VERB
@@ -4324,7 +4324,7 @@ refusée	refuser	VERB
 …	…	PUNCTsent
 on	on	PRON
 ne	ne	ADV
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 a	avoir	AUX
 plus	plus	ADV
 revu	revoir	VERB
@@ -4356,7 +4356,7 @@ importance	importance	NOUN
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Je	je	PRON
+je	je	PRON
 me	me	PRON
 fis	faire	VERB
 apporter	apporter	VERB
@@ -4404,7 +4404,7 @@ kilomètres	mètre	NOUN
 de	de	ADP
 Ragz	Ragz	PROPN
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 lui	lui	PRON
 marquais	marquer	VERB
 que	que	SCONJ
@@ -4434,7 +4434,7 @@ se	se	PRON
 achevât	achever	VERB
 de même	de même	ADV
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 oubliais	oublier	VERB
 pas	pas	ADV
@@ -4470,7 +4470,7 @@ lui	lui	PRON
 transmettre	transmettre	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 lendemain	lendemain	NOUN
 ,	,	PUNCTclause
 à	à	ADP
@@ -4496,7 +4496,7 @@ le	le	DET
 courant	courant	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 va	aller	VERB
 de	de	ADP
 soi	soi	PRON
@@ -4519,7 +4519,7 @@ personnel	personnel	NOUN
 des	un	ADP_DET
 passagers	passager	NOUN
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 uns	un	PRON
 avaient	avoir	AUX
 débarqué	débarquer	VERB
@@ -4549,7 +4549,7 @@ des	un	ADP_DET
 susdites	susdit	ADJ
 villes	ville	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 en	en	PRON
 était	être	AUX
@@ -4583,10 +4583,10 @@ jusque	jusque	ADP
 à	à	ADP
 la	le	DET
 mer	mer	NOUN
-Noire	noir	ADJ
+noire	noir	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 Mathias	Mathias	PROPN
 Corvin	Corvin	PROPN
 avait	avoir	AUX
@@ -4654,7 +4654,7 @@ abord	abord	NOUN
 peu	peu	ADV
 sympathique	sympathique	ADJ
 .	.	PUNCTsent
-Son	son	DET
+son	son	DET
 attitude	attitude	NOUN
 indiquait	indiquer	VERB
 l'	le	DET
@@ -4663,7 +4663,7 @@ hautain	hautain	ADJ
 et	et	CCONJ
 dédaigneux	dédaigneux	ADJ
 .	.	PUNCTsent
-À	à	ADP
+à	à	ADP
 plusieurs	plusieurs	DET
 reprises	repris	NOUN
 ,	,	PUNCTclause
@@ -4709,7 +4709,7 @@ frayer	frayer	VERB
 avec	avec	ADP
 personne	personne	NOUN
 .	.	PUNCTsent
-Peu	peu	ADV
+peu	peu	ADV
 me	me	PRON
 importait	importer	VERB
 ,	,	PUNCTclause
@@ -4733,7 +4733,7 @@ compagnons	compagnon	NOUN
 de	de	ADP
 voyage	voyage	NOUN
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 capitaine	capitaine	NOUN
 du	du	ADP_DET
 Mathias	Mathias	PROPN
@@ -4752,7 +4752,7 @@ de	de	ADP
 route	route	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-À	à	ADP
+à	à	ADP
 le	le	DET
 bien	bien	NOUN
 considérer	considérer	VERB
@@ -4769,7 +4769,7 @@ que	que	SCONJ
 ce	ce	PRON
 était	être	AUX
 un	un	DET
-Allemand	Allemand	NOUN
+allemand	allemand	NOUN
 ,	,	PUNCTclause
 très	très	ADV
 probablement	probablement	ADV
@@ -4778,7 +4778,7 @@ de	de	ADP
 la	le	DET
 Prusse	Prusse	PROPN
 .	.	PUNCTsent
-Si	si	SCONJ
+si	si	SCONJ
 je	je	PRON
 ne	ne	ADV
 faisais	faire	VERB
@@ -4809,12 +4809,12 @@ que	que	SCONJ
 je	je	PRON
 étais	être	AUX
 un	un	DET
-Français	Français	NOUN
+français	français	NOUN
 .	.	PUNCTsent
-Oui	oui	INTJ
+oui	oui	INTJ
 ,	,	PUNCTclause
 un	un	DET
-Prussien	Prussien	NOUN
+prussien	prussien	NOUN
 ,	,	PUNCTclause
 cela	cela	PRON
 se	se	PRON
@@ -4833,14 +4833,14 @@ la	le	DET
 marque	marque	NOUN
 teutonne	teuton	ADJ
 .	.	PUNCTsent
-Impossible	impossible	ADJ
+impossible	impossible	ADJ
 de	de	ADP
 le	le	DET
 confondre	confondre	VERB
 avec	avec	ADP
 ces	ce	DET
 braves	brave	ADJ
-Hongrois	Hongrois	NOUN
+hongrois	hongrois	NOUN
 ,	,	PUNCTclause
 ces	ce	DET
 sympathiques	sympathique	ADJ
@@ -4853,7 +4853,7 @@ la	le	DET
 France	France	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 dampfschiff	dampfschiff	NOUN
 ,	,	PUNCTclause
 après	après	ADP
@@ -4867,7 +4867,7 @@ forcer	forcer	VERB
 sa	son	DET
 vitesse	vitesse	NOUN
 .	.	PUNCTsent
-De	de	ADP
+de	de	ADP
 là	là	ADV
 ,	,	PUNCTclause
 toute	toute	DET
@@ -4950,7 +4950,7 @@ la	le	DET
 grande	grand	ADJ
 ville	ville	NOUN
 .	.	PUNCTsent
-Toujours	toujours	ADV
+toujours	toujours	ADV
 le	le	DET
 chapelet	chapelet	NOUN
 des	un	ADP_DET
@@ -4975,7 +4975,7 @@ gris	gris	NOUN
 pâle	pâle	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Après	après	ADP
+après	après	ADP
 cent	cent	NUM
 cinquante	cinquante	NUM
 kilomètres	mètre	NOUN
@@ -5036,7 +5036,7 @@ silhouette	silhouette	NOUN
 embrumée	embrumer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 lendemain	lendemain	NOUN
 ,	,	PUNCTclause
 le	le	DET
@@ -5057,7 +5057,7 @@ le	le	DET
 soir	soir	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Vers	vers	ADP
+vers	vers	ADP
 neuf	neuf	NUM
 heures	heure	NOUN
 ,	,	PUNCTclause
@@ -5116,15 +5116,15 @@ la	le	DET
 haine	haine	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Que	que	SCONJ
+que	que	SCONJ
 me	me	PRON
 voulait	vouloir	VERB
 il	il	PRON
 ,	,	PUNCTclause
 ce	ce	DET
-Prussien	Prussien	NOUN
+prussien	prussien	NOUN
 ?	?	PUNCTsent
-Cela	cela	PRON
+cela	cela	PRON
 se	se	PRON
 expliquait	expliquer	VERB
 il	il	PRON
@@ -5136,9 +5136,9 @@ apprendre	apprendre	VERB
 que	que	SCONJ
 je	je	PRON
 étais	être	AUX
-Français	Français	NOUN
+français	français	NOUN
 ?	?	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 la	le	DET
 pensée	pensée	NOUN
 me	me	PRON
@@ -5184,7 +5184,7 @@ cette	ce	DET
 façon	façon	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-En	en	ADP
+en	en	ADP
 tout	tout	PRON
 cas	cas	NOUN
 ,	,	PUNCTclause
@@ -5212,7 +5212,7 @@ ce	ce	DET
 personnage	personnage	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 Mathias	Mathias	PROPN
 Corvin	Corvin	PROPN
 fit	faire	AUX
@@ -5250,7 +5250,7 @@ noyée	noyer	VERB
 de	de	ADP
 ombre	ombre	NOUN
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 descendis	descendre	VERB
 cependant	cependant	ADV
 ,	,	PUNCTclause
@@ -5268,7 +5268,7 @@ rentrai	rentrer	VERB
 à bord	à bord	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 lendemain	lendemain	NOUN
 ,	,	PUNCTclause
 21	21	NUM
@@ -5288,7 +5288,7 @@ du	du	ADP_DET
 jour	jour	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pendant	pendant	ADP
+pendant	pendant	ADP
 cette	ce	DET
 journée	journée	NOUN
 ,	,	PUNCTclause
@@ -5333,11 +5333,11 @@ impertinent	impertinent	NOUN
 que	que	SCONJ
 il	il	PRON
 me	me	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 dît	dire	VERB
 donc	donc	ADV
 !	!	PUNCTsent
-Ce	ce	PRON
+ce	ce	PRON
 ne	ne	ADV
 est	être	AUX
 pas	pas	ADV
@@ -5371,7 +5371,7 @@ sa	son	DET
 langue	langue	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 aime	aimer	VERB
 point	point	ADV
@@ -5395,7 +5395,7 @@ cette	ce	DET
 persistance	persistance	NOUN
 désobligeante	désobligeant	ADJ
 .	.	PUNCTsent
-Toutefois	toutefois	ADV
+toutefois	toutefois	ADV
 ,	,	PUNCTclause
 si	si	SCONJ
 je	je	PRON
@@ -5404,7 +5404,7 @@ arrivais	arriver	VERB
 à	à	ADP
 interpeller	interpeller	VERB
 le	le	DET
-Teuton	Teuton	PROPN
+teuton	teuton	UNKNOWN
 ,	,	PUNCTclause
 mieux	mieux	ADV
 valait	valoir	VERB
@@ -5436,8 +5436,8 @@ passager	passager	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Je	je	PRON
-le	le:PRON	PRON
+je	je	PRON
+le	le_PRON	PRON
 vois	voir	VERB
 pour	pour	ADP
 la première fois	la première fois	ADV
@@ -5451,14 +5451,14 @@ il	il	PRON
 ce	ce	PRON
 est	être	AUX
 un	un	DET
-Allemand	Allemand	NOUN
+allemand	allemand	NOUN
 ?	?	PUNCTsent
 repris	reprendre	VERB
 je	je	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-À	à	ADP
+à	à	ADP
 ne	ne	ADV
 en	en	PRON
 pas	pas	ADV
@@ -5473,7 +5473,7 @@ pense	penser	VERB
 même	même	ADV
 que	que	SCONJ
 il	il	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 est	être	AUX
 deux fois	deux fois	ADV
 ,	,	PUNCTclause
@@ -5481,11 +5481,11 @@ car	car	CCONJ
 il	il	PRON
 doit	devoir	VERB
 être	être	AUX
-Prussien	prussien	ADJ
+prussien	prussien	ADJ
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 ce	ce	PRON
 est	être	AUX
 déjà	déjà	ADV
@@ -5509,7 +5509,7 @@ origine	origine	NOUN
 hongroise	hongrois	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 dampfschiff	dampfschiff	NOUN
 évolua	évoluer	VERB
 à	à	ADP
@@ -5557,7 +5557,7 @@ vingt-quatre	vingt-quatre	NUM
 mille	mille	NUM
 habitants	habitant	NOUN
 .	.	PUNCTsent
-Elle	elle	PRON
+elle	elle	PRON
 est	être	AUX
 située	situer	VERB
 comme	comme	ADP
@@ -5601,7 +5601,7 @@ avant	avant	ADP
 Belgrade	Belgrade	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 lendemain	lendemain	NOUN
 ,	,	PUNCTclause
 à travers	à travers	ADP
@@ -5625,7 +5625,7 @@ la	le	DET
 rive	rive	NOUN
 droite	droit	ADJ
 .	.	PUNCTsent
-Nous	nous	PRON
+nous	nous	PRON
 longions	longer	VERB
 alors	alors	ADV
 cette	ce	DET
@@ -5649,17 +5649,17 @@ vers	vers	ADP
 l'	le	DET
 est	est	NOUN
 .	.	PUNCTsent
-Là	là	ADV
+là	là	ADV
 se	se	PRON
 étendait	étendre	VERB
 aussi	aussi	ADV
 le	le	DET
 territoire	territoire	NOUN
 des	un	ADP_DET
-Confins	Confins	NOUN
-Militaires	militaire	ADJ
+confins	confins	NOUN
+militaires	militaire	ADJ
 .	.	PUNCTsent
-De	de	ADP
+de	de	ADP
 distance	distance	NOUN
 en	en	ADP
 distance	distance	NOUN
@@ -5698,13 +5698,13 @@ de	de	ADP
 branchages	branchage	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ce	ce	DET
+ce	ce	DET
 territoire	territoire	NOUN
 est	être	AUX
 administré	administrer	VERB
 militairement	militairement	ADV
 .	.	PUNCTsent
-Tous	tout	ADJ
+tous	tout	ADJ
 les	le	DET
 habitants	habitant	NOUN
 ,	,	PUNCTclause
@@ -5719,7 +5719,7 @@ y	y	PRON
 sont	être	AUX
 soldats	soldat	NOUN
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 provinces	province	NOUN
 ,	,	PUNCTclause
 les	le	DET
@@ -5745,7 +5745,7 @@ cette	ce	DET
 armée	armée	NOUN
 spéciale	spécial	ADJ
 .	.	PUNCTsent
-On	on	PRON
+on	on	PRON
 comprend	comprendre	VERB
 sous	sous	ADP
 cette	ce	DET
@@ -5756,7 +5756,7 @@ les	le	DET
 rivages	rivage	NOUN
 de	de	ADP
 l'	le	DET
-Adriatique	Adriatique	PROPN
+adriatique	adriatique	UNKNOWN
 jusque	jusque	ADP
 aux	au	ADP_DET
 montagnes	montagne	NOUN
@@ -5792,7 +5792,7 @@ une	un	DET
 sévère	sévère	ADJ
 discipline	discipline	NOUN
 .	.	PUNCTsent
-Cette	ce	DET
+cette	ce	DET
 institution	institution	NOUN
 date	dater	VERB
 de	de	ADP
@@ -5812,7 +5812,7 @@ de	de	ADP
 être	être	AUX
 contre	contre	ADP
 les	le	DET
-Turcs	Turcs	NOUN
+turcs	turc	NOUN
 ,	,	PUNCTclause
 mais	mais	CCONJ
 aussi	aussi	ADV
@@ -5834,7 +5834,7 @@ les	le	DET
 autres	autre	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Après	après	ADP
+après	après	ADP
 l'	le	DET
 escale	escale	NOUN
 de	de	ADP
@@ -5845,7 +5845,7 @@ ai	avoir	AUX
 plus	plus	ADV
 vu	voir	VERB
 l'	le	DET
-Allemand	Allemand	NOUN
+allemand	allemand	NOUN
 à bord	à bord	ADV
 .	.	PUNCTsent
 sans doute	sans doute	ADV
@@ -5877,7 +5877,7 @@ avec	avec	ADP
 lui	lui	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 ,	,	PUNCTclause
 maintenant	maintenant	ADV
 ,	,	PUNCTclause
@@ -5887,7 +5887,7 @@ emplissaient	emplir	VERB
 mon	mon	DET
 esprit	esprit	NOUN
 .	.	PUNCTsent
-Dans	dans	ADP
+dans	dans	ADP
 quelques	quelque	DET
 heures	heure	NOUN
 ,	,	PUNCTclause
@@ -5898,7 +5898,7 @@ arrivé	arriver	VERB
 à	à	ADP
 Ragz	Ragz	PROPN
 .	.	PUNCTsent
-Quelle	quel	DET
+quelle	quel	DET
 joie	joie	NOUN
 de	de	ADP
 revoir	revoir	VERB
@@ -5936,7 +5936,7 @@ nouvelle	nouveau	ADJ
 famille	famille	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Vers	vers	ADP
+vers	vers	ADP
 cinq	cinq	NUM
 heures	heure	NOUN
 de	de	ADP
@@ -6009,7 +6009,7 @@ ce	ce	DET
 était	être	AUX
 Ragz	Ragz	PROPN
 .	.	PUNCTsent
-Au	au	ADP_DET
+au	au	ADP_DET
 dernier	dernier	ADJ
 tournant	tournant	NOUN
 du	du	ADP_DET
@@ -6047,7 +6047,7 @@ la	le	DET
 Hongrie	Hongrie	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-En	en	ADP
+en	en	ADP
 quelques	quelque	DET
 tours	tour	NOUN
 de	de	ADP
@@ -6121,7 +6121,7 @@ fît	faire	VERB
 partie	partie	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Or	or	NOUN
+or	or	NOUN
 ,	,	PUNCTclause
 comme	comme	SCONJ
 je	je	PRON
@@ -6146,7 +6146,7 @@ allemande	allemand	ADJ
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Si	si	SCONJ
+si	si	SCONJ
 Marc	Marc	PROPN
 Vidal	Vidal	PROPN
 épouse	épouser	VERB
@@ -6163,7 +6163,7 @@ lui	lui	PRON
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Je	je	PRON
+je	je	PRON
 me	me	PRON
 retournai	retourner	VERB
 vivement	vivement	ADV
@@ -6191,7 +6191,7 @@ ressemblait	ressembler	VERB
 celle	celle	PRON
 de	de	ADP
 l'	le	DET
-Allemand	Allemand	NOUN
+allemand	allemand	NOUN
 qui	qui	PRON
 ne	ne	ADV
 se	se	PRON
@@ -6200,17 +6200,17 @@ plus	plus	ADV
 à bord	à bord	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cependant	cependant	ADV
+cependant	cependant	ADV
 ,	,	PUNCTclause
 personne	personne	NOUN
 ,	,	PUNCTclause
 je	je	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 répète	répéter	VERB
 ,	,	PUNCTclause
-personne	personne:PRON	PRON
+personne	personne_PRON	PRON
 !	!	PUNCTsent
-Évidemment	évidemment	ADV
+évidemment	évidemment	ADV
 ,	,	PUNCTclause
 je	je	PRON
 me	me	PRON

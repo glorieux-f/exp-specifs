@@ -5,19 +5,19 @@
 # isPartOf = Un capitaine de quinze ans
 # title = II.1. La traite
 
-↵↵↵	↵↵↵	PUNCTstruct
-		TOKEN
+↵↵	↵↵	PUNCTstruct
+II	II	PRON
 .	.	PUNCTsent
 1	1	NUM
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 traite	traite	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-La	le	DET
+la	le	DET
 traite	traite	NOUN
 !	!	PUNCTsent
-Personne	personne:PRON	PRON
+personne	personne_PRON	PRON
 ne	ne	ADV
 ignore	ignorer	VERB
 la	le	DET
@@ -38,7 +38,7 @@ le	le	DET
 langage	langage	NOUN
 humain	humain	ADJ
 .	.	PUNCTsent
-Ce	ce	DET
+ce	ce	DET
 trafic	trafic	NOUN
 abominable	abominable	ADJ
 ,	,	PUNCTclause
@@ -65,7 +65,7 @@ des	un	ADP_DET
 années	année	NOUN
 déjà	déjà	ADV
 .	.	PUNCTsent
-Cependant	cependant	ADV
+cependant	cependant	ADV
 ,	,	PUNCTclause
 il	il	PRON
 se	se	PRON
@@ -91,7 +91,7 @@ la	le	DET
 signature	signature	NOUN
 de	de	ADP
 quelques	quelque	DET
-États	États	NOUN
+états	état	NOUN
 qui	qui	PRON
 se	se	PRON
 disent	dire	VERB
@@ -109,7 +109,7 @@ l'	le	DET
 esclavage	esclavage	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-On	on	PRON
+on	on	PRON
 pourrait	pouvoir	VERB
 croire	croire	VERB
 que	que	SCONJ
@@ -132,7 +132,7 @@ humaines	humain	ADJ
 ont	avoir	AUX
 cessé	cesser	VERB
 !	!	PUNCTsent
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 en	en	PRON
 est	être	AUX
@@ -166,7 +166,7 @@ de	de	ADP
 cette	ce	DET
 histoire	histoire	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 faut	falloir	VERB
 que	que	SCONJ
 il	il	PRON
@@ -264,8 +264,8 @@ fut	être	AUX
 établie	établir	VERB
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Les	le	DET
-Musulmans	Musulmans	NOUN
+les	le	DET
+musulmans	musulman	NOUN
 ,	,	PUNCTclause
 après	après	ADP
 avoir	avoir	AUX
@@ -286,8 +286,8 @@ côte	côte	NOUN
 de	de	ADP
 Afrique	Afrique	PROPN
 .	.	PUNCTsent
-Les	le	DET
-Portugais	Portugais	PROPN
+les	le	DET
+portugais	portugais	UNKNOWN
 ,	,	PUNCTclause
 qui	qui	PRON
 occupaient	occuper	VERB
@@ -302,7 +302,7 @@ poursuivirent	poursuivre	VERB
 avec	avec	ADP
 acharnement	acharnement	NOUN
 .	.	PUNCTsent
-Un	un	DET
+un	un	DET
 certain	certain	ADJ
 nombre	nombre	NOUN
 de	de	ADP
@@ -316,7 +316,7 @@ ramenés	ramener	VERB
 en	en	ADP
 Portugal	Portugal	PROPN
 .	.	PUNCTsent
-Réduits	réduire	VERB
+réduits	réduire	VERB
 en	en	ADP
 esclavage	esclavage	NOUN
 ,	,	PUNCTclause
@@ -342,9 +342,9 @@ l'	le	DET
 chrétienne	chrétien	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ces	ce	DET
-Musulmans	Musulmans	NOUN
+musulmans	musulman	NOUN
 appartenaient	appartenir	VERB
 pour	pour	ADP
 la plupart	la plupart	PRON
@@ -362,9 +362,9 @@ prix	prix	NOUN
 de	de	ADP
 or	or	NOUN
 .	.	PUNCTsent
-Refus	refus	NOUN
+refus	refus	NOUN
 des	un	ADP_DET
-Portugais	Portugais	PROPN
+portugais	portugais	UNKNOWN
 de	de	ADP
 accepter	accepter	VERB
 une	un	DET
@@ -376,7 +376,7 @@ que	que	PRON
 elle	elle	PRON
 fût	être	AUX
 .	.	PUNCTsent
-Ils	ils	PRON
+ils	ils	PRON
 ne	ne	ADV
 avaient	avoir	VERB
 que	que	PRON
@@ -386,7 +386,7 @@ l'	le	DET
 or	or	NOUN
 étranger	étranger	ADJ
 .	.	PUNCTsent
-Ce	ce	PRON
+ce	ce	PRON
 qui	qui	PRON
 leur	leur	PRON
 manquait	manquer	VERB
@@ -414,7 +414,7 @@ l'	le	DET
 esclave	esclave	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Les	le	DET
+les	le	DET
 familles	famille	NOUN
 musulmanes	musulman	ADJ
 ,	,	PUNCTclause
@@ -456,7 +456,7 @@ fut	être	AUX
 acceptée	accepter	VERB
 par	par	ADP
 les	le	DET
-Portugais	Portugais	PROPN
+portugais	portugais	UNKNOWN
 ,	,	PUNCTclause
 qui	qui	PRON
 trouvaient	trouver	VERB
@@ -479,7 +479,7 @@ en	en	ADP
 Europe	Europe	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Vers	vers	ADP
+vers	vers	ADP
 la	le	DET
 fin	fin	NOUN
 du	du	ADP_DET
@@ -503,9 +503,9 @@ y	y	PRON
 répugnaient	répugner	VERB
 pas	pas	ADV
 .	.	PUNCTsent
-Tous	tout	ADJ
+tous	tout	ADJ
 les	le	DET
-États	États	NOUN
+états	état	NOUN
 le	le	DET
 protégeaient	protéger	VERB
 ,	,	PUNCTclause
@@ -556,7 +556,7 @@ péri	périr	VERB
 par	par	ADP
 milliers	millier	NOUN
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 transport	transport	NOUN
 des	un	ADP_DET
 nègres	nègre	NOUN
@@ -592,7 +592,7 @@ du	du	ADP_DET
 littoral	littoral	NOUN
 africain	africain	ADJ
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 «	«	PUNCTclause
 marchandise	marchandise	NOUN
 »	»	PUNCTclause
@@ -610,7 +610,7 @@ bénéfices	bénéfice	NOUN
 considérables	considérable	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 si	si	ADV
 nécessaire	nécessaire	ADJ
@@ -637,7 +637,7 @@ de	de	ADP
 chair	chair	NOUN
 humaine	humain	ADJ
 .	.	PUNCTsent
-Des	un	ADP_DET
+des	un	ADP_DET
 voix	voix	NOUN
 généreuses	généreux	ADJ
 se	se	PRON
@@ -671,7 +671,7 @@ l'	le	DET
 humanité	humanité	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-En	en	ADP
+en	en	ADP
 1751	1751	NUM
 ,	,	PUNCTclause
 les	le	DET
@@ -692,7 +692,7 @@ de	de	ADP
 cette	ce	DET
 Amérique	Amérique	PROPN
 du	du	ADP_DET
-Nord	Nord	NOUN
+Nord	Nord	PROPN
 ,	,	PUNCTclause
 où	où	PRON
 ,	,	PUNCTclause
@@ -719,10 +719,10 @@ fut	être	AUX
 pas	pas	ADV
 étrangère	étranger	ADJ
 .	.	PUNCTsent
-Divers	divers	DET
-États	États	NOUN
+divers	divers	DET
+états	état	NOUN
 du	du	ADP_DET
-Nord	Nord	NOUN
+Nord	Nord	PROPN
 ,	,	PUNCTclause
 la	le	DET
 Virginie	Virginie	PROPN
@@ -754,7 +754,7 @@ leurs	leur	DET
 territoires	territoire	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 la	le	DET
 campagne	campagne	NOUN
 ,	,	PUNCTclause
@@ -773,7 +773,7 @@ septentrionales	septentrional	ADJ
 du	du	ADP_DET
 Nouveau-Monde	Nouveau-Monde	PROPN
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 esclavagistes	esclavagiste	NOUN
 furent	être	AUX
 vivement	vivement	ADV
@@ -782,9 +782,9 @@ jusque	jusque	ADP
 au-delà	au-delà	ADV
 de	de	ADP
 l'	le	DET
-Atlantique	Atlantique	PROPN
+atlantique	atlantique	UNKNOWN
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 France	France	PROPN
 et	et	CCONJ
 l'	le	DET
@@ -802,7 +802,7 @@ juste	juste	ADV
 cause	cause	NOUN
 :	:	PUNCTclause
 «	«	PUNCTsent
-Périssent	périr	VERB
+périssent	périr	VERB
 les	le	DET
 colonies	colonie	NOUN
 plutôt	plutôt	ADV
@@ -820,7 +820,7 @@ qui	qui	PRON
 retentit	retentir	VERB
 dans	dans	ADP
 tout	tout	DET
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 ancien	ancien	ADJ
 monde	monde	NOUN
 ,	,	PUNCTclause
@@ -852,7 +852,7 @@ l'	le	DET
 était	être	AUX
 donné	donner	VERB
 .	.	PUNCTsent
-En	en	ADP
+en	en	ADP
 1807	1807	NUM
 ,	,	PUNCTclause
 l'	le	DET
@@ -875,7 +875,7 @@ exemple	exemple	NOUN
 en	en	ADP
 1814	1814	NUM
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 deux	deux	NUM
 puissantes	puissant	ADJ
 nations	nation	NOUN
@@ -895,7 +895,7 @@ les	le	DET
 Cent-Jours	Cent-Jours	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Toutefois	toutefois	ADV
+toutefois	toutefois	ADV
 ,	,	PUNCTclause
 ce	ce	DET
 ne	ne	ADV
@@ -910,7 +910,7 @@ déclaration	déclaration	NOUN
 purement	purement	ADV
 théorique	théorique	ADJ
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 négriers	négrier	NOUN
 ne	ne	ADV
 cessaient	cesser	VERB
@@ -936,7 +936,7 @@ de	de	ADP
 »	»	PUNCTclause
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Des	un	DET
+des	un	DET
 mesures	mesure	NOUN
 plus	plus	ADV
 pratiques	pratique	ADJ
@@ -950,7 +950,7 @@ fin	fin	NOUN
 ce	ce	DET
 commerce	commerce	NOUN
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 États-Unis	États-Unis	PROPN
 en	en	ADP
 1820	1820	NUM
@@ -970,10 +970,10 @@ et	et	CCONJ
 pirates	pirate	NOUN
 ceux	ceux	PRON
 qui	qui	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 exerçaient	exercer	VERB
 .	.	PUNCTsent
-Comme	comme	ADP
+comme	comme	ADP
 tels	tel	PRON
 ,	,	PUNCTclause
 ils	ils	PRON
@@ -990,7 +990,7 @@ poursuivis	poursuivre	VERB
 à	à	ADP
 outrance	outrance	NOUN
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 France	France	PROPN
 adhéra	adhérer	VERB
 bientôt	bientôt	ADV
@@ -998,11 +998,11 @@ au	au	ADP_DET
 nouveau	nouveau	ADJ
 traité	traité	NOUN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 les	le	DET
-États	États	NOUN
+états	état	NOUN
 du	du	ADP_DET
-Sud	Sud	NOUN
+sud	sud	NOUN
 de	de	ADP
 l'	le	DET
 Amérique	Amérique	PROPN
@@ -1053,7 +1053,7 @@ navires	navire	NOUN
 suspects	suspect	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cependant	cependant	ADV
+cependant	cependant	ADV
 ,	,	PUNCTclause
 la	le	DET
 nouvelle	nouveau	ADJ
@@ -1068,7 +1068,7 @@ de	de	ADP
 effet	effet	NOUN
 rétroactif	rétroactif	ADJ
 .	.	PUNCTsent
-On	on	PRON
+on	on	PRON
 ne	ne	ADV
 faisait	faire	VERB
 plus	plus	ADV
@@ -1088,7 +1088,7 @@ leur	leur	DET
 liberté	liberté	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ce	ce	PRON
+ce	ce	PRON
 fut	être	AUX
 dans	dans	ADP
 ces	ce	DET
@@ -1100,7 +1100,7 @@ donna	donner	VERB
 l'	le	DET
 exemple	exemple	NOUN
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 14	14	NUM
 mai	mai	NOUN
 1833	1833	NUM
@@ -1141,7 +1141,7 @@ en	en	ADP
 1848	1848	NUM
 ,	,	PUNCTclause
 la	le	DET
-République	République	NOUN
+République	République	PROPN
 émancipait	émanciper	VERB
 les	le	DET
 esclaves	esclave	NOUN
@@ -1157,7 +1157,7 @@ mille	mille	NUM
 noirs	noir	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-En	en	ADP
+en	en	ADP
 1859	1859	NUM
 ,	,	PUNCTclause
 la	le	DET
@@ -1186,10 +1186,10 @@ toute	toute	DET
 l'	le	DET
 Amérique	Amérique	PROPN
 du	du	ADP_DET
-Nord	Nord	NOUN
+Nord	Nord	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Les	le	DET
+les	le	DET
 trois	trois	NUM
 grandes	grand	ADJ
 puissances	puissance	NOUN
@@ -1201,7 +1201,7 @@ cette	ce	DET
 de	de	ADP
 humanité	humanité	NOUN
 .	.	PUNCTsent
-À	à	ADP
+à	à	ADP
 l'	le	DET
 heure	heure	NOUN
 que	que	SCONJ
@@ -1232,13 +1232,13 @@ des	un	ADP_DET
 populations	population	NOUN
 de	de	ADP
 l'	le	DET
-Orient	Orient	PROPN
+orient	orient	UNKNOWN
 ,	,	PUNCTclause
 turques	turc	ADJ
 ou	ou	CCONJ
 arabes	arabe	ADJ
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 Brésil	Brésil	PROPN
 ,	,	PUNCTclause
 si	si	SCONJ
@@ -1249,7 +1249,7 @@ pas	pas	ADV
 encore	encore	ADV
 rendu	rendre	VERB
 à	à	ADP
-la	le:PRON	PRON
+la	le_PRON	PRON
 liberté	liberté	NOUN
 ses	son	DET
 anciens	ancien	ADJ
@@ -1341,7 +1341,7 @@ sur	sur	ADP
 le	le	DET
 Mozambique	Mozambique	PROPN
 .	.	PUNCTsent
-De	de	ADP
+de	de	ADP
 ces	ce	DET
 malheureux	malheureux	ADJ
 ,	,	PUNCTclause
@@ -1386,7 +1386,7 @@ ou	ou	CCONJ
 à	à	ADP
 Mascate	Mascate	PROPN
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 croisières	croisière	NOUN
 anglaises	anglais	ADJ
 et	et	CCONJ
@@ -1416,7 +1416,7 @@ difficile	difficile	ADJ
 obtenir	obtenir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 le	le	DET
 chiffre	chiffre	NOUN
 de	de	ADP
@@ -1430,9 +1430,9 @@ considérable	considérable	ADJ
 encore	encore	ADV
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Oui	oui	INTJ
+oui	oui	INTJ
 !	!	PUNCTsent
-On	on	PRON
+on	on	PRON
 ne	ne	ADV
 estime	estimer	VERB
 pas	pas	ADV
@@ -1466,7 +1466,7 @@ des	un	ADP_DET
 indigènes	indigène	NOUN
 massacrés	massacrer	VERB
 .	.	PUNCTsent
-Après	après	ADP
+après	après	ADP
 ces	ce	DET
 boucheries	boucherie	NOUN
 épouvantables	épouvantable	ADJ
@@ -1498,7 +1498,7 @@ occupent	occuper	VERB
 le	le	DET
 pays	pays	NOUN
 .	.	PUNCTsent
-Livingstone	Livingstone	PROPN
+Livingstone	Livingstone	DET
 ,	,	PUNCTclause
 au	au	ADP_DET
 lendemain	lendemain	NOUN
@@ -1522,7 +1522,7 @@ quelques	quelque	DET
 mois	mois	NOUN
 auparavant	auparavant	ADV
 .	.	PUNCTsent
-Tous	tout	ADJ
+tous	tout	ADJ
 les	le	DET
 autres	autre	ADJ
 voyageurs	voyageur	NOUN
@@ -1559,7 +1559,7 @@ chefs	chef	NOUN
 à	à	ADP
 chefs	chef	NOUN
 .	.	PUNCTsent
-Dans	dans	ADP
+dans	dans	ADP
 la	le	DET
 région	région	NOUN
 des	un	ADP_DET
@@ -1576,7 +1576,7 @@ alimente	alimenter	VERB
 le	le	DET
 marché	marché	NOUN
 de	de	ADP
-Zanzibar	Zanzibar	PROPN
+zanzibar	zanzibar	UNKNOWN
 ,	,	PUNCTclause
 dans	dans	ADP
 le	le	DET
@@ -1663,7 +1663,7 @@ la	le	DET
 Nouvelle-Hollande	Nouvelle-Hollande	PROPN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 le	le	DET
 marché	marché	NOUN
 des	un	ADP_DET
@@ -1693,7 +1693,7 @@ la	le	DET
 traite	traite	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Oui	oui	INTJ
+oui	oui	INTJ
 ,	,	PUNCTclause
 sans doute	sans doute	ADV
 ,	,	PUNCTclause
@@ -1716,10 +1716,10 @@ possédés	posséder	VERB
 encore	encore	ADV
 par	par	ADP
 les	le	DET
-États	États	NOUN
+états	état	NOUN
 chrétiens	chrétien	ADJ
 .	.	PUNCTsent
-Toutefois	toutefois	ADV
+toutefois	toutefois	ADV
 ,	,	PUNCTclause
 pendant	pendant	ADP
 de	de	DET
@@ -1776,7 +1776,7 @@ annuellement	annuellement	ADV
 quarante	quarante	NUM
 mille	mille	NUM
 .	.	PUNCTsent
-Bien	bien	ADV
+bien	bien	ADV
 avant	avant	ADP
 l'	le	DET
 expédition	expédition	NOUN
@@ -1799,7 +1799,7 @@ Darfour	Darfour	PROPN
 et	et	CCONJ
 réciproquement	réciproquement	ADV
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 général	général	NOUN
 Bonaparte	Bonaparte	PROPN
 put	pouvoir	VERB
@@ -1824,7 +1824,7 @@ façon	façon	NOUN
 des	un	ADP_DET
 mameluks	mameluk	NOUN
 .	.	PUNCTsent
-Depuis	depuis	ADP
+depuis	depuis	ADP
 lors	lors	ADV
 ,	,	PUNCTclause
 pendant	pendant	ADP
@@ -1852,7 +1852,7 @@ Afrique	Afrique	PROPN
 au contraire	au contraire	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 ,	,	PUNCTclause
 en effet	en effet	ADV
 ,	,	PUNCTclause
@@ -1864,7 +1864,7 @@ favorable	favorable	ADJ
 la	le	DET
 traite	traite	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 a	avoir	AUX
 fallu	falloir	VERB
 que	que	SCONJ
@@ -1885,7 +1885,7 @@ blanc	blanc	ADJ
 de	de	ADP
 autrefois	autrefois	ADV
 .	.	PUNCTsent
-Aussi	aussi	ADV
+aussi	aussi	ADV
 ,	,	PUNCTclause
 des	un	DET
 traitants	traitant	ADJ
@@ -1900,7 +1900,7 @@ cet	ce	DET
 exécrable	exécrable	ADJ
 trafic	trafic	NOUN
 .	.	PUNCTsent
-Ils	ils	PRON
+ils	ils	PRON
 apportent	apporter	VERB
 ainsi	ainsi	ADV
 un	un	DET
@@ -1928,7 +1928,7 @@ par	par	ADP
 le	le	DET
 travail	travail	NOUN
 .	.	PUNCTsent
-Ces	ce	DET
+ces	ce	DET
 esclaves	esclave	NOUN
 ,	,	PUNCTclause
 comme	comme	ADP
@@ -1940,7 +1940,7 @@ souvent	souvent	ADV
 des	un	DET
 soldats	soldat	NOUN
 .	.	PUNCTsent
-Chez	chez	ADP
+chez	chez	ADP
 certains	certain	DET
 peuples	peuple	NOUN
 du	du	ADP_DET
@@ -1957,7 +1957,7 @@ des	un	ADP_DET
 chefs	chef	NOUN
 africains	africain	ADJ
 .	.	PUNCTsent
-Dans	dans	ADP
+dans	dans	ADP
 ces	ce	DET
 conditions	condition	NOUN
 ,	,	PUNCTclause
@@ -1974,7 +1974,7 @@ des	un	ADP_DET
 hommes	homme	NOUN
 libres	libre	ADJ
 .	.	PUNCTsent
-D'ailleurs	d'ailleurs	ADV
+d'ailleurs	d'ailleurs	ADV
 ,	,	PUNCTclause
 quand	quand	SCONJ
 l'	le	DET
@@ -2010,18 +2010,18 @@ en	en	ADP
 cette	ce	DET
 monnaie	monnaie	NOUN
 .	.	PUNCTsent
-Guillaume	guillaume	NOUN
+Guillaume	Guillaume	PROPN
 Lejean	Lejean	PROPN
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 a	avoir	AUX
 vu	voir	VERB
 et	et	CCONJ
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 a	avoir	AUX
 dit	dire	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Tel	tel	PRON
+tel	tel	PRON
 est	être	AUX
 donc	donc	ADV
 l'	le	DET
@@ -2032,7 +2032,7 @@ la	le	DET
 traite	traite	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Faut	falloir	VERB
+faut	falloir	VERB
 il	il	PRON
 ajouter	ajouter	VERB
 que	que	SCONJ
@@ -2056,7 +2056,7 @@ une	un	DET
 indulgence	indulgence	NOUN
 regrettable	regrettable	ADJ
 ?	?	PUNCTsent
-Rien	rien	PRON
+rien	rien	PRON
 ne	ne	ADV
 est	être	AUX
 plus	plus	ADV
@@ -2072,12 +2072,12 @@ les	le	DET
 côtes	côte	NOUN
 de	de	ADP
 l'	le	DET
-Atlantique	Atlantique	PROPN
+atlantique	atlantique	UNKNOWN
 et	et	CCONJ
 de	de	ADP
 l'	le	DET
 océan	océan	NOUN
-Indien	indien	ADJ
+indien	indien	ADJ
 ,	,	PUNCTclause
 le	le	DET
 trafic	trafic	NOUN
@@ -2113,7 +2113,7 @@ des	un	DET
 déterminées	déterminé	ADJ
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Aussi	aussi	ADV
+aussi	aussi	ADV
 comprendra	comprendre	VERB
 on	on	PRON
 ,	,	PUNCTclause
@@ -2152,7 +2152,7 @@ esclaves	esclave	NOUN
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 il	il	PRON
 ne	ne	ADV
 se	se	PRON
@@ -2176,7 +2176,7 @@ pour	pour	ADP
 lui	lui	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 sur	sur	ADP
 quelle	quel	DET
 partie	partie	NOUN
@@ -2186,13 +2186,13 @@ africain	africain	ADJ
 une	un	DET
 inexplicable	inexplicable	ADJ
 fatalité	fatalité	NOUN
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avait	avoir	AUX
 elle	elle	PRON
 fait	faire	VERB
 atterrir	atterrir	VERB
 ?	?	PUNCTsent
-À	à	ADP
+à	à	ADP
 la	le	DET
 côte	côte	NOUN
 ouest	ouest	NOUN
@@ -2266,7 +2266,7 @@ au prix de	au prix de	ADP
 quels	quel	DET
 efforts	effort	NOUN
 !	!	PUNCTsent
-De	de	ADP
+de	de	ADP
 ce	ce	DET
 vaste	vaste	ADJ
 territoire	territoire	NOUN
@@ -2294,7 +2294,7 @@ alors que	alors que	CCONJ
 le	le	DET
 littoral	littoral	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 se	se	PRON
 étend	étendre	VERB
 depuis	depuis	ADP
@@ -2339,7 +2339,7 @@ de	de	ADP
 Portugal	Portugal	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-À	à	ADP
+à	à	ADP
 l'	le	DET
 intérieur	intérieur	NOUN
 ,	,	PUNCTclause
@@ -2358,7 +2358,7 @@ se	se	PRON
 y	y	PRON
 aventurer	aventurer	VERB
 .	.	PUNCTsent
-Un	un	DET
+un	un	DET
 climat	climat	NOUN
 pernicieux	pernicieux	ADJ
 ,	,	PUNCTclause
@@ -2438,7 +2438,7 @@ Afrique	Afrique	PROPN
 équatoriale	équatorial	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Tuckey	Tuckey	PROPN
+Tuckey	Tuckey	NOUN
 ,	,	PUNCTclause
 en	en	ADP
 1816	1816	NUM
@@ -2465,7 +2465,7 @@ milles	mille	NOUN
 au	au	ADP_DET
 plus	plus	ADV
 .	.	PUNCTsent
-Cette	ce	DET
+cette	ce	DET
 simple	simple	ADJ
 étape	étape	NOUN
 ne	ne	ADV
@@ -2518,7 +2518,7 @@ le	le	DET
 haut	haut	NOUN
 Zambèse	Zambèse	PROPN
 .	.	PUNCTsent
-De	de	ADP
+de	de	ADP
 là	là	ADV
 ,	,	PUNCTclause
 au	au	ADP_DET
@@ -2620,7 +2620,7 @@ difficultés	difficulté	NOUN
 inouïes	inouï	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 premier	premier	ADJ
 en	en	ADP
 date	date	NOUN
@@ -2636,7 +2636,7 @@ anglaise	anglais	ADJ
 Verney-Howet	Verney-Howet	PROPN
 Cameron	Cameron	PROPN
 .	.	PUNCTsent
-En	en	ADP
+en	en	ADP
 1872	1872	NUM
 ,	,	PUNCTclause
 on	on	PRON
@@ -2649,7 +2649,7 @@ l'	le	DET
 expédition	expédition	NOUN
 de	de	ADP
 l'	le	DET
-Américain	Américain	NOUN
+américain	américain	NOUN
 Stanley	Stanley	PROPN
 ,	,	PUNCTclause
 envoyée	envoyer	VERB
@@ -2669,7 +2669,7 @@ lacs	lac	NOUN
 fort	fort	ADV
 compromise	compromettre	VERB
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 lieutenant	lieutenant	NOUN
 Cameron	Cameron	PROPN
 offrit	offrir	VERB
@@ -2684,7 +2684,7 @@ offre	offre	NOUN
 fut	être	AUX
 acceptée	accepter	VERB
 .	.	PUNCTsent
-Cameron	Cameron	PROPN
+Cameron	Cameron	NOUN
 ,	,	PUNCTclause
 accompagné	accompagner	VERB
 du	du	ADP_DET
@@ -2693,7 +2693,7 @@ Dillon	Dillon	PROPN
 ,	,	PUNCTclause
 du	du	ADP_DET
 lieutenant	lieutenant	NOUN
-Cecil	Cecil	PROPN
+Cecil	Cecil	PRON
 Murphy	Murphy	PROPN
 et	et	CCONJ
 de	de	ADP
@@ -2706,9 +2706,9 @@ Livingstone	Livingstone	PROPN
 ,	,	PUNCTclause
 partit	partir	VERB
 de	de	ADP
-Zanzibar	Zanzibar	PROPN
+zanzibar	zanzibar	UNKNOWN
 .	.	PUNCTsent
-Après	après	ADP
+après	après	ADP
 avoir	avoir	AUX
 traversé	traverser	VERB
 l'	le	DET
@@ -2730,7 +2730,7 @@ la	le	DET
 côte	côte	NOUN
 orientale	oriental	ADJ
 .	.	PUNCTsent
-Continuant	continuer	VERB
+continuant	continuer	VERB
 alors	alors	ADV
 sa	son	DET
 route	route	NOUN
@@ -2846,7 +2846,7 @@ apercevait	apercevoir	VERB
 enfin	enfin	ADV
 l'	le	DET
 océan	océan	NOUN
-Atlantique	atlantique	ADJ
+atlantique	atlantique	ADJ
 et	et	CCONJ
 arrivait	arriver	VERB
 à	à	ADP
@@ -2854,7 +2854,7 @@ Saint-Philippe	Saint-Philippe	PROPN
 de	de	ADP
 Benguela	Benguela	PROPN
 .	.	PUNCTsent
-Ce	ce	DET
+ce	ce	DET
 voyage	voyage	NOUN
 de	de	ADP
 trois	trois	NUM
@@ -2880,16 +2880,16 @@ Robert	Robert	PROPN
 Moffat	Moffat	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-À	à	ADP
+à	à	ADP
 l'	le	DET
-Anglais	Anglais	NOUN
+anglais	anglais	NOUN
 Cameron	Cameron	PROPN
 allait	aller	VERB
 presque	presque	ADV
 aussitôt	aussitôt	ADV
 succéder	succéder	VERB
 l'	le	DET
-Américain	Américain	NOUN
+américain	américain	NOUN
 Henry	Henry	PROPN
 Moreland	Moreland	PROPN
 Stanley	Stanley	PROPN
@@ -2899,7 +2899,7 @@ voie	voie	NOUN
 des	un	ADP_DET
 découvertes	découverte	NOUN
 .	.	PUNCTsent
-On	on	PRON
+on	on	PRON
 sait	savoir	VERB
 que	que	SCONJ
 cet	ce	DET
@@ -2932,7 +2932,7 @@ du	du	ADP_DET
 lac	lac	NOUN
 Tanganyika	Tanganyika	PROPN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ce	ce	PRON
 que	que	PRON
 il	il	PRON
@@ -2958,7 +2958,7 @@ la	le	DET
 science	science	NOUN
 géographique	géographique	ADJ
 .	.	PUNCTsent
-Son	son	DET
+son	son	DET
 objectif	objectif	NOUN
 fut	être	AUX
 alors	alors	ADV
@@ -2975,7 +2975,7 @@ fait	faire	VERB
 que	que	SCONJ
 entrevoir	entrevoir	VERB
 .	.	PUNCTsent
-Cameron	Cameron	PROPN
+Cameron	Cameron	NOUN
 était	être	AUX
 encore	encore	ADV
 perdu	perdre	VERB
@@ -3070,10 +3070,10 @@ officiers	officier	NOUN
 du	du	ADP_DET
 sultan	sultan	NOUN
 de	de	ADP
-Zanzibar	Zanzibar	PROPN
+zanzibar	zanzibar	UNKNOWN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Stanley	Stanley	PROPN
+Stanley	Stanley	NOUN
 se	se	PRON
 mit	mettre	VERB
 en	en	ADP
@@ -3117,7 +3117,7 @@ de	de	ADP
 son	son	DET
 expédition	expédition	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 fallut	falloir	VERB
 combattre	combattre	VERB
 dès	dès	ADP
@@ -3147,14 +3147,14 @@ de	de	ADP
 infranchissables	infranchissable	ADJ
 cataractes	cataracte	NOUN
 .	.	PUNCTsent
-Sous	sous	ADP
+sous	sous	ADP
 l'	le	DET
 équateur	équateur	NOUN
 ,	,	PUNCTclause
 au	au	ADP_DET
 point	point	NOUN
 où	où	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 Loualâba	Loualâba	PROPN
 se	se	PRON
 infléchit	infléchir	VERB
@@ -3184,11 +3184,11 @@ mettre	mettre	VERB
 en	en	ADP
 fuite	fuite	NOUN
 .	.	PUNCTsent
-Puis	puis	CCONJ
+puis	puis	CCONJ
 ,	,	PUNCTclause
 le	le	DET
 courageux	courageux	ADJ
-Américain	Américain	NOUN
+américain	américain	NOUN
 ,	,	PUNCTclause
 remontant	remonter	VERB
 jusque	jusque	ADP
@@ -3208,7 +3208,7 @@ ne	ne	ADV
 que	que	SCONJ
 le	le	DET
 haut	haut	NOUN
-Zaïre	Zaïre	PROPN
+Zaïre	Zaïre	ADJ
 ou	ou	CCONJ
 Congo	Congo	PROPN
 ,	,	PUNCTclause
@@ -3243,7 +3243,7 @@ les	le	DET
 tribus	tribu	NOUN
 riveraines	riverain	ADJ
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 3	3	NUM
 juin	juin	NOUN
 1877	1877	NUM
@@ -3296,7 +3296,7 @@ par	par	ADP
 miracle	miracle	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Enfin	enfin	ADV
+enfin	enfin	ADV
 ,	,	PUNCTclause
 le	le	DET
 6	6	NUM
@@ -3308,7 +3308,7 @@ arrivait	arriver	VERB
 au	au	ADP_DET
 village	village	NOUN
 de	de	ADP
-Ni	Ni	PROPN
+ni	ni	UNKNOWN
 Sanda	Sanda	PROPN
 ,	,	PUNCTclause
 à	à	ADP
@@ -3381,7 +3381,7 @@ de	de	ADP
 sa	son	DET
 vie	vie	NOUN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 le	le	DET
 cours	cours	NOUN
 du	du	ADP_DET
@@ -3391,7 +3391,7 @@ reconnu	reconnaître	VERB
 jusque	jusque	ADP
 à	à	ADP
 l'	le	DET
-Atlantique	Atlantique	PROPN
+atlantique	atlantique	UNKNOWN
 ,	,	PUNCTclause
 et	et	CCONJ
 si	si	SCONJ
@@ -3468,10 +3468,10 @@ lacs	lac	NOUN
 à	à	ADP
 l'	le	DET
 océan	océan	NOUN
-Atlantique	atlantique	ADJ
+atlantique	atlantique	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cependant	cependant	ADV
+cependant	cependant	ADV
 ,	,	PUNCTclause
 entre	entre	ADP
 ces	ce	DET
@@ -3514,7 +3514,7 @@ côte	côte	NOUN
 de	de	ADP
 Afrique	Afrique	PROPN
 .	.	PUNCTsent
-Ce	ce	PRON
+ce	ce	PRON
 que	que	PRON
 on	on	PRON
 en	en	PRON
@@ -3546,7 +3546,7 @@ de	de	ADP
 Kazonndé	Kazonndé	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 ce	ce	PRON
 était	être	AUX
 dans	dans	ADP
@@ -3600,7 +3600,7 @@ de	de	ADP
 esclaves	esclave	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Oui	oui	INTJ
+oui	oui	INTJ
 ,	,	PUNCTclause
 ce	ce	PRON
 était	être	AUX
@@ -3628,7 +3628,7 @@ sont	être	AUX
 véritablement	véritablement	ADV
 redoutables	redoutable	ADJ
 .	.	PUNCTsent
-Ce	ce	PRON
+ce	ce	PRON
 ne	ne	ADV
 était	être	AUX
 pas	pas	ADV
@@ -3639,7 +3639,7 @@ propice	propice	ADJ
 située	situer	VERB
 entre	entre	ADP
 les	le	DET
-Cordillères	Cordillères	PROPN
+cordillères	cordillère	UNKNOWN
 et	et	CCONJ
 la	le	DET
 côte	côte	NOUN
@@ -3659,7 +3659,7 @@ ouvertes	ouvrir	VERB
 tout	tout	PRON
 voyageur	voyageur	NOUN
 .	.	PUNCTsent
-Elles	elles	PRON
+elles	elles	PRON
 étaient	être	AUX
 loin	loin	ADV
 ,	,	PUNCTclause
@@ -3744,7 +3744,7 @@ des	un	ADP_DET
 havildars	havildars	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Que	que	SCONJ
+que	que	SCONJ
 savait	savoir	VERB
 Dick	Dick	PROPN
 Sand	Sand	PROPN

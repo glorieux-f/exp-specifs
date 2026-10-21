@@ -5,18 +5,18 @@
 # isPartOf = La Jangada
 # title = Chapitre XII. Fragoso à l’ouvrage
 
-↵↵↵	↵↵↵	PUNCTstruct
-Chapitre	chapitre	NOUN
-		TOKEN
+↵↵	↵↵	PUNCTstruct
+chapitre	chapitre	NOUN
+XII	XII	NUM
 .	.	PUNCTsent
-Fragoso	Fragoso	PROPN
+Fragoso	Fragoso	VERB
 à	à	ADP
 l'	le	DET
 ouvrage	ouvrage	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Braza	Braza	PROPN
+Braza	Braza	NOUN
 »	»	PUNCTclause
 ,	,	PUNCTclause
 braise	braise	NOUN
@@ -36,7 +36,7 @@ le	le	DET
 12e	12e	ADJ
 siècle	siècle	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 a	avoir	AUX
 servi	servir	VERB
 à	à	ADP
@@ -56,7 +56,7 @@ une	un	DET
 teinture	teinture	NOUN
 rouge	rouge	ADJ
 .	.	PUNCTsent
-De	de	ADP
+de	de	ADP
 là	là	ADV
 le	le	DET
 nom	nom	NOUN
@@ -71,7 +71,7 @@ de	de	ADP
 l'	le	DET
 Amérique	Amérique	PROPN
 du	du	ADP_DET
-Sud	Sud	NOUN
+sud	sud	NOUN
 que	que	PRON
 traverse	traverser	VERB
 la	le	DET
@@ -87,7 +87,7 @@ se	se	PRON
 rencontre	rencontrer	VERB
 fréquemment	fréquemment	ADV
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 fut	être	AUX
 ,	,	PUNCTclause
 d'ailleurs	d'ailleurs	ADV
@@ -106,9 +106,9 @@ commerce	commerce	NOUN
 considérable	considérable	ADJ
 avec	avec	ADP
 les	le	DET
-Normands	Normands	NOUN
+normands	normand	NOUN
 .	.	PUNCTsent
-Bien	bien	ADV
+bien	bien	ADV
 que	que	SCONJ
 il	il	PRON
 se	se	PRON
@@ -155,14 +155,14 @@ soleil	soleil	NOUN
 tropical	tropical	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Les	le	DET
-Portugais	Portugais	PROPN
-l'	le:PRON	PRON
+les	le	DET
+portugais	portugais	UNKNOWN
+l'	le_PRON	PRON
 occupèrent	occuper	VERB
 tout	tout	ADV
 d'abord	d'abord	ADV
 .	.	PUNCTsent
-Dès	dès	ADP
+dès	dès	ADP
 le	le	DET
 commencement	commencement	NOUN
 du	du	ADP_DET
@@ -181,7 +181,7 @@ pilote	pilote	NOUN
 Alvarez	Alvarez	PROPN
 Cabral	Cabral	PROPN
 .	.	PUNCTsent
-Si	si	SCONJ
+si	si	SCONJ
 ,	,	PUNCTclause
 plus tard	plus tard	ADV
 ,	,	PUNCTclause
@@ -220,7 +220,7 @@ l'un	l'un	PRON
 des	un	ADP_DET
 plus	plus	ADV
 grands	grand	ADJ
-États	États	NOUN
+états	état	NOUN
 de	de	ADP
 l'	le	DET
 Amérique	Amérique	PROPN
@@ -240,7 +240,7 @@ Pedro	Pedro	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Quel	quel	DET
+quel	quel	DET
 est	être	AUX
 ton	ton	DET
 droit	droit	NOUN
@@ -252,12 +252,12 @@ demandait	demander	VERB
 Montaigne	Montaigne	PROPN
 à	à	ADP
 un	un	DET
-Indien	Indien	NOUN
+indien	indien	NOUN
 que	que	SCONJ
 il	il	PRON
 rencontrait	rencontrer	VERB
 au	au	ADP_DET
-Havre	Havre	PROPN
+havre	havre	UNKNOWN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 ce	ce	PRON
@@ -276,14 +276,14 @@ guerre	guerre	NOUN
 répondit	répondre	VERB
 simplement	simplement	ADV
 l'	le	DET
-Indien	Indien	NOUN
+indien	indien	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-La	le	DET
+la	le	DET
 guerre	guerre	NOUN
 ,	,	PUNCTclause
 on	on	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 sait	savoir	VERB
 ,	,	PUNCTclause
 fut	être	AUX
@@ -301,17 +301,17 @@ de	de	ADP
 la	le	DET
 civilisation	civilisation	NOUN
 .	.	PUNCTsent
-Aussi	aussi	ADV
+aussi	aussi	ADV
 ,	,	PUNCTclause
 les	le	DET
-Brésiliens	Brésiliens	NOUN
+brésiliens	brésilien	NOUN
 firent	faire	VERB
 ils	ils	PRON
 ce	ce	PRON
 que	que	PRON
 faisait	faire	VERB
 cet	ce	DET
-Indien	Indien	NOUN
+indien	indien	NOUN
 :	:	PUNCTclause
 ils	ils	PRON
 luttèrent	lutter	VERB
@@ -333,7 +333,7 @@ premier	premier	ADJ
 rang	rang	NOUN
 que	que	SCONJ
 on	on	PRON
-les	le:PRON	PRON
+les	le_PRON	PRON
 voit	voir	VERB
 marcher	marcher	VERB
 dans	dans	ADP
@@ -344,7 +344,7 @@ la	le	DET
 civilisation	civilisation	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ce	ce	PRON
+ce	ce	PRON
 fut	être	AUX
 en	en	ADP
 1824	1824	NUM
@@ -357,7 +357,7 @@ fondation	fondation	NOUN
 de	de	ADP
 l'	le	DET
 empire	empire	NOUN
-Luso-Brésilien	Luso-Brésilien	PROPN
+Luso-Brésilien	Luso-Brésilien	ADJ
 ,	,	PUNCTclause
 que	que	SCONJ
 le	le	DET
@@ -369,8 +369,7 @@ par	par	ADP
 la	le	DET
 voix	voix	NOUN
 de	de	ADP
-don	don	NOUN
-Juan	Juan	PROPN
+Don Juan	Don Juan	PROPN
 ,	,	PUNCTclause
 que	que	SCONJ
 les	le	DET
@@ -382,7 +381,7 @@ du	du	ADP_DET
 Portugal	Portugal	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Restait	rester	VERB
+restait	rester	VERB
 à	à	ADP
 régler	régler	VERB
 la	le	DET
@@ -401,7 +400,7 @@ son	son	DET
 voisin	voisin	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-La	le	DET
+la	le	DET
 chose	chose	NOUN
 ne	ne	ADV
 était	être	AUX
@@ -409,7 +408,7 @@ pas	pas	ADV
 facile	facile	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Si	si	SCONJ
+si	si	SCONJ
 le	le	DET
 Brésil	Brésil	PROPN
 voulait	vouloir	VERB
@@ -446,7 +445,7 @@ l'	le	DET
 ouest	ouest	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 entre	entre	ADP
 temps	temps	NOUN
@@ -460,7 +459,7 @@ empêcher	empêcher	VERB
 l'	le	DET
 enlèvement	enlèvement	NOUN
 des	un	ADP_DET
-Indiens	Indiens	NOUN
+indiens	indien	NOUN
 de	de	ADP
 l'	le	DET
 Amazone	Amazone	PROPN
@@ -472,10 +471,10 @@ faisait	faire	VERB
 au	au	ADP_DET
 profit	profit	NOUN
 des	un	ADP_DET
-Missions	Missions	NOUN
+missions	mission	NOUN
 hispano-brésiliennes	hispano-brésiliennes	ADJ
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 trouva	trouver	VERB
 pas	pas	ADV
@@ -495,7 +494,7 @@ l'	le	DET
 île	île	NOUN
 de	de	ADP
 la	le	DET
-Ronde	Ronde	PROPN
+ronde	rond	UNKNOWN
 ,	,	PUNCTclause
 un	un	DET
 peu	peu	ADV
@@ -511,7 +510,7 @@ un	un	DET
 poste	poste	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ce	ce	PRON
+ce	ce	PRON
 fut	être	AUX
 une	un	DET
 solution	solution	NOUN
@@ -536,7 +535,7 @@ cette	ce	DET
 île	île	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Au-dessus	au-dessus	ADV
+au-dessus	au-dessus	ADV
 ,	,	PUNCTclause
 le	le	DET
 fleuve	fleuve	NOUN
@@ -555,7 +554,7 @@ a	avoir	AUX
 dit	dire	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Au-dessous	au-dessous	ADV
+au-dessous	au-dessous	ADV
 ,	,	PUNCTclause
 il	il	PRON
 est	être	AUX
@@ -567,10 +566,10 @@ nom	nom	NOUN
 de	de	ADP
 rivière	rivière	NOUN
 des	un	ADP_DET
-Amazones	Amazones	PROPN
+amazones	amazone	UNKNOWN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ce	ce	PRON
+ce	ce	PRON
 fut	être	AUX
 le	le	DET
 25	25	NUM
@@ -628,7 +627,7 @@ rive	rive	NOUN
 droite	droit	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Joam	Joam	PROPN
+Joam	Joam	DET
 Garral	Garral	PROPN
 avait	avoir	AUX
 résolu	résoudre	VERB
@@ -646,7 +645,7 @@ repos	repos	NOUN
 son	son	DET
 personnel	personnel	NOUN
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 départ	départ	NOUN
 ne	ne	ADV
 devait	devoir	VERB
@@ -698,7 +697,7 @@ la	le	DET
 bourgade	bourgade	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-On	on	PRON
+on	on	PRON
 estime	estimer	VERB
 actuellement	actuellement	ADV
 à	à	ADP
@@ -708,7 +707,7 @@ habitants	habitant	NOUN
 ,	,	PUNCTclause
 presque	presque	ADV
 tous	tout	ADJ
-Indiens	Indiens	NOUN
+indiens	indien	NOUN
 ,	,	PUNCTclause
 la	le	DET
 population	population	NOUN
@@ -744,14 +743,14 @@ petits	petit	ADJ
 affluents	affluent	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 poste	poste	NOUN
 de	de	ADP
 l'	le	DET
 île	île	NOUN
 de	de	ADP
 la	le	DET
-Ronde	Ronde	PROPN
+ronde	rond	UNKNOWN
 a	avoir	AUX
 été	être	AUX
 abandonné	abandonner	VERB
@@ -764,7 +763,7 @@ transporté	transporter	VERB
 Tabatinga	Tabatinga	PROPN
 même	même	ADV
 .	.	PUNCTsent
-On	on	PRON
+on	on	PRON
 peut	pouvoir	VERB
 donc	donc	ADV
 dire	dire	VERB
@@ -792,7 +791,7 @@ soldats	soldat	NOUN
 ,	,	PUNCTclause
 presque	presque	ADV
 tous	tout	ADJ
-Indiens	Indiens	NOUN
+indiens	indien	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 de	de	ADP
@@ -809,7 +808,7 @@ la	le	DET
 place	place	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Une	un	DET
+une	un	DET
 berge	berge	NOUN
 ,	,	PUNCTclause
 haute	haut	ADJ
@@ -846,7 +845,7 @@ le	le	DET
 petit	petit	ADJ
 fortin	fortin	NOUN
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 demeure	demeure	NOUN
 du	du	ADP_DET
 commandant	commandant	NOUN
@@ -879,7 +878,7 @@ grand	grand	ADJ
 arbre	arbre	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cet	ce	DET
+cet	ce	DET
 ensemble	ensemble	NOUN
 de	de	ADP
 cabanes	cabane	NOUN
@@ -965,7 +964,7 @@ au-delà	au-delà	ADV
 du	du	ADP_DET
 plateau	plateau	NOUN
 .	.	PUNCTsent
-Un	un	DET
+un	un	DET
 chemin	chemin	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
@@ -987,7 +986,7 @@ en	en	ADP
 quelques	quelque	DET
 minutes	minute	NOUN
 .	.	PUNCTsent
-Là	là	ADV
+là	là	ADV
 ,	,	PUNCTclause
 sur	sur	ADP
 une	un	DET
@@ -1020,7 +1019,7 @@ place	place	NOUN
 centrale	central	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Tout	tout	ADJ
+tout	tout	ADJ
 cela	cela	PRON
 ne	ne	ADV
 est	être	AUX
@@ -1056,7 +1055,7 @@ des	un	ADP_DET
 îles	île	NOUN
 Aramasa	Aramasa	PROPN
 .	.	PUNCTsent
-En	en	ADP
+en	en	ADP
 cet	ce	DET
 endroit	endroit	NOUN
 se	se	PRON
@@ -1113,7 +1112,7 @@ du	du	ADP_DET
 Haut-Amazone	Haut-Amazone	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Tabatinga	Tabatinga	PROPN
+Tabatinga	Tabatinga	NOUN
 ,	,	PUNCTclause
 d'ailleurs	d'ailleurs	ADV
 ,	,	PUNCTclause
@@ -1140,7 +1139,7 @@ un	un	DET
 rapide	rapide	ADJ
 développement	développement	NOUN
 .	.	PUNCTsent
-Là	là	ADV
+là	là	ADV
 ,	,	PUNCTclause
 en effet	en effet	ADV
 ,	,	PUNCTclause
@@ -1160,10 +1159,10 @@ les	le	DET
 vapeurs	vapeur	NOUN
 péruviens	péruvien	ADJ
 qui	qui	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 descendront	descendre	VERB
 .	.	PUNCTsent
-Là	là	ADV
+là	là	ADV
 se	se	PRON
 fera	faire	VERB
 l'	le	DET
@@ -1174,7 +1173,7 @@ et	et	CCONJ
 des	un	ADP_DET
 passagers	passager	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 en	en	PRON
 faudrait	falloir	VERB
@@ -1204,7 +1203,7 @@ plus	plus	ADV
 considérables	considérable	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 fleuve	fleuve	NOUN
 est	être	AUX
 très	très	ADV
@@ -1216,7 +1215,7 @@ de	de	ADP
 son	son	DET
 cours	cours	NOUN
 .	.	PUNCTsent
-Bien	bien	ADV
+bien	bien	ADV
 évidemment	évidemment	ADV
 ,	,	PUNCTclause
 l'	le	DET
@@ -1243,9 +1242,9 @@ cents	cents	NUM
 lieues	lieue	NOUN
 de	de	ADP
 l'	le	DET
-Atlantique	Atlantique	PROPN
+atlantique	atlantique	UNKNOWN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 il	il	PRON
 ne	ne	ADV
 en	en	PRON
@@ -1295,7 +1294,7 @@ kilomètres	mètre	NOUN
 l'	le	DET
 heure	heure	NOUN
 .	.	PUNCTsent
-On	on	PRON
+on	on	PRON
 prétend	prétendre	VERB
 ,	,	PUNCTclause
 en effet	en effet	ADV
@@ -1314,7 +1313,7 @@ frontière	frontière	NOUN
 brésilienne	brésilien	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 lendemain	lendemain	NOUN
 ,	,	PUNCTclause
 26	26	NUM
@@ -1338,7 +1337,7 @@ la	le	DET
 ville	ville	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Si	si	SCONJ
+si	si	SCONJ
 Joam	Joam	PROPN
 ,	,	PUNCTclause
 Benito	Benito	PROPN
@@ -1372,7 +1371,7 @@ de	de	ADP
 sa	son	DET
 fille	fille	NOUN
 .	.	PUNCTsent
-Ce	ce	PRON
+ce	ce	PRON
 serait	être	AUX
 donc	donc	ADV
 pour	pour	ADP
@@ -1384,7 +1383,7 @@ de	de	ADP
 possession	possession	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-On	on	PRON
+on	on	PRON
 conçoit	concevoir	VERB
 donc	donc	ADV
 que	que	ADV
@@ -1400,7 +1399,7 @@ cette	ce	DET
 visite	visite	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Si	si	SCONJ
+si	si	SCONJ
 ,	,	PUNCTclause
 d'autre part	d'autre part	ADV
 ,	,	PUNCTclause
@@ -1442,7 +1441,7 @@ sol	sol	NOUN
 brésilien	brésilien	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 avant de	avant de	ADP
 quitter	quitter	VERB
@@ -1469,7 +1468,7 @@ voici	voici	ADP
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Monsieur	monsieur	NOUN
+monsieur	monsieur	NOUN
 Garral	Garral	PROPN
 ,	,	PUNCTclause
 lui	lui	PRON
@@ -1509,7 +1508,7 @@ dois	devoir	VERB
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Vous	vous	PRON
+vous	vous	PRON
 ne	ne	ADV
 me	me	PRON
 devez	devoir	VERB
@@ -1523,7 +1522,7 @@ répondit	répondre	VERB
 Joam	Joam	PROPN
 Garral	Garral	PROPN
 .	.	PUNCTsent
-Donc	donc	ADV
+donc	donc	ADV
 ,	,	PUNCTclause
 ne	ne	ADV
 insistez	insister	VERB
@@ -1571,7 +1570,7 @@ descendre	descendre	VERB
 le	le	DET
 fleuve	fleuve	NOUN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 nous	nous	PRON
 voici	voici	ADP
 maintenant	maintenant	ADV
@@ -1593,7 +1592,7 @@ devais	devoir	VERB
 plus	plus	ADV
 revoir	revoir	VERB
 !	!	PUNCTsent
-Sans	sans	ADP
+sans	sans	ADP
 cette	ce	DET
 liane	liane	NOUN
 …	…	PUNCTsent
@@ -1621,8 +1620,8 @@ Garral	Garral	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
-le	le:PRON	PRON
+je	je	PRON
+le	le_PRON	PRON
 sais	savoir	VERB
 ,	,	PUNCTclause
 répondit	répondre	VERB
@@ -1645,7 +1644,7 @@ vous	vous	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-On	on	PRON
+on	on	PRON
 dirait	dire	VERB
 ,	,	PUNCTclause
 Fragoso	Fragoso	PROPN
@@ -1661,7 +1660,7 @@ faire	faire	VERB
 vos	vos	DET
 adieux	adieu	NOUN
 !	!	PUNCTsent
-Votre	votre	DET
+votre	votre	DET
 intention	intention	NOUN
 est	être	AUX
 elle	elle	PRON
@@ -1673,7 +1672,7 @@ Tabatinga	Tabatinga	PROPN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-En	en	PRON
+en	en	PRON
 aucune	aucun	PRON
 façon	façon	NOUN
 ,	,	PUNCTclause
@@ -1731,7 +1730,7 @@ ami	ami	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 viens	venir	VERB
 vous	vous	PRON
 demander	demander	VERB
@@ -1745,7 +1744,7 @@ inconvénient	inconvénient	NOUN
 ce	ce	DET
 que	que	SCONJ
 je	je	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 exerce	exercer	VERB
 en	en	ADP
 route	route	NOUN
@@ -1753,7 +1752,7 @@ route	route	NOUN
 ce	ce	DET
 métier	métier	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 faut	falloir	VERB
 pas	pas	ADV
@@ -1784,11 +1783,11 @@ poche	poche	NOUN
 surtout	surtout	ADV
 si	si	SCONJ
 je	je	PRON
-les	le:PRON	PRON
+les	le_PRON	PRON
 avais	avoir	AUX
 gagnés	gagner	VERB
 .	.	PUNCTsent
-Vous	vous	PRON
+vous	vous	PRON
 le	le	DET
 savez	savoir	VERB
 ,	,	PUNCTclause
@@ -1830,10 +1829,10 @@ Haut-Amazone	Haut-Amazone	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Surtout	surtout	ADV
+surtout	surtout	ADV
 parmi	parmi	ADP
 les	le	DET
-Brésiliens	Brésiliens	NOUN
+brésiliens	brésilien	NOUN
 ,	,	PUNCTclause
 répondit	répondre	VERB
 Joam	Joam	PROPN
@@ -1846,7 +1845,7 @@ indigènes	indigène	NOUN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 vous	vous	PRON
 demande	demander	VERB
 pardon	pardon	NOUN
@@ -1892,7 +1891,7 @@ la	le	DET
 dernière	dernier	ADJ
 mode	mode	NOUN
 !	!	PUNCTsent
-Ils	ils	PRON
+ils	ils	PRON
 aiment	aimer	VERB
 cela	cela	PRON
 ,	,	PUNCTclause
@@ -1903,7 +1902,7 @@ hommes	homme	NOUN
 ou	ou	CCONJ
 femmes	femme	NOUN
 !	!	PUNCTsent
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 serai	être	AUX
 pas	pas	ADV
@@ -1929,7 +1928,7 @@ est	être	AUX
 le	le	DET
 bilboquet	bilboquet	NOUN
 qui	qui	PRON
-les	le:PRON	PRON
+les	le_PRON	PRON
 attire	attirer	VERB
 d'abord	d'abord	ADV
 ,	,	PUNCTclause
@@ -1945,23 +1944,23 @@ que	que	SCONJ
 un	un	DET
 cercle	cercle	NOUN
 de	de	ADP
-Indiens	Indiens	NOUN
+indiens	indien	NOUN
 et	et	CCONJ
 de	de	ADP
-Indiennes	Indiennes	PROPN
+indiennes	indien	UNKNOWN
 se	se	PRON
 sera	être	AUX
 formé	former	VERB
 autour de	autour de	ADP
 moi	moi	PRON
 .	.	PUNCTsent
-On	on	PRON
+on	on	PRON
 se	se	PRON
 dispute	disputer	VERB
 mes	mon	DET
 faveurs	faveur	NOUN
 !	!	PUNCTsent
-Je	je	PRON
+je	je	PRON
 resterais	rester	VERB
 un	un	DET
 mois	mois	NOUN
@@ -1981,7 +1980,7 @@ de	de	ADP
 mes	mon	DET
 mains	main	NOUN
 !	!	PUNCTsent
-On	on	PRON
+on	on	PRON
 ne	ne	ADV
 tarderait	tarder	VERB
 pas	pas	ADV
@@ -2051,9 +2050,9 @@ le	le	DET
 même	même	ADJ
 marché	marché	NOUN
 !	!	PUNCTsent
-Mesdames	madame	NOUN
+mesdames	madame	NOUN
 les	le	DET
-Indiennes	Indiennes	PROPN
+indiennes	indien	UNKNOWN
 ne	ne	ADV
 se	se	PRON
 font	faire	VERB
@@ -2070,9 +2069,9 @@ des	un	ADP_DET
 cités	cité	NOUN
 brésiliennes	brésilien	ADJ
 !	!	PUNCTsent
-Non	non	ADV
+non	non	ADV
 !	!	PUNCTsent
-Quand	quand	SCONJ
+quand	quand	SCONJ
 ce	ce	PRON
 est	être	AUX
 fait	faire	VERB
@@ -2114,7 +2113,7 @@ ose	oser	VERB
 le	le	DET
 dire	dire	NOUN
 !	!	PUNCTsent
-Or	or	NOUN
+or	or	NOUN
 ,	,	PUNCTclause
 il y a	il y a	VERB
 bientôt	bientôt	ADV
@@ -2128,7 +2127,7 @@ venu	venir	VERB
 à	à	ADP
 Tabatinga	Tabatinga	PROPN
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 vais	aller	VERB
 donc	donc	ADV
 trouver	trouver	VERB
@@ -2169,7 +2168,7 @@ dans	dans	ADP
 ce	ce	DET
 pays	pays	NOUN
 .	.	PUNCTsent
-Question	question	NOUN
+question	question	NOUN
 de	de	ADP
 reis	reis	NOUN
 avant	avant	ADP
@@ -2186,7 +2185,7 @@ bien	bien	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Faites	faire	VERB
+faites	faire	VERB
 donc	donc	ADV
 ,	,	PUNCTclause
 mon	mon	DET
@@ -2202,7 +2201,7 @@ mais	mais	CCONJ
 faites	faire	VERB
 vite	vite	ADV
 !	!	PUNCTsent
-Nous	nous	PRON
+nous	nous	PRON
 ne	ne	ADV
 devons	devoir	VERB
 rester	rester	VERB
@@ -2223,7 +2222,7 @@ aube	aube	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 perdrai	perdre	VERB
 pas	pas	ADV
@@ -2233,7 +2232,7 @@ minute	minute	NOUN
 répondit	répondre	VERB
 Fragoso	Fragoso	PROPN
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 temps	temps	NOUN
 de	de	ADP
 prendre	prendre	VERB
@@ -2249,15 +2248,15 @@ débarque	débarquer	VERB
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Allez	aller	VERB
+allez	aller	VERB
 !	!	PUNCTsent
-Fragoso	Fragoso	PROPN
+Fragoso	Fragoso	VERB
 ,	,	PUNCTclause
 répondit	répondre	VERB
 Joam	Joam	PROPN
 Garral	Garral	PROPN
 .	.	PUNCTsent
-Puissent	pouvoir	VERB
+puissent	pouvoir	VERB
 les	le	DET
 reis	reis	NOUN
 pleuvoir	pleuvoir	VERB
@@ -2266,7 +2265,7 @@ votre	votre	DET
 poche	poche	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Oui	oui	INTJ
+oui	oui	INTJ
 ,	,	PUNCTclause
 et	et	CCONJ
 ce	ce	PRON
@@ -2289,7 +2288,7 @@ serviteur	serviteur	NOUN
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Cela	cela	PRON
+cela	cela	PRON
 dit	dire	VERB
 ,	,	PUNCTclause
 Fragoso	Fragoso	PROPN
@@ -2299,7 +2298,7 @@ alla	aller	VERB
 rapidement	rapidement	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Un	un	DET
+un	un	DET
 instant	instant	NOUN
 après	après	ADV
 ,	,	PUNCTclause
@@ -2313,7 +2312,7 @@ Garral	Garral	PROPN
 prit	prendre	VERB
 terre	terre	NOUN
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 jangada	jangada	NOUN
 avait	avoir	AUX
 pu	pouvoir	VERB
@@ -2331,7 +2330,7 @@ fît	faire	VERB
 sans	sans	ADP
 peine	peine	NOUN
 .	.	PUNCTsent
-Un	un	DET
+un	un	DET
 escalier	escalier	NOUN
 en	en	ADP
 assez	assez	ADV
@@ -2355,7 +2354,7 @@ du	du	ADP_DET
 plateau	plateau	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Yaquita	Yaquita	PROPN
+Yaquita	Yaquita	VERB
 et	et	CCONJ
 les siens	les siens	PRON
 furent	être	AUX
@@ -2387,7 +2386,7 @@ dans	dans	ADP
 son	son	DET
 habitation	habitation	NOUN
 .	.	PUNCTsent
-Çà	çà	ADV
+çà	çà	ADV
 et	et	CCONJ
 là	là	ADV
 allaient	aller	VERB
@@ -2458,11 +2457,11 @@ la	le	DET
 jangada	jangada	X
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 commandant	commandant	NOUN
 ne	ne	ADV
 se	se	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 fit	faire	VERB
 pas	pas	ADV
 dire	dire	VERB
@@ -2477,7 +2476,7 @@ onze	onze	NUM
 heures	heure	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-En	en	ADP
+en	en	ADP
 attendant	attendre	VERB
 ,	,	PUNCTclause
 Yaquita	Yaquita	PROPN
@@ -2532,7 +2531,7 @@ chef	chef	NOUN
 militaire	militaire	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Puis	puis	CCONJ
+puis	puis	CCONJ
 ,	,	PUNCTclause
 cela	cela	PRON
 fait	faire	VERB
@@ -2564,7 +2563,7 @@ le	le	DET
 suivre	suivre	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cependant	cependant	ADV
+cependant	cependant	ADV
 ,	,	PUNCTclause
 Fragoso	Fragoso	PROPN
 ,	,	PUNCTclause
@@ -2607,7 +2606,7 @@ au niveau de	au niveau de	ADP
 la	le	DET
 berge	berge	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 comptait	compter	VERB
 plus	plus	ADV
 ,	,	PUNCTclause
@@ -2668,7 +2667,7 @@ coquettes	coquet	NOUN
 moitiés	moitié	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Chez	chez	ADP
+chez	chez	ADP
 les	le	DET
 indigènes	indigène	NOUN
 ,	,	PUNCTclause
@@ -2679,7 +2678,7 @@ devait	devoir	VERB
 tout	tout	PRON
 autrement	autrement	ADV
 .	.	PUNCTsent
-Époux	époux	NOUN
+époux	époux	NOUN
 et	et	CCONJ
 épouses	époux	NOUN
 ,	,	PUNCTclause
@@ -2697,7 +2696,7 @@ meilleur	meilleur	ADJ
 accueil	accueil	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Voilà	voilà	ADP
+voilà	voilà	ADP
 donc	donc	ADV
 Fragoso	Fragoso	PROPN
 en	en	ADP
@@ -2720,7 +2719,7 @@ de	de	ADP
 Tabatinga	Tabatinga	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Dès	dès	ADP
+dès	dès	ADP
 son	son	DET
 arrivée	arrivée	NOUN
 sur	sur	ADP
@@ -2738,7 +2737,7 @@ reconnu	reconnaître	VERB
 entouré	entourer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Fragoso	Fragoso	PROPN
+Fragoso	Fragoso	PRON
 ne	ne	ADV
 avait	avoir	VERB
 ni	ni	CCONJ
@@ -2800,7 +2799,7 @@ dans	dans	ADP
 les	le	DET
 foires	foire	NOUN
 !	!	PUNCTsent
-Non	non	ADV
+non	non	ADV
 !	!	PUNCTsent
 mais	mais	CCONJ
 Fragoso	Fragoso	PROPN
@@ -2818,7 +2817,7 @@ entre	entre	ADP
 ses	son	DET
 doigts	doigt	NOUN
 !	!	PUNCTsent
-Avec	avec	ADP
+avec	avec	ADP
 quelle	quel	DET
 adresse	adresse	NOUN
 il	il	PRON
@@ -2840,7 +2839,7 @@ effilée	effilé	ADJ
 du	du	ADP_DET
 manche	manche	NOUN
 !	!	PUNCTsent
-Avec	avec	ADP
+avec	avec	ADP
 quelle	quel	DET
 grâce	grâce	NOUN
 il	il	PRON
@@ -2885,7 +2884,7 @@ maître	maître	NOUN
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Tous	tout	ADJ
+tous	tout	ADJ
 les	le	DET
 indigènes	indigène	NOUN
 étaient	être	AUX
@@ -2946,7 +2945,7 @@ joyeuse	joyeux	ADJ
 humeur	humeur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ce	ce	PRON
+ce	ce	PRON
 que	que	PRON
 il	il	PRON
 leur	leur	PRON
@@ -2979,7 +2978,7 @@ ou	ou	CCONJ
 perruquiers	perruquier	NOUN
 français	français	ADJ
 .	.	PUNCTsent
-Au	au	ADP_DET
+au	au	ADP_DET
 fond	fond	NOUN
 ,	,	PUNCTclause
 même	même	ADV
@@ -3023,7 +3022,7 @@ monde	monde	NOUN
 civilisé	civiliser	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 se	se	PRON
 ensuivit	ensuivre	VERB
 donc	donc	ADV
@@ -3060,17 +3059,17 @@ de	de	ADP
 cabaret	cabaret	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cette	ce	DET
+cette	ce	DET
 loja	loja	NOUN
 appartenait	appartenir	VERB
 à	à	ADP
 un	un	DET
-Brésilien	Brésilien	NOUN
+brésilien	brésilien	NOUN
 domicilié	domicilier	VERB
 à	à	ADP
 Tabatinga	Tabatinga	PROPN
 .	.	PUNCTsent
-Là	là	ADV
+là	là	ADV
 ,	,	PUNCTclause
 pour	pour	ADP
 quelques	quelque	DET
@@ -3147,7 +3146,7 @@ l'	le	DET
 Amazone	Amazone	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 alors	alors	ADV
 ,	,	PUNCTclause
 hommes	homme	NOUN
@@ -3173,7 +3172,7 @@ escabeau	escabeau	NOUN
 du	du	ADP_DET
 barbier	barbier	NOUN
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 ciseaux	ciseau	NOUN
 de	de	ADP
 Fragoso	Fragoso	PROPN
@@ -3228,7 +3227,7 @@ un	un	DET
 brasero	brasero	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 les	le	DET
 encouragements	encouragement	NOUN
 de	de	ADP
@@ -3240,7 +3239,7 @@ foule	foule	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Voyez	voir	VERB
+voyez	voir	VERB
 ,	,	PUNCTclause
 voyez	voir	VERB
 ,	,	PUNCTclause
@@ -3262,7 +3261,7 @@ couchez	coucher	VERB
 pas	pas	ADV
 dessus	dessus	ADV
 !	!	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 voilà	voilà	ADP
 pour	pour	ADP
 un	un	DET
@@ -3281,7 +3280,7 @@ ou	ou	CCONJ
 de	de	ADP
 Rio-de-Janeiro	Rio-de-Janeiro	PROPN
 !	!	PUNCTsent
-Les	le	DET
+les	le	DET
 filles	fille	NOUN
 de	de	ADP
 honneur	honneur	NOUN
@@ -3308,15 +3307,15 @@ pommade	pommade	NOUN
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Non	non	ADV
+non	non	ADV
 !	!	PUNCTsent
 il	il	PRON
 ne	ne	ADV
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 épargnait	épargner	VERB
 pas	pas	ADV
 !	!	PUNCTsent
-Ce	ce	PRON
+ce	ce	PRON
 ne	ne	ADV
 était	être	AUX
 ,	,	PUNCTclause
@@ -3347,7 +3346,7 @@ du	du	ADP_DET
 ciment	ciment	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Aussi	aussi	ADV
+aussi	aussi	ADV
 aurait	avoir	AUX
 on	on	PRON
 pu	pouvoir	VERB
@@ -3376,7 +3375,7 @@ genres	genre	NOUN
 de	de	ADP
 architecture	architecture	NOUN
 !	!	PUNCTsent
-Boucles	boucle	NOUN
+boucles	boucle	NOUN
 ,	,	PUNCTclause
 anneaux	anneau	NOUN
 ,	,	PUNCTclause
@@ -3400,7 +3399,7 @@ trouvait	trouver	VERB
 sa	son	DET
 place	place	NOUN
 .	.	PUNCTsent
-Rien	rien	PRON
+rien	rien	PRON
 de	de	ADP
 faux	faux	ADJ
 ,	,	PUNCTclause
@@ -3415,7 +3414,7 @@ chignons	chignon	NOUN
 ni	ni	CCONJ
 postiches	postiche	NOUN
 .	.	PUNCTsent
-Ces	ce	DET
+ces	ce	DET
 chevelures	chevelure	NOUN
 indigènes	indigène	ADJ
 ,	,	PUNCTclause
@@ -3445,7 +3444,7 @@ leur	leur	DET
 virginité	virginité	NOUN
 native	natif	ADJ
 !	!	PUNCTsent
-Fragoso	Fragoso	PROPN
+Fragoso	Fragoso	VERB
 ,	,	PUNCTclause
 cependant	cependant	ADV
 ,	,	PUNCTclause
@@ -3490,7 +3489,7 @@ endroit	endroit	NOUN
 les	le	DET
 merveilleuses	merveilleux	NOUN
 du	du	ADP_DET
-Directoire	Directoire	PROPN
+directoire	directoire	UNKNOWN
 auraient	avoir	AUX
 envié	envier	VERB
 l'	le	DET
@@ -3523,7 +3522,7 @@ de	de	ADP
 outremer	outremer	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 alors	alors	ADV
 les	le	DET
 vatems	vatems	NOUN
@@ -3557,14 +3556,14 @@ de	de	ADP
 Fragoso	Fragoso	PROPN
 ,	,	PUNCTclause
 qui	qui	PRON
-les	le:PRON	PRON
+les	le_PRON	PRON
 encaissait	encaisser	VERB
 avec	avec	ADP
 une	un	DET
 évidente	évident	ADJ
 satisfaction	satisfaction	NOUN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 très	très	ADV
 certainement	certainement	ADV
@@ -3586,7 +3585,7 @@ clientèle	clientèle	NOUN
 incessamment	incessamment	ADV
 renouvelée	renouveler	VERB
 .	.	PUNCTsent
-Ce	ce	PRON
+ce	ce	PRON
 ne	ne	ADV
 était	être	AUX
 pas	pas	ADV
@@ -3605,7 +3604,7 @@ de	de	ADP
 la	le	DET
 loja	loja	NOUN
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 nouvelle	nouveau	ADJ
 de	de	ADP
 l'	le	DET
@@ -3620,7 +3619,7 @@ tardé	tarder	VERB
 se	se	PRON
 répandre	répandre	VERB
 .	.	PUNCTsent
-De	de	ADP
+de	de	ADP
 ces	ce	DET
 indigènes	indigène	NOUN
 ,	,	PUNCTclause
@@ -3667,7 +3666,7 @@ du	du	ADP_DET
 Javary	Javary	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Aussi	aussi	ADV
+aussi	aussi	ADV
 ,	,	PUNCTclause
 une	un	DET
 longue	long	ADJ
@@ -3682,7 +3681,7 @@ la	le	DET
 place	place	NOUN
 centrale	central	ADJ
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 heureux	heureux	ADJ
 et	et	CCONJ
 les	le	DET
@@ -3719,7 +3718,7 @@ ils	ils	PRON
 étaient	être	AUX
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 arriva	arriver	VERB
 donc	donc	ADV
 que	que	ADV
@@ -3774,7 +3773,7 @@ de	de	ADP
 fer	fer	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 aussi	aussi	ADV
 ,	,	PUNCTclause
 bonne	bon	ADJ

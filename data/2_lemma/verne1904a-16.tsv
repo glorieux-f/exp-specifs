@@ -5,13 +5,13 @@
 # isPartOf = Un drame en Livonie
 # title = XVI. Confession
 
-↵↵↵	↵↵↵	PUNCTstruct
-		TOKEN
+↵↵	↵↵	PUNCTstruct
+XVI	XVI	NUM
 .	.	PUNCTsent
-Confession	confession	NOUN
+confession	confession	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-La	le	DET
+la	le	DET
 veille	veille	NOUN
 de	de	ADP
 ce	ce	DET
@@ -61,25 +61,25 @@ sa	son	DET
 confession	confession	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cette	ce	DET
+cette	ce	DET
 confession	confession	NOUN
 ,	,	PUNCTclause
 le	le	DET
 pope	pope	NOUN
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avait	avoir	AUX
 écrite	écrire	VERB
 ,	,	PUNCTclause
 et	et	CCONJ
 Kroff	Kroff	PROPN
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avait	avoir	AUX
 signée	signer	VERB
 de	de	ADP
 son	son	DET
 nom	nom	NOUN
 .	.	PUNCTsent
-Après	après	ADP
+après	après	ADP
 sa	son	DET
 mort	mort	NOUN
 ,	,	PUNCTclause
@@ -106,7 +106,7 @@ Dimitri	Dimitri	PROPN
 Nicolef	Nicolef	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Voici	voici	ADP
+voici	voici	ADP
 ce	ce	PRON
 que	que	PRON
 contenait	contenir	VERB
@@ -141,7 +141,7 @@ de	de	ADP
 Nicolef	Nicolef	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Dans	dans	ADP
+dans	dans	ADP
 la	le	DET
 nuit	nuit	NOUN
 du	du	ADP_DET
@@ -163,7 +163,7 @@ la	le	DET
 Croix-Rompue	Croix-Rompue	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-En	en	ADP
+en	en	ADP
 voyant	voir	VERB
 le	le	DET
 portefeuille	portefeuille	NOUN
@@ -192,7 +192,7 @@ garçon	garçon	NOUN
 de	de	ADP
 banque	banque	NOUN
 .	.	PUNCTsent
-Toutefois	toutefois	ADV
+toutefois	toutefois	ADV
 ,	,	PUNCTclause
 la	le	DET
 prudence	prudence	NOUN
@@ -220,7 +220,7 @@ quitté	quitter	VERB
 l'	le	DET
 auberge	auberge	NOUN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 ne	ne	ADV
 pouvant	pouvoir	VERB
@@ -250,7 +250,7 @@ avoir	avoir	AUX
 entendu	entendre	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Poch	Poch	PROPN
+Poch	Poch	NOUN
 ne	ne	ADV
 dormait	dormir	VERB
 pas	pas	ADV
@@ -269,7 +269,7 @@ fanal	fanal	NOUN
 de	de	ADP
 Kroff	Kroff	PROPN
 .	.	PUNCTsent
-Celui	celui	PRON
+celui	celui	PRON
 ,	,	PUNCTclause
 qui	qui	PRON
 ne	ne	ADV
@@ -305,7 +305,7 @@ suédois	suédois	ADJ
 virole	virole	NOUN
 —	—	PUNCTclause
 il	il	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 frappa	frapper	VERB
 au	au	ADP_DET
 cœur	cœur	NOUN
@@ -315,7 +315,7 @@ coup	coup	NOUN
 mortel	mortel	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 portefeuille	portefeuille	NOUN
 de	de	ADP
 Poch	Poch	PROPN
@@ -323,7 +323,7 @@ fut	être	AUX
 alors	alors	ADV
 fouillé	fouiller	VERB
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 contenait	contenir	VERB
 la	le	DET
 somme	somme	NOUN
@@ -341,7 +341,7 @@ roubles	rouble	NOUN
 chacun	chacun	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 quelle	quel	DET
 imprécation	imprécation	NOUN
 échappa	échapper	VERB
@@ -367,7 +367,7 @@ mots	mot	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Liste	liste	NOUN
+liste	liste	NOUN
 des	un	ADP_DET
 numéros	numéro	NOUN
 des	un	ADP_DET
@@ -381,8 +381,7 @@ entre	entre	ADP
 les	le	DET
 mains	main	NOUN
 de	de	ADP
-		TOKEN
-.	.	PUNCTsent
+messieurs	monsieur	NOUN
 Johausen	Johausen	PROPN
 frères	frère	NOUN
 .	.	PUNCTsent
@@ -411,7 +410,7 @@ la	le	DET
 banque	banque	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ainsi	ainsi	ADV
+ainsi	ainsi	ADV
 ,	,	PUNCTclause
 ces	ce	DET
 billets	billet	NOUN
@@ -437,7 +436,7 @@ de	de	ADP
 être	être	AUX
 pris	prendre	VERB
 !...	!...	PUNCTsent
-Cet	ce	DET
+cet	ce	DET
 assassinat	assassinat	NOUN
 ,	,	PUNCTclause
 il	il	PRON
@@ -470,7 +469,7 @@ occupait	occuper	VERB
 l'autre	l'autre	PRON
 chambre	chambre	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 sortit	sortir	VERB
 de	de	ADP
 l'	le	DET
@@ -507,7 +506,7 @@ la	le	DET
 maison	maison	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Fou	fou	ADJ
+fou	fou	ADJ
 de	de	ADP
 rage	rage	NOUN
 à	à	ADP
@@ -539,7 +538,7 @@ l'	le	DET
 esprit	esprit	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pourquoi	pourquoi	ADV
+pourquoi	pourquoi	ADV
 ne	ne	ADV
 pénétrerait	pénétrer	VERB
 il	il	PRON
@@ -571,10 +570,10 @@ avait	avoir	AUX
 sans doute	sans doute	ADV
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Or	or	NOUN
+or	or	NOUN
 ,	,	PUNCTclause
 on	on	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 sait	savoir	VERB
 ,	,	PUNCTclause
 Dimitri	Dimitri	PROPN
@@ -593,7 +592,7 @@ restituer	restituer	VERB
 Wladimir	Wladimir	PROPN
 Yanof	Yanof	PROPN
 .	.	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 alors	alors	ADV
 ,	,	PUNCTclause
 tandis que	tandis que	SCONJ
@@ -613,7 +612,7 @@ billets	billet	NOUN
 de	de	ADP
 banque	banque	NOUN
 .	.	PUNCTsent
-On	on	PRON
+on	on	PRON
 ne	ne	ADV
 avait	avoir	AUX
 pas	pas	ADV
@@ -622,7 +621,7 @@ numéros	numéro	NOUN
 de	de	ADP
 ceux	ceux	PRON
 !...	!...	PUNCTsent
-Il	il	PRON
+il	il	PRON
 en	en	PRON
 prit	prendre	VERB
 pour	pour	ADP
@@ -650,7 +649,7 @@ avoir	avoir	AUX
 été	être	AUX
 vu	voir	VERB
 .	.	PUNCTsent
-Puis	puis	CCONJ
+puis	puis	CCONJ
 ,	,	PUNCTclause
 au	au	ADP_DET
 pied	pied	NOUN
@@ -687,7 +686,7 @@ la	le	DET
 police	police	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-À	à	ADP
+à	à	ADP
 quatre	quatre	NUM
 heures	heure	NOUN
 du	du	ADP_DET
@@ -717,7 +716,7 @@ attendait	attendre	VERB
 Wladimir	Wladimir	PROPN
 Yanof	Yanof	PROPN
 .	.	PUNCTsent
-On	on	PRON
+on	on	PRON
 comprend	comprendre	VERB
 maintenant	maintenant	ADV
 par suite de	par suite de	ADP
@@ -739,7 +738,7 @@ en	en	ADP
 certitudes	certitude	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Kroff	Kroff	PROPN
+Kroff	Kroff	NOUN
 ,	,	PUNCTclause
 possesseur	possesseur	NOUN
 des	un	ADP_DET
@@ -773,9 +772,9 @@ sans	sans	ADP
 aucun	aucun	DET
 danger	danger	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
-le	le:PRON	PRON
+le	le_PRON	PRON
 fit	faire	VERB
 cependant que	cependant que	SCONJ
 avec	avec	ADP
@@ -822,7 +821,7 @@ porter	porter	VERB
 les	le	DET
 soupçons	soupçon	NOUN
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 professeur	professeur	NOUN
 ,	,	PUNCTclause
 tout	tout	PRON
@@ -869,7 +868,7 @@ pour	pour	ADP
 lui	lui	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-À	à	ADP
+à	à	ADP
 voir	voir	VERB
 les	le	DET
 présomptions	présomption	NOUN
@@ -893,7 +892,7 @@ retourner	retourner	VERB
 sur	sur	ADP
 lui	lui	PRON
 .	.	PUNCTsent
-Bien	bien	ADV
+bien	bien	ADV
 que	que	SCONJ
 il	il	PRON
 fût	être	AUX
@@ -934,7 +933,7 @@ auteur	auteur	NOUN
 du	du	ADP_DET
 crime	crime	NOUN
 .	.	PUNCTsent
-Après	après	ADP
+après	après	ADP
 avoir	avoir	AUX
 brûlé	brûler	VERB
 un	un	DET
@@ -1003,7 +1002,7 @@ cette	ce	DET
 perquisition	perquisition	NOUN
 ,	,	PUNCTclause
 on	on	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 sait	savoir	VERB
 ,	,	PUNCTclause
 Dimitri	Dimitri	PROPN
@@ -1030,7 +1029,7 @@ conscience	conscience	NOUN
 ,	,	PUNCTclause
 ne	ne	ADV
 pouvait	pouvoir	VERB
-le	le:PRON	PRON
+le	le_PRON	PRON
 croire	croire	VERB
 coupable	coupable	ADJ
 ,	,	PUNCTclause
@@ -1041,7 +1040,7 @@ son	son	DET
 arrestation	arrestation	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Kroff	Kroff	PROPN
+Kroff	Kroff	NOUN
 ,	,	PUNCTclause
 plus	plus	ADV
 inquiet	inquiet	ADJ
@@ -1124,7 +1123,7 @@ première	premier	ADJ
 perquisition	perquisition	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 se	se	PRON
 ensuit	ensuivre	VERB
 donc	donc	ADV
@@ -1139,10 +1138,10 @@ l'	le	DET
 opinion	opinion	NOUN
 ,	,	PUNCTclause
 Kroff	Kroff	PROPN
-le	le:PRON	PRON
+le	le_PRON	PRON
 perdait	perdre	VERB
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 attendait	attendre	VERB
 ,	,	PUNCTclause
 cependant	cependant	ADV
@@ -1185,7 +1184,7 @@ faire	faire	AUX
 usage	usage	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Enfin	enfin	ADV
+enfin	enfin	ADV
 ,	,	PUNCTclause
 Kroff	Kroff	PROPN
 comprit	comprendre	VERB
@@ -1225,8 +1224,7 @@ entre	entre	ADP
 les	le	DET
 mains	main	NOUN
 de	de	ADP
-		TOKEN
-.	.	PUNCTsent
+messieurs	monsieur	NOUN
 Johausen	Johausen	PROPN
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -1277,10 +1275,10 @@ un	un	DET
 second	second	ADJ
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 il	il	PRON
 ne	ne	ADV
-le	le:PRON	PRON
+le	le_PRON	PRON
 sut	savoir	VERB
 pas	pas	ADV
 ,	,	PUNCTclause
@@ -1288,7 +1286,7 @@ ou	ou	CCONJ
 plutôt	plutôt	ADV
 il	il	PRON
 ne	ne	ADV
-le	le:PRON	PRON
+le	le_PRON	PRON
 sut	savoir	VERB
 que	que	SCONJ
 après	après	ADP
@@ -1298,7 +1296,7 @@ le	le	DET
 second	second	ADJ
 crime	crime	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 était	être	AUX
 libre	libre	ADJ
 encore	encore	ADV
@@ -1317,7 +1315,7 @@ appelé	appeler	VERB
 le	le	DET
 juge d'instruction	juge d'instruction	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 y	y	PRON
 vint	venir	VERB
 ce	ce	DET
@@ -1348,12 +1346,12 @@ un	un	DET
 suicide	suicide	NOUN
 ...	...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Les	le	DET
+les	le	DET
 circonstances	circonstance	NOUN
 le	le	DET
 favorisèrent	favoriser	VERB
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 vit	vivre	VERB
 sortir	sortir	VERB
 Nicolef	Nicolef	PROPN
@@ -1378,7 +1376,7 @@ et	et	CCONJ
 sa	son	DET
 fille	fille	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 le	le	DET
 suivit	suivre	VERB
 à travers	à travers	ADP
@@ -1413,7 +1411,7 @@ près de	près de	ADP
 lui	lui	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Qui	qui	PRON
+qui	qui	PRON
 eût	avoir	AUX
 pu	pouvoir	VERB
 douter	douter	VERB
@@ -1456,7 +1454,7 @@ la	le	DET
 Croix-Rompue	Croix-Rompue	PROPN
 ?...	?...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Personne	personne	NOUN
+personne	personne	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 ce	ce	PRON
@@ -1475,7 +1473,7 @@ en	en	PRON
 attendait	attendre	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Aussi	aussi	ADV
+aussi	aussi	ADV
 l'	le	DET
 instruction	instruction	NOUN
 dut	devoir	VERB
@@ -1510,7 +1508,7 @@ double	double	ADJ
 assassinat	assassinat	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Les	le	DET
+les	le	DET
 billets	billet	NOUN
 de	de	ADP
 banque	banque	NOUN
@@ -1554,7 +1552,7 @@ aucun	aucun	DET
 risque	risque	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Kroff	Kroff	PROPN
+Kroff	Kroff	NOUN
 ne	ne	ADV
 jouit	jouir	VERB
 pas	pas	ADV
@@ -1565,7 +1563,7 @@ de	de	ADP
 ses	son	DET
 crimes	crime	NOUN
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 veille	veille	NOUN
 ,	,	PUNCTclause
 frappé	frapper	VERB
@@ -1611,7 +1609,7 @@ Wladimir	Wladimir	PROPN
 Yanof	Yanof	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-La	le	DET
+la	le	DET
 réhabilitation	réhabilitation	NOUN
 de	de	ADP
 Dimitri	Dimitri	PROPN
@@ -1619,7 +1617,7 @@ Nicolef	Nicolef	PROPN
 fut	être	AUX
 complète	complet	ADJ
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 quelle	quel	DET
 douleur	douleur	NOUN
 pour	pour	ADP
@@ -1637,7 +1635,7 @@ maintenant	maintenant	ADV
 que	que	SCONJ
 la	le	DET
 mort	mort	NOUN
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avait	avoir	AUX
 couché	coucher	VERB
 dans	dans	ADP
@@ -1645,7 +1643,7 @@ cette	ce	DET
 tombe	tombe	NOUN
 !...	!...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ainsi	ainsi	ADV
+ainsi	ainsi	ADV
 se	se	PRON
 termina	terminer	VERB
 ce	ce	DET
@@ -1664,5 +1662,5 @@ annales	annales	NOUN
 judiciaires	judiciaire	ADJ
 des	un	ADP_DET
 provinces	province	NOUN
-Baltiques	Baltiques	PROPN
+baltiques	baltique	UNKNOWN
 .	.	PUNCTsent

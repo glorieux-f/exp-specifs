@@ -5,20 +5,20 @@
 # isPartOf = P’tit Bonhomme
 # title = X. À Dublin
 
-↵↵↵	↵↵↵	PUNCTstruct
+↵↵	↵↵	PUNCTstruct
 X.	X.	PUNCT
-À	à	ADP
+à	à	ADP
 Dublin	Dublin	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Dublin	Dublin	PROPN
+Dublin	Dublin	NOUN
 !…	!…	PUNCTsent
-P'tit-Bonhomme	P'tit-Bonhomme	PROPN
+P'tit-Bonhomme	P'tit-Bonhomme	ADP
 est	est	NOUN
 à	à	ADP
 Dublin	Dublin	PROPN
 !…	!…	PUNCTsent
-Regardez	regarder	VERB
+regardez	regarder	VERB
 le	le	DET
 !…	!…	PUNCTsent
 ce	ce	PRON
@@ -46,7 +46,7 @@ grande	grand	ADJ
 cité	cité	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Dublin	Dublin	PROPN
+Dublin	Dublin	NOUN
 ,	,	PUNCTclause
 ce	ce	PRON
 ne	ne	ADV
@@ -62,7 +62,7 @@ ce	ce	PRON
 ne	ne	ADV
 est	être	AUX
 pas	pas	ADV
-Limerick	Limerick	PROPN
+limerick	limerick	UNKNOWN
 avec	avec	ADP
 ses	son	DET
 quarante-cinq	quarante-cinq	NUM
@@ -98,7 +98,7 @@ vingt	vingt	NUM
 mille	mille	NUM
 âmes	âme	NOUN
 .	.	PUNCTsent
-Administrée	administrer	VERB
+administrée	administrer	VERB
 par	par	ADP
 un	un	DET
 lord-maire	lord-maire	NOUN
@@ -141,7 +141,7 @@ importantes	important	ADJ
 des	un	ADP_DET
 Îles-Britanniques	Îles-Britanniques	PROPN
 .	.	PUNCTsent
-Commerçante	commerçant	ADJ
+commerçante	commerçant	ADJ
 avec	avec	ADP
 ses	son	DET
 docks	dock	NOUN
@@ -224,16 +224,16 @@ fait	faire	VERB
 un	un	DET
 rentier	rentier	NOUN
 .	.	PUNCTsent
-Rien	rien	PRON
+rien	rien	PRON
 de plus	de plus	ADV
 simple	simple	ADJ
 ,	,	PUNCTclause
 on	on	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 voit	voir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-En	en	ADP
+en	en	ADP
 cet	ce	DET
 instant	instant	NOUN
 ,	,	PUNCTclause
@@ -248,7 +248,7 @@ avoir	avoir	AUX
 quitté	quitter	VERB
 Cork	Cork	PROPN
 ?	?	PUNCTsent
-Lui	lui	PRON
+lui	lui	PRON
 parut	paraître	VERB
 il	il	PRON
 téméraire	téméraire	ADJ
@@ -258,7 +258,7 @@ suivi	suivre	VERB
 les	le	DET
 conseils	conseil	NOUN
 de	de	ADP
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 —	—	PUNCTclause
 conseils	conseil	NOUN
 en	en	ADP
@@ -272,7 +272,7 @@ ses	son	DET
 propres	propre	ADJ
 instincts	instinct	NOUN
 ?	?	PUNCTsent
-Le	le	DET
+le	le	DET
 pressentiment	pressentiment	NOUN
 lui	lui	PRON
 vint	venir	VERB
@@ -292,9 +292,9 @@ foule	foule	NOUN
 de	de	ADP
 combattants	combattant	NOUN
 ?…	?…	PUNCTsent
-Non	non	ADV
+non	non	ADV
 !…	!…	PUNCTsent
-Il	il	PRON
+il	il	PRON
 était	être	AUX
 parti	partir	VERB
 confiant	confiant	ADJ
@@ -310,7 +310,7 @@ en	en	ADP
 route	route	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 comté	comté	NOUN
 de	de	ADP
 Dublin	Dublin	PROPN
@@ -321,7 +321,7 @@ province	province	NOUN
 de	de	ADP
 Leinster	Leinster	PROPN
 .	.	PUNCTsent
-Montagneux	montagneux	ADJ
+montagneux	montagneux	ADJ
 au	au	ADP_DET
 sud	sud	NOUN
 ,	,	PUNCTclause
@@ -343,7 +343,7 @@ et	et	CCONJ
 de	de	ADP
 avoines	avoine	NOUN
 .	.	PUNCTsent
-Là	là	ADV
+là	là	ADV
 ne	ne	ADV
 est	être	AUX
 point	point	ADV
@@ -358,7 +358,7 @@ la	le	DET
 mer	mer	NOUN
 que	que	PRON
 il	il	PRON
-la	le:PRON	PRON
+la	le_PRON	PRON
 demande	demander	VERB
 ,	,	PUNCTclause
 ce	ce	PRON
@@ -406,7 +406,7 @@ du	du	ADP_DET
 Royaume-Uni	Royaume-Uni	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-La	le	DET
+la	le	DET
 baie	bai	NOUN
 de	de	ADP
 Dublin	Dublin	PROPN
@@ -439,7 +439,7 @@ de	de	ADP
 l'	le	DET
 Europe	Europe	PROPN
 .	.	PUNCTsent
-Elle	elle	PRON
+elle	elle	PRON
 se	se	PRON
 étend	étendre	VERB
 du	du	ADP_DET
@@ -453,7 +453,7 @@ septentrional	septentrional	ADJ
 de	de	ADP
 Howth	Howth	PROPN
 .	.	PUNCTsent
-Celui	celui	PRON
+celui	celui	PRON
 de	de	ADP
 Dublin	Dublin	PROPN
 est	être	AUX
@@ -550,9 +550,9 @@ son	son	DET
 magnifique	magnifique	ADJ
 ensemble	ensemble	NOUN
 .	.	PUNCTsent
-Bob	bob	NOUN
+Bob	Bob	PROPN
 et	et	CCONJ
-P'tit-Bonhomme	P'tit-Bonhomme	PROPN
+P'tit-Bonhomme	P'tit-Bonhomme	ADP
 ne	ne	ADV
 avaient	avoir	AUX
 pas	pas	ADV
@@ -561,7 +561,7 @@ cette	ce	DET
 bonne fortune	bonne fortune	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-La	le	DET
+la	le	DET
 nuit	nuit	NOUN
 était	être	AUX
 sombre	sombre	ADJ
@@ -600,7 +600,7 @@ de	de	ADP
 Dublin	Dublin	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Peu	peu	ADV
+peu	peu	ADV
 enchanteur	enchanteur	ADJ
 ,	,	PUNCTclause
 peu	peu	ADV
@@ -626,7 +626,7 @@ de	de	ADP
 quelques	quelque	DET
 becs de gaz	becs de gaz	NOUN
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 charrette	charrette	NOUN
 ,	,	PUNCTclause
 traînée	traîner	VERB
@@ -641,7 +641,7 @@ rues	rue	NOUN
 et	et	CCONJ
 enchevêtrées	enchevêtré	ADJ
 .	.	PUNCTsent
-Çà	çà	ADV
+çà	çà	ADV
 et	et	CCONJ
 là	là	ADV
 ,	,	PUNCTclause
@@ -654,7 +654,7 @@ fermées	fermé	ADJ
 publics-houses	publics-houses	ADJ
 ouverts	ouvrir	VERB
 .	.	PUNCTsent
-Partout	partout	ADV
+partout	partout	ADV
 la	le	DET
 tourbe	tourbe	NOUN
 des	un	ADP_DET
@@ -698,7 +698,7 @@ les	le	DET
 violences	violence	NOUN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Les	le	DET
+les	le	DET
 deux	deux	NUM
 enfants	enfant	NOUN
 avaient	avoir	AUX
@@ -707,7 +707,7 @@ vu	voir	VERB
 cela	cela	PRON
 ailleurs	ailleurs	ADV
 .	.	PUNCTsent
-Ce	ce	PRON
+ce	ce	PRON
 ne	ne	ADV
 était	être	AUX
 pas	pas	ADV
@@ -719,7 +719,7 @@ même	même	ADV
 les	le	DET
 inquiéter	inquiéter	VERB
 .	.	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 ,	,	PUNCTclause
 cependant	cependant	ADV
 ,	,	PUNCTclause
@@ -794,7 +794,7 @@ grand	grand	ADJ
 distillateur	distillateur	NOUN
 Roe	Roe	PROPN
 .	.	PUNCTsent
-De	de	ADP
+de	de	ADP
 la	le	DET
 tour	tour	NOUN
 ,	,	PUNCTclause
@@ -826,7 +826,7 @@ la	le	DET
 heure	heure	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Bob	bob	NOUN
+Bob	Bob	PROPN
 ,	,	PUNCTclause
 très	très	ADV
 fatigué	fatiguer	VERB
@@ -846,14 +846,14 @@ dans	dans	ADP
 la	le	DET
 charrette	charrette	NOUN
 .	.	PUNCTsent
-P'tit-Bonhomme	P'tit-Bonhomme	PROPN
+P'tit-Bonhomme	P'tit-Bonhomme	ADP
 poussait	pousser	VERB
 ,	,	PUNCTclause
 afin de	afin de	ADP
 soulager	soulager	VERB
 Birk	Birk	PROPN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 cherchait	chercher	VERB
 une	un	DET
 auberge	auberge	NOUN
@@ -871,7 +871,7 @@ mieux	mieux	ADV
 le	le	DET
 lendemain	lendemain	NOUN
 .	.	PUNCTsent
-Sans	sans	ADP
+sans	sans	ADP
 le	le	DET
 savoir	savoir	NOUN
 ,	,	PUNCTclause
@@ -884,7 +884,7 @@ se	se	PRON
 appelle	appeler	VERB
 «	«	PUNCTclause
 les	le	DET
-Libertés	Libertés	NOUN
+libertés	liberté	NOUN
 »	»	PUNCTclause
 ,	,	PUNCTclause
 à	à	ADP
@@ -909,7 +909,7 @@ cathédrale	cathédral	ADJ
 de	de	ADP
 Christ-Church	Christ-Church	PROPN
 .	.	PUNCTsent
-Rue	rue	NOUN
+rue	rue	NOUN
 large	large	ADJ
 ,	,	PUNCTclause
 bordée	border	VERB
@@ -948,9 +948,9 @@ le	le	DET
 cabin	cabin	NOUN
 de	de	ADP
 la	le	DET
-Hard	Hard	PROPN
+hard	hard	UNKNOWN
 .	.	PUNCTsent
-Ce	ce	PRON
+ce	ce	PRON
 fut	être	AUX
 même	même	ADV
 comme	comme	ADP
@@ -964,7 +964,7 @@ esprit	esprit	NOUN
 de	de	ADP
 P'tit-Bonhomme	P'tit-Bonhomme	PROPN
 …	…	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 pourtant	pourtant	ADV
 ,	,	PUNCTclause
 il	il	PRON
@@ -1012,7 +1012,7 @@ dans	dans	ADP
 leur	leur	DET
 poche	poche	NOUN
 .	.	PUNCTsent
-Aussi	aussi	ADV
+aussi	aussi	ADV
 chercha	chercher	VERB
 il	il	PRON
 ,	,	PUNCTclause
@@ -1049,7 +1049,7 @@ prix	prix	NOUN
 abordables	abordable	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cela	cela	PRON
+cela	cela	PRON
 se	se	PRON
 rencontra	rencontrer	VERB
 ,	,	PUNCTclause
@@ -1076,7 +1076,7 @@ charrette	charrette	NOUN
 fut	être	AUX
 remisée	remiser	VERB
 .	.	PUNCTsent
-Après	après	ADP
+après	après	ADP
 souper	souper	VERB
 ,	,	PUNCTclause
 les	le	DET
@@ -1088,7 +1088,7 @@ une	un	DET
 étroite	étroit	ADJ
 chambre	chambre	NOUN
 .	.	PUNCTsent
-Cette	ce	DET
+cette	ce	DET
 nuit	nuit	NOUN
 ,	,	PUNCTclause
 tous	tout	ADJ
@@ -1101,7 +1101,7 @@ tout	tout	PRON
 le	le	DET
 tumulte	tumulte	NOUN
 des	un	ADP_DET
-Libertés	Libertés	NOUN
+libertés	liberté	NOUN
 ,	,	PUNCTclause
 ne	ne	ADV
 auraient	avoir	AUX
@@ -1111,7 +1111,7 @@ leur	leur	DET
 sommeil	sommeil	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 lendemain	lendemain	NOUN
 ,	,	PUNCTclause
 on	on	PRON
@@ -1121,7 +1121,7 @@ dès	dès	ADP
 l'	le	DET
 aube	aube	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 se	se	PRON
 agissait	agir	VERB
 de	de	ADP
@@ -1144,12 +1144,12 @@ apprête	apprêter	VERB
 à	à	ADP
 combattre	combattre	VERB
 .	.	PUNCTsent
-Aller	aller	VERB
+aller	aller	VERB
 à	à	ADP
 la	le	DET
 recherche	recherche	NOUN
 de	de	ADP
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 ,	,	PUNCTclause
 ce	ce	PRON
 était	être	AUX
@@ -1180,7 +1180,7 @@ attache	attache	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Nous	nous	PRON
+nous	nous	PRON
 emmenons	emmener	VERB
 Birk	Birk	PROPN
 ?…	?…	PUNCTsent
@@ -1194,7 +1194,7 @@ sans doute	sans doute	ADV
 répondit	répondre	VERB
 P'tit-Bonhomme	P'tit-Bonhomme	PROPN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 faut	falloir	VERB
 que	que	SCONJ
 il	il	PRON
@@ -1206,7 +1206,7 @@ ville	ville	NOUN
 .	.	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 Birk	Birk	PROPN
 ne	ne	ADV
 se	se	PRON
@@ -1215,7 +1215,7 @@ point	point	ADV
 prier	prier	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Dublin	Dublin	PROPN
+Dublin	Dublin	NOUN
 décrit	décrire	VERB
 un	un	DET
 ovale	ovale	NOUN
@@ -1227,7 +1227,7 @@ de	de	ADP
 trois	trois	NUM
 milles	mille	NOUN
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 Liffey	Liffey	PROPN
 ,	,	PUNCTclause
 entrant	entrer	VERB
@@ -1248,7 +1248,7 @@ parties	partie	NOUN
 à peu près	à peu près	ADV
 équivalentes	équivalent	ADJ
 .	.	PUNCTsent
-À	à	ADP
+à	à	ADP
 son	son	DET
 embouchure	embouchure	NOUN
 ,	,	PUNCTclause
@@ -1299,7 +1299,7 @@ en	en	ADP
 communication	communication	NOUN
 l'	le	DET
 océan	océan	NOUN
-Atlantique	atlantique	ADJ
+atlantique	atlantique	ADJ
 et	et	CCONJ
 la	le	DET
 mer	mer	NOUN
@@ -1308,7 +1308,7 @@ Irlande	Irlande	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Saint-Patrick	Saint-Patrick	PROPN
-Street	Street	PROPN
+street	street	UNKNOWN
 compte	compter	VERB
 parmi	parmi	ADP
 ses	son	DET
@@ -1346,7 +1346,7 @@ l'	le	DET
 accoutrement	accoutrement	NOUN
 usuel	usuel	ADJ
 des	un	ADP_DET
-Paddys	Paddys	PROPN
+paddys	paddy	UNKNOWN
 de	de	ADP
 la	le	DET
 basse	bas	NOUN
@@ -1378,7 +1378,7 @@ ornés	orner	VERB
 de	de	ADP
 fleurs	fleur	NOUN
 .	.	PUNCTsent
-Là	là	ADV
+là	là	ADV
 aussi	aussi	ADV
 ,	,	PUNCTclause
 on	on	PRON
@@ -1419,7 +1419,7 @@ et	et	CCONJ
 le	le	DET
 gin	gin	NOUN
 .	.	PUNCTsent
-Ces	ce	DET
+ces	ce	DET
 boutiques	boutique	NOUN
 attirèrent	attirer	VERB
 l'	le	DET
@@ -1440,7 +1440,7 @@ cette	ce	DET
 heure	heure	NOUN
 matinale	matinal	ADJ
 .	.	PUNCTsent
-On	on	PRON
+on	on	PRON
 se	se	PRON
 lève	lever	VERB
 tard	tard	ADV
@@ -1489,7 +1489,7 @@ autrefois	autrefois	ADV
 importée	importer	VERB
 par	par	ADP
 les	le	DET
-Français	Français	NOUN
+français	français	NOUN
 émigrés	émigré	ADJ
 après	après	ADP
 la	le	DET
@@ -1497,11 +1497,11 @@ révocation	révocation	NOUN
 de	de	ADP
 ↵↵	↵↵	PUNCTstruct
 l'	le	DET
-Édit	Édit	NOUN
+édit	édit	NOUN
 de	de	ADP
 Nantes	Nantes	PROPN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 est	être	AUX
 vrai	vrai	ADJ
 ,	,	PUNCTclause
@@ -1511,7 +1511,7 @@ distilleries	distillerie	NOUN
 sont	être	AUX
 florissantes	florissant	ADJ
 .	.	PUNCTsent
-Ici	ici	ADV
+ici	ici	ADV
 se	se	PRON
 élève	élever	VERB
 l'	le	DET
@@ -1525,7 +1525,7 @@ de	de	ADP
 M.	M.	NOUN
 Roe	Roe	PROPN
 .	.	PUNCTsent
-Là	là	ADV
+là	là	ADV
 se	se	PRON
 étend	étendre	VERB
 la	le	DET
@@ -1571,7 +1571,7 @@ les	le	DET
 deux	deux	NUM
 continents	continent	NOUN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 si	si	SCONJ
 l'	le	DET
@@ -1608,7 +1608,7 @@ du	du	ADP_DET
 gros	gros	ADJ
 bétail	bétail	NOUN
 .	.	PUNCTsent
-P'tit-Bonhomme	P'tit-Bonhomme	PROPN
+P'tit-Bonhomme	P'tit-Bonhomme	ADP
 savait	savoir	VERB
 ces	ce	DET
 choses	chose	NOUN
@@ -1633,7 +1633,7 @@ et	et	CCONJ
 brochures	brochure	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-En	en	ADP
+en	en	ADP
 gagnant	gagner	VERB
 du côté de	du côté de	ADP
 la	le	DET
@@ -1654,7 +1654,7 @@ offrait	offrir	VERB
 leur	leur	DET
 vue	vue	NOUN
 .	.	PUNCTsent
-Bob	bob	NOUN
+Bob	Bob	PROPN
 ,	,	PUNCTclause
 très	très	ADV
 loquace	loquace	ADJ
@@ -1676,28 +1676,28 @@ ha	ha	INTJ
 cette	ce	DET
 place	place	NOUN
 !…	!…	PUNCTsent
-Quelle	quel	DET
+quelle	quel	DET
 énorme	énorme	ADJ
 bâtisse	bâtisse	NOUN
 !…	!…	PUNCTsent
-Quel	quel	DET
+quel	quel	DET
 beau	beau	ADJ
 square	square	NOUN
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-La	le	DET
+la	le	DET
 bâtisse	bâtisse	NOUN
 ,	,	PUNCTclause
 ce	ce	PRON
 était	être	AUX
 la	le	DET
-Bourse	Bourse	NOUN
+bourse	bourse	NOUN
 ,	,	PUNCTclause
 le	le	DET
 Royal-Exchange	Royal-Exchange	PROPN
 .	.	PUNCTsent
-Au	au	ADP_DET
+au	au	ADP_DET
 long	long	ADJ
 de	de	ADP
 Dame-street	Dame-street	PROPN
@@ -1722,7 +1722,7 @@ de	de	ADP
 la	le	DET
 ville	ville	NOUN
 .	.	PUNCTsent
-Plus	plus	ADV
+plus	plus	ADV
 loin	loin	ADV
 apparaissait	apparaître	VERB
 le	le	DET
@@ -1749,7 +1749,7 @@ constructions	construction	NOUN
 de	de	ADP
 briques	brique	NOUN
 .	.	PUNCTsent
-Autrefois	autrefois	ADV
+autrefois	autrefois	ADV
 forteresse	forteresse	NOUN
 restaurée	restaurer	VERB
 par	par	ADP
@@ -1777,7 +1777,7 @@ civil	civil	ADJ
 et	et	CCONJ
 militaire	militaire	ADJ
 .	.	PUNCTsent
-Au-delà	au-delà	ADV
+au-delà	au-delà	ADV
 se	se	PRON
 dessinait	dessiner	VERB
 le	le	DET
@@ -1830,7 +1830,7 @@ les	le	DET
 plus	plus	ADV
 vastes	vaste	ADJ
 .	.	PUNCTsent
-Puis	puis	CCONJ
+puis	puis	CCONJ
 ,	,	PUNCTclause
 sur	sur	ADP
 la	le	DET
@@ -1855,7 +1855,7 @@ l'	le	DET
 hôtel	hôtel	NOUN
 de	de	ADP
 la	le	DET
-Société	Société	NOUN
+Société	Société	PROPN
 royale	royal	ADJ
 ,	,	PUNCTclause
 à	à	ADP
@@ -1876,7 +1876,7 @@ naître	naître	VERB
 O'Connell	O'Connell	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-P'tit-Bonhomme	P'tit-Bonhomme	PROPN
+P'tit-Bonhomme	P'tit-Bonhomme	NOUN
 ,	,	PUNCTclause
 laissant	laisser	VERB
 jaser	jaser	VERB
@@ -1884,7 +1884,7 @@ Bob	Bob	PROPN
 ,	,	PUNCTclause
 réfléchissait	réfléchir	VERB
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 cherchait	chercher	VERB
 à	à	ADP
 tirer	tirer	VERB
@@ -1897,7 +1897,7 @@ quelque	quelque	DET
 idée	idée	NOUN
 pratique	pratique	ADJ
 .	.	PUNCTsent
-Comment	comment	ADV
+comment	comment	ADV
 ferait	faire	VERB
 il	il	PRON
 fructifier	fructifier	VERB
@@ -1905,7 +1905,7 @@ sa	son	DET
 petite	petit	ADJ
 fortune	fortune	NOUN
 ?…	?…	PUNCTsent
-À	à	ADP
+à	à	ADP
 quel	quel	DET
 genre	genre	NOUN
 de	de	ADP
@@ -1948,7 +1948,7 @@ de	de	ADP
 une	un	DET
 fois	fois	NOUN
 .	.	PUNCTsent
-Cela	cela	PRON
+cela	cela	PRON
 explique	expliquer	VERB
 pourquoi	pourquoi	ADV
 ,	,	PUNCTclause
@@ -1973,7 +1973,7 @@ Liffey	Liffey	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 y	y	PRON
 a	avoir	AUX
@@ -1987,7 +1987,7 @@ Bob	Bob	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Si	si	ADV
+si	si	ADV
 …	…	PUNCTsent
 une	un	DET
 rivière	rivière	NOUN
@@ -2002,7 +2002,7 @@ répondait	répondre	VERB
 P'tit-Bonhomme	P'tit-Bonhomme	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 ils	ils	PRON
 continuaient	continuer	VERB
 leur	leur	DET
@@ -2036,7 +2036,7 @@ quatre	quatre	NUM
 en	en	ADP
 pierre	pierre	NOUN
 de	de	ADP
-Portland	Portland	PROPN
+portland	portland	UNKNOWN
 ,	,	PUNCTclause
 possédant	posséder	VERB
 une	un	DET
@@ -2066,7 +2066,7 @@ et	et	CCONJ
 de	de	ADP
 attiques	attique	ADJ
 .	.	PUNCTsent
-Autour	autour	ADV
+autour	autour	ADV
 se	se	PRON
 déroule	dérouler	VERB
 un	un	DET
@@ -2086,18 +2086,18 @@ exercices	exercice	NOUN
 de	de	ADP
 sport	sport	NOUN
 .	.	PUNCTsent
-Était	être	AUX
+était	être	AUX
 ce	ce	PRON
 donc	donc	ADV
 un	un	DET
 gymnase	gymnase	NOUN
 ?…	?…	PUNCTsent
-Non	non	ADV
+non	non	ADV
 ,	,	PUNCTclause
 ce	ce	PRON
 était	être	AUX
 l'	le	DET
-Université	Université	NOUN
+université	université	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
 fut	être	AUX
@@ -2137,9 +2137,9 @@ de	de	ADP
 Cambridge	Cambridge	PROPN
 et	et	CCONJ
 de	de	ADP
-Oxford	Oxford	PROPN
+oxford	oxford	UNKNOWN
 .	.	PUNCTsent
-Cela	cela	PRON
+cela	cela	PRON
 ne	ne	ADV
 ressemblait	ressembler	VERB
 guère	guère	ADV
@@ -2163,9 +2163,9 @@ M.	M.	PROPN
 O'Lobkins	O'Lobkins	PROPN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Bob	bob	NOUN
+Bob	Bob	PROPN
 et	et	CCONJ
-P'tit-Bonhomme	P'tit-Bonhomme	PROPN
+P'tit-Bonhomme	P'tit-Bonhomme	ADP
 prirent	prendre	VERB
 alors	alors	ADV
 vers	vers	ADP
@@ -2191,7 +2191,7 @@ se	se	PRON
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Des	un	DET
+des	un	DET
 mâts	mât	NOUN
 …	…	PUNCTsent
 je	je	PRON
@@ -2201,7 +2201,7 @@ mâts	mât	NOUN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Donc	donc	ADV
+donc	donc	ADV
 ,	,	PUNCTclause
 Bob	Bob	PROPN
 …	…	PUNCTsent
@@ -2211,7 +2211,7 @@ rivière	rivière	NOUN
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 de	de	ADP
 cette	ce	DET
@@ -2231,7 +2231,7 @@ de	de	ADP
 un	un	DET
 quai	quai	NOUN
 .	.	PUNCTsent
-De	de	ADP
+de	de	ADP
 là	là	ADV
 ,	,	PUNCTclause
 nécessité	nécessité	NOUN
@@ -2275,7 +2275,7 @@ quelque	quelque	DET
 piste	piste	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 en	en	PRON
 résulta	résulter	VERB
 que	que	SCONJ
@@ -2320,7 +2320,7 @@ mesurée	mesurer	VERB
 par	par	ADP
 Saint-Patrick-street	Saint-Patrick-street	PROPN
 .	.	PUNCTsent
-Une	un	DET
+une	un	DET
 assez	assez	ADV
 curieuse	curieux	ADJ
 église	église	NOUN
@@ -2359,7 +2359,7 @@ pinacles	pinacle	NOUN
 toits	toit	NOUN
 pointus	pointu	ADJ
 .	.	PUNCTsent
-Bah	bah	INTJ
+bah	bah	INTJ
 !	!	PUNCTsent
 ils	ils	PRON
 auraient	avoir	AUX
@@ -2371,7 +2371,7 @@ visiter	visiter	VERB
 plus tard	plus tard	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Bien	bien	ADV
+bien	bien	ADV
 que	que	SCONJ
 Dublin	Dublin	PROPN
 possède	posséder	VERB
@@ -2399,7 +2399,7 @@ la	le	DET
 religion	religion	NOUN
 réformée	réformé	ADJ
 .	.	PUNCTsent
-Non	non	ADV
+non	non	ADV
 !	!	PUNCTsent
 les	le	DET
 catholiques	catholique	NOUN
@@ -2439,7 +2439,7 @@ magnificence	magnificence	NOUN
 —	—	PUNCTclause
 telles	tel	PRON
 la	le	DET
-Conception	Conception	NOUN
+conception	conception	NOUN
 ,	,	PUNCTclause
 Saint-André	Saint-André	PROPN
 ,	,	PUNCTclause
@@ -2475,8 +2475,8 @@ de	de	ADP
 Thomas-street	Thomas-street	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Enfin	enfin	ADV
-P'tit-Bonhomme	P'tit-Bonhomme	PROPN
+enfin	enfin	ADV
+P'tit-Bonhomme	P'tit-Bonhomme	ADJ
 et	et	CCONJ
 Bob	Bob	PROPN
 atteignirent	atteindre	VERB
@@ -2489,7 +2489,7 @@ Liffey	Liffey	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Que	que	SCONJ
+que	que	SCONJ
 ce	ce	PRON
 est	être	AUX
 beau	beau	ADJ
@@ -2499,7 +2499,7 @@ l'un	l'un	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Jamais	jamais	ADV
+jamais	jamais	ADV
 nous	nous	PRON
 ne	ne	ADV
 avons	avoir	AUX
@@ -2512,13 +2512,13 @@ répondit	répondre	VERB
 l'autre	l'autre	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 ,	,	PUNCTclause
 de	de	ADP
 fait	fait	NOUN
 ,	,	PUNCTclause
 à	à	ADP
-Limerick	Limerick	PROPN
+limerick	limerick	UNKNOWN
 ou	ou	CCONJ
 à	à	ADP
 Cork	Cork	PROPN
@@ -2582,7 +2582,7 @@ l'	le	DET
 amont	amont	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ce	ce	PRON
+ce	ce	PRON
 ne	ne	ADV
 est	être	AUX
 point	point	ADV
@@ -2599,7 +2599,7 @@ amarrer	amarrer	VERB
 les	le	DET
 navires	navire	NOUN
 .	.	PUNCTsent
-Leur	leur	DET
+leur	leur	DET
 forêt	forêt	NOUN
 de	de	ADP
 mâts	mât	NOUN
@@ -2630,7 +2630,7 @@ encore	encore	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Ce	ce	PRON
+ce	ce	PRON
 sont	être	AUX
 les	le	DET
 docks	dock	NOUN
@@ -2642,7 +2642,7 @@ P'tit-Bonhomme	P'tit-Bonhomme	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Allons	aller	VERB
+allons	aller	VERB
 y	y	PRON
 !	!	PUNCTsent
 »	»	PUNCTclause
@@ -2660,7 +2660,7 @@ la	le	DET
 curiosité	curiosité	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Traverser	traverser	VERB
+traverser	traverser	VERB
 la	le	DET
 Liffey	Liffey	PROPN
 ,	,	PUNCTclause
@@ -2668,7 +2668,7 @@ rien	rien	PRON
 de plus	de plus	ADV
 facile	facile	ADJ
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 deux	deux	NUM
 quartiers	quartier	NOUN
 de	de	ADP
@@ -2712,7 +2712,7 @@ la	le	DET
 capitale	capital	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Les	le	DET
+les	le	DET
 deux	deux	NUM
 enfants	enfant	NOUN
 ne	ne	ADV
@@ -2720,7 +2720,7 @@ prirent	prendre	VERB
 point	point	ADV
 Sackeville-street	Sackeville-street	PROPN
 .	.	PUNCTsent
-Cela	cela	PRON
+cela	cela	PRON
 les	le	DET
 eût	avoir	AUX
 éloignés	éloigner	VERB
@@ -2735,7 +2735,7 @@ bâtiments	bâtiment	NOUN
 les	le	DET
 attirait	attirer	VERB
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 en premier lieu	en premier lieu	ADV
 ,	,	PUNCTclause
@@ -2744,7 +2744,7 @@ examinèrent	examiner	VERB
 un	un	PRON
 à	à	ADP
 un	un	DET
-les	le:PRON	PRON
+les	le_PRON	PRON
 navires	navire	NOUN
 mouillés	mouiller	VERB
 dans	dans	ADP
@@ -2754,7 +2754,7 @@ Liffey	Liffey	PROPN
 au-dessous de	au-dessous de	ADP
 Carlisle-bridge	Carlisle-bridge	PROPN
 .	.	PUNCTsent
-Peut-être	peut-être	ADV
+peut-être	peut-être	ADV
 le	le	DET
 Vulcan	Vulcan	PROPN
 était	être	VERB
@@ -2764,8 +2764,8 @@ sur	sur	ADP
 ses	son	DET
 ancres	ancre	NOUN
 ?	?	PUNCTsent
-Ils	ils	PRON
-l'	le:PRON	PRON
+ils	ils	PRON
+l'	le_PRON	PRON
 auraient	avoir	AUX
 reconnu	reconnaître	VERB
 entre	entre	ADP
@@ -2774,9 +2774,9 @@ mille	mille	NUM
 le	le	DET
 steamer	steamer	NOUN
 de	de	ADP
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 .	.	PUNCTsent
-On	on	PRON
+on	on	PRON
 ne	ne	ADV
 oublie	oublier	VERB
 pas	pas	ADV
@@ -2789,7 +2789,7 @@ visité	visiter	VERB
 —	—	PUNCTclause
 surtout	surtout	ADV
 lorsque	lorsque	SCONJ
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 en	en	PRON
 est	être	AUX
 le	le	DET
@@ -2797,7 +2797,7 @@ premier	premier	ADJ
 chauffeur	chauffeur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 Vulcan	Vulcan	PROPN
 ne	ne	ADV
 était	être	AUX
@@ -2808,7 +2808,7 @@ de	de	ADP
 la	le	DET
 Liffey	Liffey	PROPN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 se	se	PRON
 pouvait	pouvoir	VERB
 que	que	SCONJ
@@ -2819,7 +2819,7 @@ point	point	ADV
 de	de	ADP
 retour	retour	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 se	se	PRON
 pouvait	pouvoir	VERB
 aussi	aussi	ADV
@@ -2858,7 +2858,7 @@ la	le	DET
 rive	rive	NOUN
 gauche	gauche	ADJ
 .	.	PUNCTsent
-Peut-être	peut-être	ADV
+peut-être	peut-être	ADV
 l'un	l'un	PRON
 ,	,	PUNCTclause
 tout	tout	ADV
@@ -2876,7 +2876,7 @@ le	le	DET
 Custom-house	Custom-house	NOUN
 ,	,	PUNCTclause
 la	le	DET
-Douane	Douane	NOUN
+douane	douane	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
 est	être	AUX
@@ -2900,7 +2900,7 @@ la	le	DET
 statue	statue	NOUN
 de	de	ADP
 l'	le	DET
-Espérance	Espérance	PROPN
+espérance	espérance	UNKNOWN
 .	.	PUNCTsent
 quant à	quant à	ADP
 l'autre	l'autre	PRON
@@ -2914,7 +2914,7 @@ instant	instant	NOUN
 le	le	DET
 contempler	contempler	VERB
 .	.	PUNCTsent
-Aurait	avoir	AUX
+aurait	avoir	AUX
 il	il	PRON
 jamais	jamais	ADV
 des	un	ADP_DET
@@ -2931,7 +2931,7 @@ de	de	ADP
 cette	ce	DET
 douane	douane	NOUN
 ?…	?…	PUNCTsent
-Est	être	AUX
+est	être	AUX
 il	il	PRON
 rien	rien	PRON
 de plus	de plus	ADV
@@ -2949,7 +2949,7 @@ des	un	DET
 pays	pays	NOUN
 lointains	lointain	ADJ
 ?…	?…	PUNCTsent
-Cette	ce	DET
+cette	ce	DET
 satisfaction	satisfaction	NOUN
 lui	lui	PRON
 serait	être	AUX
@@ -2958,13 +2958,13 @@ jamais	jamais	ADV
 donnée	donner	VERB
 ?…	?…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-On	on	PRON
+on	on	PRON
 arriva	arriver	VERB
 aux	au	ADP_DET
 docks	dock	NOUN
 Victoria	Victoria	PROPN
 .	.	PUNCTsent
-Dans	dans	ADP
+dans	dans	ADP
 ce	ce	DET
 bassin	bassin	NOUN
 ,	,	PUNCTclause
@@ -3001,7 +3001,7 @@ en	en	ADP
 déchargement	déchargement	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Un	un	DET
+un	un	DET
 cri	cri	NOUN
 échappa	échapper	VERB
 à	à	ADP
@@ -3009,7 +3009,7 @@ Bob	Bob	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Le	le	DET
+le	le	DET
 Vulcan	Vulcan	PROPN
 …	…	PUNCTsent
 là	là	ADV
@@ -3018,13 +3018,13 @@ là	là	ADV
 !…	!…	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 se	se	PRON
 trompait	tromper	VERB
 pas	pas	ADV
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 Vulcan	Vulcan	PROPN
 était	être	AUX
 à	à	ADP
@@ -3035,11 +3035,11 @@ des	un	ADP_DET
 marchandises	marchandise	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Quelques	quelque	DET
+quelques	quelque	DET
 instants	instant	NOUN
 après	après	ADV
 ,	,	PUNCTclause
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 ,	,	PUNCTclause
 que	que	SCONJ
 nulle	nul	ADJ
@@ -3055,7 +3055,7 @@ amis	ami	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Enfin	enfin	ADV
+enfin	enfin	ADV
 …	…	PUNCTsent
 vous	vous	PRON
 v'là	v'là	PUNCT
@@ -3064,7 +3064,7 @@ v'là	v'là	PUNCT
 répétait	répéter	VERB
 il	il	PRON
 en	en	PRON
-les	le:PRON	PRON
+les	le_PRON	PRON
 serrant	serrer	VERB
 entre	entre	ADP
 ses	son	DET
@@ -3106,7 +3106,7 @@ la	le	DET
 Liffey	Liffey	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cet	ce	DET
+cet	ce	DET
 endroit	endroit	NOUN
 était	être	AUX
 presque	presque	ADV
@@ -3114,7 +3114,7 @@ désert	désert	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 de	de	ADP
 puis	puis	CCONJ
 quand	quand	SCONJ
@@ -3125,10 +3125,10 @@ vous	vous	PRON
 Dublin	Dublin	PROPN
 ?	?	PUNCTsent
 demanda	demander	VERB
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 ,	,	PUNCTclause
 qui	qui	PRON
-les	le:PRON	PRON
+les	le_PRON	PRON
 tenait	tenir	VERB
 un	un	DET
 sous	sou	NOUN
@@ -3137,7 +3137,7 @@ bras	bras	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Depuis	depuis	ADV
+depuis	depuis	ADV
 hier	hier	ADV
 au	au	ADP_DET
 soir	soir	NOUN
@@ -3147,9 +3147,9 @@ P'tit-Bonhomme	P'tit-Bonhomme	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Seul'ment	Seul'ment	PROPN
+Seul'ment	Seul'ment	ADV
 ?…	?…	PUNCTsent
-Je	je	PRON
+je	je	PRON
 vois	voir	VERB
 ,	,	PUNCTclause
 mon	mon	DET
@@ -3166,9 +3166,9 @@ décider	décider	VERB
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	non	ADV
+non	non	ADV
 ,	,	PUNCTclause
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 ,	,	PUNCTclause
 et	et	CCONJ
 ,	,	PUNCTclause
@@ -3187,7 +3187,7 @@ Cork	Cork	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Bon	bon	ADJ
+bon	bon	ADJ
 …	…	PUNCTsent
 il y a	il y a	VERB
 de	de	ADP
@@ -3212,7 +3212,7 @@ de	de	ADP
 en	en	ADP
 r'venir	r'venir	NOUN
 .	.	PUNCTsent
-Chaqu'fois	Chaqu'fois	PROPN
+Chaqu'fois	Chaqu'fois	DET
 que	que	SCONJ
 je	je	PRON
 me	me	PRON
@@ -3231,10 +3231,10 @@ espérant	espérer	VERB
 te	te	PRON
 rencontrer	rencontrer	VERB
 …	…	PUNCTsent
-Pas	pas	ADV
+pas	pas	ADV
 l'	le	DET
 moind	moind	NOUN
-P'tit-Bonhomme	P'tit-Bonhomme	PROPN
+P'tit-Bonhomme	P'tit-Bonhomme	ADJ
 …	…	PUNCTsent
 pas	pas	ADV
 l'	le	DET
@@ -3252,7 +3252,7 @@ bête	bête	NOUN
 de	de	ADP
 Birk	Birk	PROPN
 !…	!…	PUNCTsent
-Alors	alors	ADV
+alors	alors	ADV
 je	je	PRON
 te	te	PRON
 ai	avoir	AUX
@@ -3267,9 +3267,9 @@ lettre	lettre	NOUN
 ?…	?…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	non	ADV
+non	non	ADV
 ,	,	PUNCTclause
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 ,	,	PUNCTclause
 et	et	CCONJ
 cela	cela	PRON
@@ -3307,7 +3307,7 @@ mois	mois	NOUN
 !	!	PUNCTsent
 se	se	PRON
 écria	écrier	VERB
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 .	.	PUNCTsent
 ha	ha	INTJ
 ça	ça	PRON
@@ -3324,7 +3324,7 @@ v'nir	v'nir	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Quel	quel	DET
+quel	quel	DET
 train	train	NOUN
 ?	?	PUNCTsent
 répliqua	répliquer	VERB
@@ -3351,7 +3351,7 @@ jambes	jambe	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Vous	vous	PRON
+vous	vous	PRON
 avez	avoir	AUX
 fait	faire	VERB
 tout	tout	ADV
@@ -3362,7 +3362,7 @@ pied	pied	NOUN
 ?…	?…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-À	à	ADP
+à	à	ADP
 pied	pied	NOUN
 et	et	CCONJ
 par	par	ADP
@@ -3379,11 +3379,11 @@ voyage	voyage	NOUN
 !	!	PUNCTsent
 se	se	PRON
 écria	écrier	VERB
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Qui	qui	PRON
+qui	qui	PRON
 ne	ne	ADV
 nous	nous	PRON
 a	avoir	AUX
@@ -3395,7 +3395,7 @@ Bob	Bob	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 qui	qui	PRON
 nous	nous	PRON
 a	avoir	AUX
@@ -3410,11 +3410,11 @@ ajouta	ajouter	VERB
 P'tit-Bonhomme	P'tit-Bonhomme	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 fallut	falloir	VERB
 faire	faire	VERB
 à	à	ADP
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 le	le	DET
 récit	récit	NOUN
 de	de	ADP
@@ -3457,7 +3457,7 @@ vous	vous	PRON
 plaît	plaire	VERB
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 les	le	DET
 prunelles	prunelle	NOUN
 de	de	ADP
@@ -3471,7 +3471,7 @@ de	de	ADP
 braise	braise	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Puis	puis	CCONJ
+puis	puis	CCONJ
 ,	,	PUNCTclause
 ce	ce	PRON
 fut	être	AUX
@@ -3512,11 +3512,11 @@ dur	dur	ADJ
 au moins	au moins	ADV
 ?…	?…	PUNCTsent
 demanda	demander	VERB
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	non	ADV
+non	non	ADV
 ,	,	PUNCTclause
 mais	mais	CCONJ
 ce	ce	PRON
@@ -3535,7 +3535,7 @@ genou	genou	NOUN
 que	que	SCONJ
 si	si	SCONJ
 je	je	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avais	avoir	AUX
 frappé	frapper	VERB
 !	!	PUNCTsent
@@ -3562,7 +3562,7 @@ du	du	ADP_DET
 Vulcan	Vulcan	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pendant	pendant	ADP
+pendant	pendant	ADP
 le	le	DET
 narré	narrer	VERB
 de	de	ADP
@@ -3580,14 +3580,14 @@ droite	droit	ADJ
 du	du	ADP_DET
 canal	canal	NOUN
 .	.	PUNCTsent
-Grip	grip	NOUN
+grip	grip	NOUN
 demandait	demander	VERB
 toujours	toujours	ADV
 de	de	DET
 nouveaux	nouveau	ADJ
 détails	détail	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 cachait	cacher	VERB
 point	point	ADV
@@ -3596,7 +3596,7 @@ admiration	admiration	NOUN
 à l'égard de	à l'égard de	ADP
 P'tit-Bonhomme	P'tit-Bonhomme	NOUN
 .	.	PUNCTsent
-Quelle	quel	DET
+quelle	quel	DET
 entente	entente	NOUN
 il	il	PRON
 possédait	posséder	VERB
@@ -3605,7 +3605,7 @@ choses	chose	NOUN
 du	du	ADP_DET
 commerce	commerce	NOUN
 …	…	PUNCTsent
-Quel	quel	DET
+quel	quel	DET
 génie	génie	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
@@ -3620,7 +3620,7 @@ compter	compter	VERB
 —	—	PUNCTclause
 à	à	ADP
 tout	tout	DET
-le	le:PRON	PRON
+le	le_PRON	PRON
 moins	moins	ADV
 aussi	aussi	ADV
 bien	bien	ADV
@@ -3628,10 +3628,10 @@ que	que	SCONJ
 M.	M.	NOUN
 O'Lobkins	O'Lobkins	PROPN
 !…	!…	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 ,	,	PUNCTclause
 lorsque	lorsque	SCONJ
-P'tit-Bonhomme	P'tit-Bonhomme	PROPN
+P'tit-Bonhomme	P'tit-Bonhomme	ADP
 lui	lui	PRON
 eut	avoir	AUX
 fait	faire	AUX
@@ -3655,7 +3655,7 @@ livres	livre	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Allons	aller	VERB
+allons	aller	VERB
 ,	,	PUNCTclause
 dit	dire	VERB
 il	il	PRON
@@ -3666,13 +3666,13 @@ aussi	aussi	ADV
 riche	riche	ADJ
 que	que	SCONJ
 je	je	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 suis	être	AUX
 ,	,	PUNCTclause
 mon	mon	DET
 boy	boy	NOUN
 !…	!…	PUNCTsent
-Seul'ment	Seul'ment	PROPN
+Seul'ment	Seul'ment	ADV
 ,	,	PUNCTclause
 je	je	PRON
 ai	avoir	AUX
@@ -3714,21 +3714,21 @@ fortune	fortune	NOUN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Où	où	PRON
+où	où	PRON
 ?…	?…	PUNCTsent
 demanda	demander	VERB
 P'tit-Bonhomme	P'tit-Bonhomme	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Partout	partout	ADV
+partout	partout	ADV
 où	où	PRON
 que	que	PRON
 te	te	PRON
 iras	aller	VERB
 ,	,	PUNCTclause
 répondit	répondre	VERB
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 avec	avec	ADP
 l'	le	DET
 accent	accent	NOUN
@@ -3738,7 +3738,7 @@ plus	plus	ADV
 absolue	absolu	ADJ
 conviction	conviction	NOUN
 .	.	PUNCTsent
-À	à	ADP
+à	à	ADP
 Dublin	Dublin	PROPN
 ,	,	PUNCTclause
 si	si	SCONJ
@@ -3755,7 +3755,7 @@ ailleurs	ailleurs	ADV
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 moi	moi	PRON
 ?…	?…	PUNCTsent
 demanda	demander	VERB
@@ -3763,7 +3763,7 @@ Bob	Bob	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Toi	toi	PRON
+toi	toi	PRON
 aussi	aussi	ADV
 ,	,	PUNCTclause
 bambin	bambin	NOUN
@@ -3790,11 +3790,11 @@ je	je	PRON
 en	en	PRON
 aurai	avoir	VERB
 ,	,	PUNCTclause
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 de	de	ADP
 ne	ne	ADV
 rien	rien	PRON
@@ -3806,14 +3806,14 @@ patron	patron	NOUN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Qui	qui	PRON
+qui	qui	PRON
 …	…	PUNCTsent
 le	le	DET
 patron	patron	NOUN
 ?…	?…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-P'tit-Bonhomme	P'tit-Bonhomme	PROPN
+P'tit-Bonhomme	P'tit-Bonhomme	NOUN
 !…	!…	PUNCTsent
 est-ce que	est-ce que	ADV
 il	il	PRON
@@ -3846,7 +3846,7 @@ cela	cela	PRON
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Oui	oui	INTJ
+oui	oui	INTJ
 …	…	PUNCTsent
 mais	mais	CCONJ
 après	après	ADP
@@ -3854,7 +3854,7 @@ l'	le	DET
 déjeuner	déjeuner	NOUN
 ,	,	PUNCTclause
 répondit	répondre	VERB
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 .	.	PUNCTsent
 je	je	PRON
 suis	être	AUX
@@ -3876,7 +3876,7 @@ soutes	soute	NOUN
 du	du	ADP_DET
 Vulcan	Vulcan	PROPN
 …	…	PUNCTsent
-Il	il	PRON
+il	il	PRON
 faut	falloir	VERB
 que	que	SCONJ
 je	je	PRON
@@ -3890,7 +3890,7 @@ courions	courir	VERB
 Dublin	Dublin	PROPN
 ensemble	ensemble	ADV
 …	…	PUNCTsent
-Tu	tu	PRON
+tu	tu	PRON
 verras	voir	VERB
 ce	ce	PRON
 qui	qui	PRON
@@ -3903,7 +3903,7 @@ entreprendre	entreprendre	VERB
 …	…	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-On	on	PRON
+on	on	PRON
 déjeuna	déjeuner	VERB
 dans	dans	ADP
 un	un	DET
@@ -3915,7 +3915,7 @@ sur	sur	ADP
 le	le	DET
 quai	quai	NOUN
 .	.	PUNCTsent
-On	on	PRON
+on	on	PRON
 fit	faire	VERB
 convenablement	convenablement	ADV
 les	le	DET
@@ -3933,7 +3933,7 @@ festin	festin	NOUN
 de	de	ADP
 Cork	Cork	PROPN
 .	.	PUNCTsent
-Grip	grip	NOUN
+grip	grip	NOUN
 raconta	raconter	VERB
 ses	son	DET
 voyages	voyage	NOUN
@@ -3944,7 +3944,7 @@ plaisir	plaisir	NOUN
 de	de	ADP
 Bob	Bob	PROPN
 .	.	PUNCTsent
-P'tit-Bonhomme	P'tit-Bonhomme	PROPN
+P'tit-Bonhomme	P'tit-Bonhomme	ADP
 écoutait	écouter	VERB
 ,	,	PUNCTclause
 toujours	toujours	ADV
@@ -3974,7 +3974,7 @@ de	de	ADP
 son	son	DET
 esprit	esprit	NOUN
 .	.	PUNCTsent
-On	on	PRON
+on	on	PRON
 eût	avoir	AUX
 dit	dire	VERB
 que	que	SCONJ
@@ -3994,7 +3994,7 @@ maintenant	maintenant	ADV
 trente	trente	NUM
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Grip	grip	NOUN
+grip	grip	NOUN
 dirigea	diriger	VERB
 ses	son	DET
 deux	deux	NUM
@@ -4013,13 +4013,13 @@ de	de	ADP
 la	le	DET
 Liffey	Liffey	PROPN
 .	.	PUNCTsent
-Là	là	ADV
+là	là	ADV
 était	être	AUX
 le	le	DET
 centre	centre	NOUN
 opulent	opulent	ADJ
 .	.	PUNCTsent
-Violent	violent	ADJ
+violent	violent	ADJ
 contraste	contraster	VERB
 avec	avec	ADP
 les	le	DET
@@ -4041,14 +4041,14 @@ de	de	ADP
 l'	le	DET
 Irlande	Irlande	PROPN
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 classe	classe	NOUN
 moyenne	moyen	ADJ
 manque	manquer	VERB
 à	à	ADP
 Dublin	Dublin	PROPN
 .	.	PUNCTsent
-Luxe	luxe	NOUN
+luxe	luxe	NOUN
 et	et	CCONJ
 pauvreté	pauvreté	NOUN
 se	se	PRON
@@ -4057,7 +4057,7 @@ et	et	CCONJ
 se	se	PRON
 rudoient	rudoyer	VERB
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 quartier	quartier	NOUN
 du	du	ADP_DET
 beau	beau	ADJ
@@ -4075,7 +4075,7 @@ jusque	jusque	ADP
 au	au	ADP_DET
 Stephen's-square	Stephen's-square	PROPN
 .	.	PUNCTsent
-Là	là	ADV
+là	là	ADV
 habite	habiter	VERB
 cette	ce	DET
 haute	haut	ADJ
@@ -4108,7 +4108,7 @@ de	de	ADP
 politique	politique	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Une	un	DET
+une	un	DET
 rue	rue	NOUN
 splendide	splendide	ADJ
 ,	,	PUNCTclause
@@ -4132,7 +4132,7 @@ appartements	appartement	NOUN
 larges	large	ADJ
 fenêtres	fenêtre	NOUN
 .	.	PUNCTsent
-Cette	ce	DET
+cette	ce	DET
 large	large	ADJ
 artère	artère	NOUN
 est	être	AUX
@@ -4160,7 +4160,7 @@ de	de	ADP
 l'	le	DET
 est	est	NOUN
 .	.	PUNCTsent
-Si	si	SCONJ
+si	si	SCONJ
 elle	elle	PRON
 se	se	PRON
 appelle	appeler	VERB
@@ -4168,7 +4168,7 @@ Sackeville-street	Sackeville-street	PROPN
 officiellement	officiellement	ADV
 ,	,	PUNCTclause
 on	on	PRON
-la	le:PRON	PRON
+la	le_PRON	PRON
 nomme	nommer	VERB
 O'Connell-street	O'Connell-street	PROPN
 patriotiquement	patriotiquement	ADV
@@ -4178,7 +4178,7 @@ est	être	AUX
 là	là	ADV
 que	que	SCONJ
 la	le	DET
-Ligue	Ligue	NOUN
+ligue	ligue	NOUN
 nationale	national	ADJ
 a	avoir	AUX
 fondé	fonder	VERB
@@ -4196,7 +4196,7 @@ de	de	ADP
 or	or	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 dans	dans	ADP
 cette	ce	DET
@@ -4260,7 +4260,7 @@ détonnait	détonner	VERB
 Sackeville-street	Sackeville-street	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Une	un	DET
+une	un	DET
 particularité	particularité	NOUN
 surprenante	surprenant	ADJ
 aussi	aussi	ADV
@@ -4280,21 +4280,21 @@ des	un	ADP_DET
 journaux	journal	NOUN
 ,	,	PUNCTclause
 la	le	DET
-Gazette	Gazette	PROPN
+gazette	gazette	UNKNOWN
 de	de	ADP
 Dublin	Dublin	PROPN
 ,	,	PUNCTclause
 le	le	DET
 Dublin	Dublin	PROPN
-Express	Express	PROPN
+express	express	UNKNOWN
 ,	,	PUNCTclause
 la	le	DET
-National	national	X
-Press	Press	PROPN
+national	national	X
+Press	Press	X
 ,	,	PUNCTclause
 le	le	DET
 Freeman	Freeman	PROPN
-Journal	Journal	PROPN
+journal	journal	UNKNOWN
 ,	,	PUNCTclause
 les	le	DET
 principaux	principal	ADJ
@@ -4309,10 +4309,10 @@ d'autres	d'autre	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Hein	Hein	PROPN
+Hein	Hein	NOUN
 ,	,	PUNCTclause
 fit	faire	AUX
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 ,	,	PUNCTclause
 qué	qué	VERB
 tas	tas	NOUN
@@ -4335,7 +4335,7 @@ quais	quai	NOUN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Un	un	DET
+un	un	DET
 métier	métier	NOUN
 qui	qui	PRON
 ne	ne	ADV
@@ -4348,7 +4348,7 @@ ici	ici	ADV
 observa	observer	VERB
 P'tit-Bonhomme	P'tit-Bonhomme	PROPN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 a	avoir	AUX
 réussi	réussir	VERB
 à	à	ADP
@@ -4363,7 +4363,7 @@ Dublin	Dublin	PROPN
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Rien	rien	PRON
+rien	rien	PRON
 de plus	de plus	ADV
 juste	juste	ADJ
 ,	,	PUNCTclause
@@ -4393,7 +4393,7 @@ le	le	DET
 soir	soir	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-On	on	PRON
+on	on	PRON
 découvrit	découvrir	VERB
 ,	,	PUNCTclause
 en	en	ADP
@@ -4423,8 +4423,8 @@ de	de	ADP
 ordre	ordre	NOUN
 ionique	ionique	ADJ
 .	.	PUNCTsent
-Et	et	CCONJ
-P'tit-Bonhomme	P'tit-Bonhomme	PROPN
+et	et	CCONJ
+P'tit-Bonhomme	P'tit-Bonhomme	ADP
 songeait	songer	VERB
 à	à	ADP
 l'	le	DET
@@ -4460,7 +4460,7 @@ en	en	PRON
 uses	user	VERB
 que	que	SCONJ
 on	on	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 a	avoir	AUX
 bâti	bâtir	VERB
 ,	,	PUNCTclause
@@ -4468,7 +4468,7 @@ mon	mon	DET
 boy	boy	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 ,	,	PUNCTclause
 et	et	CCONJ
 ce	ce	PRON
@@ -4482,7 +4482,7 @@ lettres	lettre	NOUN
 ton	ton	DET
 adresse	adresse	NOUN
 :	:	PUNCTclause
-Master	Master	PROPN
+master	master	UNKNOWN
 P'tit-Bonhomme	P'tit-Bonhomme	PROPN
 ,	,	PUNCTclause
 négociant	négocier	VERB
@@ -4491,7 +4491,7 @@ Dublin	Dublin	PROPN
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 jeune	jeune	ADJ
 garçon	garçon	NOUN
 ne	ne	ADV
@@ -4514,7 +4514,7 @@ la	le	DET
 ragged-school	ragged-school	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Enfin	enfin	ADV
+enfin	enfin	ADV
 ,	,	PUNCTclause
 on	on	PRON
 aperçut	apercevoir	VERB
@@ -4564,7 +4564,7 @@ par exemple	par exemple	ADV
 ,	,	PUNCTclause
 fit	faire	VERB
 observer	observer	VERB
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 ,	,	PUNCTclause
 je	je	PRON
 compte	compter	VERB
@@ -4581,7 +4581,7 @@ bâtisse	bâtir	VERB
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 pourquoi	pourquoi	ADV
 ?…	?…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -4596,7 +4596,7 @@ celle	celle	PRON
 du	du	ADP_DET
 Vulcan	Vulcan	PROPN
 .	.	PUNCTsent
-Seulement	seulement	ADV
+seulement	seulement	ADV
 ,	,	PUNCTclause
 ce	ce	DET
 ne	ne	ADV
@@ -4645,7 +4645,7 @@ enfournent	enfourner	VERB
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-On	on	PRON
+on	on	PRON
 ne	ne	ADV
 fait	faire	VERB
 pas	pas	ADV
@@ -4658,11 +4658,11 @@ avoir	avoir	VERB
 des	un	DET
 procès	procès	NOUN
 ,	,	PUNCTclause
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Enfin	enfin	ADV
+enfin	enfin	ADV
 tâche	tâche	NOUN
 de	de	ADP
 en	en	ADP
@@ -4688,8 +4688,8 @@ perd	perdre	VERB
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
-Grip	Grip	PROPN
+et	et	CCONJ
+grip	grip	UNKNOWN
 secouait	secouer	VERB
 la	le	DET
 tête	tête	NOUN
@@ -4699,7 +4699,7 @@ air	air	NOUN
 très	très	ADV
 entendu	entendre	VERB
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 comme	comme	SCONJ
 il	il	PRON
 changea	changer	VERB
@@ -4730,8 +4730,8 @@ dorique	dorique	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-La	le	DET
-Banque	Banque	NOUN
+la	le	DET
+banque	banque	NOUN
 de	de	ADP
 Irlande	Irlande	PROPN
 !	!	PUNCTsent
@@ -4741,7 +4741,7 @@ il	il	PRON
 en	en	PRON
 saluant	saluer	VERB
 .	.	PUNCTsent
-V'là	V'là	PROPN
+V'là	V'là	ADV
 ,	,	PUNCTclause
 mon	mon	DET
 boy	boy	NOUN
@@ -4785,14 +4785,14 @@ Bob	Bob	PROPN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Sont	être	AUX
+sont	être	AUX
 elles	elles	PRON
 en	en	ADP
 or	or	NOUN
 ?…	?…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	non	ADV
+non	non	ADV
 ,	,	PUNCTclause
 mais	mais	CCONJ
 ce	ce	PRON
@@ -4807,7 +4807,7 @@ est	être	AUX
 de	de	DET
 dans	dans	ADP
 !…	!…	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 je	je	PRON
 espère	espérer	VERB
 que	que	SCONJ
@@ -4821,12 +4821,12 @@ jour	jour	NOUN
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Toujours	toujours	ADV
+toujours	toujours	ADV
 les	le	DET
 mêmes	même	ADJ
 exagérations	exagération	NOUN
 de	de	ADP
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 ,	,	PUNCTclause
 qui	qui	PRON
 venaient	venir	VERB
@@ -4836,7 +4836,7 @@ cœur	cœur	NOUN
 si	si	ADV
 convaincu	convaincre	VERB
 !	!	PUNCTsent
-P'tit-Bonhomme	P'tit-Bonhomme	PROPN
+P'tit-Bonhomme	P'tit-Bonhomme	ADP
 l'	le	DET
 écoutait	écouter	VERB
 à	à	ADP
@@ -4872,7 +4872,7 @@ du	du	ADP_DET
 Vulcan	Vulcan	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-La	le	DET
+la	le	DET
 promenade	promenade	NOUN
 fut	être	AUX
 reprise	reprendre	VERB
@@ -4911,7 +4911,7 @@ apitoyer	apitoyer	VERB
 le	le	DET
 passant	passant	NOUN
 .	.	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 partout	partout	ADV
 des	un	DET
 policemen	policeman	NOUN
@@ -4950,12 +4950,12 @@ qui	qui	PRON
 veut	vouloir	VERB
 cela	cela	PRON
 !…	!…	PUNCTsent
-Frères	frère	NOUN
+frères	frère	NOUN
 ,	,	PUNCTclause
 les	le	DET
-Paddys	Paddys	PROPN
+paddys	paddy	UNKNOWN
 ?…	?…	PUNCTsent
-Oui	oui	INTJ
+oui	oui	INTJ
 ,	,	PUNCTclause
 tant	tant	ADV
 que	que	SCONJ
@@ -4979,7 +4979,7 @@ contre	contre	ADP
 les	le	DET
 autres	autre	ADJ
 !	!	PUNCTsent
-Alors	alors	ADV
+alors	alors	ADV
 ils	ils	PRON
 sont	être	AUX
 incapables	incapable	ADJ
@@ -4987,7 +4987,7 @@ de	de	ADP
 se	se	PRON
 posséder	posséder	VERB
 !	!	PUNCTsent
-Ce	ce	PRON
+ce	ce	PRON
 ne	ne	ADV
 est	être	AUX
 plus	plus	ADV
@@ -5015,9 +5015,9 @@ de	de	ADP
 leur	leur	DET
 pays	pays	NOUN
 :	:	PUNCTclause
-Mettez	mettre	VERB
+mettez	mettre	VERB
 un	un	DET
-Irlandais	Irlandais	NOUN
+irlandais	irlandais	NOUN
 à	à	ADP
 la	le	DET
 broche	broche	NOUN
@@ -5027,17 +5027,17 @@ trouverez	trouver	VERB
 toujours	toujours	ADV
 un	un	DET
 autre	autre	ADJ
-Irlandais	Irlandais	NOUN
+irlandais	irlandais	NOUN
 pour	pour	ADP
 la	le	DET
 tourner	tourner	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 que	que	SCONJ
 de	de	ADP
 statues	statue	NOUN
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 montra	montrer	VERB
 à	à	ADP
 ses	son	DET
@@ -5047,7 +5047,7 @@ pendant	pendant	ADP
 cette	ce	DET
 excursion	excursion	NOUN
 !	!	PUNCTsent
-Encore	encore	ADV
+encore	encore	ADV
 un	un	DET
 demi-siècle	demi-siècle	NOUN
 ,	,	PUNCTclause
@@ -5103,7 +5103,7 @@ et	et	CCONJ
 des	un	DET
 Guillaume	Guillaume	PROPN
 de	de	ADP
-Orange	Orange	PROPN
+orange	orange	UNKNOWN
 ,	,	PUNCTclause
 et	et	CCONJ
 des	un	DET
@@ -5125,7 +5125,7 @@ un	un	PRON
 à	à	ADP
 quatre	quatre	NUM
 !	!	PUNCTsent
-Jamais	jamais	ADV
+jamais	jamais	ADV
 P'tit-Bonhomme	P'tit-Bonhomme	PROPN
 et	et	CCONJ
 Bob	Bob	PROPN
@@ -5142,7 +5142,7 @@ leurs	leur	DET
 piédestaux	piédestal	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 alors	alors	ADV
 ,	,	PUNCTclause
 ils	ils	PRON
@@ -5175,17 +5175,17 @@ disposition	disposition	NOUN
 ,	,	PUNCTclause
 ils	ils	PRON
 questionnaient	questionner	VERB
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 ,	,	PUNCTclause
 et	et	CCONJ
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 ne	ne	ADV
 était	être	AUX
 jamais	jamais	ADV
 à	à	ADP
 court	courir	VERB
 .	.	PUNCTsent
-Tantôt	tantôt	ADV
+tantôt	tantôt	ADV
 ce	ce	PRON
 était	être	AUX
 un	un	PRON
@@ -5206,7 +5206,7 @@ work-houses	work-houses	NOUN
 ,	,	PUNCTclause
 où	où	PRON
 on	on	PRON
-les	le:PRON	PRON
+les	le_PRON	PRON
 oblige	obliger	VERB
 à	à	ADP
 travailler	travailler	VERB
@@ -5219,7 +5219,7 @@ rétribution	rétribution	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 ça	ça	PRON
 ?…	?…	PUNCTsent
 demanda	demander	VERB
@@ -5238,7 +5238,7 @@ Coombe-street	Coombe-street	PROPN
 ça	ça	PRON
 ?…	?…	PUNCTsent
 répondit	répondre	VERB
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 ,	,	PUNCTclause
 ce	ce	PRON
 est	être	AUX
@@ -5247,7 +5247,7 @@ ragged-school	ragged-school	NOUN
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Que	que	SCONJ
+que	que	SCONJ
 de	de	ADP
 souvenirs	souvenir	NOUN
 douloureux	douloureux	ADJ
@@ -5257,7 +5257,7 @@ nom	nom	NOUN
 chez	chez	ADP
 P'tit-Bonhomme	P'tit-Bonhomme	PROPN
 !	!	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 si	si	SCONJ
 ce	ce	PRON
 était	être	AUX
@@ -5280,14 +5280,14 @@ que	que	SCONJ
 il	il	PRON
 avait	avoir	AUX
 connu	connaître	VERB
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 …	…	PUNCTsent
 et	et	CCONJ
 cela	cela	PRON
 faisait	faire	VERB
 compensation	compensation	NOUN
 .	.	PUNCTsent
-Ainsi	ainsi	ADV
+ainsi	ainsi	ADV
 ,	,	PUNCTclause
 il y a	il y a	VERB
 ,	,	PUNCTclause
@@ -5302,7 +5302,7 @@ de	de	ADP
 enfants	enfant	NOUN
 abandonnés	abandonner	VERB
 !	!	PUNCTsent
-Il	il	PRON
+il	il	PRON
 est	être	AUX
 vrai	vrai	ADJ
 ,	,	PUNCTclause
@@ -5344,18 +5344,18 @@ si	si	SCONJ
 peu	peu	ADV
 souci	souci	NOUN
 !	!	PUNCTsent
-Cela	cela	PRON
+cela	cela	PRON
 tenait	tenir	VERB
 à	à	ADP
 ce	ce	PRON
 que	que	SCONJ
 la	le	DET
-Société	Société	NOUN
+Société	Société	PROPN
 des	un	ADP_DET
 missions	mission	NOUN
 de	de	ADP
 l'	le	DET
-Église	Église	NOUN
+église	église	NOUN
 de	de	ADP
 Irlande	Irlande	PROPN
 ,	,	PUNCTclause
@@ -5386,7 +5386,7 @@ la	le	DET
 religion	religion	NOUN
 anglicane	anglican	ADJ
 .	.	PUNCTsent
-Ajoutons	ajouter	VERB
+ajoutons	ajouter	VERB
 que	que	SCONJ
 les	le	DET
 ragged-schools	ragged-schools	NOUN
@@ -5409,7 +5409,7 @@ heureuse	heureux	ADJ
 concurrence	concurrence	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Enfin	enfin	ADV
+enfin	enfin	ADV
 ,	,	PUNCTclause
 toujours	toujours	ADV
 pilotés	piloter	VERB
@@ -5451,7 +5451,7 @@ limite	limite	NOUN
 inférieure	inférieur	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Un	un	DET
+un	un	DET
 jardin	jardin	NOUN
 ?…	?…	PUNCTsent
 ce	ce	PRON
@@ -5483,7 +5483,7 @@ de	de	ADP
 être	être	AUX
 fière	fier	ADJ
 .	.	PUNCTsent
-Des	un	ADP_DET
+des	un	ADP_DET
 futaies	futaie	NOUN
 de	de	ADP
 ormes	orme	NOUN
@@ -5549,7 +5549,7 @@ au milieu de	au milieu de	ADP
 la	le	DET
 ville	ville	NOUN
 ?	?	PUNCTsent
-Non	non	ADV
+non	non	ADV
 loin de	loin de	ADP
 la	le	DET
 grande	grand	ADJ
@@ -5594,15 +5594,15 @@ les	le	DET
 policemen	policeman	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-On	on	PRON
+on	on	PRON
 assassine	assassiner	VERB
 cependant	cependant	ADV
 à	à	ADP
-Phœnix	Phœnix	PROPN
+phœnix	phœnix	UNKNOWN
 Park	Park	PROPN
 ,	,	PUNCTclause
 et	et	CCONJ
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 montra	montrer	VERB
 aux	au	ADP_DET
 enfants	enfant	NOUN
@@ -5639,7 +5639,7 @@ lord-lieutenant	lord-lieutenant	PUNCT
 le	le	DET
 poignard	poignard	NOUN
 des	un	ADP_DET
-Invincibles	Invincibles	NOUN
+invincibles	invincible	NOUN
 avait	avoir	AUX
 mortellement	mortellement	ADV
 frappé	frapper	VERB
@@ -5649,7 +5649,7 @@ et	et	CCONJ
 le	le	DET
 sous-secrétaire	sous-secrétaire	NOUN
 de	de	ADP
-État	État	NOUN
+état	état	NOUN
 pour	pour	ADP
 l'	le	DET
 Irlande	Irlande	PROPN
@@ -5661,7 +5661,7 @@ Frédérik	Frédérik	PROPN
 Cavendish	Cavendish	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Une	un	DET
+une	un	DET
 promenade	promenade	NOUN
 dans	dans	ADP
 phœnix	phœnix	NOUN
@@ -5684,7 +5684,7 @@ excursion	excursion	NOUN
 la	le	DET
 capitale	capital	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 était	être	AUX
 cinq	cinq	NUM
 heures	heure	NOUN
@@ -5696,7 +5696,7 @@ amis	ami	NOUN
 prirent	prendre	VERB
 congé	congé	NOUN
 de	de	ADP
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 pour	pour	ADP
 revenir	revenir	VERB
 à	à	ADP
@@ -5705,7 +5705,7 @@ garni	garni	ADJ
 de	de	ADP
 Saint-Patrick-street	Saint-Patrick-street	PROPN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 était	être	AUX
 convenu	convenir	VERB
 que	que	SCONJ
@@ -5728,10 +5728,10 @@ du	du	ADP_DET
 steamer	steamer	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 voici	voici	ADP
 que	que	SCONJ
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 dit	dire	VERB
 à	à	ADP
 P'tit-Bonhomme	P'tit-Bonhomme	PROPN
@@ -5763,14 +5763,14 @@ après-midi	après-midi	PUNCT
 ?…	?…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Une	un	DET
+une	un	DET
 idée	idée	NOUN
 ,	,	PUNCTclause
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 ?…	?…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Oui	oui	INTJ
+oui	oui	INTJ
 …	…	PUNCTsent
 què	què	PRON
 que	que	SCONJ
@@ -5783,14 +5783,14 @@ f'ras	f'ras	PUNCT
 ?…	?…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Ce	ce	DET
+ce	ce	DET
 que	que	SCONJ
 je	je	PRON
 ferai	faire	VERB
 …	…	PUNCTsent
 non	non	ADV
 ,	,	PUNCTclause
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 ,	,	PUNCTclause
 mais	mais	CCONJ
 ce	ce	PRON
@@ -5802,7 +5802,7 @@ pas	pas	ADV
 ,	,	PUNCTclause
 oui	oui	INTJ
 .	.	PUNCTsent
-Reprendre	reprendre	VERB
+reprendre	reprendre	VERB
 notre	notre	DET
 commerce	commerce	NOUN
 de	de	ADP
@@ -5815,7 +5815,7 @@ guère	guère	ADV
 à	à	ADP
 Dublin	Dublin	PROPN
 …	…	PUNCTsent
-Vendre	vendre	VERB
+vendre	vendre	VERB
 des	un	DET
 journaux	journal	NOUN
 ,	,	PUNCTclause
@@ -5839,7 +5839,7 @@ n	n	ADP
 avis	avis	NOUN
 ,	,	PUNCTclause
 répliqua	répliquer	VERB
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
@@ -5856,13 +5856,13 @@ je	je	PRON
 ne	ne	ADV
 sais	savoir	VERB
 …	…	PUNCTsent
-Quels	quel	DET
+quels	quel	DET
 articles	article	NOUN
 pourrait	pouvoir	VERB
 on	on	PRON
 débiter	débiter	VERB
 ?…	?…	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 puis	puis	CCONJ
 ,	,	PUNCTclause
 ils	ils	PRON
@@ -5874,7 +5874,7 @@ faire	faire	VERB
 ce	ce	DET
 métier	métier	NOUN
 !…	!…	PUNCTsent
-Non	non	ADV
+non	non	ADV
 !	!	PUNCTsent
 peut-être	peut-être	ADV
 serait	être	AUX
@@ -5902,7 +5902,7 @@ boy	boy	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Une	un	DET
+une	un	DET
 boutique	boutique	NOUN
 dans	dans	ADP
 un	un	DET
@@ -5925,24 +5925,24 @@ ces	ce	DET
 rues	rue	NOUN
 —	—	PUNCTclause
 des	un	DET
-Libertés	Libertés	NOUN
+libertés	liberté	NOUN
 ,	,	PUNCTclause
 par exemple	par exemple	ADV
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-On	on	PRON
+on	on	PRON
 ne	ne	ADV
 pourrait	pouvoir	VERB
 imaginer	imaginer	VERB
 mieux	mieux	ADV
 !	!	PUNCTsent
 répliqua	répliquer	VERB
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mais	mais	CCONJ
+mais	mais	CCONJ
 qu'est-ce que	qu'est-ce que	ADV
 on	on	PRON
 vendrait	vendre	VERB
@@ -5952,7 +5952,7 @@ Bob	Bob	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Des	un	ADP_DET
+des	un	ADP_DET
 choses	chose	NOUN
 utiles	utile	ADJ
 ,	,	PUNCTclause
@@ -5972,7 +5972,7 @@ besoin	besoin	NOUN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Des	un	ADP_DET
+des	un	ADP_DET
 choses	chose	NOUN
 qui	qui	PRON
 se	se	PRON
@@ -5982,19 +5982,19 @@ alors	alors	ADV
 repartit	repartir	VERB
 Bob	Bob	PROPN
 .	.	PUNCTsent
-Des	un	ADP_DET
+des	un	ADP_DET
 gâteaux	gâteau	NOUN
 ,	,	PUNCTclause
 n'est-ce pas	n'est-ce pas	ADV
 ?…	?…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Qué	Qué	PROPN
+Qué	Qué	NOUN
 gourmand	gourmand	ADJ
 !	!	PUNCTsent
 se	se	PRON
 écria	écrier	VERB
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 .	.	PUNCTsent
 ce	ce	PRON
 ne	ne	ADV
@@ -6007,7 +6007,7 @@ gâteaux	gâteau	NOUN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Si	si	ADV
+si	si	ADV
 …	…	PUNCTsent
 puisque	puisque	SCONJ
 ce	ce	PRON
@@ -6032,7 +6032,7 @@ nécessaire	nécessaire	ADJ
 répondit	répondre	VERB
 P'tit-Bonhomme	P'tit-Bonhomme	PROPN
 .	.	PUNCTsent
-Enfin	enfin	ADV
+enfin	enfin	ADV
 …	…	PUNCTsent
 nous	nous	PRON
 verrons	voir	VERB
@@ -6057,7 +6057,7 @@ un	un	DET
 bon	bon	ADJ
 commerce	commerce	NOUN
 …	…	PUNCTsent
-Je	je	PRON
+je	je	PRON
 pense	penser	VERB
 que	que	ADV
 une	un	DET
@@ -6067,7 +6067,7 @@ bazar	bazar	NOUN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Un	un	DET
+un	un	DET
 bazar	bazar	NOUN
 …	…	PUNCTsent
 ce	ce	PRON
@@ -6076,7 +6076,7 @@ est	être	AUX
 !	!	PUNCTsent
 se	se	PRON
 écria	écrier	VERB
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 ,	,	PUNCTclause
 qui	qui	PRON
 voyait	voir	VERB
@@ -6103,15 +6103,15 @@ je	je	PRON
 y	y	PRON
 penserai	penser	VERB
 ,	,	PUNCTclause
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 …	…	PUNCTsent
-Ne	ne	ADV
+ne	ne	ADV
 soyons	être	VERB
 pas	pas	ADV
 trop	trop	ADV
 impatients	impatient	ADJ
 …	…	PUNCTsent
-Il	il	PRON
+il	il	PRON
 convient	convenir	VERB
 de	de	ADP
 réfléchir	réfléchir	VERB
@@ -6121,7 +6121,7 @@ décider	décider	VERB
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 ne	ne	ADV
 oublie	oublier	VERB
 pas	pas	ADV
@@ -6136,13 +6136,13 @@ n	n	ADV
 argent	argent	ADJ
 ,	,	PUNCTclause
 je	je	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 mets	mettre	VERB
 à	à	ADP
 ta	ton	DET
 disposition	disposition	NOUN
 …	…	PUNCTsent
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 sais	savoir	VERB
 ce	ce	PRON
@@ -6157,7 +6157,7 @@ positiv'ment	positiv'ment	ADV
 me	me	PRON
 gêne	gêner	VERB
 de	de	ADP
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avoir	avoir	VERB
 toujours	toujours	ADV
 sur	sur	ADP
@@ -6165,11 +6165,11 @@ moi	moi	PRON
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Toujours	toujours	ADV
+toujours	toujours	ADV
 ?…	?…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Toujours	toujours	ADV
+toujours	toujours	ADV
 …	…	PUNCTsent
 dans	dans	ADP
 ma	mon	DET
@@ -6177,18 +6177,18 @@ ceinture	ceinture	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Pourquoi	pourquoi	ADV
+pourquoi	pourquoi	ADV
 ne	ne	ADV
 le	le	DET
 places	place	NOUN
 tu	tu	PRON
 pas	pas	ADV
 ,	,	PUNCTclause
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Oui	oui	INTJ
+oui	oui	INTJ
 …	…	PUNCTsent
 chez	chez	ADP
 toi	toi	PRON
@@ -6199,7 +6199,7 @@ tu	tu	PRON
 ?…	?…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Nous	nous	PRON
+nous	nous	PRON
 verrons	voir	VERB
 …	…	PUNCTsent
 plus tard	plus tard	ADV
@@ -6210,7 +6210,7 @@ commerce	commerce	NOUN
 marche	marcher	VERB
 bien	bien	ADV
 …	…	PUNCTsent
-Ce	ce	PRON
+ce	ce	PRON
 ne	ne	ADV
 est	être	AUX
 pas	pas	ADV
@@ -6272,29 +6272,29 @@ livres	livre	NOUN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Quand	quand	SCONJ
+quand	quand	SCONJ
 part	partir	VERB
 le	le	DET
 Vulcan	Vulcan	PROPN
 ,	,	PUNCTclause
-Grip	Grip	PROPN
+grip	grip	UNKNOWN
 ?…	?…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Dans	dans	ADP
+dans	dans	ADP
 un	un	DET
 huitaine	huitaine	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 quand	quand	SCONJ
 reviendra	revenir	VERB
 il	il	PRON
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Pas	pas	ADV
+pas	pas	ADV
 avant	avant	ADP
 deux	deux	NUM
 mois	mois	NOUN
@@ -6305,7 +6305,7 @@ de	de	ADP
 vons	vons	VERB
 aller	aller	VERB
 à	à	ADP
-Boston	Boston	PROPN
+boston	boston	UNKNOWN
 ,	,	PUNCTclause
 à	à	ADP
 Baltimore	Baltimore	PROPN
@@ -6328,7 +6328,7 @@ prendre	prendre	VERB
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 à	à	ADP
 rapporter	rapporter	VERB
 !…	!…	PUNCTsent
@@ -6343,12 +6343,12 @@ de	de	ADP
 envie	envie	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Enfin	enfin	ADV
+enfin	enfin	ADV
 ils	ils	PRON
 se	se	PRON
 séparèrent	séparer	VERB
 .	.	PUNCTsent
-Grip	grip	NOUN
+grip	grip	NOUN
 prit	prendre	VERB
 du	du	ADP_DET
 côté	côté	NOUN
@@ -6377,7 +6377,7 @@ de	de	ADP
 Saint-Patrick	Saint-Patrick	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 que	que	SCONJ
 de	de	ADP
 pauvres	pauvre	ADJ
@@ -6407,7 +6407,7 @@ du	du	ADP_DET
 gin	gin	NOUN
 !…	!…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 à	à	ADP
 quoi	quoi	PRON
 a	avoir	VERB

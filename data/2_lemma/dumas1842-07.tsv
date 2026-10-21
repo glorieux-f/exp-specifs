@@ -5,14 +5,14 @@
 # isPartOf = Le Chevalier d’Harmental
 # title = VII. Alberoni
 
-↵↵↵	↵↵↵	PUNCTstruct
-		TOKEN
+↵↵	↵↵	PUNCTstruct
+VII	VII	NOUN
 .	.	PUNCTsent
-Alberoni	Alberoni	PROPN
+Alberoni	Alberoni	X
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 ↵↵	↵↵	PUNCTstruct
-Lorsque	lorsque	SCONJ
+lorsque	lorsque	SCONJ
 de	de	ADP
 Harmental	Harmental	PROPN
 se	se	PRON
@@ -25,7 +25,7 @@ fait	faire	VERB
 un	un	DET
 songe	songe	NOUN
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 événements	événement	NOUN
 se	se	PRON
 étaient	être	AUX
@@ -54,7 +54,7 @@ où	où	PRON
 il	il	PRON
 allait	aller	VERB
 .	.	PUNCTsent
-Maintenant	maintenant	ADV
+maintenant	maintenant	ADV
 seulement	seulement	ADV
 ,	,	PUNCTclause
 il	il	PRON
@@ -73,7 +73,7 @@ l'	le	DET
 avenir	avenir	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Nous	nous	PRON
+nous	nous	PRON
 sommes	être	AUX
 de	de	ADP
 une	un	DET
@@ -86,7 +86,7 @@ ou	ou	CCONJ
 moins	moins	ADV
 conspiré	conspirer	VERB
 .	.	PUNCTsent
-Nous	nous	PRON
+nous	nous	PRON
 savons	savoir	VERB
 donc	donc	ADV
 par	par	ADP
@@ -102,7 +102,7 @@ choses	chose	NOUN
 se	se	PRON
 passent	passer	VERB
 .	.	PUNCTsent
-Après	après	ADP
+après	après	ADP
 un	un	DET
 engagement	engagement	NOUN
 pris	prendre	VERB
@@ -183,7 +183,7 @@ peuvent	pouvoir	VERB
 se	se	PRON
 réaliser	réaliser	VERB
 .	.	PUNCTsent
-Bientôt	bientôt	ADV
+bientôt	bientôt	ADV
 l'	le	DET
 orgueil	orgueil	NOUN
 se	se	PRON
@@ -204,7 +204,7 @@ puissance	puissance	NOUN
 occulte	occulte	ADJ
 dans	dans	ADP
 cet	ce	DET
-État	État	NOUN
+état	état	NOUN
 où	où	PRON
 ,	,	PUNCTclause
 la	le	DET
@@ -286,7 +286,7 @@ le	le	DET
 gouvernement	gouvernement	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 en	en	PRON
 fut	être	AUX
 ainsi	ainsi	ADV
@@ -305,13 +305,13 @@ encore	encore	ADV
 pour	pour	ADP
 horizon	horizon	NOUN
 la	le	DET
-Ligue	Ligue	NOUN
+ligue	ligue	NOUN
 et	et	CCONJ
 touchait	toucher	VERB
 presque	presque	ADV
 à	à	ADP
 la	le	DET
-Fronde	Fronde	PROPN
+fronde	fronde	UNKNOWN
 ;	;	PUNCTclause
 une	un	DET
 génération	génération	NOUN
@@ -327,7 +327,7 @@ le	le	DET
 canon	canon	NOUN
 de	de	ADP
 la	le	DET
-Bastille	Bastille	PROPN
+bastille	bastille	UNKNOWN
 avait	avoir	AUX
 soutenu	soutenir	VERB
 la	le	DET
@@ -336,12 +336,12 @@ du	du	ADP_DET
 grand	grand	ADJ
 Condé	Condé	PROPN
 .	.	PUNCTsent
-Pendant	pendant	ADP
+pendant	pendant	ADP
 cette	ce	DET
 génération	génération	NOUN
 ,	,	PUNCTclause
 Louis	Louis	PROPN
-		TOKEN
+XIV	XIV	NUM
 avait	avoir	AUX
 rempli	remplir	VERB
 la	le	DET
@@ -358,9 +358,9 @@ volonté	volonté	NOUN
 ;	;	PUNCTclause
 mais	mais	CCONJ
 Louis	Louis	PROPN
-		TOKEN
+XIV	XIV	NUM
 ne	ne	ADV
-était	être	AUX
+était	être	VERB
 plus	plus	ADV
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -394,7 +394,7 @@ en effet	en effet	ADV
 ,	,	PUNCTclause
 comme	comme	ADP
 nous	nous	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avons	avoir	AUX
 dit	dire	VERB
 ,	,	PUNCTclause
@@ -430,7 +430,7 @@ pris	prendre	VERB
 ,	,	PUNCTclause
 comme	comme	SCONJ
 il	il	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avait	avoir	AUX
 fait	faire	VERB
 du	du	ADP_DET
@@ -453,7 +453,7 @@ et	et	CCONJ
 les	le	DET
 Polignac	Polignac	PROPN
 .	.	PUNCTsent
-Sa	son	DET
+sa	son	DET
 famille	famille	NOUN
 ,	,	PUNCTclause
 par	par	ADP
@@ -479,11 +479,11 @@ la	le	DET
 mode	mode	NOUN
 sous	sous	ADP
 Louis	Louis	PROPN
-Xiii	Xiii	PROPN
+XIII	XIII	NUM
 ,	,	PUNCTclause
 et	et	CCONJ
 que	que	SCONJ
-Richelieu	Richelieu	PROPN
+richelieu	richelieu	UNKNOWN
 ne	ne	ADV
 avait	avoir	AUX
 pu	pouvoir	VERB
@@ -494,7 +494,7 @@ les	le	DET
 échafauds	échafaud	NOUN
 ni	ni	CCONJ
 Louis	Louis	PROPN
-		TOKEN
+XIV	XIV	NUM
 éteindre	éteindre	VERB
 dans	dans	ADP
 les	le	DET
@@ -528,7 +528,7 @@ du	du	ADP_DET
 grand	grand	ADJ
 Condé	Condé	PROPN
 .	.	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 puis	puis	CCONJ
 ,	,	PUNCTclause
 on	on	PRON
@@ -544,7 +544,7 @@ ans	an	NOUN
 ,	,	PUNCTclause
 que	que	PRON
 on	on	PRON
-la	le:PRON	PRON
+la	le_PRON	PRON
 risque	risquer	VERB
 à	à	ADP
 chaque	chaque	DET
@@ -572,7 +572,7 @@ principal	principal	ADJ
 chef	chef	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Aussi	aussi	ADV
+aussi	aussi	ADV
 résolut	résoudre	VERB
 il	il	PRON
 de	de	ADP
@@ -595,7 +595,7 @@ il	il	PRON
 avait	avoir	AUX
 faites	faire	VERB
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 se	se	PRON
 dissimulait	dissimuler	VERB
@@ -640,7 +640,7 @@ fixés	fixer	VERB
 sur	sur	ADP
 lui	lui	PRON
 .	.	PUNCTsent
-Des	un	ADP_DET
+des	un	ADP_DET
 intérêts	intérêt	NOUN
 suprêmes	suprême	ADJ
 venaient	venir	VERB
@@ -712,7 +712,7 @@ de	de	ADP
 contrepoids	contrepoids	NOUN
 dans	dans	ADP
 le	le	DET
-Nord	Nord	NOUN
+Nord	Nord	PROPN
 ,	,	PUNCTclause
 commençait	commencer	VERB
 à	à	ADP
@@ -741,11 +741,11 @@ toujours	toujours	ADV
 conservée	conserver	VERB
 depuis	depuis	ADV
 .	.	PUNCTsent
-Placée	placer	VERB
+placée	placer	VERB
 ,	,	PUNCTclause
 comme	comme	SCONJ
 elle	elle	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 était	être	AUX
 ,	,	PUNCTclause
 au	au	ADP_DET
@@ -792,10 +792,10 @@ celui	celui	PRON
 de	de	ADP
 ces	ce	DET
 trois	trois	NUM
-États	États	NOUN
+états	état	NOUN
 qui	qui	PRON
 ne	ne	ADV
-la	le:PRON	PRON
+la	le_PRON	PRON
 traiterait	traiter	VERB
 pas	pas	ADV
 selon	selon	ADP
@@ -834,10 +834,10 @@ eue	avoir	VERB
 même	même	ADV
 sous	sous	ADP
 Louis	Louis	PROPN
-		TOKEN
+XIV	XIV	NUM
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cela	cela	PRON
+cela	cela	PRON
 tenait	tenir	VERB
 à	à	ADP
 la	le	DET
@@ -852,7 +852,7 @@ usurpation	usurpation	NOUN
 de	de	ADP
 Guillaume	Guillaume	PROPN
 de	de	ADP
-Orange	Orange	PROPN
+orange	orange	UNKNOWN
 et	et	CCONJ
 l'	le	DET
 avènement	avènement	NOUN
@@ -862,7 +862,7 @@ V	V	NUM
 au	au	ADP_DET
 trône	trône	NOUN
 .	.	PUNCTsent
-Fidèle	fidèle	ADJ
+Fidèle	Fidèle	PROPN
 à	à	ADP
 sa	son	DET
 vieille	vieux	ADJ
@@ -880,15 +880,15 @@ sa	son	DET
 fille	fille	NOUN
 ,	,	PUNCTclause
 Louis	Louis	PROPN
-		TOKEN
-avait	avoir	AUX
+XIV	XIV	NUM
+avait	avoir	VERB
 constamment	constamment	ADV
 appuyé	appuyer	VERB
 les	le	DET
 prétentions	prétention	NOUN
 de	de	ADP
 Jacques	Jacques	PROPN
-		TOKEN
+II	II	NUM
 ,	,	PUNCTclause
 celles	celle	PRON
 du	du	ADP_DET
@@ -896,7 +896,7 @@ chevalier	chevalier	NOUN
 de	de	ADP
 Saint-Georges	Saint-Georges	PROPN
 .	.	PUNCTsent
-Fidèle	fidèle	ADJ
+Fidèle	Fidèle	PROPN
 à	à	ADP
 son	son	DET
 pacte	pacte	NOUN
@@ -961,7 +961,7 @@ tant de	tant de	DET
 honte	honte	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 à	à	ADP
 la	le	DET
 mort	mort	NOUN
@@ -985,7 +985,7 @@ nouvelle	nouveau	ADJ
 mais	mais	CCONJ
 opposée	opposer	VERB
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 traité	traité	NOUN
 de	de	ADP
 Utrecht	Utrecht	PROPN
@@ -1021,7 +1021,7 @@ la	le	DET
 politique	politique	NOUN
 française	français	ADJ
 .	.	PUNCTsent
-En	en	ADP
+en	en	ADP
 conséquence	conséquence	NOUN
 ,	,	PUNCTclause
 le	le	DET
@@ -1046,7 +1046,7 @@ avait	avoir	AUX
 été	être	AUX
 signé	signer	VERB
 à	à	ADP
-La	le	DET
+la	le	DET
 Haye	Haye	PROPN
 ,	,	PUNCTclause
 le	le	DET
@@ -1102,7 +1102,7 @@ un	un	DET
 pas	pas	NOUN
 définitif	définitif	ADJ
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 intérêts	intérêt	NOUN
 de	de	ADP
 l'	le	DET
@@ -1116,8 +1116,8 @@ toujours	toujours	ADV
 en	en	ADP
 suspens	suspens	NOUN
 .	.	PUNCTsent
-Charles	Charles	PROPN
-		TOKEN
+Charles	Charles	NOUN
+VI	VI	NUM
 ne	ne	ADV
 reconnaissait	reconnaître	VERB
 pas	pas	ADV
@@ -1164,9 +1164,9 @@ du	du	ADP_DET
 trône	trône	NOUN
 de	de	ADP
 Philippe	Philippe	PROPN
-		TOKEN
+II	II	NUM
 ,	,	PUNCTclause
-avait	avoir	AUX
+avait	avoir	VERB
 cédées	céder	VERB
 à	à	ADP
 l'	le	DET
@@ -1195,7 +1195,7 @@ négociations	négociation	NOUN
 amicales	amical	ADJ
 ,	,	PUNCTclause
 Charles	Charles	PROPN
-		TOKEN
+VI	VI	NUM
 à	à	ADP
 reconnaître	reconnaître	VERB
 Philippe	Philippe	PROPN
@@ -1214,7 +1214,7 @@ la	le	DET
 force	force	NOUN
 si	si	SCONJ
 il	il	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 fallait	falloir	VERB
 ,	,	PUNCTclause
 Philippe	Philippe	PROPN
@@ -1268,17 +1268,17 @@ encore	encore	ADV
 que	que	SCONJ
 il	il	PRON
 ne	ne	ADV
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avait	avoir	AUX
 fait	faire	VERB
 pour	pour	ADP
 celui	celui	PRON
 de	de	ADP
-La	le	DET
+la	le	DET
 Haye	Haye	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Or	or	NOUN
+or	or	NOUN
 ,	,	PUNCTclause
 ce	ce	DET
 traité	traité	NOUN
@@ -1309,7 +1309,7 @@ Hollande	Hollande	PROPN
 et	et	CCONJ
 de	de	ADP
 l'	le	DET
-Empire	Empire	NOUN
+empire	empire	NOUN
 ,	,	PUNCTclause
 neutralisait	neutraliser	VERB
 toute	toute	DET
@@ -1317,7 +1317,7 @@ prétention	prétention	NOUN
 de	de	ADP
 quelque	quelque	DET
 autre	autre	ADJ
-État	État	NOUN
+état	état	NOUN
 que	que	SCONJ
 ce	ce	DET
 fût	fût	NOUN
@@ -1331,7 +1331,7 @@ les	le	DET
 quatre	quatre	NUM
 puissances	puissance	NOUN
 .	.	PUNCTsent
-Aussi	aussi	ADV
+aussi	aussi	ADV
 était	être	VERB
 ce	ce	DET
 là	là	ADV
@@ -1385,7 +1385,7 @@ sa	son	DET
 chapelle	chapelle	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 il	il	PRON
 ne	ne	ADV
 en	en	PRON
@@ -1449,7 +1449,7 @@ se	se	PRON
 avancer	avancer	VERB
 sur	sur	ADP
 l'	le	DET
-Océan	Océan	PROPN
+océan	océan	UNKNOWN
 menaçant	menacer	VERB
 de	de	ADP
 tout	tout	DET
@@ -1510,7 +1510,7 @@ des	un	ADP_DET
 montagnes	montagne	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ce	ce	PRON
+ce	ce	PRON
 serait	être	AUX
 une	un	DET
 curieuse	curieux	NOUN
@@ -1529,7 +1529,7 @@ petite	petit	ADJ
 cause	cause	NOUN
 depuis	depuis	ADP
 les	le	DET
-Grecs	Grecs	NOUN
+grecs	grec	NOUN
 jusque	jusque	ADP
 à	à	ADP
 nous	nous	PRON
@@ -1552,7 +1552,7 @@ de	de	ADP
 la	le	DET
 Grèce	Grèce	PROPN
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 viol	viol	NOUN
 de	de	ADP
 Lucrèce	Lucrèce	PROPN
@@ -1562,23 +1562,23 @@ Tarquins	Tarquins	PROPN
 de	de	ADP
 Rome	Rome	PROPN
 .	.	PUNCTsent
-Un	un	DET
+un	un	DET
 mari	mari	NOUN
 insulté	insulté	ADJ
 conduisit	conduire	VERB
 Brennus	Brennus	PROPN
 au	au	ADP_DET
-Capitole	Capitole	NOUN
+capitole	capitole	NOUN
 .	.	PUNCTsent
-La	le	DET
-Cava	Cava	PROPN
+la	le	DET
+cava	caver	UNKNOWN
 introduisit	introduire	VERB
 les	le	DET
-Maures	Maures	PROPN
+maures	maure	UNKNOWN
 en	en	ADP
 Espagne	Espagne	PROPN
 .	.	PUNCTsent
-Une	un	DET
+une	un	DET
 mauvaise	mauvais	ADJ
 plaisanterie	plaisanterie	NOUN
 écrite	écrire	VERB
@@ -1644,11 +1644,11 @@ chute	chute	NOUN
 des	un	ADP_DET
 Stuarts	Stuarts	PROPN
 .	.	PUNCTsent
-Une	un	DET
+une	un	DET
 discussion	discussion	NOUN
 entre	entre	ADP
 Louis	Louis	PROPN
-		TOKEN
+XIV	XIV	NUM
 et	et	CCONJ
 Louvois	Louvois	PROPN
 ,	,	PUNCTclause
@@ -1664,7 +1664,7 @@ guerre	guerre	NOUN
 de	de	ADP
 Hollande	Hollande	PROPN
 .	.	PUNCTsent
-Un	un	DET
+un	un	DET
 verre	verre	NOUN
 de	de	ADP
 eau	eau	NOUN
@@ -1693,7 +1693,7 @@ paix	paix	NOUN
 de	de	ADP
 Utrecht	Utrecht	PROPN
 .	.	PUNCTsent
-Enfin	enfin	ADV
+enfin	enfin	ADV
 l'	le	DET
 Europe	Europe	PROPN
 faillit	faillir	VERB
@@ -1721,7 +1721,7 @@ chaise	chaise	NOUN
 percée	percer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ce	ce	PRON
+ce	ce	PRON
 fut	être	AUX
 la	le	DET
 source	source	NOUN
@@ -1732,7 +1732,7 @@ de	de	ADP
 Alberoni	Alberoni	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Alberoni	Alberoni	PROPN
+Alberoni	Alberoni	ADV
 était	être	AUX
 né	naître	VERB
 sous	sous	ADP
@@ -1742,7 +1742,7 @@ de	de	ADP
 un	un	DET
 jardinier	jardinier	NOUN
 .	.	PUNCTsent
-Enfant	enfant	NOUN
+enfant	enfant	NOUN
 ,	,	PUNCTclause
 il	il	PRON
 se	se	PRON
@@ -1765,7 +1765,7 @@ un	un	DET
 petit	petit	ADJ
 collet	collet	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 était	être	AUX
 de	de	ADP
 humeur	humeur	NOUN
@@ -1804,7 +1804,7 @@ voulut	vouloir	VERB
 savoir	savoir	VERB
 ce	ce	DET
 qui	qui	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 égayait	égayer	VERB
 ainsi	ainsi	ADV
 ,	,	PUNCTclause
@@ -1813,7 +1813,7 @@ le	le	DET
 fit	faire	AUX
 appeler	appeler	VERB
 .	.	PUNCTsent
-Alberoni	Alberoni	PROPN
+Alberoni	Alberoni	VERB
 lui	lui	PRON
 raconta	raconter	VERB
 je	je	PRON
@@ -1826,12 +1826,12 @@ grotesque	grotesque	ADJ
 le	le	DET
 rire	rire	NOUN
 gagna	gagner	VERB
-Son	son	DET
-Altesse	Altesse	NOUN
+son	son	DET
+altesse	altesse	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
-Son	son	DET
-Altesse	Altesse	NOUN
+son	son	DET
+altesse	altesse	NOUN
 ,	,	PUNCTclause
 se	se	PRON
 apercevant	apercevoir	VERB
@@ -1884,7 +1884,7 @@ incapable	incapable	ADJ
 de	de	ADP
 affaires	affaire	NOUN
 .	.	PUNCTsent
-Ce	ce	PRON
+ce	ce	PRON
 fut	être	AUX
 sur	sur	ADP
 ces	ce	DET
@@ -1924,7 +1924,7 @@ l'	le	DET
 étrange	étrange	ADJ
 réception	réception	NOUN
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 susceptibilité	susceptibilité	NOUN
 de	de	ADP
 cet	ce	DET
@@ -1935,8 +1935,8 @@ les	le	DET
 graves	grave	ADJ
 intérêts	intérêt	NOUN
 que	que	SCONJ
-Son	son	DET
-Altesse	Altesse	NOUN
+son	son	DET
+altesse	altesse	NOUN
 avait	avoir	VERB
 à	à	ADP
 débattre	débattre	VERB
@@ -1944,8 +1944,8 @@ avec	avec	ADP
 la	le	DET
 France	France	PROPN
 ;	;	PUNCTclause
-Son	son	DET
-Altesse	Altesse	NOUN
+son	son	DET
+altesse	altesse	NOUN
 jugea	juger	VERB
 que	que	SCONJ
 Alberoni	Alberoni	PROPN
@@ -1979,7 +1979,7 @@ laissée	laisser	VERB
 interrompue	interrompu	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Monsieur	monsieur	NOUN
+monsieur	monsieur	NOUN
 de	de	ADP
 Vendôme	Vendôme	PROPN
 ,	,	PUNCTclause
@@ -2008,8 +2008,8 @@ le	le	DET
 second	second	ADJ
 ambassadeur	ambassadeur	NOUN
 de	de	ADP
-Son	son	DET
-Altesse	Altesse	NOUN
+son	son	DET
+altesse	altesse	NOUN
 comme	comme	ADP
 il	il	PRON
 avait	avoir	AUX
@@ -2075,14 +2075,14 @@ son	son	DET
 souhait	souhait	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ce	ce	PRON
+ce	ce	PRON
 fut	être	AUX
 une	un	DET
 raison	raison	NOUN
 pour que	pour que	SCONJ
 le	le	DET
 duc	duc	NOUN
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 employât	employer	VERB
 à	à	ADP
 une	un	DET
@@ -2100,7 +2100,7 @@ mettre	mettre	VERB
 à	à	ADP
 table	table	NOUN
 .	.	PUNCTsent
-Alberoni	Alberoni	PROPN
+Alberoni	Alberoni	X
 ,	,	PUNCTclause
 au lieu de	au lieu de	ADP
 lui	lui	PRON
@@ -2141,7 +2141,7 @@ macaroni	macaroni	NOUN
 de	de	ADP
 l'autre	l'autre	PRON
 .	.	PUNCTsent
-Monsieur	monsieur	NOUN
+monsieur	monsieur	NOUN
 de	de	ADP
 Vendôme	Vendôme	PROPN
 trouva	trouver	VERB
@@ -2163,7 +2163,7 @@ lui	lui	PRON
 sa	son	DET
 table	table	NOUN
 .	.	PUNCTsent
-Au	au	ADP_DET
+au	au	ADP_DET
 dessert	dessert	NOUN
 Alberoni	Alberoni	PROPN
 entama	entamer	VERB
@@ -2186,7 +2186,7 @@ de	de	ADP
 Vendôme	Vendôme	PROPN
 ,	,	PUNCTclause
 il	il	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 enleva	enlever	VERB
 à	à	ADP
 la	le	DET
@@ -2195,8 +2195,8 @@ de	de	ADP
 sa	son	DET
 fourchette	fourchette	NOUN
 .	.	PUNCTsent
-Son	son	DET
-Altesse	Altesse	NOUN
+son	son	DET
+altesse	altesse	NOUN
 était	être	AUX
 émerveillée	émerveiller	VERB
 ;	;	PUNCTclause
@@ -2218,7 +2218,7 @@ fait	faire	VERB
 autant	autant	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Alberoni	Alberoni	PROPN
+Alberoni	Alberoni	X
 se	se	PRON
 était	être	AUX
 bien	bien	ADV
@@ -2230,7 +2230,7 @@ recette	recette	NOUN
 au	au	ADP_DET
 cuisinier	cuisinier	NOUN
 .	.	PUNCTsent
-Aussi	aussi	ADV
+aussi	aussi	ADV
 ,	,	PUNCTclause
 cette fois ci	cette fois ci	PRON
 ,	,	PUNCTclause
@@ -2256,8 +2256,8 @@ traiter	traiter	VERB
 avec	avec	ADP
 lui	lui	PRON
 .	.	PUNCTsent
-Son	son	DET
-Altesse	Altesse	NOUN
+son	son	DET
+altesse	altesse	NOUN
 ne	ne	ADV
 eut	avoir	VERB
 pas	pas	ADV
@@ -2276,7 +2276,7 @@ envoya	envoyer	VERB
 de nouveau	de nouveau	ADV
 Alberoni	Alberoni	PROPN
 .	.	PUNCTsent
-Celui	celui	PRON
+celui	celui	PRON
 trouva	trouver	VERB
 moyen	moyen	ADJ
 de	de	ADP
@@ -2323,7 +2323,7 @@ et	et	CCONJ
 sans	sans	ADP
 macaroni	macaroni	NOUN
 .	.	PUNCTsent
-En	en	ADP
+en	en	ADP
 conséquence	conséquence	NOUN
 ,	,	PUNCTclause
 monsieur	monsieur	NOUN
@@ -2357,7 +2357,7 @@ premier	premier	ADJ
 secrétaire	secrétaire	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ce	ce	PRON
+ce	ce	PRON
 fut	être	AUX
 alors que	alors que	CCONJ
 monsieur	monsieur	NOUN
@@ -2367,7 +2367,7 @@ passa	passer	VERB
 en	en	ADP
 Espagne	Espagne	PROPN
 .	.	PUNCTsent
-Alberoni	Alberoni	PROPN
+Alberoni	Alberoni	X
 se	se	PRON
 mit	mettre	VERB
 en	en	ADP
@@ -2409,7 +2409,7 @@ ce	ce	DET
 monter	monter	VERB
 toujours	toujours	ADV
 .	.	PUNCTsent
-Au	au	ADP_DET
+au	au	ADP_DET
 reste	reste	NOUN
 ,	,	PUNCTclause
 depuis	depuis	ADP
@@ -2424,7 +2424,7 @@ point	point	ADV
 arrêté	arrêter	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-La	le	DET
+la	le	DET
 princesse	prince	NOUN
 des	un	ADP_DET
 Ursins	Ursins	PROPN
@@ -2438,8 +2438,8 @@ crime	crime	NOUN
 irrémissible	irrémissible	ADJ
 aux yeux de	aux yeux de	ADP
 Philippe	Philippe	PROPN
-V.	V.	PROPN
-Elle	elle	PRON
+V.	V.	X
+elle	elle	PRON
 résolut	résoudre	VERB
 de	de	ADP
 chercher	chercher	VERB
@@ -2465,7 +2465,7 @@ sur	sur	ADP
 le	le	DET
 roi	roi	NOUN
 .	.	PUNCTsent
-Alberoni	Alberoni	PROPN
+Alberoni	Alberoni	VERB
 lui	lui	PRON
 proposa	proposer	VERB
 la	le	DET
@@ -2499,7 +2499,7 @@ que	que	SCONJ
 le	le	DET
 nom	nom	NOUN
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 princesse	prince	NOUN
 des	un	ADP_DET
 Ursins	Ursins	PROPN
@@ -2527,7 +2527,7 @@ l'	le	DET
 Espagne	Espagne	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Son	son	DET
+son	son	DET
 premier	premier	ADJ
 acte	acte	NOUN
 de	de	ADP
@@ -2614,7 +2614,7 @@ pistoles	pistole	NOUN
 ses	son	DET
 domestiques	domestique	NOUN
 .	.	PUNCTsent
-Son	son	DET
+son	son	DET
 cocher	cocher	NOUN
 eut	avoir	VERB
 le	le	DET
@@ -2623,12 +2623,12 @@ gelé	geler	VERB
 ,	,	PUNCTclause
 et	et	CCONJ
 on	on	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 lui	lui	PRON
 coupa	couper	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Après	après	ADP
+après	après	ADP
 sa	son	DET
 première	premier	ADJ
 entrevue	entrevue	NOUN
@@ -2646,10 +2646,10 @@ Alberoni	Alberoni	PROPN
 que	que	SCONJ
 il	il	PRON
 était	être	AUX
-Premier ministre	Premier ministre	NOUN
+premier ministre	Premier ministre	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-De	de	ADP
+de	de	ADP
 ce	ce	DET
 jour	jour	NOUN
 ,	,	PUNCTclause
@@ -2677,7 +2677,7 @@ sur	sur	ADP
 Philippe	Philippe	PROPN
 V.	V.	PROPN
 ↵↵	↵↵	PUNCTstruct
-Or	or	NOUN
+or	or	NOUN
 ,	,	PUNCTclause
 voici	voici	ADP
 ce	ce	PRON
@@ -2689,7 +2689,7 @@ qui	qui	PRON
 ainsi	ainsi	ADV
 que	que	SCONJ
 nous	nous	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avons	avoir	AUX
 dit	dire	VERB
 ,	,	PUNCTclause
@@ -2705,7 +2705,7 @@ paix	paix	NOUN
 de	de	ADP
 Utrecht	Utrecht	PROPN
 .	.	PUNCTsent
-Si	si	SCONJ
+si	si	SCONJ
 la	le	DET
 conjuration	conjuration	NOUN
 réussissait	réussir	VERB
@@ -2722,7 +2722,7 @@ de	de	ADP
 Orléans	Orléans	PROPN
 et	et	CCONJ
 à	à	ADP
-le	le:PRON	PRON
+le	le_PRON	PRON
 conduire	conduire	VERB
 dans	dans	ADP
 la	le	DET
@@ -2793,7 +2793,7 @@ la	le	DET
 Hollande	Hollande	PROPN
 .	.	PUNCTsent
 l'	le	DET
-Empire	Empire	NOUN
+empire	empire	NOUN
 profitait	profiter	VERB
 de	de	ADP
 leur	leur	DET
@@ -2810,7 +2810,7 @@ assurait	assurer	VERB
 le	le	DET
 grand-duché	grand-duché	NOUN
 de	de	ADP
-Toscane	Toscane	PROPN
+toscane	toscan	UNKNOWN
 ,	,	PUNCTclause
 prêt à	prêt à	ADP
 rester	rester	VERB
@@ -2852,7 +2852,7 @@ pape	pape	NOUN
 ,	,	PUNCTclause
 Mantoue	Mantoue	PROPN
 aux	au	ADP_DET
-Vénitiens	Vénitiens	NOUN
+vénitiens	vénitien	NOUN
 ;	;	PUNCTclause
 se	se	PRON
 faisait	faire	VERB
@@ -2863,15 +2863,15 @@ la	le	DET
 grande	grand	ADJ
 ligue	ligue	NOUN
 du	du	ADP_DET
-Midi	Midi	NOUN
+Midi	Midi	PROPN
 contre	contre	ADP
 le	le	DET
-Nord	Nord	NOUN
+Nord	Nord	PROPN
 ,	,	PUNCTclause
 et	et	CCONJ
 si	si	SCONJ
 Louis	Louis	PROPN
-		TOKEN
+XV	XV	NUM
 venait	venir	VERB
 à	à	ADP
 mourir	mourir	VERB
@@ -2887,7 +2887,7 @@ du	du	ADP_DET
 monde	monde	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ce	ce	PRON
+ce	ce	PRON
 ne	ne	ADV
 était	être	AUX
 pas	pas	ADV

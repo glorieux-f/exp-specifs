@@ -5,17 +5,17 @@
 # isPartOf = Monsieur Sylvestre
 # title = XXX. De Pierre à Philippe
 
-↵↵↵	↵↵↵	PUNCTstruct
-		TOKEN
+↵↵	↵↵	PUNCTstruct
+XXX	XXX	NUM
 .	.	PUNCTsent
-De	de	ADP
+de	de	ADP
 Pierre	Pierre	PROPN
 à	à	ADP
 Philippe	Philippe	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 l'	le	DET
-Escabeau	Escabeau	NOUN
+escabeau	escabeau	NOUN
 ,	,	PUNCTclause
 24	24	NUM
 juin	juin	NOUN
@@ -42,7 +42,7 @@ fille	fille	NOUN
 l'	le	DET
 ermitage	ermitage	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 était	être	AUX
 si	si	ADV
 ému	émouvoir	VERB
@@ -62,9 +62,9 @@ rester	rester	VERB
 en	en	ADP
 place	place	NOUN
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 famille	famille	NOUN
-Diamant	Diamant	PROPN
+diamant	diamant	UNKNOWN
 est	être	AUX
 arrivée	arriver	VERB
 chez	chez	ADP
@@ -76,7 +76,7 @@ pour	pour	ADP
 le	le	DET
 distraire	distraire	VERB
 .	.	PUNCTsent
-Ces	ce	DET
+ces	ce	DET
 braves	brave	ADJ
 gens	gens	NOUN
 passent	passer	VERB
@@ -116,7 +116,7 @@ de	de	ADP
 mon	mon	DET
 oncle	oncle	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 sait	savoir	VERB
 où	où	PRON
 je	je	PRON
@@ -135,7 +135,7 @@ gagnais	gagner	VERB
 beaucoup de	beaucoup de	DET
 argent	argent	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 souhaite	souhaiter	VERB
 que	que	SCONJ
 je	je	PRON
@@ -157,8 +157,8 @@ suis	être	AUX
 très-riche	très-riche	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Les	le	DET
-Diamant	Diamant	PROPN
+les	le	DET
+diamant	diamant	UNKNOWN
 et	et	CCONJ
 l'	le	DET
 ermite	ermite	NOUN
@@ -180,7 +180,7 @@ fois	fois	NOUN
 la	le	DET
 pêche	pêche	NOUN
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 vieux	vieux	ADJ
 et	et	CCONJ
 digne	digne	ADJ
@@ -209,7 +209,7 @@ fait	faire	VERB
 comme	comme	SCONJ
 je	je	PRON
 te	te	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 ai	avoir	AUX
 dit	dire	VERB
 ,	,	PUNCTclause
@@ -217,7 +217,7 @@ bien	bien	ADV
 des	un	ADP_DET
 métiers	métier	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 est	être	AUX
 donc	donc	ADV
 au	au	ADP_DET
@@ -238,7 +238,7 @@ gentilhomme	gentilhomme	NOUN
 parle	parler	VERB
 avec	avec	ADP
 les	le	DET
-Diamant	Diamant	NOUN
+diamant	diamant	NOUN
 comme	comme	ADP
 si	si	SCONJ
 il	il	PRON
@@ -248,7 +248,7 @@ dans	dans	ADP
 la	le	DET
 partie	partie	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 leur	leur	PRON
 dit	dire	VERB
 que	que	SCONJ
@@ -303,19 +303,19 @@ juges	juge	NOUN
 que	que	SCONJ
 on	on	PRON
 ne	ne	ADV
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 imagine	imaginer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Voyez	voir	VERB
+voyez	voir	VERB
 vous	vous	PRON
 cet	ce	DET
 homme	homme	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 madame	madame	NOUN
-Diamant	Diamant	PROPN
+diamant	diamant	UNKNOWN
 ,	,	PUNCTclause
 ça	ça	PRON
 a	avoir	VERB
@@ -329,7 +329,7 @@ toujours	toujours	ADV
 été	être	AUX
 quelque chose	quelque chose	PRON
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 dis	dire	VERB
 pas	pas	ADV
@@ -348,7 +348,7 @@ pour ce qui est de	pour ce qui est de	ADP
 ça	ça	PRON
 ,	,	PUNCTclause
 M.	M.	NOUN
-Diamant	Diamant	PROPN
+diamant	diamant	UNKNOWN
 ne	ne	ADV
 est	être	AUX
 pas	pas	ADV
@@ -379,7 +379,7 @@ se	se	PRON
 faire	faire	AUX
 valoir	valoir	VERB
 .	.	PUNCTsent
-Si	si	SCONJ
+si	si	SCONJ
 votre	votre	DET
 vieux	vieux	ADJ
 ermite	ermite	NOUN
@@ -411,7 +411,7 @@ heureux	heureux	ADJ
 que	que	SCONJ
 il	il	PRON
 ne	ne	ADV
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 a	avoir	AUX
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -457,14 +457,14 @@ sait	savoir	VERB
 plus	plus	ADV
 rien	rien	PRON
 .	.	PUNCTsent
-Les	le	DET
-Diamant	Diamant	PROPN
+les	le	DET
+diamant	diamant	UNKNOWN
 ont	avoir	AUX
 pourtant	pourtant	ADV
 beaucoup	beaucoup	ADV
 insisté	insister	VERB
 .	.	PUNCTsent
-Leurs	leur	DET
+leurs	leur	DET
 deux	deux	NUM
 garçons	garçon	NOUN
 travaillent	travailler	VERB
@@ -477,7 +477,7 @@ sont	être	AUX
 de	de	ADP
 vrais	vrai	ADJ
 petits	petit	NOUN
-Auvergnats	auvergnat	ADJ
+auvergnats	auvergnat	ADJ
 qui	qui	PRON
 ont	avoir	VERB
 besoin	besoin	NOUN
@@ -507,7 +507,7 @@ dans	dans	ADP
 une	un	DET
 classe	classe	NOUN
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 plaintes	plainte	NOUN
 et	et	CCONJ
 les	le	DET
@@ -529,7 +529,7 @@ témoigner	témoigner	VERB
 mon	mon	DET
 amitié	amitié	NOUN
 .	.	PUNCTsent
-Comme	comme	ADP
+comme	comme	ADP
 leurs	leur	DET
 enfants	enfant	NOUN
 passeront	passer	VERB
@@ -569,11 +569,11 @@ direction	direction	NOUN
 leur	leur	DET
 donner	donner	VERB
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 reconnaissance	reconnaissance	NOUN
 de	de	ADP
 M.	M.	NOUN
-Diamant	Diamant	PROPN
+diamant	diamant	UNKNOWN
 a	avoir	AUX
 été	être	AUX
 portée	porter	VERB
@@ -600,7 +600,7 @@ dans	dans	ADP
 sa	son	DET
 clientèle	clientèle	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 lui	lui	PRON
 donnera	donner	VERB
 de	de	ADP
@@ -662,13 +662,13 @@ avec	avec	ADP
 le	le	DET
 diable	diable	NOUN
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 la	le	DET
 lui	lui	PRON
 souhaiterais	souhaiter	VERB
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Nous	nous	PRON
+nous	nous	PRON
 avons	avoir	AUX
 pu	pouvoir	VERB
 enfin	enfin	ADV
@@ -761,7 +761,7 @@ rejoint	rejoindre	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Elle	elle	PRON
+elle	elle	PRON
 consent	consentir	VERB
 !	!	PUNCTsent
 me	me	PRON
@@ -769,7 +769,7 @@ a	avoir	AUX
 il	il	PRON
 dit	dire	VERB
 .	.	PUNCTsent
-Elle	elle	PRON
+elle	elle	PRON
 me	me	PRON
 confie	confier	VERB
 sa	son	DET
@@ -787,7 +787,7 @@ pas	pas	ADV
 été	être	AUX
 facile	facile	ADJ
 !	!	PUNCTsent
-Elle	elle	PRON
+elle	elle	PRON
 était	être	AUX
 furieuse	furieux	ADJ
 de	de	ADP
@@ -819,13 +819,13 @@ a	avoir	AUX
 tenu	tenir	VERB
 tête	tête	NOUN
 et	et	CCONJ
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 a	avoir	AUX
 réduite	réduire	VERB
 à	à	ADP
 merci	merci	NOUN
 .	.	PUNCTsent
-Si	si	SCONJ
+si	si	SCONJ
 je	je	PRON
 sais	savoir	VERB
 comment	comment	ADV
@@ -833,7 +833,7 @@ elle	elle	PRON
 a	avoir	AUX
 fait	faire	VERB
 !…	!…	PUNCTsent
-N'importe	n'importe	ADV
+n'importe	n'importe	ADV
 ,	,	PUNCTclause
 nous	nous	PRON
 aurons	avoir	AUX
@@ -842,7 +842,7 @@ de	de	ADP
 détails	détail	NOUN
 demain	demain	ADV
 ,	,	PUNCTclause
-Aldine	Aldine	PROPN
+aldine	aldin	UNKNOWN
 me	me	PRON
 écrira	écrire	VERB
 ;	;	PUNCTclause
@@ -857,11 +857,11 @@ paraissait	paraître	VERB
 et	et	CCONJ
 fatiguée	fatiguer	VERB
 .	.	PUNCTsent
-Laissons	laisser	VERB
+laissons	laisser	VERB
 la	le	DET
 respirer	respirer	VERB
 .	.	PUNCTsent
-Moi	moi	PRON
+moi	moi	PRON
 ,	,	PUNCTclause
 je	je	PRON
 vais	aller	VERB
@@ -876,7 +876,7 @@ est	être	AUX
 décidé	décider	VERB
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 me	me	PRON
 a	avoir	AUX
 fallu	falloir	VERB
@@ -913,7 +913,7 @@ sur	sur	ADP
 les	le	DET
 épaules	épaule	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 est	être	AUX
 tellement	tellement	ADV
 habitué	habituer	VERB
@@ -926,11 +926,11 @@ tout	tout	DET
 que	que	PRON
 mon	mon	DET
 observation	observation	NOUN
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 a	avoir	AUX
 troublé	troubler	VERB
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 lui	lui	PRON
 répugne	répugner	VERB
 de	de	ADP
@@ -967,7 +967,7 @@ son	son	DET
 nom	nom	NOUN
 ici	ici	ADV
 .	.	PUNCTsent
-Le	le:PRON	PRON
+le	le_PRON	PRON
 voyant	voir	VERB
 fort	fort	ADV
 tourmenté	tourmenter	VERB
@@ -1003,7 +1003,7 @@ moyennant	moyenner	VERB
 quoi	quoi	PRON
 ,	,	PUNCTclause
 je	je	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 mettrais	mettre	VERB
 en	en	ADP
 règle	règle	NOUN
@@ -1034,7 +1034,7 @@ ce	ce	DET
 fût	être	AUX
 nécessaire	nécessaire	ADJ
 .	.	PUNCTsent
-Un	un	DET
+un	un	DET
 petit	petit	ADJ
 voyage	voyage	NOUN
 pédestre	pédestre	ADJ

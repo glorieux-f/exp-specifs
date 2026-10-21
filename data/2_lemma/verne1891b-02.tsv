@@ -5,15 +5,15 @@
 # isPartOf = Mistress Branican
 # title = II. Situation de famille
 
-↵↵↵	↵↵↵	PUNCTstruct
-		TOKEN
+↵↵	↵↵	PUNCTstruct
+II	II	PRON
 .	.	PUNCTsent
-Situation	situation	NOUN
+situation	situation	NOUN
 de	de	ADP
 famille	famille	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 convient	convenir	VERB
 de	de	ADP
 marquer	marquer	VERB
@@ -24,7 +24,7 @@ plus	plus	ADV
 précis	précis	ADJ
 messieurs	monsieur	NOUN
 .	.	PUNCTsent
-Branican	Branican	PROPN
+Branican	Branican	ADJ
 ,	,	PUNCTclause
 que	que	SCONJ
 les	le	DET
@@ -40,7 +40,7 @@ en plein	en plein	ADV
 lumière	lumière	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-À	à	ADP
+à	à	ADP
 cette	ce	DET
 époque	époque	NOUN
 Dolly	Dolly	PROPN
@@ -50,13 +50,13 @@ et	et	CCONJ
 un	un	DET
 ans	an	NOUN
 .	.	PUNCTsent
-Elle	elle	PRON
+elle	elle	PRON
 était	être	AUX
 de	de	ADP
 origine	origine	NOUN
 américaine	américain	ADJ
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 sans	sans	ADP
 remonter	remonter	VERB
@@ -74,7 +74,7 @@ rencontré	rencontrer	VERB
 la	le	DET
 génération	génération	NOUN
 qui	qui	PRON
-la	le:PRON	PRON
+la	le_PRON	PRON
 reliait	relier	VERB
 à	à	ADP
 la	le	DET
@@ -94,7 +94,7 @@ de	de	ADP
 ce	ce	DET
 pays	pays	NOUN
 .	.	PUNCTsent
-Sa	son	DET
+sa	son	DET
 mère	mère	NOUN
 ,	,	PUNCTclause
 en effet	en effet	ADV
@@ -121,7 +121,7 @@ encore	encore	ADV
 au	au	ADP_DET
 Mexique	Mexique	PROPN
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 vaste	vaste	ADJ
 baie	bai	NOUN
 ,	,	PUNCTclause
@@ -151,7 +151,7 @@ nom	nom	NOUN
 en	en	ADP
 1602	1602	NUM
 .	.	PUNCTsent
-Puis	puis	CCONJ
+puis	puis	CCONJ
 ,	,	PUNCTclause
 en	en	ADP
 1846	1846	NUM
@@ -172,7 +172,7 @@ les	le	DET
 étoiles	étoile	NOUN
 de	de	ADP
 la	le	DET
-Confédération	Confédération	PROPN
+confédération	confédération	UNKNOWN
 ,	,	PUNCTclause
 et	et	CCONJ
 ce	ce	PRON
@@ -191,7 +191,7 @@ les	le	DET
 USA	USA	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Une	un	DET
+une	un	DET
 taille	taille	NOUN
 moyenne	moyen	ADJ
 ,	,	PUNCTclause
@@ -224,7 +224,7 @@ foncé	foncé	ADJ
 la	le	DET
 main	main	NOUN
 et	et	CCONJ
-le	le:PRON	PRON
+le	le_PRON	PRON
 pied	pied	NOUN
 un	un	DET
 peu	peu	ADV
@@ -233,7 +233,7 @@ forts	fort	ADJ
 que	que	SCONJ
 on	on	PRON
 ne	ne	ADV
-les	le:PRON	PRON
+les	le_PRON	PRON
 observe	observer	VERB
 habituellement	habituellement	ADV
 dans	dans	ADP
@@ -267,9 +267,9 @@ telle	tel	DET
 était	être	AUX
 messieurs	monsieur	NOUN
 .	.	PUNCTsent
-Branican	Branican	PROPN
+Branican	Branican	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 est	être	AUX
 de	de	ADP
 ces	ce	DET
@@ -322,7 +322,7 @@ attirer	attirer	VERB
 l'	le	DET
 attention	attention	NOUN
 .	.	PUNCTsent
-On	on	PRON
+on	on	PRON
 la	le	DET
 sentait	sentir	VERB
 sérieuse	sérieux	ADJ
@@ -354,7 +354,7 @@ en	en	ADP
 elle	elle	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Oui	oui	INTJ
+oui	oui	INTJ
 !	!	PUNCTsent
 en	en	ADP
 n'importe	n'importe	NOUN
@@ -373,14 +373,14 @@ Dolly	Dolly	PROPN
 devenue	devenir	VERB
 messieurs	monsieur	NOUN
 .	.	PUNCTsent
-Branican	Branican	PROPN
+Branican	Branican	NOUN
 ,	,	PUNCTclause
 saurait	savoir	VERB
 faire	faire	VERB
 son	son	DET
 devoir	devoir	NOUN
 .	.	PUNCTsent
-Ayant	avoir	AUX
+ayant	avoir	AUX
 regardé	regarder	VERB
 franchement	franchement	ADV
 l'	le	DET
@@ -421,7 +421,7 @@ de	de	ADP
 sa	son	DET
 tâche	tâche	NOUN
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 cas	cas	NOUN
 échéant	échéant	ADJ
 ,	,	PUNCTclause
@@ -435,12 +435,12 @@ phrase	phrase	NOUN
 banale	banal	ADJ
 quand	quand	SCONJ
 on	on	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 applique	appliquer	VERB
 à	à	ADP
 messieurs	monsieur	NOUN
 .	.	PUNCTsent
-Branican	Branican	PROPN
+Branican	Branican	NOUN
 ,	,	PUNCTclause
 —	—	PUNCTclause
 elle	elle	PRON
@@ -466,7 +466,7 @@ pour	pour	ADP
 cet	ce	DET
 enfant	enfant	NOUN
 .	.	PUNCTsent
-Ils	ils	PRON
+ils	ils	PRON
 adoraient	adorer	VERB
 ce	ce	DET
 bébé	bébé	NOUN
@@ -497,7 +497,7 @@ et	et	CCONJ
 de	de	ADP
 lui	lui	PRON
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 ressemblance	ressemblance	NOUN
 du	du	ADP_DET
 petit	petit	ADJ
@@ -527,7 +527,7 @@ teint	teint	NOUN
 de	de	ADP
 Dolly	Dolly	PROPN
 .	.	PUNCTsent
-Vigoureusement	vigoureusement	ADV
+vigoureusement	vigoureusement	ADV
 constitué	constituer	VERB
 ,	,	PUNCTclause
 il	il	PRON
@@ -542,7 +542,7 @@ de	de	ADP
 l'	le	DET
 enfance	enfance	NOUN
 .	.	PUNCTsent
-D'ailleurs	d'ailleurs	ADV
+d'ailleurs	d'ailleurs	ADV
 ,	,	PUNCTclause
 il	il	PRON
 serait	être	AUX
@@ -583,11 +583,11 @@ se	se	PRON
 ébaucher	ébaucher	VERB
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Certes	certes	ADV
+certes	certes	ADV
 ,	,	PUNCTclause
 messieurs	monsieur	NOUN
 .	.	PUNCTsent
-Branican	Branican	PROPN
+Branican	Branican	NOUN
 eût	avoir	AUX
 été	être	AUX
 la	le	DET
@@ -627,7 +627,7 @@ l'un	l'un	PRON
 de	de	ADP
 l'autre	l'autre	PRON
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 au moment où	au moment où	ADP
 le	le	DET
@@ -650,7 +650,7 @@ de	de	ADP
 le	le	DET
 retenir	retenir	VERB
 ?	?	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 puis	puis	CCONJ
 ,	,	PUNCTclause
 ne	ne	ADV
@@ -697,7 +697,7 @@ assurait	assurer	VERB
 sa	son	DET
 maison	maison	NOUN
 .	.	PUNCTsent
-Évidemment	évidemment	ADV
+évidemment	évidemment	ADV
 John	John	PROPN
 Branican	Branican	PROPN
 devait	devoir	VERB
@@ -731,7 +731,7 @@ lui	lui	PRON
 puisque	puisque	SCONJ
 M.	M.	PROPN
 Edward	Edward	PROPN
-Starter	Starter	PROPN
+starter	starter	UNKNOWN
 ,	,	PUNCTclause
 presque	presque	ADV
 sexagénaire	sexagénaire	NOUN
@@ -772,7 +772,7 @@ oncle	oncle	NOUN
 de	de	ADP
 Dolly	Dolly	PROPN
 !	!	PUNCTsent
-Celle	celle	PRON
+celle	celle	PRON
 serait	être	AUX
 donc	donc	ADV
 riche	riche	ADJ
@@ -798,7 +798,7 @@ de	de	ADP
 cet	ce	DET
 héritage	héritage	NOUN
 .	.	PUNCTsent
-De	de	ADP
+de	de	ADP
 là	là	ADV
 ,	,	PUNCTclause
 obligation	obligation	NOUN
@@ -825,7 +825,7 @@ de	de	ADP
 l'	le	DET
 avenir	avenir	NOUN
 .	.	PUNCTsent
-Aussi	aussi	ADV
+aussi	aussi	ADV
 ,	,	PUNCTclause
 était	être	VERB
 il	il	PRON
@@ -858,7 +858,7 @@ spéciales	spécial	ADJ
 du	du	ADP_DET
 Franklin	Franklin	PROPN
 .	.	PUNCTsent
-Or	or	NOUN
+or	or	NOUN
 ,	,	PUNCTclause
 comme	comme	ADP
 le	le	DET
@@ -897,15 +897,15 @@ succession	succession	NOUN
 de	de	ADP
 l'	le	DET
 oncle	oncle	NOUN
-Starter	Starter	PROPN
+starter	starter	UNKNOWN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Un	un	DET
+un	un	DET
 mot	mot	NOUN
 seulement	seulement	ADV
 sur	sur	ADP
 cet	ce	DET
-Américain	Américain	NOUN
+américain	américain	NOUN
 —	—	PUNCTclause
 de	de	ADP
 un	un	DET
@@ -916,7 +916,7 @@ absolument	absolument	ADV
 original	original	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 était	être	AUX
 frère	frère	NOUN
 du	du	ADP_DET
@@ -940,7 +940,7 @@ qui	qui	PRON
 devenue	devenir	VERB
 messieurs	monsieur	NOUN
 .	.	PUNCTsent
-Branican	Branican	PROPN
+Branican	Branican	NOUN
 .	.	PUNCTsent
 ce	ce	PRON
 était	être	AUX
@@ -956,7 +956,7 @@ six	six	NUM
 ans	an	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avait	avoir	VERB
 pour	pour	ADP
 ainsi	ainsi	ADV
@@ -968,8 +968,8 @@ tous deux	tous deux	PRON
 étaient	être	AUX
 orphelins	orphelin	ADJ
 .	.	PUNCTsent
-Aussi	aussi	ADV
-Starter	Starter	PROPN
+aussi	aussi	ADV
+starter	starter	UNKNOWN
 jeune	jeune	ADJ
 avait	avoir	AUX
 il	il	PRON
@@ -986,9 +986,9 @@ une	un	DET
 vive	vif	ADJ
 reconnaissance	reconnaissance	NOUN
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 circonstances	circonstance	NOUN
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 ayant	avoir	AUX
 favorisé	favoriser	VERB
 ,	,	PUNCTclause
@@ -1002,7 +1002,7 @@ la	le	DET
 fortune	fortune	NOUN
 ,	,	PUNCTclause
 alors que	alors que	CCONJ
-Starter	Starter	PROPN
+starter	starter	UNKNOWN
 aîné	aîné	ADJ
 se	se	PRON
 égarait	égarer	VERB
@@ -1037,7 +1037,7 @@ vastes	vaste	ADJ
 terrains	terrain	NOUN
 dans	dans	ADP
 l'	le	DET
-État	État	NOUN
+état	état	NOUN
 de	de	ADP
 Tennessee	Tennessee	PROPN
 ,	,	PUNCTclause
@@ -1059,11 +1059,11 @@ affaires	affaire	NOUN
 retenaient	retenir	VERB
 dans	dans	ADP
 l'	le	DET
-État	État	NOUN
+état	état	NOUN
 de	de	ADP
 New-York	New-York	PROPN
 .	.	PUNCTsent
-Quand	quand	SCONJ
+quand	quand	SCONJ
 celui	celui	PRON
 devint	devenir	VERB
 veuf	veuf	NOUN
@@ -1098,7 +1098,7 @@ Branican	Branican	PROPN
 déjà	déjà	ADV
 décidé	décider	VERB
 .	.	PUNCTsent
-Ce	ce	DET
+ce	ce	DET
 mariage	mariage	NOUN
 fut	être	AUX
 célébré	célébrer	VERB
@@ -1125,11 +1125,11 @@ modeste	modeste	ADJ
 héritage	héritage	NOUN
 laissé	laisser	VERB
 par	par	ADP
-Starter	Starter	PROPN
+starter	starter	UNKNOWN
 aîné	aîné	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-À	à	ADP
+à	à	ADP
 peu de	peu de	DET
 temps	temps	NOUN
 de	de	ADP
@@ -1148,7 +1148,7 @@ adressée	adresser	VERB
 Dolly	Dolly	PROPN
 Branican	Branican	PROPN
 par	par	ADP
-Starter	Starter	PROPN
+starter	starter	UNKNOWN
 jeune	jeune	ADJ
 .	.	PUNCTsent
 ce	ce	PRON
@@ -1170,7 +1170,7 @@ dernière	dernier	ADJ
 aussi	aussi	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-En	en	ADP
+en	en	ADP
 substance	substance	NOUN
 ,	,	PUNCTclause
 cette	ce	DET
@@ -1186,9 +1186,9 @@ que	que	ADV
 pratique	pratique	ADJ
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Bien	bien	ADV
+bien	bien	ADV
 que	que	SCONJ
-Starter	Starter	PROPN
+starter	starter	UNKNOWN
 jeune	jeune	ADJ
 fût	être	AUX
 très	très	ADV
@@ -1200,7 +1200,7 @@ bien	bien	ADV
 que	que	SCONJ
 il	il	PRON
 ne	ne	ADV
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 eût	avoir	AUX
 jamais	jamais	ADV
 vue	vu	VERB
@@ -1225,7 +1225,7 @@ frère	frère	NOUN
 si	si	SCONJ
 il	il	PRON
 ne	ne	ADV
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avait	avoir	AUX
 jamais	jamais	ADV
 vue	vu	VERB
@@ -1233,10 +1233,10 @@ vue	vu	VERB
 ce	ce	PRON
 est	être	AUX
 que	que	SCONJ
-Starter	Starter	PROPN
+starter	starter	UNKNOWN
 aîné	aîné	ADJ
 et	et	CCONJ
-Starter	Starter	PROPN
+starter	starter	UNKNOWN
 jeune	jeune	ADJ
 ne	ne	ADV
 se	se	PRON
@@ -1245,7 +1245,7 @@ point	point	ADV
 rencontrés	rencontrer	VERB
 depuis	depuis	ADP
 que	que	SCONJ
-Starter	Starter	PROPN
+starter	starter	UNKNOWN
 aîné	aîné	ADJ
 avait	avoir	AUX
 pris	prendre	VERB
@@ -1253,7 +1253,7 @@ femme	femme	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 que	que	SCONJ
-Starter	Starter	PROPN
+starter	starter	UNKNOWN
 jeune	jeune	ADJ
 résidait	résider	VERB
 auprès de	auprès de	ADP
@@ -1274,7 +1274,7 @@ résidait	résider	VERB
 à	à	ADP
 San-Diégo	San-Diégo	PROPN
 .	.	PUNCTsent
-Or	or	NOUN
+or	or	NOUN
 ,	,	PUNCTclause
 entre	entre	ADP
 le	le	DET
@@ -1294,15 +1294,15 @@ ne	ne	ADV
 convenait	convenir	VERB
 nullement	nullement	ADV
 à	à	ADP
-Starter	Starter	PROPN
+starter	starter	UNKNOWN
 jeune	jeune	ADJ
 de	de	ADP
 franchir	franchir	VERB
 .	.	PUNCTsent
-Donc	donc	ADV
+donc	donc	ADV
 ,	,	PUNCTclause
 si	si	SCONJ
-Starter	Starter	PROPN
+starter	starter	UNKNOWN
 jeune	jeune	ADJ
 trouvait	trouver	VERB
 le	le	DET
@@ -1380,7 +1380,7 @@ relations	relation	NOUN
 sociales	social	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cela	cela	PRON
+cela	cela	PRON
 ne	ne	ADV
 devait	devoir	VERB
 pas	pas	ADV
@@ -1389,7 +1389,7 @@ Dolly	Dolly	PROPN
 ,	,	PUNCTclause
 d'ailleurs	d'ailleurs	ADV
 .	.	PUNCTsent
-Elle	elle	PRON
+elle	elle	PRON
 était	être	AUX
 la	le	DET
 nièce	nièce	NOUN
@@ -1408,7 +1408,7 @@ cœur	cœur	NOUN
 de	de	ADP
 oncle	oncle	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 oubliait	oublier	VERB
 pas	pas	ADV
@@ -1417,7 +1417,7 @@ que	que	PRON
 il	il	PRON
 devait	devoir	VERB
 à	à	ADP
-Starter	Starter	PROPN
+starter	starter	UNKNOWN
 aîné	aîné	ADJ
 ,	,	PUNCTclause
 et	et	CCONJ
@@ -1435,7 +1435,7 @@ sa	son	DET
 fortune	fortune	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Starter	starter	NOUN
+starter	starter	NOUN
 jeune	jeune	ADJ
 ajoutait	ajouter	VERB
 que	que	SCONJ
@@ -1449,7 +1449,7 @@ de	de	ADP
 être	être	AUX
 recueillie	recueillir	VERB
 .	.	PUNCTsent
-Elle	elle	PRON
+elle	elle	PRON
 se	se	PRON
 montait	monter	VERB
 alors	alors	ADV
@@ -1473,11 +1473,11 @@ défrichement	défrichement	NOUN
 prospéraient	prospérer	VERB
 dans	dans	ADP
 l'	le	DET
-État	État	NOUN
+état	état	NOUN
 de	de	ADP
 Tennessee	Tennessee	PROPN
 .	.	PUNCTsent
-Comme	comme	SCONJ
+comme	comme	SCONJ
 elle	elle	PRON
 consistait	consister	VERB
 en	en	ADP
@@ -1494,7 +1494,7 @@ la	le	DET
 réaliser	réaliser	VERB
 ;	;	PUNCTclause
 on	on	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 ferait	faire	VERB
 à	à	ADP
 un	un	DET
@@ -1510,7 +1510,7 @@ manqueraient	manquer	VERB
 pas	pas	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Si	si	SCONJ
+si	si	SCONJ
 cela	cela	PRON
 était	être	AUX
 dit	dire	VERB
@@ -1528,7 +1528,7 @@ appartient	appartenir	VERB
 en	en	ADP
 propre	propre	ADJ
 aux	au	ADP_DET
-Américains	Américains	NOUN
+américains	américain	NOUN
 de	de	ADP
 vieille	vieux	ADJ
 race	race	NOUN
@@ -1540,10 +1540,10 @@ dit	dire	VERB
 était	être	AUX
 dit	dire	VERB
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 fortune	fortune	NOUN
 de	de	ADP
-Starter	Starter	PROPN
+starter	starter	UNKNOWN
 jeune	jeune	ADJ
 irait	aller	VERB
 tout	tout	ADV
@@ -1551,7 +1551,7 @@ entière	entier	ADJ
 à	à	ADP
 messieurs	monsieur	NOUN
 .	.	PUNCTsent
-Branican	Branican	PROPN
+Branican	Branican	NOUN
 ou	ou	CCONJ
 à	à	ADP
 ses	son	DET
@@ -1561,7 +1561,7 @@ au cas où	au cas où	SCONJ
 la	le	DET
 souche	souche	NOUN
 des	un	ADP_DET
-Starter	Starter	PROPN
+starter	starter	UNKNOWN
 se	se	PRON
 «	«	PUNCTclause
 progénérerait	progénérerait	VERB
@@ -1573,14 +1573,14 @@ par	par	ADP
 ses	son	DET
 soins	soin	NOUN
 .	.	PUNCTsent
-En	en	ADP
+en	en	ADP
 cas	cas	NOUN
 de	de	ADP
 prédécès	prédécès	NOUN
 de	de	ADP
 messieurs	monsieur	NOUN
 .	.	PUNCTsent
-Branican	Branican	PROPN
+Branican	Branican	ADJ
 ,	,	PUNCTclause
 sans	sans	ADP
 descendants	descendant	NOUN
@@ -1593,7 +1593,7 @@ fortune	fortune	NOUN
 reviendrait	revenir	VERB
 à	à	ADP
 l'	le	DET
-État	État	NOUN
+état	état	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
 serait	être	AUX
@@ -1604,7 +1604,7 @@ accepter	accepter	VERB
 les	le	DET
 biens	bien	NOUN
 de	de	ADP
-Starter	Starter	PROPN
+starter	starter	UNKNOWN
 jeune	jeune	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -1615,17 +1615,17 @@ encore	encore	ADV
 ↵↵	↵↵	PUNCTstruct
 1	1	NUM
 o	o	VERB
-Starter	Starter	PROPN
+starter	starter	UNKNOWN
 jeune	jeune	ADJ
 était	être	AUX
 célibataire	célibataire	ADJ
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 resterait	rester	VERB
 célibataire	célibataire	ADJ
 .	.	PUNCTsent
 «	«	PUNCTclause
-La	le	DET
+la	le	DET
 sottise	sottise	NOUN
 que	que	PRON
 l'on	on	PRON
@@ -1646,7 +1646,7 @@ est	être	AUX
 pas	pas	ADV
 lui	lui	PRON
 qui	qui	PRON
-la	le:PRON	PRON
+la	le_PRON	PRON
 ferait	faire	VERB
 à	à	ADP
 soixante	soixante	NUM
@@ -1659,7 +1659,7 @@ de	de	ADP
 sa	son	DET
 lettre	lettre	NOUN
 .	.	PUNCTsent
-Rien	rien	PRON
+rien	rien	PRON
 ne	ne	ADV
 pourrait	pouvoir	VERB
 donc	donc	ADV
@@ -1701,7 +1701,7 @@ Mexique	Mexique	PROPN
 ↵↵	↵↵	PUNCTstruct
 2	2	NUM
 o	o	NOUN
-Starter	Starter	PROPN
+starter	starter	UNKNOWN
 jeune	jeune	ADJ
 ferait	faire	VERB
 tous	tout	ADJ
@@ -1724,7 +1724,7 @@ le	le	DET
 plus tard	plus tard	ADV
 possible	possible	ADJ
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 tâcherait	tâcher	VERB
 de	de	ADP
 mourir	mourir	VERB
@@ -1755,13 +1755,13 @@ du	du	ADP_DET
 possible	possible	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Enfin	enfin	ADV
-Starter	Starter	PROPN
+enfin	enfin	ADV
+starter	starter	UNKNOWN
 jeune	jeune	ADJ
 priait	prier	VERB
 messieurs	monsieur	NOUN
 .	.	PUNCTsent
-Branican	Branican	PROPN
+Branican	Branican	NOUN
 ,	,	PUNCTclause
 —	—	PUNCTclause
 il	il	PRON
@@ -1775,7 +1775,7 @@ ne	ne	ADV
 point	point	ADV
 répondre	répondre	VERB
 .	.	PUNCTsent
-D'ailleurs	d'ailleurs	ADV
+d'ailleurs	d'ailleurs	ADV
 ,	,	PUNCTclause
 ce	ce	PRON
 est	être	AUX
@@ -1832,7 +1832,7 @@ propre	propre	ADJ
 main	main	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Telle	tel	DET
+telle	tel	DET
 était	être	AUX
 la	le	DET
 singulière	singulier	ADJ
@@ -1842,7 +1842,7 @@ avait	avoir	VERB
 reçue	recevoir	VERB
 messieurs	monsieur	NOUN
 .	.	PUNCTsent
-Branican	Branican	PROPN
+Branican	Branican	NOUN
 .	.	PUNCTsent
 que	que	SCONJ
 elle	elle	PRON
@@ -1857,7 +1857,7 @@ universelle	universel	ADJ
 de	de	ADP
 son	son	DET
 oncle	oncle	NOUN
-Starter	Starter	PROPN
+starter	starter	UNKNOWN
 ,	,	PUNCTclause
 cela	cela	PRON
 ne	ne	ADV
@@ -1866,7 +1866,7 @@ point	point	ADV
 à	à	ADP
 mettre en doute	mettre en doute	VERB
 .	.	PUNCTsent
-Elle	elle	PRON
+elle	elle	PRON
 posséderait	posséder	VERB
 un	un	DET
 jour	jour	NOUN
@@ -1893,10 +1893,10 @@ défricheur	défricheur	NOUN
 de	de	ADP
 forêts	forêt	NOUN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 comme	comme	ADP
-Starter	Starter	PROPN
+starter	starter	UNKNOWN
 jeune	jeune	ADJ
 manifestait	manifester	VERB
 très	très	ADV
@@ -1914,9 +1914,9 @@ l'on	on	PRON
 sait	savoir	VERB
 si	si	SCONJ
 ces	ce	DET
-Américains	Américains	NOUN
+américains	américain	NOUN
 du	du	ADP_DET
-Nord	Nord	NOUN
+Nord	Nord	PROPN
 sont	être	AUX
 tenaces	tenace	ADJ
 ,	,	PUNCTclause
@@ -1935,7 +1935,7 @@ métier	métier	NOUN
 de	de	ADP
 marin	marin	NOUN
 .	.	PUNCTsent
-Son	son	DET
+son	son	DET
 intelligence	intelligence	NOUN
 ,	,	PUNCTclause
 son	son	DET
@@ -1965,7 +1965,7 @@ bien	bien	ADV
 avant que	avant que	SCONJ
 l'	le	DET
 oncle	oncle	NOUN
-Starter	Starter	PROPN
+starter	starter	UNKNOWN
 eût	avoir	AUX
 consenti	consentir	VERB
 à	à	ADP
@@ -1975,7 +1975,7 @@ l'autre	l'autre	PRON
 monde	monde	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Telle	tel	PRON
+telle	tel	PRON
 était	être	AUX
 donc	donc	CCONJ
 la	le	DET
@@ -1994,9 +1994,9 @@ les	le	DET
 parages	parage	NOUN
 occidentaux	occidental	ADJ
 du	du	ADP_DET
-Pacifique	Pacifique	PROPN
+pacifique	pacifique	UNKNOWN
 .	.	PUNCTsent
-Cela	cela	PRON
+cela	cela	PRON
 étant	être	AUX
 établi	établir	VERB
 pour	pour	ADP
@@ -2034,13 +2034,13 @@ M.	M.	NOUN
 et	et	CCONJ
 messieurs	monsieur	NOUN
 .	.	PUNCTsent
-Burker	Burker	PROPN
+Burker	Burker	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Len	Len	PROPN
+Len	Len	DET
 Burker	Burker	PROPN
 ,	,	PUNCTclause
-Américain	Américain	PROPN
+américain	américain	UNKNOWN
 de	de	ADP
 origine	origine	NOUN
 ,	,	PUNCTclause
@@ -2069,8 +2069,8 @@ la	le	DET
 basse	bas	NOUN
 Californie	Californie	PROPN
 .	.	PUNCTsent
-Ce	ce	DET
-Yankee	Yankee	PROPN
+ce	ce	DET
+yankee	yankee	UNKNOWN
 de	de	ADP
 la	le	DET
 Nouvelle-Angleterre	Nouvelle-Angleterre	PROPN
@@ -2118,7 +2118,7 @@ que	que	PRON
 il	il	PRON
 faisait	faire	VERB
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 est	être	AUX
 de	de	ADP
 ces	ce	DET
@@ -2141,7 +2141,7 @@ ouvre	ouvrir	VERB
 à	à	ADP
 personne	personne	NOUN
 .	.	PUNCTsent
-Cependant	cependant	ADV
+cependant	cependant	ADV
 ,	,	PUNCTclause
 à	à	ADP
 San-Diégo	San-Diégo	PROPN
@@ -2176,7 +2176,7 @@ de	de	ADP
 John	John	PROPN
 Branican	Branican	PROPN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 y	y	PRON
 avait	avoir	VERB
@@ -2205,7 +2205,7 @@ et	et	CCONJ
 son	son	DET
 enfant	enfant	NOUN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 en réalité	en réalité	ADV
 ,	,	PUNCTclause
@@ -2236,7 +2236,7 @@ pour	pour	ADP
 l'autre	l'autre	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 il	il	PRON
 en	en	PRON
 eût	avoir	AUX
@@ -2293,7 +2293,7 @@ droits	droit	NOUN
 de	de	ADP
 autrui	autrui	PRON
 .	.	PUNCTsent
-Trompée	tromper	VERB
+trompée	tromper	VERB
 par	par	ADP
 ses	son	DET
 dehors	dehors	NOUN
@@ -2313,14 +2313,14 @@ sur	sur	ADP
 elle	elle	PRON
 ,	,	PUNCTclause
 Jane	Jane	PROPN
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avait	avoir	AUX
 épousé	épouser	VERB
 cinq	cinq	NUM
 ans	an	NOUN
 auparavant	auparavant	ADV
 à	à	ADP
-Boston	Boston	PROPN
+boston	boston	UNKNOWN
 ,	,	PUNCTclause
 où	où	PRON
 elle	elle	PRON
@@ -2345,7 +2345,7 @@ devaient	devoir	VERB
 si	si	ADV
 regrettables	regrettable	ADJ
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 dot	dot	NOUN
 de	de	ADP
 Jane	Jane	PROPN
@@ -2380,14 +2380,14 @@ les	le	DET
 chemins	chemin	NOUN
 détournés	détourner	VERB
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 il	il	PRON
 ne	ne	ADV
 en	en	PRON
 fut	être	AUX
 rien	rien	PRON
 .	.	PUNCTsent
-Après	après	ADP
+après	après	ADP
 avoir	avoir	AUX
 en	en	ADP
 partie	partie	NOUN
@@ -2407,7 +2407,7 @@ dans	dans	ADP
 son	son	DET
 crédit	crédit	NOUN
 à	à	ADP
-Boston	Boston	PROPN
+boston	boston	UNKNOWN
 ,	,	PUNCTclause
 se	se	PRON
 décida	décider	VERB
@@ -2416,7 +2416,7 @@ quitter	quitter	VERB
 cette	ce	DET
 ville	ville	NOUN
 .	.	PUNCTsent
-De	de	ADP
+de	de	ADP
 l'autre	l'autre	PRON
 côté	côté	NOUN
 de	de	ADP
@@ -2428,7 +2428,7 @@ sa	son	DET
 réputation	réputation	NOUN
 douteuse	douteux	ADJ
 ne	ne	ADV
-le	le:PRON	PRON
+le	le_PRON	PRON
 suivrait	suivre	VERB
 pas	pas	ADV
 ,	,	PUNCTclause
@@ -2451,7 +2451,7 @@ la	le	DET
 Nouvelle-Angleterre	Nouvelle-Angleterre	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Jane	Jane	PROPN
+Jane	Jane	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
 connaissait	connaître	VERB
@@ -2472,7 +2472,7 @@ départ	départ	NOUN
 heureuse	heureux	NOUN
 de	de	ADP
 quitter	quitter	VERB
-Boston	Boston	PROPN
+boston	boston	UNKNOWN
 ,	,	PUNCTclause
 où	où	PRON
 la	le	DET
@@ -2511,7 +2511,7 @@ Jane	Jane	PROPN
 se	se	PRON
 retrouvèrent	retrouver	VERB
 .	.	PUNCTsent
-D'ailleurs	d'ailleurs	ADV
+d'ailleurs	d'ailleurs	ADV
 ,	,	PUNCTclause
 depuis	depuis	ADP
 trois	trois	NUM
@@ -2547,7 +2547,7 @@ ses	son	DET
 affaires	affaire	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Telles	tel	DET
+telles	tel	DET
 furent	être	AUX
 les	le	DET
 circonstances	circonstance	NOUN
@@ -2571,10 +2571,10 @@ pas	pas	ADV
 encore	encore	ADV
 messieurs	monsieur	NOUN
 .	.	PUNCTsent
-Branican	Branican	PROPN
+Branican	Branican	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-La	le	DET
+la	le	DET
 jeune	jeune	ADJ
 femme	femme	NOUN
 et	et	CCONJ
@@ -2585,7 +2585,7 @@ se	se	PRON
 lièrent	lier	VERB
 étroitement	étroitement	ADV
 .	.	PUNCTsent
-Bien	bien	ADV
+bien	bien	ADV
 que	que	SCONJ
 il	il	PRON
 semblât	sembler	VERB
@@ -2603,7 +2603,7 @@ qui	qui	PRON
 eut	avoir	VERB
 lieu	lieu	NOUN
 .	.	PUNCTsent
-Dolly	Dolly	PROPN
+Dolly	Dolly	ADP
 était	être	AUX
 forte	fort	ADJ
 ,	,	PUNCTclause
@@ -2624,7 +2624,7 @@ la	le	DET
 jeune	jeune	ADJ
 femme	femme	NOUN
 .	.	PUNCTsent
-Lorsque	lorsque	SCONJ
+lorsque	lorsque	SCONJ
 l'	le	DET
 union	union	NOUN
 de	de	ADP
@@ -2657,7 +2657,7 @@ ressembler	ressembler	VERB
 au	au	ADP_DET
 sien	sien	PRON
 !	!	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 dans	dans	ADP
 l'	le	DET
 intimité	intimité	NOUN
@@ -2689,7 +2689,7 @@ ses	son	DET
 peines	peine	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 cependant	cependant	ADV
 la	le	DET
 situation	situation	NOUN
@@ -2700,11 +2700,11 @@ devenait	devenir	VERB
 de plus en plus	de plus en plus	ADV
 grave	grave	ADJ
 .	.	PUNCTsent
-Ses	son	DET
+ses	son	DET
 affaires	affaire	NOUN
 périclitaient	péricliter	VERB
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 peu	peu	ADV
 qui	qui	PRON
 lui	lui	PRON
@@ -2720,14 +2720,14 @@ lorsque	lorsque	SCONJ
 il	il	PRON
 avait	avoir	AUX
 quitté	quitter	VERB
-Boston	Boston	PROPN
+boston	boston	UNKNOWN
 ,	,	PUNCTclause
 était	être	AUX
 presque	presque	ADV
 entièrement	entièrement	ADV
 dissipé	dissiper	VERB
 .	.	PUNCTsent
-Cet	ce	DET
+cet	ce	DET
 homme	homme	NOUN
 ,	,	PUNCTclause
 joueur	joueur	NOUN
@@ -2754,7 +2754,7 @@ que	que	ADV
 de	de	ADP
 lui	lui	PRON
 .	.	PUNCTsent
-Ce	ce	DET
+ce	ce	DET
 tempérament	tempérament	NOUN
 ,	,	PUNCTclause
 réfractaire	réfractaire	NOUN
@@ -2777,7 +2777,7 @@ résultats	résultat	NOUN
 déplorables	déplorable	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Dès	dès	ADP
+dès	dès	ADP
 son	son	DET
 arrivée	arrivée	NOUN
 à	à	ADP
@@ -2791,7 +2791,7 @@ un	un	DET
 office	office	NOUN
 dans	dans	ADP
 Fleet	Fleet	PROPN
-Street	Street	PROPN
+street	street	UNKNOWN
 ,	,	PUNCTclause
 —	—	PUNCTclause
 un	un	PRON
@@ -2821,7 +2821,7 @@ de	de	ADP
 une	un	DET
 affaire	affaire	NOUN
 .	.	PUNCTsent
-Très	très	ADV
+très	très	ADV
 apte	apte	ADJ
 à	à	ADP
 faire	faire	VERB
@@ -2889,7 +2889,7 @@ ses	son	DET
 propres	propre	ADJ
 plumes	plume	NOUN
 .	.	PUNCTsent
-À	à	ADP
+à	à	ADP
 l'	le	DET
 époque	époque	NOUN
 où	où	PRON
@@ -2914,7 +2914,7 @@ dans	dans	ADP
 son	son	DET
 ménage	ménage	NOUN
 .	.	PUNCTsent
-Toutefois	toutefois	ADV
+toutefois	toutefois	ADV
 ,	,	PUNCTclause
 comme	comme	SCONJ
 il	il	PRON
@@ -2946,7 +2946,7 @@ nouvelles	nouveau	ADJ
 affaires	affaire	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cette	ce	DET
+cette	ce	DET
 situation	situation	NOUN
 ,	,	PUNCTclause
 cependant	cependant	ADV
@@ -2974,10 +2974,10 @@ viendraient	venir	VERB
 se	se	PRON
 produire	produire	VERB
 .	.	PUNCTsent
-Peut-être	peut-être	ADV
+peut-être	peut-être	ADV
 cet	ce	DET
 aventureux	aventureux	ADJ
-Yankee	Yankee	PROPN
+yankee	yankee	UNKNOWN
 ,	,	PUNCTclause
 transporté	transporter	VERB
 dans	dans	ADP
@@ -2999,9 +2999,9 @@ comme	comme	ADP
 il	il	PRON
 avait	avoir	AUX
 quitté	quitter	VERB
-Boston	Boston	PROPN
+boston	boston	UNKNOWN
 .	.	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 ,	,	PUNCTclause
 pourtant	pourtant	ADV
 ,	,	PUNCTclause
@@ -3044,7 +3044,7 @@ occasion	occasion	NOUN
 de	de	ADP
 réussir	réussir	VERB
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 il	il	PRON
 fallait	falloir	VERB
 avoir	avoir	VERB
@@ -3073,7 +3073,7 @@ l'	le	DET
 intelligence	intelligence	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 importe	importer	VERB
 de	de	ADP
 insister	insister	VERB
@@ -3093,7 +3093,7 @@ William	William	PROPN
 Andrew	Andrew	PROPN
 ,	,	PUNCTclause
 ni	ni	CCONJ
-personne	personne:PRON	PRON
+personne	personne_PRON	PRON
 ne	ne	ADV
 soupçonnaient	soupçonner	VERB
 rien	rien	PRON
@@ -3103,7 +3103,7 @@ de	de	ADP
 Len	Len	PROPN
 Burker	Burker	PROPN
 .	.	PUNCTsent
-Dans	dans	ADP
+dans	dans	ADP
 le	le	DET
 monde	monde	NOUN
 de	de	ADP
@@ -3140,7 +3140,7 @@ un	un	DET
 désastre	désastre	NOUN
 prochain	prochain	ADJ
 .	.	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 ,	,	PUNCTclause
 même	même	ADV
 ,	,	PUNCTclause
@@ -3184,7 +3184,7 @@ pour	pour	ADP
 se	se	PRON
 enrichir	enrichir	VERB
 .	.	PUNCTsent
-Aussi	aussi	ADV
+aussi	aussi	ADV
 ,	,	PUNCTclause
 sans	sans	ADP
 avoir	avoir	AUX
@@ -3241,7 +3241,7 @@ présentait	présenter	VERB
 quelque	quelque	DET
 circonstance	circonstance	NOUN
 où	où	PRON
-Dolly	Dolly	PROPN
+Dolly	Dolly	PRON
 serait	être	AUX
 forcée	forcer	VERB
 de	de	ADP
@@ -3251,12 +3251,12 @@ eux	eux	PRON
 ,	,	PUNCTclause
 elle	elle	PRON
 ne	ne	ADV
-le	le:PRON	PRON
+le	le_PRON	PRON
 ferait	faire	VERB
 pas	pas	ADV
 en vain	en vain	ADV
 .	.	PUNCTsent
-Leur	leur	DET
+leur	leur	DET
 maison	maison	NOUN
 lui	lui	PRON
 était	être	AUX
@@ -3281,7 +3281,7 @@ une	un	DET
 sœur	sœur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-À	à	ADP
+à	à	ADP
 ce	ce	DET
 sujet	sujet	NOUN
 ,	,	PUNCTclause
@@ -3330,7 +3330,7 @@ femmes	femme	NOUN
 ,	,	PUNCTclause
 Len	Len	PROPN
 Burker	Burker	PROPN
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avait	avoir	AUX
 encouragée	encourager	VERB
 ,	,	PUNCTclause
@@ -3352,7 +3352,7 @@ pourrait	pouvoir	VERB
 lui	lui	PRON
 rapporter	rapporter	VERB
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 savait	savoir	VERB
 ,	,	PUNCTclause
 d'ailleurs	d'ailleurs	ADV
@@ -3412,7 +3412,7 @@ commençait	commencer	VERB
 se	se	PRON
 débattre	débattre	VERB
 .	.	PUNCTsent
-Là-dessus	là-dessus	ADV
+là-dessus	là-dessus	ADV
 ,	,	PUNCTclause
 Jane	Jane	PROPN
 se	se	PRON
@@ -3428,7 +3428,7 @@ même	même	ADV
 une	un	DET
 récrimination	récrimination	NOUN
 .	.	PUNCTsent
-On	on	PRON
+on	on	PRON
 le	le	DET
 répète	répéter	VERB
 ,	,	PUNCTclause
@@ -3447,7 +3447,7 @@ influence	influence	NOUN
 bien	bien	ADV
 que	que	SCONJ
 elle	elle	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 connût	connaître	VERB
 pour	pour	ADP
 un	un	DET
@@ -3473,7 +3473,7 @@ les	le	DET
 plus	plus	ADV
 impardonnables	impardonnable	ADJ
 .	.	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 ,	,	PUNCTclause
 après	après	ADP
 tant de	tant de	DET
@@ -3489,7 +3489,7 @@ la	le	DET
 moindre	moindre	ADJ
 estime	estime	NOUN
 ?	?	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 —	—	PUNCTclause
 on	on	PRON
 ne	ne	ADV
@@ -3502,7 +3502,7 @@ point	point	NOUN
 essentiel	essentiel	ADJ
 —	—	PUNCTclause
 elle	elle	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 redoutait	redouter	VERB
 ,	,	PUNCTclause
 elle	elle	PRON
@@ -3525,7 +3525,7 @@ de	de	ADP
 lui	lui	PRON
 ,	,	PUNCTclause
 elle	elle	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 suivrait	suivre	VERB
 encore	encore	ADV
 ,	,	PUNCTclause
@@ -3545,7 +3545,7 @@ partie	partie	NOUN
 du	du	ADP_DET
 monde	monde	NOUN
 .	.	PUNCTsent
-Enfin	enfin	ADV
+enfin	enfin	ADV
 ,	,	PUNCTclause
 ne	ne	ADV
 fût	être	AUX
@@ -3576,7 +3576,7 @@ cousine	cousin	NOUN
 Dolly	Dolly	PROPN
 ,	,	PUNCTclause
 qui	qui	PRON
-les	le:PRON	PRON
+les	le_PRON	PRON
 soupçonnait	soupçonner	VERB
 peut-être	peut-être	ADV
 ,	,	PUNCTclause
@@ -3625,7 +3625,7 @@ vont	aller	VERB
 être	être	AUX
 relatés	relater	VERB
 .	.	PUNCTsent
-Dans	dans	ADP
+dans	dans	ADP
 quelle	quel	DET
 mesure	mesure	NOUN
 ces	ce	DET
@@ -3650,7 +3650,7 @@ soudainement	soudainement	ADV
 se	se	PRON
 produire	produire	VERB
 ?	?	PUNCTsent
-Personne	personne:PRON	PRON
+personne	personne_PRON	PRON
 ne	ne	ADV
 eût	avoir	AUX
 jamais	jamais	ADV

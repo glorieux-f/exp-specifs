@@ -5,12 +5,12 @@
 # isPartOf = Le compagnon du tour de France
 # title = Chapitre XV.
 
-↵↵↵	↵↵↵	PUNCTstruct
-Chapitre	chapitre	NOUN
-		TOKEN
+↵↵	↵↵	PUNCTstruct
+chapitre	chapitre	NOUN
+XV	XV	NUM
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 récit	récit	NOUN
 de	de	ADP
 ce	ce	DET
@@ -27,14 +27,14 @@ donna	donner	VERB
 du	du	ADP_DET
 courage	courage	NOUN
 au	au	ADP_DET
-Corinthien	Corinthien	PROPN
+corinthien	corinthien	UNKNOWN
 ,	,	PUNCTclause
 et	et	CCONJ
 hâta	hâter	VERB
 sa	son	DET
 guérison	guérison	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 fixa	fixer	VERB
 au	au	ADP_DET
 jour	jour	NOUN
@@ -59,7 +59,7 @@ et	et	CCONJ
 de	de	ADP
 résignation	résignation	NOUN
 .	.	PUNCTsent
-Pierre	pierre	NOUN
+Pierre	Pierre	PROPN
 ,	,	PUNCTclause
 sans	sans	ADP
 cesser	cesser	VERB
@@ -83,7 +83,7 @@ compagnon	compagnon	NOUN
 pour	pour	ADP
 escorter	escorter	VERB
 le	le	DET
-Corinthien	Corinthien	PROPN
+corinthien	corinthien	UNKNOWN
 dans	dans	ADP
 sa	son	DET
 route	route	NOUN
@@ -94,7 +94,7 @@ aider	aider	VERB
 son	son	DET
 ouvrage	ouvrage	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 était	être	AUX
 pas	pas	ADV
@@ -124,7 +124,7 @@ compter	compter	VERB
 pour	pour	ADP
 deux	deux	NUM
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 fallait	falloir	VERB
 que	que	SCONJ
@@ -140,8 +140,8 @@ tailler	tailler	VERB
 et	et	CCONJ
 débillarder	débillarder	VERB
 .	.	PUNCTsent
-Le	le	DET
-Dignitaire	Dignitaire	PROPN
+le	le	DET
+dignitaire	dignitaire	UNKNOWN
 lui	lui	PRON
 présenta	présenter	VERB
 un	un	DET
@@ -158,7 +158,7 @@ beau	beau	ADJ
 ,	,	PUNCTclause
 quoique	quoique	SCONJ
 on	on	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 appelât	appeler	VERB
 ,	,	PUNCTclause
 par	par	ADP
@@ -187,9 +187,9 @@ tous	tout	ADJ
 les	le	DET
 compagnons	compagnon	NOUN
 .	.	PUNCTsent
-Cet	ce	DET
+cet	ce	DET
 utile	utile	ADJ
-Berrichon	Berrichon	PROPN
+berrichon	berrichon	UNKNOWN
 ,	,	PUNCTclause
 trouvé	trouver	VERB
 ,	,	PUNCTclause
@@ -246,7 +246,7 @@ quittait	quitter	VERB
 et	et	CCONJ
 chez	chez	ADP
 la	le	DET
-Mère	Mère	NOUN
+mère	mère	NOUN
 ,	,	PUNCTclause
 que	que	SCONJ
 il	il	PRON
@@ -268,7 +268,7 @@ tint	tenir	VERB
 prêt à	prêt à	ADP
 partir	partir	VERB
 .	.	PUNCTsent
-Pierre	pierre	NOUN
+Pierre	Pierre	PROPN
 fit	faire	VERB
 encore	encore	ADV
 ,	,	PUNCTclause
@@ -308,7 +308,7 @@ en	en	ADP
 route	route	NOUN
 pour	pour	ADP
 le	le	DET
-Berceau	Berceau	PROPN
+berceau	berceau	UNKNOWN
 de	de	ADP
 la	le	DET
 sagesse	sagesse	NOUN
@@ -316,7 +316,7 @@ sagesse	sagesse	NOUN
 accompagné	accompagner	VERB
 de	de	ADP
 son	son	DET
-Berrichon	Berrichon	PROPN
+berrichon	berrichon	UNKNOWN
 ,	,	PUNCTclause
 et	et	CCONJ
 le	le	DET
@@ -328,14 +328,14 @@ accablé	accabler	VERB
 que	que	SCONJ
 il	il	PRON
 ne	ne	ADV
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avait	avoir	AUX
 eu	avoir	VERB
 les	le	DET
 jours	jour	NOUN
 précédents	précédent	ADJ
 .	.	PUNCTsent
-Chemin	chemin	NOUN
+chemin	chemin	NOUN
 faisant	faire	VERB
 ,	,	PUNCTclause
 il	il	PRON
@@ -369,7 +369,7 @@ avec	avec	ADP
 maître	maître	NOUN
 Huguenin	Huguenin	PROPN
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 Clef-des-cœurs	Clef-des-cœurs	PROPN
 était	être	AUX
 ,	,	PUNCTclause
@@ -386,7 +386,7 @@ diplomate	diplomate	NOUN
 très	très	ADV
 gauche	gauche	ADJ
 .	.	PUNCTsent
-À	à	ADP
+à	à	ADP
 cette	ce	DET
 ingénuité	ingénuité	NOUN
 parfaite	parfait	ADJ
@@ -409,11 +409,11 @@ une	un	DET
 affaire	affaire	NOUN
 délicate	délicat	ADJ
 .	.	PUNCTsent
-Pierre	pierre	NOUN
+Pierre	Pierre	PROPN
 ,	,	PUNCTclause
 qui	qui	PRON
 ne	ne	ADV
-le	le:PRON	PRON
+le	le_PRON	PRON
 connaissait	connaître	VERB
 pas	pas	ADV
 ,	,	PUNCTclause
@@ -424,9 +424,9 @@ peu de	peu de	DET
 ses	son	DET
 promesses	promesse	NOUN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 le	le	DET
-Berrichon	Berrichon	PROPN
+berrichon	berrichon	UNKNOWN
 y	y	PRON
 revint	revenir	VERB
 avec	avec	ADP
@@ -441,10 +441,10 @@ en	en	ADP
 lui-même	lui-même	PRON
 tout	tout	ADV
 en	en	ADP
-le	le:PRON	PRON
+le	le_PRON	PRON
 regardant	regarder	VERB
 :	:	PUNCTclause
-On	on	PRON
+on	on	PRON
 a	avoir	AUX
 vu	voir	VERB
 quelquefois	quelquefois	ADV

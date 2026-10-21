@@ -5,17 +5,17 @@
 # isPartOf = La Jangada
 # title = Chapitre XX. Entre ces deux hommes
 
-↵↵↵	↵↵↵	PUNCTstruct
-Chapitre	chapitre	NOUN
-		TOKEN
+↵↵	↵↵	PUNCTstruct
+chapitre	chapitre	NOUN
+XX	XX	X
 .	.	PUNCTsent
-Entre	entre	ADP
+entre	entre	ADP
 ces	ce	DET
 deux	deux	NUM
 hommes	homme	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Depuis	depuis	ADP
+depuis	depuis	ADP
 un	un	DET
 instant	instant	NOUN
 ,	,	PUNCTclause
@@ -24,7 +24,7 @@ dans	dans	ADP
 cette	ce	DET
 chambre	chambre	NOUN
 où	où	PRON
-personne	personne:PRON	PRON
+personne	personne_PRON	PRON
 ne	ne	ADV
 pouvait	pouvoir	VERB
 ni	ni	CCONJ
@@ -55,7 +55,7 @@ donc	donc	ADV
 à	à	ADP
 parler	parler	VERB
 ?	?	PUNCTsent
-Comprenait	comprendre	VERB
+comprenait	comprendre	VERB
 il	il	PRON
 que	que	PRON
 Joam	Joam	PROPN
@@ -75,11 +75,11 @@ seraient	être	AUX
 faites	faire	VERB
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Oui	oui	INTJ
+oui	oui	INTJ
 ,	,	PUNCTclause
 sans doute	sans doute	ADV
 !	!	PUNCTsent
-Aussi	aussi	ADV
+aussi	aussi	ADV
 ,	,	PUNCTclause
 Torrès	Torrès	PROPN
 ne	ne	ADV
@@ -87,7 +87,7 @@ interrogea	interroger	VERB
 il	il	PRON
 pas	pas	ADV
 .	.	PUNCTsent
-Au	au	ADP_DET
+au	au	ADP_DET
 début	début	NOUN
 de	de	ADP
 cette	ce	DET
@@ -107,7 +107,7 @@ accusateur	accusateur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Joam	Joam	PROPN
+Joam	Joam	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 il	il	PRON
@@ -117,7 +117,7 @@ ne	ne	ADV
 vous	vous	PRON
 appelez	appeler	VERB
 pas	pas	ADV
-Garral	Garral	PROPN
+Garral	Garral	ADJ
 ,	,	PUNCTclause
 vous	vous	PRON
 vous	vous	PRON
@@ -126,14 +126,14 @@ Dacosta	Dacosta	PROPN
 .	.	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-À	à	ADP
+à	à	ADP
 ce	ce	DET
 nom	nom	NOUN
 criminel	criminel	ADJ
 que	que	PRON
 lui	lui	PRON
 donnait	donner	VERB
-Torrès	Torrès	PROPN
+Torrès	Torrès	ADV
 ,	,	PUNCTclause
 Joam	Joam	PROPN
 Garral	Garral	PROPN
@@ -152,13 +152,13 @@ rien	rien	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Vous	vous	PRON
+vous	vous	PRON
 êtes	être	AUX
 Joam	Joam	PROPN
 Dacosta	Dacosta	PROPN
 ,	,	PUNCTclause
 reprit	reprendre	VERB
-Torrès	Torrès	PROPN
+Torrès	Torrès	ADV
 ,	,	PUNCTclause
 employé	employer	VERB
 ,	,	PUNCTclause
@@ -193,7 +193,7 @@ assassinat	assassinat	NOUN
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Nulle	nul	ADJ
+nulle	nul	ADJ
 réponse	réponse	NOUN
 de	de	ADP
 Joam	Joam	PROPN
@@ -210,7 +210,7 @@ surprendre	surprendre	VERB
 l'	le	DET
 aventurier	aventurier	NOUN
 .	.	PUNCTsent
-Celui	celui	PRON
+celui	celui	PRON
 se	se	PRON
 trompait	tromper	VERB
 il	il	PRON
@@ -220,7 +220,7 @@ accusant	accuser	VERB
 son	son	DET
 hôte	hôte	NOUN
 ?	?	PUNCTsent
-Non	non	ADV
+non	non	ADV
 !	!	PUNCTsent
 puisque	puisque	SCONJ
 Joam	Joam	PROPN
@@ -242,18 +242,18 @@ où	où	PRON
 en	en	PRON
 voulait	vouloir	VERB
 venir	venir	VERB
-Torrès	Torrès	PROPN
+Torrès	Torrès	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Joam	Joam	PROPN
+Joam	Joam	NOUN
 Dacosta	Dacosta	PROPN
 ,	,	PUNCTclause
 reprit	reprendre	VERB
 celui	celui	PRON
 ,	,	PUNCTclause
 je	je	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 répète	répéter	VERB
 ,	,	PUNCTclause
 ce	ce	PRON
@@ -297,12 +297,12 @@ avant	avant	ADP
 l'	le	DET
 exécution	exécution	NOUN
 !	!	PUNCTsent
-Répondrez	répondre	VERB
+répondrez	répondre	VERB
 vous	vous	PRON
 ?	?	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Un	un	DET
+un	un	DET
 assez	assez	ADV
 long	long	ADJ
 silence	silence	NOUN
@@ -316,7 +316,7 @@ de	de	ADP
 faire	faire	VERB
 Torrès	Torrès	PROPN
 .	.	PUNCTsent
-Joam	Joam	PROPN
+Joam	Joam	NOUN
 Garral	Garral	PROPN
 ,	,	PUNCTclause
 toujours	toujours	ADV
@@ -327,7 +327,7 @@ allé	aller	VERB
 se	se	PRON
 asseoir	asseoir	VERB
 .	.	PUNCTsent
-Son	son	DET
+son	son	DET
 coude	coude	NOUN
 reposait	reposer	VERB
 sur	sur	ADP
@@ -349,7 +349,7 @@ tête	tête	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Répondrez	répondre	VERB
+répondrez	répondre	VERB
 vous	vous	PRON
 ?	?	PUNCTsent
 reprit	reprendre	VERB
@@ -357,7 +357,7 @@ Torrès	Torrès	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Quelle	quel	DET
+quelle	quel	DET
 réponse	réponse	NOUN
 attendez	attendre	VERB
 vous	vous	PRON
@@ -371,12 +371,12 @@ Garral	Garral	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Une	un	DET
+une	un	DET
 réponse	réponse	NOUN
 ,	,	PUNCTclause
 répliqua	répliquer	VERB
 lentement	lentement	ADV
-Torrès	Torrès	PROPN
+Torrès	Torrès	ADV
 ,	,	PUNCTclause
 qui	qui	PRON
 me	me	PRON
@@ -396,7 +396,7 @@ de	de	ADP
 lui	lui	PRON
 dire	dire	VERB
 :	:	PUNCTclause
-Un	un	DET
+un	un	DET
 homme	homme	NOUN
 est	être	AUX
 là	là	ADV
@@ -473,7 +473,7 @@ Dacosta	Dacosta	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Ainsi	ainsi	ADV
+ainsi	ainsi	ADV
 ,	,	PUNCTclause
 dit	dire	VERB
 Joam	Joam	PROPN
@@ -488,7 +488,7 @@ craindre	craindre	VERB
 de	de	ADP
 vous	vous	PRON
 ,	,	PUNCTclause
-Torrès	Torrès	PROPN
+Torrès	Torrès	ADV
 ,	,	PUNCTclause
 si	si	SCONJ
 je	je	PRON
@@ -502,7 +502,7 @@ attendez	attendre	VERB
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Rien	rien	PRON
+rien	rien	PRON
 ,	,	PUNCTclause
 car	car	CCONJ
 alors	alors	ADV
@@ -523,7 +523,7 @@ cette	ce	DET
 affaire	affaire	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ni	ni	CCONJ
+ni	ni	CCONJ
 vous	vous	PRON
 ,	,	PUNCTclause
 ni	ni	CCONJ
@@ -533,7 +533,7 @@ répondit	répondre	VERB
 Joam	Joam	PROPN
 Garral	Garral	PROPN
 .	.	PUNCTsent
-Ce	ce	PRON
+ce	ce	PRON
 ne	ne	ADV
 est	être	AUX
 donc	donc	ADV
@@ -551,7 +551,7 @@ silence	silence	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	non	ADV
+non	non	ADV
 ,	,	PUNCTclause
 quelle	quel	DET
 que	que	SCONJ
@@ -565,18 +565,18 @@ offriez	offrir	VERB
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Que	que	SCONJ
+que	que	SCONJ
 voulez	vouloir	VERB
 vous	vous	PRON
 donc	donc	ADV
 alors	alors	ADV
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Joam	Joam	PROPN
+Joam	Joam	NOUN
 Garral	Garral	PROPN
 ,	,	PUNCTclause
 répondit	répondre	VERB
-Torrès	Torrès	PROPN
+Torrès	Torrès	ADV
 ,	,	PUNCTclause
 voici	voici	ADP
 quelle	quel	DET
@@ -584,7 +584,7 @@ est	être	AUX
 ma	mon	DET
 proposition	proposition	NOUN
 .	.	PUNCTsent
-Ne	ne	ADV
+ne	ne	ADV
 vous	vous	PRON
 hâtez	hâter	VERB
 pas	pas	ADV
@@ -607,7 +607,7 @@ mon	mon	DET
 pouvoir	pouvoir	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Quelle	quel	DET
+quelle	quel	DET
 est	être	AUX
 cette	ce	DET
 proposition	proposition	NOUN
@@ -618,7 +618,7 @@ Joam	Joam	PROPN
 Garral	Garral	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Torrès	Torrès	PROPN
+Torrès	Torrès	ADV
 se	se	PRON
 recueillit	recueillir	VERB
 un	un	DET
@@ -643,7 +643,7 @@ pour	pour	ADP
 le	le	DET
 surprendre	surprendre	VERB
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 se	se	PRON
 attendait	attendre	VERB
 à	à	ADP
@@ -659,7 +659,7 @@ supplications	supplication	NOUN
 des	un	DET
 larmes	larme	NOUN
 …	…	PUNCTsent
-Il	il	PRON
+il	il	PRON
 avait	avoir	VERB
 devant	devant	ADP
 lui	lui	PRON
@@ -678,7 +678,7 @@ ne	ne	ADV
 bronchait	broncher	VERB
 pas	pas	ADV
 .	.	PUNCTsent
-Enfin	enfin	ADV
+enfin	enfin	ADV
 ,	,	PUNCTclause
 se	se	PRON
 croisant	croiser	VERB
@@ -687,7 +687,7 @@ bras	bras	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Vous	vous	PRON
+vous	vous	PRON
 avez	avoir	VERB
 une	un	DET
 fille	fille	NOUN
@@ -695,7 +695,7 @@ fille	fille	NOUN
 dit	dire	VERB
 il	il	PRON
 .	.	PUNCTsent
-Cette	ce	DET
+cette	ce	DET
 fille	fille	NOUN
 me	me	PRON
 plaît	plaire	VERB
@@ -735,7 +735,7 @@ calme	calme	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Ainsi	ainsi	ADV
+ainsi	ainsi	ADV
 ,	,	PUNCTclause
 dit	dire	VERB
 il	il	PRON
@@ -758,7 +758,7 @@ voleur	voleur	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 suis	être	AUX
 seul	seul	ADJ
 juge	juge	NOUN
@@ -774,7 +774,7 @@ faire	faire	VERB
 répondit	répondre	VERB
 Torrès	Torrès	PROPN
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 veux	vouloir	VERB
 être	être	AUX
 le	le	DET
@@ -785,18 +785,18 @@ Garral	Garral	PROPN
 ,	,	PUNCTclause
 et	et	CCONJ
 je	je	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 serai	être	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Vous	vous	PRON
+vous	vous	PRON
 ne	ne	ADV
 ignorez	ignorer	VERB
 pourtant	pourtant	ADV
 pas	pas	ADV
 ,	,	PUNCTclause
-Torrès	Torrès	PROPN
+Torrès	Torrès	ADV
 ,	,	PUNCTclause
 que	que	SCONJ
 ma	mon	DET
@@ -808,7 +808,7 @@ Valdez	Valdez	PROPN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Vous	vous	PRON
+vous	vous	PRON
 vous	vous	PRON
 dégagerez	dégager	VERB
 vis-à-vis de	vis-à-vis de	ADP
@@ -817,7 +817,7 @@ Valdez	Valdez	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 si	si	SCONJ
 ma	mon	DET
 fille	fille	NOUN
@@ -825,7 +825,7 @@ refuse	refuser	VERB
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Vous	vous	PRON
+vous	vous	PRON
 lui	lui	PRON
 direz	dire	VERB
 tout	tout	ADV
@@ -833,7 +833,7 @@ tout	tout	ADV
 et	et	CCONJ
 ,	,	PUNCTclause
 je	je	PRON
-la	le:PRON	PRON
+la	le_PRON	PRON
 connais	connaître	VERB
 ,	,	PUNCTclause
 elle	elle	PRON
@@ -841,22 +841,22 @@ consentira	consentir	VERB
 ,	,	PUNCTclause
 répondit	répondre	VERB
 impudemment	impudemment	ADV
-Torrès	Torrès	PROPN
+Torrès	Torrès	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Tout	tout	PRON
+tout	tout	PRON
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Tout	tout	PRON
+tout	tout	PRON
 ,	,	PUNCTclause
 si	si	SCONJ
 il	il	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 faut	falloir	VERB
 .	.	PUNCTsent
-Entre	entre	ADP
+entre	entre	ADP
 ses	son	DET
 propres	propre	ADJ
 sentiments	sentiment	NOUN
@@ -880,7 +880,7 @@ pas	pas	ADV
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Vous	vous	PRON
+vous	vous	PRON
 êtes	être	AUX
 un	un	DET
 bien	bien	NOUN
@@ -903,7 +903,7 @@ pas	pas	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Un	un	DET
+un	un	DET
 misérable	misérable	NOUN
 et	et	CCONJ
 un	un	DET
@@ -915,7 +915,7 @@ se	se	PRON
 entendre	entendre	VERB
 !	!	PUNCTsent
 »	»	PUNCTclause
-À	à	ADP
+à	à	ADP
 ces	ce	DET
 mots	mot	NOUN
 ,	,	PUNCTclause
@@ -938,7 +938,7 @@ en face	en face	ADV
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Torrès	Torrès	PROPN
+Torrès	Torrès	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 il	il	PRON
@@ -976,11 +976,11 @@ condamné	condamner	VERB
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Vraiment	vraiment	ADV
+vraiment	vraiment	ADV
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 je	je	PRON
 ajoute	ajouter	VERB
 ,	,	PUNCTclause
@@ -1022,7 +1022,7 @@ fille	fille	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Jouons	jouer	VERB
+jouons	jouer	VERB
 franc	franc	NOUN
 jeu	jeu	NOUN
 ,	,	PUNCTclause
@@ -1030,7 +1030,7 @@ Joam	Joam	PROPN
 Garral	Garral	PROPN
 ,	,	PUNCTclause
 répondit	répondre	VERB
-Torrès	Torrès	PROPN
+Torrès	Torrès	ADV
 en	en	ADP
 baissant	baisser	VERB
 la	le	DET
@@ -1056,7 +1056,7 @@ fille	fille	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 vous	vous	PRON
 écoute	écouter	VERB
 ,	,	PUNCTclause
@@ -1100,8 +1100,8 @@ vous	vous	PRON
 êtes	être	AUX
 innocent	innocent	ADJ
 !	!	PUNCTsent
-Je	je	PRON
-le	le:PRON	PRON
+je	je	PRON
+le	le_PRON	PRON
 sais	savoir	VERB
 ,	,	PUNCTclause
 car	car	CCONJ
@@ -1123,7 +1123,7 @@ innocence	innocence	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 le	le	DET
 misérable	misérable	NOUN
 qui	qui	PRON
@@ -1134,13 +1134,13 @@ crime	crime	NOUN
 ?…	?…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Il	il	PRON
+il	il	PRON
 est	être	AUX
 mort	mourir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mort	mort	NOUN
+mort	mort	NOUN
 !	!	PUNCTsent
 se	se	PRON
 écria	écrier	VERB
@@ -1170,10 +1170,10 @@ réhabiliter	réhabiliter	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mort	mort	NOUN
+mort	mort	NOUN
 ,	,	PUNCTclause
 répondit	répondre	VERB
-Torrès	Torrès	PROPN
+Torrès	Torrès	ADV
 ;	;	PUNCTclause
 mais	mais	CCONJ
 cet	ce	DET
@@ -1223,7 +1223,7 @@ aux	au	ADP_DET
 moindres	moindre	ADJ
 détails	détail	NOUN
 .	.	PUNCTsent
-Sentant	sentir	VERB
+sentant	sentir	VERB
 sa	son	DET
 fin	fin	NOUN
 approcher	approcher	VERB
@@ -1234,7 +1234,7 @@ pris	prendre	VERB
 de	de	ADP
 remords	remords	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 savait	savoir	VERB
 où	où	PRON
 se	se	PRON
@@ -1255,7 +1255,7 @@ une	un	DET
 vie	vie	NOUN
 nouvelle	nouveau	ADJ
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 savait	savoir	VERB
 que	que	SCONJ
 il	il	PRON
@@ -1299,7 +1299,7 @@ il	il	PRON
 avait	avoir	AUX
 droit	droit	NOUN
 !…	!…	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 la	le	DET
 mort	mort	NOUN
 venait	venir	VERB
@@ -1323,7 +1323,7 @@ pourrait	pouvoir	VERB
 plus	plus	ADV
 faire	faire	VERB
 !…	!…	PUNCTsent
-Il	il	PRON
+il	il	PRON
 me	me	PRON
 remit	remettre	VERB
 les	le	DET
@@ -1345,7 +1345,7 @@ mourut	mourir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Le	le:PRON	PRON
+le	le_PRON	PRON
 nom	nom	NOUN
 de	de	ADP
 cet	ce	DET
@@ -1367,8 +1367,8 @@ maîtriser	maîtriser	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Vous	vous	PRON
-le	le:PRON	PRON
+vous	vous	PRON
+le	le_PRON	PRON
 saurez	savoir	VERB
 ,	,	PUNCTclause
 quand	quand	SCONJ
@@ -1380,13 +1380,13 @@ famille	famille	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 cet	ce	DET
 écrit	écrit	NOUN
 ?…	?…	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Joam	Joam	PROPN
+Joam	Joam	VERB
 Garral	Garral	PROPN
 fut	être	AUX
 sur le point de	sur le point de	ADP
@@ -1410,7 +1410,7 @@ innocence	innocence	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Cet	ce	DET
+cet	ce	DET
 écrit	écrit	NOUN
 ,	,	PUNCTclause
 il	il	PRON
@@ -1425,7 +1425,7 @@ Torrès	Torrès	PROPN
 et	et	CCONJ
 vous	vous	PRON
 ne	ne	ADV
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 aurez	avoir	VERB
 que	que	SCONJ
 après que	après que	SCONJ
@@ -1436,7 +1436,7 @@ devenue	devenir	VERB
 ma	mon	DET
 femme	femme	NOUN
 .	.	PUNCTsent
-Maintenant	maintenant	ADV
+maintenant	maintenant	ADV
 ,	,	PUNCTclause
 me	me	PRON
 la	le	DET
@@ -1446,13 +1446,13 @@ encore	encore	ADV
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Oui	oui	INTJ
+oui	oui	INTJ
 ,	,	PUNCTclause
 répondit	répondre	VERB
 Joam	Joam	PROPN
 Garral	Garral	PROPN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 en	en	ADP
 échange	échange	NOUN
@@ -1471,7 +1471,7 @@ vous	vous	PRON
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-La	le	DET
+la	le	DET
 moitié	moitié	NOUN
 de	de	ADP
 votre	votre	DET
@@ -1479,9 +1479,9 @@ fortune	fortune	NOUN
 !	!	PUNCTsent
 se	se	PRON
 écria	écrier	VERB
-Torrès	Torrès	PROPN
+Torrès	Torrès	ADV
 !	!	PUNCTsent
-Je	je	PRON
+je	je	PRON
 l'	le	DET
 accepte	accepter	VERB
 ,	,	PUNCTclause
@@ -1498,7 +1498,7 @@ mariage	mariage	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 ce	ce	PRON
 est	être	AUX
 ainsi	ainsi	ADV
@@ -1567,11 +1567,11 @@ misérable	misérable	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Soit	soit	ADV
+soit	soit	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 ,	,	PUNCTclause
 comme	comme	SCONJ
 je	je	PRON
@@ -1594,14 +1594,14 @@ entendre	entendre	VERB
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Ainsi	ainsi	ADV
+ainsi	ainsi	ADV
 ,	,	PUNCTclause
 vous	vous	PRON
 refusez	refuser	VERB
 ?…	?…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 refuse	refuser	VERB
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -1616,7 +1616,7 @@ alors	alors	ADV
 Joam	Joam	PROPN
 Garral	Garral	PROPN
 .	.	PUNCTsent
-Tout	tout	PRON
+tout	tout	PRON
 vous	vous	PRON
 accuse	accuser	VERB
 dans	dans	ADP
@@ -1625,7 +1625,7 @@ instruction	instruction	NOUN
 déjà	déjà	ADV
 faite	faire	VERB
 !	!	PUNCTsent
-Vous	vous	PRON
+vous	vous	PRON
 êtes	être	AUX
 condamné	condamner	VERB
 à	à	ADP
@@ -1634,7 +1634,7 @@ mort	mort	NOUN
 et	et	CCONJ
 ,	,	PUNCTclause
 vous	vous	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 savez	savoir	VERB
 ,	,	PUNCTclause
 dans	dans	ADP
@@ -1657,13 +1657,13 @@ commuer	commuer	VERB
 les	le	DET
 peines	peine	NOUN
 .	.	PUNCTsent
-Dénoncé	dénoncer	VERB
+dénoncé	dénoncer	VERB
 ,	,	PUNCTclause
 vous	vous	PRON
 êtes	être	AUX
 pris	prendre	VERB
 !	!	PUNCTsent
-Pris	prendre	VERB
+pris	prendre	VERB
 ,	,	PUNCTclause
 vous	vous	PRON
 êtes	être	AUX
@@ -1676,7 +1676,7 @@ dénonce	dénoncer	VERB
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Si	si	ADV
+si	si	ADV
 maître	maître	NOUN
 que	que	SCONJ
 il	il	PRON
@@ -1692,7 +1692,7 @@ plus	plus	ADV
 se	se	PRON
 contenir	contenir	VERB
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 allait	aller	VERB
 se	se	PRON
 élancer	élancer	VERB
@@ -1700,7 +1700,7 @@ sur	sur	ADP
 Torrès	Torrès	PROPN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Un	un	DET
+un	un	DET
 geste	geste	NOUN
 de	de	ADP
 ce	ce	PRON
@@ -1712,13 +1712,13 @@ colère	colère	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Prenez	prendre	VERB
+prenez	prendre	VERB
 garde	garde	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 Torrès	Torrès	PROPN
 .	.	PUNCTsent
-Votre	votre	DET
+votre	votre	DET
 femme	femme	NOUN
 ne	ne	ADV
 sait	savoir	VERB
@@ -1749,18 +1749,18 @@ Dacosta	Dacosta	PROPN
 et	et	CCONJ
 vous	vous	PRON
 allez	aller	VERB
-le	le:PRON	PRON
+le	le_PRON	PRON
 leur	leur	PRON
 apprendre	apprendre	VERB
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Joam	Joam	PROPN
+Joam	Joam	VERB
 Garral	Garral	PROPN
 se	se	PRON
 arrêta	arrêter	VERB
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 reprit	reprendre	VERB
 tout	tout	ADV
 son	son	DET
@@ -1778,7 +1778,7 @@ habituel	habituel	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Cette	ce	DET
+cette	ce	DET
 discussion	discussion	NOUN
 a	avoir	AUX
 trop	trop	ADV
@@ -1804,7 +1804,7 @@ reste	rester	VERB
 faire	faire	VERB
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Prenez	prendre	VERB
+prenez	prendre	VERB
 garde	garde	NOUN
 ,	,	PUNCTclause
 Joam	Joam	PROPN
@@ -1831,14 +1831,14 @@ eût	avoir	AUX
 échoué	échouer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Joam	Joam	PROPN
+Joam	Joam	NOUN
 Garral	Garral	PROPN
 ne	ne	ADV
 lui	lui	PRON
 répondit	répondre	VERB
 pas	pas	ADV
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 repoussa	repousser	VERB
 la	le	DET
 porte	porte	NOUN
@@ -1876,7 +1876,7 @@ famille	famille	NOUN
 réunie	réunir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Benito	Benito	PROPN
+Benito	Benito	NOUN
 ,	,	PUNCTclause
 Manoel	Manoel	PROPN
 ,	,	PUNCTclause
@@ -1894,7 +1894,7 @@ se	se	PRON
 étaient	être	AUX
 levés	lever	VERB
 .	.	PUNCTsent
-Ils	ils	PRON
+ils	ils	PRON
 pouvaient	pouvoir	VERB
 voir	voir	VERB
 que	que	SCONJ
@@ -1919,7 +1919,7 @@ ses	son	DET
 yeux	œil	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Par	par	ADP
+par	par	ADP
 un	un	DET
 extraordinaire	extraordinaire	ADJ
 contraste	contraste	NOUN
@@ -1942,7 +1942,7 @@ Yaquita	Yaquita	PROPN
 et	et	CCONJ
 les siens	les siens	PRON
 .	.	PUNCTsent
-Personne	personne:PRON	PRON
+personne	personne_PRON	PRON
 ne	ne	ADV
 osait	oser	VERB
 leur	leur	DET
@@ -1950,7 +1950,7 @@ adresser	adresser	VERB
 la	le	DET
 parole	parole	NOUN
 .	.	PUNCTsent
-Ce	ce	PRON
+ce	ce	PRON
 fut	être	AUX
 Torrès	Torrès	PROPN
 qui	qui	PRON
@@ -1971,7 +1971,7 @@ pénible	pénible	ADJ
 silence	silence	NOUN
 .	.	PUNCTsent
 «	«	PUNCTclause
-Une	un	DET
+une	un	DET
 dernière	dernier	ADJ
 fois	fois	NOUN
 ,	,	PUNCTclause
@@ -1989,7 +1989,7 @@ dernière	dernier	ADJ
 réponse	réponse	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ma	mon	DET
+ma	mon	DET
 réponse	réponse	NOUN
 ,	,	PUNCTclause
 la	le	DET
@@ -1997,7 +1997,7 @@ voici	voici	ADP
 .	.	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 se	se	PRON
 adressant	adresser	VERB
 à	à	ADP
@@ -2005,7 +2005,7 @@ sa	son	DET
 femme	femme	NOUN
 :	:	PUNCTclause
 «	«	PUNCTsent
-Yaquita	Yaquita	PROPN
+Yaquita	Yaquita	VERB
 ,	,	PUNCTclause
 dit	dire	VERB
 il	il	PRON
@@ -2033,14 +2033,14 @@ de	de	ADP
 Manoel	Manoel	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Enfin	enfin	ADV
+enfin	enfin	ADV
 !	!	PUNCTsent
 »	»	PUNCTclause
 se	se	PRON
 écria	écrier	VERB
-Torrès	Torrès	PROPN
+Torrès	Torrès	ADV
 .	.	PUNCTsent
-Joam	Joam	PROPN
+Joam	Joam	NOUN
 Garral	Garral	PROPN
 ,	,	PUNCTclause
 sans	sans	ADP
@@ -2060,7 +2060,7 @@ profond	profond	ADJ
 dédain	dédain	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 à	à	ADP
 ces	ce	DET
@@ -2076,7 +2076,7 @@ battre	battre	VERB
 se	se	PRON
 rompre	rompre	VERB
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 jeune	jeune	ADJ
 fille	fille	NOUN
 se	se	PRON
@@ -2097,7 +2097,7 @@ du côté de	du côté de	ADP
 sa	son	DET
 mère	mère	NOUN
 .	.	PUNCTsent
-Yaquita	Yaquita	PROPN
+Yaquita	Yaquita	VERB
 lui	lui	PRON
 ouvrait	ouvrir	VERB
 ses	son	DET
@@ -2112,7 +2112,7 @@ défendre	défendre	VERB
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Mon	mon	DET
+mon	mon	DET
 père	père	NOUN
 !	!	PUNCTsent
 se	se	PRON
@@ -2137,7 +2137,7 @@ dire	dire	VERB
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 veux	vouloir	VERB
 dire	dire	VERB
 ,	,	PUNCTclause
@@ -2153,7 +2153,7 @@ attendre	attendre	VERB
 notre	notre	DET
 arrivée	arrivée	NOUN
 au	au	ADP_DET
-Para	Para	PROPN
+para	para	UNKNOWN
 pour	pour	ADP
 marier	marier	VERB
 Minha	Minha	PROPN
@@ -2165,7 +2165,7 @@ est	être	AUX
 trop	trop	ADV
 attendre	attendre	VERB
 !	!	PUNCTsent
-Le	le	DET
+le	le	DET
 mariage	mariage	NOUN
 se	se	PRON
 fera	faire	VERB
@@ -2228,7 +2228,7 @@ homme	homme	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Attends	attendre	VERB
+attends	attendre	VERB
 encore	encore	ADV
 pour	pour	ADP
 me	me	PRON
@@ -2247,7 +2247,7 @@ de	de	ADP
 indicible	indicible	ADJ
 souffrance	souffrance	NOUN
 .	.	PUNCTsent
-En	en	ADP
+en	en	ADP
 ce	ce	DET
 moment	moment	NOUN
 ,	,	PUNCTclause
@@ -2275,7 +2275,7 @@ sans	sans	ADP
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Ainsi	ainsi	ADV
+ainsi	ainsi	ADV
 ,	,	PUNCTclause
 ce	ce	PRON
 est	être	AUX
@@ -2295,7 +2295,7 @@ Garral	Garral	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	non	ADV
+non	non	ADV
 ,	,	PUNCTclause
 ce	ce	PRON
 ne	ne	ADV
@@ -2307,23 +2307,23 @@ mot	mot	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Quel	quel	DET
+quel	quel	DET
 est	être	AUX
 il	il	PRON
 donc	donc	ADV
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 voici	voici	ADP
 ,	,	PUNCTclause
 Torrès	Torrès	PROPN
 !	!	PUNCTsent
-Je	je	PRON
+je	je	PRON
 suis	être	AUX
 maître	maître	NOUN
 ici	ici	ADV
 !	!	PUNCTsent
-Vous	vous	PRON
+vous	vous	PRON
 allez	aller	VERB
 ,	,	PUNCTclause
 si	si	SCONJ
@@ -2345,7 +2345,7 @@ jangada	jangada	X
 à l'instant même	à l'instant même	ADV
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Oui	oui	INTJ
+oui	oui	INTJ
 ,	,	PUNCTclause
 à l'instant	à l'instant	ADV
 ,	,	PUNCTclause
@@ -2355,7 +2355,7 @@ Benito	Benito	PROPN
 ,	,	PUNCTclause
 on	on	PRON
 je	je	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 jette	jeter	VERB
 par-dessus	par-dessus	ADP
 le	le	DET
@@ -2363,14 +2363,14 @@ bord	bord	NOUN
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Torrès	Torrès	PROPN
+Torrès	Torrès	ADV
 haussa	hausser	VERB
 les	le	DET
 épaules	épaule	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Pas	pas	ADV
+pas	pas	ADV
 de	de	ADP
 menaces	menace	NOUN
 ,	,	PUNCTclause
@@ -2381,7 +2381,7 @@ elles	elles	PRON
 sont	être	AUX
 inutiles	inutile	ADJ
 !	!	PUNCTsent
-À	à	ADP
+à	à	ADP
 moi	moi	PRON
 aussi	aussi	ADV
 il	il	PRON
@@ -2393,7 +2393,7 @@ et	et	CCONJ
 sans	sans	ADP
 retard	retard	NOUN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 vous	vous	PRON
 vous	vous	PRON
 souviendrez	souvenir	VERB
@@ -2403,7 +2403,7 @@ moi	moi	PRON
 Joam	Joam	PROPN
 Garral	Garral	PROPN
 !	!	PUNCTsent
-Nous	nous	PRON
+nous	nous	PRON
 ne	ne	ADV
 serons	être	VERB
 pas	pas	ADV
@@ -2436,11 +2436,11 @@ peut-être	peut-être	ADV
 que	que	SCONJ
 vous	vous	PRON
 ne	ne	ADV
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 auriez	avoir	AUX
 voulu	vouloir	VERB
 !	!	PUNCTsent
-Je	je	PRON
+je	je	PRON
 serai	être	AUX
 demain	demain	ADV
 chez	chez	ADP
@@ -2467,9 +2467,9 @@ arrivée	arrivée	NOUN
 à	à	ADP
 Manao	Manao	PROPN
 .	.	PUNCTsent
-Si	si	SCONJ
+si	si	SCONJ
 vous	vous	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 osez	oser	VERB
 ,	,	PUNCTclause
 venez	venir	VERB
@@ -2479,19 +2479,19 @@ retrouver	retrouver	VERB
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Chez	chez	ADP
+chez	chez	ADP
 le	le	DET
 juge	juge	NOUN
 Ribeiro	Ribeiro	PROPN
 !…	!…	PUNCTsent
 répondit	répondre	VERB
-Torrès	Torrès	PROPN
+Torrès	Torrès	ADV
 ,	,	PUNCTclause
 évidemment	évidemment	ADV
 décontenancé	décontenancer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Chez	chez	ADP
+chez	chez	ADP
 le	le	DET
 juge	juge	NOUN
 Ribeiro	Ribeiro	PROPN
@@ -2502,7 +2502,7 @@ Joam	Joam	PROPN
 Garral	Garral	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Montrant	montrer	VERB
+montrant	montrer	VERB
 alors	alors	ADV
 la	le	DET
 pirogue	pirogue	NOUN
@@ -2539,7 +2539,7 @@ l'	le	DET
 île	île	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 misérable	misérable	NOUN
 ,	,	PUNCTclause
 enfin	enfin	ADV
@@ -2547,7 +2547,7 @@ enfin	enfin	ADV
 disparut	disparaître	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-La	le	DET
+la	le	DET
 famille	famille	NOUN
 ,	,	PUNCTclause
 frémissante	frémissant	ADJ
@@ -2560,7 +2560,7 @@ de	de	ADP
 son	son	DET
 chef	chef	NOUN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 Fragoso	Fragoso	PROPN
 ,	,	PUNCTclause
 ne	ne	ADV
@@ -2592,7 +2592,7 @@ Garral	Garral	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Si	si	SCONJ
+si	si	SCONJ
 le	le	DET
 mariage	mariage	NOUN
 de	de	ADP
@@ -2628,7 +2628,7 @@ Joam	Joam	PROPN
 Garral	Garral	PROPN
 .	.	PUNCTsent
 »	»	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 ,	,	PUNCTclause
 faisant	faire	VERB
 un	un	DET
@@ -2679,13 +2679,13 @@ rouvrit	rouvrir	VERB
 enfin	enfin	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Manoel	Manoel	PROPN
+Manoel	Manoel	NOUN
 en	en	ADP
 sortit	sortir	VERB
 seul	seul	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ses	son	DET
+ses	son	DET
 regards	regard	NOUN
 brillaient	briller	VERB
 de	de	ADP
@@ -2694,7 +2694,7 @@ généreuse	généreux	ADJ
 résolution	résolution	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Allant	aller	VERB
+allant	aller	VERB
 à	à	ADP
 Yaquita	Yaquita	PROPN
 ,	,	PUNCTclause
@@ -2703,7 +2703,7 @@ lui	lui	PRON
 dit	dire	VERB
 :	:	PUNCTclause
 «	«	PUNCTsent
-Ma	mon	DET
+ma	mon	DET
 mère	mère	NOUN
 !	!	PUNCTsent
 »	»	PUNCTclause
@@ -2714,7 +2714,7 @@ il	il	PRON
 dit	dire	VERB
 :	:	PUNCTclause
 «	«	PUNCTsent
-Ma	mon	DET
+ma	mon	DET
 femme	femme	NOUN
 »	»	PUNCTclause
 ,	,	PUNCTclause
@@ -2725,7 +2725,7 @@ il	il	PRON
 dit	dire	VERB
 :	:	PUNCTclause
 «	«	PUNCTsent
-Mon	mon	DET
+mon	mon	DET
 frère	frère	NOUN
 »	»	PUNCTclause
 ,	,	PUNCTclause
@@ -2743,12 +2743,12 @@ dit	dire	VERB
 tous	tout	ADJ
 :	:	PUNCTclause
 «	«	PUNCTsent
-À	à	ADP
+à	à	ADP
 demain	demain	NOUN
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 savait	savoir	VERB
 tout	tout	ADJ
 ce	ce	PRON
@@ -2762,7 +2762,7 @@ Garral	Garral	PROPN
 et	et	CCONJ
 Torrès	Torrès	PROPN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 savait	savoir	VERB
 que	que	SCONJ
 ,	,	PUNCTclause
@@ -2802,13 +2802,13 @@ l'	le	DET
 éclairer	éclairer	VERB
 et	et	CCONJ
 à	à	ADP
-le	le:PRON	PRON
+le	le_PRON	PRON
 convaincre	convaincre	VERB
 de	de	ADP
 son	son	DET
 innocence	innocence	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 savait	savoir	VERB
 que	que	SCONJ
 Joam	Joam	PROPN
@@ -2866,7 +2866,7 @@ pour	pour	ADP
 lui-même	lui-même	PRON
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Oui	oui	INTJ
+oui	oui	INTJ
 ,	,	PUNCTclause
 Manoel	Manoel	PROPN
 savait	savoir	VERB
@@ -2905,7 +2905,7 @@ plus	plus	ADV
 sacré	sacré	ADJ
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ce	ce	PRON
+ce	ce	PRON
 que	que	SCONJ
 il	il	PRON
 ne	ne	ADV
@@ -2936,7 +2936,7 @@ mains	main	NOUN
 de	de	ADP
 Torrès	Torrès	PROPN
 .	.	PUNCTsent
-Joam	Joam	PROPN
+Joam	Joam	DET
 Garral	Garral	PROPN
 avait	avoir	AUX
 voulu	vouloir	VERB
@@ -2963,7 +2963,7 @@ dit	dire	VERB
 vrai	vrai	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Manoel	Manoel	PROPN
+Manoel	Manoel	NOUN
 se	se	PRON
 borna	borner	VERB
 donc	donc	ADV
@@ -2991,7 +2991,7 @@ deux	deux	NUM
 mariages	mariage	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 lendemain	lendemain	NOUN
 ,	,	PUNCTclause
 le	le	DET
@@ -3030,11 +3030,11 @@ la	le	DET
 jangada	jangada	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Une	un	DET
+une	un	DET
 douzaine	douzaine	NOUN
 de	de	ADP
 pagayeurs	pagayeur	NOUN
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avaient	avoir	AUX
 rapidement	rapidement	ADV
 amenée	amener	VERB
@@ -3063,7 +3063,7 @@ monta	monter	VERB
 à bord	à bord	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-À	à	ADP
+à	à	ADP
 ce	ce	DET
 moment	moment	NOUN
 ,	,	PUNCTclause
@@ -3085,7 +3085,7 @@ habitation	habitation	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Joam	Joam	PROPN
+Joam	Joam	NOUN
 Garral	Garral	PROPN
 !	!	PUNCTsent
 demanda	demander	VERB
@@ -3095,7 +3095,7 @@ de	de	ADP
 police	police	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Me	me	PRON
+me	me	PRON
 voici	voici	ADP
 ,	,	PUNCTclause
 répondit	répondre	VERB
@@ -3103,7 +3103,7 @@ Joam	Joam	PROPN
 Garral	Garral	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Joam	Joam	PROPN
+Joam	Joam	NOUN
 Garral	Garral	PROPN
 ,	,	PUNCTclause
 répondit	répondre	VERB
@@ -3119,7 +3119,7 @@ aussi	aussi	ADV
 Joam	Joam	PROPN
 Dacosta	Dacosta	PROPN
 !	!	PUNCTsent
-Ces	ce	DET
+ces	ce	DET
 deux	deux	NUM
 noms	nom	NOUN
 ont	avoir	AUX
@@ -3130,13 +3130,13 @@ un	un	DET
 même	même	ADJ
 homme	homme	NOUN
 !	!	PUNCTsent
-Je	je	PRON
+je	je	PRON
 vous	vous	PRON
 arrête	arrêter	VERB
 .	.	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-À	à	ADP
+à	à	ADP
 ces	ce	DET
 mots	mot	NOUN
 ,	,	PUNCTclause
@@ -3159,7 +3159,7 @@ un	un	DET
 mouvement	mouvement	NOUN
 .	.	PUNCTsent
 «	«	PUNCTclause
-Mon	mon	DET
+mon	mon	DET
 père	père	NOUN
 ,	,	PUNCTclause
 un	un	DET
@@ -3190,7 +3190,7 @@ silence	silence	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 me	me	PRON
 permettrai	permettre	VERB
@@ -3215,7 +3215,7 @@ chef	chef	NOUN
 de	de	ADP
 police	police	NOUN
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 mandat	mandat	NOUN
 en	en	ADP
 vertu	vertu	NOUN
@@ -3245,7 +3245,7 @@ Ribeiro	Ribeiro	PROPN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	non	ADV
+non	non	ADV
 ,	,	PUNCTclause
 répondit	répondre	VERB
 le	le	DET
@@ -3270,7 +3270,7 @@ par	par	ADP
 son	son	DET
 remplaçant	remplaçant	NOUN
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 juge	juge	NOUN
 Ribeiro	Ribeiro	PROPN
 ,	,	PUNCTclause
@@ -3298,7 +3298,7 @@ connaissance	connaissance	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mort	mort	NOUN
+mort	mort	NOUN
 !	!	PUNCTsent
 se	se	PRON
 écria	écrier	VERB
@@ -3317,7 +3317,7 @@ mort	mourir	VERB
 mort	mourir	VERB
 !	!	PUNCTsent
 »	»	PUNCTclause
-Mais	mais	CCONJ
+mais	mais	CCONJ
 bientôt	bientôt	ADV
 ,	,	PUNCTclause
 relevant	relever	VERB
@@ -3337,7 +3337,7 @@ enfants	enfant	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Le	le	DET
+le	le	DET
 juge	juge	NOUN
 Ribeiro	Ribeiro	PROPN
 ,	,	PUNCTclause
@@ -3354,7 +3354,7 @@ innocent	innocent	NOUN
 mes	mon	DET
 bien-aimés	bien-aimé	NOUN
 !	!	PUNCTsent
-La	le	DET
+la	le	DET
 mort	mort	NOUN
 de	de	ADP
 ce	ce	DET
@@ -3378,7 +3378,7 @@ désespérer	désespérer	VERB
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 se	se	PRON
 tournant	tourner	VERB
 vers	vers	ADP
@@ -3386,7 +3386,7 @@ Manoel	Manoel	PROPN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-À	à	ADP
+à	à	ADP
 la	le	DET
 grâce	grâce	NOUN
 de	de	ADP
@@ -3396,7 +3396,7 @@ lui	lui	PRON
 dit	dire	VERB
 il	il	PRON
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 se	se	PRON
 agit	agir	VERB
 de	de	ADP
@@ -3417,7 +3417,7 @@ terre	terre	NOUN
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 chef	chef	NOUN
 de	de	ADP
 police	police	NOUN
@@ -3441,7 +3441,7 @@ Garral	Garral	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Mais	mais	CCONJ
+mais	mais	CCONJ
 parlez	parler	VERB
 donc	donc	ADV
 ,	,	PUNCTclause
@@ -3456,7 +3456,7 @@ fou	fou	NOUN
 de	de	ADP
 désespoir	désespoir	NOUN
 .	.	PUNCTsent
-Dites	dire	VERB
+dites	dire	VERB
 un	un	DET
 mot	mot	NOUN
 ,	,	PUNCTclause
@@ -3482,7 +3482,7 @@ victime	victime	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 y	y	PRON
 a	avoir	AUX
@@ -3498,7 +3498,7 @@ répondit	répondre	VERB
 Joam	Joam	PROPN
 Garral	Garral	PROPN
 .	.	PUNCTsent
-Joam	Joam	PROPN
+Joam	Joam	NOUN
 Dacosta	Dacosta	PROPN
 et	et	CCONJ
 Joam	Joam	PROPN
@@ -3508,7 +3508,7 @@ font	faire	VERB
 que	que	ADV
 un	un	DET
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 suis	être	AUX
 ,	,	PUNCTclause
 en effet	en effet	ADV
@@ -3516,7 +3516,7 @@ en effet	en effet	ADV
 Joam	Joam	PROPN
 Dacosta	Dacosta	PROPN
 !	!	PUNCTsent
-Je	je	PRON
+je	je	PRON
 suis	être	AUX
 l'	le	DET
 honnête homme	honnête homme	NOUN
@@ -3541,7 +3541,7 @@ du	du	ADP_DET
 vrai	vrai	ADJ
 coupable	coupable	NOUN
 .	.	PUNCTsent
-De	de	ADP
+de	de	ADP
 ma	mon	DET
 complète	complet	ADJ
 innocence	innocence	NOUN
@@ -3569,7 +3569,7 @@ mère	mère	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Toute	toute	DET
+toute	toute	DET
 communication	communication	NOUN
 entre	entre	ADP
 vous	vous	PRON
@@ -3586,7 +3586,7 @@ chef	chef	NOUN
 de	de	ADP
 police	police	NOUN
 .	.	PUNCTsent
-Vous	vous	PRON
+vous	vous	PRON
 êtes	être	AUX
 mon	mon	DET
 prisonnier	prisonnier	NOUN
@@ -3606,7 +3606,7 @@ rigueur	rigueur	NOUN
 .	.	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Joam	Joam	PROPN
+Joam	Joam	NOUN
 Garral	Garral	PROPN
 ,	,	PUNCTclause
 contenant	contenir	VERB
@@ -3621,7 +3621,7 @@ consternés	consterner	VERB
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Laissez	laisser	VERB
+laissez	laisser	VERB
 faire	faire	VERB
 la	le	DET
 justice	justice	NOUN
@@ -3640,7 +3640,7 @@ Dieu	Dieu	PROPN
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 ,	,	PUNCTclause
 la	le	DET
 tête	tête	NOUN
@@ -3654,7 +3654,7 @@ la	le	DET
 pirogue	pirogue	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 semblait	sembler	VERB
 ,	,	PUNCTclause
 en vérité	en vérité	ADV

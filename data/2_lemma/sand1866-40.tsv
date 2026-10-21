@@ -5,31 +5,31 @@
 # isPartOf = Monsieur Sylvestre
 # title = XL. De M. Piémont à M. Sylvestre
 
-↵↵↵	↵↵↵	PUNCTstruct
-		TOKEN
+↵↵	↵↵	PUNCTstruct
+XL	XL	X
 .	.	PUNCTsent
-De	de	ADP
+de	de	ADP
 M.	M.	NOUN
-Piémont	Piémont	PROPN
+piémont	piémont	UNKNOWN
 à	à	ADP
 M.	M.	NOUN
 Sylvestre	Sylvestre	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Paris	pari	NOUN
+Paris	Paris	PROPN
 ,	,	PUNCTclause
 25	25	NUM
 juillet	juillet	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Monsieur	monsieur	NOUN
+monsieur	monsieur	NOUN
 ,	,	PUNCTclause
 je	je	PRON
 ai	avoir	AUX
 appris	apprendre	VERB
 par	par	ADP
 M.	M.	NOUN
-Diamant	Diamant	PROPN
+diamant	diamant	UNKNOWN
 ,	,	PUNCTclause
 qui	qui	PRON
 est	être	AUX
@@ -61,7 +61,7 @@ plus	plus	ADV
 étonnante	étonnant	ADJ
 sagesse	sagesse	NOUN
 .	.	PUNCTsent
-Mon	mon	DET
+mon	mon	DET
 âge	âge	NOUN
 et	et	CCONJ
 mes	mon	DET
@@ -112,7 +112,7 @@ et	et	CCONJ
 au	au	ADP_DET
 moral	moral	NOUN
 .	.	PUNCTsent
-D'ailleurs	d'ailleurs	ADV
+d'ailleurs	d'ailleurs	ADV
 ,	,	PUNCTclause
 on	on	PRON
 me	me	PRON
@@ -151,7 +151,7 @@ un	un	DET
 service	service	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Vous	vous	PRON
+vous	vous	PRON
 êtes	être	AUX
 ,	,	PUNCTclause
 à	à	ADP
@@ -197,7 +197,7 @@ vous	vous	PRON
 parler	parler	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Quand	quand	SCONJ
+quand	quand	SCONJ
 ses	son	DET
 parents	parent	NOUN
 moururent	mourir	VERB
@@ -243,7 +243,7 @@ de	de	ADP
 une	un	DET
 servante-maîtresse	servante-maîtresse	NOUN
 qui	qui	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 grugea	gruger	VERB
 tant	tant	ADV
 que	que	SCONJ
@@ -256,7 +256,7 @@ léguer	léguer	VERB
 son	son	DET
 bien	bien	NOUN
 .	.	PUNCTsent
-Toutefois	toutefois	ADV
+toutefois	toutefois	ADV
 ,	,	PUNCTclause
 M.	M.	PROPN
 le	le	DET
@@ -294,7 +294,7 @@ sous	sous	ADP
 mon	mon	DET
 nom	nom	NOUN
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 personne	personne	NOUN
 avec	avec	ADP
 laquelle	laquelle	PRON
@@ -352,7 +352,7 @@ de	de	ADP
 vingt-cinq	vingt-cinq	NUM
 ans	an	NOUN
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 preuve	preuve	NOUN
 de	de	ADP
 cette	ce	DET
@@ -393,7 +393,7 @@ entre	entre	ADP
 mes	mon	DET
 mains	main	NOUN
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 tiens	tenir	VERB
 donc	donc	ADV
 à	à	ADP
@@ -488,7 +488,7 @@ de	de	ADP
 sa	son	DET
 fortune	fortune	NOUN
 .	.	PUNCTsent
-Après	après	ADP
+après	après	ADP
 sa	son	DET
 mort	mort	NOUN
 ,	,	PUNCTclause
@@ -510,7 +510,7 @@ de la part de	de la part de	ADP
 cette	ce	DET
 créature	créature	NOUN
 .	.	PUNCTsent
-Elle	elle	PRON
+elle	elle	PRON
 est	être	AUX
 morte	mourir	VERB
 maintenant	maintenant	ADV
@@ -576,7 +576,7 @@ fort	fort	ADV
 de	de	ADP
 une	un	DET
 mademoiselle	mademoiselle	NOUN
-Vallier	Vallier	PROPN
+Vallier	Vallier	ADJ
 que	que	PRON
 je	je	PRON
 ai	avoir	AUX
@@ -603,7 +603,7 @@ je	je	PRON
 apprends	apprendre	VERB
 par	par	ADP
 M.	M.	NOUN
-Diamant	Diamant	PROPN
+diamant	diamant	UNKNOWN
 que	que	SCONJ
 cette	ce	DET
 demoiselle	demoiselle	NOUN
@@ -643,7 +643,7 @@ parti	parti	NOUN
 pour	pour	ADP
 lui	lui	PRON
 .	.	PUNCTsent
-Pierre	pierre	NOUN
+Pierre	Pierre	PROPN
 a	avoir	AUX
 des	un	DET
 sentiments	sentiment	NOUN
@@ -709,7 +709,7 @@ loin de	loin de	ADP
 désapprouver	désapprouver	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Dans	dans	ADP
+dans	dans	ADP
 l'	le	DET
 intérêt	intérêt	NOUN
 de	de	ADP
@@ -873,6 +873,6 @@ très-humble	très-humble	NOUN
 serviteur	serviteur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Baptiste	baptiste	NOUN
+Baptiste	Baptiste	PROPN
 Piermont	Piermont	PROPN
 .	.	PUNCTsent

@@ -5,13 +5,13 @@
 # isPartOf = La comtesse de Charny
 # title = CXX. Catherine
 
-↵↵↵	↵↵↵	PUNCTstruct
+↵↵	↵↵	PUNCTstruct
 		TOKEN
 .	.	PUNCTsent
-Catherine	Catherine	PROPN
+Catherine	Catherine	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Des	un	ADP_DET
+des	un	ADP_DET
 deux	deux	NUM
 personnes	personne	NOUN
 que	que	SCONJ
@@ -28,13 +28,13 @@ l'	le	DET
 désespéré	désespérer	VERB
 de	de	ADP
 madame	madame	NOUN
-Billot	Billot	PROPN
+billot	billot	UNKNOWN
 ,	,	PUNCTclause
 l'une	l'une	PRON
 ,	,	PUNCTclause
 comme	comme	SCONJ
 on	on	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 voit	voir	VERB
 ,	,	PUNCTclause
 était	être	AUX
@@ -56,7 +56,7 @@ le	le	DET
 mari	mari	NOUN
 ;	;	PUNCTclause
 l'autre	l'autre	PRON
-personne	personne:PRON	PRON
+personne	personne_PRON	PRON
 seule	seul	ADJ
 pouvait	pouvoir	VERB
 donc	donc	ADV
@@ -75,7 +75,7 @@ sa	son	DET
 fille	fille	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 se	se	PRON
 agissait	agir	VERB
 de	de	ADP
@@ -104,7 +104,7 @@ où	où	PRON
 Catherine	Catherine	PROPN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-On	on	PRON
+on	on	PRON
 ne	ne	ADV
 avait	avoir	VERB
 que	que	ADV
@@ -112,7 +112,7 @@ un	un	DET
 moyen	moyen	NOUN
 possible	possible	ADJ
 de	de	ADP
-le	le:PRON	PRON
+le	le_PRON	PRON
 savoir	savoir	VERB
 :	:	PUNCTclause
 ce	ce	DET
@@ -126,7 +126,7 @@ de	de	ADP
 Charny	Charny	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pitou	Pitou	PROPN
+Pitou	Pitou	NOUN
 avait	avoir	AUX
 été	être	AUX
 si	si	ADV
@@ -199,7 +199,7 @@ l'	le	DET
 horloge	horloge	NOUN
 de	de	ADP
 l'	le	DET
-École	École	NOUN
+école	école	NOUN
 militaire	militaire	ADJ
 lorsque	lorsque	SCONJ
 ,	,	PUNCTclause
@@ -215,10 +215,10 @@ quitter	quitter	VERB
 le	le	DET
 lit	lit	NOUN
 de	de	ADP
-Billot	Billot	PROPN
+billot	billot	UNKNOWN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Gilbert	Gilbert	PROPN
+Gilbert	Gilbert	VERB
 recommanda	recommander	VERB
 le	le	DET
 blessé	blessé	NOUN
@@ -242,7 +242,7 @@ la	le	DET
 nature	nature	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-D'ailleurs	d'ailleurs	ADV
+d'ailleurs	d'ailleurs	ADV
 ,	,	PUNCTclause
 il	il	PRON
 devait	devoir	VERB
@@ -254,7 +254,7 @@ la	le	DET
 journée	journée	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pitou	Pitou	PROPN
+Pitou	Pitou	VERB
 et	et	CCONJ
 Gilbert	Gilbert	PROPN
 montèrent	monter	VERB
@@ -284,7 +284,7 @@ rue	rue	NOUN
 Coq-Héron	Coq-Héron	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Tout	tout	PRON
+tout	tout	PRON
 était	être	AUX
 fermé	fermer	VERB
 et	et	CCONJ
@@ -294,7 +294,7 @@ le	le	DET
 quartier	quartier	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Après	après	ADP
+après	après	ADP
 avoir	avoir	AUX
 sonné	sonner	VERB
 un	un	DET
@@ -356,20 +356,20 @@ tromper	tromper	VERB
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Qui	qui	PRON
+qui	qui	PRON
 va	aller	VERB
 là	là	ADV
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Moi	moi	PRON
+moi	moi	PRON
 ,	,	PUNCTclause
 dit	dire	VERB
 Pitou	Pitou	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Qui	qui	PRON
+qui	qui	PRON
 ,	,	PUNCTclause
 vous	vous	PRON
 ?	?	PUNCTsent
@@ -381,7 +381,7 @@ ce	ce	PRON
 est	être	AUX
 vrai	vrai	ADJ
 …	…	PUNCTsent
-Ange	ange	NOUN
+ange	ange	NOUN
 Pitou	Pitou	PROPN
 ,	,	PUNCTclause
 capitaine	capitaine	NOUN
@@ -391,10 +391,10 @@ garde nationale	garde nationale	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Ange	ange	NOUN
+ange	ange	NOUN
 Pitou	Pitou	PROPN
 ?…	?…	PUNCTsent
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 connais	connaître	VERB
 pas	pas	ADV
@@ -402,14 +402,14 @@ cela	cela	PRON
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Capitaine	capitaine	NOUN
+capitaine	capitaine	NOUN
 de	de	ADP
 la	le	DET
 garde nationale	garde nationale	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Capitaine	capitaine	NOUN
+capitaine	capitaine	NOUN
 …	…	PUNCTsent
 répéta	répéter	VERB
 le	le	DET
@@ -419,7 +419,7 @@ capitaine	capitaine	NOUN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Capitaine	capitaine	NOUN
+capitaine	capitaine	NOUN
 !	!	PUNCTsent
 répéta	répéter	VERB
 Pitou	Pitou	PROPN
@@ -467,11 +467,11 @@ affaire	affaire	NOUN
 quelque	quelque	DET
 aide de camp	aide de camp	NOUN
 de	de	ADP
-La	le	DET
+la	le	DET
 Fayette	Fayette	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-En	en	ADP
+en	en	ADP
 conséquence	conséquence	NOUN
 ,	,	PUNCTclause
 de	de	ADP
@@ -513,7 +513,7 @@ vous	vous	PRON
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 demande	demander	VERB
 à	à	ADP
 parler	parler	VERB
@@ -526,7 +526,7 @@ Charny	Charny	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 y	y	PRON
 est	être	AUX
@@ -534,7 +534,7 @@ pas	pas	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-À	à	ADP
+à	à	ADP
 madame	madame	NOUN
 la	le	DET
 comtesse	comte	NOUN
@@ -543,7 +543,7 @@ alors	alors	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Elle	elle	PRON
+elle	elle	PRON
 ne	ne	ADV
 y	y	PRON
 est	être	AUX
@@ -553,13 +553,13 @@ plus	plus	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Où	où	PRON
+où	où	PRON
 sont	être	AUX
 ils	ils	PRON
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Ils	ils	PRON
+ils	ils	PRON
 sont	être	AUX
 partis	partir	VERB
 ce	ce	DET
@@ -567,13 +567,13 @@ matin	matin	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Pour	pour	ADP
+pour	pour	ADP
 quel	quel	DET
 pays	pays	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Pour	pour	ADP
+pour	pour	ADP
 leur	leur	DET
 terre	terre	NOUN
 de	de	ADP
@@ -612,17 +612,17 @@ voiture	voiture	NOUN
 de	de	ADP
 poste	poste	NOUN
 …	…	PUNCTsent
-Si	si	SCONJ
+si	si	SCONJ
 je	je	PRON
 avais	avoir	AUX
 su	savoir	VERB
 cela	cela	PRON
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 Pitou	Pitou	PROPN
 ne	ne	ADV
-le	le:PRON	PRON
+le	le_PRON	PRON
 savait	savoir	VERB
 pas	pas	ADV
 ;	;	PUNCTclause
@@ -639,7 +639,7 @@ comtesse	comte	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mon	mon	DET
+mon	mon	DET
 ami	ami	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
@@ -708,7 +708,7 @@ de	de	ADP
 douceur	douceur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 ,	,	PUNCTclause
 ouvrant	ouvrer	VERB
 la	le	DET
@@ -754,7 +754,7 @@ docteur	docteur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Quel	quel	DET
+quel	quel	DET
 renseignement	renseignement	NOUN
 monsieur	monsieur	NOUN
 désire	désirer	VERB
@@ -766,7 +766,7 @@ concierge	concierge	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Connaissez	connaître	VERB
+connaissez	connaître	VERB
 vous	vous	PRON
 ,	,	PUNCTclause
 mon	mon	DET
@@ -782,7 +782,7 @@ le	le	DET
 comte	comte	NOUN
 et	et	CCONJ
 madame	madame	NOUN
-la	le:PRON	PRON
+la	le_PRON	PRON
 comtesse	comte	NOUN
 doivent	devoir	VERB
 porter	porter	VERB
@@ -800,18 +800,18 @@ concierge	concierge	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Justement	justement	ADV
+justement	justement	ADV
 !	!	PUNCTsent
 dit	dire	VERB
 Gilbert	Gilbert	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Oui	oui	INTJ
+oui	oui	INTJ
 ,	,	PUNCTclause
 monsieur	monsieur	NOUN
 …	…	PUNCTsent
-M.	M.	PROPN
+M.	M.	PRON
 le	le	DET
 comte	comte	NOUN
 et	et	CCONJ
@@ -846,7 +846,7 @@ demoiselle	demoiselle	NOUN
 quoique	quoique	SCONJ
 je	je	PRON
 ne	ne	ADV
-la	le:PRON	PRON
+la	le_PRON	PRON
 croie	croire	VERB
 pas	pas	ADV
 bien	bien	ADV
@@ -873,12 +873,12 @@ de	de	ADP
 rien	rien	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-À	à	ADP
+à	à	ADP
 ces	ce	DET
 mots	mot	NOUN
 :	:	PUNCTclause
 «	«	PUNCTsent
-Enfant	enfant	NOUN
+enfant	enfant	NOUN
 du	du	ADP_DET
 bon Dieu	bon Dieu	INTJ
 »	»	PUNCTclause
@@ -923,7 +923,7 @@ sa	son	DET
 mère	mère	NOUN
 ,	,	PUNCTclause
 madame	madame	NOUN
-Billot	Billot	PROPN
+billot	billot	UNKNOWN
 ,	,	PUNCTclause
 se	se	PRON
 meurt	mourir	VERB
@@ -941,7 +941,7 @@ cette	ce	DET
 triste	triste	ADJ
 nouvelle	nouveau	ADJ
 .	.	PUNCTsent
-Voulez	vouloir	VERB
+voulez	vouloir	VERB
 vous	vous	PRON
 nous	nous	PRON
 donner	donner	VERB
@@ -957,17 +957,17 @@ jeune	jeune	ADJ
 fille	fille	NOUN
 ,	,	PUNCTclause
 Dieu	Dieu	PROPN
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 assiste	assister	VERB
 !	!	PUNCTsent
-Elle	elle	PRON
+elle	elle	PRON
 est	être	AUX
 pourtant	pourtant	ADV
 déjà	déjà	ADV
 assez	assez	ADV
 malheureuse	malheureux	ADJ
 !	!	PUNCTsent
-Elle	elle	PRON
+elle	elle	PRON
 demeure	demeurer	VERB
 à	à	ADP
 Ville-d'Avray	Ville-d'Avray	PROPN
@@ -979,7 +979,7 @@ la	le	DET
 grande	grand	ADJ
 rue	rue	NOUN
 …	…	PUNCTsent
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 saurais	savoir	VERB
 trop	trop	ADV
@@ -997,7 +997,7 @@ fontaine	fontaine	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Cela	cela	PRON
+cela	cela	PRON
 suffit	suffire	VERB
 ,	,	PUNCTclause
 dit	dire	VERB
@@ -1009,7 +1009,7 @@ trouverai	trouver	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Merci	merci	INTJ
+merci	merci	INTJ
 ,	,	PUNCTclause
 mon	mon	DET
 ami	ami	NOUN
@@ -1031,7 +1031,7 @@ concierge	concierge	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 fallait	falloir	VERB
 rien	rien	PRON
@@ -1057,7 +1057,7 @@ entre	entre	ADP
 chrétiens	chrétien	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 ,	,	PUNCTclause
 tirant	tirer	VERB
 sa	son	DET
@@ -1092,7 +1092,7 @@ pour	pour	ADP
 Ville-d'Avray	Ville-d'Avray	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pitou	Pitou	PROPN
+Pitou	Pitou	NOUN
 était	être	AUX
 toujours	toujours	ADV
 prêt à	prêt à	ADP
@@ -1100,7 +1100,7 @@ partir	partir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Sais	savoir	VERB
+sais	savoir	VERB
 tu	tu	PRON
 le	le	DET
 chemin	chemin	NOUN
@@ -1111,7 +1111,7 @@ docteur	docteur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	non	ADV
+non	non	ADV
 ;	;	PUNCTclause
 mais	mais	CCONJ
 vous	vous	PRON
@@ -1121,7 +1121,7 @@ indiquerez	indiquer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Tu	tu	PRON
+tu	tu	PRON
 es	être	AUX
 un	un	DET
 cœur	cœur	NOUN
@@ -1138,7 +1138,7 @@ en	en	ADP
 riant	rire	VERB
 Gilbert	Gilbert	PROPN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 viens	venir	VERB
 te	te	PRON
 reposer	reposer	VERB
@@ -1150,7 +1150,7 @@ matin	matin	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Cependant	cependant	ADV
+cependant	cependant	ADV
 ,	,	PUNCTclause
 si	si	SCONJ
 cela	cela	PRON
@@ -1158,7 +1158,7 @@ presse	presser	VERB
 ?…	?…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Ni	ni	CCONJ
+ni	ni	CCONJ
 de	de	ADP
 un	un	DET
 côté	côté	NOUN
@@ -1178,7 +1178,7 @@ docteur	docteur	NOUN
 l'	le	DET
 état	état	NOUN
 de	de	ADP
-Billot	Billot	PROPN
+billot	billot	UNKNOWN
 est	être	AUX
 grave	grave	ADJ
 ;	;	PUNCTclause
@@ -1199,7 +1199,7 @@ mortel	mortel	ADJ
 quant à	quant à	ADP
 la	le	DET
 mère	mère	NOUN
-Billot	Billot	PROPN
+billot	billot	UNKNOWN
 ,	,	PUNCTclause
 elle	elle	PRON
 peut	pouvoir	VERB
@@ -1220,7 +1220,7 @@ docteur	docteur	NOUN
 ,	,	PUNCTclause
 quand	quand	SCONJ
 on	on	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 a	avoir	AUX
 couchée	coucher	VERB
 avant-hier	avant-hier	ADV
@@ -1249,7 +1249,7 @@ vivants	vivant	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-N'importe	n'importe	NOUN
+n'importe	n'importe	NOUN
 ,	,	PUNCTclause
 je	je	PRON
 sais	savoir	VERB
@@ -1269,7 +1269,7 @@ elle	elle	PRON
 comme	comme	SCONJ
 je	je	PRON
 te	te	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 dis	dire	VERB
 ,	,	PUNCTclause
 de	de	ADP
@@ -1280,7 +1280,7 @@ jours	jour	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Dame	dame	NOUN
+dame	dame	NOUN
 !	!	PUNCTsent
 monsieur	monsieur	NOUN
 Gilbert	Gilbert	PROPN
@@ -1294,7 +1294,7 @@ moi	moi	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Autant	autant	ADV
+autant	autant	ADV
 vaut	valoir	VERB
 donc	donc	ADV
 laisser	laisser	VERB
@@ -1328,7 +1328,7 @@ important	important	ADJ
 Pitou	Pitou	PROPN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pitou	Pitou	PROPN
+Pitou	Pitou	VERB
 se	se	PRON
 rendit	rendre	VERB
 à	à	ADP
@@ -1355,12 +1355,12 @@ Gilbert	Gilbert	PROPN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Chez	chez	ADP
+chez	chez	ADP
 moi	moi	PRON
 ,	,	PUNCTclause
 parbleu	parbleu	INTJ
 !	!	PUNCTsent
-Tu	tu	PRON
+tu	tu	PRON
 retrouveras	retrouver	VERB
 ton	ton	DET
 ancienne	ancien	ADJ
@@ -1368,7 +1368,7 @@ chambre	chambre	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Tiens	tien	NOUN
+tiens	tien	NOUN
 !	!	PUNCTsent
 dit	dire	VERB
 Pitou	Pitou	PROPN
@@ -1384,7 +1384,7 @@ revoir	revoir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 ,	,	PUNCTclause
 demain	demain	ADV
 ,	,	PUNCTclause
@@ -1406,7 +1406,7 @@ voiture	voiture	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Pourquoi	pourquoi	ADV
+pourquoi	pourquoi	ADV
 faire	faire	VERB
 les	le	DET
 chevaux	cheval	NOUN
@@ -1432,7 +1432,7 @@ luxe	luxe	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mais	mais	CCONJ
+mais	mais	CCONJ
 pour	pour	ADP
 te	te	PRON
 conduire	conduire	VERB
@@ -1441,7 +1441,7 @@ Ville-d'Avray	Ville-d'Avray	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Bon	bon	ADJ
+bon	bon	ADJ
 !	!	PUNCTsent
 dit	dire	VERB
 Pitou	Pitou	PROPN
@@ -1454,13 +1454,13 @@ de	de	ADP
 lieues	lieue	NOUN
 d'ici	d'ici	ADV
 à	à	ADP
-Ville	Ville	NOUN
+ville	ville	NOUN
 de	de	ADP
 Avray	Avray	PROPN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	non	ADV
+non	non	ADV
 ,	,	PUNCTclause
 il	il	PRON
 y	y	PRON
@@ -1542,7 +1542,7 @@ un	un	DET
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 Catherine	Catherine	PROPN
 ,	,	PUNCTclause
 demanda	demander	VERB
@@ -1599,7 +1599,7 @@ suis	être	AUX
 un	un	DET
 imbécile	imbécile	ADJ
 …	…	PUNCTsent
-À	à	ADP
+à	à	ADP
 propos	propos	NOUN
 ,	,	PUNCTclause
 comment	comment	ADV
@@ -1608,17 +1608,17 @@ Sébastien	Sébastien	PROPN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-À	à	ADP
+à	à	ADP
 merveille	merveille	NOUN
 !	!	PUNCTsent
-Tu	tu	PRON
+tu	tu	PRON
 le	le	DET
 verras	voir	VERB
 demain	demain	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Toujours	toujours	ADV
+toujours	toujours	ADV
 chez	chez	ADP
 l'	le	DET
 abbé	abbé	NOUN
@@ -1626,7 +1626,7 @@ Bérardier	Bérardier	PROPN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Toujours	toujours	ADV
+toujours	toujours	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
@@ -1645,9 +1645,9 @@ voir	voir	VERB
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 lui	lui	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 sera	être	AUX
 aussi	aussi	ADV
 ,	,	PUNCTclause
@@ -1668,7 +1668,7 @@ son	son	DET
 cœur	cœur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 ,	,	PUNCTclause
 sur	sur	ADP
 cette	ce	DET
@@ -1677,7 +1677,7 @@ assurance	assurance	NOUN
 le	le	DET
 docteur	docteur	NOUN
 et	et	CCONJ
-Ange	Ange	PROPN
+ange	ange	UNKNOWN
 Pitou	Pitou	PROPN
 se	se	PRON
 arrêtèrent	arrêter	VERB
@@ -1690,7 +1690,7 @@ rue	rue	NOUN
 Saint-Honoré	Saint-Honoré	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pitou	Pitou	PROPN
+Pitou	Pitou	VERB
 dormit	dormir	VERB
 comme	comme	SCONJ
 il	il	PRON
@@ -1734,7 +1734,7 @@ cinq	cinq	NUM
 heures	heure	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-À	à	ADP
+à	à	ADP
 six	six	NUM
 ,	,	PUNCTclause
 la	le	DET
@@ -1743,7 +1743,7 @@ voiture	voiture	NOUN
 prête	prêt	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-À	à	ADP
+à	à	ADP
 sept	sept	NUM
 ,	,	PUNCTclause
 il	il	PRON
@@ -1755,7 +1755,7 @@ de	de	ADP
 Catherine	Catherine	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 était	être	AUX
 convenu	convenir	VERB
 ,	,	PUNCTclause
@@ -1777,10 +1777,10 @@ chevet	chevet	NOUN
 du	du	ADP_DET
 lit	lit	NOUN
 de	de	ADP
-Billot	Billot	PROPN
+billot	billot	UNKNOWN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Catherine	Catherine	PROPN
+Catherine	Catherine	NOUN
 vint	venir	VERB
 ouvrir	ouvrir	VERB
 ,	,	PUNCTclause
@@ -1805,7 +1805,7 @@ est	être	AUX
 morte	mourir	VERB
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 elle	elle	PRON
 pâlit	pâlir	VERB
 en	en	ADP
@@ -1817,7 +1817,7 @@ muraille	muraille	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	non	ADV
+non	non	ADV
 ,	,	PUNCTclause
 dit	dire	VERB
 Pitou	Pitou	PROPN
@@ -1842,7 +1842,7 @@ mademoiselle	mademoiselle	NOUN
 Catherine	Catherine	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cet	ce	DET
+cet	ce	DET
 échange	échange	NOUN
 de	de	ADP
 paroles	parole	NOUN
@@ -1873,7 +1873,7 @@ malheur	malheur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 puis	puis	CCONJ
 ,	,	PUNCTclause
 continua	continuer	VERB
@@ -1887,7 +1887,7 @@ malheur	malheur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Lequel	lequel	PRON
+lequel	lequel	PRON
 ?	?	PUNCTsent
 demanda	demander	VERB
 Catherine	Catherine	PROPN
@@ -1925,7 +1925,7 @@ augmentent	augmenter	VERB
 il y a	il y a	VERB
 que	que	SCONJ
 M.	M.	PROPN
-Billot	Billot	PROPN
+billot	billot	UNKNOWN
 a	avoir	AUX
 été	être	AUX
 dangereusement	dangereusement	ADV
@@ -1961,7 +1961,7 @@ première	premier	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Alors	alors	ADV
+alors	alors	ADV
 ,	,	PUNCTclause
 continua	continuer	VERB
 Pitou	Pitou	PROPN
@@ -1988,7 +1988,7 @@ Gilbert	Gilbert	PROPN
 —	—	PUNCTclause
 :	:	PUNCTclause
 «	«	PUNCTsent
-Mademoiselle	mademoiselle	NOUN
+mademoiselle	mademoiselle	NOUN
 Catherine	Catherine	PROPN
 fera	faire	VERB
 ,	,	PUNCTclause
@@ -1998,7 +1998,7 @@ une	un	DET
 visite	visite	NOUN
 à	à	ADP
 M.	M.	PROPN
-Billot	Billot	PROPN
+billot	billot	UNKNOWN
 ,	,	PUNCTclause
 qui	qui	PRON
 a	avoir	AUX
@@ -2025,7 +2025,7 @@ Villers-Cotterêts	Villers-Cotterêts	PROPN
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 vous	vous	PRON
 ,	,	PUNCTclause
 monsieur	monsieur	NOUN
@@ -2036,7 +2036,7 @@ Catherine	Catherine	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Moi	moi	PRON
+moi	moi	PRON
 ,	,	PUNCTclause
 dit	dire	VERB
 Pitou	Pitou	PROPN
@@ -2051,7 +2051,7 @@ alliez	aller	VERB
 aider	aider	VERB
 là-bas	là-bas	ADV
 madame	madame	NOUN
-Billot	Billot	PROPN
+billot	billot	UNKNOWN
 à	à	ADP
 mourir	mourir	VERB
 ,	,	PUNCTclause
@@ -2068,18 +2068,18 @@ tâcher	tâcher	VERB
 de	de	ADP
 aider	aider	VERB
 M.	M.	NOUN
-Billot	Billot	PROPN
+billot	billot	UNKNOWN
 à	à	ADP
 revivre	revivre	VERB
 …	…	PUNCTsent
-Je	je	PRON
+je	je	PRON
 reste	rester	VERB
 auprès de	auprès de	ADP
 celui	celui	PRON
 qui	qui	PRON
 ne	ne	ADV
 a	avoir	AUX
-personne	personne:PRON	PRON
+personne	personne_PRON	PRON
 ,	,	PUNCTclause
 vous	vous	PRON
 comprenez	comprendre	VERB
@@ -2088,7 +2088,7 @@ mademoiselle	mademoiselle	NOUN
 Catherine	Catherine	PROPN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pitou	Pitou	PROPN
+Pitou	Pitou	VERB
 prononça	prononcer	VERB
 ces	ce	DET
 paroles	parole	NOUN
@@ -2118,7 +2118,7 @@ son	son	DET
 dévouement	dévouement	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Catherine	Catherine	PROPN
+Catherine	Catherine	NOUN
 lui	lui	PRON
 tendit	tendre	VERB
 la	le	DET
@@ -2126,7 +2126,7 @@ main	main	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Vous	vous	PRON
+vous	vous	PRON
 êtes	être	AUX
 un	un	DET
 brave	brave	ADJ
@@ -2138,7 +2138,7 @@ lui	lui	PRON
 dit	dire	VERB
 elle	elle	PRON
 .	.	PUNCTsent
-Venez	venir	VERB
+venez	venir	VERB
 embrasser	embrasser	VERB
 mon	mon	DET
 pauvre	pauvre	NOUN
@@ -2146,7 +2146,7 @@ petit	petit	ADJ
 Isidor	Isidor	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 elle	elle	PRON
 marcha	marcher	VERB
 devant	devant	ADV
@@ -2177,7 +2177,7 @@ de	de	ADP
 la	le	DET
 rue	rue	NOUN
 .	.	PUNCTsent
-Elle	elle	PRON
+elle	elle	PRON
 était	être	AUX
 plus	plus	ADV
 belle	beau	ADJ
@@ -2193,7 +2193,7 @@ de	de	ADP
 deuil	deuil	NOUN
 comme	comme	ADP
 elle	elle	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 était	être	AUX
 ;	;	PUNCTclause
 ce	ce	PRON
@@ -2207,7 +2207,7 @@ soupir	soupir	NOUN
 Pitou	Pitou	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Catherine	Catherine	PROPN
+Catherine	Catherine	NOUN
 précéda	précéder	VERB
 le	le	DET
 jeune	jeune	ADJ
@@ -2249,7 +2249,7 @@ un	un	DET
 berceau	berceau	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 lit	lit	NOUN
 de	de	ADP
 la	le	DET
@@ -2267,7 +2267,7 @@ enfant	enfant	NOUN
 dormait	dormir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Catherine	Catherine	PROPN
+Catherine	Catherine	NOUN
 tira	tirer	VERB
 un	un	DET
 rideau	rideau	NOUN
@@ -2305,7 +2305,7 @@ les	le	DET
 mains	main	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 ,	,	PUNCTclause
 comme	comme	SCONJ
 si	si	SCONJ
@@ -2333,7 +2333,7 @@ l'	le	DET
 enfant	enfant	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pitou	Pitou	PROPN
+Pitou	Pitou	NOUN
 fut	être	AUX
 vite	vite	ADV
 récompensé	récompenser	VERB
@@ -2366,7 +2366,7 @@ son	son	DET
 front	front	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-La	le	DET
+la	le	DET
 mère	mère	NOUN
 rendait	rendre	VERB
 le	le	DET
@@ -2377,7 +2377,7 @@ fils	fils	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Merci	merci	INTJ
+merci	merci	INTJ
 ,	,	PUNCTclause
 bon	bon	ADJ
 Pitou	Pitou	PROPN
@@ -2385,7 +2385,7 @@ Pitou	Pitou	PROPN
 dit	dire	VERB
 elle	elle	PRON
 .	.	PUNCTsent
-Depuis	depuis	ADP
+depuis	depuis	ADP
 le	le	DET
 dernier	dernier	ADJ
 baiser	baiser	VERB
@@ -2397,7 +2397,7 @@ de	de	ADP
 son	son	DET
 père	père	NOUN
 ,	,	PUNCTclause
-personne	personne:PRON	PRON
+personne	personne_PRON	PRON
 que	que	SCONJ
 moi	moi	PRON
 ne	ne	ADV
@@ -2430,7 +2430,7 @@ fille	fille	NOUN
 ,	,	PUNCTclause
 comme	comme	SCONJ
 il	il	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 eût	avoir	AUX
 été	être	AUX
 par	par	ADP
@@ -2439,7 +2439,7 @@ l'	le	DET
 électrique	électrique	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 ,	,	PUNCTclause
 cependant	cependant	ADV
 ,	,	PUNCTclause

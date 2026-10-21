@@ -5,8 +5,8 @@
 # isPartOf = Le capitaine Richard
 # title = VI. Six pouces plus bas, le roi de France s’appelait Louis XVIII
 
-↵↵↵	↵↵↵	PUNCTstruct
-		TOKEN
+↵↵	↵↵	PUNCTstruct
+VI	VI	ADJ
 .	.	PUNCTsent
 Six	Six	NUM
 pouces	pouce	NOUN
@@ -20,10 +20,10 @@ France	France	PROPN
 se	se	PRON
 appelait	appeler	VERB
 Louis	Louis	PROPN
-Xviii	Xviii	PROPN
+XVIII	XVIII	NUM
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Un	un	DET
+un	un	DET
 soir	soir	NOUN
 ,	,	PUNCTclause
 dans	dans	ADP
@@ -80,9 +80,9 @@ archiduchesses	archiduchesse	NOUN
 ,	,	PUNCTclause
 craignant	craindre	VERB
 que	que	SCONJ
-Altesses	Altesses	PROPN
+altesses	altesse	UNKNOWN
 et	et	CCONJ
-Majestés	Majestés	NOUN
+majestés	majesté	NOUN
 ne	ne	ADV
 fussent	être	VERB
 incommodées	incommoder	VERB
@@ -209,7 +209,7 @@ archiduc	archiduc	NOUN
 Charles	Charles	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 est	être	AUX
 vrai	vrai	ADJ
 que	que	SCONJ
@@ -294,7 +294,7 @@ de	de	ADP
 Rome	Rome	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Consacrons	consacrer	VERB
+consacrons	consacrer	VERB
 un	un	DET
 chapitre	chapitre	NOUN
 au	au	ADP_DET
@@ -313,7 +313,7 @@ de	de	ADP
 Napoléon	Napoléon	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Nous	nous	PRON
+nous	nous	PRON
 avons	avoir	AUX
 ,	,	PUNCTclause
 le	le	DET
@@ -341,7 +341,7 @@ et	et	CCONJ
 ses	son	DET
 lieutenants	lieutenant	NOUN
 .	.	PUNCTsent
-Celui	celui	PRON
+celui	celui	PRON
 auquel	auquel	ADP_PRON
 il	il	PRON
 avait	avoir	AUX
@@ -363,7 +363,7 @@ et	et	CCONJ
 par conséquent	par conséquent	CCONJ
 ne	ne	ADV
 devait	devoir	VERB
-les	le:PRON	PRON
+les	le_PRON	PRON
 recevoir	recevoir	VERB
 que	que	ADV
 dans	dans	ADP
@@ -380,14 +380,14 @@ Davoust	Davoust	PROPN
 qui	qui	PRON
 ,	,	PUNCTclause
 nous	nous	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 savons	savoir	VERB
 déjà	déjà	ADV
 ,	,	PUNCTclause
 occupait	occuper	VERB
 Ratisbonne	Ratisbonne	PROPN
 .	.	PUNCTsent
-Aussi	aussi	ADV
+aussi	aussi	ADV
 le	le	DET
 premier	premier	ADJ
 officier	officier	NOUN
@@ -447,7 +447,7 @@ mission	mission	NOUN
 particulière	particulier	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 est	être	AUX
 vrai	vrai	ADJ
 que	que	SCONJ
@@ -502,7 +502,7 @@ de	de	ADP
 Italie	Italie	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 l'	le	DET
 empereur	empereur	NOUN
 déclara	déclarer	VERB
@@ -549,7 +549,7 @@ et	et	CCONJ
 intelligent	intelligent	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Un	un	DET
+un	un	DET
 officier	officier	NOUN
 se	se	PRON
 présenta	présenter	VERB
@@ -611,7 +611,7 @@ ne	ne	ADV
 parvînt	parvenir	VERB
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Voici	voici	ADP
+voici	voici	ADP
 quels	quel	DET
 étaient	être	AUX
 les	le	DET
@@ -623,9 +623,9 @@ empereur	empereur	NOUN
 son	son	DET
 lieutenant	lieutenant	NOUN
 :	:	PUNCTclause
-↵↵↵↵	↵↵↵↵	PUNCTstruct
+↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Quitter	quitter	VERB
+quitter	quitter	VERB
 immédiatement	immédiatement	ADV
 Ratisbonne	Ratisbonne	PROPN
 ,	,	PUNCTclause
@@ -642,7 +642,7 @@ ville	ville	NOUN
 ;	;	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 »	»	PUNCTclause
-Remonter	remonter	VERB
+remonter	remonter	VERB
 le	le	DET
 Danube	Danube	PROPN
 ,	,	PUNCTclause
@@ -662,11 +662,11 @@ et	et	CCONJ
 la	le	DET
 masse	masse	NOUN
 des	un	ADP_DET
-Autrichiens	Autrichiens	NOUN
+autrichiens	autrichien	NOUN
 ;	;	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 »	»	PUNCTclause
-Enfin	enfin	ADV
+enfin	enfin	ADV
 ,	,	PUNCTclause
 venir	venir	VERB
 le	le	DET
@@ -697,8 +697,8 @@ le	le	DET
 Danube	Danube	PROPN
 .	.	PUNCTsent
 »	»	PUNCTclause
-↵↵↵↵	↵↵↵↵	PUNCTstruct
-Ces	ce	DET
+↵↵	↵↵	PUNCTstruct
+ces	ce	DET
 ordres	ordre	NOUN
 expédiés	expédier	VERB
 à	à	ADP
@@ -712,7 +712,7 @@ prévenir	prévenir	VERB
 Masséna	Masséna	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-On	on	PRON
+on	on	PRON
 trouva	trouver	VERB
 trois	trois	NUM
 nouveaux	nouveau	ADJ
@@ -726,7 +726,7 @@ l'	le	DET
 ordre	ordre	NOUN
 suivant	suivant	ADJ
 :	:	PUNCTclause
-↵↵↵↵	↵↵↵↵	PUNCTstruct
+↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
 l'	le	DET
 empereur	empereur	NOUN
@@ -759,7 +759,7 @@ le	le	DET
 flanc	flanc	NOUN
 gauche	gauche	ADJ
 des	un	ADP_DET
-Autrichiens	Autrichiens	NOUN
+autrichiens	autrichien	NOUN
 ,	,	PUNCTclause
 l'	le	DET
 empereur	empereur	NOUN
@@ -788,7 +788,7 @@ Landshut	Landshut	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 »	»	PUNCTclause
-Le	le	DET
+le	le	DET
 maréchal	maréchal	NOUN
 partira	partir	VERB
 en	en	ADP
@@ -861,8 +861,8 @@ son	son	DET
 dévouement	dévouement	NOUN
 .	.	PUNCTsent
 »	»	PUNCTclause
-↵↵↵↵	↵↵↵↵	PUNCTstruct
-La	le	DET
+↵↵	↵↵	PUNCTstruct
+la	le	DET
 dépêche	dépêche	NOUN
 se	se	PRON
 terminait	terminer	VERB
@@ -886,19 +886,19 @@ de	de	ADP
 l'	le	DET
 empereur	empereur	NOUN
 :	:	PUNCTclause
-↵↵↵↵	↵↵↵↵	PUNCTstruct
+↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Activité	activité	NOUN
+activité	activité	NOUN
 et	et	CCONJ
 vitesse	vitesse	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Nap	Nap	PROPN
+Nap	Nap	ADV
 .	.	PUNCTsent
 »	»	PUNCTclause
-↵↵↵↵	↵↵↵↵	PUNCTstruct
-Ces	ce	DET
+↵↵	↵↵	PUNCTstruct
+ces	ce	DET
 deux	deux	NUM
 dépêches	dépêche	NOUN
 parties	partie	NOUN
@@ -914,7 +914,7 @@ si	si	SCONJ
 toutefois	toutefois	ADV
 Berthier	Berthier	PROPN
 ne	ne	ADV
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avait	avoir	AUX
 pas	pas	ADV
 envoyé	envoyer	VERB
@@ -925,7 +925,7 @@ son	son	DET
 frère	frère	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 jeune	jeune	ADJ
 homme	homme	NOUN
 se	se	PRON
@@ -973,9 +973,9 @@ en	en	ADP
 ces	ce	DET
 termes	terme	NOUN
 :	:	PUNCTclause
-↵↵↵↵	↵↵↵↵	PUNCTstruct
+↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Monsieur	monsieur	NOUN
+monsieur	monsieur	NOUN
 ,	,	PUNCTclause
 vous	vous	PRON
 avez	avoir	AUX
@@ -1008,7 +1008,7 @@ du	du	ADP_DET
 mois	mois	NOUN
 prochain	prochain	ADJ
 .	.	PUNCTsent
-Venez	venir	VERB
+venez	venir	VERB
 nous	nous	PRON
 rejoindre	rejoindre	VERB
 aussitôt	aussitôt	ADV
@@ -1041,7 +1041,7 @@ envoyés	envoyer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 »	»	PUNCTclause
-Sur	sur	ADP
+sur	sur	ADP
 ce	ce	DET
 ,	,	PUNCTclause
 monsieur	monsieur	NOUN
@@ -1072,14 +1072,14 @@ garde	garde	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 »	»	PUNCTclause
-Napoléon	napoléon	NOUN
+Napoléon	Napoléon	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 »	»	PUNCTclause
 P.	P.	PUNCT
-S.	S.	PROPN
+S.	S.	X
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 fais	faire	VERB
 donner l'ordre	donner l'ordre	VERB
 au	au	ADP_DET
@@ -1106,8 +1106,8 @@ que	que	ADV
 vous	vous	PRON
 .	.	PUNCTsent
 »	»	PUNCTclause
-↵↵↵↵	↵↵↵↵	PUNCTstruct
-Le	le	DET
+↵↵	↵↵	PUNCTstruct
+le	le	DET
 jeune	jeune	ADJ
 officier	officier	NOUN
 reçut	recevoir	VERB
@@ -1132,7 +1132,7 @@ et	et	CCONJ
 disparut	disparaître	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Un	un	DET
+un	un	DET
 instant	instant	NOUN
 après	après	ADV
 ,	,	PUNCTclause
@@ -1146,7 +1146,7 @@ pour	pour	ADP
 Ingolstadt	Ingolstadt	PROPN
 .	.	PUNCTsent
 —	—	PUNCTclause
-Ingolstadt	Ingolstadt	PROPN
+Ingolstadt	Ingolstadt	VERB
 le	le	DET
 plaçait	placer	VERB
 entre	entre	ADP
@@ -1161,7 +1161,7 @@ du	du	ADP_DET
 mouvement	mouvement	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-On	on	PRON
+on	on	PRON
 sait	savoir	VERB
 les	le	DET
 différentes	différent	ADJ
@@ -1177,7 +1177,7 @@ de	de	ADP
 Augsbourg	Augsbourg	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-À	à	ADP
+à	à	ADP
 Donauwœrth	Donauwœrth	PROPN
 ,	,	PUNCTclause
 l'	le	DET
@@ -1199,7 +1199,7 @@ de	de	ADP
 Augsbourg	Augsbourg	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 en	en	PRON
 résulta	résulter	VERB
 que	que	SCONJ
@@ -1243,11 +1243,11 @@ reçut	recevoir	VERB
 les	le	DET
 ordres	ordre	NOUN
 qui	qui	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 concernaient	concerner	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 fallut	falloir	VERB
 au	au	ADP_DET
 maréchal	maréchal	NOUN
@@ -1270,7 +1270,7 @@ pour	pour	ADP
 rallier	rallier	VERB
 la	le	DET
 division	division	NOUN
-Friant	Friant	PROPN
+Friant	Friant	ADJ
 —	—	PUNCTclause
 qui	qui	PRON
 ,	,	PUNCTclause
@@ -1359,7 +1359,7 @@ de	de	ADP
 Ratisbonne	Ratisbonne	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cette	ce	DET
+cette	ce	DET
 armée	armée	NOUN
 de	de	ADP
 Bellegarde	Bellegarde	PROPN
@@ -1408,7 +1408,7 @@ appelait	appeler	VERB
 lui	lui	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-La	le	DET
+la	le	DET
 journée	journée	NOUN
 du	du	ADP_DET
 18	18	NUM
@@ -1538,14 +1538,14 @@ de	de	ADP
 Landshut	Landshut	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 rendez-vous	rendez-vous	NOUN
 général	général	ADJ
 était	être	AUX
 ,	,	PUNCTclause
 comme	comme	ADP
 on	on	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 a	avoir	AUX
 vu	voir	VERB
 ,	,	PUNCTclause
@@ -1560,7 +1560,7 @@ Abens	Abens	NOUN
 Abensberg	Abensberg	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 19	19	NUM
 au	au	ADP_DET
 matin	matin	NOUN
@@ -1574,7 +1574,7 @@ en	en	ADP
 marche	marche	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Nous	nous	PRON
+nous	nous	PRON
 ne	ne	ADV
 faisons	faire	VERB
 pas	pas	ADV
@@ -1688,7 +1688,7 @@ fait	faire	AUX
 connaître	connaître	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Dans	dans	ADP
+dans	dans	ADP
 la	le	DET
 nuit	nuit	NOUN
 du	du	ADP_DET
@@ -1716,7 +1716,7 @@ faible	faible	ADJ
 engagement	engagement	NOUN
 ,	,	PUNCTclause
 les	le	DET
-Autrichiens	Autrichiens	NOUN
+autrichiens	autrichien	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
 se	se	PRON
@@ -1757,7 +1757,7 @@ Davoust	Davoust	PROPN
 libre	libre	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Durant	durant	ADP
+durant	durant	ADP
 toute	tout	ADJ
 la	le	DET
 journée	journée	NOUN
@@ -1771,7 +1771,7 @@ le	le	DET
 canon	canon	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 20	20	NUM
 ,	,	PUNCTclause
 à	à	ADP
@@ -1832,7 +1832,7 @@ pasteur	pasteur	NOUN
 Stiller	Stiller	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-On	on	PRON
+on	on	PRON
 avait	avoir	AUX
 offert	offrir	VERB
 à	à	ADP
@@ -1875,7 +1875,7 @@ jusque	jusque	ADP
 Thann	Thann	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Au	au	ADP_DET
+au	au	ADP_DET
 reste	reste	NOUN
 ,	,	PUNCTclause
 à la suite de	à la suite de	ADP
@@ -1903,7 +1903,7 @@ l'	le	DET
 empereur	empereur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Dès	dès	ADP
+dès	dès	ADP
 la	le	DET
 veille	veille	NOUN
 au	au	ADP_DET
@@ -1946,7 +1946,7 @@ vieux	vieux	ADJ
 château	château	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Napoléon	napoléon	NOUN
+Napoléon	Napoléon	PROPN
 ,	,	PUNCTclause
 sans que	sans que	SCONJ
 il	il	PRON
@@ -1978,7 +1978,7 @@ veillant	veiller	VERB
 sur	sur	ADP
 lui	lui	PRON
 .	.	PUNCTsent
-Au	au	ADP_DET
+au	au	ADP_DET
 surplus	surplus	NOUN
 ,	,	PUNCTclause
 l'	le	DET
@@ -2004,7 +2004,7 @@ il	il	PRON
 crût	croire	VERB
 à	à	ADP
 la	le	DET
-Providence	Providence	PROPN
+providence	providence	UNKNOWN
 comme	comme	ADP
 un	un	DET
 chrétien	chrétien	NOUN
@@ -2053,7 +2053,7 @@ sur	sur	ADP
 lui	lui	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Là	là	ADV
+là	là	ADV
 ,	,	PUNCTclause
 selon	selon	ADP
 l'	le	DET
@@ -2078,7 +2078,7 @@ les	le	DET
 rapports	rapport	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Voici	voici	ADP
+voici	voici	ADP
 ce	ce	PRON
 qui	qui	PRON
 se	se	PRON
@@ -2088,7 +2088,7 @@ la	le	DET
 veille	veille	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 maréchal	maréchal	NOUN
 Davoust	Davoust	PROPN
 était	être	AUX
@@ -2160,7 +2160,7 @@ Ratisbonne	Ratisbonne	PROPN
 Mainsbourg	Mainsbourg	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 même	même	ADJ
 jour	jour	NOUN
 ,	,	PUNCTclause
@@ -2315,7 +2315,7 @@ qui	qui	PRON
 ainsi	ainsi	ADV
 que	que	SCONJ
 on	on	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 a	avoir	AUX
 vu	voir	VERB
 ,	,	PUNCTclause
@@ -2333,7 +2333,7 @@ division	division	NOUN
 Friant	Friant	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 résultait	résulter	VERB
 de	de	ADP
 ces	ce	DET
@@ -2392,7 +2392,7 @@ se	se	PRON
 heurter	heurter	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 prince	prince	NOUN
 Charles	Charles	PROPN
 suivait	suivre	VERB
@@ -2427,7 +2427,7 @@ versant	versant	NOUN
 occidental	occidental	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-À	à	ADP
+à	à	ADP
 neuf	neuf	NUM
 heures	heure	NOUN
 du	du	ADP_DET
@@ -2459,7 +2459,7 @@ versant	versant	NOUN
 oriental	oriental	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-La	le	DET
+la	le	DET
 division	division	NOUN
 Gudin	Gudin	PROPN
 ,	,	PUNCTclause
@@ -2552,7 +2552,7 @@ du	du	ADP_DET
 terrain	terrain	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Les	le	DET
+les	le	DET
 tirailleurs	tirailleur	NOUN
 autrichiens	autrichien	ADJ
 se	se	PRON
@@ -2584,7 +2584,7 @@ se	se	PRON
 était	être	AUX
 porté	porter	VERB
 sur	sur	ADP
-Dinzling	Dinzling	PROPN
+Dinzling	Dinzling	X
 ,	,	PUNCTclause
 tandis que	tandis que	SCONJ
 le	le	DET
@@ -2668,13 +2668,13 @@ apportait	apporter	VERB
 Napoléon	Napoléon	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 avait	avoir	AUX
 été	être	AUX
 terrible	terrible	ADJ
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-On	on	PRON
+on	on	PRON
 se	se	PRON
 était	être	AUX
 battu	battre	VERB
@@ -2694,7 +2694,7 @@ contre	contre	NOUN
 Rosenberg	Rosenberg	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-On	on	PRON
+on	on	PRON
 se	se	PRON
 était	être	AUX
 battu	battre	VERB
@@ -2724,7 +2724,7 @@ de	de	ADP
 Liechtenstein	Liechtenstein	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Puis	puis	CCONJ
+puis	puis	CCONJ
 ,	,	PUNCTclause
 en outre	en outre	ADV
 ,	,	PUNCTclause
@@ -2745,7 +2745,7 @@ extrêmes	extrême	ADJ
 gauches	gauche	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Seulement	seulement	ADV
+seulement	seulement	ADV
 ,	,	PUNCTclause
 l'	le	DET
 archiduc	archiduc	NOUN
@@ -2807,7 +2807,7 @@ armée	armée	NOUN
 lui	lui	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 en	en	PRON
 était	être	AUX
 résulté	résulter	VERB
@@ -2862,7 +2862,7 @@ archiduc	archiduc	NOUN
 Louis	Louis	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 envoya	envoyer	VERB
 en	en	ADP
 conséquence	conséquence	NOUN
@@ -2896,7 +2896,7 @@ lendemain	lendemain	NOUN
 seulement	seulement	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Or	or	NOUN
+or	or	NOUN
 ,	,	PUNCTclause
 voici	voici	ADP
 les	le	DET
@@ -2944,7 +2944,7 @@ Morand	Morand	PROPN
 vingt-cinq	vingt-cinq	NUM
 ;	;	PUNCTclause
 les	le	DET
-Bavarois	Bavarois	PROPN
+bavarois	bavarois	UNKNOWN
 ,	,	PUNCTclause
 cent	cent	NUM
 ou	ou	CCONJ
@@ -2953,7 +2953,7 @@ cinquante	cinquante	NUM
 cavaliers	cavalier	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-En	en	ADP
+en	en	ADP
 tout	tout	PRON
 ,	,	PUNCTclause
 deux	deux	NUM
@@ -3001,7 +3001,7 @@ huit	huit	NUM
 cents	cents	NUM
 .	.	PUNCTsent
 —	—	PUNCTclause
-En	en	ADP
+en	en	ADP
 tout	tout	PRON
 ,	,	PUNCTclause
 près de	près de	ADP
@@ -3010,7 +3010,7 @@ mille	mille	NUM
 hommes	homme	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Napoléon	napoléon	NOUN
+Napoléon	Napoléon	PROPN
 vit	vivre	VERB
 ce	ce	DET
 que	que	SCONJ
@@ -3050,7 +3050,7 @@ de	de	ADP
 son	son	DET
 génie	génie	NOUN
 .	.	PUNCTsent
-Presque	presque	ADV
+presque	presque	ADV
 en même temps que	en même temps que	ADP
 il	il	PRON
 arrivait	arriver	VERB
@@ -3095,7 +3095,7 @@ l'	le	DET
 Abens	Abens	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Napoléon	napoléon	NOUN
+Napoléon	Napoléon	PROPN
 décida	décider	VERB
 que	que	SCONJ
 l'	le	DET
@@ -3179,7 +3179,7 @@ deux	deux	NUM
 feux	feu	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-En	en	ADP
+en	en	ADP
 conséquence	conséquence	NOUN
 ,	,	PUNCTclause
 il	il	PRON
@@ -3235,9 +3235,9 @@ commandait	commander	VERB
 à	à	ADP
 quarante	quarante	NUM
 mille	mille	NUM
-Wurtembergeois	Wurtembergeois	NOUN
+wurtembergeois	wurtembergeois	NOUN
 et	et	CCONJ
-Bavarois	Bavarois	NOUN
+bavarois	bavarois	NOUN
 ,	,	PUNCTclause
 de	de	ADP
 enlever	enlever	VERB
@@ -3301,17 +3301,17 @@ et	et	CCONJ
 Moosbourg	Moosbourg	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Puis	puis	CCONJ
+puis	puis	CCONJ
 il	il	PRON
 regarda	regarder	VERB
 défiler	défiler	VERB
 devant	devant	ADP
 lui	lui	PRON
 les	le	DET
-Bavarois	Bavarois	PROPN
+bavarois	bavarois	UNKNOWN
 et	et	CCONJ
 les	le	DET
-Wurtembergeois	Wurtembergeois	PROPN
+wurtembergeois	wurtembergeois	UNKNOWN
 qui	qui	PRON
 allaient	aller	VERB
 se	se	PRON
@@ -3349,13 +3349,13 @@ en	en	ADP
 allemand	allemand	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 leur	leur	PRON
 disait	dire	VERB
 :	:	PUNCTclause
-↵↵↵↵	↵↵↵↵	PUNCTstruct
+↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Peuples	peuple	NOUN
+peuples	peuple	NOUN
 de	de	ADP
 la	le	DET
 grande	grand	ADJ
@@ -3451,7 +3451,7 @@ dominateurs	dominateur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 »	»	PUNCTclause
-Au	au	ADP_DET
+au	au	ADP_DET
 reste	reste	NOUN
 ,	,	PUNCTclause
 ajouta	ajouter	VERB
@@ -3494,7 +3494,7 @@ votre	votre	DET
 loyauté	loyauté	NOUN
 .	.	PUNCTsent
 »	»	PUNCTclause
-↵↵↵↵	↵↵↵↵	PUNCTstruct
+↵↵	↵↵	PUNCTstruct
 à peine	à peine	ADV
 avait	avoir	VERB
 il	il	PRON
@@ -3527,7 +3527,7 @@ son	son	DET
 cheval	cheval	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Nous	nous	PRON
+nous	nous	PRON
 avons	avoir	AUX
 tort	tort	NOUN
 en	en	ADP
@@ -3572,7 +3572,7 @@ sa	son	DET
 monture	monture	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Un	un	DET
+un	un	DET
 officier	officier	NOUN
 bavarois	bavarois	ADJ
 sortit	sortir	VERB
@@ -3589,7 +3589,7 @@ présenta	présenter	VERB
 Napoléon	Napoléon	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Napoléon	napoléon	NOUN
+Napoléon	Napoléon	PROPN
 y	y	PRON
 jeta	jeter	VERB
 un	un	DET
@@ -3605,7 +3605,7 @@ sa	son	DET
 tête	tête	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Après	après	ADP
+après	après	ADP
 quoi	quoi	PRON
 la	le	DET
 masse	masse	NOUN
@@ -3621,7 +3621,7 @@ sur	sur	ADP
 Arnhofen	Arnhofen	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Arrivé	arriver	VERB
+arrivé	arriver	VERB
 au bas	au bas	ADV
 du	du	ADP_DET
 plateau	plateau	NOUN
@@ -3639,7 +3639,7 @@ derniers	dernier	ADJ
 ordres	ordre	NOUN
 ;	;	PUNCTclause
 Napoléon	Napoléon	PROPN
-les	le:PRON	PRON
+les	le_PRON	PRON
 lui	lui	PRON
 donna	donner	VERB
 ;	;	PUNCTclause
@@ -3679,10 +3679,10 @@ France	France	PROPN
 se	se	PRON
 appelait	appeler	VERB
 Louis	Louis	PROPN
-Xviii	Xviii	PROPN
+XVIII	XVIII	NUM
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Berthier	Berthier	PROPN
+Berthier	Berthier	NOUN
 pâlit	pâlir	VERB
 en	en	ADP
 voyant	voir	VERB

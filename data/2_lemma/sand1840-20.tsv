@@ -5,12 +5,12 @@
 # isPartOf = Le compagnon du tour de France
 # title = Chapitre XX.
 
-↵↵↵	↵↵↵	PUNCTstruct
-Chapitre	chapitre	NOUN
-		TOKEN
+↵↵	↵↵	PUNCTstruct
+chapitre	chapitre	NOUN
+XX	XX	X
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-En	en	ADP
+en	en	ADP
 peu de	peu de	DET
 temps	temps	NOUN
 ,	,	PUNCTclause
@@ -28,7 +28,7 @@ une	un	DET
 manière	manière	NOUN
 merveilleuse	merveilleux	ADJ
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 faisait	faire	VERB
 beaucoup	beaucoup	ADV
 travailler	travailler	VERB
@@ -46,7 +46,7 @@ avait	avoir	AUX
 pas	pas	ADV
 connue	connaître	VERB
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 dominait	dominer	VERB
 le	le	DET
 curé	curé	NOUN
@@ -75,7 +75,7 @@ danser	danser	VERB
 le	le	DET
 dimanche	dimanche	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 tenait	tenir	VERB
 tête	tête	NOUN
 au	au	ADP_DET
@@ -96,7 +96,7 @@ conseil	conseil	NOUN
 de	de	ADP
 révision	révision	NOUN
 .	.	PUNCTsent
-Enfin	enfin	ADV
+enfin	enfin	ADV
 il	il	PRON
 ouvrait	ouvrir	VERB
 son	son	DET
@@ -147,7 +147,7 @@ illustre	illustre	ADJ
 origine	origine	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Les	le	DET
+les	le	DET
 ouvriers	ouvrier	NOUN
 du	du	ADP_DET
 père	père	NOUN
@@ -174,8 +174,8 @@ soubrettes	soubrette	NOUN
 du	du	ADP_DET
 château	château	NOUN
 .	.	PUNCTsent
-Le	le	DET
-Berrichon	Berrichon	PROPN
+le	le	DET
+berrichon	berrichon	UNKNOWN
 y	y	PRON
 déployait	déployer	VERB
 toutes	tout	ADJ
@@ -191,8 +191,8 @@ pas	pas	ADV
 de	de	ADP
 succès	succès	NOUN
 .	.	PUNCTsent
-Le	le	DET
-Corinthien	Corinthien	PROPN
+le	le	DET
+corinthien	corinthien	UNKNOWN
 se	se	PRON
 livrait	livrer	VERB
 aussi	aussi	ADV
@@ -276,7 +276,7 @@ avec	avec	ADP
 lui	lui	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 vieux	vieux	ADJ
 comte	comte	NOUN
 venait	venir	VERB
@@ -311,7 +311,7 @@ sa	son	DET
 présence	présence	NOUN
 seigneuriale	seigneurial	ADJ
 .	.	PUNCTsent
-On	on	PRON
+on	on	PRON
 était	être	AUX
 flatté	flatter	VERB
 du	du	ADP_DET
@@ -341,7 +341,7 @@ le	le	DET
 chêne	chêne	NOUN
 ,	,	PUNCTclause
 où	où	PRON
-personne	personne:PRON	PRON
+personne	personne_PRON	PRON
 ne	ne	ADV
 se	se	PRON
 fût	être	AUX
@@ -402,7 +402,7 @@ convînt	convenir	VERB
 jamais	jamais	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Dans	dans	ADP
+dans	dans	ADP
 le	le	DET
 commencement	commencement	NOUN
 ,	,	PUNCTclause
@@ -508,7 +508,7 @@ dauphin	dauphin	NOUN
 de	de	ADP
 France	France	PROPN
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 père	père	NOUN
 Lacrête	Lacrête	PROPN
 avait	avoir	AUX
@@ -533,7 +533,7 @@ la	le	DET
 famille	famille	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 comte	comte	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
@@ -556,7 +556,7 @@ serrurier	serrurier	NOUN
 mais	mais	CCONJ
 il	il	PRON
 ne	ne	ADV
-le	le:PRON	PRON
+le	le_PRON	PRON
 laissa	laisser	VERB
 pas	pas	ADV
 tomber	tomber	VERB
@@ -595,7 +595,7 @@ triomphe	triomphe	NOUN
 impertinents	impertinent	ADJ
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Quand	quand	SCONJ
+quand	quand	SCONJ
 Raoul	Raoul	PROPN
 se	se	PRON
 éclipsa	éclipser	VERB
@@ -620,12 +620,12 @@ invitation	invitation	NOUN
 de	de	ADP
 Isidore	Isidore	PROPN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 après	après	ADP
 Isidore	Isidore	PROPN
 ,	,	PUNCTclause
-personne	personne:PRON	PRON
+personne	personne_PRON	PRON
 ne	ne	ADV
 se	se	PRON
 présenta	présenter	VERB
@@ -652,7 +652,7 @@ plus	plus	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Voilà	voilà	ADP
+voilà	voilà	ADP
 ce	ce	PRON
 que	que	SCONJ
 ce	ce	PRON
@@ -668,7 +668,7 @@ dit	dire	VERB
 le	le	DET
 comte	comte	NOUN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 voyons	voir	VERB
 donc	donc	ADV
 si	si	SCONJ
@@ -680,7 +680,7 @@ pas	pas	ADV
 un	un	DET
 danseur	danseur	NOUN
 .	.	PUNCTsent
-Viens	venir	VERB
+viens	venir	VERB
 ici	ici	ADV
 ,	,	PUNCTclause
 mon	mon	DET
@@ -689,7 +689,7 @@ enfant	enfant	NOUN
 dit	dire	VERB
 il	il	PRON
 au	au	ADP_DET
-Corinthien	Corinthien	PROPN
+corinthien	corinthien	UNKNOWN
 qui	qui	PRON
 était	être	AUX
 à	à	ADP
@@ -716,7 +716,7 @@ ne	ne	ADV
 oses	oser	VERB
 pas	pas	ADV
 .	.	PUNCTsent
-Moi	moi	PRON
+moi	moi	PRON
 ,	,	PUNCTclause
 je	je	PRON
 te	te	PRON
@@ -728,7 +728,7 @@ charmée	charmer	VERB
 de	de	ADP
 danser	danser	VERB
 .	.	PUNCTsent
-Allons	aller	VERB
+allons	aller	VERB
 ,	,	PUNCTclause
 offre	offrir	VERB
 lui	lui	PRON
@@ -752,8 +752,8 @@ les	le	DET
 figures	figure	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
-Corinthien	Corinthien	PROPN
+le	le	DET
+corinthien	corinthien	UNKNOWN
 était	être	AUX
 trop	trop	ADV
 gâté	gâter	VERB
@@ -824,7 +824,7 @@ aux	au	ADP_DET
 regards	regard	NOUN
 écarquillés	écarquiller	VERB
 du	du	ADP_DET
-Berrichon	Berrichon	PROPN
+berrichon	berrichon	UNKNOWN
 ,	,	PUNCTclause
 placé	placer	VERB
 vis-à-vis de	vis-à-vis de	ADP
@@ -838,7 +838,7 @@ l'	le	DET
 aventure	aventure	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Tout	tout	PRON
+tout	tout	PRON
 en	en	ADP
 sautant	sauter	VERB
 légèrement	légèrement	ADV
@@ -850,7 +850,7 @@ sa	son	DET
 danseuse	danseur	NOUN
 ,	,	PUNCTclause
 le	le	DET
-Corinthien	Corinthien	PROPN
+corinthien	corinthien	UNKNOWN
 ,	,	PUNCTclause
 qui	qui	PRON
 ,	,	PUNCTclause
@@ -886,7 +886,7 @@ dans	dans	ADP
 les	le	DET
 figures	figure	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 y	y	PRON
 comprit	comprendre	VERB
@@ -910,7 +910,7 @@ les	le	DET
 ronds-de-jambe	ronds-de-jambe	NOUN
 impétueux	impétueux	ADJ
 du	du	ADP_DET
-Berrichon	Berrichon	PROPN
+berrichon	berrichon	UNKNOWN
 ,	,	PUNCTclause
 il	il	PRON
 osa	oser	VERB
@@ -942,7 +942,7 @@ empêcher	empêcher	VERB
 de	de	ADP
 tomber	tomber	VERB
 .	.	PUNCTsent
-Ce	ce	PRON
+ce	ce	PRON
 coude	coude	NOUN
 nu	nu	ADJ
 entre	entre	ADP
@@ -967,9 +967,9 @@ doux	doux	ADJ
 ,	,	PUNCTclause
 que	que	SCONJ
 le	le	DET
-Corinthien	Corinthien	PROPN
+corinthien	corinthien	UNKNOWN
 ne	ne	ADV
-le	le:PRON	PRON
+le	le_PRON	PRON
 sentit	sentir	VERB
 pas	pas	ADV
 d'abord	d'abord	ADV
@@ -979,7 +979,7 @@ que	que	SCONJ
 ,	,	PUNCTclause
 voyant	voir	VERB
 le	le	DET
-Berrichon	Berrichon	PROPN
+berrichon	berrichon	UNKNOWN
 lancé	lancer	VERB
 dans	dans	ADP
 une	un	DET
@@ -1001,13 +1001,13 @@ remettre	remettre	VERB
 en	en	ADP
 équilibre	équilibre	NOUN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 cette	ce	DET
 pression	pression	NOUN
 fut	être	AUX
 électrique	électrique	ADJ
 .	.	PUNCTsent
-Joséphine	Joséphine	PROPN
+Joséphine	Joséphine	VERB
 devint	devenir	VERB
 rouge	rouge	ADJ
 comme	comme	ADP
@@ -1016,7 +1016,7 @@ fraise	fraise	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 le	le	DET
-Corinthien	Corinthien	PROPN
+corinthien	corinthien	UNKNOWN
 eut	avoir	VERB
 un	un	DET
 accès	accès	NOUN
@@ -1028,7 +1028,7 @@ de	de	ADP
 malaise	malaise	NOUN
 insurmontable	insurmontable	ADJ
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 eut	avoir	VERB
 hâte	hâte	NOUN
 de	de	ADP
@@ -1054,7 +1054,7 @@ sorte	sorte	NOUN
 de	de	ADP
 effroi	effroi	NOUN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 le	le	DET
 violon	violon	NOUN
 ne	ne	ADV
@@ -1092,7 +1092,7 @@ celle	celle	PRON
 dans	dans	ADP
 la sienne	la sienne	PRON
 .	.	PUNCTsent
-De	de	ADP
+de	de	ADP
 quelle	quel	DET
 formule	formule	NOUN
 se	se	PRON
@@ -1106,18 +1106,18 @@ de nouveau	de nouveau	ADV
 ,	,	PUNCTclause
 et	et	CCONJ
 comment	comment	ADV
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avait	avoir	VERB
 il	il	PRON
 osé	oser	VERB
 ?	?	PUNCTsent
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
-le	le:PRON	PRON
+le	le_PRON	PRON
 sut	savoir	VERB
 jamais	jamais	ADV
 .	.	PUNCTsent
-Un	un	DET
+un	un	DET
 nuage	nuage	NOUN
 flottait	flotter	VERB
 autour de	autour de	ADP
@@ -1132,12 +1132,12 @@ un	un	DET
 rêve	rêve	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Depuis	depuis	ADP
+depuis	depuis	ADP
 ce	ce	DET
 jour	jour	NOUN
 ,	,	PUNCTclause
 le	le	DET
-Corinthien	Corinthien	PROPN
+corinthien	corinthien	UNKNOWN
 fit	faire	AUX
 danser	danser	VERB
 la	le	DET
@@ -1152,7 +1152,7 @@ trois fois	trois fois	ADV
 que	que	SCONJ
 une	un	DET
 .	.	PUNCTsent
-Son	son	DET
+son	son	DET
 exemple	exemple	NOUN
 encouragea	encourager	VERB
 les	le	DET
@@ -1166,11 +1166,11 @@ plus	plus	ADV
 une	un	DET
 contredanse	contredanse	NOUN
 .	.	PUNCTsent
-Quand	quand	SCONJ
+quand	quand	SCONJ
 le	le	DET
-Corinthien	Corinthien	PROPN
+corinthien	corinthien	UNKNOWN
 ne	ne	ADV
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 invitait	inviter	VERB
 pas	pas	ADV
 ,	,	PUNCTclause
@@ -1205,7 +1205,7 @@ se	se	PRON
 chercher	chercher	VERB
 encore	encore	ADV
 .	.	PUNCTsent
-Tous	tout	ADJ
+tous	tout	ADJ
 ces	ce	DET
 petits	petit	ADJ
 prodiges	prodige	NOUN
@@ -1245,7 +1245,7 @@ en	en	ADP
 apercevoir	apercevoir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Yseult	Yseult	PROPN
+Yseult	Yseult	ADJ
 ne	ne	ADV
 dansait	danser	VERB
 jamais	jamais	ADV
@@ -1282,7 +1282,7 @@ le	le	DET
 tourbillon	tourbillon	NOUN
 champêtre	champêtre	ADJ
 .	.	PUNCTsent
-Était	être	AUX
+était	être	AUX
 ce	ce	DET
 dédain	dédain	NOUN
 ,	,	PUNCTclause
@@ -1294,7 +1294,7 @@ la	le	DET
 jeune	jeune	ADJ
 châtelaine	châtelain	NOUN
 ?	?	PUNCTsent
-Pierre	pierre	NOUN
+Pierre	Pierre	PROPN
 Huguenin	Huguenin	PROPN
 ,	,	PUNCTclause
 toujours	toujours	ADV
@@ -1351,7 +1351,7 @@ derrière	derrière	ADP
 tant de	tant de	DET
 langueur	langueur	NOUN
 .	.	PUNCTsent
-Mademoiselle	mademoiselle	NOUN
+mademoiselle	mademoiselle	NOUN
 de	de	ADP
 Villepreux	Villepreux	PROPN
 avait	avoir	AUX
@@ -1379,7 +1379,7 @@ en	en	ADP
 attendant	attendre	VERB
 que	que	SCONJ
 elle	elle	PRON
-les	le:PRON	PRON
+les	le_PRON	PRON
 applique	appliquer	VERB
 à	à	ADP
 de	de	DET
@@ -1388,7 +1388,7 @@ actes	acte	NOUN
 de	de	ADP
 force	force	NOUN
 .	.	PUNCTsent
-Pierre	pierre	NOUN
+Pierre	Pierre	PROPN
 Huguenin	Huguenin	PROPN
 l'	le	DET
 étudiait	étudier	VERB
@@ -1414,7 +1414,7 @@ deviner	deviner	VERB
 le	le	DET
 sens	sens	NOUN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ce	ce	DET
 livre	livre	NOUN
 était	être	AUX
@@ -1431,7 +1431,7 @@ le	le	DET
 mystère	mystère	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Un	un	DET
+un	un	DET
 jour	jour	NOUN
 ,	,	PUNCTclause
 Amaury	Amaury	PROPN
@@ -1458,7 +1458,7 @@ dans	dans	ADP
 le	le	DET
 parc	parc	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 le	le	DET
 porta	porter	VERB
 à	à	ADP
@@ -1491,7 +1491,7 @@ et	et	CCONJ
 de	de	ADP
 joie	joie	NOUN
 .	.	PUNCTsent
-Depuis	depuis	ADP
+depuis	depuis	ADP
 bien	bien	ADV
 des	un	DET
 jours	jour	NOUN
@@ -1586,7 +1586,7 @@ et	et	CCONJ
 son	son	DET
 époux	époux	NOUN
 .	.	PUNCTsent
-Cette	ce	DET
+cette	ce	DET
 intrigue	intrigue	NOUN
 à la fois	à la fois	ADV
 simple	simple	ADJ
@@ -1607,7 +1607,7 @@ des	un	ADP_DET
 romanciers	romancier	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ce	ce	DET
+ce	ce	DET
 volume	volume	NOUN
 fut	être	AUX
 dévoré	dévorer	VERB
@@ -1641,12 +1641,12 @@ au	au	ADP_DET
 château	château	NOUN
 que	que	SCONJ
 on	on	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 leur	leur	PRON
 prêtât	prêter	VERB
 ,	,	PUNCTclause
 ils	ils	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 louèrent	louer	VERB
 chez	chez	ADP
 le	le	DET
@@ -1656,7 +1656,7 @@ la	le	DET
 ville	ville	NOUN
 voisine	voisin	ADJ
 .	.	PUNCTsent
-Cette	ce	DET
+cette	ce	DET
 lecture	lecture	NOUN
 fit	faire	VERB
 sur	sur	ADP
@@ -1680,7 +1680,7 @@ la	le	DET
 femme	femme	NOUN
 ;	;	PUNCTclause
 le	le	DET
-Corinthien	Corinthien	PROPN
+corinthien	corinthien	UNKNOWN
 y	y	PRON
 voyait	voir	VERB
 la	le	DET
@@ -1711,9 +1711,8 @@ la	le	DET
 gloire	gloire	NOUN
 dans	dans	ADP
 l'	le	DET
-art	art	NOUN
-.	.	PUNCTsent
-Il	il	PRON
+article	article	NOUN
+il	il	PRON
 avouait	avouer	VERB
 naïvement	naïvement	ADV
 à	à	ADP
@@ -1726,7 +1725,7 @@ espérances	espérance	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Tu	tu	PRON
+tu	tu	PRON
 es	être	AUX
 heureux	heureux	ADJ
 ,	,	PUNCTclause
@@ -1744,7 +1743,7 @@ dans	dans	ADP
 l'	le	DET
 esprit	esprit	NOUN
 .	.	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 après	après	ADP
 tout	tout	ADV
 ,	,	PUNCTclause
@@ -1774,7 +1773,7 @@ pas	pas	ADV
 absolument	absolument	ADV
 nécessaires	nécessaire	ADJ
 .	.	PUNCTsent
-Travaille	travailler	VERB
+travaille	travailler	VERB
 donc	donc	ADV
 ,	,	PUNCTclause
 mon	mon	DET
@@ -1786,7 +1785,7 @@ te	te	PRON
 rebute	rebuter	VERB
 pas	pas	ADV
 .	.	PUNCTsent
-Dieu	dieu	NOUN
+Dieu	Dieu	PROPN
 te	te	PRON
 a	avoir	AUX
 beaucoup	beaucoup	ADV
@@ -1798,7 +1797,7 @@ et	et	CCONJ
 l'	le	DET
 amour	amour	NOUN
 !	!	PUNCTsent
-Il	il	PRON
+il	il	PRON
 semble	sembler	VERB
 que	que	SCONJ
 il	il	PRON
@@ -1862,7 +1861,7 @@ de	de	ADP
 te	te	PRON
 aider	aider	VERB
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ceci	ceci	PRON
 ne	ne	ADV
 est	être	AUX
@@ -1891,7 +1890,7 @@ au	au	ADP_DET
 monde	monde	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Lorsque	lorsque	SCONJ
+lorsque	lorsque	SCONJ
 Pierre	Pierre	PROPN
 parlait	parler	VERB
 de	de	ADP
@@ -1913,7 +1912,7 @@ de	de	ADP
 combattre	combattre	VERB
 .	.	PUNCTsent
 —	—	PUNCTclause
-Comment	comment	ADV
+comment	comment	ADV
 peux	pouvoir	VERB
 tu	tu	PRON
 te	te	PRON
@@ -1949,7 +1948,7 @@ fidèlement	fidèlement	ADV
 et	et	CCONJ
 courageusement	courageusement	ADV
 !	!	PUNCTsent
-Je	je	PRON
+je	je	PRON
 me	me	PRON
 surprends	surprendre	VERB
 ,	,	PUNCTclause
@@ -1961,7 +1960,7 @@ ton	ton	DET
 malheur	malheur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Amaury	Amaury	PROPN
+Amaury	Amaury	NOUN
 avait	avoir	VERB
 coutume	coutume	NOUN
 de	de	ADP
@@ -1997,7 +1996,7 @@ se	se	PRON
 réaliser	réaliser	VERB
 .	.	PUNCTsent
 —	—	PUNCTclause
-Crois	croire	VERB
+crois	croire	VERB
 tu	tu	PRON
 donc	donc	ADV
 ,	,	PUNCTclause
@@ -2015,7 +2014,7 @@ je	je	PRON
 lui	lui	PRON
 dispute	disputer	VERB
 ?	?	PUNCTsent
-Pendant	pendant	ADP
+pendant	pendant	ADP
 un	un	DET
 an	an	NOUN
 que	que	SCONJ
@@ -2024,9 +2023,9 @@ va	aller	VERB
 passer	passer	VERB
 auprès de	auprès de	ADP
 la	le	DET
-Mère	Mère	NOUN
+mère	mère	NOUN
 ,	,	PUNCTclause
-la	le:PRON	PRON
+la	le_PRON	PRON
 voyant	voir	VERB
 tous	tout	ADJ
 les	le	DET
@@ -2125,7 +2124,7 @@ pensées	pensée	NOUN
 de	de	ADP
 amour	amour	NOUN
 !	!	PUNCTsent
-Aujourd'hui	aujourd'hui	ADV
+aujourd'hui	aujourd'hui	ADV
 elle	elle	PRON
 se	se	PRON
 repend	rependre	VERB
@@ -2184,7 +2183,7 @@ le	le	DET
 Bon-Soutien	Bon-Soutien	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ces	ce	DET
+ces	ce	DET
 doutes	doute	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
@@ -2199,7 +2198,7 @@ hardi	hardi	ADJ
 et	et	CCONJ
 croyant	croire	VERB
 du	du	ADP_DET
-Corinthien	Corinthien	PROPN
+corinthien	corinthien	UNKNOWN
 ,	,	PUNCTclause
 étonnaient	étonner	VERB
 Pierre	Pierre	PROPN
@@ -2229,7 +2228,7 @@ pas	pas	ADV
 son	son	DET
 ami	ami	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 essaya	essayer	VERB
 de	de	ADP
 bannir	bannir	VERB
@@ -2244,7 +2243,7 @@ et	et	CCONJ
 de	de	ADP
 justifier	justifier	VERB
 le	le	DET
-Corinthien	Corinthien	PROPN
+corinthien	corinthien	UNKNOWN
 à	à	ADP
 ses	son	DET
 propres	propre	ADJ
@@ -2252,7 +2251,7 @@ yeux	œil	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	non	ADV
+non	non	ADV
 ,	,	PUNCTclause
 je	je	PRON
 ne	ne	ADV
@@ -2267,7 +2266,7 @@ le	le	DET
 jeune	jeune	ADJ
 homme	homme	NOUN
 .	.	PUNCTsent
-Chaque	chaque	DET
+chaque	chaque	DET
 matin	matin	NOUN
 et	et	CCONJ
 chaque	chaque	DET
@@ -2312,7 +2311,7 @@ et	et	CCONJ
 les	le	DET
 querelles	querelle	NOUN
 du	du	ADP_DET
-Compagnonnage	Compagnonnage	NOUN
+compagnonnage	compagnonnage	NOUN
 me	me	PRON
 font	faire	AUX
 horreur	horreur	NOUN
@@ -2368,7 +2367,7 @@ soldat	soldat	NOUN
 la	le	DET
 guerre	guerre	NOUN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ce	ce	DET
 sang	sang	NOUN
 répandu	répandre	VERB
@@ -2412,7 +2411,7 @@ plus	plus	ADV
 affreuse	affreux	ADJ
 encore	encore	ADV
 .	.	PUNCTsent
-Si	si	SCONJ
+si	si	SCONJ
 la	le	DET
 Savinienne	Savinienne	PROPN
 était	être	AUX
@@ -2443,7 +2442,7 @@ souvenir	souvenir	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Cela	cela	PRON
+cela	cela	PRON
 est	être	AUX
 certain	certain	ADJ
 ;	;	PUNCTclause
@@ -2457,10 +2456,10 @@ coupable	coupable	ADJ
 que	que	SCONJ
 je	je	PRON
 ne	ne	ADV
-le	le:PRON	PRON
+le	le_PRON	PRON
 suis	suivre	VERB
 .	.	PUNCTsent
-Pierre	pierre	NOUN
+Pierre	Pierre	PROPN
 ,	,	PUNCTclause
 tu	tu	PRON
 me	me	PRON
@@ -2478,7 +2477,7 @@ tu	tu	PRON
 étais	être	AUX
 dégoûté	dégoûter	VERB
 du	du	ADP_DET
-Compagnonnage	Compagnonnage	NOUN
+compagnonnage	compagnonnage	NOUN
 ,	,	PUNCTclause
 et	et	CCONJ
 que	que	SCONJ
@@ -2521,7 +2520,7 @@ le	le	DET
 même	même	ADJ
 dégoût	dégoût	NOUN
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 puis	puis	CCONJ
 supporter	supporter	VERB
@@ -2545,7 +2544,7 @@ je	je	PRON
 ai	avoir	AUX
 rêvée	rêver	VERB
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 faudrait	falloir	VERB
 que	que	SCONJ
 la	le	DET
@@ -2617,7 +2616,7 @@ il	il	PRON
 ne	ne	ADV
 faudrait	falloir	VERB
 .	.	PUNCTsent
-Rappelle	rappeler	VERB
+rappelle	rappeler	VERB
 toi	toi	PRON
 tes	ton	DET
 jours	jour	NOUN
@@ -2639,7 +2638,7 @@ de	de	ADP
 sa	son	DET
 présence	présence	NOUN
 .	.	PUNCTsent
-Plus	plus	ADV
+plus	plus	ADV
 ferme	ferme	ADJ
 et	et	CCONJ
 plus	plus	ADV
@@ -2678,7 +2677,7 @@ de	de	ADP
 son	son	DET
 foyer	foyer	NOUN
 .	.	PUNCTsent
-Son	son	DET
+son	son	DET
 rôle	rôle	NOUN
 est	être	AUX
 bien	bien	ADV
@@ -2691,7 +2690,7 @@ assure	assurer	VERB
 et	et	CCONJ
 plus	plus	ADV
 je	je	PRON
-la	le:PRON	PRON
+la	le_PRON	PRON
 vois	voir	VERB
 entourée	entourer	VERB
 de	de	ADP
@@ -2699,7 +2698,7 @@ dangers	danger	NOUN
 ,	,	PUNCTclause
 plus	plus	ADV
 je	je	PRON
-la	le:PRON	PRON
+la	le_PRON	PRON
 trouve	trouver	VERB
 digne	digne	ADJ
 de	de	ADP
@@ -2726,7 +2725,7 @@ grondent	gronder	VERB
 autour de	autour de	ADP
 elle	elle	PRON
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 me	me	PRON
 semble	sembler	VERB
 que	que	SCONJ
@@ -2771,12 +2770,12 @@ confiée	confier	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Ô	ô	INTJ
+ô	ô	INTJ
 Pierre	Pierre	PROPN
 !	!	PUNCTsent
 dit	dire	VERB
 le	le	DET
-Corinthien	Corinthien	PROPN
+corinthien	corinthien	UNKNOWN
 ému	émouvoir	VERB
 ,	,	PUNCTclause
 ton	ton	DET
@@ -2794,7 +2793,7 @@ les	le	DET
 plus	plus	ADV
 élevées	élevé	ADJ
 .	.	PUNCTsent
-Oui	oui	INTJ
+oui	oui	INTJ
 ,	,	PUNCTclause
 la	le	DET
 Savinienne	Savinienne	PROPN
@@ -2819,8 +2818,8 @@ enfer	enfer	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Tu	tu	PRON
-le	le:PRON	PRON
+tu	tu	PRON
+le	le_PRON	PRON
 feras	faire	AUX
 un	un	DET
 jour	jour	NOUN
@@ -2828,7 +2827,7 @@ jour	jour	NOUN
 répondit	répondre	VERB
 Pierre	Pierre	PROPN
 .	.	PUNCTsent
-Quand	quand	SCONJ
+quand	quand	SCONJ
 tu	tu	PRON
 auras	avoir	AUX
 conquis	conquérir	VERB
@@ -2855,7 +2854,7 @@ associer	associer	VERB
 ta	ton	DET
 compagne	compagne	NOUN
 .	.	PUNCTsent
-Alors	alors	ADV
+alors	alors	ADV
 elle	elle	PRON
 aura	avoir	VERB
 bien	bien	ADV
@@ -2870,7 +2869,7 @@ ses	son	DET
 nombreux	nombreux	ADJ
 enfants	enfant	NOUN
 du	du	ADP_DET
-Tour	Tour	NOUN
+tour	tour	NOUN
 de	de	ADP
 France	France	PROPN
 ;	;	PUNCTclause
@@ -2892,7 +2891,7 @@ devoirs	devoir	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 dans	dans	ADP
 combien	combien	ADV
 de	de	ADP
@@ -2904,7 +2903,7 @@ il	il	PRON
 se	se	PRON
 écria	écrier	VERB
 le	le	DET
-Corinthien	Corinthien	PROPN
+corinthien	corinthien	UNKNOWN
 avec	avec	ADP
 une	un	DET
 expression	expression	NOUN
@@ -2918,7 +2917,7 @@ frappé	frapper	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Ô	ô	INTJ
+ô	ô	INTJ
 mon	mon	DET
 cher	cher	ADJ
 enfant	enfant	NOUN
@@ -2938,7 +2937,7 @@ pressé	pressé	ADJ
 de	de	ADP
 vivre	vivre	VERB
 .	.	PUNCTsent
-Comment	comment	ADV
+comment	comment	ADV
 !	!	PUNCTsent
 le	le	DET
 courage	courage	NOUN
@@ -2963,8 +2962,8 @@ de	de	ADP
 puissance	puissance	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
-Corinthien	Corinthien	PROPN
+le	le	DET
+corinthien	corinthien	UNKNOWN
 cacha	cacher	VERB
 son	son	DET
 visage	visage	NOUN
@@ -2973,7 +2972,7 @@ ses	son	DET
 deux	deux	NUM
 mains	main	NOUN
 .	.	PUNCTsent
-Assis	asseoir	VERB
+assis	asseoir	VERB
 sur	sur	ADP
 un	un	DET
 arbre	arbre	NOUN
@@ -3038,19 +3037,19 @@ jeunesse	jeunesse	NOUN
 du	du	ADP_DET
 village	village	NOUN
 qui	qui	PRON
-les	le:PRON	PRON
+les	le_PRON	PRON
 escortait	escorter	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
-Corinthien	Corinthien	PROPN
+le	le	DET
+corinthien	corinthien	UNKNOWN
 se	se	PRON
 leva	lever	VERB
 brusquement	brusquement	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Pierre	pierre	NOUN
+Pierre	Pierre	PROPN
 ,	,	PUNCTclause
 dit	dire	VERB
 il	il	PRON
@@ -3063,7 +3062,7 @@ tristesse	tristesse	NOUN
 pour	pour	ADP
 aujourd'hui	aujourd'hui	ADV
 .	.	PUNCTsent
-Allons	aller	VERB
+allons	aller	VERB
 danser	danser	VERB
 sous	sous	ADP
 le	le	DET
@@ -3074,7 +3073,7 @@ tu	tu	PRON
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 danse	danse	NOUN
 jamais	jamais	ADV
@@ -3104,7 +3103,7 @@ chagrin	chagrin	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-À	à	ADP
+à	à	ADP
 quoi	quoi	PRON
 vois	voir	VERB
 tu	tu	PRON
@@ -3112,7 +3111,7 @@ cela	cela	PRON
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-À	à	ADP
+à	à	ADP
 l'	le	DET
 air	air	NOUN
 dont	dont	PRON
@@ -3133,7 +3132,7 @@ en effet	en effet	ADV
 ,	,	PUNCTclause
 dit	dire	VERB
 le	le	DET
-Corinthien	Corinthien	PROPN
+corinthien	corinthien	UNKNOWN
 en	en	ADP
 se	se	PRON
 rasseyant	rasseoir	VERB
@@ -3161,7 +3160,7 @@ vos	vos	DET
 peines	peine	NOUN
 pour	pour	ADP
 vous	vous	PRON
-les	le:PRON	PRON
+les	le_PRON	PRON
 ramener	ramener	VERB
 plus	plus	ADV
 lourdes	lourd	ADJ
@@ -3170,7 +3169,7 @@ lendemain	lendemain	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Allons	aller	VERB
+allons	aller	VERB
 ,	,	PUNCTclause
 dit	dire	VERB
 Pierre	Pierre	PROPN
@@ -3192,7 +3191,7 @@ que	que	SCONJ
 on	on	PRON
 vive	vivre	VERB
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 est	être	AUX
 bon	bon	ADJ
 de	de	ADP
@@ -3214,7 +3213,7 @@ doux	doux	ADJ
 l'autre	l'autre	PRON
 salutaire	salutaire	ADJ
 .	.	PUNCTsent
-Viens	venir	VERB
+viens	venir	VERB
 ,	,	PUNCTclause
 que	que	SCONJ
 je	je	PRON
@@ -3226,7 +3225,7 @@ danse	danse	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Tu	tu	PRON
+tu	tu	PRON
 devrais	devoir	VERB
 plutôt	plutôt	ADV
 me	me	PRON
@@ -3239,12 +3238,12 @@ Pierre	Pierre	PROPN
 ,	,	PUNCTclause
 répondit	répondre	VERB
 le	le	DET
-Corinthien	Corinthien	PROPN
+corinthien	corinthien	UNKNOWN
 sans	sans	ADP
 se	se	PRON
 lever	lever	VERB
 .	.	PUNCTsent
-Tu	tu	PRON
+tu	tu	PRON
 ne	ne	ADV
 sais	savoir	VERB
 pas	pas	ADV
@@ -3265,7 +3264,7 @@ conduis	conduire	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Tu	tu	PRON
+tu	tu	PRON
 me	me	PRON
 as	avoir	AUX
 donc	donc	ADV
@@ -3283,7 +3282,7 @@ ami	ami	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 toi	toi	PRON
 ,	,	PUNCTclause
 tu	tu	PRON
@@ -3296,7 +3295,7 @@ deviné	deviner	VERB
 répondit	répondre	VERB
 Amaury	Amaury	PROPN
 .	.	PUNCTsent
-Tu	tu	PRON
+tu	tu	PRON
 ne	ne	ADV
 as	avoir	AUX
 donc	donc	ADV
@@ -3322,7 +3321,7 @@ certainement	certainement	ADV
 car	car	CCONJ
 je	je	PRON
 ne	ne	ADV
-la	le:PRON	PRON
+la	le_PRON	PRON
 connais	connaître	VERB
 pas	pas	ADV
 ,	,	PUNCTclause
@@ -3361,7 +3360,7 @@ culte	culte	NOUN
 du	du	ADP_DET
 beau	beau	ADJ
 ?	?	PUNCTsent
-Comment	comment	ADV
+comment	comment	ADV
 pourrais	pouvoir	VERB
 je	je	PRON
 jamais	jamais	ADV
@@ -3376,7 +3375,7 @@ et	et	CCONJ
 détourner	détourner	VERB
 les miens	les miens	PRON
 ?	?	PUNCTsent
-Cela	cela	PRON
+cela	cela	PRON
 ne	ne	ADV
 est	être	AUX
 pas	pas	ADV
@@ -3384,11 +3383,11 @@ possible	possible	ADJ
 ,	,	PUNCTclause
 Pierre	Pierre	PROPN
 !	!	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 pourtant	pourtant	ADV
 je	je	PRON
 ne	ne	ADV
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 aime	aimer	VERB
 pas	pas	ADV
 ;	;	PUNCTclause
@@ -3401,7 +3400,7 @@ aimer	aimer	VERB
 ,	,	PUNCTclause
 n'est-ce pas	n'est-ce pas	ADV
 ?	?	PUNCTsent
-Tout	tout	ADJ
+tout	tout	ADJ
 cela	cela	PRON
 est	être	AUX
 donc	donc	ADV
@@ -3410,25 +3409,25 @@ ridicule	ridicule	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mais	mais	CCONJ
+mais	mais	CCONJ
 que	que	SCONJ
 veux	vouloir	VERB
 tu	tu	PRON
 dire	dire	VERB
 ?	?	PUNCTsent
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 te	te	PRON
 comprends	comprendre	VERB
 pas	pas	ADV
 .	.	PUNCTsent
-Quelle	quel	DET
+quelle	quel	DET
 est	être	AUX
 donc	donc	ADV
 cette	ce	DET
 femme	femme	NOUN
 ?	?	PUNCTsent
-Comment	comment	ADV
+comment	comment	ADV
 une	un	DET
 autre	autre	ADJ
 que	que	SCONJ
@@ -3440,7 +3439,7 @@ te	te	PRON
 sembler	sembler	VERB
 belle	beau	ADJ
 ?	?	PUNCTsent
-Si	si	SCONJ
+si	si	SCONJ
 je	je	PRON
 aimais	aimer	VERB
 ,	,	PUNCTclause
@@ -3467,7 +3466,7 @@ sur	sur	ADP
 la	le	DET
 terre	terre	NOUN
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 saurais	savoir	VERB
 pas	pas	ADV
@@ -3480,7 +3479,7 @@ d'autres	d'autre	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Pierre	pierre	NOUN
+Pierre	Pierre	PROPN
 ,	,	PUNCTclause
 tu	tu	PRON
 ne	ne	ADV
@@ -3490,14 +3489,14 @@ rien	rien	PRON
 tout	tout	ADJ
 cela	cela	PRON
 .	.	PUNCTsent
-Tu	tu	PRON
+tu	tu	PRON
 ne	ne	ADV
 as	avoir	AUX
 jamais	jamais	ADV
 été	être	AUX
 amoureux	amoureux	ADJ
 .	.	PUNCTsent
-Tu	tu	PRON
+tu	tu	PRON
 crois	croire	VERB
 peut-être	peut-être	ADV
 à	à	ADP
@@ -3548,9 +3547,9 @@ suivrai	suivre	VERB
 tes	ton	DET
 conseils	conseil	NOUN
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 te	te	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 ai	avoir	AUX
 dit	dire	VERB
 ,	,	PUNCTclause
@@ -3577,11 +3576,11 @@ encore	encore	ADV
 quand	quand	SCONJ
 je	je	PRON
 ne	ne	ADV
-la	le:PRON	PRON
+la	le_PRON	PRON
 vois	voir	VERB
 pas	pas	ADV
 .	.	PUNCTsent
-Souviens	souvenir	VERB
+souviens	souvenir	VERB
 toi	toi	PRON
 de	de	ADP
 ce	ce	PRON
@@ -3632,7 +3631,7 @@ dame	dame	NOUN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Il	il	PRON
+il	il	PRON
 est	être	AUX
 bien	bien	ADV
 inutile	inutile	ADJ
@@ -3640,7 +3639,7 @@ de	de	ADP
 la	le	DET
 nommer	nommer	VERB
 .	.	PUNCTsent
-Elles	elles	PRON
+elles	elles	PRON
 ne	ne	ADV
 sont	être	AUX
 que	que	ADV
@@ -3662,7 +3661,7 @@ de	de	ADP
 la	le	DET
 vie	vie	NOUN
 .	.	PUNCTsent
-Tu	tu	PRON
+tu	tu	PRON
 as	avoir	AUX
 prétendu	prétendre	VERB
 que	que	SCONJ
@@ -3682,9 +3681,9 @@ en	en	PRON
 suis	être	AUX
 défendu	défendre	VERB
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
-le	le:PRON	PRON
+le	le_PRON	PRON
 voulais	vouloir	VERB
 pas	pas	ADV
 en effet	en effet	ADV
@@ -3705,7 +3704,7 @@ sous	sous	ADP
 mon	mon	DET
 ciseau	ciseau	NOUN
 .	.	PUNCTsent
-Tu	tu	PRON
+tu	tu	PRON
 insistas	insister	PRON
 ,	,	PUNCTclause
 tu	tu	PRON
@@ -3714,7 +3713,7 @@ Guillaume	Guillaume	PROPN
 à	à	ADP
 témoin	témoin	NOUN
 .	.	PUNCTsent
-Nous	nous	PRON
+nous	nous	PRON
 parlions	parler	VERB
 un	un	DET
 peu	peu	ADV
@@ -3743,7 +3742,7 @@ dans	dans	ADP
 l'	le	DET
 atelier	atelier	NOUN
 .	.	PUNCTsent
-Nous	nous	PRON
+nous	nous	PRON
 sommes	être	AUX
 sortis	sortir	VERB
 ,	,	PUNCTclause
@@ -3767,7 +3766,7 @@ avions	avoir	VERB
 laissé	laisser	VERB
 là	là	ADV
 .	.	PUNCTsent
-Tu	tu	PRON
+tu	tu	PRON
 me	me	PRON
 attendais	attendre	VERB
 à	à	ADP
@@ -3777,14 +3776,14 @@ pour	pour	ADP
 l'	le	DET
 achever	achever	VERB
 .	.	PUNCTsent
-Tu	tu	PRON
+tu	tu	PRON
 me	me	PRON
 as	avoir	AUX
 attendu	attendre	VERB
 assez	assez	ADV
 longtemps	longtemps	ADV
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 te	te	PRON
 ai	avoir	AUX
 dit	dire	VERB
@@ -3802,7 +3801,7 @@ dissiper	dissiper	VERB
 un	un	DET
 maux de tête	maux de tête	NOUN
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 te	te	PRON
 ai	avoir	AUX
@@ -3829,7 +3828,7 @@ atelier	atelier	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Que	que	SCONJ
+que	que	SCONJ
 se	se	PRON
 est	être	AUX
 il	il	PRON
@@ -3837,26 +3836,26 @@ donc	donc	ADV
 passé	passer	VERB
 là	là	ADV
 ?	?	PUNCTsent
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 saurais	savoir	VERB
 l'	le	DET
 imaginer	imaginer	VERB
 .	.	PUNCTsent
-Une	un	DET
+une	un	DET
 dame	dame	NOUN
 !	!	PUNCTsent
 une	un	DET
 marquise	marquis	NOUN
 !…	!…	PUNCTsent
-Toi	toi	PRON
+toi	toi	PRON
 un	un	DET
 ouvrier	ouvrier	NOUN
 !	!	PUNCTsent
 un	un	DET
 compagnon	compagnon	NOUN
 !…	!…	PUNCTsent
-Corinthien	corinthien	ADJ
+corinthien	corinthien	ADJ
 ,	,	PUNCTclause
 ne	ne	ADV
 as	avoir	VERB
@@ -3869,7 +3868,7 @@ enfant	enfant	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 ai	avoir	AUX
 pas	pas	ADV
@@ -3886,7 +3885,7 @@ de	de	ADP
 bien	bien	ADV
 romanesque	romanesque	ADJ
 .	.	PUNCTsent
-Cependant	cependant	ADV
+cependant	cependant	ADV
 écoute	écouter	VERB
 .	.	PUNCTsent
 je	je	PRON
@@ -3915,11 +3914,11 @@ la	le	DET
 place	place	NOUN
 où	où	PRON
 je	je	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avais	avoir	AUX
 laissé	laisser	VERB
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 vois	voir	VERB
 le	le	DET
 fond	fond	NOUN
@@ -3944,7 +3943,7 @@ qui	qui	PRON
 lui	lui	PRON
 ressemble	ressembler	VERB
 .	.	PUNCTsent
-En	en	ADP
+en	en	ADP
 me	me	PRON
 voyant	voir	VERB
 ,	,	PUNCTclause
@@ -3959,7 +3958,7 @@ tomber	tomber	VERB
 son	son	DET
 bougeoir	bougeoir	NOUN
 .	.	PUNCTsent
-Nous	nous	PRON
+nous	nous	PRON
 voilà	voilà	ADP
 dans	dans	ADP
 l'	le	DET
@@ -3968,13 +3967,13 @@ tous les deux	tous les deux	PRON
 ;	;	PUNCTclause
 je	je	PRON
 ne	ne	ADV
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avais	avoir	AUX
 pas	pas	ADV
 bien	bien	ADV
 reconnue	reconnaître	VERB
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 sais	savoir	VERB
 pourquoi	pourquoi	ADV
@@ -4007,10 +4006,10 @@ elle	elle	PRON
 que	que	SCONJ
 je	je	PRON
 ne	ne	ADV
-le	le:PRON	PRON
+le	le_PRON	PRON
 croyais	croire	VERB
 .	.	PUNCTsent
-Elle	elle	PRON
+elle	elle	PRON
 ne	ne	ADV
 répond	répondre	VERB
 pas	pas	ADV
@@ -4022,7 +4021,7 @@ dans	dans	ADP
 mes	mon	DET
 bras	bras	NOUN
 .	.	PUNCTsent
-Ma	mon	DET
+ma	mon	DET
 tête	tête	NOUN
 se	se	PRON
 égare	égarer	VERB
@@ -4058,7 +4057,7 @@ parfum	parfum	NOUN
 me	me	PRON
 enivre	enivrer	VERB
 …	…	PUNCTsent
-On	on	PRON
+on	on	PRON
 me	me	PRON
 repousse	repousser	VERB
 ,	,	PUNCTclause
@@ -4069,7 +4068,7 @@ en	en	ADP
 disant	dire	VERB
 :	:	PUNCTclause
 —	—	PUNCTclause
-Ce	ce	DET
+ce	ce	DET
 ne	ne	ADV
 est	être	AUX
 pas	pas	ADV
@@ -4088,7 +4087,7 @@ y	y	PRON
 trompez	tromper	VERB
 pas	pas	ADV
 .	.	PUNCTsent
-Elle	elle	PRON
+elle	elle	PRON
 ne	ne	ADV
 cherchait	chercher	VERB
 pas	pas	ADV
@@ -4110,7 +4109,7 @@ laisser	laisser	VERB
 fuir	fuir	VERB
 .	.	PUNCTsent
 —	—	PUNCTclause
-Qui	qui	PRON
+qui	qui	PRON
 donc	donc	ADV
 ,	,	PUNCTclause
 vous	vous	PRON
@@ -4125,7 +4124,7 @@ pas	pas	ADV
 votre	votre	DET
 voix	voix	NOUN
 .	.	PUNCTsent
-Alors	alors	ADV
+alors	alors	ADV
 elle	elle	PRON
 se	se	PRON
 échappe	échapper	VERB
@@ -4148,9 +4147,9 @@ dans	dans	ADP
 l'	le	DET
 obscurité	obscurité	NOUN
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
-la	le:PRON	PRON
+la	le_PRON	PRON
 suivais	suivre	VERB
 pas	pas	ADV
 ;	;	PUNCTclause
@@ -4168,7 +4167,7 @@ faisant	faire	VERB
 un	un	DET
 cri	cri	NOUN
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 me	me	PRON
 élance	élancer	VERB
 ,	,	PUNCTclause
@@ -4183,7 +4182,7 @@ blessée	blesser	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	non	ADV
+non	non	ADV
 ,	,	PUNCTclause
 ce	ce	PRON
 ne	ne	ADV
@@ -4194,7 +4193,7 @@ me	me	PRON
 dit	dire	VERB
 elle	elle	PRON
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 vous	vous	PRON
 me	me	PRON
 avez	avoir	AUX
@@ -4212,7 +4211,7 @@ tuer	tuer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Comment	comment	ADV
+comment	comment	ADV
 pouviez	pouvoir	VERB
 vous	vous	PRON
 avoir	avoir	VERB
@@ -4224,7 +4223,7 @@ madame	madame	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mais	mais	CCONJ
+mais	mais	CCONJ
 comment	comment	ADV
 ne	ne	ADV
 me	me	PRON
@@ -4236,7 +4235,7 @@ monsieur	monsieur	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Si	si	SCONJ
+si	si	SCONJ
 madame	madame	NOUN
 la	le	DET
 marquise	marquis	NOUN
@@ -4255,7 +4254,7 @@ approcher	approcher	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Vous	vous	PRON
+vous	vous	PRON
 comptiez	compter	VERB
 trouver	trouver	VERB
 Julie	Julie	PROPN
@@ -4263,14 +4262,14 @@ Julie	Julie	PROPN
 ma	mon	DET
 place	place	NOUN
 ?	?	PUNCTsent
-Elle	elle	PRON
+elle	elle	PRON
 devait	devoir	VERB
 venir	venir	VERB
 ici	ici	ADV
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Nullement	nullement	ADV
+nullement	nullement	ADV
 ,	,	PUNCTclause
 madame	madame	NOUN
 ;	;	PUNCTclause
@@ -4295,7 +4294,7 @@ croire	croire	VERB
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 cherchais	chercher	VERB
 un	un	DET
 livre	livre	NOUN
@@ -4320,7 +4319,7 @@ sculpture	sculpture	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Ce	ce	DET
+ce	ce	DET
 livre	livre	NOUN
 est	être	AUX
 à	à	ADP
@@ -4328,9 +4327,9 @@ madame	madame	NOUN
 la	le	DET
 marquise	marquis	NOUN
 ?	?	PUNCTsent
-Si	si	SCONJ
+si	si	SCONJ
 je	je	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avais	avoir	AUX
 su	savoir	VERB
 …	…	PUNCTsent
@@ -4352,12 +4351,12 @@ vous	vous	PRON
 a	avoir	AUX
 tenté	tenter	VERB
 .	.	PUNCTsent
-Voulez	vouloir	VERB
+voulez	vouloir	VERB
 vous	vous	PRON
 que	que	PRON
 je	je	PRON
 vous	vous	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 laisse	laisser	VERB
 encore	encore	ADV
 ?	?	PUNCTsent
@@ -4367,12 +4366,12 @@ ce	ce	PRON
 est	être	AUX
 Pierre	Pierre	PROPN
 qui	qui	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 lit	lire	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 vous	vous	PRON
 ,	,	PUNCTclause
 vous	vous	PRON
@@ -4382,14 +4381,14 @@ pas	pas	ADV
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 lis	lire	VERB
 beaucoup	beaucoup	ADV
 ,	,	PUNCTclause
 au contraire	au contraire	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Alors	alors	ADV
+alors	alors	ADV
 elle	elle	PRON
 me	me	PRON
 demande	demander	VERB
@@ -4417,7 +4416,7 @@ nous	nous	PRON
 la	le	DET
 contredanse	contredanse	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 venait	venir	VERB
 un	un	DET
 peu de	peu de	DET
@@ -4461,7 +4460,7 @@ lui	lui	PRON
 répondais	répondre	VERB
 à peine	à peine	ADV
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 me	me	PRON
 étais	être	AUX
 senti	sentir	VERB
@@ -4518,7 +4517,7 @@ en	en	PRON
 avais	avoir	AUX
 honte	honte	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 me	me	PRON
 semblait	sembler	VERB
 que	que	SCONJ
@@ -4527,7 +4526,7 @@ devait	devoir	VERB
 me	me	PRON
 mépriser	mépriser	VERB
 .	.	PUNCTsent
-Cependant	cependant	ADV
+cependant	cependant	ADV
 elle	elle	PRON
 ne	ne	ADV
 se	se	PRON
@@ -4573,7 +4572,7 @@ la	le	DET
 conversation	conversation	NOUN
 :	:	PUNCTclause
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 suis	être	AUX
 sûr	sûr	ADJ
 que	que	SCONJ
@@ -4585,7 +4584,7 @@ mal	mal	NOUN
 en	en	ADP
 tombant	tomber	VERB
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 sais	savoir	VERB
 bien	bien	ADV
 que	que	SCONJ
@@ -4594,8 +4593,8 @@ devais	devoir	VERB
 dire	dire	VERB
 :	:	PUNCTclause
 —	—	PUNCTclause
-Madame	Madame	NOUN
-La	le	DET
+madame	madame	NOUN
+la	le	DET
 marquise	marquis	NOUN
 se	se	PRON
 est	être	AUX
@@ -4603,7 +4602,7 @@ fait	faire	VERB
 du	du	DET
 mal	mal	NOUN
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 ai	avoir	AUX
 pas	pas	ADV
@@ -4619,12 +4618,12 @@ au	au	ADP_DET
 monde	monde	NOUN
 je	je	PRON
 ne	ne	ADV
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 aurais	avoir	AUX
 dit	dire	VERB
 .	.	PUNCTsent
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 me	me	PRON
 suis	être	AUX
@@ -4666,7 +4665,7 @@ après	après	ADP
 moi	moi	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cette	ce	DET
+cette	ce	DET
 parole	parole	NOUN
 me	me	PRON
 a	avoir	AUX
@@ -4675,7 +4674,7 @@ surpris	surprendre	VERB
 ,	,	PUNCTclause
 Pierre	Pierre	PROPN
 .	.	PUNCTsent
-Que	que	SCONJ
+que	que	SCONJ
 voulait	vouloir	VERB
 elle	elle	PRON
 dire	dire	VERB
@@ -4690,7 +4689,7 @@ ouvrier	ouvrier	NOUN
 ,	,	PUNCTclause
 moi	moi	PRON
 ?	?	PUNCTsent
-A	avoir	AUX
+a	avoir	AUX
 elle	elle	PRON
 cru	croire	VERB
 me	me	PRON
@@ -4714,7 +4713,7 @@ est	être	AUX
 malgré	malgré	ADP
 elle	elle	PRON
 ?	?	PUNCTsent
-D'ailleurs	d'ailleurs	ADV
+d'ailleurs	d'ailleurs	ADV
 elle	elle	PRON
 me	me	PRON
 avait	avoir	AUX
@@ -4729,7 +4728,7 @@ nommé	nommer	VERB
 tout	tout	DET
 d'abord	d'abord	ADV
 .	.	PUNCTsent
-Elle	elle	PRON
+elle	elle	PRON
 se	se	PRON
 est	être	AUX
 levée	lever	VERB
@@ -4750,7 +4749,7 @@ se	se	PRON
 trouvait	trouver	VERB
 là	là	ADV
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 me	me	PRON
 a	avoir	AUX
 fallu	falloir	VERB
@@ -4795,7 +4794,7 @@ gâter	gâter	VERB
 les	le	DET
 ailes	aile	NOUN
 .	.	PUNCTsent
-Elle	elle	PRON
+elle	elle	PRON
 a	avoir	AUX
 cherché	chercher	VERB
 ensuite	ensuite	ADV
@@ -4821,7 +4820,7 @@ ni	ni	CCONJ
 me	me	PRON
 éloigner	éloigner	VERB
 .	.	PUNCTsent
-Quand	quand	SCONJ
+quand	quand	SCONJ
 elle	elle	PRON
 a	avoir	AUX
 été	être	AUX
@@ -4864,7 +4863,7 @@ ai	avoir	AUX
 auprès de	auprès de	ADP
 elle	elle	PRON
 .	.	PUNCTsent
-Elle	elle	PRON
+elle	elle	PRON
 riait	rire	VERB
 ,	,	PUNCTclause
 tout	tout	PRON
@@ -4894,7 +4893,7 @@ de peur de	de peur de	ADP
 rouler	rouler	VERB
 en bas	en bas	ADV
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 lui	lui	PRON
 ai	avoir	AUX
 proposé	proposer	VERB
@@ -4918,7 +4917,7 @@ est	être	AUX
 elle	elle	PRON
 écriée	écrier	VERB
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 faut	falloir	VERB
 pas	pas	ADV
@@ -4928,7 +4927,7 @@ me	me	PRON
 sache	savoir	VERB
 ici	ici	ADV
 !	!	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 elle	elle	PRON
 se	se	PRON
 est	être	AUX
@@ -4947,12 +4946,12 @@ n'est-ce pas	n'est-ce pas	ADV
 si	si	SCONJ
 je	je	PRON
 ne	ne	ADV
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avais	avoir	AUX
 pas	pas	ADV
 aidée	aider	VERB
 ?	?	PUNCTsent
-Elle	elle	PRON
+elle	elle	PRON
 était	être	AUX
 vraiment	vraiment	ADV
 en	en	ADP
@@ -4990,7 +4989,7 @@ appuyée	appuyer	VERB
 sur	sur	ADP
 moi	moi	PRON
 .	.	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 voilà	voilà	ADP
 que	que	SCONJ
 au	au	ADP_DET
@@ -5016,7 +5015,7 @@ dans	dans	ADP
 mes	mon	DET
 bras	bras	NOUN
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 danger	danger	NOUN
 passé	passer	VERB
 ,	,	PUNCTclause
@@ -5081,7 +5080,7 @@ allais	aller	VERB
 l'	le	DET
 enfoncer	enfoncer	VERB
 …	…	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 je	je	PRON
 me	me	PRON
 suis	être	AUX
@@ -5109,7 +5108,7 @@ depuis	depuis	ADP
 ce	ce	DET
 jour	jour	NOUN
 .	.	PUNCTsent
-Pourtant	pourtant	ADV
+pourtant	pourtant	ADV
 il y a	il y a	VERB
 des	un	DET
 moments	moment	NOUN
@@ -5120,7 +5119,7 @@ me	me	PRON
 paraît	paraître	VERB
 autrement	autrement	ADV
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 me	me	PRON
 semble	sembler	VERB
 que	que	SCONJ
@@ -5144,7 +5143,7 @@ oserait	oser	VERB
 pas	pas	ADV
 aimer	aimer	VERB
 .	.	PUNCTsent
-Cela	cela	PRON
+cela	cela	PRON
 serait	être	AUX
 bien	bien	ADV
 lâche	lâcher	VERB
@@ -5171,7 +5170,7 @@ qui	qui	PRON
 se	se	PRON
 respecte	respecter	VERB
 …	…	PUNCTsent
-Réponds	répondre	VERB
+réponds	répondre	VERB
 moi	moi	PRON
 donc	donc	ADV
 ,	,	PUNCTclause
@@ -5201,7 +5200,7 @@ avait	avoir	AUX
 fort	fort	ADV
 troublé	troubler	VERB
 .	.	PUNCTsent
-Une	un	DET
+une	un	DET
 femme	femme	NOUN
 ainsi	ainsi	ADV
 placée	placer	VERB
@@ -5222,7 +5221,7 @@ et	et	CCONJ
 bien	bien	ADV
 courageuse	courageux	ADJ
 ?	?	PUNCTsent
-De	de	ADP
+de	de	ADP
 combien	combien	ADV
 de	de	ADP
 persécutions	persécution	NOUN
@@ -5233,7 +5232,7 @@ pas	pas	ADV
 l'	le	DET
 objet	objet	NOUN
 !	!	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 ,	,	PUNCTclause
 dans	dans	ADP
 cette	ce	DET
@@ -5250,7 +5249,7 @@ en quelque sorte	en quelque sorte	ADV
 les	le	DET
 avances	avance	NOUN
 ?	?	PUNCTsent
-Car	car	CCONJ
+car	car	CCONJ
 quel	quel	DET
 serait	être	AUX
 l'	le	DET
@@ -5277,7 +5276,7 @@ pas	pas	ADV
 un	un	DET
 peu	peu	ADV
 ?	?	PUNCTsent
-Pourrais	pouvoir	VERB
+pourrais	pouvoir	VERB
 tu	tu	PRON
 te	te	PRON
 arrêter	arrêter	VERB
@@ -5293,7 +5292,7 @@ de	de	DET
 telles	tel	PRON
 avances	avancer	VERB
 ?	?	PUNCTsent
-Ô	ô	INTJ
+ô	ô	INTJ
 mon	mon	DET
 ami	ami	NOUN
 ,	,	PUNCTclause
@@ -5325,7 +5324,7 @@ ton	ton	DET
 en quelque sorte	en quelque sorte	ADV
 flétrie	flétrir	VERB
 .	.	PUNCTsent
-Garde	garde	NOUN
+garde	garde	NOUN
 toi	toi	PRON
 donc	donc	ADV
 des	un	DET
@@ -5338,7 +5337,7 @@ de	de	ADP
 l'	le	DET
 imagination	imagination	NOUN
 .	.	PUNCTsent
-Tu	tu	PRON
+tu	tu	PRON
 ne	ne	ADV
 sais	savoir	VERB
 pas	pas	ADV
@@ -5380,7 +5379,7 @@ privation	privation	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Tu	tu	PRON
+tu	tu	PRON
 parles	parler	VERB
 de	de	ADP
 ces	ce	DET
@@ -5393,7 +5392,7 @@ ferme	ferme	ADJ
 et	et	CCONJ
 sage	sage	ADJ
 pouvait	pouvoir	VERB
-les	le:PRON	PRON
+les	le_PRON	PRON
 connaître	connaître	VERB
 ,	,	PUNCTclause
 répondit	répondre	VERB
@@ -5412,7 +5411,7 @@ de	de	ADP
 son	son	DET
 ami	ami	NOUN
 .	.	PUNCTsent
-As	as	NOUN
+as	as	NOUN
 tu	tu	PRON
 donc	donc	ADV
 déjà	déjà	ADV
@@ -5429,7 +5428,7 @@ réprouves	réprouver	VERB
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Oui	oui	INTJ
+oui	oui	INTJ
 ,	,	PUNCTclause
 je	je	PRON
 en	en	PRON
@@ -5448,7 +5447,7 @@ jour	jour	NOUN
 peut-être	peut-être	ADV
 je	je	PRON
 te	te	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 raconterai	raconter	VERB
 ;	;	PUNCTclause
 mais	mais	CCONJ
@@ -5476,9 +5475,9 @@ de	de	ADP
 un	un	DET
 honnête homme	honnête homme	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
-la	le:PRON	PRON
+la	le_PRON	PRON
 méritait	mériter	VERB
 pas	pas	ADV
 ,	,	PUNCTclause
@@ -5497,7 +5496,7 @@ remercie	remercier	VERB
 Dieu	Dieu	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Amaury	Amaury	PROPN
+Amaury	Amaury	NOUN
 comprit	comprendre	VERB
 à	à	ADP
 demi	demi	ADJ
@@ -5514,7 +5513,7 @@ l'	le	DET
 interroger	interroger	VERB
 davantage	davantage	ADV
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 après	après	ADP
 quelques	quelque	DET
@@ -5545,7 +5544,7 @@ citait	citer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	non	ADV
+non	non	ADV
 ,	,	PUNCTclause
 mon	mon	DET
 ami	ami	NOUN
@@ -5568,7 +5567,7 @@ me	me	PRON
 fais	faire	AUX
 songer	songer	VERB
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 quelle	quel	DET
 que	que	SCONJ
@@ -5635,7 +5634,7 @@ son	son	DET
 amour	amour	NOUN
 maternel	maternel	ADJ
 .	.	PUNCTsent
-Une	un	DET
+une	un	DET
 robe	robe	NOUN
 de	de	ADP
 satin	satin	NOUN
@@ -5661,7 +5660,7 @@ grecque	grec	ADJ
 voilà	voilà	ADP
 ,	,	PUNCTclause
 je	je	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avoue	avouer	VERB
 ,	,	PUNCTclause
 de	de	ADP
@@ -5701,7 +5700,7 @@ dans	dans	ADP
 les	le	DET
 églises	église	NOUN
 .	.	PUNCTsent
-De	de	ADP
+de	de	ADP
 belles	beau	ADJ
 paroles	parole	NOUN
 ,	,	PUNCTclause
@@ -5764,7 +5763,7 @@ devant	devant	ADP
 les	le	DET
 autres	autre	ADJ
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 sois	être	AUX
 en	en	ADP
@@ -5804,7 +5803,7 @@ tendant	tendre	VERB
 la	le	DET
 main	main	NOUN
 .	.	PUNCTsent
-Elles	elles	PRON
+elles	elles	PRON
 vivent	vivre	VERB
 dans	dans	ADP
 l'	le	DET
@@ -5813,7 +5812,7 @@ et	et	CCONJ
 la	le	DET
 soie	soie	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 faut	falloir	VERB
 que	que	SCONJ
 un	un	DET
@@ -5836,7 +5835,7 @@ pas	pas	ADV
 un	un	DET
 homme	homme	NOUN
 .	.	PUNCTsent
-Nous	nous	PRON
+nous	nous	PRON
 ,	,	PUNCTclause
 avec	avec	ADP
 nos	nos	DET
@@ -5869,7 +5868,7 @@ et	et	CCONJ
 celle	celle	PRON
 qui	qui	PRON
 pourrait	pouvoir	VERB
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 oublier	oublier	VERB
 un	un	DET
 instant	instant	NOUN
@@ -5884,7 +5883,7 @@ instant	instant	NOUN
 d'après	d'après	ADP
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pierre	pierre	NOUN
+Pierre	Pierre	PROPN
 parlait	parler	VERB
 avec	avec	ADP
 amertume	amertume	NOUN
@@ -5897,7 +5896,7 @@ avait	avoir	AUX
 la	le	DET
 voix	voix	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 se	se	PRON
 interrompit	interrompre	VERB
 tout	tout	ADV
@@ -5916,8 +5915,8 @@ remué	remuer	VERB
 derrière	derrière	ADP
 lui	lui	PRON
 .	.	PUNCTsent
-Le	le	DET
-Corinthien	Corinthien	PROPN
+le	le	DET
+corinthien	corinthien	UNKNOWN
 fut	être	AUX
 frappé	frapper	VERB
 aussi	aussi	ADV
@@ -5926,7 +5925,7 @@ ce	ce	DET
 frôlement	frôlement	NOUN
 mystérieux	mystérieux	ADJ
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 tremblait	trembler	VERB
 que	que	SCONJ
 la	le	DET
@@ -5943,7 +5942,7 @@ entendu	entendre	VERB
 ses	son	DET
 confidences	confidence	NOUN
 .	.	PUNCTsent
-Une	un	DET
+une	un	DET
 autre	autre	ADJ
 pensée	pensée	NOUN
 était	être	AUX
@@ -5961,7 +5960,7 @@ l'	le	DET
 exprima	exprimer	VERB
 point	point	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 retint	retenir	VERB
 son	son	DET
 ami	ami	NOUN
@@ -5988,7 +5987,7 @@ de	de	ADP
 sa	son	DET
 folie	folie	NOUN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 leurs	leur	DET
 soupçons	soupçon	NOUN
 se	se	PRON
@@ -6026,7 +6025,7 @@ le	le	DET
 crépuscule	crépuscule	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ils	ils	PRON
+ils	ils	PRON
 se	se	PRON
 rendirent	rendre	VERB
 sous	sous	ADP
@@ -6043,7 +6042,7 @@ y	y	PRON
 avaient	avoir	VERB
 devancés	devancer	VERB
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 marquise	marquis	NOUN
 venait	venir	VERB
 de	de	ADP
@@ -6071,7 +6070,7 @@ et	et	CCONJ
 passablement	passablement	ADV
 jolie	joli	ADJ
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 comte	comte	NOUN
 de	de	ADP
 Villepreux	Villepreux	PROPN
@@ -6080,7 +6079,7 @@ y	y	PRON
 était	être	AUX
 pas	pas	ADV
 .	.	PUNCTsent
-Sa	son	DET
+sa	son	DET
 fille	fille	NOUN
 ne	ne	ADV
 y	y	PRON
@@ -6089,7 +6088,7 @@ pas	pas	ADV
 non	non	ADV
 plus	plus	ADV
 .	.	PUNCTsent
-Cependant	cependant	ADV
+cependant	cependant	ADV
 ce	ce	PRON
 pouvait	pouvoir	VERB
 bien	bien	ADV
@@ -6115,7 +6114,7 @@ sorte	sorte	NOUN
 de	de	ADP
 imprécation	imprécation	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 savait	savoir	VERB
 que	que	SCONJ
 elle	elle	PRON
@@ -6127,7 +6126,7 @@ botanique	botanique	NOUN
 et	et	CCONJ
 quelquefois	quelquefois	ADV
 il	il	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avait	avoir	AUX
 vue	vu	VERB
 entrer	entrer	VERB
@@ -6143,7 +6142,7 @@ et	et	CCONJ
 des	un	DET
 jungermanns	jungermanns	NOUN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ce	ce	PRON
 pouvait	pouvoir	VERB
 être	être	AUX
@@ -6159,7 +6158,7 @@ pour	pour	ADP
 les	le	DET
 écouter	écouter	VERB
 .	.	PUNCTsent
-Ils	ils	PRON
+ils	ils	PRON
 en	en	ADP
 ressentaient	ressentir	VERB
 quelque	quelque	DET
@@ -6168,7 +6167,7 @@ secrète	secret	ADJ
 ,	,	PUNCTclause
 lorsque	lorsque	SCONJ
 le	le	DET
-Corinthien	Corinthien	PROPN
+corinthien	corinthien	UNKNOWN
 ,	,	PUNCTclause
 soit	soit	CCONJ
 pour	pour	ADP
@@ -6200,7 +6199,7 @@ alla	aller	VERB
 inviter	inviter	VERB
 Joséphine	Joséphine	PROPN
 .	.	PUNCTsent
-Pierre	pierre	NOUN
+Pierre	Pierre	PROPN
 ne	ne	ADV
 put	pouvoir	VERB
 se	se	PRON
@@ -6218,7 +6217,7 @@ cet	ce	DET
 attrait	attrait	NOUN
 réciproque	réciproque	ADJ
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 se	se	PRON
 mit	mettre	VERB
 à	à	ADP
@@ -6242,9 +6241,9 @@ et	et	CCONJ
 le	le	DET
 repos	repos	NOUN
 du	du	ADP_DET
-Corinthien	Corinthien	PROPN
+corinthien	corinthien	UNKNOWN
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 marquise	marquis	NOUN
 ne	ne	ADV
 lui	lui	PRON
@@ -6254,14 +6253,14 @@ moins	moins	ADV
 à	à	ADP
 plaindre	plaindre	VERB
 .	.	PUNCTsent
-Elle	elle	PRON
+elle	elle	PRON
 semblait	sembler	VERB
 à la fois	à la fois	ADV
 enivrée	enivrer	VERB
 et	et	CCONJ
 consternée	consterner	VERB
 .	.	PUNCTsent
-Lorsque	lorsque	SCONJ
+lorsque	lorsque	SCONJ
 le	le	DET
 jeune	jeune	ADJ
 sculpteur	sculpteur	NOUN
@@ -6296,11 +6295,11 @@ pleins	plein	ADJ
 de	de	ADP
 confusion	confusion	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 faut	falloir	VERB
 que	que	SCONJ
 elle	elle	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 aime	aimer	VERB
 beaucoup	beaucoup	ADV
 ,	,	PUNCTclause
@@ -6332,7 +6331,7 @@ que	que	SCONJ
 des	un	DET
 rustres	rustre	NOUN
 .	.	PUNCTsent
-Pierre	pierre	NOUN
+Pierre	Pierre	PROPN
 se	se	PRON
 trompait	tromper	VERB
 sur	sur	ADP
@@ -6340,7 +6339,7 @@ ce	ce	DET
 dernier	dernier	ADJ
 point	point	NOUN
 .	.	PUNCTsent
-Ces	ce	DET
+ces	ce	DET
 rustres	rustre	NOUN
 avaient	avoir	VERB
 des	un	DET
@@ -6361,17 +6360,17 @@ de	de	ADP
 ses	son	DET
 mouvements	mouvement	NOUN
 .	.	PUNCTsent
-Ils	ils	PRON
+ils	ils	PRON
 se	se	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 disaient	dire	VERB
 les	le	DET
 uns	un	PRON
 aux	au	ADP_DET
 autres	autre	PRON
 .	.	PUNCTsent
-Le	le	DET
-Corinthien	Corinthien	PROPN
+le	le	DET
+corinthien	corinthien	UNKNOWN
 entendait	entendre	VERB
 ces	ce	DET
 éloges	éloge	NOUN
@@ -6384,13 +6383,13 @@ bien	bien	ADV
 que	que	SCONJ
 il	il	PRON
 ne	ne	ADV
-les	le:PRON	PRON
+les	le_PRON	PRON
 entendait	entendre	VERB
 pas	pas	ADV
 sans	sans	ADP
 émotion	émotion	NOUN
 .	.	PUNCTsent
-Elle	elle	PRON
+elle	elle	PRON
 désirait	désirer	VERB
 donc	donc	ADV
 de	de	ADP

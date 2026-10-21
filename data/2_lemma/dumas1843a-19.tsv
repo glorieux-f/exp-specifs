@@ -5,20 +5,20 @@
 # isPartOf = Georges
 # title = Chapitre XIX. Le Yamsé
 
-↵↵↵	↵↵↵	PUNCTstruct
-Chapitre	chapitre	NOUN
-		TOKEN
+↵↵	↵↵	PUNCTstruct
+chapitre	chapitre	NOUN
+XIX	XIX	NUM
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 Yamsé	Yamsé	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Les	le	DET
+les	le	DET
 courses	course	NOUN
 ,	,	PUNCTclause
 comme	comme	ADP
 nous	nous	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avons	avoir	AUX
 dit	dire	VERB
 ,	,	PUNCTclause
@@ -62,7 +62,7 @@ achemina	acheminer	VERB
 vers	vers	ADP
 la	le	DET
 plaine	plaine	NOUN
-Verte	vert	ADJ
+verte	vert	ADJ
 ,	,	PUNCTclause
 tandis que	tandis que	SCONJ
 les	le	DET
@@ -102,10 +102,10 @@ assister	assister	VERB
 aux	au	ADP_DET
 exercices	exercice	NOUN
 des	un	ADP_DET
-Lascars	Lascars	PROPN
+lascars	lascar	UNKNOWN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ces	ce	DET
+ces	ce	DET
 exercices	exercice	NOUN
 consistent	consister	VERB
 en	en	ADP
@@ -165,24 +165,24 @@ les	le	DET
 uns	un	PRON
 :	:	PUNCTclause
 «	«	PUNCTsent
-Bananes	banane	NOUN
+bananes	banane	NOUN
 !	!	PUNCTsent
 bananes	banane	NOUN
 !	!	PUNCTsent
 »	»	PUNCTclause
-Les	le	DET
+les	le	DET
 autres	autre	PRON
 :	:	PUNCTclause
 «	«	PUNCTsent
-Cannes	canne	NOUN
+cannes	canne	NOUN
 !	!	PUNCTsent
 cannes	canne	NOUN
 !	!	PUNCTsent
 »	»	PUNCTclause
-Ceux	ceux	PRON
+ceux	ceux	PRON
 :	:	PUNCTclause
 «	«	PUNCTsent
-Caillé	cailler	VERB
+caillé	cailler	VERB
 !	!	PUNCTsent
 caillé	cailler	VERB
 !	!	PUNCTsent
@@ -191,10 +191,10 @@ lait	lait	NOUN
 caillé	cailler	VERB
 !	!	PUNCTsent
 »	»	PUNCTclause
-Ceux	ceux	PRON
+ceux	ceux	PRON
 :	:	PUNCTclause
 «	«	PUNCTsent
-Kalou	Kalou	PROPN
+Kalou	Kalou	NOUN
 !	!	PUNCTsent
 kalou	kalou	NOUN
 !	!	PUNCTsent
@@ -203,7 +203,7 @@ kalou	kalou	NOUN
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Ces	ce	DET
+ces	ce	DET
 exercices	exercice	NOUN
 durent	devoir	VERB
 jusque	jusque	ADP
@@ -230,7 +230,7 @@ procession	procession	NOUN
 ainsi	ainsi	ADV
 appelée	appeler	VERB
 pour	pour	ADP
-la	le:PRON	PRON
+la	le_PRON	PRON
 distinguer	distinguer	VERB
 de	de	ADP
 la	le	DET
@@ -242,7 +242,7 @@ lendemain	lendemain	NOUN
 commence	commencer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Alors	alors	ADV
+alors	alors	ADV
 ,	,	PUNCTclause
 entre	entre	ADP
 deux	deux	NUM
@@ -251,7 +251,7 @@ de	de	ADP
 spectateurs	spectateur	NOUN
 ,	,	PUNCTclause
 les	le	DET
-Lascars	Lascars	PROPN
+lascars	lascar	UNKNOWN
 se	se	PRON
 avancent	avancer	VERB
 ,	,	PUNCTclause
@@ -304,7 +304,7 @@ des	un	DET
 vêtements	vêtement	NOUN
 déchirés	déchiré	ADJ
 .	.	PUNCTsent
-Puis	puis	CCONJ
+puis	puis	CCONJ
 ,	,	PUNCTclause
 à	à	ADP
 un	un	DET
@@ -385,14 +385,14 @@ ou	ou	CCONJ
 tour à tour	tour à tour	ADV
 :	:	PUNCTclause
 «	«	PUNCTsent
-Yamsé	Yamsé	PROPN
+Yamsé	Yamsé	VERB
 !	!	PUNCTsent
-Yamli	Yamli	PROPN
+Yamli	Yamli	PRON
 !	!	PUNCTsent
-O	O	PROPN
+O	O	PRON
 Hoseïn	Hoseïn	PROPN
 !	!	PUNCTsent
-O	O	PROPN
+O	O	PRON
 Ali	Ali	PROPN
 !	!	PUNCTsent
 »	»	PUNCTclause
@@ -425,7 +425,7 @@ plantes	plante	NOUN
 aromatiques	aromatique	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cette	ce	DET
+cette	ce	DET
 promenade	promenade	NOUN
 dure	dur	ADJ
 jusque	jusque	ADP
@@ -466,7 +466,7 @@ même	même	ADJ
 heure	heure	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 le	le	DET
 lendemain	lendemain	NOUN
@@ -478,7 +478,7 @@ et	et	CCONJ
 se	se	PRON
 agrandit	agrandir	VERB
 .	.	PUNCTsent
-Après	après	ADP
+après	après	ADP
 avoir	avoir	AUX
 fait	faire	VERB
 dans	dans	ADP
@@ -492,7 +492,7 @@ la	le	DET
 veille	veille	NOUN
 ,	,	PUNCTclause
 les	le	DET
-Lascars	Lascars	PROPN
+lascars	lascar	UNKNOWN
 ,	,	PUNCTclause
 à	à	ADP
 la	le	DET
@@ -518,7 +518,7 @@ des	un	ADP_DET
 deux	deux	NUM
 bandes	bande	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 était	être	AUX
 cette	ce	DET
 année	année	NOUN
@@ -532,7 +532,7 @@ tous	tout	ADJ
 les	le	DET
 précédents	précédent	NOUN
 .	.	PUNCTsent
-Couvert	couvrir	VERB
+couvert	couvrir	VERB
 des	un	ADP_DET
 papiers	papier	NOUN
 les	le	DET
@@ -660,7 +660,7 @@ pièces	pièce	NOUN
 de	de	ADP
 artifice	artifice	NOUN
 .	.	PUNCTsent
-Alors	alors	ADV
+alors	alors	ADV
 ,	,	PUNCTclause
 la	le	DET
 danse	danse	NOUN
@@ -676,7 +676,7 @@ reprirent	reprendre	VERB
 de plus	de plus	ADV
 belle	beau	ADJ
 .	.	PUNCTsent
-Les	le	DET
+les	le	DET
 dévots	dévot	NOUN
 aux	au	ADP_DET
 robes	robe	NOUN
@@ -706,14 +706,14 @@ alternés	alterner	VERB
 de	de	ADP
 :	:	PUNCTclause
 «	«	PUNCTsent
-Yamsé	Yamsé	PROPN
+Yamsé	Yamsé	VERB
 !	!	PUNCTsent
-Yamli	Yamli	PROPN
+Yamli	Yamli	PRON
 !	!	PUNCTsent
-O	O	PROPN
+O	O	PRON
 Hoseïn	Hoseïn	PROPN
 !	!	PUNCTsent
-O	O	PROPN
+O	O	PRON
 Ali	Ali	PROPN
 !	!	PUNCTsent
 »	»	PUNCTclause
@@ -854,7 +854,7 @@ gestes	geste	NOUN
 magnétiques	magnétique	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pendant	pendant	ADP
+pendant	pendant	ADP
 plusieurs	plusieurs	DET
 heures	heure	NOUN
 ,	,	PUNCTclause
@@ -874,7 +874,7 @@ ville	ville	NOUN
 puis	puis	CCONJ
 ceux	ceux	PRON
 qui	qui	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 portaient	porter	VERB
 prirent	prendre	VERB
 le	le	DET
@@ -883,7 +883,7 @@ de	de	ADP
 la	le	DET
 rivière	rivière	NOUN
 des	un	ADP_DET
-Lataniers	Lataniers	PROPN
+lataniers	latanier	UNKNOWN
 ,	,	PUNCTclause
 suivis	suivre	VERB
 de	de	ADP
@@ -893,7 +893,7 @@ population	population	NOUN
 de	de	ADP
 Port-Louis	Port-Louis	PROPN
 .	.	PUNCTsent
-La	le	DET
+la	le	DET
 fête	fête	NOUN
 tirait	tirer	VERB
 à	à	ADP
@@ -926,12 +926,12 @@ sa	son	DET
 ruine	ruine	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Arrivés	arriver	VERB
+arrivés	arriver	VERB
 à	à	ADP
 la	le	DET
 rivière	rivière	NOUN
 des	un	ADP_DET
-Lataniers	Lataniers	PROPN
+lataniers	latanier	UNKNOWN
 ,	,	PUNCTclause
 ceux	ceux	PRON
 qui	qui	PRON
@@ -980,13 +980,13 @@ la	le	DET
 rivière	rivière	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 comme	comme	ADP
 la	le	DET
 rivière	rivière	NOUN
 des	un	ADP_DET
-Lataniers	Lataniers	PROPN
+lataniers	latanier	UNKNOWN
 ne	ne	ADV
 est	être	AUX
 que	que	ADV
@@ -1027,7 +1027,7 @@ vers	vers	ADP
 le	le	DET
 ciel	ciel	NOUN
 .	.	PUNCTsent
-Alors	alors	ADV
+alors	alors	ADV
 il y a	il y a	VERB
 un	un	DET
 moment	moment	NOUN
@@ -1129,7 +1129,7 @@ sur	sur	ADP
 leurs	leur	DET
 chevaux	cheval	NOUN
 .	.	PUNCTsent
-Pendant	pendant	ADP
+pendant	pendant	ADP
 un	un	DET
 moment	moment	NOUN
 ,	,	PUNCTclause
@@ -1203,7 +1203,7 @@ de	de	ADP
 sang	sang	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Puis	puis	CCONJ
+puis	puis	CCONJ
 ,	,	PUNCTclause
 bientôt	bientôt	ADV
 ,	,	PUNCTclause
@@ -1275,7 +1275,7 @@ sur	sur	ADP
 les	le	DET
 spectateurs	spectateur	NOUN
 qui	qui	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 peuplaient	peupler	VERB
 un	un	DET
 éclair	éclair	NOUN
@@ -1329,7 +1329,7 @@ ciel	ciel	NOUN
 ainsi	ainsi	ADV
 que	que	SCONJ
 nous	nous	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avons	avoir	AUX
 dit	dire	VERB
 ,	,	PUNCTclause
@@ -1352,7 +1352,7 @@ que	que	ADV
 la	le	DET
 lumière	lumière	NOUN
 qui	qui	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avait	avoir	AUX
 précédée	précéder	VERB
 avait	avoir	AUX
@@ -1361,7 +1361,7 @@ plus	plus	ADV
 grande	grand	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Alors	alors	ADV
+alors	alors	ADV
 il	il	PRON
 arriva	arriver	VERB
 ce	ce	DET
@@ -1448,7 +1448,7 @@ plus	plus	ADV
 rapide	rapide	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Soit	être	AUX
+soit	être	AUX
 curiosité	curiosité	NOUN
 plus	plus	ADV
 vive	vif	ADJ
@@ -1606,7 +1606,7 @@ la	le	DET
 forêt	forêt	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Bientôt	bientôt	ADV
+bientôt	bientôt	ADV
 ,	,	PUNCTclause
 cependant	cependant	ADV
 ,	,	PUNCTclause
@@ -1652,7 +1652,7 @@ l'autre	l'autre	PRON
 de	de	ADP
 la	le	DET
 montagne	montagne	NOUN
-Longue	long	ADJ
+longue	long	ADJ
 ;	;	PUNCTclause
 quand	quand	SCONJ
 ils	ils	PRON
@@ -1690,7 +1690,7 @@ siffla	siffler	VERB
 trois fois	trois fois	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Alors	alors	ADV
+alors	alors	ADV
 des	un	DET
 profondeurs	profondeur	NOUN
 des	un	ADP_DET
@@ -1730,7 +1730,7 @@ de	de	ADP
 nègres	nègre	NOUN
 et	et	CCONJ
 de	de	ADP
-Indiens	Indiens	NOUN
+indiens	indien	NOUN
 ,	,	PUNCTclause
 dont	dont	PRON
 ,	,	PUNCTclause
@@ -1766,7 +1766,7 @@ composée	composer	VERB
 rien	rien	PRON
 que	que	ADV
 de	de	ADP
-Indiens	Indiens	NOUN
+indiens	indien	NOUN
 ;	;	PUNCTclause
 l'autre	l'autre	PRON
 ,	,	PUNCTclause
@@ -1776,8 +1776,8 @@ entière	entier	ADJ
 de	de	ADP
 nègres	nègre	NOUN
 .	.	PUNCTsent
-Les	le	DET
-Indiens	Indiens	NOUN
+les	le	DET
+indiens	indien	NOUN
 se	se	PRON
 rangèrent	ranger	VERB
 autour de	autour de	ADP
@@ -1804,7 +1804,7 @@ idiome	idiome	NOUN
 malais	malais	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Les	le	DET
+les	le	DET
 nègres	nègre	NOUN
 se	se	PRON
 rangèrent	ranger	VERB
@@ -1864,7 +1864,7 @@ ce	ce	PRON
 était	être	AUX
 Antonio	Antonio	PROPN
 le	le	DET
-Malais	Malais	PROPN
+malais	malais	UNKNOWN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 l'autre	l'autre	PRON
@@ -1915,7 +1915,7 @@ de	de	ADP
 Anjouan	Anjouan	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ces	ce	DET
+ces	ce	DET
 deux	deux	NUM
 hommes	homme	NOUN
 ,	,	PUNCTclause
@@ -1932,7 +1932,7 @@ dix	dix	NUM
 mille	mille	NUM
 métis	métis	NOUN
 qui	qui	PRON
-les	le:PRON	PRON
+les	le_PRON	PRON
 entouraient	entourer	VERB
 ,	,	PUNCTclause
 ce	ce	PRON
@@ -1941,7 +1941,7 @@ les	le	DET
 conspirateurs	conspirateur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Antonio	Antonio	PROPN
+Antonio	Antonio	NOUN
 parla	parler	VERB
 le	le	DET
 premier	premier	ADJ
@@ -1984,7 +1984,7 @@ par	par	ADP
 des	un	DET
 serpents	serpent	NOUN
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 nombre	nombre	NOUN
 des	un	ADP_DET
 gouvernés	gouverner	VERB
@@ -2042,7 +2042,7 @@ serpents	serpent	NOUN
 avec	avec	ADP
 tous	tous	PRON
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 en	en	PRON
 résultait	résulter	VERB
 que	que	SCONJ
@@ -2088,7 +2088,7 @@ par	par	ADP
 être	être	AUX
 vaincus	vaincu	ADJ
 .	.	PUNCTsent
-Si	si	SCONJ
+si	si	SCONJ
 ce	ce	PRON
 étaient	être	AUX
 les	le	DET
@@ -2130,7 +2130,7 @@ par	par	ADP
 être	être	AUX
 enchaînés	enchaîner	VERB
 .	.	PUNCTsent
-Si	si	SCONJ
+si	si	SCONJ
 ce	ce	PRON
 étaient	être	AUX
 les	le	DET
@@ -2176,7 +2176,7 @@ mis	mettre	VERB
 en	en	ADP
 cage	cage	NOUN
 .	.	PUNCTsent
-Si	si	SCONJ
+si	si	SCONJ
 ce	ce	PRON
 étaient	être	AUX
 les	le	DET
@@ -2190,7 +2190,7 @@ faisaient	faire	VERB
 marcher	marcher	VERB
 contre	contre	ADP
 elles	elles	PRON
-les	le:PRON	PRON
+les	le_PRON	PRON
 éléphants	éléphant	NOUN
 ,	,	PUNCTclause
 les	le	DET
@@ -2219,7 +2219,7 @@ par	par	ADP
 être	être	AUX
 domptées	dompté	ADJ
 .	.	PUNCTsent
-Enfin	enfin	ADV
+enfin	enfin	ADV
 ,	,	PUNCTclause
 si	si	SCONJ
 ce	ce	PRON
@@ -2263,7 +2263,7 @@ par	par	ADP
 être	être	AUX
 soumis	soumettre	VERB
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 en	en	PRON
 résultait	résulter	VERB
 que	que	SCONJ
@@ -2301,7 +2301,7 @@ habituelle	habituel	ADJ
 les	le	DET
 révoltés	révolté	NOUN
 .	.	PUNCTsent
-Cela	cela	PRON
+cela	cela	PRON
 dura	durer	VERB
 ainsi	ainsi	ADV
 longtemps	longtemps	ADV
@@ -2309,7 +2309,7 @@ longtemps	longtemps	ADV
 très	très	ADV
 longtemps	longtemps	ADV
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 un	un	DET
 jour	jour	NOUN
@@ -2369,7 +2369,7 @@ est	est	NOUN
 à	à	ADP
 8	8	NUM
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 réunit	réunir	VERB
 donc	donc	ADV
 les	le	DET
@@ -2397,12 +2397,12 @@ dit	dit	NOUN
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
 —	—	PUNCTclause
-Combien	combien	ADV
+combien	combien	ADV
 êtes	être	AUX
 vous	vous	PRON
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Les	le	DET
+les	le	DET
 animaux	animal	NOUN
 se	se	PRON
 comptèrent	compter	VERB
@@ -2411,7 +2411,7 @@ répondirent	répondre	VERB
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Nous	nous	PRON
+nous	nous	PRON
 sommes	être	AUX
 quatre-vingt	quatre-vingt	NUM
 mille	mille	NUM
@@ -2439,7 +2439,7 @@ ils	ils	PRON
 sont	être	AUX
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Les	le	DET
+les	le	DET
 animaux	animal	NOUN
 comptèrent	compter	VERB
 les	le	DET
@@ -2449,14 +2449,14 @@ répondirent	répondre	VERB
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Ils	ils	PRON
+ils	ils	PRON
 sont	être	AUX
 huit	huit	NUM
 mille	mille	NUM
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Alors	alors	ADV
+alors	alors	ADV
 ,	,	PUNCTclause
 vous	vous	PRON
 êtes	être	AUX
@@ -2482,7 +2482,7 @@ contre	contre	ADP
 un	un	DET
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Les	le	DET
+les	le	DET
 animaux	animal	NOUN
 se	se	PRON
 réunirent	réunir	VERB
@@ -2546,7 +2546,7 @@ maîtresses	maître	NOUN
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Avez	avoir	AUX
+avez	avoir	AUX
 vous	vous	PRON
 compris	comprendre	VERB
 ?	?	PUNCTsent
@@ -2554,7 +2554,7 @@ dit	dire	VERB
 Antonio	Antonio	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-De	de	ADP
+de	de	ADP
 grands	grand	ADJ
 cris	cri	NOUN
 retentirent	retentir	VERB
@@ -2598,7 +2598,7 @@ avec	avec	ADP
 la sienne	la sienne	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Laïza	Laïza	PROPN
+Laïza	Laïza	DET
 attendit	attendre	VERB
 tranquillement	tranquillement	ADV
 que	que	SCONJ
@@ -2646,10 +2646,10 @@ tous	tout	ADJ
 ensemble	ensemble	NOUN
 et	et	CCONJ
 ils	ils	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 furent	être	VERB
 .	.	PUNCTsent
-Cette	ce	DET
+cette	ce	DET
 île	île	NOUN
 se	se	PRON
 appelait	appeler	VERB
@@ -2664,7 +2664,7 @@ cette	ce	DET
 heure	heure	NOUN
 Haïti	Haïti	PROPN
 …	…	PUNCTsent
-Faisons	faire	VERB
+faisons	faire	VERB
 comme	comme	ADP
 eux	eux	PRON
 ,	,	PUNCTclause
@@ -2676,7 +2676,7 @@ comme	comme	ADP
 eux	eux	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-De	de	ADP
+de	de	ADP
 grands	grand	ADJ
 cris	cri	NOUN
 retentirent	retentir	VERB
@@ -2696,7 +2696,7 @@ la	le	DET
 seconde	second	ADJ
 fois	fois	NOUN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 il	il	PRON
 faut	falloir	VERB
 l'	le	DET
@@ -2731,7 +2731,7 @@ un	un	DET
 espoir	espoir	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 fit	faire	AUX
 signe	signer	VERB
 que	que	SCONJ
@@ -2745,7 +2745,7 @@ tut	taire	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Oui	oui	INTJ
+oui	oui	INTJ
 ,	,	PUNCTclause
 dit	dire	VERB
 il	il	PRON
@@ -2793,7 +2793,7 @@ nègres	nègre	NOUN
 sont	être	AUX
 rois	roi	NOUN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 dans	dans	ADP
 mon	mon	DET
@@ -2867,7 +2867,7 @@ seul	seul	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 quel	quel	DET
 sera	être	AUX
 ce	ce	PRON
@@ -2894,7 +2894,7 @@ Laïza	Laïza	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 homme	homme	NOUN
 qui	qui	PRON
 est	être	AUX
@@ -2940,7 +2940,7 @@ Laïza	Laïza	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Celui	celui	PRON
+celui	celui	PRON
 qui	qui	PRON
 est	être	AUX
 digne	digne	ADJ
@@ -3013,7 +3013,7 @@ et	et	CCONJ
 son	son	DET
 champ	champ	NOUN
 .	.	PUNCTsent
-Voilà	voilà	ADP
+voilà	voilà	ADP
 l'	le	DET
 homme	homme	NOUN
 qui	qui	PRON
@@ -3035,7 +3035,7 @@ Laïza	Laïza	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 ne	ne	ADV
 connais	connaître	VERB
 que	que	SCONJ
@@ -3052,7 +3052,7 @@ Antonio	Antonio	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 moi	moi	PRON
 aussi	aussi	ADV
 ,	,	PUNCTclause
@@ -3061,7 +3061,7 @@ Laïza	Laïza	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Veux	vouloir	VERB
+veux	vouloir	VERB
 tu	tu	PRON
 dire	dire	VERB
 que	que	SCONJ
@@ -3074,14 +3074,14 @@ Antonio	Antonio	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	non	ADV
+non	non	ADV
 ,	,	PUNCTclause
 répondit	répondre	VERB
 Laïza	Laïza	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Tu	tu	PRON
+tu	tu	PRON
 conviens	convenir	VERB
 donc	donc	ADV
 que	que	SCONJ
@@ -3091,7 +3091,7 @@ moi	moi	PRON
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Ce	ce	PRON
+ce	ce	PRON
 ne	ne	ADV
 est	être	AUX
 pas	pas	ADV
@@ -3101,7 +3101,7 @@ plus	plus	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 qui	qui	PRON
 est	être	AUX
 ce	ce	DET
@@ -3113,7 +3113,7 @@ Antonio	Antonio	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Oui	oui	INTJ
+oui	oui	INTJ
 ;	;	PUNCTclause
 qui	qui	PRON
 est	être	AUX
@@ -3137,10 +3137,10 @@ les	le	DET
 nègres	nègre	NOUN
 et	et	CCONJ
 les	le	DET
-Indiens	Indiens	NOUN
+indiens	indien	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Laïza	Laïza	PROPN
+Laïza	Laïza	DET
 frappa	frapper	VERB
 trois fois	trois fois	ADV
 dans	dans	ADP
@@ -3221,7 +3221,7 @@ ses	son	DET
 jarrets	jarret	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Laïza	Laïza	PROPN
+Laïza	Laïza	DET
 étendit	étendre	VERB
 la	le	DET
 main	main	NOUN
@@ -3237,7 +3237,7 @@ cavalier	cavalier	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Votre	votre	DET
+votre	votre	DET
 chef	chef	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
@@ -3248,8 +3248,8 @@ voilà	voilà	ADP
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Georges	Georges	PROPN
-Munier	Munier	PROPN
+Georges	Georges	NOUN
+Munier	Munier	ADJ
 !	!	PUNCTsent
 se	se	PRON
 écrièrent	écrier	VERB
@@ -3259,7 +3259,7 @@ voix	voix	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Oui	oui	INTJ
+oui	oui	INTJ
 ,	,	PUNCTclause
 Georges	Georges	PROPN
 Munier	Munier	PROPN
@@ -3267,7 +3267,7 @@ Munier	Munier	PROPN
 dit	dire	VERB
 Laïza	Laïza	PROPN
 .	.	PUNCTsent
-Vous	vous	PRON
+vous	vous	PRON
 avez	avoir	AUX
 demandé	demander	VERB
 un	un	DET
@@ -3295,7 +3295,7 @@ courage	courage	NOUN
 le	le	DET
 voilà	voilà	ADP
 !…	!…	PUNCTsent
-Vous	vous	PRON
+vous	vous	PRON
 avez	avoir	AUX
 demandé	demander	VERB
 un	un	DET
@@ -3325,7 +3325,7 @@ autres	autre	ADJ
 le	le	DET
 voilà	voilà	ADP
 !…	!…	PUNCTsent
-Vous	vous	PRON
+vous	vous	PRON
 avez	avoir	AUX
 demandé	demander	VERB
 un	un	DET
@@ -3369,7 +3369,7 @@ chef	chef	NOUN
 le	le	DET
 voilà	voilà	ADP
 !	!	PUNCTsent
-Où	où	PRON
+où	où	PRON
 en	en	PRON
 chercherez	chercher	VERB
 vous	vous	PRON
@@ -3384,7 +3384,7 @@ un	un	DET
 pareil	pareil	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Antonio	Antonio	PROPN
+Antonio	Antonio	NOUN
 demeura	demeurer	VERB
 confondu	confondre	VERB
 ;	;	PUNCTclause
@@ -3408,7 +3408,7 @@ la	le	DET
 multitude	multitude	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Georges	Georges	PROPN
+Georges	Georges	NOUN
 connaissait	connaître	VERB
 les	le	DET
 hommes	homme	NOUN
@@ -3473,7 +3473,7 @@ légion d'honneur	légion d'honneur	NOUN
 et	et	CCONJ
 de	de	ADP
 Charles	Charles	PROPN
-		TOKEN
+III	III	NUM
 ;	;	PUNCTclause
 de	de	ADP
 son	son	DET
@@ -3500,7 +3500,7 @@ orgueilleux	orgueilleux	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 se	se	PRON
 écria	écrier	VERB
@@ -3514,14 +3514,14 @@ lui	lui	PRON
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Moi	moi	PRON
+moi	moi	PRON
 ,	,	PUNCTclause
 dit	dire	VERB
 Laïza	Laïza	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-A	avoir	AUX
+a	avoir	AUX
 il	il	PRON
 vécu	vivre	VERB
 avec	avec	ADP
@@ -3534,7 +3534,7 @@ besoins	besoin	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	non	ADV
+non	non	ADV
 ,	,	PUNCTclause
 il	il	PRON
 ne	ne	ADV
@@ -3617,7 +3617,7 @@ Georges	Georges	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Oui	oui	INTJ
+oui	oui	INTJ
 ,	,	PUNCTclause
 oui	oui	INTJ
 ,	,	PUNCTclause
@@ -3643,7 +3643,7 @@ nous	nous	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mais	mais	CCONJ
+mais	mais	CCONJ
 il	il	PRON
 est	être	AUX
 lié	lier	VERB
@@ -3672,7 +3672,7 @@ hier	hier	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mais	mais	CCONJ
+mais	mais	CCONJ
 il	il	PRON
 aime	aimer	VERB
 une	un	DET
@@ -3684,7 +3684,7 @@ Antonio	Antonio	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 ce	ce	PRON
 est	être	AUX
 un	un	DET
@@ -3709,7 +3709,7 @@ aime	aimer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 si	si	SCONJ
 on	on	PRON
@@ -3737,7 +3737,7 @@ blancs	blanc	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Si	si	SCONJ
+si	si	SCONJ
 on	on	PRON
 vient	venir	VERB
 me	me	PRON
@@ -3774,7 +3774,7 @@ la	le	DET
 donner	donner	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Antonio	Antonio	PROPN
+Antonio	Antonio	NOUN
 voulut	vouloir	VERB
 faire	faire	VERB
 une	un	DET
@@ -3786,7 +3786,7 @@ les	le	DET
 cris	cri	NOUN
 de	de	ADP
 «	«	PUNCTclause
-Vive	Vive	PROPN
+vive	vif	UNKNOWN
 Georges	Georges	PROPN
 !	!	PUNCTsent
 vive	vif	ADJ
@@ -3815,7 +3815,7 @@ une	un	DET
 parole	parole	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Georges	Georges	PROPN
+Georges	Georges	NOUN
 fit	faire	AUX
 signe	signer	VERB
 que	que	SCONJ
@@ -3829,7 +3829,7 @@ tut	taire	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mes	mon	DET
+mes	mon	DET
 amis	ami	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
@@ -3849,7 +3849,7 @@ de	de	ADP
 nous	nous	PRON
 séparer	séparer	VERB
 .	.	PUNCTsent
-Jeudi	jeudi	NOUN
+jeudi	jeudi	NOUN
 est	être	AUX
 jour	jour	NOUN
 de	de	ADP
@@ -3896,7 +3896,7 @@ ville	ville	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Oui	oui	INTJ
+oui	oui	INTJ
 ,	,	PUNCTclause
 oui	oui	INTJ
 !	!	PUNCTsent
@@ -3907,7 +3907,7 @@ voix	voix	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Un	un	PRON
+un	un	PRON
 mot	mot	NOUN
 encore	encore	ADV
 :	:	PUNCTclause
@@ -3953,7 +3953,7 @@ douce	doux	ADJ
 ou	ou	CCONJ
 cruelle	cruel	ADJ
 .	.	PUNCTsent
-Vous	vous	PRON
+vous	vous	PRON
 soumettez	soumettre	VERB
 vous	vous	PRON
 de	de	ADP
@@ -3974,7 +3974,7 @@ premier	premier	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Oui	oui	INTJ
+oui	oui	INTJ
 ,	,	PUNCTclause
 oui	oui	INTJ
 !	!	PUNCTsent
@@ -4007,7 +4007,7 @@ ce	ce	PRON
 est	être	AUX
 bien	bien	ADV
 .	.	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 maintenant	maintenant	ADV
 ,	,	PUNCTclause
 combien	combien	ADV
@@ -4016,7 +4016,7 @@ vous	vous	PRON
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Nous	nous	PRON
+nous	nous	PRON
 sommes	être	AUX
 dix	dix	NUM
 mille	mille	NUM
@@ -4026,7 +4026,7 @@ Laïza	Laïza	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mes	mon	DET
+mes	mon	DET
 trois	trois	NUM
 cents	cents	NUM
 serviteurs	serviteur	NOUN
@@ -4055,11 +4055,11 @@ une	un	DET
 arme	arme	NOUN
 quelconque	quelconque	ADJ
 .	.	PUNCTsent
-À	à	ADP
+à	à	ADP
 jeudi	jeudi	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 Georges	Georges	PROPN
 ,	,	PUNCTclause
 saluant	saluer	VERB
@@ -4099,7 +4099,7 @@ piastres	piastre	NOUN
 promises	promis	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cette	ce	DET
+cette	ce	DET
 magnificence	magnificence	NOUN
 royale	royal	ADJ
 coûtait	coûter	VERB
@@ -4117,7 +4117,7 @@ cent	cent	NUM
 mille	mille	NUM
 francs	franc	NOUN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 que	que	SCONJ
 était	être	AUX
 ce	ce	PRON
@@ -4152,7 +4152,7 @@ sa	son	DET
 volonté	volonté	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Enfin	enfin	ADV
+enfin	enfin	ADV
 ,	,	PUNCTclause
 ce	ce	DET
 projet	projet	NOUN

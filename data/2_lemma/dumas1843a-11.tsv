@@ -5,17 +5,17 @@
 # isPartOf = Georges
 # title = Chapitre XI. Le prix des nègres
 
-↵↵↵	↵↵↵	PUNCTstruct
-Chapitre	chapitre	NOUN
-		TOKEN
+↵↵	↵↵	PUNCTstruct
+chapitre	chapitre	NOUN
+XI	XI	NUM
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 prix	prix	NOUN
 des	un	ADP_DET
 nègres	nègre	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Au	au	ADP_DET
+au	au	ADP_DET
 même	même	ADV
 instant	instant	NOUN
 ,	,	PUNCTclause
@@ -53,7 +53,7 @@ et	et	CCONJ
 Henri	Henri	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-La	le	DET
+la	le	DET
 jeune	jeune	ADJ
 fille	fille	NOUN
 se	se	PRON
@@ -117,7 +117,7 @@ son	son	DET
 cousin	cousin	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Ils	ils	PRON
+ils	ils	PRON
 étaient	être	AUX
 arrivés	arriver	VERB
 ,	,	PUNCTclause
@@ -186,7 +186,7 @@ et	et	CCONJ
 ,	,	PUNCTclause
 comme	comme	ADP
 nous	nous	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avons	avoir	AUX
 dit	dire	VERB
 ,	,	PUNCTclause
@@ -208,7 +208,7 @@ de	de	ADP
 raconter	raconter	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Derrière	derrière	ADP
+derrière	derrière	ADP
 messieurs	monsieur	NOUN
 de	de	ADP
 Malmédie	Malmédie	PROPN
@@ -219,7 +219,7 @@ des	un	ADP_DET
 chasseurs	chasseur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Sara	Sara	PROPN
+Sara	Sara	X
 et	et	CCONJ
 ma	mon	DET
 mie	mie	NOUN
@@ -232,8 +232,8 @@ centre	centre	NOUN
 du	du	ADP_DET
 rassemblement	rassemblement	NOUN
 .	.	PUNCTsent
-On	on	PRON
-les	le:PRON	PRON
+on	on	PRON
+les	le_PRON	PRON
 interrogea	interroger	VERB
 alors	alors	ADV
 sur	sur	ADP
@@ -373,7 +373,7 @@ un	un	DET
 grand	grand	ADJ
 effet	effet	NOUN
 .	.	PUNCTsent
-Chacun	chacun	PRON
+chacun	chacun	PRON
 regretta	regretter	VERB
 galamment	galamment	ADV
 de	de	ADP
@@ -389,7 +389,7 @@ ou	ou	CCONJ
 du	du	ADP_DET
 nègre	nègre	NOUN
 .	.	PUNCTsent
-Chacun	chacun	PRON
+chacun	chacun	PRON
 assura	assurer	VERB
 que	que	SCONJ
 il	il	PRON
@@ -410,7 +410,7 @@ vigoureusement	vigoureusement	ADV
 que	que	SCONJ
 l'autre	l'autre	PRON
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 à	à	ADP
 toutes	tout	ADJ
 ces	ce	DET
@@ -433,7 +433,7 @@ de	de	ADP
 Sara	Sara	PROPN
 :	:	PUNCTclause
 «	«	PUNCTsent
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 y	y	PRON
 avait	avoir	VERB
@@ -450,7 +450,7 @@ fait	faire	VERB
 .	.	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-En	en	ADP
+en	en	ADP
 ce	ce	DET
 moment	moment	NOUN
 ,	,	PUNCTclause
@@ -470,7 +470,7 @@ cerf	cerf	NOUN
 aux	au	ADP_DET
 abois	aboi	NOUN
 .	.	PUNCTsent
-On	on	PRON
+on	on	PRON
 sait	savoir	VERB
 quelle	quel	DET
 fête	fête	NOUN
@@ -497,7 +497,7 @@ toute	toute	DET
 une	une	NUM
 matinée	matinée	NOUN
 .	.	PUNCTsent
-Sara	Sara	PROPN
+Sara	Sara	X
 était	être	AUX
 sauvée	sauver	VERB
 ,	,	PUNCTclause
@@ -509,7 +509,7 @@ rien	rien	PRON
 à	à	ADP
 craindre	craindre	VERB
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 était	être	AUX
 donc	donc	ADV
 inutile	inutile	ADJ
@@ -573,7 +573,7 @@ autres	autre	ADJ
 les	le	DET
 suivirent	suivre	VERB
 .	.	PUNCTsent
-Henri	Henri	PROPN
+Henri	Henri	PRON
 fit	faire	AUX
 observer	observer	VERB
 que	que	SCONJ
@@ -623,7 +623,7 @@ de	de	ADP
 Malmédie	Malmédie	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Tous	tout	ADJ
+tous	tout	ADJ
 trois	trois	NUM
 rentrèrent	rentrer	VERB
 à	à	ADP
@@ -673,8 +673,8 @@ comme	comme	ADP
 un	un	DET
 trophée	trophée	NOUN
 .	.	PUNCTsent
-Sara	Sara	PROPN
-le	le:PRON	PRON
+Sara	Sara	DET
+le	le_PRON	PRON
 remercia	remercier	VERB
 de	de	ADP
 cette	ce	DET
@@ -733,14 +733,14 @@ firent	faire	VERB
 chorus	chorus	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 repas	repas	NOUN
 fut	être	AUX
 des	un	DET
 plus	plus	ADV
 gais	gai	ADJ
 .	.	PUNCTsent
-Ma	mon	DET
+ma	mon	DET
 mie	mie	NOUN
 Henriette	Henriette	PROPN
 demanda	demander	VERB
@@ -809,7 +809,7 @@ lui	lui	PRON
 habituelle	habituel	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Au	au	ADP_DET
+au	au	ADP_DET
 dessert	dessert	NOUN
 ,	,	PUNCTclause
 on	on	PRON
@@ -864,7 +864,7 @@ fut	être	AUX
 rapporté	rapporter	VERB
 à	à	ADP
 la	le	DET
-Providence	Providence	PROPN
+providence	providence	UNKNOWN
 ,	,	PUNCTclause
 qui	qui	PRON
 voulait	vouloir	VERB
@@ -886,7 +886,7 @@ tendrement	tendrement	ADV
 chérie	chéri	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Mais	mais	CCONJ
+mais	mais	CCONJ
 si	si	ADV
 ,	,	PUNCTclause
 dans	dans	ADP
@@ -895,7 +895,7 @@ intervalle	intervalle	NOUN
 des	un	ADP_DET
 toasts	toast	NOUN
 ,	,	PUNCTclause
-personne	personne:PRON	PRON
+personne	personne_PRON	PRON
 ne	ne	ADV
 souffla	souffler	VERB
 le	le	DET
@@ -954,7 +954,7 @@ son	son	DET
 courage	courage	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Comme	comme	SCONJ
+comme	comme	SCONJ
 on	on	PRON
 se	se	PRON
 levait	lever	VERB
@@ -991,7 +991,7 @@ ramené	ramener	VERB
 au	au	ADP_DET
 camp	camp	NOUN
 .	.	PUNCTsent
-Comme	comme	SCONJ
+comme	comme	SCONJ
 ce	ce	PRON
 était	être	AUX
 une	un	PRON
@@ -1028,7 +1028,7 @@ ordinaire	ordinaire	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Qu'est-ce	qu'est-ce	PRON
+qu'est-ce	qu'est-ce	PRON
 donc	donc	ADV
 ,	,	PUNCTclause
 mon	mon	DET
@@ -1039,7 +1039,7 @@ Sara	Sara	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Rien	rien	PRON
+rien	rien	PRON
 ,	,	PUNCTclause
 mon	mon	DET
 enfant	enfant	NOUN
@@ -1050,7 +1050,7 @@ de	de	ADP
 Malmédie	Malmédie	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 l'on	on	PRON
 reprit	reprendre	VERB
 la	le	DET
@@ -1070,7 +1070,7 @@ chevaux	cheval	NOUN
 étaient	être	AUX
 prêts	prêt	ADJ
 .	.	PUNCTsent
-Comme	comme	ADP
+comme	comme	ADP
 le	le	DET
 dîner	dîner	NOUN
 et	et	CCONJ
@@ -1115,7 +1115,7 @@ le	le	DET
 dîner	dîner	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Sara	Sara	PROPN
+Sara	Sara	DET
 passa	passer	VERB
 dans	dans	ADP
 la	le	DET
@@ -1148,7 +1148,7 @@ restât	rester	VERB
 à	à	ADP
 la	le	DET
 rivière	rivière	NOUN
-Noire	noir	ADJ
+noire	noir	ADJ
 ;	;	PUNCTclause
 Sara	Sara	PROPN
 ,	,	PUNCTclause
@@ -1172,7 +1172,7 @@ revenait	revenir	VERB
 cheval	cheval	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Comme	comme	ADP
+comme	comme	ADP
 la	le	DET
 cavalcade	cavalcade	NOUN
 sortait	sortir	VERB
@@ -1215,7 +1215,7 @@ l'	le	DET
 huile	huile	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-En	en	ADP
+en	en	ADP
 approchant	approcher	VERB
 des	un	DET
 Trois-Mamelles	Trois-Mamelles	PROPN
@@ -1230,7 +1230,7 @@ les	le	DET
 nègres	nègre	NOUN
 rassemblés	rassembler	VERB
 .	.	PUNCTsent
-Arrivés	arriver	VERB
+arrivés	arriver	VERB
 au	au	ADP_DET
 lieu	lieu	NOUN
 du	du	ADP_DET
@@ -1287,7 +1287,7 @@ une	un	DET
 faute	faute	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 coupable	coupable	NOUN
 était	être	AUX
 un	un	DET
@@ -1431,7 +1431,7 @@ Malmédie	Malmédie	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Monsieur	monsieur	NOUN
+monsieur	monsieur	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 le	le	DET
@@ -1459,7 +1459,7 @@ condamné	condamner	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 pourquoi	pourquoi	ADV
 a	avoir	AUX
 il	il	PRON
@@ -1511,11 +1511,11 @@ l'	le	DET
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Lui-même	lui-même	PRON
+lui-même	lui-même	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 comment	comment	ADV
 l'	le	DET
 avez	avoir	AUX
@@ -1578,7 +1578,7 @@ aller	aller	VERB
 sa	son	DET
 poursuite	poursuite	NOUN
 .	.	PUNCTsent
-En	en	ADP
+en	en	ADP
 doublant	doubler	VERB
 le	le	DET
 cap	cap	NOUN
@@ -1586,7 +1586,7 @@ du	du	ADP_DET
 sud-ouest	sud-ouest	NOUN
 ,	,	PUNCTclause
 nous	nous	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avons	avoir	AUX
 aperçu	apercevoir	VERB
 à	à	ADP
@@ -1597,7 +1597,7 @@ mer	mer	NOUN
 ,	,	PUNCTclause
 à peu près	à peu près	ADV
 .	.	PUNCTsent
-Comme	comme	SCONJ
+comme	comme	SCONJ
 il	il	PRON
 ne	ne	ADV
 avait	avoir	VERB
@@ -1629,13 +1629,13 @@ excellente	excellent	ADJ
 pirogue	pirogue	NOUN
 ,	,	PUNCTclause
 nous	nous	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avons	avoir	AUX
 eu	avoir	VERB
 bientôt	bientôt	ADV
 rejoint	rejoindre	VERB
 .	.	PUNCTsent
-Alors	alors	ADV
+alors	alors	ADV
 il	il	PRON
 se	se	PRON
 est	être	AUX
@@ -1724,14 +1724,14 @@ plongé	plonger	VERB
 pour	pour	ADP
 toujours	toujours	ADV
 .	.	PUNCTsent
-Cependant	cependant	ADV
+cependant	cependant	ADV
 ,	,	PUNCTclause
 au bout de	au bout de	ADP
 un	un	DET
 instant	instant	NOUN
 ,	,	PUNCTclause
 nous	nous	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 avons	avoir	AUX
 vu	vu	ADP
 remonter	remonter	VERB
@@ -1740,13 +1740,13 @@ il	il	PRON
 était	être	AUX
 évanoui	évanouir	VERB
 .	.	PUNCTsent
-Ce	ce	PRON
+ce	ce	PRON
 ne	ne	ADV
 est	être	AUX
 que	que	ADV
 au	au	ADP_DET
 morne	morne	ADJ
-Brabant	Brabant	PROPN
+brabant	brabant	UNKNOWN
 que	que	SCONJ
 il	il	PRON
 a	avoir	AUX
@@ -1759,7 +1759,7 @@ voilà	voilà	ADP
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 dit	dire	VERB
 vivement	vivement	ADV
@@ -1780,7 +1780,7 @@ mon Dieu	mon Dieu	NOUN
 ,	,	PUNCTclause
 non	non	ADV
 ,	,	PUNCTclause
-Mademoiselle	Mademoiselle	PROPN
+mademoiselle	mademoiselle	UNKNOWN
 ,	,	PUNCTclause
 reprit	reprendre	VERB
 le	le	DET
@@ -1790,7 +1790,7 @@ une	un	DET
 égratignure	égratignure	NOUN
 seulement	seulement	ADV
 .	.	PUNCTsent
-Ces	ce	DET
+ces	ce	DET
 diables	diable	NOUN
 de	de	ADP
 nègres	nègre	NOUN
@@ -1803,7 +1803,7 @@ tout	tout	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 alors	alors	ADV
 ,	,	PUNCTclause
 pourquoi	pourquoi	ADV
@@ -1827,7 +1827,7 @@ M.	M.	NOUN
 de	de	ADP
 Malmédie	Malmédie	PROPN
 .	.	PUNCTsent
-D'après	d'après	ADP
+d'après	d'après	ADP
 l'	le	DET
 ordre	ordre	NOUN
 que	que	PRON
@@ -1843,13 +1843,13 @@ fait	faire	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 cela	cela	PRON
 serait	être	AUX
 fait	faire	VERB
 aussi	aussi	ADV
 ,	,	PUNCTclause
-Monsieur	Monsieur	NOUN
+monsieur	monsieur	NOUN
 ,	,	PUNCTclause
 répondit	répondre	VERB
 le	le	DET
@@ -1884,7 +1884,7 @@ ordre	ordre	NOUN
 fût	être	AUX
 exécuté	exécuter	VERB
 .	.	PUNCTsent
-Comme	comme	SCONJ
+comme	comme	SCONJ
 vous	vous	PRON
 deviez	devoir	VERB
 passer	passer	VERB
@@ -1913,7 +1913,7 @@ surseoir	surseoir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 vous	vous	PRON
 avez	avoir	AUX
 bien	bien	ADV
@@ -1924,18 +1924,18 @@ commandeur	commandeur	NOUN
 dit	dire	VERB
 Sara	Sara	PROPN
 .	.	PUNCTsent
-Et	et	CCONJ
+et	et	CCONJ
 où	où	PRON
 est	être	AUX
 il	il	PRON
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Qui	qui	PRON
+qui	qui	PRON
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Le	le:PRON	PRON
+le	le_PRON	PRON
 frère	frère	NOUN
 de	de	ADP
 ce	ce	PRON
@@ -1943,7 +1943,7 @@ malheureux	malheureux	ADJ
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Oui	oui	INTJ
+oui	oui	INTJ
 ,	,	PUNCTclause
 où	où	PRON
 est	être	AUX
@@ -1956,7 +1956,7 @@ Malmédie	Malmédie	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Me	me	PRON
+me	me	PRON
 voici	voici	ADP
 ,	,	PUNCTclause
 dit	dire	VERB
@@ -1966,7 +1966,7 @@ se	se	PRON
 avançant	avancer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Sara	Sara	PROPN
+Sara	Sara	X
 jeta	jeter	VERB
 un	un	DET
 cri	cri	NOUN
@@ -1999,7 +1999,7 @@ sauver	sauver	VERB
 la	le	DET
 vie	vie	NOUN
 .	.	PUNCTsent
-Cependant	cependant	ADV
+cependant	cependant	ADV
 ,	,	PUNCTclause
 chose	chose	NOUN
 étonnante	étonnant	ADJ
@@ -2051,7 +2051,7 @@ M.	M.	NOUN
 de	de	ADP
 Malmédie	Malmédie	PROPN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 ne	ne	ADV
 y	y	PRON
 avait	avoir	AUX
@@ -2086,7 +2086,7 @@ saignantes	saignant	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Que	que	PRON
+que	que	PRON
 veux	vouloir	VERB
 tu	tu	PRON
 ?	?	PUNCTsent
@@ -2097,7 +2097,7 @@ Malmédie	Malmédie	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Vous	vous	PRON
+vous	vous	PRON
 demander	demander	VERB
 une	un	DET
 grâce	grâce	NOUN
@@ -2125,17 +2125,17 @@ autres	autre	ADJ
 nègres	nègre	NOUN
 ,	,	PUNCTclause
 ne	ne	ADV
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 entendît	entendre	VERB
 pas	pas	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Laquelle	laquelle	PRON
+laquelle	laquelle	PRON
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Nazim	Nazim	PROPN
+Nazim	Nazim	NOUN
 est	être	AUX
 faible	faible	ADJ
 ,	,	PUNCTclause
@@ -2210,7 +2210,7 @@ venir	venir	VERB
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 veux	vouloir	VERB
 vous	vous	PRON
 proposer	proposer	VERB
@@ -2219,11 +2219,11 @@ un	un	DET
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Lequel	lequel	PRON
+lequel	lequel	PRON
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Faites	faire	AUX
+faites	faire	AUX
 moi	moi	PRON
 donner	donner	VERB
 ,	,	PUNCTclause
@@ -2241,12 +2241,12 @@ il	il	PRON
 a	avoir	AUX
 mérités	mériter	VERB
 .	.	PUNCTsent
-Je	je	PRON
+je	je	PRON
 suis	être	AUX
 fort	fort	ADV
 ,	,	PUNCTclause
 je	je	PRON
-les	le:PRON	PRON
+les	le_PRON	PRON
 supporterai	supporter	VERB
 ;	;	PUNCTclause
 et	et	CCONJ
@@ -2270,7 +2270,7 @@ lui	lui	PRON
 ,	,	PUNCTclause
 je	je	PRON
 vous	vous	PRON
-le	le:PRON	PRON
+le	le_PRON	PRON
 répète	répéter	VERB
 ,	,	PUNCTclause
 ce	ce	PRON
@@ -2283,7 +2283,7 @@ mourrait	mourir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Cela	cela	PRON
+cela	cela	PRON
 ne	ne	ADV
 se	se	PRON
 peut	pouvoir	VERB
@@ -2297,7 +2297,7 @@ Malmédie	Malmédie	PROPN
 tandis que	tandis que	SCONJ
 Sara	Sara	PROPN
 ,	,	PUNCTclause
-les	le:PRON	PRON
+les	le_PRON	PRON
 yeux	œil	NOUN
 toujours	toujours	ADV
 fixés	fixer	VERB
@@ -2315,7 +2315,7 @@ profond	profond	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 pourquoi	pourquoi	ADV
 cela	cela	PRON
 ne	ne	ADV
@@ -2334,7 +2334,7 @@ injustice	injustice	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Vous	vous	PRON
+vous	vous	PRON
 vous	vous	PRON
 trompez	tromper	VERB
 ,	,	PUNCTclause
@@ -2350,11 +2350,11 @@ coupable	coupable	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Toi	toi	PRON
+toi	toi	PRON
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Oui	oui	INTJ
+oui	oui	INTJ
 ,	,	PUNCTclause
 moi	moi	PRON
 ,	,	PUNCTclause
@@ -2418,7 +2418,7 @@ frotter	frotter	VERB
 le	le	DET
 corps	corps	NOUN
 .	.	PUNCTsent
-Vous	vous	PRON
+vous	vous	PRON
 voyez	voir	VERB
 donc	donc	ADV
 bien	bien	ADV
@@ -2437,7 +2437,7 @@ Nazim	Nazim	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Tu	tu	PRON
+tu	tu	PRON
 te	te	PRON
 trompes	tromper	VERB
 ,	,	PUNCTclause
@@ -2452,7 +2452,7 @@ tour	tour	NOUN
 la	le	DET
 discussion	discussion	NOUN
 .	.	PUNCTsent
-Vous	vous	PRON
+vous	vous	PRON
 devez	devoir	VERB
 être	être	AUX
 punis	punir	VERB
@@ -2473,7 +2473,7 @@ fuir	fuir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Alors	alors	ADV
+alors	alors	ADV
 ,	,	PUNCTclause
 faites	faire	VERB
 moi	moi	PRON
@@ -2497,7 +2497,7 @@ dit	dire	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Commandeur	commandeur	NOUN
+commandeur	commandeur	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 M.	M.	NOUN
@@ -2524,7 +2524,7 @@ finisse	finir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Un	un	DET
+un	un	DET
 instant	instant	NOUN
 ,	,	PUNCTclause
 mon	mon	DET
@@ -2544,7 +2544,7 @@ hommes	homme	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	et	CCONJ
+et	et	CCONJ
 pourquoi	pourquoi	ADV
 cela	cela	PRON
 ?	?	PUNCTsent
@@ -2580,7 +2580,7 @@ sauver	sauver	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Elle	elle	PRON
+elle	elle	PRON
 me	me	PRON
 a	avoir	AUX
 reconnu	reconnaître	VERB
@@ -2616,7 +2616,7 @@ Sara	Sara	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Alors	alors	ADV
+alors	alors	ADV
 ,	,	PUNCTclause
 dit	dire	VERB
 Laïza	Laïza	PROPN
@@ -2640,7 +2640,7 @@ Nazim	Nazim	PROPN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Diable	diable	NOUN
+diable	diable	NOUN
 !	!	PUNCTsent
 diable	diable	NOUN
 !	!	PUNCTsent
@@ -2654,7 +2654,7 @@ tu	tu	PRON
 y	y	PRON
 vas	aller	VERB
 !	!	PUNCTsent
-Est	être	AUX
+est	être	AUX
 ce	ce	DET
 toi	toi	PRON
 qui	qui	PRON
@@ -2665,7 +2665,7 @@ nièce	nièce	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Ce	ce	PRON
+ce	ce	PRON
 ne	ne	ADV
 est	être	AUX
 pas	pas	ADV
@@ -2686,7 +2686,7 @@ perdue	perdre	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mais	mais	CCONJ
+mais	mais	CCONJ
 il	il	PRON
 a	avoir	AUX
 fait	faire	VERB
@@ -2747,7 +2747,7 @@ défendant	défendre	VERB
 reprit	reprendre	VERB
 Laïza	Laïza	PROPN
 .	.	PUNCTsent
-Le	le	DET
+le	le	DET
 requin	requin	NOUN
 est	être	AUX
 venu	venir	VERB
@@ -2784,7 +2784,7 @@ Sara	Sara	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Oui	oui	INTJ
+oui	oui	INTJ
 ,	,	PUNCTclause
 sans doute	sans doute	ADV
 ,	,	PUNCTclause
@@ -2831,14 +2831,14 @@ eux	eux	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 mon	mon	DET
 oncle	oncle	NOUN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Demande	demander	VERB
+demande	demander	VERB
 à	à	ADP
 tous	tout	ADJ
 ces	ce	DET
@@ -2873,7 +2873,7 @@ fils	fils	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Le	le:PRON	PRON
+le	le_PRON	PRON
 fait	faire	VERB
 est	est	NOUN
 ,	,	PUNCTclause
@@ -2892,7 +2892,7 @@ exemple	exemple	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Tu	tu	PRON
+tu	tu	PRON
 le	le	DET
 vois	voir	VERB
 ,	,	PUNCTclause
@@ -2900,7 +2900,7 @@ Sara	Sara	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mais	mais	CCONJ
+mais	mais	CCONJ
 un	un	DET
 homme	homme	NOUN
 qui	qui	PRON
@@ -2925,7 +2925,7 @@ jour	jour	NOUN
 même	même	ADV
 où	où	PRON
 il	il	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 a	avoir	AUX
 risquée	risquer	VERB
 ;	;	PUNCTclause
@@ -2959,7 +2959,7 @@ dette	dette	NOUN
 ,	,	PUNCTclause
 quand	quand	SCONJ
 je	je	PRON
-l'	le:PRON	PRON
+l'	le_PRON	PRON
 aurai	avoir	AUX
 fait	faire	AUX
 punir	punir	VERB
@@ -2972,7 +2972,7 @@ récompenseras	récompenser	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
 mon	mon	DET
 oncle	oncle	NOUN
@@ -3011,13 +3011,13 @@ projet	projet	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Quel	quel	DET
+quel	quel	DET
 tort	tort	NOUN
 elle	elle	PRON
 me	me	PRON
 fait	faire	VERB
 ?	?	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 elle	elle	PRON
 leur	leur	PRON
 ôte	ôter	VERB
@@ -3027,7 +3027,7 @@ de	de	ADP
 leur	leur	DET
 valeur	valeur	NOUN
 .	.	PUNCTsent
-Un	un	DET
+un	un	DET
 nègre	nègre	NOUN
 qui	qui	PRON
 a	avoir	AUX
@@ -3043,7 +3043,7 @@ de	de	ADP
 son	son	DET
 prix	prix	NOUN
 .	.	PUNCTsent
-Voilà	voilà	ADP
+voilà	voilà	ADP
 deux	deux	NUM
 gaillards	gaillard	NOUN
 qui	qui	PRON
@@ -3080,13 +3080,13 @@ aujourd'hui	aujourd'hui	ADV
 on	on	PRON
 ne	ne	ADV
 me	me	PRON
-les	le:PRON	PRON
+les	le_PRON	PRON
 donnera	donner	VERB
 pas	pas	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Le	le:PRON	PRON
+le	le_PRON	PRON
 fait	faire	AUX
 est	être	AUX
 que	que	ADV
@@ -3116,7 +3116,7 @@ Henri	Henri	PROPN
 hé	hé	INTJ
 bien	bien	ADV
 ,	,	PUNCTclause
-Monsieur	Monsieur	NOUN
+monsieur	monsieur	NOUN
 ,	,	PUNCTclause
 je	je	PRON
 serai	être	VERB
@@ -3143,7 +3143,7 @@ donne	donner	VERB
 mille	mille	NUM
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-La	le	DET
+la	le	DET
 jeune	jeune	ADJ
 fille	fille	NOUN
 se	se	PRON
@@ -3162,7 +3162,7 @@ du	du	ADP_DET
 rocher	rocher	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Il	il	PRON
+il	il	PRON
 était	être	AUX
 debout	debout	ADV
 ,	,	PUNCTclause
@@ -3182,7 +3182,7 @@ fusil	fusil	NOUN
 deux	deux	NUM
 coups	coup	NOUN
 .	.	PUNCTsent
-Il	il	PRON
+il	il	PRON
 avait	avoir	AUX
 tout	tout	ADV
 entendu	entendre	VERB
@@ -3195,7 +3195,7 @@ ce	ce	PRON
 est	être	AUX
 vous	vous	PRON
 ,	,	PUNCTclause
-Monsieur	Monsieur	NOUN
+monsieur	monsieur	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 M.	M.	NOUN
@@ -3267,7 +3267,7 @@ acquitter	acquitter	VERB
 envers	envers	ADP
 vous	vous	PRON
 ,	,	PUNCTclause
-Monsieur	Monsieur	NOUN
+monsieur	monsieur	NOUN
 ,	,	PUNCTclause
 ce	ce	PRON
 est	être	AUX
@@ -3302,7 +3302,7 @@ point	point	ADV
 à	à	ADP
 Sara	Sara	PROPN
 .	.	PUNCTsent
-Aussi	aussi	ADV
+aussi	aussi	ADV
 se	se	PRON
 empressa	empresser	VERB
 elle	elle	PRON
@@ -3311,12 +3311,12 @@ ajouter	ajouter	VERB
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mon	mon	DET
+mon	mon	DET
 oncle	oncle	NOUN
 a	avoir	AUX
 raison	raison	NOUN
 ,	,	PUNCTclause
-Monsieur	Monsieur	NOUN
+monsieur	monsieur	NOUN
 ;	;	PUNCTclause
 de	de	ADP
 pareils	pareil	NOUN
@@ -3368,7 +3368,7 @@ de	de	ADP
 pareils	pareil	NOUN
 remerciements	remerciement	NOUN
 ,	,	PUNCTclause
-Mademoiselle	Mademoiselle	PROPN
+mademoiselle	mademoiselle	UNKNOWN
 ;	;	PUNCTclause
 je	je	PRON
 me	me	PRON
@@ -3410,7 +3410,7 @@ besoin	besoin	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Henri	Henri	PROPN
+Henri	Henri	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 à	à	ADP
@@ -3440,7 +3440,7 @@ négrier	négrier	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Oui	oui	INTJ
+oui	oui	INTJ
 ,	,	PUNCTclause
 mon	mon	DET
 père	père	NOUN
@@ -3450,7 +3450,7 @@ Henri	Henri	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Bien	bien	ADV
+bien	bien	ADV
 ,	,	PUNCTclause
 continua	continuer	VERB
 M.	M.	NOUN
@@ -3468,7 +3468,7 @@ nous	nous	PRON
 trouverons	trouver	VERB
 moyen	moyen	ADJ
 de	de	ADP
-les	le:PRON	PRON
+les	le_PRON	PRON
 remplacer	remplacer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -3478,7 +3478,7 @@ attends	attendre	VERB
 votre	votre	DET
 réponse	réponse	NOUN
 ,	,	PUNCTclause
-Monsieur	Monsieur	NOUN
+monsieur	monsieur	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 l'	le	DET
@@ -3486,10 +3486,10 @@ l'	le	DET
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Comment	comment	ADV
+comment	comment	ADV
 donc	donc	ADV
 ,	,	PUNCTclause
-Monsieur	Monsieur	NOUN
+monsieur	monsieur	NOUN
 ,	,	PUNCTclause
 mais	mais	CCONJ
 avec	avec	ADP
@@ -3498,7 +3498,7 @@ plus	plus	ADV
 grand	grand	ADJ
 plaisir	plaisir	NOUN
 .	.	PUNCTsent
-Ces	ce	DET
+ces	ce	DET
 nègres	nègre	NOUN
 sont	être	AUX
 à	à	ADP
@@ -3548,7 +3548,7 @@ méritée	mériter	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Ceci	ceci	PRON
+ceci	ceci	PRON
 ,	,	PUNCTclause
 ce	ce	PRON
 est	être	AUX
@@ -3572,9 +3572,9 @@ soir	soir	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Pardon	pardon	NOUN
+pardon	pardon	NOUN
 ,	,	PUNCTclause
-Monsieur	Monsieur	NOUN
+monsieur	monsieur	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 Henri	Henri	PROPN
@@ -3603,7 +3603,7 @@ hommes	homme	NOUN
 mais	mais	CCONJ
 de	de	ADP
 vous	vous	PRON
-les	le:PRON	PRON
+les	le_PRON	PRON
 donner	donner	VERB
 .	.	PUNCTsent
 l'	le	DET
@@ -3633,7 +3633,7 @@ ma	mon	DET
 belle	beau	NOUN
 cousine	cousin	NOUN
 .	.	PUNCTsent
-Mais	mais	CCONJ
+mais	mais	CCONJ
 laissez	laisser	VERB
 moi	moi	PRON
 vous	vous	PRON
@@ -3654,9 +3654,9 @@ désirer	désirer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mais	mais	CCONJ
+mais	mais	CCONJ
 ,	,	PUNCTclause
-Monsieur	Monsieur	NOUN
+monsieur	monsieur	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 l'	le	DET
@@ -3733,11 +3733,11 @@ offrons	offrir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Je	je	PRON
+je	je	PRON
 vous	vous	PRON
 remercie	remercier	VERB
 ,	,	PUNCTclause
-Mademoiselle	Mademoiselle	PROPN
+mademoiselle	mademoiselle	UNKNOWN
 ,	,	PUNCTclause
 dit	dire	VERB
 l'	le	DET
@@ -3771,7 +3771,7 @@ votre	votre	DET
 obligé	obligé	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 l'	le	DET
 étranger	étranger	NOUN
 ,	,	PUNCTclause
@@ -3804,7 +3804,7 @@ pas	pas	NOUN
 en arrière	en arrière	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Les	le	DET
+les	le	DET
 hommes	homme	NOUN
 échangèrent	échanger	VERB
 un	un	DET
@@ -3819,7 +3819,7 @@ un	un	DET
 regard	regard	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-La	le	DET
+la	le	DET
 cavalcade	cavalcade	NOUN
 se	se	PRON
 remit	remettre	VERB
@@ -3827,7 +3827,7 @@ en	en	ADP
 route	route	NOUN
 et	et	CCONJ
 Georges	Georges	PROPN
-la	le:PRON	PRON
+la	le_PRON	PRON
 suivit	suivre	VERB
 un	un	DET
 instant	instant	NOUN
@@ -3858,7 +3858,7 @@ Nazim	Nazim	PROPN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Faites	faire	AUX
+faites	faire	AUX
 délier	délier	VERB
 cet	ce	DET
 homme	homme	NOUN
@@ -3877,7 +3877,7 @@ me	me	PRON
 appartiennent	appartenir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Le	le	DET
+le	le	DET
 commandeur	commandeur	NOUN
 ,	,	PUNCTclause
 qui	qui	PRON
@@ -3901,7 +3901,7 @@ difficulté	difficulté	NOUN
 de	de	ADP
 obéir	obéir	VERB
 .	.	PUNCTsent
-Nazim	Nazim	PROPN
+Nazim	Nazim	ADJ
 fut	être	AUX
 donc	donc	ADV
 délié	délier	VERB
@@ -3916,7 +3916,7 @@ maître	maître	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Maintenant	maintenant	ADV
+maintenant	maintenant	ADV
 ,	,	PUNCTclause
 mes	mon	DET
 amis	ami	NOUN
@@ -3966,7 +3966,7 @@ un	un	DET
 petit	petit	ADJ
 présent	présent	NOUN
 .	.	PUNCTsent
-Prenez	prendre	VERB
+prenez	prendre	VERB
 cette	ce	DET
 bourse	bourse	NOUN
 et	et	CCONJ
@@ -3979,7 +3979,7 @@ elle	elle	PRON
 contient	contenir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Et	et	CCONJ
+et	et	CCONJ
 il	il	PRON
 remit	remettre	VERB
 la	le	DET
@@ -4040,7 +4040,7 @@ vous	vous	PRON
 libres	libre	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Laïza	Laïza	PROPN
+Laïza	Laïza	DET
 et	et	CCONJ
 Nazim	Nazim	PROPN
 poussèrent	pousser	VERB
@@ -4150,5 +4150,5 @@ reprit	reprendre	VERB
 le	le	DET
 chemin	chemin	NOUN
 de	de	ADP
-Moka	Moka	PROPN
+moka	moka	UNKNOWN
 .	.	PUNCTsent
