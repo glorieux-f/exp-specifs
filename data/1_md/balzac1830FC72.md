@@ -2,7 +2,7 @@
 identifier: balzac1830FC72
 creator: Balzac, Honoré de
 created: 1830
-modified: 1845
+issued: 1845
 title: Adieu. Études philosophiques
 ---
 

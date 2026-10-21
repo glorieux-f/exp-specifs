@@ -2,7 +2,7 @@
 identifier: balzac1842FC07
 creator: Balzac, Honoré de
 created: 1842
-modified: 1842
+issued: 1842
 title: Albert Savarus. Études de mœurs. Scènes de la vie privée
 ---
 

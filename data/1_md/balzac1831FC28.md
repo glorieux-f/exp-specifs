@@ -2,7 +2,7 @@
 identifier: balzac1831FC28
 creator: Balzac, Honoré de
 created: 1831
-modified: 1846
+issued: 1846
 title: Autre étude de femme. Études de mœurs. Scènes de la vie privée
 ---
 

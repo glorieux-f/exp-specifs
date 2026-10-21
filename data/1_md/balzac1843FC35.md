@@ -2,7 +2,7 @@
 identifier: balzac1843FC35
 creator: Balzac, Honoré de
 created: 1843
-modified: 1843
+issued: 1843
 title: La Muse du département. Études de mœurs. Scènes de la vie de province
 ---
 

@@ -2,7 +2,7 @@
 identifier: balzac1846FC46a
 creator: Balzac, Honoré de
 created: 1846
-modified: 1848
+issued: 1848
 title: Les Parents pauvres : La Cousine Bette. Études de mœurs. Scènes de la vie parisienne
 ---
 

@@ -2,7 +2,7 @@
 identifier: balzac1842FC54
 creator: Balzac, Honoré de
 created: 1842
-modified: 1846
+issued: 1846
 title: Un épisode sous la Terreur. Études de mœurs. Scènes de la vie politique
 ---
 

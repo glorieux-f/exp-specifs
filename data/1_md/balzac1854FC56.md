@@ -2,7 +2,7 @@
 identifier: balzac1854FC56
 creator: Balzac, Honoré de
 created: 1854
-modified: 1847
+issued: 1847
 title: Le Député d’Arcis. Études de mœurs. Scènes de la vie politique
 ---
 

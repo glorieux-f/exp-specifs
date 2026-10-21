@@ -2,7 +2,7 @@
 identifier: balzac1831FC81
 creator: Balzac, Honoré de
 created: 1831
-modified: 1846
+issued: 1846
 title: Les Proscrits. Études philosophiques
 ---
 

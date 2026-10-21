@@ -2,7 +2,7 @@
 identifier: balzac1832FC04
 creator: Balzac, Honoré de
 created: 1832
-modified: 1842
+issued: 1842
 title: La Bourse. Études de mœurs. Scènes de la vie privée
 ---
 

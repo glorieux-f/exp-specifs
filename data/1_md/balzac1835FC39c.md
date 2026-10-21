@@ -2,7 +2,7 @@
 identifier: balzac1835FC39c
 creator: Balzac, Honoré de
 created: 1835
-modified: 1843
+issued: 1843
 title: Histoire des Treize : La Fille aux yeux d’or. Études de mœurs. Scènes de la vie parisienne
 ---
 

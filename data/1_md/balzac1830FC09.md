@@ -2,7 +2,7 @@
 identifier: balzac1830FC09
 creator: Balzac, Honoré de
 created: 1830
-modified: 1842
+issued: 1842
 title: Une double famille. Études de mœurs. Scènes de la vie privée
 ---
 

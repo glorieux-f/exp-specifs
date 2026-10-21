@@ -2,7 +2,7 @@
 identifier: balzac1830FC86a-04
 creator: Balzac, Honoré de
 created: 1830
-modified: 1830
+issued: 1830
 isPartOf: Pathologie de la vie sociale : Traité de la vie élégante. Études analytiques
 title: Chapitre IV.  Dogmes
 ---

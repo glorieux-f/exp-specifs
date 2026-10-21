@@ -1,4 +1,4 @@
-"""Reusable term-document corpus loaded from docs/terms/postings TSV files.
+"""Reusable term-document corpus loaded from prefixed TSV files.
 
 A :class:`Corpus` always represents a complete active corpus for statistical
 purposes. ``select()`` returns another ``Corpus`` sharing postings and metadata
@@ -10,7 +10,6 @@ renumbered by selection.
 
 from __future__ import annotations
 
-import csv
 from dataclasses import dataclass
 from fnmatch import fnmatchcase
 from pathlib import Path
@@ -26,7 +25,7 @@ class Document:
     identifier: str
     creator: str
     created: str
-    modified: str
+    issued: str
     work: str
     title: str
     doc_len: int
@@ -79,11 +78,19 @@ class Corpus:
         self._doc_mask[self.doc_ids] = True
 
     @classmethod
-    def load(cls, directory: str | Path) -> "Corpus":
-        """Load a complete corpus from ``docs.tsv``, ``terms.tsv`` and ``postings.tsv``."""
-        directory = Path(directory)
-        documents, doc_len = cls._load_docs(directory / "docs.tsv")
-        lemmas, lemma_to_id, cf, df = cls._load_terms(directory / "terms.tsv")
+    def load(cls, prefix: str | Path) -> "Corpus":
+        """Load ``{prefix}docs.tsv``, ``{prefix}terms.tsv`` and ``{prefix}postings.tsv``.
+
+        A directory path denotes an empty filename prefix.
+        """
+        prefix_text = str(prefix)
+        if prefix_text.endswith(("/", "\\")) or Path(prefix_text).is_dir():
+            path_for = lambda name: Path(prefix_text) / name
+        else:
+            path_for = lambda name: Path(prefix_text + name)
+
+        documents, doc_len = cls._load_docs(path_for("docs.tsv"))
+        lemmas, lemma_to_id, cf, df = cls._load_terms(path_for("terms.tsv"))
 
         n_docs = len(documents) - 1
         n_terms = len(lemmas) - 1
@@ -95,7 +102,7 @@ class Corpus:
             term_tf_values,
             term_offsets,
         ) = cls._load_postings(
-            directory / "postings.tsv",
+            path_for("postings.tsv"),
             n_docs=n_docs,
             n_terms=n_terms,
             expected_cf=cf,
@@ -230,25 +237,30 @@ class Corpus:
         return cf, df
 
     @staticmethod
-    def _load_docs(path: Path) -> tuple[list[Document | None], np.ndarray]:
-        with path.open("r", encoding="utf-8", newline="") as file:
-            reader = csv.DictReader(file, delimiter="\t")
-            expected = [
-                "doc_id",
-                "identifier",
-                "creator",
-                "created",
-                "modified",
-                "work",
-                "title",
-                "doc_len",
-            ]
-            if reader.fieldnames != expected:
+    def _read_tsv(path: Path, columns: list[str]) -> list[dict[str, str]]:
+        """Read literal tab-separated fields without interpreting quotation marks."""
+        with path.open("r", encoding="utf-8", newline="") as stream:
+            header = stream.readline().rstrip("\r\n").split("\t")
+            if header != columns:
                 raise ValueError(
-                    f"Unexpected {path.name} columns: {reader.fieldnames}; "
-                    f"expected {expected}"
+                    f"Unexpected {path.name} columns: {header}; expected {columns}"
                 )
-            rows = list(reader)
+            rows = []
+            for line_no, line in enumerate(stream, 2):
+                fields = line.rstrip("\r\n").split("\t")
+                if len(fields) != len(columns):
+                    raise ValueError(
+                        f"{path}:{line_no}: expected {len(columns)} columns, got {len(fields)}"
+                    )
+                rows.append(dict(zip(columns, fields)))
+            return rows
+
+    @staticmethod
+    def _load_docs(path: Path) -> tuple[list[Document | None], np.ndarray]:
+        rows = Corpus._read_tsv(
+            path,
+            ["doc_id", "identifier", "creator", "created", "issued", "work", "title", "doc_len"],
+        )
 
         n_docs = len(rows)
         documents: list[Document | None] = [None] * (n_docs + 1)
@@ -264,7 +276,7 @@ class Corpus:
                 identifier=row["identifier"],
                 creator=row["creator"],
                 created=row["created"],
-                modified=row["modified"],
+                issued=row["issued"],
                 work=row["work"],
                 title=row["title"],
                 doc_len=int(row["doc_len"]),
@@ -280,15 +292,7 @@ class Corpus:
     def _load_terms(
         path: Path,
     ) -> tuple[list[str], dict[str, int], np.ndarray, np.ndarray]:
-        with path.open("r", encoding="utf-8", newline="") as file:
-            reader = csv.DictReader(file, delimiter="\t")
-            expected = ["term_id", "lemma", "cf", "df"]
-            if reader.fieldnames != expected:
-                raise ValueError(
-                    f"Unexpected {path.name} columns: {reader.fieldnames}; "
-                    f"expected {expected}"
-                )
-            rows = list(reader)
+        rows = Corpus._read_tsv(path, ["term_id", "lemma", "cf", "df"])
 
         n_terms = len(rows)
         lemmas: list[str | None] = [None] * (n_terms + 1)

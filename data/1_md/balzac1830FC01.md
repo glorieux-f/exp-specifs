@@ -2,7 +2,7 @@
 identifier: balzac1830FC01
 creator: Balzac, Honoré de
 created: 1830
-modified: 1842
+issued: 1842
 title: La Maison du chat-qui-pelote. Études de mœurs. Scènes de la vie privée
 ---
 

@@ -2,7 +2,7 @@
 identifier: balzac1847FC46b
 creator: Balzac, Honoré de
 created: 1847
-modified: 1848
+issued: 1848
 title: Les Parents pauvres : Le Cousin Pons. Études de mœurs. Scènes de la vie parisienne
 ---
 

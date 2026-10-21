@@ -2,7 +2,7 @@
 identifier: balzac1838FC50
 creator: Balzac, Honoré de
 created: 1838
-modified: 1846
+issued: 1846
 title: Les Employés. Études de mœurs. Scènes de la vie parisienne
 ---
 

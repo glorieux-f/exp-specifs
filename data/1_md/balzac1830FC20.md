@@ -2,7 +2,7 @@
 identifier: balzac1830FC20
 creator: Balzac, Honoré de
 created: 1830
-modified: 1846
+issued: 1846
 title: Gobseck. Études de mœurs. Scènes de la vie privée
 ---
 

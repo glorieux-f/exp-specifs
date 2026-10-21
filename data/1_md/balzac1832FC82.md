@@ -2,7 +2,7 @@
 identifier: balzac1832FC82
 creator: Balzac, Honoré de
 created: 1832
-modified: 1846
+issued: 1846
 title: Louis Lambert. Études philosophiques
 ---
 

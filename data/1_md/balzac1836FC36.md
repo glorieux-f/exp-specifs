@@ -2,7 +2,7 @@
 identifier: balzac1836FC36
 creator: Balzac, Honoré de
 created: 1836
-modified: 1844
+issued: 1844
 title: La Vieille Fille. Études de mœurs. Scènes de la vie de province
 ---
 

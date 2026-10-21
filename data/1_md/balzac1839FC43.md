@@ -2,7 +2,7 @@
 identifier: balzac1839FC43
 creator: Balzac, Honoré de
 created: 1839
-modified: 1844
+issued: 1844
 title: Les Secrets de la princesse de Cadignan. Études de mœurs. Scènes de la vie parisienne
 ---
 

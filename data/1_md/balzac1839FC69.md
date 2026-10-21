@@ -2,7 +2,7 @@
 identifier: balzac1839FC69
 creator: Balzac, Honoré de
 created: 1839
-modified: 1845
+issued: 1845
 title: Massimilla Doni. Études philosophiques
 ---
 

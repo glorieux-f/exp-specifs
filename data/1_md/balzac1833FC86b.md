@@ -2,7 +2,7 @@
 identifier: balzac1833FC86b
 creator: Balzac, Honoré de
 created: 1833
-modified: 1833
+issued: 1833
 title: Pathologie de la vie sociale : Théorie de la démarche. Études analytiques
 ---
 

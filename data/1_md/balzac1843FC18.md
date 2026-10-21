@@ -2,7 +2,7 @@
 identifier: balzac1843FC18
 creator: Balzac, Honoré de
 created: 1843
-modified: 1845
+issued: 1845
 title: Honorine. Études de mœurs. Scènes de la vie privée
 ---
 

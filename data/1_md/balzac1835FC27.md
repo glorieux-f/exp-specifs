@@ -2,7 +2,7 @@
 identifier: balzac1835FC27
 creator: Balzac, Honoré de
 created: 1835
-modified: 1842
+issued: 1842
 title: Le Contrat de mariage. Études de mœurs. Scènes de la vie privée
 ---
 

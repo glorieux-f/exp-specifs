@@ -2,7 +2,7 @@
 identifier: balzac1832FC11
 creator: Balzac, Honoré de
 created: 1832
-modified: 1842
+issued: 1842
 title: Madame Firmiani. Études de mœurs. Scènes de la vie privée
 ---
 

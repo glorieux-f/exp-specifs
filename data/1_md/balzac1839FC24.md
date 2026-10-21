@@ -2,7 +2,7 @@
 identifier: balzac1839FC24
 creator: Balzac, Honoré de
 created: 1839
-modified: 1844
+issued: 1844
 title: Pierre Grassou. Études de mœurs. Scènes de la vie privée
 ---
 

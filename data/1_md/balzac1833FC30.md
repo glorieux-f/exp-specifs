@@ -2,7 +2,7 @@
 identifier: balzac1833FC30
 creator: Balzac, Honoré de
 created: 1833
-modified: 1843
+issued: 1843
 title: Eugénie Grandet. Études de mœurs. Scènes de la vie de province
 ---
 

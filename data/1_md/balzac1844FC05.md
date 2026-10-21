@@ -2,7 +2,7 @@
 identifier: balzac1844FC05
 creator: Balzac, Honoré de
 created: 1844
-modified: 1845
+issued: 1845
 title: Modeste Mignon. Études de mœurs. Scènes de la vie privée
 ---
 

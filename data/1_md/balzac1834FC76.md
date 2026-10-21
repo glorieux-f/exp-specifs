@@ -2,7 +2,7 @@
 identifier: balzac1834FC76
 creator: Balzac, Honoré de
 created: 1834
-modified: 1845
+issued: 1845
 title: Un drame au bord de la mer. Études philosophiques
 ---
 

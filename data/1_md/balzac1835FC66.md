@@ -2,7 +2,7 @@
 identifier: balzac1835FC66
 creator: Balzac, Honoré de
 created: 1835
-modified: 1845
+issued: 1845
 title: Melmoth réconcilié. Études philosophiques
 ---
 
