@@ -6,7 +6,7 @@
 # title = II. La Guadeloupe
 
 ↵↵	↵↵	PUNCTstruct
-II	II	NUM
+II	II	PRON
 .	.	PUNCTsent
 la	le	DET
 Guadeloupe	Guadeloupe	PROPN
@@ -117,7 +117,7 @@ fut	être	AUX
 pas	pas	ADV
 ainsi	ainsi	ADV
 .	.	PUNCTsent
-des	un	DET
+des	un	ADP_DET
 calmes	calme	NOUN
 ,	,	PUNCTclause
 ou	ou	CCONJ
@@ -556,7 +556,7 @@ l'	le	DET
 entrée	entrée	NOUN
 de	de	ADP
 la	le	DET
-baie	bai	NOUN
+baie	baie	NOUN
 où	où	PRON
 se	se	PRON
 jette	jeter	VERB
@@ -1395,9 +1395,9 @@ Alert	Alert	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Sois	Sois	PROPN
-le	le_PRON	PRON
-bienvenu	bienvenu	ADJ
+sois	être	AUX
+le	le	DET
+bienvenu	bienvenu	NOUN
 ,	,	PUNCTclause
 mon	mon	DET
 cher	cher	ADJ
@@ -1451,7 +1451,7 @@ bien	bien	ADV
 !…	!…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mon	Mon	PROPN
+mon	mon	DET
 oncle	oncle	NOUN
 ,	,	PUNCTclause
 affirma	affirmer	VERB
@@ -1804,7 +1804,7 @@ aumônier	aumônier	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Pardon	Pardon	PROPN
+pardon	pardon	NOUN
 ,	,	PUNCTclause
 monsieur	monsieur	NOUN
 Barrand	Barrand	PROPN
@@ -2055,7 +2055,7 @@ gêner	gêner	VERB
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Me	Me	PROPN
+me	me	PRON
 gêner	gêner	VERB
 …	…	PUNCTsent
 moi	moi	PRON
@@ -2077,7 +2077,7 @@ qui	qui	PRON
 se	se	PRON
 gêne	gêner	VERB
 ?…	?…	PUNCTsent
-d'ailleurs	d'ailleurs	DET
+d'ailleurs	d'ailleurs	ADV
 ,	,	PUNCTclause
 je	je	PRON
 le	le_PRON	PRON
@@ -2216,7 +2216,7 @@ Saint-Martin	Saint-Martin	PROPN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-précisément	précisément	NOUN
+précisément	précisément	ADV
 ,	,	PUNCTclause
 monsieur	monsieur	NOUN
 ,	,	PUNCTclause
@@ -2346,7 +2346,7 @@ tort	tort	NOUN
 ?…	?…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Oui	Oui	PROPN
+oui	oui	INTJ
 !…	!…	PUNCTsent
 quand	quand	SCONJ
 on	on	PRON
@@ -2438,7 +2438,7 @@ possible	possible	ADJ
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	Et	PROPN
+et	et	CCONJ
 ne	ne	ADV
 croyez	croire	VERB
 pas	pas	ADV
@@ -2597,7 +2597,7 @@ France	France	PROPN
 !…	!…	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-tel	tel	ADJ
+tel	tel	DET
 était	être	AUX
 M.	M.	NOUN
 Henry	Henry	PROPN
@@ -2673,7 +2673,7 @@ retard	retard	NOUN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Comptez	Comptez	PROPN
+comptez	compter	VERB
 ,	,	PUNCTclause
 monsieur	monsieur	NOUN
 ,	,	PUNCTclause
@@ -2688,7 +2688,7 @@ M.	M.	NOUN
 Patterson	Patterson	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-M.	M.	NOUN
+M.	M.	PUNCT
 Barrand	Barrand	PROPN
 emmena	emmener	VERB
 son	son	DET
@@ -2869,7 +2869,7 @@ des	un	ADP_DET
 jeunes	jeune	NOUN
 voyageurs	voyageur	NOUN
 .	.	PUNCTsent
-M.	M.	NOUN
+M.	M.	PUNCT
 Barrand	Barrand	PROPN
 saurait	savoir	VERB
 bien	bien	ADV
@@ -3227,8 +3227,8 @@ juste	juste	ADJ
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-ce	ce	DET
-que	que	SCONJ
+ce	ce	PRON
+que	que	PRON
 je	je	PRON
 ne	ne	ADV
 comprends	comprendre	VERB
@@ -3388,7 +3388,7 @@ le	le	DET
 plus	plus	ADV
 souffert	souffrir	VERB
 ?…	?…	PUNCTsent
-que	que	PRON
+que	que	SCONJ
 voulez	vouloir	VERB
 vous	vous	PRON
 ?…	?…	PUNCTsent
@@ -3446,7 +3446,7 @@ Pointe-à-Pitre	Pointe-à-Pitre	NOUN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	Et	PROPN
+et	et	CCONJ
 en	en	ADP
 l'	le	DET
 honneur	honneur	NOUN
@@ -3654,7 +3654,7 @@ parfaite	parfait	ADJ
 salubrité	salubrité	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-quel	quel	ADJ
+quel	quel	DET
 plaisir	plaisir	NOUN
 tous	tout	ADJ
 ces	ce	DET
@@ -3701,7 +3701,7 @@ fructueuse	fructueux	ADJ
 récolte	récolte	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-des	un	DET
+des	un	ADP_DET
 plantations	plantation	NOUN
 de	de	ADP
 caféiers	caféier	NOUN
@@ -3962,7 +3962,7 @@ côte	côte	NOUN
 méridionale	méridional	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Basse-Terre	Basse-Terre	PROPN
+Basse-Terre	Basse-Terre	NOUN
 ,	,	PUNCTclause
 tout	tout	ADV
 en	en	ADP
@@ -4005,7 +4005,7 @@ lui	lui	PRON
 être	être	AUX
 comparée	comparer	VERB
 .	.	PUNCTsent
-Bâtie	Bâtie	PROPN
+bâtie	bâtir	VERB
 à	à	ADP
 l'	le	DET
 embouchure	embouchure	NOUN
@@ -4076,7 +4076,7 @@ rôle	rôle	NOUN
 de	de	ADP
 cicerone	cicerone	NOUN
 .	.	PUNCTsent
-Ni	Ni	PROPN
+ni	ni	CCONJ
 le	le	DET
 Jardin	Jardin	PROPN
 botanique	botanique	PROPN
@@ -4285,7 +4285,7 @@ rivale	rival	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-quelles	quel	ADJ
+quelles	quel	DET
 sont	être	AUX
 donc	donc	ADV
 les	le	DET
@@ -4370,7 +4370,7 @@ réclamer	réclamer	VERB
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Réclamer	Réclamer	PROPN
+réclamer	réclamer	VERB
 ,	,	PUNCTclause
 se	se	PRON
 écria	écrier	VERB
@@ -4476,7 +4476,7 @@ camarades	camarade	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Voyons	Voyons	PROPN
+voyons	voir	VERB
 ,	,	PUNCTclause
 dit	dire	VERB
 il	il	PRON
@@ -4503,7 +4503,7 @@ Guadeloupe	Guadeloupe	PROPN
 ?…	?…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	Et	PROPN
+et	et	CCONJ
 mon	mon	DET
 île	île	NOUN
 ?…	?…	PUNCTsent
@@ -4514,7 +4514,7 @@ Renault	Renault	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Ton	Ton	PROPN
+ton	ton	DET
 île	île	NOUN
 ,	,	PUNCTclause
 mon	mon	DET
@@ -4576,7 +4576,7 @@ Seymour	Seymour	PROPN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Soit	Soit	PROPN
+soit	soit	ADV
 !…	!…	PUNCTsent
 allez	aller	VERB
 donc	donc	ADV
@@ -4637,7 +4637,7 @@ répondit	répondre	VERB
 le	le	DET
 mentor	mentor	NOUN
 .	.	PUNCTsent
-Non	Non	PROPN
+non	non	ADV
 !	!	PUNCTsent
 jamais	jamais	ADV
 je	je	PRON

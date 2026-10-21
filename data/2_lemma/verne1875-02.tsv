@@ -6,7 +6,7 @@
 # title = II.
 
 ↵↵	↵↵	PUNCTstruct
-II	II	NUM
+II	II	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 un	un	DET
@@ -24,21 +24,21 @@ Cyrus	Cyrus	PROPN
 Smith	Smith	PROPN
 .	.	PUNCTsent
 —	—	PUNCTclause
-Gédéon	Gédéon	PROPN
+Gédéon	Gédéon	NOUN
 Spilett	Spilett	PROPN
 .	.	PUNCTsent
 —	—	PUNCTclause
-Le	Le	PROPN
+le	le_PRON	PRON
 nègre	nègre	ADJ
 Nab	Nab	PROPN
 .	.	PUNCTsent
 —	—	PUNCTclause
-Le	Le	PROPN
-marin	marin	NOUN
+le	le_PRON	PRON
+marin	marin	ADJ
 Pencroff	Pencroff	PROPN
 .	.	PUNCTsent
 —	—	PUNCTclause
-Le	Le	PROPN
+le	le_PRON	PRON
 jeune	jeune	ADJ
 Harbert	Harbert	PROPN
 .	.	PUNCTsent
@@ -196,7 +196,7 @@ cinq	cinq	NUM
 jours	jour	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-voici	voici	VERB
+voici	voici	ADP
 ,	,	PUNCTclause
 d'ailleurs	d'ailleurs	ADV
 ,	,	PUNCTclause
@@ -294,7 +294,7 @@ Cyrus	Cyrus	PROPN
 Smith	Smith	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cyrus	Cyrus	PROPN
+Cyrus	Cyrus	NOUN
 Smith	Smith	PROPN
 ,	,	PUNCTclause
 originaire	originaire	ADJ
@@ -773,7 +773,7 @@ pouvoir	pouvoir	NOUN
 des	un	ADP_DET
 sudistes	sudiste	NOUN
 .	.	PUNCTsent
-ce	ce	DET
+ce	ce	PRON
 ne	ne	ADV
 était	être	AUX
 rien	rien	PRON
@@ -810,7 +810,7 @@ du	du	ADP_DET
 Nord	Nord	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Gédéon	Gédéon	PROPN
+Gédéon	Gédéon	DET
 Spilett	Spilett	PROPN
 était	être	AUX
 de	de	ADP
@@ -880,7 +880,7 @@ lesquels	lesquels	PRON
 on	on	PRON
 compte	compter	VERB
 .	.	PUNCTsent
-Gédéon	Gédéon	PROPN
+Gédéon	Gédéon	DET
 Spilett	Spilett	PROPN
 marquait	marquer	VERB
 au	au	ADP_DET
@@ -1083,7 +1083,7 @@ un	un	DET
 point	point	NOUN
 important	important	ADJ
 .	.	PUNCTsent
-d'ailleurs	d'ailleurs	DET
+d'ailleurs	d'ailleurs	ADV
 ,	,	PUNCTclause
 «	«	PUNCTclause
 l'	le	DET
@@ -1161,7 +1161,7 @@ premier	premier	ADJ
 informé	informé	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Gédéon	Gédéon	PROPN
+Gédéon	Gédéon	DET
 Spilett	Spilett	PROPN
 était	être	AUX
 de	de	ADP
@@ -1175,7 +1175,7 @@ ans	an	NOUN
 au	au	ADP_DET
 plus	plus	ADV
 .	.	PUNCTsent
-des	un	DET
+des	un	ADP_DET
 favoris	favori	NOUN
 blonds	blond	ADJ
 tirant	tirer	VERB
@@ -1219,7 +1219,7 @@ de	de	ADP
 un	un	DET
 horizon	horizon	NOUN
 .	.	PUNCTsent
-Solidement	Solidement	PROPN
+solidement	solidement	ADV
 bâti	bâtir	VERB
 ,	,	PUNCTclause
 il	il	PRON
@@ -1339,7 +1339,7 @@ une	un	DET
 égratignure	égratignure	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cyrus	Cyrus	PROPN
+Cyrus	Cyrus	NOUN
 Smith	Smith	PROPN
 et	et	CCONJ
 Gédéon	Gédéon	PROPN
@@ -1654,8 +1654,8 @@ la	le	DET
 ville	ville	NOUN
 assiégée	assiéger	VERB
 .	.	PUNCTsent
-ce	ce	DET
-que	que	SCONJ
+ce	ce	PRON
+que	que	PRON
 furent	être	AUX
 le	le	DET
 plaisir	plaisir	NOUN
@@ -1980,7 +1980,7 @@ armée	armée	NOUN
 de	de	ADP
 secours	secours	NOUN
 .	.	PUNCTsent
-ce	ce	DET
+ce	ce	PRON
 Jonathan	Jonathan	PROPN
 Forster	Forster	PROPN
 eut	avoir	VERB
@@ -2352,7 +2352,7 @@ une	un	DET
 bonne	bon	ADJ
 figure	figure	NOUN
 .	.	PUNCTsent
-ce	ce	DET
+ce	ce	PRON
 Pencroff	Pencroff	PROPN
 était	être	AUX
 un	un	DET
@@ -2393,7 +2393,7 @@ plumes	plume	NOUN
 était	être	AUX
 arrivé	arriver	VERB
 .	.	PUNCTsent
-inutile	inutile	NOUN
+inutile	inutile	ADJ
 de	de	ADP
 dire	dire	VERB
 que	que	SCONJ
@@ -2417,7 +2417,7 @@ se	se	PRON
 de	de	ADP
 rien	rien	PRON
 .	.	PUNCTsent
-Pencroff	Pencroff	PROPN
+Pencroff	Pencroff	NOUN
 ,	,	PUNCTclause
 au	au	ADP_DET
 commencement	commencement	NOUN
@@ -2669,7 +2669,7 @@ voix	voix	NOUN
 brève	bref	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pencroff	Pencroff	PROPN
+Pencroff	Pencroff	NOUN
 se	se	PRON
 fit	faire	AUX
 connaître	connaître	VERB
@@ -2851,7 +2851,7 @@ une	un	DET
 tempête	tempête	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cyrus	Cyrus	PROPN
+Cyrus	Cyrus	NOUN
 Smith	Smith	PROPN
 avait	avoir	AUX
 écouté	écouter	VERB
@@ -3028,7 +3028,7 @@ moi	moi	PRON
 ,	,	PUNCTclause
 cinq	cinq	NUM
 .	.	PUNCTsent
-or	or_CCONJ	CCONJ
+or	or	NOUN
 ,	,	PUNCTclause
 le	le	DET
 ballon	ballon	NOUN
@@ -3050,7 +3050,7 @@ Cyrus	Cyrus	PROPN
 Smith	Smith	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-ce	ce	DET
+ce	ce	PRON
 «	«	PUNCTclause
 nous	nous	PRON
 »	»	PUNCTclause
@@ -3167,7 +3167,7 @@ départ	départ	NOUN
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Pencroff	Pencroff	PROPN
+Pencroff	Pencroff	VERB
 prit	prendre	VERB
 congé	congé	NOUN
 de	de	ADP
@@ -3187,7 +3187,7 @@ jeune	jeune	ADJ
 Harbert	Harbert	PROPN
 Brown	Brown	PROPN
 .	.	PUNCTsent
-ce	ce	DET
+ce	ce	PRON
 courageux	courageux	ADJ
 enfant	enfant	NOUN
 connaissait	connaître	VERB
@@ -3240,7 +3240,7 @@ en plein	en plein	ADV
 ouragan	ouragan	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Non	Non	PROPN
+non	non	ADV
 !	!	PUNCTsent
 l'	le	DET
 ouragan	ouragan	NOUN
@@ -3319,7 +3319,7 @@ surveillant	surveiller	VERB
 l'	le	DET
 appareil	appareil	NOUN
 .	.	PUNCTsent
-Pencroff	Pencroff	PROPN
+Pencroff	Pencroff	VERB
 en	en	ADP
 faisait	faire	VERB
 autant	autant	ADV
@@ -3506,7 +3506,7 @@ déchaînées	déchaîné	ADJ
 !…	!…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Vilaine	Vilaine	PROPN
+vilaine	vilain	ADJ
 marée	marée	NOUN
 !	!	PUNCTsent
 se	se	PRON
@@ -3775,7 +3775,7 @@ suivi	suivre	VERB
 son	son	DET
 maître	maître	NOUN
 .	.	PUNCTsent
-Cyrus	Cyrus	PROPN
+Cyrus	Cyrus	NOUN
 Smith	Smith	PROPN
 craignant	craindre	VERB
 un	un	DET
@@ -3791,7 +3791,7 @@ animal	animal	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Bah	Bah	PROPN
+bah	bah	INTJ
 !	!	PUNCTsent
 un	un	DET
 de plus	de plus	ADV

@@ -6,7 +6,7 @@
 # title = VIII.
 
 ↵↵	↵↵	PUNCTstruct
-VIII	VIII	NUM
+VIII	VIII	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 les	le	DET
@@ -41,14 +41,14 @@ le	le	DET
 passé	passé	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-ce	ce	DET
-que	que	SCONJ
+ce	ce	PRON
+que	que	PRON
 réserve	réserver	VERB
 l'	le	DET
 avenir	avenir	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-les	le	NOUN
+les	le_PRON	PRON
 idées	idée	NOUN
 de	de	ADP
 Cyrus	Cyrus	PROPN
@@ -138,7 +138,7 @@ pouvant	pouvoir	VERB
 surpris	surprendre	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cyrus	Cyrus	PROPN
+Cyrus	Cyrus	NOUN
 Smith	Smith	PROPN
 se	se	PRON
 arrangea	arranger	VERB
@@ -427,7 +427,7 @@ prévenir	prévenir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Attendre	Attendre	PROPN
+attendre	attendre	VERB
 !	!	PUNCTsent
 il	il	PRON
 ne	ne	ADV
@@ -541,7 +541,7 @@ ingénieur	ingénieur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-que	que	PRON
+que	que	SCONJ
 voulez	vouloir	VERB
 vous	vous	PRON
 dire	dire	VERB
@@ -552,7 +552,7 @@ reporter	reporter	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-que	que	PRON
+que	que	SCONJ
 nous	nous	PRON
 ne	ne	ADV
 sommes	être	AUX
@@ -623,7 +623,7 @@ heureusement	heureusement	ADV
 pas	pas	ADV
 empiré	empirer	VERB
 .	.	PUNCTsent
-or	or_CCONJ	CCONJ
+or	or	NOUN
 ,	,	PUNCTclause
 du	du	ADP_DET
 temps	temps	NOUN
@@ -761,7 +761,7 @@ grand	grand	ADJ
 bien	bien	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cyrus	Cyrus	PROPN
+Cyrus	Cyrus	NOUN
 Smith	Smith	PROPN
 ,	,	PUNCTclause
 Gédéon	Gédéon	PROPN
@@ -778,7 +778,7 @@ le	le	DET
 jeune	jeune	ADJ
 blessé	blessé	NOUN
 .	.	PUNCTsent
-tout	tout	ADV
+tout	tout	PRON
 le	le	DET
 linge	linge	NOUN
 de	de	ADP
@@ -942,7 +942,7 @@ les	le	DET
 plus	plus	ADV
 invraisemblables	invraisemblable	ADJ
 .	.	PUNCTsent
-Harbert	Harbert	PROPN
+Harbert	Harbert	VERB
 l'	le	DET
 avait	avoir	AUX
 interrogé	interroger	VERB
@@ -995,7 +995,7 @@ Granite-house	Granite-house	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Hein	Hein	PROPN
+Hein	Hein	NOUN
 !	!	PUNCTsent
 disait	dire	VERB
 il	il	PRON
@@ -1003,7 +1003,7 @@ il	il	PRON
 ces	ce	DET
 pirates	pirate	NOUN
 !	!	PUNCTsent
-voilà	voilà	VERB
+voilà	voilà	ADP
 des	un	DET
 gentlemen	gentleman	NOUN
 qui	qui	PRON
@@ -1056,7 +1056,7 @@ Harbert	Harbert	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-non	non	NOUN
+non	non	ADV
 ,	,	PUNCTclause
 mon	mon	DET
 enfant	enfant	NOUN
@@ -1214,7 +1214,7 @@ amputés	amputer	VERB
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Non	Non	PROPN
+non	non	ADV
 ,	,	PUNCTclause
 dit	dire	VERB
 plus	plus	ADV
@@ -1238,7 +1238,7 @@ frémir	frémir	VERB
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	Et	PROPN
+et	et	CCONJ
 cependant	cependant	ADV
 ,	,	PUNCTclause
 si	si	SCONJ
@@ -1262,7 +1262,7 @@ hésité	hésiter	VERB
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	Non	PROPN
+non	non	ADV
 ,	,	PUNCTclause
 Cyrus	Cyrus	PROPN
 !	!	PUNCTsent
@@ -1344,7 +1344,7 @@ sur	sur	ADP
 cette	ce	DET
 île	île	NOUN
 .	.	PUNCTsent
-or	or_CCONJ	CCONJ
+or	or	NOUN
 ,	,	PUNCTclause
 les	le	DET
 hommes	homme	NOUN
@@ -1364,7 +1364,7 @@ uns	un	PRON
 aux	au	ADP_DET
 autres	autre	PRON
 .	.	PUNCTsent
-Cyrus	Cyrus	PROPN
+Cyrus	Cyrus	NOUN
 Smith	Smith	PROPN
 le	le_PRON	PRON
 savait	savoir	VERB
@@ -1513,7 +1513,7 @@ un	un	DET
 temps	temps	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-bref	bref	INTJ
+bref	bref	ADJ
 ,	,	PUNCTclause
 Cyrus	Cyrus	PROPN
 Smith	Smith	PROPN
@@ -1586,7 +1586,7 @@ y	y	PRON
 à peu près	à peu près	ADV
 insaisissables	insaisissable	ADJ
 .	.	PUNCTsent
-Ayrton	Ayrton	PROPN
+Ayrton	Ayrton	NOUN
 avait	avoir	AUX
 été	être	AUX
 ,	,	PUNCTclause
@@ -1625,7 +1625,7 @@ frappé	frapper	VERB
 presque	presque	ADV
 mortellement	mortellement	ADV
 .	.	PUNCTsent
-étaient	être	VERB
+étaient	être	AUX
 ce	ce	PRON
 donc	donc	ADV
 là	là	ADV
@@ -1640,7 +1640,7 @@ adressait	adresser	VERB
 aux	au	ADP_DET
 colons	colon	NOUN
 ?	?	PUNCTsent
-voilà	voilà	VERB
+voilà	voilà	ADP
 ce	ce	PRON
 que	que	PRON
 se	se	PRON
@@ -1648,9 +1648,9 @@ demandait	demander	VERB
 Cyrus	Cyrus	PROPN
 Smith	Smith	PROPN
 !	!	PUNCTsent
-voilà	voilà	VERB
+voilà	voilà	ADP
 ce	ce	PRON
-que	que	PRON
+que	que	SCONJ
 il	il	PRON
 répétait	répéter	VERB
 souvent	souvent	ADV

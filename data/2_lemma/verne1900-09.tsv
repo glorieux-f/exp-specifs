@@ -6,7 +6,7 @@
 # title = IX.
 
 ↵↵	↵↵	PUNCTstruct
-IX	IX	NUM
+IX	IX	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 Vue	Vue	PROPN
@@ -15,7 +15,7 @@ la	le	DET
 côte	côte	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-les	le	NOUN
+les	le_PRON	PRON
 manchots	manchot	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
@@ -26,7 +26,7 @@ de	de	ADP
 eau	eau	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-Territoires	Territoires	PROPN
+territoires	territoire	NOUN
 inconnus	inconnu	ADJ
 .	.	PUNCTsent
 —	—	PUNCTclause
@@ -67,7 +67,7 @@ du côté de	du côté de	ADP
 l'	le	DET
 est	est	NOUN
 .	.	PUNCTsent
-derrière	derrière	ADV
+derrière	derrière	ADP
 quelques	quelque	DET
 brumes	brume	NOUN
 ,	,	PUNCTclause
@@ -306,7 +306,7 @@ lieues	lieue	NOUN
 devaient	devoir	VERB
 séparer	séparer	VERB
 la	le	DET
-baie	bai	NOUN
+baie	baie	NOUN
 de	de	ADP
 la	le	DET
 licorne	licorne	NOUN
@@ -427,7 +427,7 @@ accorder	accorder	VERB
 cette	ce	DET
 permission	permission	NOUN
 .	.	PUNCTsent
-d'ailleurs	d'ailleurs	DET
+d'ailleurs	d'ailleurs	ADV
 ,	,	PUNCTclause
 à quoi bon	à quoi bon	ADV
 se	se	PRON
@@ -436,7 +436,7 @@ dans	dans	ADP
 cette	ce	DET
 pêche	pêche	NOUN
 ?	?	PUNCTsent
-des	un	DET
+des	un	ADP_DET
 maquereaux	maquereau	NOUN
 et	et	CCONJ
 des	un	DET
@@ -664,7 +664,7 @@ animal	animal	ADJ
 !...	!...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Annah	Annah	PROPN
+Annah	Annah	NOUN
 a	avoir	AUX
 raison	raison	NOUN
 ...	...	PUNCTsent
@@ -746,7 +746,7 @@ albatros	albatros	NOUN
 ...	...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-évidemment	évidemment	NOUN
+évidemment	évidemment	ADV
 ,	,	PUNCTclause
 puisque	puisque	SCONJ
 je	je	PRON
@@ -839,7 +839,7 @@ rapprocha	rapprocher	VERB
 avec	avec	ADP
 prudence	prudence	NOUN
 .	.	PUNCTsent
-M.	M.	NOUN
+M.	M.	PUNCT
 Wolston	Wolston	PROPN
 ,	,	PUNCTclause
 penché	pencher	VERB
@@ -938,7 +938,7 @@ nombre	nombre	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Explique	Explique	PROPN
+explique	expliquer	VERB
 toi	toi	PRON
 ,	,	PUNCTclause
 mon	mon	DET
@@ -949,7 +949,7 @@ dit	dire	VERB
 sa	son	DET
 mère	mère	NOUN
 .	.	PUNCTsent
-Tu	Tu	PROPN
+tu	tu	PRON
 vois	voir	VERB
 là	là	ADV
 des	un	DET
@@ -989,7 +989,7 @@ plus	plus	ADV
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Voyons	Voyons	PROPN
+voyons	voir	VERB
 ...	...	PUNCTsent
 Jack	Jack	PROPN
 ...	...	PUNCTsent
@@ -1084,7 +1084,7 @@ palmipèdes	palmipède	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-disons	dire	NOUN
+disons	dire	VERB
 des	un	ADP_DET
 espèces	espèce	NOUN
 de	de	ADP
@@ -1133,7 +1133,7 @@ Jack	Jack	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Le	Le	PROPN
+le	le_PRON	PRON
 moqueur	moqueur	NOUN
 !	!	PUNCTsent
 se	se	PRON
@@ -1277,7 +1277,7 @@ exact	exact	ADJ
 avoua	avouer	VERB
 Jack	Jack	PROPN
 .	.	PUNCTsent
-or	or_CCONJ	CCONJ
+or	or	NOUN
 ,	,	PUNCTclause
 comme	comme	SCONJ
 je	je	PRON
@@ -1297,7 +1297,7 @@ promettais	promettre	VERB
 ?...	?...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	Et	PROPN
+et	et	CCONJ
 tu	tu	PRON
 as	avoir	AUX
 tenu	tenir	VERB
@@ -1331,7 +1331,7 @@ les	le	DET
 grèves	grève	NOUN
 de	de	ADP
 la	le	DET
-baie	bai	NOUN
+baie	baie	NOUN
 du	du	ADP_DET
 salut	salut	NOUN
 ,	,	PUNCTclause
@@ -1375,7 +1375,7 @@ les	le	DET
 rivages	rivage	NOUN
 de	de	ADP
 la	le	DET
-baie	bai	NOUN
+baie	baie	NOUN
 dès	dès	ADP
 les	le	DET
 premiers	premier	ADJ
@@ -1508,7 +1508,7 @@ des	un	ADP_DET
 hauteurs	hauteur	NOUN
 de	de	ADP
 la	le	DET
-baie	bai	NOUN
+baie	baie	NOUN
 de	de	ADP
 la	le	DET
 licorne	licorne	NOUN
@@ -1539,7 +1539,7 @@ de	de	ADP
 misaine	misaine	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-M.	M.	NOUN
+M.	M.	PUNCT
 Zermatt	Zermatt	PROPN
 ,	,	PUNCTclause
 sa	son	DET
@@ -1814,7 +1814,7 @@ ne	ne	ADV
 fut	être	AUX
 négligée	négliger	VERB
 .	.	PUNCTsent
-M.	M.	NOUN
+M.	M.	PUNCT
 Zermatt	Zermatt	PROPN
 ,	,	PUNCTclause
 au	au	ADP_DET
@@ -2018,7 +2018,7 @@ l'	le	DET
 intérieur	intérieur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-inutile	inutile	NOUN
+inutile	inutile	ADJ
 de	de	ADP
 dire	dire	VERB
 que	que	SCONJ
@@ -2179,7 +2179,7 @@ plusieurs	plusieurs	DET
 heures	heure	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Manger	Manger	PROPN
+manger	manger	VERB
 ,	,	PUNCTclause
 —	—	PUNCTclause
 et	et	CCONJ
@@ -2354,7 +2354,7 @@ est	être	PROPN
 jusque	jusque	ADP
 à	à	ADP
 cette	ce	DET
-baie	bai	NOUN
+baie	baie	NOUN
 .	.	PUNCTsent
 de	de	ADP
 ce	ce	DET
@@ -2465,7 +2465,7 @@ Wolston	Wolston	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-que	que	PRON
+que	que	SCONJ
 vous	vous	PRON
 ne	ne	ADV
 voudriez	vouloir	VERB
@@ -2476,16 +2476,16 @@ quitter	quitter	VERB
 repartit	repartir	VERB
 Jack	Jack	PROPN
 .	.	PUNCTsent
-Allons	Allons	PROPN
+allons	aller	VERB
 ,	,	PUNCTclause
 ce	ce	PRON
 est	être	AUX
 convenu	convenir	VERB
 !...	!...	PUNCTsent
-Abandonnons	Abandonnons	PROPN
+abandonnons	abandonner	VERB
 Felsenheim	Felsenheim	PROPN
 ...	...	PUNCTsent
-Falkenhorst	Falkenhorst	PROPN
+Falkenhorst	Falkenhorst	VERB
 ...	...	PUNCTsent
 le	le	DET
 district	district	NOUN
@@ -2514,7 +2514,7 @@ Nouvelle-Suisse	Nouvelle-Suisse	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-voilà	voilà	VERB
+voilà	voilà	ADP
 Jack	Jack	PROPN
 parti	partir	VERB
 !...	!...	PUNCTsent
@@ -2660,7 +2660,7 @@ Terre-Promise	Terre-Promise	NOUN
 ...	...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	Non	PROPN
+non	non	ADV
 ,	,	PUNCTclause
 certes	certes	ADV
 ,	,	PUNCTclause
@@ -2889,7 +2889,7 @@ Ernest	Ernest	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	Non	PROPN
+non	non	ADV
 ...	...	PUNCTsent
 avec	avec	ADP
 la	le	DET
@@ -2944,9 +2944,9 @@ Wolston	Wolston	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Le	Le	PROPN
+le	le_PRON	PRON
 courant	courant	NOUN
-sera	être	VERB
+sera	être	AUX
 pour	pour	ADP
 nous	nous	PRON
 ,	,	PUNCTclause
@@ -2980,7 +2980,7 @@ profit	profit	NOUN
 ...	...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Ne	Ne	PROPN
+ne	ne	ADV
 sera	être	AUX
 il	il	PRON
 pas	pas	ADV
@@ -2996,7 +2996,7 @@ Wolston	Wolston	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Trop	Trop	PROPN
+trop	trop	ADV
 tard	tard	ADV
 en effet	en effet	ADV
 ,	,	PUNCTclause
@@ -3037,7 +3037,7 @@ jour	jour	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	Et	PROPN
+et	et	CCONJ
 jusque	jusque	ADP
 ?...	?...	PUNCTsent
 demanda	demander	VERB
@@ -3045,7 +3045,7 @@ Jack	Jack	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-jusque	jusque	NOUN
+jusque	jusque	ADP
 ,	,	PUNCTclause
 répondit	répondre	VERB
 M.	M.	NOUN
@@ -3295,7 +3295,7 @@ direction	direction	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Et	Et	PROPN
+et	et	CCONJ
 ,	,	PUNCTclause
 à	à	ADP
 ce	ce	DET
@@ -3369,7 +3369,7 @@ illusion	illusion	NOUN
 de	de	ADP
 optique	optique	NOUN
 .	.	PUNCTsent
-Ernest	Ernest	PROPN
+Ernest	Ernest	NOUN
 se	se	PRON
 en	en	ADP
 rend	rendre	VERB
@@ -3542,7 +3542,7 @@ exagérer	exagérer	VERB
 ...	...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Ne	Ne	PROPN
+ne	ne	ADV
 te	te	PRON
 en	en	PRON
 défends	défendre	VERB
@@ -3693,7 +3693,7 @@ rencontre	rencontrer	VERB
 ...	...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Donc	Donc	PROPN
+donc	donc	ADV
 ,	,	PUNCTclause
 pour	pour	ADP
 achever	achever	VERB
@@ -3767,7 +3767,7 @@ Grande-Bretagne	Grande-Bretagne	PROPN
 ...	...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	Et	PROPN
+et	et	CCONJ
 que	que	SCONJ
 la	le	DET
 licorne	licorne	NOUN
@@ -3978,14 +3978,14 @@ l'	le	DET
 ouvert	ouvert	ADJ
 de	de	ADP
 la	le	DET
-baie	bai	NOUN
+baie	baie	NOUN
 du	du	ADP_DET
 salut	salut	NOUN
 ;	;	PUNCTclause
 puis	puis	CCONJ
 ,	,	PUNCTclause
 ladite	ledit	ADJ
-baie	bai	NOUN
+baie	baie	NOUN
 se	se	PRON
 creusait	creuser	VERB
 en forme de	en forme de	ADP
@@ -4024,7 +4024,7 @@ ouest	ouest	NOUN
 se	se	PRON
 évidait	évider	VERB
 la	le	DET
-baie	bai	NOUN
+baie	baie	NOUN
 des	un	ADP_DET
 nautiles	nautile	PROPN
 ,	,	PUNCTclause
@@ -4051,7 +4051,7 @@ se	se	PRON
 découpait	découper	VERB
 la	le	DET
 grande	grand	ADJ
-baie	bai	NOUN
+baie	baie	NOUN
 des	un	ADP_DET
 Perles	Perles	PROPN
 ,	,	PUNCTclause
@@ -4092,7 +4092,7 @@ un	un	DET
 côté	côté	NOUN
 ,	,	PUNCTclause
 la	le	DET
-baie	bai	NOUN
+baie	baie	NOUN
 des	un	ADP_DET
 nautiles	nautile	NOUN
 de	de	ADP
@@ -4111,14 +4111,14 @@ du	du	ADP_DET
 goulet	goulet	NOUN
 de	de	ADP
 la	le	DET
-baie	bai	NOUN
+baie	baie	NOUN
 du	du	ADP_DET
 salut	salut	NOUN
 au	au	ADP_DET
 fond	fond	NOUN
 de	de	ADP
 la	le	DET
-baie	bai	NOUN
+baie	baie	NOUN
 des	un	ADP_DET
 nautiles	nautile	PROPN
 ,	,	PUNCTclause
@@ -4243,7 +4243,7 @@ que	que	PRON
 elle	elle	PRON
 arrose	arroser	VERB
 .	.	PUNCTsent
-or	or_CCONJ	CCONJ
+or	or	NOUN
 ,	,	PUNCTclause
 étant	être	AUX
 donnée	donner	VERB
@@ -4356,7 +4356,7 @@ ajouta	ajouter	VERB
 M.	M.	NOUN
 Zermatt	Zermatt	PROPN
 .	.	PUNCTsent
-Jamais	Jamais	PROPN
+jamais	jamais	ADV
 aucun	aucun	PRON
 de	de	ADP
 nous	nous	PRON
@@ -4371,7 +4371,7 @@ Terre-Promise	Terre-Promise	NOUN
 ...	...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-d'autant	d'autant	VERB
+d'autant	d'autant	ADV
 plus	plus	ADV
 que	que	SCONJ
 madame	madame	NOUN
@@ -4505,7 +4505,7 @@ populaire	populaire	ADJ
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Sois	Sois	PROPN
+sois	être	AUX
 tranquille	tranquille	ADJ
 ,	,	PUNCTclause
 Jack	Jack	PROPN
@@ -4855,7 +4855,7 @@ elle	elle	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Oubliée	Oubliée	PROPN
+oubliée	oublié	ADJ
 ,	,	PUNCTclause
 Betsie	Betsie	PROPN
 ?...	?...	PUNCTsent
@@ -4865,7 +4865,7 @@ Zermatt	Zermatt	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Oui	Oui	PROPN
+oui	oui	INTJ
 ...	...	PUNCTsent
 ce	ce	PRON
 est	être	AUX
@@ -4927,7 +4927,7 @@ Parfait	Parfait	PROPN
 dit	dire	VERB
 Jack	Jack	PROPN
 ...	...	PUNCTsent
-voilà	voilà	VERB
+voilà	voilà	ADP
 qui	qui	PRON
 va	aller	VERB
 vous	vous	PRON
@@ -4964,7 +4964,7 @@ honneur	honneur	NOUN
 ...	...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Lequel	Lequel	PROPN
+lequel	lequel	PRON
 ?...	?...	PUNCTsent
 demanda	demander	VERB
 madame	madame	NOUN

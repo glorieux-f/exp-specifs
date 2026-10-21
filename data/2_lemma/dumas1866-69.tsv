@@ -6,7 +6,7 @@
 # title = XX. Où le comte de Moret se charge de faire entrer un mulet et un million dans le fort de Pignerol.
 
 ↵↵	↵↵	PUNCTstruct
-XX	XX	X
+XX	XX	NUM
 .	.	PUNCTsent
 où	où	PRON
 le	le	DET
@@ -30,7 +30,7 @@ de	de	ADP
 Pignerol	Pignerol	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Richelieu	Richelieu	PROPN
+richelieu	richelieu	NOUN
 ,	,	PUNCTclause
 en	en	ADP
 apprenant	apprendre	VERB
@@ -91,7 +91,7 @@ de	de	ADP
 Montmorency	Montmorency	PROPN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-était	être	VERB
+était	être	AUX
 ce	ce	DET
 lui	lui	PRON
 qui	qui	PRON
@@ -129,7 +129,7 @@ son	son	DET
 roi	roi	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Richelieu	Richelieu	PROPN
+richelieu	richelieu	NOUN
 ,	,	PUNCTclause
 sans	sans	ADP
 rien	rien	PRON
@@ -172,7 +172,7 @@ l'	le	DET
 obscurité	obscurité	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Latil	Latil	ADJ
+Latil	Latil	PRON
 dit	dire	VERB
 tout	tout	ADJ
 ce	ce	PRON
@@ -274,7 +274,7 @@ Suze	Suze	PROPN
 et	et	CCONJ
 Savoie	Savoie	PROPN
 .	.	PUNCTsent
-or	or_CCONJ	CCONJ
+or	or	NOUN
 le	le	DET
 mot d'ordre	mot d'ordre	NOUN
 ne	ne	ADV
@@ -573,7 +573,7 @@ trouvait	trouver	VERB
 Latil	Latil	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-M.	M.	NOUN
+M.	M.	DET
 de	de	ADP
 Montmorency	Montmorency	PROPN
 ,	,	PUNCTclause
@@ -642,7 +642,7 @@ vouloir	vouloir	VERB
 affirmer	affirmer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Richelieu	Richelieu	PROPN
+richelieu	richelieu	NOUN
 fronça	froncer	VERB
 le	le	DET
 sourcil	sourcil	NOUN
@@ -770,9 +770,9 @@ de	de	ADP
 grand	grand	ADJ
 prix	prix	NOUN
 .	.	PUNCTsent
-Cavois	Cavois	PROPN
+Cavois	Cavois	NOUN
 et	et	CCONJ
-Latil	Latil	PROPN
+Latil	Latil	ADJ
 ,	,	PUNCTclause
 c'est-à-dire	c'est-à-dire	CCONJ
 son	son	DET
@@ -962,13 +962,13 @@ tu	tu	PRON
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Quoi	Quoi	PROPN
+quoi	quoi	PRON
 ?	?	PUNCTsent
 monseigneur	monseigneur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-tout	tout	ADJ
+tout	tout	PRON
 ce	ce	PRON
 que	que	PRON
 ces	ce	DET
@@ -979,7 +979,7 @@ moi	moi	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Bon	Bon	PROPN
+bon	bon	ADJ
 ,	,	PUNCTclause
 monseigneur	monseigneur	NOUN
 ,	,	PUNCTclause
@@ -1056,7 +1056,7 @@ plus	plus	ADV
 sages	sage	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Latil	Latil	ADJ
+Latil	Latil	PRON
 passa	passer	VERB
 dans	dans	ADP
 les	le	DET
@@ -1093,7 +1093,7 @@ patience	patience	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Tu	Tu	PROPN
+tu	tu	PRON
 leur	leur	PRON
 as	avoir	AUX
 dit	dire	VERB
@@ -1117,9 +1117,9 @@ monseigneur	monseigneur	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-que	que	PRON
-leur	leur	PRON
-as	avoir	AUX
+que	que	SCONJ
+leur	leur	DET
+as	as	NOUN
 tu	tu	PRON
 dit	dire	VERB
 ,	,	PUNCTclause
@@ -1127,10 +1127,10 @@ alors	alors	ADV
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-que	que	PRON
-votre	votre	VERB
+que	que	SCONJ
+votre	votre	PROPN
 éminence	éminence	PROPN
-leur	leur	DET
+leur	leur	PRON
 était	être	AUX
 reconnaissante	reconnaissant	ADJ
 de	de	ADP
@@ -1246,7 +1246,7 @@ heures	heure	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Votre	Votre	PROPN
+votre	votre	DET
 éminence	éminence	PROPN
 me	me	PRON
 charge	charger	VERB
@@ -1535,7 +1535,7 @@ de	de	ADP
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Latil	Latil	PROPN
+Latil	Latil	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 le	le	DET
@@ -1670,7 +1670,7 @@ ajouta	ajouter	VERB
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Dans	Dans	PROPN
+dans	dans	ADP
 une	un	DET
 heure	heure	NOUN
 ,	,	PUNCTclause
@@ -1885,7 +1885,7 @@ en	en	PRON
 faut	falloir	VERB
 deux	deux	NUM
 .	.	PUNCTsent
-voici	voici	VERB
+voici	voici	ADP
 donc	donc	ADV
 mon	mon	DET
 plan	plan	NOUN
@@ -1959,7 +1959,7 @@ duc	duc	NOUN
 de	de	ADP
 Savoie	Savoie	PROPN
 .	.	PUNCTsent
-Gonzagues	Gonzagues	PROPN
+Gonzagues	Gonzagues	NOUN
 ,	,	PUNCTclause
 duc	duc	NOUN
 de	de	ADP
@@ -2157,14 +2157,14 @@ et	et	CCONJ
 beaucoup de	beaucoup de	DET
 hommes	homme	NOUN
 .	.	PUNCTsent
-voilà	voilà	VERB
+voilà	voilà	ADP
 pourquoi	pourquoi	ADV
 je	je	PRON
 préférerais	préférer	VERB
 la	le	DET
 ruse	ruse	NOUN
 .	.	PUNCTsent
-Philippe	Philippe	PROPN
+Philippe	Philippe	NOUN
 de	de	ADP
 Macédoine	Macédoine	PROPN
 disait	dire	VERB
@@ -2212,7 +2212,7 @@ entrer	entrer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Aidez	Aidez	PROPN
+aidez	aider	VERB
 moi	moi	PRON
 ,	,	PUNCTclause
 je	je	PRON
@@ -2228,7 +2228,7 @@ la	le	DET
 forteresse	forteresse	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-comme	comme	SCONJ
+comme	comme	ADP
 toujours	toujours	ADV
 ,	,	PUNCTclause
 la	le	DET
@@ -2250,7 +2250,7 @@ des	un	ADP_DET
 assistants	assistant	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-tous	tout	ADJ
+tous	tous	PRON
 demandèrent	demander	VERB
 vingt-quatre	vingt-quatre	NUM
 heures	heure	NOUN
@@ -2310,8 +2310,8 @@ cardinal	cardinal	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-que	que	PRON
-votre	votre	VERB
+que	que	SCONJ
+votre	votre	DET
 éminence	éminence	PROPN
 tienne	tenir	VERB
 le	le	DET

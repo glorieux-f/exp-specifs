@@ -6,7 +6,7 @@
 # title = III.
 
 ↵↵	↵↵	PUNCTstruct
-III	III	NUM
+III	III	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 la	le	DET
@@ -15,7 +15,7 @@ se	se	PRON
 lève	lever	VERB
 .	.	PUNCTsent
 —	—	PUNCTclause
-les	le	NOUN
+les	le_PRON	PRON
 dispositions	disposition	NOUN
 de	de	ADP
 l'	le	DET
@@ -26,7 +26,7 @@ Trois	Trois	NUM
 postes	poste	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-Ayrton	Ayrton	PROPN
+Ayrton	Ayrton	NOUN
 et	et	CCONJ
 Pencroff	Pencroff	PROPN
 .	.	PUNCTsent
@@ -41,25 +41,25 @@ autres	autre	ADJ
 embarcations	embarcation	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-sur	sur	NOUN
+sur	sur	ADP
 l'	le	DET
 îlot	îlot	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-Six	Six	PROPN
-convicts	convicts	VERB
+Six	Six	NUM
+convicts	convicts	NOUN
 à	à	ADP
 terre	terre	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-Le	Le	PROPN
+le	le_PRON	PRON
 brick	brick	NOUN
 lève	lever	VERB
 l'	le	DET
 ancre	ancre	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-les	le	NOUN
+les	le_PRON	PRON
 projectiles	projectile	NOUN
 du	du	ADP_DET
 Speedy.	Speedy.	PROPN
@@ -216,7 +216,7 @@ Speedy	Speedy	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-voici	voici	VERB
+voici	voici	ADP
 ,	,	PUNCTclause
 mes	mon	DET
 amis	ami	NOUN
@@ -494,7 +494,7 @@ pas	pas	ADV
 les	le	DET
 munitions	munition	NOUN
 .	.	PUNCTsent
-Tirons	Tirons	PROPN
+tirons	tirer	VERB
 souvent	souvent	ADV
 ,	,	PUNCTclause
 mais	mais	CCONJ
@@ -522,7 +522,7 @@ tue	tu	ADJ
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Cyrus	Cyrus	PROPN
+Cyrus	Cyrus	NOUN
 Smith	Smith	PROPN
 avait	avoir	AUX
 chiffré	chiffrer	VERB
@@ -590,7 +590,7 @@ complètement	complètement	ADV
 dissipée	dissiper	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Nab	Nab	PROPN
+Nab	Nab	NOUN
 et	et	CCONJ
 Pencroff	Pencroff	PROPN
 remontèrent	remonter	VERB
@@ -604,7 +604,7 @@ des	un	DET
 munitions	munition	NOUN
 suffisantes	suffisant	ADJ
 .	.	PUNCTsent
-Gédéon	Gédéon	PROPN
+Gédéon	Gédéon	DET
 Spilett	Spilett	PROPN
 et	et	CCONJ
 Ayrton	Ayrton	PROPN
@@ -648,7 +648,7 @@ et	et	CCONJ
 Harbert	Harbert	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-voici	voici	VERB
+voici	voici	ADP
 comment	comment	ADV
 les	le	DET
 postes	poste	NOUN
@@ -656,7 +656,7 @@ furent	être	AUX
 composés	composer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cyrus	Cyrus	PROPN
+Cyrus	Cyrus	NOUN
 Smith	Smith	PROPN
 et	et	CCONJ
 Harbert	Harbert	PROPN
@@ -684,7 +684,7 @@ large	large	ADJ
 rayon	rayon	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Gédéon	Gédéon	PROPN
+Gédéon	Gédéon	DET
 Spilett	Spilett	PROPN
 et	et	CCONJ
 Nab	Nab	PROPN
@@ -856,7 +856,7 @@ fois	fois	NOUN
 la	le	DET
 main	main	NOUN
 .	.	PUNCTsent
-Pencroff	Pencroff	PROPN
+Pencroff	Pencroff	VERB
 parvint	parvenir	VERB
 à	à	ADP
 se	se	PRON
@@ -1273,7 +1273,7 @@ où	où	PRON
 venait	venir	VERB
 il	il	PRON
 ?	?	PUNCTsent
-que	que	PRON
+que	que	SCONJ
 venait	venir	VERB
 il	il	PRON
 faire	faire	VERB
@@ -1298,7 +1298,7 @@ pensait	penser	VERB
 Bob	Bob	PROPN
 Harvey	Harvey	PROPN
 ?	?	PUNCTsent
-tout	tout	ADJ
+tout	tout	PRON
 cela	cela	PRON
 devait	devoir	VERB
 être	être	AUX
@@ -1400,9 +1400,9 @@ l'	le	DET
 intérieur	intérieur	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-voilà	voilà	VERB
+voilà	voilà	ADP
 ce	ce	PRON
-que	que	PRON
+que	que	SCONJ
 devait	devoir	VERB
 se	se	PRON
 demander	demander	VERB
@@ -1553,7 +1553,7 @@ le	le_PRON	PRON
 périmètre	périmètre	NOUN
 de	de	ADP
 la	le	DET
-baie	bai	NOUN
+baie	baie	NOUN
 de	de	ADP
 l'	le	DET
 union	union	NOUN
@@ -1770,7 +1770,7 @@ justifiée	justifier	VERB
 d'ailleurs	d'ailleurs	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pencroff	Pencroff	PROPN
+Pencroff	Pencroff	NOUN
 et	et	CCONJ
 Ayrton	Ayrton	PROPN
 ,	,	PUNCTclause
@@ -2263,7 +2263,7 @@ dans	dans	ADP
 cette	ce	DET
 direction	direction	NOUN
 .	.	PUNCTsent
-Silence	Silence	PROPN
+silence	silence	NOUN
 absolu	absolu	ADJ
 ,	,	PUNCTclause
 calme	calme	NOUN
@@ -2277,7 +2277,7 @@ les	le	DET
 eaux	eau	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pencroff	Pencroff	PROPN
+Pencroff	Pencroff	NOUN
 et	et	CCONJ
 Ayrton	Ayrton	PROPN
 ,	,	PUNCTclause
@@ -2351,7 +2351,7 @@ des	un	ADP_DET
 cheminées	cheminée	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Vingt	Vingt	PROPN
+Vingt	Vingt	NUM
 minutes	minute	NOUN
 après	après	ADP
 les	le	DET
@@ -2373,7 +2373,7 @@ de	de	ADP
 deux	deux	NUM
 encablures	encablure	NOUN
 .	.	PUNCTsent
-comme	comme	SCONJ
+comme	comme	ADP
 le	le	DET
 flot	flot	NOUN
 commençait	commencer	VERB
@@ -2450,7 +2450,7 @@ dans	dans	ADP
 l'	le	DET
 embarcation	embarcation	NOUN
 .	.	PUNCTsent
-Nab	Nab	PROPN
+Nab	Nab	NOUN
 et	et	CCONJ
 Spilett	Spilett	PROPN
 ne	ne	ADV
@@ -3412,7 +3412,7 @@ Harbert	Harbert	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Attendons	Attendons	PROPN
+attendons	attendre	VERB
 !	!	PUNCTsent
 répondit	répondre	VERB
 Cyrus	Cyrus	PROPN
@@ -3420,7 +3420,7 @@ Smith	Smith	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-mais	mai	NOUN
+mais	mais	CCONJ
 Nab	Nab	PROPN
 et	et	CCONJ
 M.	M.	NOUN
@@ -3460,9 +3460,9 @@ maintenant	maintenant	ADV
 .	.	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-ce	ce	DET
+ce	ce	PRON
 ne	ne	ADV
-était	être	VERB
+était	être	AUX
 que	que	SCONJ
 trop	trop	ADV
 vrai	vrai	ADJ
@@ -3740,7 +3740,7 @@ rames	rame	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-huit	huit	NOUN
+Huit	Huit	NUM
 de	de	ADP
 moins	moins	ADV
 !	!	PUNCTsent
@@ -3891,7 +3891,7 @@ de	de	ADP
 terre	terre	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-des	un	DET
+des	un	ADP_DET
 deux	deux	NUM
 postes	poste	NOUN
 de	de	ADP
@@ -3964,7 +3964,7 @@ de	de	ADP
 débarquer	débarquer	VERB
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cyrus	Cyrus	PROPN
+Cyrus	Cyrus	NOUN
 Smith	Smith	PROPN
 sentait	sentir	VERB
 bien	bien	ADV
@@ -4120,7 +4120,7 @@ nuisibles	nuisible	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Jamais	Jamais	PROPN
+jamais	jamais	ADV
 ,	,	PUNCTclause
 répétait	répéter	VERB
 Pencroff	Pencroff	PROPN
@@ -4413,7 +4413,7 @@ sans doute	sans doute	ADV
 se	se	PRON
 engager	engager	VERB
 .	.	PUNCTsent
-Gédéon	Gédéon	PROPN
+Gédéon	Gédéon	DET
 Spilett	Spilett	PROPN
 et	et	CCONJ
 Nab	Nab	PROPN
@@ -4442,9 +4442,9 @@ atteints	atteindre	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Spilett	Spilett	PROPN
+Spilett	Spilett	NOUN
 !	!	PUNCTsent
-Nab	Nab	PROPN
+Nab	Nab	NOUN
 !	!	PUNCTsent
 se	se	PRON
 était	être	AUX
@@ -4460,7 +4460,7 @@ blessés	blesser	VERB
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	Non	PROPN
+non	non	ADV
 !	!	PUNCTsent
 répondit	répondre	VERB
 le	le	DET
@@ -4484,7 +4484,7 @@ canal	canal	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Oui	Oui	PROPN
+oui	oui	INTJ
 !	!	PUNCTsent
 répondit	répondre	VERB
 Pencroff	Pencroff	PROPN
@@ -4503,7 +4503,7 @@ Granite-house	Granite-house	PROPN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-avez	avoir	VERB
+avez	avoir	AUX
 vous	vous	PRON
 un	un	DET
 projet	projet	NOUN
@@ -4569,7 +4569,7 @@ ingénieur	ingénieur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-en	en	NOUN
+en	en	PRON
 route	route	NOUN
 donc	donc	ADV
 ,	,	PUNCTclause
@@ -4612,7 +4612,7 @@ répondit	répondre	VERB
 Cyrus	Cyrus	PROPN
 Smith	Smith	PROPN
 .	.	PUNCTsent
-Non	Non	PROPN
+non	non	ADV
 .	.	PUNCTsent
 ne	ne	ADV
 nous	nous	PRON
@@ -4831,7 +4831,7 @@ boulet	boulet	NOUN
 ,	,	PUNCTclause
 effleurant	effleurer	VERB
 la	le	DET
-baie	bai	NOUN
+baie	baie	NOUN
 de	de	ADP
 la	le	DET
 porte	porte	NOUN
@@ -4843,7 +4843,7 @@ couloir	couloir	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Malédiction	Malédiction	PROPN
+malédiction	malédiction	NOUN
 !	!	PUNCTsent
 nous	nous	PRON
 sommes	être	AUX
@@ -4997,7 +4997,7 @@ cris	cri	NOUN
 épouvantables	épouvantable	ADJ
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cyrus	Cyrus	PROPN
+Cyrus	Cyrus	NOUN
 Smith	Smith	PROPN
 et	et	CCONJ
 les siens	les siens	PRON

@@ -16,7 +16,7 @@ du	du	ADP_DET
 Severn	Severn	PROPN
 .	.	PUNCTsent
 —	—	PUNCTclause
-Costar	Costar	PROPN
+Costar	Costar	NOUN
 malade	malade	ADJ
 .	.	PUNCTsent
 —	—	PUNCTclause
@@ -29,21 +29,21 @@ hirondelles	hirondelle	NOUN
 découragement	découragement	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-Les	Les	PUNCT
+les	le_PRON	PRON
 oiseaux	oiseau	NOUN
 de	de	ADP
 proie	proie	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-Le	Le	PROPN
-guanaque	guanaque	DET
-tué	tué	ADJ
+le	le_PRON	PRON
+guanaque	guanaque	VERB
+tué	tuer	VERB
 de	de	ADP
 une	un	DET
 balle	balle	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-Le	Le	PROPN
+le	le_PRON	PRON
 culot	culot	NOUN
 de	de	ADP
 pipe	pipe	NOUN
@@ -54,7 +54,7 @@ plus	plus	ADV
 active	actif	ADJ
 .	.	PUNCTsent
 —	—	PUNCTclause
-Violent	Violent	PROPN
+violent	violent	ADJ
 orage	orage	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
@@ -406,8 +406,8 @@ tache	tache	NOUN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Moko	Moko	PROPN
-l'	le_PRON	PRON
+Moko	Moko	VERB
+l'	le	DET
 avait	avoir	AUX
 aussi	aussi	ADV
 distinctement	distinctement	ADV
@@ -420,7 +420,7 @@ Briant	Briant	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Soit	Soit	PROPN
+soit	soit	ADV
 !	!	PUNCTsent
 cela	cela	PRON
 peut-être	peut-être	ADV
@@ -454,7 +454,7 @@ de	de	ADP
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Le	Le	PROPN
+le	le_PRON	PRON
 voici	voici	ADP
 ,	,	PUNCTclause
 dit	dire	VERB
@@ -512,7 +512,7 @@ dans	dans	ADP
 ces	ce	DET
 parages	parage	NOUN
 !	!	PUNCTsent
-or	or_CCONJ	CCONJ
+or	or	NOUN
 ,	,	PUNCTclause
 les	le	DET
 matelots	matelot	NOUN
@@ -534,7 +534,7 @@ atteindre	atteindre	VERB
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-ce	ce	DET
+ce	ce	PRON
 ne	ne	ADV
 est	être	AUX
 pas	pas	ADV
@@ -543,7 +543,7 @@ douteux	douteux	ADJ
 répondit	répondre	VERB
 baxter	baxter	PROPN
 .	.	PUNCTsent
-que	que	PRON
+que	que	SCONJ
 gagneraient	gagner	VERB
 ils	ils	PRON
 à	à	ADP
@@ -579,9 +579,9 @@ chaloupe	chaloupe	NOUN
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-ce	ce	DET
-que	que	SCONJ
-Briant	Briant	PROPN
+ce	ce	PRON
+que	que	PRON
+Briant	Briant	VERB
 venait	venir	VERB
 de	de	ADP
 faire	faire	AUX
@@ -699,7 +699,7 @@ découvrir	découvrir	VERB
 French-den	French-den	PROPN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Briant	Briant	PROPN
+Briant	Briant	VERB
 eut	avoir	VERB
 donc	donc	ADV
 à	à	ADP
@@ -822,7 +822,7 @@ sujets	sujet	NOUN
 de	de	ADP
 inquiétude	inquiétude	NOUN
 .	.	PUNCTsent
-Costar	Costar	PROPN
+Costar	Costar	NOUN
 fut	être	AUX
 pris	prendre	VERB
 de	de	ADP
@@ -835,7 +835,7 @@ vie	vie	NOUN
 en	en	ADP
 danger	danger	NOUN
 .	.	PUNCTsent
-Gordon	Gordon	PROPN
+Gordon	Gordon	NOUN
 dut	devoir	VERB
 recourir	recourir	VERB
 à	à	ADP
@@ -919,7 +919,7 @@ régulièrement	régulièrement	ADV
 son	son	DET
 cours	cours	NOUN
 .	.	PUNCTsent
-Costar	Costar	PROPN
+Costar	Costar	NOUN
 se	se	PRON
 était	être	AUX
 il	il	PRON
@@ -1055,7 +1055,7 @@ pas	pas	ADV
 là	là	ADV
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-ce	ce	DET
+ce	ce	PRON
 dont	dont	PRON
 Kate	Kate	PROPN
 se	se	PRON
@@ -1338,7 +1338,7 @@ naufragés	naufragé	NOUN
 du	du	ADP_DET
 sloughi	sloughi	PROPN
 ?	?	PUNCTsent
-Non	Non	PROPN
+non	non	ADV
 ,	,	PUNCTclause
 hélas	hélas	INTJ
 !…	!…	PUNCTsent
@@ -1366,7 +1366,7 @@ dans	dans	ADP
 le	le	DET
 hall	hall	NOUN
 !	!	PUNCTsent
-Baxter	Baxter	PROPN
+baxter	baxter	VERB
 ,	,	PUNCTclause
 chargé	charger	VERB
 de	de	ADP
@@ -1441,7 +1441,7 @@ de	de	ADP
 son	son	DET
 administration	administration	NOUN
 .	.	PUNCTsent
-Briant	Briant	PROPN
+Briant	Briant	VERB
 ,	,	PUNCTclause
 lui	lui	PRON
 aussi	aussi	ADV
@@ -1545,9 +1545,9 @@ en	en	PRON
 fut	être	AUX
 rien	rien	PRON
 .	.	PUNCTsent
-d'ailleurs	d'ailleurs	DET
+d'ailleurs	d'ailleurs	ADV
 ,	,	PUNCTclause
-des	un	ADP_DET
+des	un	DET
 événements	événement	NOUN
 extrêmement	extrêmement	ADV
 graves	grave	ADJ
@@ -1639,7 +1639,7 @@ et	et	CCONJ
 croassante	croassant	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Doniphan	Doniphan	PROPN
+Doniphan	Doniphan	PRON
 ne	ne	ADV
 se	se	PRON
 fût	être	AUX
@@ -1849,7 +1849,7 @@ toute	tout	ADJ
 chaleur	chaleur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Doniphan	Doniphan	PROPN
+Doniphan	Doniphan	DET
 et	et	CCONJ
 Moko	Moko	PROPN
 ,	,	PUNCTclause
@@ -1911,7 +1911,7 @@ de	de	ADP
 habitude	habitude	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Doniphan	Doniphan	PROPN
+Doniphan	Doniphan	PRON
 examina	examiner	VERB
 l'	le	DET
 animal	animal	NOUN
@@ -1942,8 +1942,8 @@ carnassier	carnassier	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-ce	ce	DET
-guanaque	guanaque	NOUN
+ce	ce	PRON
+guanaque	guanaque	PRON
 a	avoir	AUX
 certainement	certainement	ADV
 reçu	recevoir	VERB
@@ -1956,7 +1956,7 @@ Doniphan	Doniphan	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-En	En	PROPN
+en	en	PRON
 voici	voici	ADP
 la	le	DET
 preuve	preuve	NOUN
@@ -2020,7 +2020,7 @@ ses	son	DET
 compagnons	compagnon	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Doniphan	Doniphan	PROPN
+Doniphan	Doniphan	DET
 et	et	CCONJ
 Moko	Moko	PROPN
 ,	,	PUNCTclause
@@ -2271,7 +2271,7 @@ aventuré	aventurer	VERB
 les	le	DET
 Downs-lands	Downs-lands	PROPN
 .	.	PUNCTsent
-d'ailleurs	d'ailleurs	NOUN
+d'ailleurs	d'ailleurs	ADV
 ,	,	PUNCTclause
 on	on	PRON
 ne	ne	ADV
@@ -2536,7 +2536,7 @@ dit	dire	VERB
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-attends	attendre	NOUN
+attends	attendre	VERB
 ,	,	PUNCTclause
 Briant	Briant	PROPN
 ,	,	PUNCTclause
@@ -2552,7 +2552,7 @@ il	il	PRON
 ?	?	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Gordon	Gordon	PROPN
+Gordon	Gordon	NOUN
 se	se	PRON
 baissa	baisser	VERB
 et	et	CCONJ
@@ -2563,14 +2563,14 @@ objet	objet	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Regarde	Regarde	PROPN
+regarde	regarder	VERB
 !	!	PUNCTsent
 dit	dire	VERB
 il	il	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-ce	ce	DET
+ce	ce	PRON
 ne	ne	ADV
 est	être	AUX
 pas	pas	ADV
@@ -2641,9 +2641,9 @@ par	par	ADP
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Par	Par	PROPN
+par	par	ADP
 l'un	l'un	PRON
-des	un	DET
+des	un	ADP_DET
 hommes	homme	NOUN
 de	de	ADP
 la	le	DET
@@ -2672,7 +2672,7 @@ l'	le	DET
 Chairman	Chairman	PROPN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Non	Non	PROPN
+non	non	ADV
 !	!	PUNCTsent
 ce	ce	DET
 culot	culot	NOUN
@@ -2754,7 +2754,7 @@ du	du	ADP_DET
 Family-lake	Family-lake	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Gordon	Gordon	PROPN
+Gordon	Gordon	NOUN
 et	et	CCONJ
 Briant	Briant	PROPN
 retournèrent	retourner	VERB
@@ -3102,7 +3102,7 @@ moindre	moindre	ADJ
 alerte	alerte	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Kate	Kate	PROPN
+Kate	Kate	NOUN
 approuvait	approuver	VERB
 toutes	tout	ADJ
 ces	ce	DET
@@ -3295,14 +3295,14 @@ terres	terre	NOUN
 voisines	voisin	ADJ
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-telles	tel	ADJ
+telles	tel	DET
 étaient	être	AUX
 les	le	DET
 réflexions	réflexion	NOUN
 de	de	ADP
 Kate	Kate	PROPN
 .	.	PUNCTsent
-ce	ce	DET
+ce	ce	PRON
 ne	ne	ADV
 était	être	AUX
 pas	pas	ADV
@@ -3352,7 +3352,7 @@ avait	avoir	AUX
 été	être	AUX
 étouffante	étouffant	ADJ
 .	.	PUNCTsent
-De	De	PROPN
+de	de	ADP
 gros	gros	ADJ
 nuages	nuage	NOUN
 passaient	passer	VERB
@@ -3562,7 +3562,7 @@ l'	le	DET
 épuiser	épuiser	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Costar	Costar	PROPN
+Costar	Costar	NOUN
 ,	,	PUNCTclause
 Dole	Dole	PROPN
 ,	,	PUNCTclause
@@ -3723,7 +3723,7 @@ et	et	CCONJ
 du	du	ADP_DET
 tonnerre	tonnerre	NOUN
 .	.	PUNCTsent
-ce	ce	DET
+ce	ce	PRON
 fut	être	AUX
 seulement	seulement	ADV
 un	un	DET
@@ -3738,7 +3738,7 @@ tendit	tendre	VERB
 se	se	PRON
 faire	faire	VERB
 .	.	PUNCTsent
-des	un	DET
+des	un	ADP_DET
 intervalles	intervalle	NOUN
 de plus en plus	de plus en plus	ADV
 longs	long	ADJ
@@ -3893,9 +3893,9 @@ chien	chien	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-en	en	NOUN
+en	en	PRON
 bien	bien	ADV
-des	un	ADP_DET
+des	un	DET
 circonstances	circonstance	NOUN
 déjà	déjà	ADV
 ,	,	PUNCTclause
@@ -3940,7 +3940,7 @@ Gordon	Gordon	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Soit	Soit	PROPN
+soit	être	AUX
 ,	,	PUNCTclause
 dit	dire	VERB
 Briant	Briant	PROPN
@@ -4084,7 +4084,7 @@ l'	le	DET
 extérieur	extérieur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Soudain	Soudain	PROPN
+soudain	soudain	ADJ
 éclata	éclater	VERB
 une	un	DET
 détonation	détonation	NOUN
@@ -4128,7 +4128,7 @@ sur	sur	ADP
 la	le	DET
 défensive	défensif	NOUN
 .	.	PUNCTsent
-Doniphan	Doniphan	PROPN
+Doniphan	Doniphan	PRON
 ,	,	PUNCTclause
 baxter	baxter	PROPN
 ,	,	PUNCTclause
@@ -4226,7 +4226,7 @@ pas	pas	ADV
 seulement	seulement	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Kate	Kate	PROPN
+Kate	Kate	NOUN
 ,	,	PUNCTclause
 près de	près de	ADP
 la	le	DET
@@ -4253,7 +4253,7 @@ Briant	Briant	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Ouvrez	Ouvrez	PROPN
+ouvrez	ouvrir	VERB
 !…	!…	PUNCTsent
 ouvrez	ouvrir	VERB
 !…	!…	PUNCTsent

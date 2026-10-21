@@ -6,22 +6,22 @@
 # title = XXII.
 
 ↵↵	↵↵	PUNCTstruct
-XXII	XXII	NUM
+XXII	XXII	X
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 les	le	DET
 trappes	trappe	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-les	le	NOUN
+les	le_PRON	PRON
 renards	renard	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-les	le	NOUN
+les	le_PRON	PRON
 pécaris	pécari	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-Saute	Saute	PROPN
+saute	saute	NOUN
 de	de	ADP
 vent	vent	NOUN
 au	au	ADP_DET
@@ -33,11 +33,11 @@ de	de	ADP
 neige	neige	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-les	le	NOUN
+les	le_PRON	PRON
 vanniers	vannier	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-les	le	NOUN
+les	le_PRON	PRON
 plus	plus	ADV
 grands	grand	ADJ
 froids	froid	NOUN
@@ -54,7 +54,7 @@ de	de	ADP
 érable	érable	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-Le	Le	PROPN
+le	le_PRON	PRON
 puits	puits	NOUN
 mystérieux	mystérieux	ADJ
 .	.	PUNCTsent
@@ -64,7 +64,7 @@ exploration	exploration	NOUN
 projetée	projeter	VERB
 .	.	PUNCTsent
 —	—	PUNCTclause
-Le	Le	PROPN
+le	le_PRON	PRON
 grain	grain	NOUN
 de	de	ADP
 plomb	plomb	NOUN
@@ -119,7 +119,7 @@ gens	gens	NOUN
 insuffisamment	insuffisamment	ADV
 vêtus	vêtir	VERB
 .	.	PUNCTsent
-Pencroff	Pencroff	PROPN
+Pencroff	Pencroff	NOUN
 en	en	ADP
 était	être	VERB
 à	à	ADP
@@ -193,7 +193,7 @@ corps	corps	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-mais	mai	NOUN
+mais	mais	CCONJ
 ,	,	PUNCTclause
 répondait	répondre	VERB
 Nab	Nab	PROPN
@@ -216,7 +216,7 @@ donner	donner	VERB
 leur	leur	DET
 capote	capote	NOUN
 .	.	PUNCTsent
-ce	ce	DET
+ce	ce	PRON
 ne	ne	ADV
 sont	être	AUX
 point	point	ADV
@@ -304,7 +304,7 @@ de	de	ADP
 la	le	DET
 forêt	forêt	NOUN
 .	.	PUNCTsent
-suivant	suivre	VERB
+suivant	suivant	ADP
 l'	le	DET
 opinion	opinion	NOUN
 du	du	ADP_DET
@@ -524,7 +524,7 @@ quelque chose	quelque chose	PRON
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	Et	PROPN
+et	et	CCONJ
 à	à	ADP
 quoi	quoi	PRON
 donc	donc	ADV
@@ -656,7 +656,7 @@ et	et	CCONJ
 plus	plus	ADV
 utiles	utile	ADJ
 .	.	PUNCTsent
-ce	ce	DET
+ce	ce	PRON
 furent	être	AUX
 quelques-uns	quelques-uns	PRON
 de	de	ADP
@@ -672,7 +672,7 @@ nord	nord	NOUN
 du	du	ADP_DET
 lac	lac	NOUN
 .	.	PUNCTsent
-Pencroff	Pencroff	PROPN
+Pencroff	Pencroff	NOUN
 ne	ne	ADV
 eut	avoir	VERB
 pas	pas	ADV
@@ -725,7 +725,7 @@ Pencroff	Pencroff	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Mon	Mon	PROPN
+mon	mon	DET
 garçon	garçon	NOUN
 ,	,	PUNCTclause
 répondit	répondre	VERB
@@ -772,7 +772,7 @@ cochons	cochon	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	Et	PROPN
+et	et	CCONJ
 pourquoi	pourquoi	ADV
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -785,7 +785,7 @@ plaisir	plaisir	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Tu	Tu	PROPN
+tu	tu	PRON
 aimes	aimer	VERB
 donc	donc	ADV
 bien	bien	ADV
@@ -1251,7 +1251,7 @@ et	et	CCONJ
 inébranlable	inébranlable	ADJ
 retraite	retrait	NOUN
 !	!	PUNCTsent
-Cyrus	Cyrus	PROPN
+Cyrus	Cyrus	NOUN
 Smith	Smith	PROPN
 avait	avoir	AUX
 bien	bien	ADV
@@ -1714,7 +1714,7 @@ trop	trop	ADV
 de	de	ADP
 peine	peine	NOUN
 .	.	PUNCTsent
-Cyrus	Cyrus	PROPN
+Cyrus	Cyrus	NOUN
 Smith	Smith	PROPN
 et	et	CCONJ
 ses	son	DET
@@ -1912,7 +1912,7 @@ fût	être	AUX
 dissipée	dissiper	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Gédéon	Gédéon	PROPN
+Gédéon	Gédéon	NOUN
 Spilett	Spilett	PROPN
 ,	,	PUNCTclause
 Pencroff	Pencroff	PROPN
@@ -2016,7 +2016,7 @@ très	très	ADV
 nettement	nettement	ADV
 accusées	accuser	VERB
 .	.	PUNCTsent
-Harbert	Harbert	PROPN
+Harbert	Harbert	NOUN
 ne	ne	ADV
 hésita	hésiter	VERB
 pas	pas	ADV
@@ -2105,7 +2105,7 @@ Pencroff	Pencroff	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-ce	ce	DET
+ce	ce	PRON
 sont	être	AUX
 des	un	DET
 tigres	tigre	NOUN
@@ -2131,7 +2131,7 @@ chauds	chaud	ADJ
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Sur	Sur	PROPN
+sur	sur	ADP
 le	le	DET
 nouveau	nouveau	ADJ
 continent	continent	NOUN
@@ -2153,9 +2153,9 @@ pampas	pampa	PROPN
 de	de	ADP
 Buenos-Aires	Buenos-Aires	PROPN
 .	.	PUNCTsent
-or	or_CCONJ	CCONJ
+or	or	NOUN
 ,	,	PUNCTclause
-comme	comme	SCONJ
+comme	comme	ADP
 l'	le	DET
 île	île	NOUN
 Lincoln	Lincoln	PROPN
@@ -2185,7 +2185,7 @@ rencontrent	rencontrer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Bon	Bon	PROPN
+bon	bon	ADJ
 ,	,	PUNCTclause
 on	on	PRON
 veillera	veiller	VERB
@@ -2530,7 +2530,7 @@ des	un	ADP_DET
 sables	sable	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-ce	ce	DET
+ce	ce	PRON
 ne	ne	ADV
 fut	être	AUX
 pas	pas	ADV
@@ -2647,7 +2647,7 @@ devint	devenir	VERB
 extrêmement	extrêmement	ADV
 vif	vif	ADJ
 .	.	PUNCTsent
-suivant	suivre	VERB
+suivant	suivant	ADP
 l'	le	DET
 estime	estime	NOUN
 de	de	ADP
@@ -2852,7 +2852,7 @@ hôtes	hôte	NOUN
 de	de	ADP
 Granite-house	Granite-house	PROPN
 .	.	PUNCTsent
-Cyrus	Cyrus	PROPN
+Cyrus	Cyrus	NOUN
 Smith	Smith	PROPN
 entreprit	entreprendre	VERB
 alors	alors	ADV
@@ -2969,7 +2969,7 @@ raffineurs	raffineur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Raffineurs	Raffineurs	PROPN
+raffineurs	raffineur	NOUN
 !	!	PUNCTsent
 répondit	répondre	VERB
 Pencroff	Pencroff	PROPN
@@ -3032,7 +3032,7 @@ et	et	CCONJ
 en	en	ADP
 ouvriers	ouvrier	NOUN
 .	.	PUNCTsent
-Non	Non	PROPN
+non	non	ADV
 !	!	PUNCTsent
 pour	pour	ADP
 cristalliser	cristalliser	VERB
@@ -3267,7 +3267,7 @@ causait	causer	VERB
 en	en	ADP
 travaillant	travailler	VERB
 .	.	PUNCTsent
-Cyrus	Cyrus	PROPN
+Cyrus	Cyrus	NOUN
 Smith	Smith	PROPN
 instruisait	instruire	VERB
 ses	son	DET
@@ -3360,7 +3360,7 @@ séquestration	séquestration	NOUN
 se	se	PRON
 terminât	terminer	VERB
 .	.	PUNCTsent
-tous	tout	ADJ
+tous	tous	PRON
 avaient	avoir	AUX
 hâte	hâter	VERB
 de	de	ADP
@@ -3510,7 +3510,7 @@ de	de	ADP
 caserné	caserner	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cyrus	Cyrus	PROPN
+Cyrus	Cyrus	NOUN
 Smith	Smith	PROPN
 remarqua	remarquer	VERB
 souvent	souvent	ADV
@@ -3551,7 +3551,7 @@ des	un	ADP_DET
 grognements	grognement	NOUN
 singuliers	singulier	ADJ
 .	.	PUNCTsent
-Top	Top	PROPN
+top	top	NOUN
 tournait	tourner	VERB
 autour de	autour de	ADP
 ce	ce	DET
@@ -3567,7 +3567,7 @@ panneau	panneau	NOUN
 en	en	ADP
 bois	bois	NOUN
 .	.	PUNCTsent
-quelquefois	quelquefois	DET
+quelquefois	quelquefois	ADV
 même	même	ADV
 ,	,	PUNCTclause
 il	il	PRON
@@ -3641,7 +3641,7 @@ cela	cela	PRON
 était	être	AUX
 certain	certain	ADJ
 .	.	PUNCTsent
-Se	Se	PROPN
+se	se	PRON
 ramifiait	ramifier	VERB
 il	il	PRON
 donc	donc	ADV
@@ -3655,7 +3655,7 @@ de	de	ADP
 l'	le	DET
 île	île	NOUN
 ?	?	PUNCTsent
-était	être	VERB
+était	être	AUX
 il	il	PRON
 en	en	ADP
 communication	communication	NOUN
@@ -4091,7 +4091,7 @@ satisfait	satisfaire	VERB
 son	son	DET
 désir	désir	NOUN
 .	.	PUNCTsent
-Gédéon	Gédéon	PROPN
+Gédéon	Gédéon	DET
 Spilett	Spilett	PROPN
 appuyait	appuyer	VERB
 ,	,	PUNCTclause
@@ -4457,7 +4457,7 @@ deux	deux	NUM
 petits	petit	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Pencroff	Pencroff	PROPN
+Pencroff	Pencroff	VERB
 revint	revenir	VERB
 donc	donc	ADV
 à	à	ADP
@@ -4484,7 +4484,7 @@ chasse	chasse	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Allons	Allons	PROPN
+allons	aller	VERB
 !	!	PUNCTsent
 nous	nous	PRON
 ferons	faire	VERB
@@ -4529,7 +4529,7 @@ mangerai	manger	VERB
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Du	Du	PROPN
+du	du	ADP_DET
 cochon	cochon	NOUN
 de	de	ADP
 lait	lait	NOUN
@@ -4581,7 +4581,7 @@ par hasard	par hasard	ADV
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	Non	PROPN
+non	non	ADV
 ,	,	PUNCTclause
 répondit	répondre	VERB
 Gédéon	Gédéon	PROPN
@@ -4660,7 +4660,7 @@ gibier	gibier	NOUN
 !…	!…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Voilà	Voilà	PROPN
+voilà	voilà	ADP
 ,	,	PUNCTclause
 voilà	voilà	ADP
 ,	,	PUNCTclause
@@ -4693,7 +4693,7 @@ Nab	Nab	PROPN
 se	se	PRON
 distinguera	distinguer	VERB
 .	.	PUNCTsent
-Voyez	Voyez	PROPN
+voyez	voir	VERB
 !	!	PUNCTsent
 ces	ce	DET
 deux	deux	NUM
@@ -4713,7 +4713,7 @@ comme	comme	ADP
 des	un	DET
 cailles	caille	NOUN
 !	!	PUNCTsent
-Allons	Allons	PROPN
+allons	aller	VERB
 ,	,	PUNCTclause
 Nab	Nab	PROPN
 ,	,	PUNCTclause
@@ -4756,7 +4756,7 @@ faire	faire	VERB
 sa	son	DET
 façon	façon	NOUN
 .	.	PUNCTsent
-Nab	Nab	PROPN
+Nab	Nab	NOUN
 et	et	CCONJ
 lui	lui	PRON
 préparèrent	préparer	VERB
@@ -4979,7 +4979,7 @@ une	un	DET
 mâchelière	mâchelière	NOUN
 !…	!…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-ce	ce	DET
+ce	ce	PRON
 ne	ne	ADV
 était	être	AUX
 point	point	ADV

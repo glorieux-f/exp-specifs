@@ -33,7 +33,7 @@ mon	mon	DET
 ami	ami	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Axiome	Axiome	PROPN
+axiome	axiome	NOUN
 ↵↵	↵↵	PUNCTstruct
 les	le	DET
 êtres	être	NOUN
@@ -81,7 +81,7 @@ ho	ho	INTJ
 monsieur	monsieur	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-dites	dire	NOUN
+dites	dire	VERB
 :	:	PUNCTclause
 —	—	PUNCTclause
 ha	ha	INTJ
@@ -148,31 +148,31 @@ de	de	ADP
 Aristote	Aristote	PROPN
 ,	,	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Ni	Ni	PROPN
+ni	ni	CCONJ
 celle	celle	PRON
 de	de	ADP
 ramus	ramus	PROPN
 ,	,	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Ni	Ni	PROPN
+ni	ni	CCONJ
 celle	celle	PRON
 de	de	ADP
 Kant	Kant	PROPN
 ,	,	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Ni	Ni	PROPN
+ni	ni	CCONJ
 celle	celle	PRON
 de	de	ADP
 Condillac	Condillac	PROPN
 ,	,	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Ni	Ni	PROPN
+ni	ni	CCONJ
 celle	celle	PRON
 de	de	ADP
 Robespierre	Robespierre	PROPN
 ,	,	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-Ni	Ni	PROPN
+ni	ni	CCONJ
 celle	celle	PRON
 de	de	ADP
 Napoléon	Napoléon	PROPN
@@ -352,7 +352,7 @@ est	être	AUX
 pas	pas	ADV
 raisonneuse	raisonneur	ADJ
 .	.	PUNCTsent
-bref	bref	INTJ
+bref	bref	ADJ
 ,	,	PUNCTclause
 vous	vous	PRON
 ne	ne	ADV
@@ -431,7 +431,7 @@ la	le	DET
 maison	maison	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-votre	votre	VERB
+votre	votre	DET
 enfant	enfant	NOUN
 jappe	japper	VERB
 ,	,	PUNCTclause
@@ -745,7 +745,7 @@ grondez	gronder	VERB
 il	il	PRON
 pleure	pleurer	VERB
 .	.	PUNCTsent
-Accourt	Accourt	PROPN
+accourt	accourir	VERB
 la	le	DET
 mère	mère	NOUN
 !	!	PUNCTsent
@@ -849,7 +849,7 @@ interjective	interjectif	ADJ
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-décidément	décidément	NOUN
+décidément	décidément	ADV
 ,	,	PUNCTclause
 Caroline	Caroline	PROPN
 ,	,	PUNCTclause
@@ -861,7 +861,7 @@ pension	pension	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Charles	Charles	PROPN
+Charles	Charles	NOUN
 ne	ne	ADV
 peut	pouvoir	VERB
 pas	pas	ADV
@@ -879,7 +879,7 @@ doux	doux	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Charles	Charles	PROPN
+Charles	Charles	NOUN
 a	avoir	VERB
 six	six	NUM
 ans	an	NOUN
@@ -921,7 +921,7 @@ que	que	PRON
 sept	sept	NUM
 ans	an	NOUN
 .	.	PUNCTsent
-voilà	voilà	VERB
+voilà	voilà	ADP
 la	le	DET
 loi	loi	NOUN
 et	et	CCONJ
@@ -967,7 +967,7 @@ Rome	Rome	PROPN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Le	Le	PROPN
+le	le_PRON	PRON
 roi	roi	NOUN
 de	de	ADP
 Rome	Rome	PROPN
@@ -979,7 +979,7 @@ autorité	autorité	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Le	Le	PROPN
+le	le_PRON	PRON
 roi	roi	NOUN
 de	de	ADP
 Rome	Rome	PROPN
@@ -1035,7 +1035,7 @@ cela	cela	PRON
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-tu	tu	NOUN
+tu	tu	PRON
 ne	ne	ADV
 me	me	PRON
 laisses	laisser	VERB
@@ -1134,7 +1134,7 @@ différent	différent	ADJ
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Tu	Tu	PROPN
+tu	tu	PRON
 conviens	convenir	VERB
 donc	donc	ADV
 alors que	alors que	CCONJ
@@ -1227,7 +1227,7 @@ entrer	entrer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Charles	Charles	PROPN
+Charles	Charles	NOUN
 est	être	AUX
 très-fort	très-fort	ADV
 pour	pour	ADP
@@ -1236,7 +1236,7 @@ son	son	DET
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Charles	Charles	PROPN
+Charles	Charles	NOUN
 ?…	?…	PUNCTsent
 ho	ho	INTJ
 !	!	PUNCTsent
@@ -1299,7 +1299,7 @@ ennuie	ennuyer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Allons	Allons	PROPN
+allons	aller	VERB
 !	!	PUNCTsent
 mon	mon	DET
 enfant	enfant	NOUN
@@ -1614,7 +1614,7 @@ souffrir	souffrir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Raisonnons	Raisonnons	PROPN
+raisonnons	raisonner	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
@@ -1736,7 +1736,7 @@ collège	collège	NOUN
 six	six	NUM
 ans	an	NOUN
 .	.	PUNCTsent
-Viens	Viens	PROPN
+viens	venir	VERB
 voir	voir	VERB
 des	un	DET
 collèges	collège	NOUN
@@ -1774,7 +1774,7 @@ bien	bien	ADV
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Le	Le	PUNCT
+le	le_PRON	PRON
 petit	petit	ADJ
 Deschars	Deschars	PROPN
 est	être	AUX
@@ -1797,7 +1797,7 @@ ici	ici	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Jamais	Jamais	PROPN
+jamais	jamais	ADV
 ,	,	PUNCTclause
 dit	dire	VERB
 elle	elle	PRON
@@ -1824,7 +1824,7 @@ accessoire	accessoire	ADJ
 sur	sur	ADP
 :	:	PUNCTclause
 «	«	PUNCTsent
-Charles	Charles	PROPN
+Charles	Charles	NOUN
 a	avoir	AUX
 il	il	PRON
 eu	avoir	VERB
@@ -1863,10 +1863,10 @@ des	un	DET
 tiers	tiers	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Axiome	Axiome	PROPN
+axiome	axiome	NOUN
 ↵↵	↵↵	PUNCTstruct
-tout	tout	ADV
-ménage	ménage	NOUN
+tout	tout	PRON
+ménage	ménager	VERB
 a	avoir	VERB
 sa	son	DET
 cour	cour	NOUN
@@ -2085,9 +2085,9 @@ lui	lui	PRON
 une	un	DET
 indiscrétion	indiscrétion	NOUN
 .	.	PUNCTsent
-d'autres	d'autre	DET
+d'autres	d'autre	PRON
 cassent	casser	VERB
-des	un	ADP_DET
+des	un	DET
 porcelaines	porcelaine	NOUN
 en	en	ADP
 se	se	PRON

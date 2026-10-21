@@ -6,14 +6,14 @@
 # title = III.
 
 ↵↵	↵↵	PUNCTstruct
-III	III	NUM
+III	III	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 le	le	DET
 départ	départ	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-Le	Le	PROPN
+le	le_PRON	PRON
 flot	flot	NOUN
 montant	monter	VERB
 .	.	PUNCTsent
@@ -23,11 +23,11 @@ et	et	CCONJ
 microcouliers	microcouliers	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-Plantes	Plantes	PROPN
+plantes	plante	NOUN
 diverses	divers	ADJ
 .	.	PUNCTsent
 —	—	PUNCTclause
-Le	Le	PROPN
+le	le_PRON	PRON
 jacamar.	jacamar.	PUNCT
 —	—	PUNCTclause
 aspect	aspect	NOUN
@@ -36,7 +36,7 @@ la	le	DET
 forêt	forêt	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-Les	Les	PUNCT
+les	le_PRON	PRON
 eucalyptus	eucalyptus	NOUN
 géants	géant	ADJ
 .	.	PUNCTsent
@@ -62,7 +62,7 @@ de	de	ADP
 eau	eau	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-Campement	Campement	PROPN
+campement	campement	NOUN
 pour	pour	ADP
 la	le	DET
 nuit	nuit	NOUN
@@ -369,7 +369,7 @@ assignât	assigner	VERB
 l'	le	DET
 exploration	exploration	NOUN
 .	.	PUNCTsent
-d'ailleurs	d'ailleurs	NOUN
+d'ailleurs	d'ailleurs	ADV
 ,	,	PUNCTclause
 on	on	PRON
 comptait	compter	VERB
@@ -573,7 +573,7 @@ de	de	ADP
 affaire	affaire	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Inutile	Inutile	PROPN
+inutile	inutile	ADJ
 de	de	ADP
 ajouter	ajouter	VERB
 que	que	SCONJ
@@ -811,7 +811,7 @@ Mercy	Mercy	PROPN
 était	être	AUX
 magnifique	magnifique	ADJ
 .	.	PUNCTsent
-Cyrus	Cyrus	PROPN
+Cyrus	Cyrus	NOUN
 Smith	Smith	PROPN
 et	et	CCONJ
 ses	son	DET
@@ -1097,7 +1097,7 @@ brunes	brun	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Sais	Sais	PROPN
+sais	savoir	VERB
 tu	tu	PRON
 ce	ce	PRON
 que	que	PRON
@@ -1114,7 +1114,7 @@ marin	marin	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Du	Du	PROPN
+du	du	ADP_DET
 tabac	tabac	NOUN
 !	!	PUNCTsent
 se	se	PRON
@@ -1143,9 +1143,9 @@ pipe	pipe	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	Non	PROPN
+non	non	ADV
 !	!	PUNCTsent
-Pencroff	Pencroff	PROPN
+Pencroff	Pencroff	NOUN
 !	!	PUNCTsent
 répondit	répondre	VERB
 Harbert	Harbert	PROPN
@@ -1208,7 +1208,7 @@ Spilett	Spilett	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Vrai	Vrai	PROPN
+vrai	vrai	ADJ
 !	!	PUNCTsent
 se	se	PRON
 écria	écrier	VERB
@@ -1417,8 +1417,8 @@ apparence	apparence	NOUN
 de	de	ADP
 queue	queue	NOUN
 .	.	PUNCTsent
-Harbert	Harbert	PROPN
-leur	leur	PRON
+Harbert	Harbert	VERB
+leur	leur	DET
 donna	donner	VERB
 ,	,	PUNCTclause
 avec	avec	ADP
@@ -1519,8 +1519,8 @@ reporter	reporter	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Le	Le	PROPN
-volatile	volatile	NOUN
+le	le_PRON	PRON
+volatile	volatil	ADJ
 qui	qui	PRON
 nous	nous	PRON
 a	avoir	AUX
@@ -2100,7 +2100,7 @@ armer	armer	VERB
 les	le	DET
 avirons	aviron	NOUN
 .	.	PUNCTsent
-Nab	Nab	PROPN
+Nab	Nab	NOUN
 et	et	CCONJ
 Harbert	Harbert	PROPN
 se	se	PRON
@@ -2180,7 +2180,7 @@ ils	ils	PRON
 magnifiques	magnifique	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-quels	quel	ADJ
+quels	quel	DET
 splendides	splendide	ADJ
 échantillons	échantillon	NOUN
 de	de	ADP
@@ -2389,7 +2389,7 @@ ailées	ailé	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-voilà	voilà	VERB
+voilà	voilà	ADP
 des	un	DET
 arbres	arbre	NOUN
 !	!	PUNCTsent
@@ -2406,7 +2406,7 @@ quelque chose	quelque chose	PRON
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Peuh	Peuh	PROPN
+peuh	peuh	INTJ
 !	!	PUNCTsent
 répondit	répondre	VERB
 Pencroff	Pencroff	PROPN
@@ -2467,7 +2467,7 @@ l'	le	DET
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	Et	PROPN
+et	et	CCONJ
 je	je	PRON
 ajouterai	ajouter	VERB
 ,	,	PUNCTclause
@@ -2678,9 +2678,9 @@ leçon	leçon	NOUN
 de	de	ADP
 botanique	botanique	NOUN
 .	.	PUNCTsent
-Cyrus	Cyrus	PROPN
+Cyrus	Cyrus	NOUN
 Smith	Smith	PROPN
-l'	le_PRON	PRON
+l'	le	DET
 écoutait	écouter	VERB
 en	en	ADP
 souriant	sourire	VERB
@@ -2792,7 +2792,7 @@ quelque chose	quelque chose	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	Et	PROPN
+et	et	CCONJ
 à	à	ADP
 quoi	quoi	PRON
 donc	donc	ADV
@@ -2808,7 +2808,7 @@ ils	ils	PRON
 habitent	habiter	VERB
 .	.	PUNCTsent
 —	—	PUNCTclause
-Savez	Savez	PROPN
+savez	savoir	VERB
 vous	vous	PRON
 comment	comment	ADV
 on	on	PRON
@@ -2823,7 +2823,7 @@ Nouvelle-Zélande	Nouvelle-Zélande	PROPN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	Non	PROPN
+non	non	ADV
 ,	,	PUNCTclause
 monsieur	monsieur	NOUN
 Cyrus	Cyrus	PROPN
@@ -2849,7 +2849,7 @@ donnent	donner	VERB
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Non	Non	PROPN
+non	non	ADV
 ,	,	PUNCTclause
 parce que	parce que	SCONJ
 ils	ils	PRON
@@ -2952,8 +2952,8 @@ de	de	ADP
 ces	ce	DET
 myrtacées	myrtacée	NOUN
 .	.	PUNCTsent
-ce	ce	DET
-fait	fait	NOUN
+ce	ce	PRON
+fait	faire	AUX
 est	être	AUX
 maintenant	maintenant	ADV
 hors de	hors de	ADP
@@ -3188,7 +3188,7 @@ démesurées	démesuré	ADJ
 des	un	ADP_DET
 arbres	arbre	NOUN
 .	.	PUNCTsent
-Cyrus	Cyrus	PROPN
+Cyrus	Cyrus	NOUN
 Smith	Smith	PROPN
 ,	,	PUNCTclause
 voyant	voir	VERB
@@ -3310,8 +3310,8 @@ sous	sous	ADP
 les	le	DET
 taillis	taillis	NOUN
 .	.	PUNCTsent
-quelquefois	quelquefois	DET
-même	même	ADJ
+quelquefois	quelquefois	ADV
+même	même	ADV
 ,	,	PUNCTclause
 deux	deux	NUM
 ou	ou	CCONJ
@@ -3382,7 +3382,7 @@ l'	le	DET
 enragé	enragé	NOUN
 Pencroff	Pencroff	PROPN
 .	.	PUNCTsent
-d'ailleurs	d'ailleurs	NOUN
+d'ailleurs	d'ailleurs	ADV
 ,	,	PUNCTclause
 ce	ce	PRON
 était	être	AUX
@@ -3626,7 +3626,7 @@ nord-ouest	nord-ouest	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Continuons	Continuons	PROPN
+continuons	continuer	VERB
 nous	nous	PRON
 à	à	ADP
 aller	aller	VERB
@@ -3654,7 +3654,7 @@ répondit	répondre	VERB
 Cyrus	Cyrus	PROPN
 Smith	Smith	PROPN
 .	.	PUNCTsent
-demain	demain	NOUN
+demain	demain	ADV
 ,	,	PUNCTclause
 au	au	ADP_DET
 point	point	NOUN
@@ -3699,7 +3699,7 @@ littoral	littoral	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-En	En	PROPN
+en	en	PRON
 avant	avant	ADV
 !	!	PUNCTsent
 »	»	PUNCTclause
@@ -4014,7 +4014,7 @@ ses	son	DET
 flammes	flamme	NOUN
 pétillantes	pétillant	ADJ
 .	.	PUNCTsent
-Nab	Nab	PROPN
+Nab	Nab	NOUN
 et	et	CCONJ
 Pencroff	Pencroff	PROPN
 veillèrent	veiller	VERB

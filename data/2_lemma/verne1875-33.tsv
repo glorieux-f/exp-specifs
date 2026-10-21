@@ -13,13 +13,13 @@ l'	le	DET
 hiver	hiver	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-Foulage	Foulage	PROPN
+foulage	foulage	NOUN
 de	de	ADP
 la	le	DET
 laine	laine	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-Le	Le	PROPN
+le	le_PRON	PRON
 moulin	moulin	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
@@ -30,7 +30,7 @@ de	de	ADP
 Pencroff	Pencroff	PROPN
 .	.	PUNCTsent
 —	—	PUNCTclause
-les	le	NOUN
+les	le_PRON	PRON
 fanons	fanon	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
@@ -42,14 +42,14 @@ un	un	DET
 albatros	albatros	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-Le	Le	PROPN
+le	le_PRON	PRON
 combustible	combustible	ADJ
 de	de	ADP
 l'	le	DET
 avenir	avenir	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-Top	Top	PROPN
+top	top	NOUN
 et	et	CCONJ
 Jup	Jup	PROPN
 .	.	PUNCTsent
@@ -57,7 +57,7 @@ Jup	Jup	PROPN
 tempêtes	tempête	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-Dégâts	Dégâts	PROPN
+dégâts	dégât	NOUN
 à	à	ADP
 la	le	DET
 basse-cour	basse-cour	NOUN
@@ -69,7 +69,7 @@ au	au	ADP_DET
 marais	marais	NOUN
 .	.	PUNCTsent
 —	—	PUNCTclause
-Cyrus	Cyrus	PROPN
+Cyrus	Cyrus	NOUN
 Smith	Smith	PROPN
 seul	seul	ADJ
 .	.	PUNCTsent
@@ -252,8 +252,8 @@ on	on	PRON
 appelle	appeler	VERB
 feutre	feutrer	VERB
 .	.	PUNCTsent
-ce	ce	DET
-feutre	feutre	NOUN
+ce	ce	PRON
+feutre	feutrer	VERB
 pouvait	pouvoir	VERB
 donc	donc	ADV
 se	se	PRON
@@ -284,7 +284,7 @@ de	de	ADP
 la	le	DET
 chaleur	chaleur	NOUN
 .	.	PUNCTsent
-or	or_CCONJ	CCONJ
+or	or	NOUN
 ,	,	PUNCTclause
 précisément	précisément	ADV
 ,	,	PUNCTclause
@@ -769,7 +769,7 @@ ou	ou	CCONJ
 des	un	DET
 couvertures	couverture	NOUN
 .	.	PUNCTsent
-ce	ce	DET
+ce	ce	PRON
 ne	ne	ADV
 était	être	AUX
 évidemment	évidemment	ADV
@@ -1027,7 +1027,7 @@ en	en	ADP
 sinistres	sinistre	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cyrus	Cyrus	PROPN
+Cyrus	Cyrus	NOUN
 Smith	Smith	PROPN
 causait	causer	VERB
 souvent	souvent	ADV
@@ -1187,7 +1187,7 @@ aventurer	aventurer	VERB
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-pour	pour	NOUN
+pour	pour	ADP
 savoir	savoir	VERB
 ce	ce	DET
 qui	qui	PRON
@@ -1277,7 +1277,7 @@ voyage	voyage	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Pencroff	Pencroff	PROPN
+Pencroff	Pencroff	NOUN
 ,	,	PUNCTclause
 répondit	répondre	VERB
 l'	le	DET
@@ -1341,7 +1341,7 @@ pas	pas	ADV
 ce	ce	DET
 chagrin	chagrin	NOUN
 .	.	PUNCTsent
-d'ailleurs	d'ailleurs	NOUN
+d'ailleurs	d'ailleurs	ADV
 ,	,	PUNCTclause
 nous	nous	PRON
 reparlerons	reparler	VERB
@@ -1438,7 +1438,7 @@ bateau	bateau	NOUN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-dites	dire	NOUN
+dites	dire	VERB
 au moins	au moins	ADV
 :	:	PUNCTclause
 notre	notre	DET
@@ -1659,7 +1659,7 @@ leurs	leur	DET
 semblables	semblable	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Gédéon	Gédéon	PROPN
+Gédéon	Gédéon	DET
 Spilett	Spilett	PROPN
 avait	avoir	AUX
 déjà	déjà	ADV
@@ -1796,7 +1796,7 @@ le	le	DET
 pacifique	pacifique	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Harbert	Harbert	PROPN
+Harbert	Harbert	NOUN
 aurait	avoir	AUX
 bien	bien	ADV
 voulu	vouloir	VERB
@@ -1943,7 +1943,7 @@ John	John	PROPN
 Benett	Benett	PROPN
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Gédéon	Gédéon	PROPN
+Gédéon	Gédéon	DET
 Spilett	Spilett	PROPN
 rédigea	rédiger	VERB
 donc	donc	ADV
@@ -2071,7 +2071,7 @@ Harbert	Harbert	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Bon	Bon	PROPN
+bon	bon	ADJ
 voyage	voyage	NOUN
 !	!	PUNCTsent
 »	»	PUNCTclause
@@ -2159,7 +2159,7 @@ ni	ni	CCONJ
 le	le	DET
 charbon	charbon	NOUN
 .	.	PUNCTsent
-Cyrus	Cyrus	PROPN
+Cyrus	Cyrus	NOUN
 Smith	Smith	PROPN
 avait	avoir	AUX
 installé	installer	VERB
@@ -2400,7 +2400,7 @@ tôt ou tard	tôt ou tard	ADV
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Arrêté	Arrêté	PROPN
+arrêté	arrêté	NOUN
 !	!	PUNCTsent
 et	et	CCONJ
 par	par	ADP
@@ -2498,7 +2498,7 @@ chaudières	chaudière	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-non	non	NOUN
+non	non	ADV
 ,	,	PUNCTclause
 mon	mon	DET
 ami	ami	NOUN
@@ -2765,7 +2765,7 @@ ami	ami	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	Et	PROPN
+et	et	CCONJ
 qu'est-ce que	qu'est-ce que	ADV
 on	on	PRON
 brûlera	brûler	VERB
@@ -3049,7 +3049,7 @@ marin	marin	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-tu	tu	NOUN
+tu	tu	PRON
 te	te	PRON
 es	être	AUX
 levé	lever	VERB
@@ -3149,7 +3149,7 @@ Pencroff	Pencroff	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Et	Et	PROPN
+et	et	CCONJ
 Jup	Jup	PROPN
 à	à	ADP
 grogner	grogner	VERB
@@ -3248,7 +3248,7 @@ explication	explication	NOUN
 à	à	ADP
 donner	donner	VERB
 …	…	PUNCTsent
-Allons	Allons	PROPN
+allons	aller	VERB
 ,	,	PUNCTclause
 silence	silence	NOUN
 ,	,	PUNCTclause
@@ -3282,7 +3282,7 @@ chien	chien	NOUN
 se	se	PRON
 turent	taire	VERB
 .	.	PUNCTsent
-Jup	Jup	PROPN
+Jup	Jup	ADV
 retourna	retourner	VERB
 se	se	PRON
 coucher	coucher	VERB
@@ -3832,7 +3832,7 @@ quartiers	quartier	NOUN
 de	de	ADP
 hiver	hiver	NOUN
 .	.	PUNCTsent
-Canards	Canards	PROPN
+canards	canard	NOUN
 sauvages	sauvage	ADJ
 ,	,	PUNCTclause
 bécassines	bécassine	NOUN
@@ -3925,9 +3925,9 @@ revenus	revenir	VERB
 le	le	DET
 soir	soir	NOUN
 .	.	PUNCTsent
-Top	Top	PROPN
+top	top	NOUN
 et	et	CCONJ
-Jup	Jup	PROPN
+Jup	Jup	VERB
 les	le	DET
 accompagnaient	accompagner	VERB
 .	.	PUNCTsent
@@ -3965,7 +3965,7 @@ voulait	vouloir	VERB
 seul	seul	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-or	or_CCONJ	CCONJ
+or	or	NOUN
 ,	,	PUNCTclause
 ce	ce	DET
 projet	projet	NOUN
@@ -4067,7 +4067,7 @@ avec	avec	ADP
 la	le	DET
 mer	mer	NOUN
 ?	?	PUNCTsent
-Se	Se	PROPN
+se	se	PRON
 ramifiait	ramifier	VERB
 il	il	PRON
 vers	vers	ADP
@@ -4077,7 +4077,7 @@ de	de	ADP
 l'	le	DET
 île	île	NOUN
 ?	?	PUNCTsent
-voilà	voilà	VERB
+voilà	voilà	ADP
 ce	ce	PRON
 que	que	PRON
 Cyrus	Cyrus	PROPN
@@ -4313,7 +4313,7 @@ ou	ou	CCONJ
 récente	récent	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Cyrus	Cyrus	PROPN
+Cyrus	Cyrus	NOUN
 Smith	Smith	PROPN
 descendit	descendre	VERB
 plus	plus	ADV
@@ -4360,7 +4360,7 @@ alors	alors	ADV
 parfaitement	parfaitement	ADV
 calme	calme	ADJ
 .	.	PUNCTsent
-Ni	Ni	PROPN
+ni	ni	CCONJ
 à	à	ADP
 son	son	DET
 niveau	niveau	NOUN
