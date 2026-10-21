@@ -108,7 +108,7 @@ def lexical_form(word):
 def load_dictionary(path):
     words = set()
 
-    with path.open(encoding="utf-8", newline="") as f:
+    with path.open(encoding="utf-8-sig", newline="") as f:
         reader = csv.DictReader(f)
 
         if "INFLECTED" not in reader.fieldnames:
@@ -135,7 +135,7 @@ def markdown_body(text):
     return text
 
 
-def markdown_files(paths):
+def input_files(paths):
     files = set()
     for raw_path in paths:
         pattern = str(raw_path)
@@ -152,12 +152,29 @@ def markdown_files(paths):
             matched = [raw_path]
 
         for path in matched:
-            if path.is_file() and path.suffix.lower() == ".md":
+            if path.is_file() and path.suffix.lower() in {".md", ".tsv"}:
                 files.add(path)
             elif path.is_dir():
-                files.update(path.rglob("*.md"))
+                files.update(
+                    p for p in path.rglob("*")
+                    if p.is_file() and p.suffix.lower() in {".md", ".tsv"}
+                )
 
     return sorted(files)
+
+
+def file_words(path):
+    if path.suffix.lower() == ".md":
+        text = normalize(markdown_body(path.read_text(encoding="utf-8-sig")))
+        yield from WORD_RE.findall(text)
+    else:
+        with path.open(encoding="utf-8-sig", newline="") as f:
+            for row in csv.reader(f, delimiter="\t"):
+                if not row or row[0].startswith("#"):
+                    continue
+                term = row[0]
+                if any(char.isalpha() for char in term):
+                    yield term
 
 
 def collect_words(files, progress):
@@ -167,12 +184,9 @@ def collect_words(files, progress):
     total = len(files)
 
     for n, path in enumerate(files, 1):
-        text = normalize(
-            markdown_body(path.read_text(encoding="utf-8"))
-        )
-
-        words = WORD_RE.findall(text)
-        frequencies.update(words)
+        is_tsv = path.suffix.lower() == ".tsv"
+        words = list(file_words(path))
+        frequencies.update((word, is_tsv) for word in words)
         token_count += len(words)
 
         if progress and (n % progress == 0 or n == total):
@@ -201,14 +215,11 @@ def collect_unknown(frequencies, dictionary):
         file=sys.stderr,
     )
 
-    for word, frequency in frequencies.items():
-        lexical = lexical_form(word)
+    for (word, is_tsv), frequency in frequencies.items():
+        lexical = word if is_tsv else lexical_form(word)
+        lookup = normalize(lexical)
 
-        if lexical in dictionary:
-            continue
-
-        lower = lexical.lower()
-        if lower in dictionary:
+        if lookup in dictionary or lookup.lower() in dictionary:
             continue
 
         unknown[lexical] += frequency
@@ -229,18 +240,19 @@ def write_frequencies(frequencies, output):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Collect unknown words from Markdown files."
+        description="Collect unknown words from Markdown and tokenized TSV files."
     )
     parser.add_argument(
-        "dictionary",
+        "-d",
+        "--dictionary",
         type=Path,
-        help="CSV dictionary containing an INFLECTED column",
+        help="CSV dictionary containing an INFLECTED column; default: word.csv beside this script",
     )
     parser.add_argument(
         "paths",
         nargs="+",
         type=Path,
-        help="Markdown files or directories",
+        help="Markdown/TSV files, globs, or directories",
     )
     parser.add_argument(
         "-o",
@@ -256,11 +268,18 @@ def main():
     )
     args = parser.parse_args()
 
-    dictionary = load_dictionary(args.dictionary)
-    files = markdown_files(args.paths)
+    # Accept the original syntax: unknowns.py dictionary.csv files...
+    if args.dictionary is None and args.paths[0].suffix.lower() == ".csv":
+        args.dictionary = args.paths.pop(0)
+        if not args.paths:
+            parser.error("At least one Markdown or TSV input path is required")
+
+    dictionary_path = args.dictionary or Path(__file__).resolve().with_name("word.csv")
+    dictionary = load_dictionary(dictionary_path)
+    files = input_files(args.paths)
 
     print(f"Dictionary: {len(dictionary):,} forms", file=sys.stderr)
-    print(f"Markdown: {len(files):,} files", file=sys.stderr)
+    print(f"Input: {len(files):,} files", file=sys.stderr)
 
     frequencies = collect_words(files, args.progress)
     unknown = collect_unknown(frequencies, dictionary)
@@ -271,6 +290,7 @@ def main():
     )
 
     if args.output:
+        args.output.parent.mkdir(parents=True, exist_ok=True)
         with args.output.open(
             "w",
             encoding="utf-8",
