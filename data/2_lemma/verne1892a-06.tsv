@@ -6,12 +6,12 @@
 # title = VI
 
 ↵↵	↵↵	PUNCTstruct
-VI	VI	ADJ
+VI	VI	NUM
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-le	le	DET
+Le	Le	PROPN
 mince	mince	ADJ
-croissant	croissant	NOUN
+croissant	croître	VERB
 de	de	ADP
 la	le	DET
 lune	lune	NOUN
@@ -33,7 +33,7 @@ coucher	coucher	NOUN
 du	du	ADP_DET
 soleil	soleil	NOUN
 .	.	PUNCTsent
-des	un	DET
+Des	Des	PROPN
 nuages	nuage	NOUN
 ,	,	PUNCTclause
 venus	venir	VERB
@@ -61,7 +61,7 @@ des	un	DET
 basses	bas	NOUN
 zones	zone	NOUN
 .	.	PUNCTsent
-le	le	DET
+Le	Le	PROPN
 cirque	cirque	NOUN
 de	de	ADP
 montagnes	montagne	NOUN
@@ -144,7 +144,7 @@ plateau	plateau	NOUN
 de	de	ADP
 Orgall	Orgall	PROPN
 .	.	PUNCTsent
-çà	çà	ADV
+Çà	Çà	PROPN
 et	et	CCONJ
 là	là	ADV
 seulement	seulement	ADV
@@ -165,7 +165,7 @@ les	le	DET
 fraîcheurs	fraîcheur	NOUN
 nocturnes	nocturne	ADJ
 .	.	PUNCTsent
-des	un	ADP_DET
+Des	Des	PROPN
 roches	roche	NOUN
 tant	tant	ADV
 que	que	SCONJ
@@ -261,8 +261,8 @@ transylvains	transylvain	NOUN
 »	»	PUNCTclause
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-a	avoir	AUX
-présent	présent	ADJ
+a	avoir	ADP
+présent	présent	NOUN
 ,	,	PUNCTclause
 il	il	PRON
 se	se	PRON
@@ -356,7 +356,7 @@ me	me	PRON
 guérir	guérir	VERB
 !	!	PUNCTsent
 »	»	PUNCTclause
-aveu	aveu	NOUN
+Aveu	Aveu	PROPN
 dépouillé	dépouiller	VERB
 de	de	ADP
 artifice	artifice	NOUN
@@ -588,7 +588,7 @@ en	en	ADP
 poussière	poussière	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-a	avoir	AUX
+a	avoir	ADP
 l'	le	DET
 extrémité	extrémité	NOUN
 du	du	ADP_DET
@@ -671,7 +671,7 @@ croire	croire	VERB
 au	au	ADP_DET
 diable	diable	NOUN
 .	.	PUNCTsent
-or	or	NOUN
+or	or_CCONJ	CCONJ
 ,	,	PUNCTclause
 dans	dans	ADP
 sa	son	DET
@@ -765,7 +765,7 @@ frissonnait	frissonner	VERB
 de	de	ADP
 terreur	terreur	NOUN
 .	.	PUNCTsent
-non	non	ADV
+Non	Non	PROPN
 !	!	PUNCTsent
 ce	ce	PRON
 était	être	AUX
@@ -838,7 +838,7 @@ coucher	coucher	NOUN
 du	du	ADP_DET
 soleil	soleil	NOUN
 .	.	PUNCTsent
-le	le	DET
+Le	Le	PROPN
 mardi	mardi	NOUN
 ,	,	PUNCTclause
 on	on	PRON
@@ -850,7 +850,7 @@ jour	jour	NOUN
 de	de	ADP
 maléfices	maléfice	NOUN
 .	.	PUNCTsent
-a	avoir	AUX
+a	avoir	ADP
 se	se	PRON
 en	en	ADP
 rapporter	rapporter	VERB
@@ -1089,20 +1089,20 @@ roche	roche	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-dormir	dormir	VERB
+Dormir	Dormir	PROPN
 ,	,	PUNCTclause
 forestier	forestier	ADJ
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-bonne	bon	ADJ
-nuit	nuit	NOUN
+Bonne	Bonne	PROPN
+nuit	nuire	VERB
 ,	,	PUNCTclause
 docteur	docteur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-bonne	bon	ADJ
+Bonne	Bonne	PROPN
 nuit	nuit	NOUN
 ,	,	PUNCTclause
 ce	ce	PRON
@@ -1123,7 +1123,7 @@ mal	mal	ADV
 …	…	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-nie	nier	VERB
+Nie	Nie	PROPN
 Deck	Deck	PROPN
 ,	,	PUNCTclause
 ne	ne	ADV
@@ -1533,7 +1533,7 @@ il	il	PRON
 donc	donc	ADV
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-le	le	DET
+Le	Le	PROPN
 docteur	docteur	NOUN
 venait	venir	VERB
 de	de	ADP
@@ -1688,7 +1688,7 @@ oreille	oreille	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-la	le	DET
+La	La	PROPN
 cloche	cloche	NOUN
 …	…	PUNCTsent
 murmure	murmure	NOUN
@@ -1743,7 +1743,7 @@ sont	être	AUX
 plus	plus	ADV
 précipités	précipité	ADJ
 …	…	PUNCTsent
-la	le	DET
+La	La	PROPN
 main	main	NOUN
 qui	qui	PRON
 la	le_PRON	PRON
@@ -1758,7 +1758,7 @@ glas	glas	NOUN
 de	de	ADP
 mort	mort	NOUN
 !	!	PUNCTsent
-non	non	ADV
+Non	Non	PROPN
 !	!	PUNCTsent
 ce	ce	PRON
 est	être	AUX
@@ -1849,7 +1849,7 @@ en	en	ADP
 lui-même	lui-même	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Nic	Nic	X
+Nic	Nic	PROPN
 Deck	Deck	PROPN
 tend	tendre	VERB
 l'	le	DET
@@ -1910,8 +1910,8 @@ absolument	absolument	ADV
 affolé	affoler	VERB
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-le	le	DET
-forestier	forestier	NOUN
+Le	Le	PROPN
+forestier	forestier	ADJ
 ,	,	PUNCTclause
 immobile	immobile	ADJ
 ,	,	PUNCTclause
@@ -1922,7 +1922,7 @@ pas	pas	ADV
 répondu	répondre	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-soudain	soudain	ADJ
+Soudain	Soudain	PROPN
 ,	,	PUNCTclause
 des	un	DET
 rugissements	rugissement	NOUN
@@ -2012,7 +2012,7 @@ plateau	plateau	NOUN
 de	de	ADP
 Orgall	Orgall	PROPN
 ?	?	PUNCTsent
-de	de	ADP
+De	De	PROPN
 quelle	quel	DET
 fournaise	fournaise	NOUN
 se	se	PRON
@@ -2038,9 +2038,9 @@ lividité	lividité	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-Nic	Nic	X
+Nic	Nic	PROPN
 …	…	PUNCTsent
-Nic	Nic	X
+Nic	Nic	PROPN
 …	…	PUNCTsent
 se	se	PRON
 écrie	écrier	VERB
@@ -2108,7 +2108,7 @@ des	un	ADP_DET
 pendus	pendu	NOUN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Nic	Nic	X
+Nic	Nic	PROPN
 Deck	Deck	PROPN
 est	être	AUX
 stupéfié	stupéfier	VERB
@@ -2125,7 +2125,7 @@ que	que	SCONJ
 il	il	PRON
 entend	entendre	VERB
 .	.	PUNCTsent
-le	le	DET
+Le	Le	PROPN
 docteur	docteur	NOUN
 Patak	Patak	PROPN
 ,	,	PUNCTclause
@@ -2215,7 +2215,7 @@ l'	le	DET
 obscurité	obscurité	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-ni	ni	CCONJ
+Ni	Ni	PROPN
 l'un	l'un	PRON
 ni	ni	CCONJ
 l'autre	l'autre	PRON
@@ -2251,7 +2251,7 @@ l'	le	DET
 aube	aube	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-a	avoir	AUX
+a	avoir	ADP
 quoi	quoi	PRON
 songeait	songer	VERB
 Nic	Nic	PROPN
@@ -2367,7 +2367,7 @@ diabolique	diabolique	ADJ
 château	château	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-tout	tout	PRON
+tout	tout	ADJ
 à	à	ADP
 coup	coup	NOUN
 ,	,	PUNCTclause
@@ -2397,12 +2397,12 @@ sourde	sourd	ADJ
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-viens	venir	VERB
+Viens	Viens	PROPN
 !…	!…	PUNCTsent
-viens	venir	VERB
+Viens	Viens	PROPN
 !…	!…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-non	non	ADV
+Non	Non	PROPN
 !	!	PUNCTsent
 »	»	PUNCTclause
 répond	répondre	VERB
@@ -2484,7 +2484,7 @@ du	du	ADP_DET
 matin	matin	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-a	avoir	VERB
+a	avoir	ADP
 cet	ce	DET
 instant	instant	NOUN
 ,	,	PUNCTclause
@@ -2516,7 +2516,7 @@ des	un	ADP_DET
 deux	deux	NUM
 sils	sil	PROPN
 .	.	PUNCTsent
-de	de	ADP
+De	De	PROPN
 légères	léger	ADJ
 blancheurs	blancheur	NOUN
 se	se	PRON
@@ -2536,7 +2536,7 @@ de	de	ADP
 zèbre	zèbre	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Nic	Nic	X
+Nic	Nic	PROPN
 Deck	Deck	PROPN
 se	se	PRON
 tourna	tourner	VERB
@@ -2613,7 +2613,7 @@ ordinaire	ordinaire	ADJ
 du	du	ADP_DET
 burg	burg	NOUN
 .	.	PUNCTsent
-la	le	DET
+La	La	PROPN
 cloche	cloche	NOUN
 était	être	AUX
 aussi	aussi	ADV
@@ -2658,7 +2658,7 @@ cris	cri	NOUN
 clairs	clair	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Nic	Nic	X
+Nic	Nic	PROPN
 Deck	Deck	PROPN
 tourna	tourner	VERB
 son	son	DET
@@ -2670,7 +2670,7 @@ principale	principal	ADJ
 du	du	ADP_DET
 château	château	NOUN
 .	.	PUNCTsent
-le	le	DET
+Le	Le	PROPN
 pont-levis	pont-levis	NOUN
 ,	,	PUNCTclause
 relevé	relever	VERB
@@ -2696,8 +2696,8 @@ de	de	ADP
 Gortz	Gortz	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-le	le	DET
-forestier	forestier	NOUN
+Le	Le	PROPN
+forestier	forestier	ADJ
 était	être	AUX
 il	il	PRON
 donc	donc	ADV
@@ -2741,7 +2741,7 @@ comme	comme	SCONJ
 on	on	PRON
 sait	savoir	VERB
 .	.	PUNCTsent
-ni	ni	CCONJ
+Ni	Ni	PROPN
 la	le	DET
 voix	voix	NOUN
 mystérieuse	mystérieux	ADJ
@@ -2864,7 +2864,7 @@ de	de	ADP
 se	se	PRON
 relever	relever	VERB
 .	.	PUNCTsent
-les	le	DET
+Les	Les	PROPN
 épouvantements	épouvantement	NOUN
 de	de	ADP
 cette	ce	DET
@@ -2897,7 +2897,7 @@ dit	dire	VERB
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-allons	aller	VERB
+Allons	Allons	PROPN
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
@@ -3027,7 +3027,7 @@ préalablement	préalablement	ADV
 reconnaître	reconnaître	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-la	le	DET
+La	La	PROPN
 courtine	courtine	NOUN
 ne	ne	ADV
 présentait	présenter	VERB
@@ -3160,7 +3160,7 @@ de	de	ADP
 une	un	DET
 couleuvrine	couleuvrine	NOUN
 .	.	PUNCTsent
-or	or	NOUN
+or	or_CCONJ	CCONJ
 ,	,	PUNCTclause
 en	en	ADP
 se	se	PRON
@@ -3234,8 +3234,8 @@ du	du	ADP_DET
 burg	burg	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-le	le	DET
-forestier	forestier	NOUN
+Le	Le	PROPN
+forestier	forestier	ADJ
 comprit	comprendre	VERB
 ,	,	PUNCTclause
 à	à	ADP
@@ -3358,7 +3358,7 @@ de	de	ADP
 franchir	franchir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Nic	Nic	X
+Nic	Nic	PROPN
 Deck	Deck	PROPN
 ,	,	PUNCTclause
 ne	ne	ADV
@@ -3598,16 +3598,16 @@ peur	peur	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-arrête	arrêter	VERB
+Arrête	Arrête	PROPN
 …	…	PUNCTsent
-Nic	Nic	X
+Nic	Nic	PROPN
 …	…	PUNCTsent
 arrête	arrêter	VERB
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-le	le	DET
-forestier	forestier	NOUN
+Le	Le	PROPN
+forestier	forestier	ADJ
 ne	ne	ADV
 l'	le	DET
 écouta	écouter	VERB
@@ -3615,7 +3615,7 @@ point	point	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-viens	venir	VERB
+Viens	Viens	PROPN
 …	…	PUNCTsent
 viens	venir	VERB
 …	…	PUNCTsent
@@ -3640,7 +3640,7 @@ pieds	pied	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-Va-t'en	Va-t'en	NOUN
+Va-t'en	Va-t'en	PROPN
 !	!	PUNCTsent
 »	»	PUNCTclause
 répondit	répondre	VERB
@@ -3662,7 +3662,7 @@ du	du	ADP_DET
 pont-levis	pont-levis	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-le	le	DET
+Le	Le	PROPN
 docteur	docteur	NOUN
 Patak	Patak	PROPN
 ,	,	PUNCTclause
@@ -3703,7 +3703,7 @@ de	de	ADP
 Werst	Werst	PROPN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-O	O	DET
+O	O	X
 prodige	prodige	NOUN
 ,	,	PUNCTclause
 devant	devant	ADP
@@ -3743,7 +3743,7 @@ de	de	ADP
 un	un	DET
 étau	étau	NOUN
 …	…	PUNCTsent
-peut	pouvoir	VERB
+peut	pouvoir	ADV
 il	il	PRON
 les	le_PRON	PRON
 déplacer	déplacer	VERB
@@ -3751,7 +3751,7 @@ l'un	l'un	PRON
 après	après	ADP
 l'autre	l'autre	PRON
 ?…	?…	PUNCTsent
-non	non	ADV
+Non	Non	PROPN
 !…	!…	PUNCTsent
 ils	ils	PRON
 adhèrent	adhérer	VERB
@@ -3765,7 +3765,7 @@ de	de	ADP
 leurs	leur	DET
 bottes	botte	NOUN
 …	…	PUNCTsent
-le	le	DET
+Le	Le	PROPN
 docteur	docteur	NOUN
 se	se	PRON
 est	être	AUX
@@ -3937,7 +3937,7 @@ du	du	ADP_DET
 fossé	fossé	NOUN
 .	.	PUNCTsent
 «	«	PUNCTclause
-la	le	DET
+La	La	PROPN
 voix	voix	NOUN
 avait	avoir	AUX
 bien	bien	ADV

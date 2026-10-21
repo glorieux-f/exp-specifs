@@ -6,7 +6,7 @@
 # title = VI
 
 ↵↵	↵↵	PUNCTstruct
-VI	VI	ADJ
+VI	VI	NUM
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 pendant	pendant	ADP
@@ -73,7 +73,7 @@ cèdent	céder	VERB
 au	au	ADP_DET
 diable	diable	NOUN
 ?	?	PUNCTsent
-les	le	DET
+Les	Les	PROPN
 mots	mot	NOUN
 ,	,	PUNCTclause
 murmurés	murmurer	VERB
@@ -431,7 +431,7 @@ pensait	penser	VERB
 à	à	ADP
 rien	rien	PRON
 .	.	PUNCTsent
-assise	asseoir	VERB
+assise	assise	NOUN
 devant	devant	ADP
 son	son	DET
 métier	métier	NOUN
@@ -459,7 +459,7 @@ matin	matin	NOUN
 au	au	ADP_DET
 soir	soir	NOUN
 .	.	PUNCTsent
-être	être	AUX
+être	être	VERB
 aimée	aimer	VERB
 ,	,	PUNCTclause
 être	être	AUX
@@ -475,7 +475,7 @@ tour	tour	NOUN
 aimait	aimer	VERB
 elle	elle	PRON
 ?	?	PUNCTsent
-question	question	NOUN
+question	question	DET
 obscure	obscur	ADJ
 encore	encore	ADV
 ,	,	PUNCTclause
@@ -618,7 +618,7 @@ examinait	examiner	VERB
 inquiète	inquiéter	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-d'ailleurs	d'ailleurs	ADV
+d'ailleurs	d'ailleurs	DET
 ,	,	PUNCTclause
 Angélique	Angélique	PROPN
 avait	avoir	AUX
@@ -753,7 +753,7 @@ au	au	ADP_DET
 lendemain	lendemain	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-or	or	NOUN
+or	or_CCONJ	CCONJ
 ,	,	PUNCTclause
 un	un	DET
 matin	matin	NOUN
@@ -893,7 +893,7 @@ pas	pas	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-tiens	tien	NOUN
+Tiens	Tiens	PROPN
 !	!	PUNCTsent
 mon	mon	DET
 enfant	enfant	NOUN
@@ -947,7 +947,7 @@ votre	votre	DET
 dessin	dessin	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-ni	ni	CCONJ
+Ni	Ni	PROPN
 lui	lui	PRON
 ,	,	PUNCTclause
 ni	ni	CCONJ
@@ -1072,7 +1072,7 @@ mitre	mitre	NOUN
 gothique	gothique	ADJ
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-angélique	angélique	ADJ
+Angélique	Angélique	PROPN
 ,	,	PUNCTclause
 penchée	pencher	VERB
 sur	sur	ADP
@@ -1215,7 +1215,7 @@ fin	fin	NOUN
 se	se	PRON
 étendait	étendre	VERB
 .	.	PUNCTsent
-le	le	DET
+Le	Le	PROPN
 revers	revers	NOUN
 et	et	CCONJ
 les	le	DET
@@ -1269,8 +1269,8 @@ interrompit	interrompre	VERB
 Hubert	Hubert	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Hubertine	Hubertine	DET
-dit	dit	NOUN
+Hubertine	Hubertine	PROPN
+dit	dire	VERB
 à	à	ADP
 son	son	DET
 tour	tour	NOUN
@@ -1283,7 +1283,7 @@ très	très	ADV
 touché	toucher	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-la	le	DET
+La	La	PROPN
 procession	procession	NOUN
 du	du	ADP_DET
 miracle	miracle	NOUN
@@ -1332,7 +1332,7 @@ de	de	ADP
 la	le	DET
 peste	peste	NOUN
 .	.	PUNCTsent
-la	le	DET
+La	La	PROPN
 légende	légende	NOUN
 contait	conter	VERB
 que	que	SCONJ
@@ -1410,7 +1410,7 @@ miracle	miracle	NOUN
 ,	,	PUNCTclause
 murmura	murmurer	VERB
 enfin	enfin	ADV
-Angélique	Angélique	ADJ
+Angélique	Angélique	PROPN
 les	le	DET
 yeux	œil	NOUN
 sur	sur	ADP
@@ -1432,7 +1432,7 @@ le	le	DET
 temps	temps	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-les	le	DET
+Les	Les	PROPN
 Hubert	Hubert	PROPN
 hochèrent	hocher	VERB
 la	le	DET
@@ -1448,7 +1448,7 @@ des	un	ADP_DET
 soins	soin	NOUN
 infinis	infini	ADJ
 .	.	PUNCTsent
-Hubertine	Hubertine	ADJ
+Hubertine	Hubertine	PROPN
 ,	,	PUNCTclause
 cependant	cependant	ADV
 ,	,	PUNCTclause
@@ -1483,7 +1483,7 @@ la	le	DET
 figure	figure	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-angélique	angélique	ADJ
+Angélique	Angélique	PROPN
 examinait	examiner	VERB
 toujours	toujours	ADV
 la	le	DET
@@ -1493,7 +1493,7 @@ dans	dans	ADP
 son	son	DET
 trouble	trouble	NOUN
 .	.	PUNCTsent
-non	non	ADV
+Non	Non	PROPN
 ,	,	PUNCTclause
 non	non	ADV
 !	!	PUNCTsent
@@ -1599,7 +1599,7 @@ rêve	rêve	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-non	non	ADV
+Non	Non	PROPN
 ,	,	PUNCTclause
 répéta	répéter	VERB
 elle	elle	PRON
@@ -1662,7 +1662,7 @@ nué	nué	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-justement	justement	ADV
+justement	justement	NOUN
 ,	,	PUNCTclause
 dit	dire	VERB
 Félicien	Félicien	PROPN
@@ -1696,7 +1696,7 @@ la	le	DET
 sacristie	sacristie	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Hubert	Hubert	VERB
+Hubert	Hubert	PROPN
 se	se	PRON
 passionna	passionner	VERB
 .	.	PUNCTsent
@@ -1722,7 +1722,7 @@ de	de	ADP
 mes	mon	DET
 arrière-grand-mères	arrière-grand-mère	NOUN
 …	…	PUNCTsent
-de	de	ADP
+De	De	PROPN
 l'	le	DET
 or	or	NOUN
 nué	nué	ADJ
@@ -1759,7 +1759,7 @@ de	de	ADP
 vraies	vrai	ADJ
 artistes	artiste	NOUN
 .	.	PUNCTsent
-voici	voici	ADP
+voici	voici	VERB
 deux	deux	NUM
 cents	cents	NUM
 ans	an	NOUN
@@ -1811,7 +1811,7 @@ la	le	DET
 main	main	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Hubertine	Hubertine	ADJ
+Hubertine	Hubertine	PROPN
 ,	,	PUNCTclause
 depuis	depuis	ADP
 que	que	SCONJ
@@ -1833,7 +1833,7 @@ convaincue	convaincre	VERB
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-en	en	PRON
+en	en	NOUN
 vingt	vingt	NUM
 jours	jour	NOUN
 ,	,	PUNCTclause
@@ -1874,7 +1874,7 @@ joie	joie	NOUN
 son	son	DET
 cœur	cœur	NOUN
 .	.	PUNCTsent
-Agnès	Agnès	VERB
+Agnès	Agnès	PROPN
 lui	lui	PRON
 ressemblait	ressembler	VERB
 .	.	PUNCTsent
@@ -1987,7 +1987,7 @@ pour	pour	ADP
 personne	personne_PRON	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Félicien	Félicien	ADJ
+Félicien	Félicien	PROPN
 eut	avoir	VERB
 un	un	DET
 geste	geste	NOUN
@@ -2056,7 +2056,7 @@ chiffre	chiffre	NOUN
 l'	le	DET
 émotionna	émotionner	NOUN
 .	.	PUNCTsent
-le	le	DET
+Le	Le	PROPN
 mari	mari	NOUN
 avait	avoir	AUX
 regardé	regarder	VERB
@@ -2185,7 +2185,7 @@ les	le	DET
 nuits	nuit	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Hubert	Hubert	VERB
+Hubert	Hubert	PROPN
 et	et	CCONJ
 Hubertine	Hubertine	PROPN
 ,	,	PUNCTclause
@@ -2208,7 +2208,7 @@ trop	trop	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-non	non	ADV
+Non	Non	PROPN
 ,	,	PUNCTclause
 non	non	ADV
 ,	,	PUNCTclause
@@ -2238,7 +2238,7 @@ la	le	DET
 procession	procession	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Félicien	Félicien	NOUN
+Félicien	Félicien	PROPN
 laissa	laisser	VERB
 le	le	DET
 dessin	dessin	NOUN
@@ -2297,7 +2297,7 @@ bon	bon	ADJ
 à	à	ADP
 prendre	prendre	VERB
 .	.	PUNCTsent
-d'abord	d'abord	ADV
+D'abord	D'abord	PROPN
 ,	,	PUNCTclause
 il	il	PRON
 se	se	PRON
@@ -2502,7 +2502,7 @@ l'	le	DET
 avait	avoir	AUX
 point	point	ADV
 .	.	PUNCTsent
-le	le	DET
+Le	Le	PROPN
 troisième	troisième	ADJ
 jour	jour	NOUN
 ,	,	PUNCTclause
@@ -2620,7 +2620,7 @@ ne	ne	ADV
 dérange	déranger	VERB
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-angélique	angélique	ADJ
+Angélique	Angélique	PROPN
 ,	,	PUNCTclause
 en	en	ADP
 le	le_PRON	PRON
@@ -2695,7 +2695,7 @@ devant	devant	ADP
 le	le	DET
 monde	monde	NOUN
 …	…	PUNCTsent
-le	le	DET
+Le	Le	PROPN
 dessin	dessin	NOUN
 est	être	AUX
 de	de	ADP
@@ -2766,7 +2766,7 @@ de	de	ADP
 la	le	DET
 mitre	mitre	NOUN
 .	.	PUNCTsent
-de	de	ADP
+De	De	PROPN
 son	son	DET
 côté	côté	NOUN
 ,	,	PUNCTclause
@@ -2976,7 +2976,7 @@ or	or	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-mademoiselle	mademoiselle	NOUN
+Mademoiselle	Mademoiselle	PROPN
 ,	,	PUNCTclause
 je	je	PRON
 voulais	vouloir	VERB
@@ -3021,8 +3021,8 @@ levé	lever	VERB
 la	le	DET
 tête	tête	NOUN
 .	.	PUNCTsent
-le	le	DET
-rire	rire	NOUN
+Le	Le	PROPN
+rire	rire	VERB
 de	de	ADP
 ses	son	DET
 yeux	œil	NOUN
@@ -3382,7 +3382,7 @@ de	de	ADP
 haut	haut	NOUN
 …	…	PUNCTsent
 »	»	PUNCTclause
-tu	tu	PRON
+Tu	Tu	PROPN
 aurais	avoir	AUX
 été	être	AUX
 reçue	recevoir	VERB
@@ -3465,7 +3465,7 @@ forêts	forêt	NOUN
 de	de	ADP
 automne	automne	NOUN
 .	.	PUNCTsent
-Agnès	Agnès	NOUN
+Agnès	Agnès	PROPN
 ,	,	PUNCTclause
 du	du	ADP_DET
 col	col	NOUN
@@ -3483,7 +3483,7 @@ cheveux	cheveu	NOUN
 de	de	ADP
 or	or	NOUN
 .	.	PUNCTsent
-le	le	DET
+Le	Le	PROPN
 flot	flot	NOUN
 partait	partir	VERB
 de	de	ADP
@@ -3601,7 +3601,7 @@ coup	coup	NOUN
 le	le	DET
 troublaient	troubler	VERB
 .	.	PUNCTsent
-Hubertine	Hubertine	ADJ
+Hubertine	Hubertine	PROPN
 ,	,	PUNCTclause
 en train de	en train de	ADV
 coudre	coudre	VERB
@@ -3644,7 +3644,7 @@ paillette	paillette	NOUN
 mal	mal	ADV
 faite	faire	VERB
 .	.	PUNCTsent
-Hubert	Hubert	NOUN
+Hubert	Hubert	PROPN
 ,	,	PUNCTclause
 qui	qui	PRON
 avait	avoir	AUX
@@ -3736,7 +3736,7 @@ mes	mon	DET
 indications	indication	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-angélique	angélique	ADJ
+Angélique	Angélique	PROPN
 posa	poser	VERB
 sur	sur	ADP
 les siens	les siens	PRON
@@ -3749,7 +3749,7 @@ tranquillement	tranquillement	ADV
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-non	non	ADV
+Non	Non	PROPN
 ,	,	PUNCTclause
 non	non	ADV
 …	…	PUNCTsent
@@ -3823,7 +3823,7 @@ rue	rue	NOUN
 des	un	ADP_DET
 orfèvres	orfèvre	PROPN
 .	.	PUNCTsent
-les	le	DET
+Les	Les	PROPN
 heures	heure	NOUN
 que	que	SCONJ
 il	il	PRON
@@ -4241,7 +4241,7 @@ sur	sur	ADP
 ses	son	DET
 genoux	genou	NOUN
 .	.	PUNCTsent
-d'autres	d'autre	PRON
+d'autres	d'autre	DET
 ,	,	PUNCTclause
 d'autres	d'autre	PRON
 merveilles	merveille	NOUN
@@ -4377,7 +4377,7 @@ passion	passion	NOUN
 de	de	ADP
 artiste	artiste	NOUN
 .	.	PUNCTsent
-jamais	jamais	ADV
+jamais	jamais	DET
 elle	elle	PRON
 ne	ne	ADV
 lui	lui	PRON
@@ -4475,7 +4475,7 @@ fâchée	fâcher	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-bon	bon	ADJ
+Bon	Bon	PROPN
 !	!	PUNCTsent
 voilà	voilà	ADP
 encore	encore	ADV
@@ -4493,7 +4493,7 @@ donc	donc	ADV
 pas	pas	ADV
 !	!	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Hubertine	Hubertine	ADJ
+Hubertine	Hubertine	PROPN
 ,	,	PUNCTclause
 qui	qui	PRON
 ne	ne	ADV
@@ -4575,7 +4575,7 @@ son	son	DET
 air	air	NOUN
 sage	sage	ADJ
 .	.	PUNCTsent
-d'ailleurs	d'ailleurs	ADV
+d'ailleurs	d'ailleurs	DET
 ,	,	PUNCTclause
 elle-même	elle-même	PRON
 ,	,	PUNCTclause
@@ -4734,7 +4734,7 @@ familière	familier	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-le	le_PRON	PRON
+Le	Le	PROPN
 front	front	NOUN
 très	très	ADV
 haut	haut	ADJ
@@ -4767,7 +4767,7 @@ temps	temps	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-passez	passer	VERB
+Passez	Passez	PROPN
 moi	moi	PRON
 la	le	DET
 soie	soie	NOUN
@@ -4775,7 +4775,7 @@ blanche	blanc	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-attendez	attendre	VERB
+attendez	attendre	INTJ
 ,	,	PUNCTclause
 je	je	PRON
 vais	aller	VERB
@@ -5189,7 +5189,7 @@ son	son	DET
 le	le	DET
 criait	crier	VERB
 .	.	PUNCTsent
-la	le	DET
+La	La	PROPN
 clarté	clarté	NOUN
 se	se	PRON
 était	être	AUX
@@ -5326,7 +5326,7 @@ et	et	CCONJ
 doux	doux	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-le	le	DET
+Le	Le	PROPN
 lendemain	lendemain	NOUN
 ,	,	PUNCTclause
 Angélique	Angélique	PROPN
@@ -5492,7 +5492,7 @@ se	se	PRON
 approché	approcher	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Hubertine	Hubertine	ADJ
+Hubertine	Hubertine	PROPN
 se	se	PRON
 contentait	contenter	VERB
 de	de	ADP
@@ -5601,7 +5601,7 @@ même	même	ADJ
 prix	prix	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-saisi	saisir	VERB
+Saisi	Saisi	PROPN
 ,	,	PUNCTclause
 Félicien	Félicien	PROPN
 l'	le_PRON	PRON
@@ -5710,7 +5710,7 @@ pâlirent	pâlir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-mademoiselle	mademoiselle	NOUN
+Mademoiselle	Mademoiselle	PROPN
 ,	,	PUNCTclause
 n'est-ce pas	n'est-ce pas	ADV
 vous	vous	PRON
@@ -5721,7 +5721,7 @@ mitre	mitre	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-non	non	ADV
+Non	Non	PROPN
 ,	,	PUNCTclause
 mère	mère	NOUN
 fera	faire	VERB
@@ -5882,8 +5882,8 @@ dut	devoir	VERB
 partir	partir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-la	le	DET
-porte	porte	NOUN
+La	La	PROPN
+porte	porter	VERB
 à peine	à peine	ADV
 refermée	refermer	VERB
 ,	,	PUNCTclause
@@ -5900,7 +5900,7 @@ donc	donc	ADV
 mon	mon	DET
 enfant	enfant	NOUN
 ?	?	PUNCTsent
-es	être	AUX
+es	être	X
 tu	tu	PRON
 souffrante	souffrant	ADJ
 ?	?	PUNCTsent
@@ -5952,7 +5952,7 @@ de	de	ADP
 polie	polir	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-angélique	angélique	ADJ
+Angélique	Angélique	PROPN
 ,	,	PUNCTclause
 sous	sous	ADP
 un	un	DET

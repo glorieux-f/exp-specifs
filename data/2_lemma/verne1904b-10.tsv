@@ -6,13 +6,13 @@
 # title = X. Hors la loi
 
 ↵↵	↵↵	PUNCTstruct
-X.	X.	PUNCT
+X.	X.	VERB
 hors	hors	ADP
 la	le	DET
 loi	loi	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-telle	tel	DET
+telle	tel	PRON
 était	être	AUX
 la	le	DET
 lettre	lettre	NOUN
@@ -166,7 +166,7 @@ la	le	DET
 première	premier	ADJ
 heure	heure	NOUN
 .	.	PUNCTsent
-or	or	NOUN
+or	or_CCONJ	CCONJ
 ,	,	PUNCTclause
 il	il	PRON
 ne	ne	ADV
@@ -200,7 +200,7 @@ plaisant	plaire	VERB
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-non	non	ADV
+Non	Non	PROPN
 ,	,	PUNCTclause
 cette	ce	DET
 impression	impression	NOUN
@@ -238,7 +238,7 @@ dans	dans	ADP
 mon	mon	DET
 esprit	esprit	NOUN
 ?...	?...	PUNCTsent
-le	le	DET
+Le	Le	PROPN
 raisonnement	raisonnement	NOUN
 ne	ne	ADV
 l'	le_PRON	PRON
@@ -274,7 +274,7 @@ que	que	PRON
 penser	penser	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-d'ailleurs	d'ailleurs	ADV
+d'ailleurs	d'ailleurs	NOUN
 ,	,	PUNCTclause
 ce	ce	PRON
 ne	ne	ADV
@@ -295,7 +295,7 @@ aucune	aucun	DET
 partie	partie	NOUN
 de	de	ADP
 l'	le	DET
-Union	Union	NOUN
+Union	Union	PROPN
 .	.	PUNCTsent
 effet	effet	NOUN
 très	très	ADV
@@ -883,7 +883,7 @@ conditions	condition	NOUN
 moins	moins	ADV
 incertaines	incertain	ADJ
 ?...	?...	PUNCTsent
-pourrions	pouvoir	VERB
+pourrions	pouvoir	ADP
 nous	nous	PRON
 lancer	lancer	VERB
 nos	nos	DET
@@ -1015,7 +1015,7 @@ le	le	DET
 bureau	bureau	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-M.	M.	PUNCT
+M.	M.	NOUN
 Ward	Ward	PROPN
 avait	avoir	AUX
 précisément	précisément	ADV
@@ -1061,7 +1061,7 @@ Strock	Strock	PROPN
 ?...	?...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-jugez	juger	VERB
+Jugez	Jugez	PROPN
 en	en	PRON
 ,	,	PUNCTclause
 monsieur	monsieur	NOUN
@@ -1081,9 +1081,9 @@ aux	au	ADP_DET
 initiales	initial	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-M.	M.	PUNCT
+M.	M.	NOUN
 Ward	Ward	PROPN
-la	le_PRON	PRON
+la	le	DET
 prit	prendre	VERB
 ,	,	PUNCTclause
 il	il	PRON
@@ -1123,7 +1123,7 @@ voir	voir	VERB
 ...	...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-et	et	CCONJ
+Et	Et	PROPN
 où	où	PRON
 avait	avoir	AUX
 elle	elle	PRON
@@ -1144,7 +1144,7 @@ dans	dans	ADP
 la	le	DET
 Caroline	Caroline	PROPN
 du	du	ADP_DET
-Nord	Nord	NOUN
+Nord	Nord	PROPN
 ...	...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
@@ -1156,7 +1156,7 @@ reçue	recevoir	VERB
 ?...	?...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-le	le_PRON	PRON
+Le	Le	PROPN
 13	13	NUM
 juin	juin	NOUN
 dernier	dernier	ADJ
@@ -1189,11 +1189,11 @@ plaisant	plaire	VERB
 ...	...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-et	et	CCONJ
+Et	Et	PROPN
 ...	...	PUNCTsent
 aujourd'hui	aujourd'hui	ADV
 ...	...	PUNCTsent
-Strock	Strock	NOUN
+Strock	Strock	PROPN
 ?...	?...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
@@ -1269,7 +1269,7 @@ fac-similé	fac-similé	NOUN
 ...	...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-dont	dont	PRON
+Dont	Dont	PROPN
 voici	voici	ADP
 l'	le	DET
 original	original	NOUN
@@ -1302,7 +1302,7 @@ main	main	NOUN
 ...	...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-de	de	ADP
+De	De	PROPN
 la	le	DET
 même	même	ADJ
 main	main	NOUN
@@ -1337,7 +1337,7 @@ Great-Eyry	Great-Eyry	PROPN
 ...	...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-oui	oui	INTJ
+Oui	Oui	PROPN
 ...	...	PUNCTsent
 des	un	ADP_DET
 menaces	menace	NOUN
@@ -1405,8 +1405,8 @@ approuve	approuver	VERB
 ,	,	PUNCTclause
 Strock	Strock	PROPN
 ...	...	PUNCTsent
-le	le	DET
-fait	fait	NOUN
+Le	Le	PROPN
+fait	faire	VERB
 me	me	PRON
 paraît	paraître	VERB
 grave	grave	ADJ
@@ -1507,7 +1507,7 @@ impossible	impossible	ADJ
 ...	...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-et	et	CCONJ
+Et	Et	PROPN
 laquelle	laquelle	PRON
 ?...	?...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -1587,7 +1587,7 @@ je	je	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-que	que	SCONJ
+que	que	PRON
 l'	le	DET
 appareil	appareil	NOUN
 de	de	ADP
@@ -1652,7 +1652,7 @@ cette	ce	DET
 hypothèse	hypothèse	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-d'ailleurs	d'ailleurs	ADV
+d'ailleurs	d'ailleurs	NOUN
 ,	,	PUNCTclause
 il	il	PRON
 avait	avoir	AUX
@@ -1759,7 +1759,7 @@ ces	ce	DET
 deux	deux	NUM
 affaires	affaire	NOUN
 !...	!...	PUNCTsent
-quel	quel	DET
+quel	quel	ADJ
 lien	lien	NOUN
 les	le	DET
 rattache	rattacher	VERB
@@ -1826,7 +1826,7 @@ curieux	curieux	NOUN
 ...	...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-que	que	SCONJ
+que	que	PRON
 vous	vous	PRON
 êtes	être	AUX
 ,	,	PUNCTclause
@@ -1974,7 +1974,7 @@ des	un	ADP_DET
 choses	chose	NOUN
 inexplicables	inexplicable	ADJ
 .	.	PUNCTsent
-que	que	SCONJ
+que	que	PRON
 sa	son	DET
 machine	machine	NOUN
 fût	être	AUX
@@ -2063,7 +2063,7 @@ de	de	ADP
 choses	chose	NOUN
 inexplicables	inexplicable	ADJ
 !...	!...	PUNCTsent
-raison	raison	NOUN
+Raison	Raison	PROPN
 de plus	de plus	ADV
 pour	pour	ADP
 la	le	DET
@@ -2110,7 +2110,7 @@ exprimait	exprimer	VERB
 son	son	DET
 refus	refus	NOUN
 !...	!...	PUNCTsent
-soit	soit	CCONJ
+Soit	Soit	PROPN
 !	!	PUNCTsent
 il	il	PRON
 serait	être	AUX
@@ -2134,7 +2134,7 @@ hors de	hors de	ADP
 de	de	ADP
 nuire	nuire	VERB
 !...	!...	PUNCTsent
-la	le	DET
+La	La	PROPN
 sécurité	sécurité	NOUN
 non seulement	non seulement	ADV
 en	en	ADP
@@ -2355,7 +2355,7 @@ le	le	DET
 pays	pays	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-telle	tel	DET
+telle	tel	PRON
 était	être	AUX
 la	le	DET
 situation	situation	NOUN
@@ -2366,7 +2366,7 @@ quinzaine	quinzaine	NOUN
 de	de	ADP
 juillet	juillet	NOUN
 .	.	PUNCTsent
-or	or	NOUN
+or	or_CCONJ	CCONJ
 ,	,	PUNCTclause
 à	à	ADP
 bien	bien	ADV
@@ -2419,7 +2419,7 @@ prêtassent	prêter	VERB
 son	son	DET
 arrestation	arrestation	NOUN
 ?...	?...	PUNCTsent
-ce	ce	PRON
+ce	ce	DET
 ne	ne	ADV
 est	être	AUX
 pas	pas	ADV
@@ -2446,7 +2446,7 @@ pourrait	pouvoir	VERB
 être	être	AUX
 arrêté	arrêter	VERB
 .	.	PUNCTsent
-non	non	ADV
+Non	Non	PROPN
 !	!	PUNCTsent
 il	il	PRON
 serait	être	AUX
@@ -2514,7 +2514,7 @@ demeurait	demeurer	VERB
 invisible	invisible	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-la	le	DET
+La	La	PROPN
 fin	fin	NOUN
 du	du	ADP_DET
 mois	mois	NOUN
@@ -2522,7 +2522,7 @@ de	de	ADP
 juillet	juillet	NOUN
 approchait	approcher	VERB
 .	.	PUNCTsent
-les	le	DET
+Les	Les	PROPN
 journaux	journal	NOUN
 ne	ne	ADV
 cessaient	cesser	VERB
@@ -2548,8 +2548,8 @@ la	le	DET
 curiosité	curiosité	NOUN
 publique	public	ADJ
 .	.	PUNCTsent
-d'autres	d'autre	PRON
-pistes	pister	VERB
+d'autres	d'autre	ADP
+pistes	piste	NOUN
 étaient	être	AUX
 indiquées	indiquer	VERB
 .	.	PUNCTsent
@@ -2559,7 +2559,7 @@ rien	rien	PRON
 de	de	ADP
 sérieux	sérieux	ADJ
 .	.	PUNCTsent
-les	le	DET
+Les	Les	PROPN
 télégrammes	télégramme	NOUN
 se	se	PRON
 croisaient	croiser	VERB
@@ -2705,7 +2705,7 @@ un	un	DET
 instant	instant	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Vingt	Vingt	NUM
+Vingt	Vingt	PROPN
 minutes	minute	NOUN
 après	après	ADV
 ,	,	PUNCTclause
@@ -2717,7 +2717,7 @@ présence	présence	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-soyez	être	AUX
+Soyez	Soyez	PROPN
 parti	partir	VERB
 dans	dans	ADP
 une	un	DET
@@ -2731,11 +2731,11 @@ il	il	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-pour	pour	ADP
+pour	pour	NOUN
 ?...	?...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-pour	pour	ADP
+pour	pour	NOUN
 Toledo	Toledo	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
@@ -2747,7 +2747,7 @@ vu	voir	VERB
 ?...	?...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-oui	oui	INTJ
+Oui	Oui	PROPN
 ...	...	PUNCTsent
 et	et	CCONJ
 ,	,	PUNCTclause
@@ -2760,7 +2760,7 @@ renseignements	renseignement	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-dans	dans	ADP
+Dans	Dans	PROPN
 une	un	DET
 heure	heure	NOUN
 ,	,	PUNCTclause
@@ -2790,14 +2790,14 @@ formel	formel	ADJ
 ...	...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-lequel	lequel	PRON
+Lequel	Lequel	PROPN
 ,	,	PUNCTclause
 monsieur	monsieur	NOUN
 Ward	Ward	PROPN
 ?...	?...	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-de	de	ADP
+De	De	PROPN
 réussir	réussir	VERB
 ...	...	PUNCTsent
 cette fois ci	cette fois ci	PRON

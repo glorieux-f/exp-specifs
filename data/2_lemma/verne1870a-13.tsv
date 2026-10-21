@@ -6,7 +6,7 @@
 # title = XIII. Quelques chiffres
 
 ↵↵	↵↵	PUNCTstruct
-XIII	XIII	X
+XIII	XIII	NUM
 .	.	PUNCTsent
 quelques	quelque	DET
 chiffres	chiffre	NOUN
@@ -30,7 +30,7 @@ cigare	cigare	NOUN
 aux	au	ADP_DET
 lèvres	lèvre	NOUN
 .	.	PUNCTsent
-le	le	DET
+Le	Le	PROPN
 capitaine	capitaine	NOUN
 mit	mettre	VERB
 sous	sous	ADP
@@ -60,7 +60,7 @@ termes	terme	NOUN
 :	:	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-voici	voici	ADP
+voici	voici	VERB
 ,	,	PUNCTclause
 monsieur	monsieur	NOUN
 Aronnax	Aronnax	PROPN
@@ -105,7 +105,7 @@ du	du	ADP_DET
 même	même	ADJ
 genre	genre	NOUN
 .	.	PUNCTsent
-la	le	DET
+La	La	PROPN
 longueur	longueur	NOUN
 de	de	ADP
 ce	ce	DET
@@ -344,7 +344,7 @@ susdites	susdit	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 «	«	PUNCTclause
-le	le	DET
+Le	Le	PROPN
 Nautilus	Nautilus	PROPN
 se	se	PRON
 compose	composer	VERB
@@ -458,7 +458,7 @@ sept	sept	NUM
 huit	huit	NUM
 dixièmes	dixième	NOUN
 .	.	PUNCTsent
-la	le	DET
+La	La	PROPN
 première	premier	ADJ
 ne	ne	ADV
 a	avoir	AUX
@@ -479,9 +479,9 @@ tonneaux	tonneau	NOUN
 quatre-vingt-seize	quatre-vingt-seize	NUM
 centièmes	centième	NOUN
 .	.	PUNCTsent
-la	le	DET
+La	La	PROPN
 seconde	second	ADJ
-enveloppe	enveloppe	NOUN
+enveloppe	envelopper	VERB
 ,	,	PUNCTclause
 la	le	DET
 quille	quille	NOUN
@@ -576,7 +576,7 @@ je	je	PRON
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-donc	donc	ADV
+Donc	Donc	PROPN
 ,	,	PUNCTclause
 reprit	reprendre	VERB
 le	le	DET
@@ -599,7 +599,7 @@ de	de	ADP
 un	un	DET
 10e	10e	ADJ
 .	.	PUNCTsent
-or	or	NOUN
+or	or_CCONJ	CCONJ
 ,	,	PUNCTclause
 si	si	SCONJ
 je	je	PRON
@@ -711,7 +711,7 @@ la	le	DET
 véritable	véritable	ADJ
 difficulté	difficulté	NOUN
 .	.	PUNCTsent
-que	que	SCONJ
+que	que	PRON
 vous	vous	PRON
 puissiez	pouvoir	VERB
 affleurer	affleurer	VERB
@@ -782,7 +782,7 @@ monsieur	monsieur	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-donc	donc	ADV
+Donc	Donc	PROPN
 ,	,	PUNCTclause
 à	à	ADP
 moins	moins	ADV
@@ -1098,7 +1098,7 @@ facile	facile	ADJ
 à	à	ADP
 vérifier	vérifier	VERB
 .	.	PUNCTsent
-or	or	NOUN
+or	or_CCONJ	CCONJ
 ,	,	PUNCTclause
 je	je	PRON
 ai	avoir	VERB
@@ -1218,7 +1218,7 @@ réelle	réel	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-laquelle	laquelle	PRON
+Laquelle	Laquelle	PROPN
 ,	,	PUNCTclause
 monsieur	monsieur	NOUN
 ?	?	PUNCTsent
@@ -1288,15 +1288,15 @@ par	par	ADP
 centimètre	mètre	NOUN
 carré	carré	ADJ
 .	.	PUNCTsent
-de	de	ADP
+De	De	PROPN
 là	là	ADV
 une	un	DET
 puissance	puissance	NOUN
 …	…	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-que	que	SCONJ
-l'	le	DET
+que	que	PRON
+l'	le_PRON	PRON
 électricité	électricité	NOUN
 seule	seul	ADJ
 pouvait	pouvoir	VERB
@@ -1328,7 +1328,7 @@ est	être	AUX
 à peu près	à peu près	ADV
 infini	infini	ADJ
 .	.	PUNCTsent
-les	le	DET
+Les	Les	PROPN
 pompes	pompe	NOUN
 du	du	ADP_DET
 Nautilus	Nautilus	PROPN
@@ -1359,7 +1359,7 @@ sur	sur	ADP
 l'	le	DET
 Abraham-Lincoln	Abraham-Lincoln	PROPN
 .	.	PUNCTsent
-d'ailleurs	d'ailleurs	ADV
+d'ailleurs	d'ailleurs	DET
 ,	,	PUNCTclause
 je	je	PRON
 ne	ne	ADV
@@ -1429,7 +1429,7 @@ infaillibles	infaillible	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-lesquelles	lesquelles	PRON
+Lesquelles	Lesquelles	PROPN
 ,	,	PUNCTclause
 capitaine	capitaine	NOUN
 ?	?	PUNCTsent
@@ -1462,7 +1462,7 @@ apprendre	apprendre	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-pour	pour	ADP
+pour	pour	NOUN
 gouverner	gouverner	VERB
 ce	ce	DET
 bateau	bateau	NOUN
@@ -1667,7 +1667,7 @@ airs	air	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-bravo	bravo	INTJ
+Bravo	Bravo	PROPN
 !	!	PUNCTsent
 capitaine	capitaine	NOUN
 ,	,	PUNCTclause
@@ -1695,7 +1695,7 @@ eaux	eau	NOUN
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-le	le_PRON	PRON
+Le	Le	PROPN
 timonier	timonier	NOUN
 est	être	AUX
 placé	placer	VERB
@@ -1726,7 +1726,7 @@ lenticulaires	lenticulaire	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-des	un	ADP_DET
+Des	Des	PROPN
 verres	verre	NOUN
 capables	capable	ADJ
 de	de	ADP
@@ -1740,7 +1740,7 @@ pressions	pression	NOUN
 —	—	PUNCTclause
 parfaitement	parfaitement	ADV
 .	.	PUNCTsent
-le	le	DET
+Le	Le	PROPN
 cristal	cristal	NOUN
 ,	,	PUNCTclause
 fragile	fragile	ADJ
@@ -1771,7 +1771,7 @@ milieu	milieu	NOUN
 des	un	ADP_DET
 mers	mer	NOUN
 du	du	ADP_DET
-Nord	Nord	NOUN
+Nord	Nord	PROPN
 ,	,	PUNCTclause
 on	on	PRON
 a	avoir	AUX
@@ -1813,7 +1813,7 @@ inégalement	inégalement	ADV
 la	le	DET
 chaleur	chaleur	NOUN
 .	.	PUNCTsent
-or	or	NOUN
+or	or_CCONJ	CCONJ
 ,	,	PUNCTclause
 les	le	DET
 verres	verre	NOUN
@@ -1962,7 +1962,7 @@ fortuite	fortuit	ADJ
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-purement	purement	ADV
+purement	purement	NOUN
 fortuite	fortuit	ADJ
 ,	,	PUNCTclause
 monsieur	monsieur	NOUN
@@ -2000,7 +2000,7 @@ fâcheux	fâcheux	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-aucun	aucun	PRON
+Aucun	Aucun	PROPN
 ,	,	PUNCTclause
 monsieur	monsieur	NOUN
 .	.	PUNCTsent
@@ -2185,7 +2185,7 @@ rien	rien	PRON
 à	à	ADP
 redouter	redouter	VERB
 .	.	PUNCTsent
-pas	pas	ADV
+Pas	Pas	PROPN
 de	de	ADP
 déformation	déformation	NOUN
 à	à	ADP
@@ -2300,11 +2300,11 @@ l'	le	DET
 absolue	absolu	ADJ
 tranquillité	tranquillité	NOUN
 !	!	PUNCTsent
-voilà	voilà	ADP
+voilà	voilà	VERB
 ,	,	PUNCTclause
 monsieur	monsieur	NOUN
 .	.	PUNCTsent
-voilà	voilà	ADP
+voilà	voilà	VERB
 le	le	DET
 navire	navire	NOUN
 par excellence	par excellence	ADV
@@ -2366,7 +2366,7 @@ ingénieur	ingénieur	NOUN
 !	!	PUNCTsent
 »	»	PUNCTclause
 ↵↵	↵↵	PUNCTstruct
-le	le	DET
+Le	Le	PROPN
 capitaine	capitaine	NOUN
 Nemo	Nemo	PROPN
 parlait	parler	VERB
@@ -2375,7 +2375,7 @@ une	un	DET
 éloquence	éloquence	NOUN
 entraînante	entraînant	ADJ
 .	.	PUNCTsent
-le	le	DET
+Le	Le	PROPN
 feu	feu	NOUN
 de	de	ADP
 son	son	DET
@@ -2615,7 +2615,7 @@ divers	divers	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-mais	mais	CCONJ
+mais	mai	NOUN
 ,	,	PUNCTclause
 repris	reprendre	VERB
 je	je	PRON
@@ -2744,7 +2744,7 @@ francs	franc	NOUN
 par	par	ADP
 tonneau	tonneau	NOUN
 .	.	PUNCTsent
-or	or	NOUN
+or	or_CCONJ	CCONJ
 ,	,	PUNCTclause
 le	le	DET
 Nautilus	Nautilus	PROPN
@@ -2787,7 +2787,7 @@ renferme	renfermer	VERB
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-une	un	PRON
+Une	Une	NUM
 dernière	dernier	ADJ
 question	question	NOUN
 ,	,	PUNCTclause
@@ -2796,7 +2796,7 @@ Nemo	Nemo	PROPN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-faites	fait	ADJ
+faites	faire	NOUN
 ,	,	PUNCTclause
 monsieur	monsieur	NOUN
 le	le	DET
@@ -2811,7 +2811,7 @@ riche	riche	ADJ
 ?	?	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
 —	—	PUNCTclause
-riche	riche	ADJ
+Riche	Riche	PROPN
 à	à	ADP
 l'	le	DET
 infini	infini	NOUN

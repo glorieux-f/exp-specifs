@@ -6,8 +6,8 @@
 # title = V. Le roman de la Lune
 
 ↵↵	↵↵	PUNCTstruct
-V.	V.	ADP
-Le	Le	DET
+V.	V.	PROPN
+Le	Le	PROPN
 roman	roman	NOUN
 de	de	ADP
 la	le	DET
@@ -229,8 +229,8 @@ sous forme de	sous forme de	ADP
 étoiles	étoile	NOUN
 innombrables	innombrable	ADJ
 .	.	PUNCTsent
-la	le	DET
-nébuleuse	nébuleuse	NOUN
+La	La	PROPN
+nébuleuse	nébuleux	ADJ
 ,	,	PUNCTclause
 dont	dont	PRON
 les	le	DET
@@ -475,7 +475,7 @@ celui	celui	PRON
 de	de	ADP
 Saturne	Saturne	PROPN
 .	.	PUNCTsent
-a	avoir	VERB
+a	avoir	ADP
 leur	leur	DET
 tour	tour	NOUN
 ,	,	PUNCTclause
@@ -632,8 +632,8 @@ du	du	ADP_DET
 monde	monde	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-le	le	DET
-soleil	soleil	NOUN
+Le	Le	PROPN
+soleil	soleil	PROPN
 semble	sembler	VERB
 perdu	perdre	VERB
 dans	dans	ADP
@@ -665,7 +665,7 @@ la	le	DET
 voie	voie	NOUN
 lactée	lacté	ADJ
 .	.	PUNCTsent
-centre	centre	NOUN
+Centre	Centre	PROPN
 de	de	ADP
 un	un	DET
 monde	monde	NOUN
@@ -718,7 +718,7 @@ de	de	ADP
 la	le	DET
 création	création	NOUN
 .	.	PUNCTsent
-ce	ce	PRON
+ce	ce	DET
 sont	être	AUX
 ,	,	PUNCTclause
 en	en	ADP
@@ -787,7 +787,7 @@ ce	ce	PRON
 jour	jour	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-de	de	ADP
+De	De	PROPN
 ces	ce	DET
 serviteurs	serviteur	NOUN
 que	que	SCONJ
@@ -814,9 +814,9 @@ tour	tour	NOUN
 des	un	ADP_DET
 satellites	satellite	NOUN
 .	.	PUNCTsent
-Uranus	Uranus	X
+Uranus	Uranus	PROPN
 en	en	PRON
-a	avoir	AUX
+a	avoir	VERB
 huit	huit	NUM
 ,	,	PUNCTclause
 Saturne	Saturne	PROPN
@@ -920,7 +920,7 @@ les	le	DET
 yeux	œil	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-la	le	DET
+La	La	PROPN
 blonde	blond	NOUN
 Phoebé	Phoebé	PROPN
 ,	,	PUNCTclause
@@ -970,8 +970,8 @@ jamais	jamais	ADV
 par	par	ADP
 lui	lui	PRON
 .	.	PUNCTsent
-les	le	DET
-mahométans	mahométan	NOUN
+Les	Les	PROPN
+mahométans	mahométan	ADJ
 ont	avoir	AUX
 compris	comprendre	VERB
 la	le	DET
@@ -998,7 +998,7 @@ sa	son	DET
 révolution	révolution	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-les	le	DET
+Les	Les	PROPN
 premiers	premier	ADJ
 peuples	peuple	NOUN
 vouèrent	vouer	VERB
@@ -1010,9 +1010,9 @@ cette	ce	DET
 chaste	chaste	ADJ
 déesse	déesse	NOUN
 .	.	PUNCTsent
-les	le	DET
-égyptiens	égyptien	NOUN
-l'	le_PRON	PRON
+Les	Les	PROPN
+égyptiens	égyptien	ADJ
+l'	le	DET
 appelaient	appeler	VERB
 Isis	Isis	PROPN
 ;	;	PUNCTclause
@@ -1052,10 +1052,10 @@ de	de	ADP
 Diane	Diane	PROPN
 au	au	ADP_DET
 bel	beau	ADJ
-Endymion	Endymion	NOUN
+Endymion	Endymion	PROPN
 .	.	PUNCTsent
-a	avoir	AUX
-en	en	ADP
+a	avoir	ADP
+en	en	PRON
 croire	croire	VERB
 la	le	DET
 légende	légende	NOUN
@@ -1299,7 +1299,7 @@ par	par	ADP
 le	le	DET
 soleil	soleil	NOUN
 .	.	PUNCTsent
-Aristarque	Aristarque	NOUN
+Aristarque	Aristarque	PROPN
 de	de	ADP
 Samos	Samos	PROPN
 donna	donner	VERB
@@ -1310,7 +1310,7 @@ de	de	ADP
 ses	son	DET
 phases	phase	NOUN
 .	.	PUNCTsent
-Cléomène	Cléomène	NOUN
+Cléomène	Cléomène	PROPN
 enseigna	enseigner	VERB
 que	que	SCONJ
 elle	elle	PRON
@@ -1320,7 +1320,7 @@ une	un	DET
 lumière	lumière	NOUN
 réfléchie	réfléchir	VERB
 .	.	PUNCTsent
-le	le	DET
+Le	Le	PROPN
 chaldéen	chaldéen	PROPN
 Bérose	Bérose	PROPN
 découvrit	découvrir	VERB
@@ -1397,7 +1397,7 @@ aux	au	ADP_DET
 nouveaux	nouveau	ADJ
 astronomes	astronome	NOUN
 .	.	PUNCTsent
-Ptolémée	Ptolémée	VERB
+Ptolémée	Ptolémée	PROPN
 ,	,	PUNCTclause
 au	au	ADP_DET
 2e	2e	ADJ
@@ -1471,7 +1471,7 @@ corps	corps	NOUN
 célestes	céleste	ADJ
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-a	avoir	VERB
+a	avoir	ADP
 cette	ce	DET
 époque	époque	NOUN
 ,	,	PUNCTclause
@@ -1490,7 +1490,7 @@ on	on	PRON
 savait	savoir	VERB
 peu de chose	peu de chose	NOUN
 .	.	PUNCTsent
-ce	ce	PRON
+ce	ce	DET
 fut	être	AUX
 alors que	alors que	CCONJ
 Galilée	Galilée	PROPN
@@ -1555,7 +1555,7 @@ sept	sept	NUM
 mille	mille	NUM
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-Herschell	Herschell	NOUN
+Herschell	Herschell	PROPN
 ,	,	PUNCTclause
 à	à	ADP
 la	le	DET
@@ -1740,7 +1740,7 @@ affirmait	affirmer	VERB
 chaque	chaque	DET
 observation	observation	NOUN
 .	.	PUNCTsent
-du	du	ADP_DET
+Du	Du	PROPN
 défaut	défaut	NOUN
 de	de	ADP
 réfraction	réfraction	NOUN
@@ -1984,7 +1984,7 @@ huit	huit	NUM
 cents	cents	NUM
 toises	toise	NOUN
 .	.	PUNCTsent
-les	le	DET
+Les	Les	PROPN
 astronomes	astronome	NOUN
 les	le	DET
 appelèrent	appeler	VERB
@@ -2219,7 +2219,7 @@ dernière	dernier	ADJ
 phases	phase	NOUN
 .	.	PUNCTsent
 ↵↵	↵↵	PUNCTstruct
-tel	tel	PRON
+tel	tel	ADJ
 était	être	AUX
 l'	le	DET
 état	état	NOUN
