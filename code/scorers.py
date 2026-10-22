@@ -714,7 +714,7 @@ class G2(Scorer):
     """
 
     _registrations = (
-        ('g2', 'signed G²'),
+        ('g2', 'G²'),
     )
 
     requires_complement = True

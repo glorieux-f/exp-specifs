@@ -40,6 +40,7 @@ from dataclasses import dataclass
 from fnmatch import fnmatchcase
 from pathlib import Path
 import re
+from time import perf_counter
 
 from keyword_metrics import METRICS, Metric, make_metric
 
@@ -112,10 +113,20 @@ def build_matrix(
     authors: dict[str, str],
     metric: Metric,
     weight: str,
+    progress: bool = False,
 ) -> list[list[float]]:
-    """Build the symmetric scorer distance matrix."""
+    """Build the symmetric scorer distance matrix, reporting completed pairs."""
     size = len(scorers)
     matrix = [[0.0] * size for _ in range(size)]
+    total_pairs = size * (size - 1) // 2
+    report_every = max(1, total_pairs // 20)
+    completed = 0
+    start = perf_counter()
+    if progress:
+        print(
+            f"Computing distances: {total_pairs} scorer pairs "
+            f"across {len(doc_ids)} documents", flush=True
+        )
     for i, left_name in enumerate(scorers):
         for j in range(i + 1, size):
             right_name = scorers[j]
@@ -129,6 +140,19 @@ def build_matrix(
             )
             matrix[i][j] = distance
             matrix[j][i] = distance
+            completed += 1
+            if progress and (
+                completed == 1
+                or completed % report_every == 0
+                or completed == total_pairs
+            ):
+                print(
+                    f"Distances {completed}/{total_pairs} "
+                    f"({100 * completed / total_pairs:.1f}%): "
+                    f"{left_name} / {right_name}; "
+                    f"elapsed {perf_counter() - start:.1f}s",
+                    flush=True,
+                )
     return matrix
 
 
@@ -137,6 +161,7 @@ def load_lists(
     pattern: str,
     vocab: str | None,
     top_n: int | None,
+    progress: bool = False,
 ) -> tuple[KeywordLists, dict[str, str], str, int, int]:
     """Load keyword files from one keyword-generation configuration.
 
@@ -145,6 +170,8 @@ def load_lists(
     paths = sorted(path for path in input_dir.glob(pattern) if path.is_file())
     if not paths:
         raise ValueError(f"No keyword files match {input_dir / pattern}")
+    if progress:
+        print(f"Discovered {len(paths)} keyword files in {input_dir}", flush=True)
 
     files = [parse_keyword_filename(path) for path in paths]
     if vocab is not None:
@@ -178,8 +205,18 @@ def load_lists(
     file_top, min_doc_len = configurations[0]
     lists: KeywordLists = {}
     authors: dict[str, str] = {}
+    total_files = len(files)
+    read_start = perf_counter()
+    if progress:
+        print(
+            f"Selected {total_files} files: "
+            f"vocab={vocab}, keywords{file_top}, min_doc_len={min_doc_len}",
+            flush=True,
+        )
 
-    for file in files:
+    for index, file in enumerate(files, 1):
+        if progress:
+            print(f"Reading {index}/{total_files}: {file.path.name}", flush=True)
         documents = parse_keyword_file(file.path, top_n)
         merged = lists.setdefault(file.scorer, {})
         overlap = merged.keys() & documents.keys()
@@ -198,6 +235,13 @@ def load_lists(
                     f"{known!r} and {file.author!r}"
                 )
 
+    if progress:
+        print(
+            f"Loaded {total_files} files, {len(lists)} scorers, "
+            f"{len(authors)} distinct documents in "
+            f"{perf_counter() - read_start:.1f}s",
+            flush=True,
+        )
     return lists, authors, vocab, file_top, min_doc_len
 
 
@@ -211,10 +255,18 @@ def main() -> None:
         args.pattern,
         args.vocab,
         args.top,
+        progress=True,
     )
     scorers = select_scorers(set(lists), args.scorers, args.exclude)
     doc_ids = validate_documents(lists, scorers)
-    matrix = build_matrix(lists, scorers, doc_ids, authors, metric, args.weight)
+    print(
+        f"Validated {len(doc_ids)} documents shared by "
+        f"{len(scorers)} scorers; metric={args.metric}; weight={args.weight}",
+        flush=True,
+    )
+    matrix = build_matrix(
+        lists, scorers, doc_ids, authors, metric, args.weight, progress=True
+    )
 
     output = args.output or output_path(
         args.metric,
