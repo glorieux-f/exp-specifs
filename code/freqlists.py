@@ -2,8 +2,8 @@
 """Build frequency lists from a term-document contingency table.
 
 By default, write all seven vocabulary variants defined in corpus.py.
-Use --vocab to request individual variants and --select to aggregate only
-matching document identifiers (e.g. ddr19721100ao*).
+Use --vocab to request individual variants and --select to create a
+separate frequency list for each document-identifier glob.
 
 Vocabulary filtering does not change corpus statistics. Frequencies per million
 are calculated using all lexical tokens in the selected documents.
@@ -67,31 +67,37 @@ def build(
     output_dir: Path,
     stopwords_path: Path,
     top: int,
-    select: str | None,
+    select: list[str] | None,
     vocabs: list[str] | None = None,
 ) -> None:
-    """Generate selected vocabulary lists for a corpus or document subset."""
+    """Generate vocabulary lists independently for each selected subcorpus."""
     if top < 0:
         raise ValueError("--top must be >= 0")
     modes = list(dict.fromkeys(vocabs)) if vocabs else list(VOCAB_MODES)
-    corpus = Corpus.load(input_prefix)
-    if select is not None:
-        corpus = corpus.select(select)
-        print(f"Selected {corpus.n_docs} document(s) matching {select!r}")
+    selections = list(dict.fromkeys(select)) if select else [None]
+    base_corpus = Corpus.load(input_prefix)
 
     stopwords = (
         load_stopwords(stopwords_path)
         if any(mode in STOPWORD_VOCAB_MODES for mode in modes)
         else set()
     )
+    masks = {
+        mode: vocabulary_mask(base_corpus.lemmas, mode, stopwords)
+        for mode in modes
+    }
     output_dir.mkdir(parents=True, exist_ok=True)
     prefix = "" if input_prefix.is_dir() else input_prefix.name
-    name = pattern_slug(select) if select is not None else "corpus"
-    for mode in modes:
-        mask = vocabulary_mask(corpus.lemmas, mode, stopwords)
-        path = output_dir / f"{prefix}{name}-{mode}.tsv"
-        write_frequency_list(path, corpus, mask, top)
-        print(path)
+
+    for selection in selections:
+        corpus = base_corpus.select(selection) if selection is not None else base_corpus
+        name = pattern_slug(selection) if selection is not None else "corpus"
+        if selection is not None:
+            print(f"Selected {corpus.n_docs} document(s) matching {selection!r}")
+        for mode, mask in masks.items():
+            path = output_dir / f"{prefix}{name}-{mode}.tsv"
+            write_frequency_list(path, corpus, mask, top)
+            print(path)
 
 
 def main() -> None:
@@ -105,8 +111,8 @@ def main() -> None:
     )
     parser.add_argument("output_dir", type=Path, help="Directory for generated frequency lists")
     parser.add_argument(
-        "--select",
-        help="Document identifier or glob pattern (*, ?, [abc]); default: all documents",
+        "--select", action="extend", nargs="+", default=[], metavar="GLOB",
+        help="One or more document-identifier globs; repeatable (default: entire corpus)",
     )
     parser.add_argument(
         "--vocab", action="append", choices=VOCAB_MODES,

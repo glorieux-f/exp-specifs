@@ -26,6 +26,7 @@ class TermDocCorpus(Protocol):
     """
 
     n_docs: int
+    doc_ids: IntArray
     collection_len: int
     avg_doc_len: float
     cf: NDArray[np.integer]
@@ -842,9 +843,8 @@ class G2IDF(Scorer):
 
     def __init__(self, corpus: TermDocCorpus) -> None:
         super().__init__(corpus)
-        self._lengths = np.asarray(
-            corpus.doc_len[1 : corpus.n_docs + 1], dtype=np.float64
-        )
+        self._doc_ids = np.asarray(corpus.doc_ids, dtype=np.int64)
+        self._lengths = np.asarray(corpus.doc_len[self._doc_ids], dtype=np.float64)
 
     @property
     def code(self) -> str:
@@ -883,9 +883,7 @@ class G2IDF(Scorer):
         b = np.zeros(observed.shape, dtype=np.float64)
         valid = ~invalid & (c > 0.0)
         if np.any(valid):
-            other_lengths = np.concatenate(
-                (self._lengths[: doc_id - 1], self._lengths[doc_id:])
-            )
+            other_lengths = self._lengths[self._doc_ids != doc_id]
             with np.errstate(divide="ignore", invalid="ignore"):
                 log_absent = np.log1p(-other_lengths / L)
 
@@ -2537,7 +2535,7 @@ def _residual_df_weights(corpus: TermDocCorpus) -> FloatArray:
         return weights
 
     doc_proportions = (
-        np.asarray(corpus.doc_len[1 : corpus.n_docs + 1], dtype=np.float64)
+        np.asarray(corpus.doc_len[corpus.doc_ids], dtype=np.float64)
         / float(corpus.collection_len)
     )
     with np.errstate(divide="ignore"):
