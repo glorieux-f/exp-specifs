@@ -2,9 +2,7 @@
 setlocal EnableExtensions EnableDelayedExpansion
 
 :: freqlists from contingency table
-python freqlists.py --select "verne*" "balzac*" "sand*" "zola*" "dumas*" --top 1000 ..\data\3_contingency\romans19e- ..\results\freqlists
-
-goto end
+:: python freqlists.py --select "verne*" "balzac*" "sand*" "zola*" "dumas*" --top 1000 ..\data\3_contingency\romans19e- ..\results\freqlists
 
 :: command to get coocs 
 :: python cooc.py --corpus ../data/3_contingency/romans19e- --pivot indigène --window 3 5 10 30 100 --scorers simplemaths tscore tf mi logratio txm --vocab content --top 30 -o ../results/cooc "../data/2_lemma/verne*.tsv"
@@ -14,7 +12,7 @@ python .\keywords.py^
   ..\results\keywords100\^
   --select "verne*" "balzac*" "sand*" "zola*" "dumas*"^
   --vocab all content nostops^
-  --top 100^
+  --top 100 --min-doc-len 1000^
   --scorer bm25 bm25k100b1 btfidf cf chi2 df extf g2 logdice logratio mi milogf minsens simplemaths simplemathsk1 subtfidf tf tficf tfidf  tscore txm zscore
 
 :: python .\keywords.py ..\data\3_contingency\ ..\results\keywords100 --vocab content --top 100 --min-doc-len 1000 
