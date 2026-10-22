@@ -74,9 +74,15 @@ def read_chapter(path: Path) -> tuple[str, list[str]]:
             columns = line.split("\t")
             if len(columns) != 3:
                 raise ValueError(f"{path}:{number}: expected TERM, LEMMA, POS")
-            _, lemma, pos = columns
-            if not pos.startswith("PUNCT"):
-                lemmas.append(lemma)
+            term, lemma, pos = columns
+            if pos.startswith("PUNCT"):
+                continue
+            lemma = re.sub(r"\s+", " ", lemma).strip()
+            if not term and not lemma:
+                continue
+            if not lemma:
+                raise ValueError(f"{path}:{number}: non-empty TERM with empty LEMMA")
+            lemmas.append(lemma)
     if not identifier:
         raise ValueError(f"{path}: missing # identifier metadata")
     return identifier, lemmas
@@ -117,15 +123,17 @@ def count_windows(
     return counts, length, len(hits)
 
 
-def output_stem(prefix: str, selection: str, timestamp: str) -> str:
-    """Build the corpus-prefix + filename-safe ID glob + timestamp stem."""
-    base = Path(str(prefix).rstrip("/\\")).name
-    if Path(prefix).is_dir():
-        base += "-"
+def output_stem(prefix: str, selection: str, pivots: list[str], timestamp: str) -> str:
+    """Build a filename stem from corpus prefix, document glob, pivots and date."""
+    base = Path(str(prefix).rstrip("/\\")).name.rstrip("-")
     if not base:
         raise ValueError(f"Cannot derive filename prefix from {prefix!r}")
     glob_tag = "" if selection == "*" else re.sub(r"[^\w.-]", "", selection)
-    return f"{base}{glob_tag}{timestamp}"
+    pivot_tags = [re.sub(r"[^\w.-]+", "-", pivot).strip("-.") for pivot in pivots]
+    if not all(pivot_tags):
+        raise ValueError("Pivot lemmas must contain filename-safe characters")
+    parts = [base, glob_tag, *pivot_tags, timestamp]
+    return "-".join(part for part in parts if part)
 
 
 def run(args: argparse.Namespace) -> tuple[Path, Path]:
@@ -198,7 +206,7 @@ def run(args: argparse.Namespace) -> tuple[Path, Path]:
 
     virtual = WindowCorpus(corpus)
     scorers = {code: make_scorer(virtual, code) for code in scorer_codes}
-    tsv_lines = ["window\tscorer\trank\tlemma\ttf\tcf\tdf\tscore\tpivot_hits\tdl\n"]
+    tsv_lines = ["window\tscorer\trank\tlemma\ttf\tcf\tdf\tscore\tpivot_hits\tdl\ttypes\n"]
     txt_blocks = []
 
     for width in widths:
@@ -220,6 +228,7 @@ def run(args: argparse.Namespace) -> tuple[Path, Path]:
         for code, scorer in scorers.items():
             scores = np.asarray(scorer.score_terms(0, ids, tf), dtype=np.float64)
             valid = np.flatnonzero(np.isfinite(scores))
+            types = len(valid)
             ranked = sorted(valid, key=lambda i: (-scores[i], -tf[i], corpus.lemmas[ids[i]]))
             if args.top:
                 ranked = ranked[:args.top]
@@ -231,15 +240,16 @@ def run(args: argparse.Namespace) -> tuple[Path, Path]:
                 tsv_lines.append(
                     f"{width}\t{code}\t{rank}\t{lemma}\t{tf[index]}\t"
                     f"{corpus.cf[term_id]}\t{corpus.df[term_id]}\t"
-                    f"{scores[index]:.10g}\t{occurrences}\t{token_count}\n"
+                    f"{scores[index]:.10g}\t{occurrences}\t{token_count}\t{types}\n"
                 )
             txt_blocks.append(
-                f"{code} — window={width} — dl={token_count} — hits={occurrences}\n"
+                f"{code} — window={width} — hits={occurrences} — "
+                f"tokens={token_count} — types={types}\n"
                 f"{', '.join(keywords)}\n\n"
             )
 
     timestamp = datetime.now().strftime("%y%m%dT%H%M")
-    stem = output_stem(args.corpus, selection, timestamp)
+    stem = output_stem(args.corpus, selection, list(dict.fromkeys(args.pivot)), timestamp)
     args.output_dir.mkdir(parents=True, exist_ok=True)
     tsv_path = args.output_dir / f"{stem}.tsv"
     txt_path = args.output_dir / f"{stem}.txt"

@@ -1,10 +1,13 @@
 @echo off
 setlocal EnableExtensions EnableDelayedExpansion
-:: command to get coocs 
-python cooc.py --corpus ../data/3_contingency/romans19e- --pivot sauvage barbare --window 3 10 30 100 --scorers tf mi logdice tscore g2 txm --vocab content --top 30 -o ../results/cooc "../data/2_lemma/verne*.tsv"
 
 :: freqlists from contingency table
-:: python .\freqlists.py --top 0 ..\data\3_contingency\ ..\results\freqlists\
+:: python freqlists.py --select "verne*" --top 1000 ..\data\3_contingency\romans19e- ..\results\freqlists
+
+:: command to get coocs 
+python cooc.py --corpus ../data/3_contingency/romans19e- --pivot indigène --window 3 5 10 30 100 --scorers simplemaths tscore tf mi logratio txm --vocab content --top 30 -o ../results/cooc "../data/2_lemma/verne*.tsv"
+
+
 :: generate keyword 100
 :: python .\keywords.py ..\data\3_contingency\ ..\results\keywords100 --vocab content --top 100 --min-doc-len 1000 
 :: matrix of distances
