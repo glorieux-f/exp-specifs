@@ -13,8 +13,62 @@ from __future__ import annotations
 from dataclasses import dataclass
 from fnmatch import fnmatchcase
 from pathlib import Path
+import unicodedata
 
 import numpy as np
+
+
+VOCAB_MODES = (
+    "all", "content", "nostops", "nocaps", "stops", "caps", "stopscaps"
+)
+STOPWORD_VOCAB_MODES = frozenset({"content", "nostops", "stops", "stopscaps"})
+DEFAULT_STOPWORDS = Path(__file__).with_name("stopwords.txt")
+
+
+def normalize_word(value: str) -> str:
+    """Normalize a word for case-insensitive stopword comparison."""
+    return unicodedata.normalize("NFC", value.strip()).casefold()
+
+
+def load_stopwords(path: Path) -> set[str]:
+    """Load normalized stopwords, ignoring comments and the __STOPWORDS header."""
+    words: set[str] = set()
+    with path.open("r", encoding="utf-8-sig") as stream:
+        for line in stream:
+            value = line.strip()
+            if value and not value.startswith("#") and value != "__STOPWORDS":
+                words.add(normalize_word(value))
+    return words
+
+
+def vocabulary_mask(
+    lemmas: list[str], mode: str, stopwords: set[str] | None = None
+) -> np.ndarray:
+    """Select eligible term IDs without changing any corpus statistics."""
+    if mode not in VOCAB_MODES:
+        raise ValueError(f"Unknown vocabulary mode: {mode}")
+    if mode in STOPWORD_VOCAB_MODES and stopwords is None:
+        raise ValueError(f"Vocabulary mode {mode!r} requires stopwords")
+    mask = np.zeros(len(lemmas), dtype=bool)
+    for term_id, lemma in enumerate(lemmas[1:], 1):
+        is_cap = bool(lemma[:1].isupper())
+        is_stop = normalize_word(lemma) in stopwords if stopwords else False
+        if mode == "all":
+            keep = True
+        elif mode == "content":
+            keep = not is_stop and not is_cap
+        elif mode == "nostops":
+            keep = not is_stop
+        elif mode == "nocaps":
+            keep = not is_cap
+        elif mode == "stops":
+            keep = is_stop
+        elif mode == "caps":
+            keep = is_cap
+        else:  # stopscaps
+            keep = is_stop or is_cap
+        mask[term_id] = keep
+    return mask
 
 
 @dataclass(frozen=True)

@@ -1,28 +1,17 @@
 #!/usr/bin/env python3
-"""Generate ranked chapter keywords inside each author's corpus.
+"""Generate ranked document keywords from prefixed term-document TSV files.
 
-By default, input is ``../data`` and output is ``../results/1_keywords`` relative
-to this script.
+The input prefix identifies ``{prefix}docs.tsv``, ``{prefix}terms.tsv`` and
+``{prefix}postings.tsv``; a directory denotes an empty filename prefix.
 
-Each author corpus is selected by an identifier glob. Scorer statistics such as
-``df``, ``cf``, collection length and average document length are therefore
-computed inside that author's corpus, not across all five authors.
+Rankings use the complete input corpus and its global term statistics.
+The output name starts with the input corpus prefix, e.g.::
 
-The scorers are those returned by ``scorers.default_scorers(corpus)``,
-optionally restricted with ``--scorer``. One file is written per author and
-scorer::
+    ddr-keywords100-content-g2a1.4.txt
 
-    <author>-keywords<N>-<vocab>-<scorer>.txt
+With ``--min-doc-len 1000`` the minimum is included before the scorer code.
 
-For example::
-
-    zola-keywords100-content-chi2a0.43.txt
-
-With ``--min-doc-len 1000`` the minimum is included before the scorer code::
-
-    zola-keywords100-content-min1000-chi2a0.43.txt
-
-Vocabulary modes are those of ``2_doc-vsm.py``:
+Vocabulary modes:
 
     all        all terms
     content    neither stopwords nor capitalized terms
@@ -33,30 +22,14 @@ Vocabulary modes are those of ``2_doc-vsm.py``:
     stopscaps  stopwords OR capitalized terms
 
 Modes involving stopwords use ``stopwords.txt`` next to this script unless
-``--stopwords`` supplies another file.
+``--stopwords`` supplies another file. Vocabulary selection does not alter
+corpus statistics. ``--min-doc-len`` affects only which documents are output.
+A keyword list contains only scores above the scorer's neutral value (1 for
+Simple Maths, 0 otherwise). ``--top 0`` disables truncation.
 
-The vocabulary filter is applied *after* scoring. It does not alter corpus
-statistics or document lengths. Likewise, ``--min-doc-len`` filters only the
-chapter rankings written to the output; scorer statistics are still computed on
-the complete author corpus. A keyword list only contains terms the scorer marks
-as keywords: scores above the scorer's neutral value, which is 1 for the Simple
-Maths ratio and 0 for every other scorer. Lists can therefore be shorter than
-``--top`` when a document has few over-represented terms. With ``--top 0``, no
-truncation is applied and all eligible over-represented terms are written.
-
-Each document is written as a two-line block followed by a blank line::
-
-    [identifier] creator — date — work — title
-    keyword1, keyword2, ...
-
-Only ``[identifier]`` is machine-significant on the metadata line.
-
-Existing output files are skipped before scorer computation, so interrupted runs can
-be resumed without recomputing finished author/scorer combinations. ``--force``
-recomputes and overwrites existing files. Scorers are processed one at a time. The
-console shows one in-place status line per scorer, with a spinner while it runs and DONE
-when it finishes. Each completed scorer is written immediately to a temporary name then
-renamed, so an error never leaves an empty or truncated final keyword file.
+Each document is written as a metadata line, a comma-separated keyword line,
+and a blank line. Existing outputs are skipped unless ``--force`` is specified.
+Completed scorer outputs are written via a temporary file then renamed.
 """
 
 from __future__ import annotations
@@ -65,51 +38,34 @@ import argparse
 import os
 from pathlib import Path
 from time import perf_counter
-import unicodedata
 
 import numpy as np
 
-from corpus import Corpus, Document
-from scorers import Scorer, SimpleMaths, default_scorers, make_scorer
+from corpus import (
+    Corpus, Document, DEFAULT_STOPWORDS, STOPWORD_VOCAB_MODES,
+    VOCAB_MODES, load_stopwords, vocabulary_mask,
+)
+from scorers import Scorer, SimpleMaths, make_scorer
 
 
-DEFAULT_STOPWORDS = Path(__file__).with_name("stopwords.txt")
 DEFAULT_TOP_N = 100
 KEYWORD_SEPARATOR = ", "
-
-AUTHOR_GLOBS = {
-    "balzac": "balzac*",
-    "dumas": "dumas*",
-    "sand": "sand*",
-    "verne": "verne*",
-    "zola": "zola*",
-}
-
-VOCAB_MODES = (
-    "all",
-    "content",
-    "nostops",
-    "nocaps",
-    "stops",
-    "caps",
-    "stopscaps",
+DEFAULT_SCORERS = (
+    "tfidf",
+    "subtfidfa0.3",
+    "poissonidfa1",
+    "txm",
+    "poissondev",
+    "g2",
 )
-STOPWORD_VOCAB_MODES = {"content", "nostops", "stops", "stopscaps"}
 
 
-def author_corpora(base_corpus: Corpus) -> dict[str, Corpus]:
-    """Select every author corpus and check that together they cover the corpus."""
-    corpora = {
-        author_code: base_corpus.select(identifier_glob)
-        for author_code, identifier_glob in AUTHOR_GLOBS.items()
-    }
-    document_count = sum(corpus.n_docs for corpus in corpora.values())
-    if document_count != base_corpus.n_docs:
-        raise ValueError(
-            f"Author globs selected {document_count} documents, "
-            f"but corpus contains {base_corpus.n_docs}"
-        )
-    return corpora
+def corpus_label(input_prefix: str | Path) -> str:
+    """Return the output label derived from a contingency-table prefix."""
+    label = Path(str(input_prefix).rstrip("/\\")).name.rstrip("-_.")
+    if not label:
+        raise ValueError(f"Cannot derive corpus label from prefix: {input_prefix!r}")
+    return label
 
 
 def clean_text(value: str) -> str:
@@ -118,7 +74,7 @@ def clean_text(value: str) -> str:
 
 
 def generate(
-    input_dir: Path,
+    input_prefix: str | Path,
     output_dir: Path,
     vocab_mode: str = "all",
     stopwords_path: Path | None = None,
@@ -127,7 +83,7 @@ def generate(
     min_doc_len: int = 0,
     force: bool = False,
 ) -> None:
-    """Generate one keyword file per author and scorer with progress logging."""
+    """Generate one keyword file per corpus and scorer with progress logging."""
     if top_n < 0:
         raise ValueError("top_n must be >= 0")
     if min_doc_len < 0:
@@ -150,15 +106,15 @@ def generate(
         log(f"Loaded {len(stopwords)} stopwords")
 
     load_start = perf_counter()
-    log(f"Loading corpus: {input_dir}")
-    base_corpus = Corpus.load(input_dir)
+    log(f"Loading corpus: {input_prefix}")
+    base_corpus = Corpus.load(input_prefix)
     log(
         f"Loaded corpus: {base_corpus.n_docs} documents, "
         f"{len(base_corpus.lemmas) - 1} terms in {perf_counter() - load_start:.1f}s"
     )
 
-    corpora = author_corpora(base_corpus)
-    candidates = keyword_mask(base_corpus, vocab_mode, stopwords)
+    corpora = {corpus_label(input_prefix): base_corpus}
+    candidates = vocabulary_mask(base_corpus.lemmas, vocab_mode, stopwords)
     candidate_count = int(np.count_nonzero(candidates))
     log(f"Vocabulary {vocab_mode}: {candidate_count} candidate terms")
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -166,7 +122,7 @@ def generate(
 
     file_count = 0
     skipped_count = 0
-    for author_code, corpus in corpora.items():
+    for corpus_code, corpus in corpora.items():
         eligible_doc_ids = [
             int(doc_id)
             for doc_id in corpus.doc_ids
@@ -174,16 +130,16 @@ def generate(
         ]
         if not eligible_doc_ids:
             raise ValueError(
-                f"{author_code}: no documents with doc_len >= {min_doc_len}"
+                f"{corpus_code}: no documents with doc_len >= {min_doc_len}"
             )
 
         all_scorers = selected_scorers(corpus, scorer_codes)
         scorer_count = len(all_scorers)
         eligible_count = len(eligible_doc_ids)
-        generated_author = 0
-        skipped_author = 0
+        generated_corpus = 0
+        skipped_corpus = 0
         log(
-            f"{author_code}: {corpus.n_docs} documents, {eligible_count} eligible, "
+            f"{corpus_code}: {corpus.n_docs} documents, {eligible_count} eligible, "
             f"{scorer_count} scorers"
         )
 
@@ -193,16 +149,16 @@ def generate(
         for scorer_index, scorer in enumerate(all_scorers, start=1):
             path = keyword_output_path(
                 output_dir,
-                author_code,
+                corpus_code,
                 scorer.code,
                 vocab_mode,
                 top_n,
                 min_doc_len,
             )
-            prefix = f"{author_code} [{scorer_index}/{scorer_count}] {scorer.code}"
+            prefix = f"{corpus_code} [{scorer_index}/{scorer_count}] {scorer.code}"
             if path.exists() and not force:
                 skipped_count += 1
-                skipped_author += 1
+                skipped_corpus += 1
                 continue
 
             scorer_start = perf_counter()
@@ -267,7 +223,7 @@ def generate(
             # the file while this scorer was being computed.
             if path.exists() and not force:
                 skipped_count += 1
-                skipped_author += 1
+                skipped_corpus += 1
                 print(flush=True)
                 log(f"{prefix}: SKIP created by another process: {path.name}")
                 continue
@@ -275,12 +231,12 @@ def generate(
             write_atomic(path, "".join(blocks))
             elapsed = perf_counter() - scorer_start
             file_count += 1
-            generated_author += 1
+            generated_corpus += 1
             print(f"\r{status} DONE ({elapsed:.1f}s)", flush=True)
 
         log(
-            f"{author_code}: DONE; {generated_author} generated, "
-            f"{skipped_author} existing files skipped"
+            f"{corpus_code}: DONE; {generated_corpus} generated, "
+            f"{skipped_corpus} existing files skipped"
         )
 
     stopword_text = (
@@ -298,52 +254,18 @@ def generate(
 
 def keyword_output_path(
     output_dir: Path,
-    author_code: str,
+    corpus_code: str,
     scorer_code: str,
     vocab_mode: str,
     top_n: int,
     min_doc_len: int = 0,
 ) -> Path:
-    """Return the keyword output path for one author/scorer combination."""
+    """Return the keyword output path for one corpus/scorer combination."""
     min_tag = f"-min{min_doc_len}" if min_doc_len > 0 else ""
     filename = (
-        f"{author_code}-keywords{top_n}-{vocab_mode}{min_tag}-{scorer_code}.txt"
+        f"{corpus_code}-keywords{top_n}-{vocab_mode}{min_tag}-{scorer_code}.txt"
     )
     return output_dir / filename
-
-
-def keyword_mask(
-    corpus: Corpus,
-    vocab_mode: str,
-    stopwords: set[str],
-) -> np.ndarray:
-    """Return a boolean mask of terms eligible as keyword candidates."""
-    mask = np.zeros(len(corpus.lemmas), dtype=bool)
-
-    for term_id in range(1, len(corpus.lemmas)):
-        lemma = corpus.lemmas[term_id]
-        is_cap = bool(lemma[:1].isupper())
-        is_stop = normalize_word(lemma) in stopwords if stopwords else False
-
-        if vocab_mode == "all":
-            keep = True
-        elif vocab_mode == "content":
-            keep = not is_stop and not is_cap
-        elif vocab_mode == "nostops":
-            keep = not is_stop
-        elif vocab_mode == "nocaps":
-            keep = not is_cap
-        elif vocab_mode == "stops":
-            keep = is_stop
-        elif vocab_mode == "caps":
-            keep = is_cap
-        elif vocab_mode == "stopscaps":
-            keep = is_stop or is_cap
-        else:
-            raise ValueError(f"Unknown vocabulary mode: {vocab_mode}")
-        mask[term_id] = keep
-
-    return mask
 
 
 def log(message: str) -> None:
@@ -351,27 +273,11 @@ def log(message: str) -> None:
     print(message, flush=True)
 
 
-def load_stopwords(path: Path) -> set[str]:
-    """Load a one-entry-per-line stopword file.
-
-    Empty lines, comment lines beginning with ``#``, and the conventional
-    ``__STOPWORDS`` header are ignored.
-    """
-    words: set[str] = set()
-    with path.open("r", encoding="utf-8-sig") as stream:
-        for line in stream:
-            value = line.strip()
-            if not value or value.startswith("#") or value == "__STOPWORDS":
-                continue
-            words.add(normalize_word(value))
-    return words
-
-
 def main() -> None:
     """Run the keyword experiment."""
     args = parse_args()
     generate(
-        args.input_dir,
+        args.input_prefix,
         args.output_dir,
         vocab_mode=args.vocab,
         stopwords_path=args.stopwords,
@@ -385,11 +291,11 @@ def main() -> None:
 def metadata_line(document: Document) -> str:
     """Return the human-readable metadata line for one document."""
     created = clean_text(document.created)
-    modified = clean_text(document.modified)
-    if created and modified and modified != created:
-        date = f"{created}–{modified}"
+    issued = clean_text(document.issued)
+    if created and issued and issued != created:
+        date = f"{created}–{issued}"
     else:
-        date = created or modified
+        date = created or issued
 
     parts = [
         clean_text(document.creator),
@@ -413,28 +319,22 @@ def neutral_score(scorer: Scorer) -> float:
     return 1.0 if isinstance(scorer, SimpleMaths) else 0.0
 
 
-def normalize_word(value: str) -> str:
-    """Return a normalized case-insensitive form for stopword comparison."""
-    return unicodedata.normalize("NFC", value.strip()).casefold()
-
-
 def parse_args() -> argparse.Namespace:
     """Parse command-line arguments."""
     parser = argparse.ArgumentParser(
-        description="Generate ranked chapter keywords within each author's corpus."
+        description="Generate ranked document keywords from prefixed term-document TSV files."
     )
     script_dir = Path(__file__).resolve().parent
     default_input = (script_dir / ".." / "data").resolve()
     default_output = (script_dir / ".." / "results" / "1_keywords").resolve()
 
     parser.add_argument(
-        "input_dir",
+        "input_prefix",
         nargs="?",
-        type=Path,
-        default=default_input,
+        default=str(default_input),
         help=(
-            "Directory containing docs.tsv, terms.tsv, and postings.tsv "
-            f"(default: {default_input})"
+            "Prefix for {prefix}docs.tsv, {prefix}terms.tsv and "
+            f"{{prefix}}postings.tsv (default: {default_input})"
         ),
     )
     parser.add_argument(
@@ -470,7 +370,7 @@ def parse_args() -> argparse.Namespace:
         help=(
             "Use one or more scorer codes; the option may also be repeated. "
             "Parameterized codes are accepted, e.g. "
-            "--scorer txm hgt g2a1.4 chi2a0.43"
+            "--scorer txm g2 g2a1.4 subtfidfa0.3"
         ),
     )
     parser.add_argument(
@@ -488,7 +388,7 @@ def parse_args() -> argparse.Namespace:
         default=0,
         help=(
             "Write only documents with doc_len >= this value; scorer statistics "
-            "still use the complete author corpus (default: 0)"
+            "still use the complete selected corpus (default: 0)"
         ),
     )
     parser.add_argument(
@@ -510,7 +410,7 @@ def rank_terms(
 
     ``top_n == 0`` means no truncation; otherwise return at most ``top_n`` terms.
     Default ordering is score descending, tf descending, then term_id ascending.
-    For raw TF only, caller supplies author-internal cf, producing:
+    For raw TF only, caller supplies corpus cf, producing:
     tf descending, cf descending, then term_id ascending.
     """
     term_ids = np.asarray(term_ids, dtype=np.int64)
@@ -541,13 +441,10 @@ def rank_terms(
 
 
 def selected_scorers(corpus: Corpus, scorer_codes: list[str] | None) -> list[Scorer]:
-    """Return default scorers, or instantiate the explicitly requested codes."""
-    if not scorer_codes:
-        return list(default_scorers(corpus))
-
+    """Instantiate application defaults or requested scorers via the registry."""
     scorers: list[Scorer] = []
     seen_codes: set[str] = set()
-    for code in scorer_codes:
+    for code in scorer_codes or DEFAULT_SCORERS:
         scorer = make_scorer(corpus, code)
         if scorer.code in seen_codes:
             continue
