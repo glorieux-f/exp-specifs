@@ -11,7 +11,7 @@ import re
 from typing import Protocol
 
 import numpy as np
-from scipy.stats import hypergeom
+from scipy.stats import beta, hypergeom
 from numpy.typing import NDArray
 
 IntArray = NDArray[np.integer]
@@ -1232,6 +1232,103 @@ class LogRatio(Scorer):
             (doc_count / dl)
             / (rest_count / rest_len)
         )
+        scores[invalid] = np.nan
+        return scores
+
+
+class LRC(Scorer):
+    """Evert's Log Ratio with Confidence (LRC) keyness measure.
+
+    Compares the term frequency in a document to its frequency in the rest of
+    the corpus. The conditional Poisson test yields a binomial distribution
+    for tf given cf, whose exact Clopper-Pearson confidence limits yield an
+    interval for the relative risk. LRC is the log2 interval endpoint closest
+    to zero, or zero if the interval includes relative risk 1.
+
+    tf : term frequency in document
+    cf : collection frequency of term
+    dl : document length
+    CL : collection length
+
+    By default, Bonferroni correction uses all attested terms in the corpus as
+    the family of candidate tests. This fixed family size keeps scalar and
+    vector scores consistent. Pass family_size=1 to disable the correction,
+    or another positive integer to match a specified test family.
+
+    Evert, S. (2022). "Measuring keyness." Digital Humanities 2022.
+    """
+
+    _registrations = (
+        ('lrc', 'LRC'),
+    )
+
+    def __init__(
+        self,
+        corpus: TermDocCorpus,
+        confidence: float = 0.95,
+        family_size: int | None = None,
+    ) -> None:
+        """Configure the confidence level and Bonferroni family size."""
+        super().__init__(corpus)
+        if not 0.0 < confidence < 1.0:
+            raise ValueError("confidence must be between 0 and 1")
+        if family_size is None:
+            family_size = int(np.count_nonzero(corpus.cf[1:]))
+        if family_size < 1 or int(family_size) != family_size:
+            raise ValueError("family_size must be a positive integer")
+        self.confidence = confidence
+        self.family_size = int(family_size)
+
+    @property
+    def code(self) -> str:
+        """Return the filename code."""
+        return "lrc"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Score terms using exact conditional-Poisson confidence limits."""
+        observed = np.asarray(tf, dtype=np.float64)
+        cf = np.asarray(self.corpus.cf[term_ids], dtype=np.float64)
+        dl = float(self.corpus.doc_len[doc_id])
+        rest_len = float(self.corpus.collection_len) - dl
+        rest_tf = cf - observed
+
+        scores = np.zeros(observed.shape, dtype=np.float64)
+        invalid = (
+            (observed < 0.0)
+            | (rest_tf < 0.0)
+            | (observed > dl)
+            | (rest_tf > rest_len)
+        )
+        if dl <= 0.0 or rest_len <= 0.0:
+            scores[invalid] = np.nan
+            return scores
+
+        # The conditional distribution of tf given cf is binomial.  The
+        # two-sided Clopper-Pearson limits use alpha / (2 * family_size).
+        tail = (1.0 - self.confidence) / (2.0 * self.family_size)
+        positive = observed * rest_len >= rest_tf * dl
+        valid = ~invalid & (cf > 0.0)
+        above = valid & positive & (observed > 0.0)
+        below = valid & ~positive & (rest_tf > 0.0)
+        log_size_ratio = np.log2(rest_len / dl)
+
+        if np.any(above):
+            lower = beta.ppf(tail, observed[above], rest_tf[above] + 1.0)
+            with np.errstate(divide="ignore", invalid="ignore"):
+                bound = log_size_ratio + np.log2(lower) - np.log1p(-lower) / np.log(2.0)
+            scores[above] = np.maximum(bound, 0.0)
+
+        if np.any(below):
+            upper = beta.isf(tail, observed[below] + 1.0, rest_tf[below])
+            with np.errstate(divide="ignore", invalid="ignore"):
+                bound = log_size_ratio + np.log2(upper) - np.log1p(-upper) / np.log(2.0)
+            scores[below] = np.minimum(bound, 0.0)
+
         scores[invalid] = np.nan
         return scores
 

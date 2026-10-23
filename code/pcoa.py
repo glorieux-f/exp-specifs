@@ -2,9 +2,9 @@
 """Principal Coordinates Analysis (PCoA) of a distance matrix.
 
 The script accepts a square TSV or CSV distance matrix with row and column
-labels. It always writes the eigenvalues and PNG/SVG figures for two selected
-axes (1 and 2 by default). Coordinates for all positive axes are written only
-when ``--coordinates`` is requested.
+labels. It always writes PNG/SVG figures named after the input matrix for two selected
+axes (1 and 2 by default). Write eigenvalues with ``--values`` and coordinates
+for all positive axes with ``--coordinates``.
 
 Presentation choices:
 - the figure title defaults to the matrix filename;
@@ -61,8 +61,8 @@ def display_label(code: str) -> str:
 
 
 def default_prefix(matrix_path: Path) -> Path:
-    """Return the default output prefix next to the matrix."""
-    return matrix_path.with_name(f"{matrix_path.stem}-pcoa")
+    """Return the input matrix path without its extension."""
+    return matrix_path.with_suffix("")
 
 
 def default_title(matrix_path: Path) -> str:
@@ -107,9 +107,15 @@ def main() -> None:
             raise ValueError(f"--flip {axis}: axis outside 1..{n_axes}")
         coordinates[:, axis - 1] *= -1.0
 
-    prefix = args.output_prefix or default_prefix(args.matrix)
+    # Keep the legacy second positional as a destination prefix, but derive the
+    # output filenames from the matrix rather than that prefix's basename.
+    prefix = (
+        args.output_prefix.parent / args.matrix.stem
+        if args.output_prefix is not None
+        else default_prefix(args.matrix)
+    )
     coordinates_path = Path(f"{prefix}-coordinates.tsv")
-    eigenvalues_path = Path(f"{prefix}-valeurs-propres.tsv")
+    values_path = Path(f"{prefix}-values.tsv")
     png_path = Path(f"{prefix}.png")
     svg_path = Path(f"{prefix}.svg")
 
@@ -118,7 +124,8 @@ def main() -> None:
 
     if args.coordinates:
         write_coordinates(coordinates_path, labels, coordinates, positive)
-    write_eigenvalues(eigenvalues_path, eigenvalues)
+    if args.values:
+        write_values(values_path, eigenvalues)
     plot_pcoa(
         png_path,
         svg_path,
@@ -144,7 +151,8 @@ def main() -> None:
     print(f"Original distances / plane distances correlation: {fit:.3f}")
     if args.coordinates:
         print(f"Coordinates: {coordinates_path}")
-    print(f"Eigenvalues: {eigenvalues_path}")
+    if args.values:
+        print(f"Values: {values_path}")
     print(f"PNG figure: {png_path}")
     print(f"SVG figure: {svg_path}")
 
@@ -185,7 +193,8 @@ def parse_args() -> argparse.Namespace:
         nargs="?",
         type=Path,
         help=(
-            "Output file prefix; default: '<matrix>-pcoa' next to the matrix"
+            "Legacy output prefix; its directory is used, while output filenames "
+            "always use the input matrix name (default: beside input matrix)"
         ),
     )
     parser.add_argument(
@@ -229,9 +238,14 @@ def parse_args() -> argparse.Namespace:
         ),
     )
     parser.add_argument(
+        "--values",
+        action="store_true",
+        help="Write all eigenvalues to '<matrix>-values.tsv' (default: off)",
+    )
+    parser.add_argument(
         "--coordinates",
         action="store_true",
-        help="Write coordinates for all positive axes to '<prefix>-coordinates.tsv'",
+        help="Write coordinates for all positive axes to '<matrix>-coordinates.tsv'",
     )
     parser.add_argument(
         "--width",
@@ -571,7 +585,7 @@ def write_coordinates(
             writer.writerow([label, *(f"{value:.12g}" for value in row)])
 
 
-def write_eigenvalues(path: Path, eigenvalues: np.ndarray) -> None:
+def write_values(path: Path, eigenvalues: np.ndarray) -> None:
     """Write all positive, zero, and negative eigenvalues."""
     path.parent.mkdir(parents=True, exist_ok=True)
     positive_sum = float(eigenvalues[eigenvalues > 0.0].sum())
