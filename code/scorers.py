@@ -654,7 +654,7 @@ class ExclusiveTf(Scorer):
     """
 
     _registrations = (
-        ('extf', 'extf'),
+        ('extf', 'EXTF'),
     )
 
     @property
@@ -833,18 +833,36 @@ class G2IDF(Scorer):
     outside frequency. The expected DF uses independent allocation of the c
     remaining occurrences proportional to the *other* document lengths.
 
+    The expected DF is evaluated using cached corpus-wide values and a cubic
+    expansion in dl / CL. For target documents representing more than 0.5% of
+    the corpus, it is evaluated directly, using the original exact expression.
+    This avoids repeating an O(number of documents) sum for every term cell.
+
     cf = tf and df = 1 imply c = b = 0: a corpus singleton receives no
     additional DF bonus. There is no extra G² term, IDF exponent or weight.
     """
 
     _registrations = (
-        ('g2idf', 'G²-IDF (DF-adjusted 2×2)'),
+        ('g2idf', 'G²-IDF'),
     )
 
     def __init__(self, corpus: TermDocCorpus) -> None:
         super().__init__(corpus)
         self._doc_ids = np.asarray(corpus.doc_ids, dtype=np.int64)
         self._lengths = np.asarray(corpus.doc_len[self._doc_ids], dtype=np.float64)
+        proportions = self._lengths / float(corpus.collection_len)
+        with np.errstate(divide="ignore", invalid="ignore"):
+            self._log_absent = np.log1p(-proportions)
+            odds = np.divide(
+                proportions,
+                1.0 - proportions,
+                out=np.zeros_like(proportions),
+                where=proportions < 1.0,
+            )
+        self._odds = odds
+        self._odds2 = odds * odds
+        self._odds3 = self._odds2 * odds
+        self._df_cache: dict[int, tuple[float, float, float, float]] = {}
 
     @property
     def code(self) -> str:
@@ -862,7 +880,8 @@ class G2IDF(Scorer):
         corpus_frequency = np.asarray(self.corpus.cf[term_ids], dtype=np.float64)
         document_frequency = np.asarray(self.corpus.df[term_ids], dtype=np.float64)
         dl = float(self.corpus.doc_len[doc_id])
-        L = float(self.corpus.collection_len) - dl
+        CL = float(self.corpus.collection_len)
+        L = CL - dl
         M = self.corpus.n_docs - 1
 
         scores = np.zeros(observed.shape, dtype=np.float64)
@@ -878,37 +897,44 @@ class G2IDF(Scorer):
             | (r < 0.0) | (r > M) | (r > c)
         )
 
-        # For cf = tf, no occurrences remain outside the target document.
-        # Else c >= 1 and r >= 1 for valid term/document counts.
         b = np.zeros(observed.shape, dtype=np.float64)
         valid = ~invalid & (c > 0.0)
         if np.any(valid):
-            other_lengths = self._lengths[self._doc_ids != doc_id]
-            with np.errstate(divide="ignore", invalid="ignore"):
-                log_absent = np.log1p(-other_lengths / L)
-
-            frequencies, inverse = np.unique(c[valid], return_inverse=True)
+            frequencies, inverse = np.unique(c[valid].astype(np.int64), return_inverse=True)
             expected_df = np.empty(len(frequencies), dtype=np.float64)
-            # Chunk the outer product to bound peak memory use for long texts.
-            for start in range(0, len(frequencies), 256):
-                block = frequencies[start : start + 256]
-                expected_df[start : start + len(block)] = (
-                    -np.expm1(np.multiply.outer(block, log_absent))
-                ).sum(axis=1)
+            if dl / CL > 0.005:
+                # The cubic expansion is unnecessary for rare, very long docs.
+                other_lengths = self._lengths[self._doc_ids != doc_id]
+                log_absent = np.log1p(-other_lengths / L)
+                for start in range(0, len(frequencies), 256):
+                    block = frequencies[start : start + 256]
+                    expected_df[start : start + len(block)] = (
+                        -np.expm1(np.multiply.outer(block, log_absent))
+                    ).sum(axis=1)
+            else:
+                delta = dl / CL
+                own_log_absent = np.log1p(-dl / L)
+                for i, frequency in enumerate(frequencies):
+                    params = self._df_cache.get(int(frequency))
+                    if params is None:
+                        params = self._df_coefficients(int(frequency))
+                        self._df_cache[int(frequency)] = params
+                    f0, f1, f2, f3 = params
+                    own = -np.expm1(float(frequency) * own_log_absent)
+                    expected_df[i] = (
+                        f0 + delta * (f1 + delta * (f2 / 2.0 + delta * f3 / 6.0))
+                        - own
+                    )
 
             r_hat = expected_df[inverse]
             r_valid = r[valid]
             c_valid = c[valid]
-            # Scale odds, keeping b + (L - b) == L. The 0/0 cases occur
-            # only on invalid corpus statistics (or an empty outside corpus).
             denom = (L - c_valid) * r_hat + c_valid * r_valid
             with np.errstate(divide="ignore", invalid="ignore"):
                 b[valid] = L * c_valid * r_valid / denom
             b[valid] = np.clip(b[valid], 0.0, L)
             invalid |= ~np.isfinite(b)
 
-        # The adjusted outside term count is a token-equivalent count.
-        # Recalculate all four expectations from the adjusted table margins.
         focus_nonterm = dl - observed
         other_nonterm = L - b
         term_total = observed + b
@@ -932,6 +958,22 @@ class G2IDF(Scorer):
         scores[(term_total == 0.0) | (nonterm_total == 0.0)] = 0.0
         scores[invalid] = np.nan
         return scores
+
+    def _df_coefficients(self, frequency: int) -> tuple[float, float, float, float]:
+        """Cache cubic expansion coefficients for expected DF at corpus length.
+
+        For delta = doc_len / collection_len, the desired sum over *all*
+        documents at background length CL*(1-delta) is approximated by
+        F0 + delta*F1 + delta²*F2/2 + delta³*F3/6. Subtracting the focus
+        document's contribution at that same background length yields r_hat.
+        """
+        n = float(frequency)
+        q = np.exp(n * self._log_absent)
+        f0 = float((-np.expm1(n * self._log_absent)).sum())
+        a = n * float(np.dot(self._odds, q))
+        b = n * (n - 1.0) * float(np.dot(self._odds2, q))
+        d = n * (n - 1.0) * (n - 2.0) * float(np.dot(self._odds3, q))
+        return f0, a, 2.0 * a - b, 6.0 * a - 6.0 * b + d
 
 
 class G2simple(Scorer):
@@ -1333,6 +1375,72 @@ class LRC(Scorer):
         return scores
 
 
+class PositiveLRC(LRC):
+    """Evert's one-sided PositiveLRC for ranking positive keyword candidates.
+
+    Returns the base-2 log relative risk at the lower limit of a one-sided
+    exact conditional-Poisson confidence interval (Clopper-Pearson). Unlike
+    LRC, negative scores are preserved rather than collapsed to zero: they
+    mean insufficient evidence for positive keyness, not necessarily
+    significant underrepresentation.
+
+    The inherited confidence and family_size parameters use the same fixed
+    Bonferroni family as LRC. For present terms the score is finite; a term
+    absent from the target (tf=0) has a score of -infinity, as required by
+    the exact one-sided lower confidence bound.
+
+    Evert, S. (2022). "Measuring keyness." Digital Humanities 2022.
+    """
+
+    _registrations = (
+        ('lrcplus', 'LRC+'),
+    )
+
+    @property
+    def code(self) -> str:
+        """Return the filename code."""
+        return "lrcplus"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Return the lower one-sided log-relative-risk confidence bound."""
+        observed = np.asarray(tf, dtype=np.float64)
+        cf = np.asarray(self.corpus.cf[term_ids], dtype=np.float64)
+        dl = float(self.corpus.doc_len[doc_id])
+        rest_len = float(self.corpus.collection_len) - dl
+        rest_tf = cf - observed
+
+        scores = np.zeros(observed.shape, dtype=np.float64)
+        invalid = (
+            (observed < 0.0)
+            | (rest_tf < 0.0)
+            | (observed > dl)
+            | (rest_tf > rest_len)
+        )
+        if dl <= 0.0 or rest_len <= 0.0:
+            scores[invalid] = np.nan
+            return scores
+
+        valid = ~invalid & (cf > 0.0)
+        if np.any(valid):
+            # One-sided confidence interval: alpha / m, not alpha / (2m).
+            tail = (1.0 - self.confidence) / self.family_size
+            lower = beta.ppf(tail, observed[valid], rest_tf[valid] + 1.0)
+            with np.errstate(divide="ignore", invalid="ignore"):
+                scores[valid] = (
+                    np.log2(rest_len / dl)
+                    + np.log2(lower)
+                    - np.log1p(-lower) / np.log(2.0)
+                )
+            scores[valid & (observed == 0.0)] = -np.inf
+        scores[invalid] = np.nan
+        return scores
+
+
 class MinimumSensitivity(Scorer):
     """Sketch Engine minimum-sensitivity association score.
 
@@ -1604,7 +1712,7 @@ class PoissonDeviance(Scorer):
     """
 
     _registrations = (
-        ('poissondev', 'Signed Poisson deviance'),
+        ('poissondev', 'Poisson'),
     )
 
     requires_complement = True
@@ -1719,7 +1827,7 @@ class PoissonIDF(PoissonIDFAlpha):
     """Default PoissonIDF: corpus-conditioned repetition, alpha=1."""
 
     _registrations = (
-        ('poissonidf', 'PoissonIDF (conditional repetition; α=1)'),
+        ('poissonidf', 'PoissonIDF'),
     )
 
     def __init__(self, corpus: TermDocCorpus) -> None:
@@ -1808,6 +1916,44 @@ class SimpleMaths(Scorer):
         ppm_focus = focus_term * 1_000_000.0 / focus_tokens + self.k
         ppm_other = other_term * 1_000_000.0 / other_tokens + self.k
         return ppm_focus / ppm_other
+
+
+class LogSimpleMaths(SimpleMaths):
+    """Base-2 logarithm of Kilgarriff's Simple Maths measure.
+
+    Inherits the same smoothing parameter as SimpleMaths; logarithms preserve
+    its complete term ranking, including terms scoring below the ratio 1.
+    No threshold is applied by this scorer.
+    """
+
+    _registrations = (
+        ('logsimplemaths', 'log₂ SimpleMaths'),
+        ('logsimplemathsk{k}', 'log₂ SimpleMaths({k:g})'),
+    )
+
+    @property
+    def code(self) -> str:
+        """Return the filename code."""
+        if self.auto_k:
+            return "logsimplemaths"
+        return f"logsimplemathsk{self.k:g}"
+
+    @property
+    def name(self) -> str:
+        """Return the human-readable scorer name."""
+        return f"log₂ Simple Maths (k={self.k:g})"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Take log2 of Simple Maths without changing its ordering."""
+        dl = float(self.corpus.doc_len[doc_id])
+        if dl <= 0.0 or dl >= self.corpus.collection_len:
+            return np.zeros(len(tf), dtype=np.float64)
+        return np.log2(super().score_terms(doc_id, term_ids, tf))
 
 
 class SubTf(Scorer):

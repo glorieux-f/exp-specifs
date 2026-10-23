@@ -8,9 +8,13 @@ setlocal EnableExtensions EnableDelayedExpansion
 :: python cooc.py --corpus ../data/3_contingency/romans19e- --pivot indigène --window 3 5 10 30 100 --scorers simplemaths tscore tf mi logratio txm --vocab content --top 30 -o ../results/cooc "../data/2_lemma/verne*.tsv"
 
 :: plot non parametric formula keyword 100
-python .\keywords.py  ..\data\3_contingency\romans19e-  ..\results\keywords100\  --select "verne*" "balzac*" "sand*" "zola*" "dumas*"  --vocab "all" "content" "nostops"  --top 100 --min-doc-len 1000  --scorer bm25 bm25k100b1 bm25k1000b0.25  bm25k1000b0.25 btfidf cf chi2 df extf g2 logdice logratio lrc mi milogf minsens simplemaths simplemathsk1 subtfidf tf tficf tfidf  tscore txm
-python .\keywords-matrix.py --metric rbo --vocab content ..\results\keywords100 ..\results\keywords-pcoa\romans19e-keywords100-rbo.tsv
-python .\pcoa.py ..\results\keywords-pcoa\romans19e-keywords100-rbo.tsv --exclude "cf" "df" "*alpha*" --flip 2 --title "Balzac, Dumas, Sand, Verne, Zola ; plus de 7000 chapitres ; 100 mots clés. Distances entre formules de spécificité."
+:: python .\keywords.py  ..\data\3_contingency\romans19e-  ..\results\keywords100\  --select "verne*" "balzac*" "sand*" "zola*" "dumas*"  --vocab "all" "content" "nostops"  --top 100 --min-doc-len 1000  --scorer bm25 bm25k1000b0.25 btfidf cf chi2 df extf g2 g2idf logdice logratio lrc lrcplus mi milogf minsens poissondev poissonidf simplemaths simplemathsk100000 simplemathsk1 simplemathsk0.01 subtfidf subtfidfa0.3 tf tficf tfidf tfidfa0.8 tscore txm
+:: python .\keywords-matrix.py --metric rbo --vocab content ..\results\keywords100 ..\results\keywords-pcoa\romans19e-keywords100-rbo.tsv
+:: python .\pcoa.py ..\results\keywords-pcoa\romans19e-keywords100-rbo.tsv --exclude "cf" "df" "*alpha*" --flip 2 --title "Balzac, Dumas, Sand, Verne, Zola ; plus de 7000 chapitres ; 100 mots clés. Spectre des formules de spécificité."
+
+python .\keywords.py  ..\data\3_contingency\romans19e-  ..\results\keywords100-maxness\  --select "verne*" "balzac*" "sand*" "zola*" "dumas*"  --vocab "content" --top 100 --min-doc-len 1000  --scorer g2 g2idf lrc lrcplus poissondev tf poissonidfa0 poissonidfa0.9 poissonidfa1 poissonidfa1.1 simplemaths subtfidfa0.28 tfidf tfidfa0.77 txm
+python .\keywords-matrix.py --metric rbo --vocab content ..\results\keywords100-maxness ..\results\keywords-pcoa\romans19e-keywords100-maxness-rbo.tsv
+python .\pcoa.py ..\results\keywords-pcoa\romans19e-keywords100-maxness-rbo.tsv --exclude "cf" "df" "*alpha*" --flip 2 --title "Balzac, Dumas, Sand, Verne, Zola ; plus de 7000 chapitres ; 100 mots clés. Nuage de la spécificité."
 
 
 :: plot keywords for simplemaths and bm25

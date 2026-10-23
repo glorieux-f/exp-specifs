@@ -27,8 +27,9 @@ Vocabulary modes:
 Modes involving stopwords use ``stopwords.txt`` next to this script unless
 ``--stopwords`` supplies another file. Vocabulary selection does not alter
 corpus statistics. ``--min-doc-len`` affects only which documents are output.
-A keyword list contains only scores above the scorer's neutral value (1 for
-Simple Maths, 0 otherwise). ``--top 0`` disables truncation.
+A keyword list ranks eligible terms by descending score. For plot comparisons,
+LRC retains only positive scores and EXTF only exclusive terms (DF=1).
+``--top 0`` disables truncation.
 
 Each document is written as a metadata line, a comma-separated keyword line,
 and a blank line. Existing outputs are skipped unless ``--force`` is specified.
@@ -48,7 +49,7 @@ from corpus import (
     Corpus, Document, DEFAULT_STOPWORDS, STOPWORD_VOCAB_MODES,
     VOCAB_MODES, load_stopwords, vocabulary_mask,
 )
-from scorers import Scorer, SimpleMaths, make_scorer
+from scorers import Scorer, make_scorer
 
 
 DEFAULT_TOP_N = 100
@@ -211,16 +212,25 @@ def generate(
                                 f"for {document.identifier}"
                             )
 
-                        keyword = scores > neutral_score(scorer)
+                        if scorer.code == "lrc":
+                            keep = scores > 0.0
+                        elif scorer.code == "extf":
+                            keep = corpus.df[candidate_terms] == 1
+                        else:
+                            keep = slice(None)
+                        candidate_terms = candidate_terms[keep]
+                        candidate_tf = candidate_tf[keep]
+                        scores = scores[keep]
+
                         tie_cf = (
-                            -corpus.cf[candidate_terms[keyword]]
+                            corpus.cf[candidate_terms]
                             if scorer.code == "tf"
                             else None
                         )
                         ranked = rank_terms(
-                            candidate_terms[keyword],
-                            candidate_tf[keyword],
-                            scores[keyword],
+                            candidate_terms,
+                            candidate_tf,
+                            scores,
                             top_n,
                             cf=tie_cf,
                         )
@@ -334,16 +344,6 @@ def metadata_line(document: Document) -> str:
     return f"[{document.identifier}]"
 
 
-def neutral_score(scorer: Scorer) -> float:
-    """Return the score of a term that is neither over- nor under-represented.
-
-    Simple Maths is a ratio of smoothed relative frequencies, so its neutral
-    value is 1. Every other scorer is either signed around 0 or non-negative
-    with 0 meaning "not selected".
-    """
-    return 1.0 if isinstance(scorer, SimpleMaths) else 0.0
-
-
 def parse_args() -> argparse.Namespace:
     """Parse command-line arguments."""
     parser = argparse.ArgumentParser(
@@ -451,7 +451,7 @@ def rank_terms(
     ``top_n == 0`` means no truncation; otherwise return at most ``top_n`` terms.
     Default ordering is score descending, tf descending, then term_id ascending.
     For raw TF only, caller supplies corpus cf, producing:
-    tf descending, cf descending, then term_id ascending.
+    tf descending, cf ascending, then term_id ascending.
     """
     term_ids = np.asarray(term_ids, dtype=np.int64)
     tf = np.asarray(tf, dtype=np.int64)
@@ -469,7 +469,7 @@ def rank_terms(
             raise ValueError("cf must have the same shape as term_ids")
         keys = (
             term_ids,
-            -cf,
+            cf,
             -tf,
             -scores,
         )
