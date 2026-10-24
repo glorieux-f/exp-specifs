@@ -641,6 +641,85 @@ class DocumentFrequency(Scorer):
         return np.asarray(self.corpus.df[term_ids], dtype=np.float64)
 
 
+class EtfIdfAlpha(Scorer):
+    """Expected-TF-adjusted IDF with a single specificity exponent.
+
+    score = tf * [tf / (tf + expected_tf) * normalized_idf(df)] ** alpha
+    expected_tf = dl * (cf - tf) / (CL - dl)
+    normalized_idf(df) = ln(N / df) / ln(N)
+
+    tf : frequency in the focus document
+    cf : collection frequency of the term
+    df : document frequency of the term
+    dl : focus-document length
+    CL : collection length
+    N : number of documents
+    alpha : specificity exponent, non-negative
+
+    Alpha=0 gives TF exactly. For alpha>0, expected TF incorporates the
+    document length and the reference-corpus term frequency. As alpha grows,
+    terms occurring outside the focus document tend to zero; exclusive terms
+    retain their TF. This is an experimental weighting formula.
+    """
+
+    _registrations = (
+        ("etfidf", "ETF-IDFα(0.7)"),
+        ("etfidfa{alpha}", "ETF-IDFα({alpha:g})"),
+    )
+
+    def __init__(self, corpus: TermDocCorpus, alpha: float = 0.7) -> None:
+        """Prepare the normalized IDF weights for the chosen exponent."""
+        if not isfinite(alpha) or alpha < 0.0:
+            raise ValueError("alpha must be finite and >= 0")
+        if corpus.n_docs < 2:
+            raise ValueError("ETF-IDF requires at least two documents")
+        super().__init__(corpus)
+        self.alpha = float(alpha)
+        df = np.asarray(corpus.df, dtype=np.float64)
+        self._idf = np.zeros(df.shape, dtype=np.float64)
+        valid = (df > 0.0) & (df <= corpus.n_docs)
+        self._idf[valid] = np.log(corpus.n_docs / df[valid]) / np.log(corpus.n_docs)
+
+    @property
+    def code(self) -> str:
+        """Return the filename-safe code with its explicit alpha value."""
+        return f"etfidfa{self.alpha:g}"
+
+    @property
+    def name(self) -> str:
+        """Return a descriptive name with its alpha value."""
+        return f"ETF-IDF (alpha={self.alpha:g})"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Score aligned terms against the length-adjusted rest of corpus."""
+        observed = np.asarray(tf, dtype=np.float64)
+        if self.alpha == 0.0:
+            return observed.copy()
+
+        scores = np.zeros(observed.shape, dtype=np.float64)
+        dl = float(self.corpus.doc_len[doc_id])
+        rest_len = float(self.corpus.collection_len) - dl
+        if dl <= 0.0 or rest_len <= 0.0:
+            return scores
+
+        outside = np.asarray(self.corpus.cf[term_ids], dtype=np.float64) - observed
+        invalid = (observed < 0.0) | (observed > dl) | (outside < 0.0) | (outside > rest_len)
+        positive = (observed > 0.0) & ~invalid
+        if np.any(positive):
+            expected = dl * outside[positive] / rest_len
+            contrast = observed[positive] / (observed[positive] + expected)
+            scores[positive] = observed[positive] * np.power(
+                contrast * self._idf[term_ids[positive]], self.alpha
+            )
+        scores[invalid] = np.nan
+        return scores
+
+
 class ExclusiveTf(Scorer):
     """Raw term frequency restricted to terms exclusive to the focus document.
 
@@ -654,7 +733,7 @@ class ExclusiveTf(Scorer):
     """
 
     _registrations = (
-        ('extf', 'EXTF'),
+        ('extf', 'DF=1'),
     )
 
     @property
@@ -665,7 +744,7 @@ class ExclusiveTf(Scorer):
     @property
     def name(self) -> str:
         """Return the human-readable scorer name."""
-        return "Exclusive TF"
+        return "DF=1"
 
     def score_terms(
         self,
