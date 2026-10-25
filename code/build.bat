@@ -8,9 +8,15 @@ setlocal EnableExtensions EnableDelayedExpansion
 :: python cooc.py --corpus ../data/3_contingency/romans19e- --pivot indigène --window 3 5 10 30 100 --scorers simplemaths tscore tf mi logratio txm --vocab content --top 30 -o ../results/cooc "../data/2_lemma/verne*.tsv"
 
 :: plot non parametric formula keyword 100
-python .\keywords.py  ..\data\3_contingency\romans19e-  ..\results\keywords100\  --select "verne*" "balzac*" "sand*" "zola*" "dumas*"  --vocab "all" "content" "nostops"  --top 100 --min-doc-len 1000  --scorer bm25 bm25k1000b0.25 btfidf cf chi2 df extf g2 logdice logratio lrc mi milogf minsens poissondev simplemaths simplemathsk1 subtfidf subtfidfa0.27 tf tficf tfidf tfidfa0.77 tscore txm
-python .\keywords-matrix.py --metric rbo --vocab content ..\results\keywords100 ..\results\keywords-pcoa\romans19e-keywords100-rbo.tsv
-python .\pcoa.py ..\results\keywords-pcoa\romans19e-keywords100-rbo.tsv --exclude "cf" "df" "*alpha*" --flip 2 --title "Balzac, Dumas, Sand, Verne, Zola ; plus de 7000 chapitres ; 100 mots clés. Spectre des formules de spécificité."
+:: python .\keywords.py  ..\data\3_contingency\romans19e-  ..\results\keywords100\  --select "verne*" "balzac*" "sand*" "zola*" "dumas*"  --vocab "all" "content" "nostops"  --top 100 --min-doc-len 1000  --scorer bm25 bm25k1000b1 btfidf cf chi2 df extf g2 logdice logratio lrc mi milogf minsens poissondev simplemaths simplemathsk1 subtfidf subtfidfa0.27 tf tficf tfidf tfidfa0.77 tscore txm
+:: python .\keywords-matrix.py --metric rbo --vocab content ..\results\keywords100 ..\results\keywords-pcoa\romans19e-keywords100-rbo.tsv
+:: python .\pcoa.py ..\results\keywords-pcoa\romans19e-keywords100-rbo.tsv --exclude "cf" "df" "*alpha*" --flip 2 --title "Balzac, Dumas, Sand, Verne, Zola ; plus de 7000 chapitres ; 100 mots clés. Spectre des formules de spécificité."
+
+:: plot parametric formula keyword 100
+python .\keywords.py  ..\data\3_contingency\romans19e-  ..\results\keywords100param\  --select "verne*" "balzac*" "sand*" "zola*" "dumas*"  --vocab content --top 100 --min-doc-len 1000  --scorer bm25k10000b1 bm25k1000b1 bm25k100b1 bm25k10b1 bm25k1b1 bm25k0.1b1 bm25k0.001b1  bm25k0.0001b1 simplemathsk100000 simplemathsk10000 simplemathsk1000 simplemathsk500 simplemathsk100 simplemathsk60 simplemathsk20 simplemathsk10 simplemathsk5 simplemathsk1 simplemathsk0.1 simplemathsk0.01 simplemathsk0.001 simplemathsk0.0001 tfidfa0 tfidfa0.25 tfidfa0.5 tfidfa0.77 tfidfa1 tfidfa2 tfidfa4 tfidfa8 tfidfa16 subtfidfa0 subtfidfa0.05 subtfidfa0.1 subtfidfa0.27 subtfidfa0.5 subtfidfa0.75 subtfidfa1 subtfidfa2 subtfidfa4 subtfidfa8 subtfidfa16 hgta0 hgta0.25 hgta0.5 hgta0.75 hgta1 hgta2 hgta4 hgta8 hgta16
+python .\keywords-matrix.py --metric rbo --vocab content ..\results\keywords100param ..\results\keywords-pcoa\romans19e-keywords100param-rbo.tsv
+python .\pcoa-families.py ..\results\keywords-pcoa\romans19e-keywords100param-rbo.tsv --output-prefix ..\results\keywords-pcoa\romans19e-100motscles-spec-families --families subtfidfa tfidfa g2a hgta simplemaths bm25 --flip 2 --title "Balzac, Dumas, Sand, Verne, Zola ; plus de 7000 chapitres ; 100 mots clés. Distances entre formules paramétrables de spécificité."
+
 
 :: python .\keywords.py  ..\data\3_contingency\romans19e-  ..\results\keywords100-maxness\  --select "verne*" "balzac*" "sand*" "zola*" "dumas*"  --vocab "content" --top 100 --min-doc-len 1000  --scorer etfidfa0.77 g2  lrc  subtfidfa0.27 subtfidfa0.28 subtfidfa0.29 tfidfa0.77 txm
 :: python .\keywords-matrix.py --metric rbo --vocab content ..\results\keywords100-maxness ..\results\keywords-pcoa\romans19e-keywords100-maxness-rbo.tsv
@@ -26,7 +32,6 @@ python .\pcoa.py ..\results\keywords-pcoa\romans19e-keywords100-rbo.tsv --exclud
 :: plot formulas without parameters
 :: python .\pcoa.py ..\results\keywords-pcoa\romans19e-100motscles-rbo.tsv ..\results\keywords-pcoa\romans19e-100motscles-specifs --exclude "cf" "df" "*alpha*" --flip 2 --title "Balzac, Dumas, Sand, Verne, Zola ; plus de 7000 chapitres ; 100 mots clés. Distances entre formules de spécificité."
 :: plots formulas with parameters
-:: python .\pcoa-families.py ..\results\romans19e-100motscles-rbo.tsv --output-prefix ..\results\romans19e-100motscles-spec-families --families "subTF-IDF" "TF-IDF" HGT "G²" "χ²" --flip 2 --title "Balzac, Dumas, Sand, Verne, Zola ; plus de 7000 chapitres ; 100 mots clés. Distances entre formules paramétrables de spécificité."
 :: 1000 keywords 
 :: python .\keywords.py ..\data\3_contingency\ ..\results\keywords-content --vocab content --top 0 --min-doc-len 1000 --scorer hgta3 hgta2 hgta1.47 txm hgta0.75   g2a1.4 g2 g2a0.76  tfidf tfidfa3  tfidfa1.14 tfidfa0.77 tfidfa0.57  subtfidf subtfidfa0.56 subtfidfa0.4 subtfidfa0.3 subtfidfa0.2   tfidfa16 logdice tf  chi2 chi2a2 chi2a1.5 df cf
 :: python .\keywords-average.py -o ..\results\keywords-average\keywords-content-average.txt ..\results\keywords-content\*.txt

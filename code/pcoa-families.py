@@ -1,22 +1,10 @@
 #!/usr/bin/env python3
-"""PCoA plot for parameterized specificity families.
+"""PCoA trajectories from a scorer-code distance matrix.
 
-The input is a square labelled TSV/CSV distance matrix whose row and column
-labels are publication labels, for example ``G²α(1.4)``, ``HGTα(1.47)`` or
-``subTF-IDFα(0.56)``. A full symmetric matrix is accepted; an upper- or
-lower-triangular matrix with blank cells is also accepted and is completed
-from the opposite triangle.
-
-Parameterized families are detected directly from labels of the form
-``<family>α(<value>)``. With no ``--families`` option, every detected family is
-plotted. A subset can be requested with the publication family names, e.g.::
-
-    python pcoa-families.py distances.tsv \
-        --families "TF-IDF" "subTF-IDF" HGT "G²" "χ²"
-
-PCoA is computed on the selected submatrix only. Within each family, points
-are ordered by numeric alpha and linked by straight segments. Point labels
-show alpha only. The script does not depend on ``scorers.py``.
+``--families`` accepts stable family identifiers (e.g. ``tfidfa``, ``bm25``),
+not publication labels. Display names come from ``scorers.scorer_label``.
+The BM25 curve varies k1 at fixed b, with separate curves for each b.
+Unrepresented, but recognized, families are skipped with a warning.
 """
 
 from __future__ import annotations
@@ -24,7 +12,11 @@ from __future__ import annotations
 import argparse
 import csv
 import re
+import sys
 from pathlib import Path
+from difflib import get_close_matches
+
+from scorers import scorer_label
 
 import matplotlib
 
@@ -51,11 +43,45 @@ DIRECTIONS = (
 # The first five entries of tab10 are deliberately well separated in hue.
 COLOR_ORDER = (0, 1, 2, 3, 4, 8, 9, 5, 6, 7)
 
-# Publication labels use FAMILYα(value), with a numeric alpha value.
-ALPHA_NUMBER_RE = r"[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?"
-FAMILY_LABEL_RE = re.compile(
-    rf"^(?P<family>.+?)α\((?P<alpha>{ALPHA_NUMBER_RE})\)$"
+# Command-line family IDs are independent of figure labels.
+# Most match their scorer-code prefix; the SimpleMaths family is the exception.
+CODE_PREFIXES = {
+    "subtfidfa": "subtfidfa",
+    "tfidfa": "tfidfa",
+    "hgta": "hgta",
+    "g2a": "g2a",
+    "chi2a": "chi2a",
+    "poissonidfa": "poissonidfa",
+    "simplemaths": "simplemathsk",
+    "bm25": "bm25",
+}
+NUMBER_RE = r"[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?"
+BM25_RE = re.compile(rf"^bm25k(?P<parameter>{NUMBER_RE})b(?P<b>{NUMBER_RE})$")
+FAMILY_RE = re.compile(
+    rf"^(?P<family>{'|'.join(re.escape(p) for p in sorted(
+        (prefix for family, prefix in CODE_PREFIXES.items() if family != 'bm25'),
+        key=len, reverse=True))})(?P<parameter>{NUMBER_RE})$"
 )
+PREFIX_TO_FAMILY = {prefix: family for family, prefix in CODE_PREFIXES.items()}
+
+
+def parse_family_code(code: str) -> tuple[str, float, float | None] | None:
+    """Return the family ID, varying parameter and optional fixed BM25 b."""
+    match = BM25_RE.fullmatch(code)
+    if match:
+        return "bm25", float(match.group("parameter")), float(match.group("b"))
+    match = FAMILY_RE.fullmatch(code)
+    if match:
+        return PREFIX_TO_FAMILY[match.group("family")], float(match.group("parameter")), None
+    return None
+
+
+def publication_family_label(code: str, family: str, b: float | None) -> str:
+    """Derive the figure legend from the scorer registry, without the parameter."""
+    if family == "bm25":
+        return f"BM25 (b={b:g})"
+    label = scorer_label(code)
+    return re.sub(r"(?:α)?\([^()]*\)$", "", label)
 
 
 def default_prefix(matrix_path: Path) -> Path:
@@ -94,8 +120,10 @@ def parse_args() -> argparse.Namespace:
         nargs="+",
         metavar="FAMILY",
         help=(
-            "Publication family names to plot, e.g. --families 'TF-IDF' "
-            "'subTF-IDF' HGT 'G²' 'χ²'. Default: every α family found."
+            "Scorer-code family IDs: "
+            + ", ".join(CODE_PREFIXES)
+            + ". BM25 includes all b values; absent families are skipped. "
+            "Default: all recognized families."
         ),
     )
     parser.add_argument(
@@ -158,11 +186,12 @@ def main() -> None:
         raise ValueError("--dpi must be > 0")
 
     labels, distance = read_distance_matrix(args.matrix)
-    selected_labels, selected_distance, families, family_of, alpha_of = select_families(
-        labels,
-        distance,
-        args.families,
-    )
+    try:
+        selected_labels, selected_distance, families, family_of, parameter_of, display_of = select_families(
+            labels, distance, args.families
+        )
+    except ValueError as exc:
+        raise SystemExit(f"error: {exc}") from None
 
     coordinates, eigenvalues = pcoa(selected_distance)
 
@@ -191,7 +220,8 @@ def main() -> None:
         (axis_x, axis_y),
         families,
         family_of,
-        alpha_of,
+        parameter_of,
+        display_of,
         args.title or default_title(args.matrix),
         args.width,
         args.height,
@@ -203,7 +233,7 @@ def main() -> None:
             selected_labels,
             coordinates,
             family_of,
-            alpha_of,
+            parameter_of,
         )
 
     scale = max(1.0, float(np.max(np.abs(eigenvalues))))
@@ -222,12 +252,12 @@ def main() -> None:
 
     print(f"Selected scorers: {len(selected_labels)}")
     for family in families:
-        alphas = sorted(
-            alpha_of[label]
+        parameters = sorted(
+            parameter_of[label]
             for label in selected_labels
             if family_of[label] == family
         )
-        print(f"{family}: " + ", ".join(f"{alpha:g}" for alpha in alphas))
+        print(f"{family} ({display_of[family]}): " + ", ".join(f"{value:g}" for value in parameters))
     print(f"Positive axes: {len(positive)}")
     print(f"Negative eigenvalues: {negative_count}")
     print(f"Positive inertia of axes {axis_x} and {axis_y}: {plane_pct:.2f} %")
@@ -248,77 +278,90 @@ def select_families(
     list[str],
     dict[str, str],
     dict[str, float],
+    dict[str, str],
 ]:
-    """Select publication labels of the form FAMILYα(value).
+    """Select scorer-code families and distinguish BM25 curves by fixed b.
 
-    Families are detected from the matrix labels themselves. If
-    requested_families is given, only those exact publication family names are
-    retained, in command-line order. Otherwise every detected family is kept in
-    first-occurrence order.
+    Family identifiers are CLI codes, not presentation labels. A known family
+    absent from this matrix is skipped; an unknown identifier is an error.
     """
+    if requested_families:
+        unknown = [name for name in requested_families if name not in CODE_PREFIXES]
+        if unknown:
+            hints = [
+                f"{name!r} (did you mean {suggestion[0]!r}?)" if suggestion else repr(name)
+                for name in unknown
+                for suggestion in [get_close_matches(name, CODE_PREFIXES, n=1)]
+            ]
+            raise ValueError(
+                "Unknown --families identifier(s): " + ", ".join(hints)
+                + "; valid IDs: " + ", ".join(CODE_PREFIXES)
+            )
+        if len(set(requested_families)) != len(requested_families):
+            raise ValueError("--families contains duplicates")
+
     parsed: dict[str, tuple[str, float]] = {}
     detected_families: list[str] = []
-
-    for label in labels:
-        match = FAMILY_LABEL_RE.fullmatch(label)
-        if match is None:
+    family_id_of: dict[str, str] = {}
+    display_of: dict[str, str] = {}
+    for code in labels:
+        result = parse_family_code(code)
+        if result is None:
             continue
-        family = match.group("family")
-        alpha = float(match.group("alpha"))
-        if not np.isfinite(alpha):
-            raise ValueError(f"Non-finite alpha in scorer label {label!r}")
-        parsed[label] = (family, alpha)
-        if family not in detected_families:
-            detected_families.append(family)
+        family_id, parameter, b = result
+        if not np.isfinite(parameter) or (b is not None and not np.isfinite(b)):
+            raise ValueError(f"Non-finite parameter in scorer code {code!r}")
+        group = f"bm25:b={b:g}" if family_id == "bm25" else family_id
+        parsed[code] = group, parameter
+        if group not in detected_families:
+            detected_families.append(group)
+            family_id_of[group] = family_id
+            display_of[group] = publication_family_label(code, family_id, b)
 
     if not detected_families:
         raise ValueError(
-            "No parameterized scorer labels of the form FAMILYα(value) were found"
+            "No parameterized scorer codes found; examples: "
+            "tfidfa0.5, hgta1, simplemathsk10, bm25k100b1"
         )
 
     if requested_families:
-        if len(set(requested_families)) != len(requested_families):
-            raise ValueError("--families contains duplicates")
-        missing = [
-            family
+        families = [
+            group
             for family in requested_families
-            if family not in detected_families
+            for group in detected_families
+            if family_id_of[group] == family
         ]
-        if missing:
-            raise ValueError(
-                "Unknown family/families: "
-                + ", ".join(missing)
-                + "; available: "
-                + ", ".join(detected_families)
+        absent = [
+            family for family in requested_families
+            if family not in family_id_of.values()
+        ]
+        if absent:
+            print(
+                "Skipping absent family/families: " + ", ".join(absent)
+                + "; available IDs: "
+                + ", ".join(dict.fromkeys(family_id_of.values())),
+                file=sys.stderr,
+                flush=True,
             )
-        families = list(requested_families)
     else:
         families = detected_families
 
     family_set = set(families)
-    family_of: dict[str, str] = {}
-    alpha_of: dict[str, float] = {}
-    indices: list[int] = []
-
-    for index, label in enumerate(labels):
-        parsed_label = parsed.get(label)
-        if parsed_label is None:
-            continue
-        family, alpha = parsed_label
-        if family not in family_set:
-            continue
-        family_of[label] = family
-        alpha_of[label] = alpha
-        indices.append(index)
-
+    indices = [i for i, code in enumerate(labels) if code in parsed and parsed[code][0] in family_set]
     if len(indices) < 3:
-        raise ValueError(
-            "At least three parameterized scorers are required for a 2D PCoA"
-        )
+        raise ValueError("At least three parameterized scorers are required for a 2D PCoA")
 
-    selected_labels = [labels[index] for index in indices]
-    selected_distance = distance[np.ix_(indices, indices)].copy()
-    return selected_labels, selected_distance, families, family_of, alpha_of
+    selected_labels = [labels[i] for i in indices]
+    family_of = {code: parsed[code][0] for code in selected_labels}
+    parameter_of = {code: parsed[code][1] for code in selected_labels}
+    return (
+        selected_labels,
+        distance[np.ix_(indices, indices)].copy(),
+        families,
+        family_of,
+        parameter_of,
+        display_of,
+    )
 
 
 def pcoa(distance: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
@@ -374,13 +417,14 @@ def plot_families(
     axes: tuple[int, int],
     families: list[str],
     family_of: dict[str, str],
-    alpha_of: dict[str, float],
+    parameter_of: dict[str, float],
+    display_of: dict[str, str],
     title: str,
     width: float,
     height: float,
     dpi: int,
 ) -> None:
-    """Draw one colored polyline and alpha-labelled points per family."""
+    """Draw one colored polyline and parameter-labelled points per family."""
     matplotlib.rcParams["svg.fonttype"] = "none"
     axis_x, axis_y = axes
 
@@ -389,7 +433,6 @@ def plot_families(
     positive_sum = float(positive.sum())
     x_pct = 100.0 * float(positive[axis_x - 1]) / positive_sum
     y_pct = 100.0 * float(positive[axis_y - 1]) / positive_sum
-    negative = eigenvalues[eigenvalues < -TOLERANCE * scale]
 
     x = coordinates[:, axis_x - 1]
     y = coordinates[:, axis_y - 1]
@@ -407,19 +450,19 @@ def plot_families(
     for family in families:
         family_labels = sorted(
             (label for label in labels if family_of[label] == family),
-            key=lambda label: alpha_of[label],
+            key=lambda label: parameter_of[label],
         )
         indices = [index_of[label] for label in family_labels]
         fx = x[indices]
         fy = y[indices]
         color = colors[family]
 
-        # Straight segments join the actually sampled alpha values.
+        # Straight segments join the actually sampled parameter values.
         ax.plot(fx, fy, linewidth=1.2, color=color, zorder=2)
         ax.scatter(fx, fy, s=marker_size, color=color, zorder=3)
 
         for label, px, py in zip(family_labels, fx, fy, strict=True):
-            label_texts.append(f"{alpha_of[label]:g}")
+            label_texts.append(f"{parameter_of[label]:g}")
             label_x.append(float(px))
             label_y.append(float(py))
             label_colors.append(color)
@@ -430,16 +473,6 @@ def plot_families(
     ax.set_aspect("equal", adjustable="datalim")
 
     x_label = f"Axe principal {axis_x} — {x_pct:.1f} % de l'inertie positive"
-    if len(negative) > 0:
-        negative_abs = float(np.abs(negative).sum())
-        total_abs = float(np.abs(eigenvalues).sum())
-        negative_pct = 100.0 * negative_abs / total_abs if total_abs > 0.0 else 0.0
-        """
-        x_label += (
-            f"\nValeurs propres négatives : {len(negative)} "
-            f"({negative_pct:.2f} % de l'inertie absolue)"
-        )
-        """
     ax.set_xlabel(x_label)
     ax.set_ylabel(f"Axe principal {axis_y} — {y_pct:.1f} % de l'inertie positive")
     ax.set_title(title)
@@ -452,7 +485,7 @@ def plot_families(
             marker="o",
             linewidth=1.2,
             markersize=5,
-            label=family,
+            label=display_of[family],
         )
         for family in families
     ]
@@ -494,7 +527,7 @@ def place_labels_colored(
     colors: list[object],
     marker_radius_pt: float,
 ) -> None:
-    """Place alpha labels around points while reducing collisions."""
+    """Place numeric parameter labels around points while reducing collisions."""
     fig.canvas.draw()
     renderer = fig.canvas.get_renderer()
     to_pixels = fig.dpi / 72.0
@@ -694,13 +727,13 @@ def write_coordinates(
     labels: list[str],
     coordinates: np.ndarray,
     family_of: dict[str, str],
-    alpha_of: dict[str, float],
+    parameter_of: dict[str, float],
 ) -> None:
-    """Write selected PCoA coordinates with family and alpha columns."""
+    """Write selected PCoA coordinates with family and parameter columns."""
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="") as stream:
         writer = csv.writer(stream, delimiter="\t", lineterminator="\n")
-        writer.writerow(["scorer", "family", "alpha", *[
+        writer.writerow(["scorer", "family", "parameter", *[
             f"axis{i}" for i in range(1, coordinates.shape[1] + 1)
         ]])
         for label, row in zip(labels, coordinates, strict=True):
@@ -708,7 +741,7 @@ def write_coordinates(
                 [
                     label,
                     family_of[label],
-                    f"{alpha_of[label]:g}",
+                    f"{parameter_of[label]:g}",
                     *(f"{value:.12g}" for value in row),
                 ]
             )
