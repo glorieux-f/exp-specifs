@@ -48,11 +48,15 @@ COLOR_ORDER = (0, 1, 2, 3, 4, 8, 9, 5, 6, 7)
 CODE_PREFIXES = {
     "subtfidfa": "subtfidfa",
     "tfidfa": "tfidfa",
+    "etfidfa": "etfidfa",
     "hgta": "hgta",
     "g2a": "g2a",
     "chi2a": "chi2a",
     "poissonidfa": "poissonidfa",
     "simplemaths": "simplemathsk",
+    "logsimplemaths": "logsimplemathsk",
+    "f2log": "f2logs",
+    "inbz": "inbz",
     "bm25": "bm25",
 }
 NUMBER_RE = r"[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?"
@@ -77,11 +81,11 @@ def parse_family_code(code: str) -> tuple[str, float, float | None] | None:
 
 
 def publication_family_label(code: str, family: str, b: float | None) -> str:
-    """Derive the figure legend from the scorer registry, without the parameter."""
+    """Remove the varying parameter from the publication label in scorers.py."""
+    label = re.sub(r"\([^()]*\)$", "", scorer_label(code))
     if family == "bm25":
-        return f"BM25 (b={b:g})"
-    label = scorer_label(code)
-    return re.sub(r"(?:α)?\([^()]*\)$", "", label)
+        return f"{label} (b={b:g})"
+    return label
 
 
 def default_prefix(matrix_path: Path) -> Path:
