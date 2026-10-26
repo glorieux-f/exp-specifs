@@ -4,13 +4,10 @@
 The input prefix identifies ``{prefix}docs.tsv``, ``{prefix}terms.tsv`` and
 ``{prefix}postings.tsv``; a directory denotes an empty filename prefix.
 
-By default, rankings use the complete input corpus. ``--select`` accepts one or
-more independent document-identifier globs; each selection recomputes corpus
-statistics. Multiple vocabulary modes and scorers may be requested in one run.
+Rankings use the complete input corpus and its global term statistics.
 The output name starts with the input corpus prefix, e.g.::
 
     ddr-keywords100-content-g2a1.4.txt
-    romans19e-verne~-keywords100-all-tfidf.txt  (--select "verne*")
 
 With ``--min-doc-len 1000`` the minimum is included before the scorer code.
 
@@ -27,9 +24,11 @@ Vocabulary modes:
 Modes involving stopwords use ``stopwords.txt`` next to this script unless
 ``--stopwords`` supplies another file. Vocabulary selection does not alter
 corpus statistics. ``--min-doc-len`` affects only which documents are output.
-A keyword list ranks eligible terms by descending score. For plot comparisons,
-LRC retains only positive scores and EXTF only exclusive terms (DF=1).
-``--top 0`` disables truncation.
+A keyword list contains only scores above the scorer's neutral value (1 for
+Simple Maths, 0 otherwise). ``--top 0`` disables truncation.
+``--diagnose`` writes all score-qualified keywords as ``term (score)``.
+For statistical measures it applies conventional significance cutoffs;
+for heuristic measures without a significance test it retains positive scores.
 
 Each document is written as a metadata line, a comma-separated keyword line,
 and a blank line. Existing outputs are skipped unless ``--force`` is specified.
@@ -42,16 +41,16 @@ import argparse
 import os
 from pathlib import Path
 from time import perf_counter
+import unicodedata
 
 import numpy as np
+from scipy.stats import chi2
 
-from corpus import (
-    Corpus, Document, DEFAULT_STOPWORDS, STOPWORD_VOCAB_MODES,
-    VOCAB_MODES, load_stopwords, vocabulary_mask,
-)
+from corpus import Corpus, Document
 from scorers import Scorer, make_scorer
 
 
+DEFAULT_STOPWORDS = Path(__file__).with_name("stopwords.txt")
 DEFAULT_TOP_N = 100
 KEYWORD_SEPARATOR = ", "
 DEFAULT_SCORERS = (
@@ -63,6 +62,17 @@ DEFAULT_SCORERS = (
     "g2",
 )
 
+VOCAB_MODES = (
+    "all",
+    "content",
+    "nostops",
+    "nocaps",
+    "stops",
+    "caps",
+    "stopscaps",
+)
+STOPWORD_VOCAB_MODES = {"content", "nostops", "stops", "stopscaps"}
+
 
 def corpus_label(input_prefix: str | Path) -> str:
     """Return the output label derived from a contingency-table prefix."""
@@ -70,13 +80,6 @@ def corpus_label(input_prefix: str | Path) -> str:
     if not label:
         raise ValueError(f"Cannot derive corpus label from prefix: {input_prefix!r}")
     return label
-
-
-def selection_label(glob: str) -> str:
-    """Encode one identifier glob as a filename-safe corpus suffix."""
-    if not glob or any(char in glob for char in '<>:"/\\|'):
-        raise ValueError(f"Invalid selection glob for output filename: {glob!r}")
-    return glob.replace("*", "~").replace("?", "!")
 
 
 def clean_text(value: str) -> str:
@@ -87,32 +90,30 @@ def clean_text(value: str) -> str:
 def generate(
     input_prefix: str | Path,
     output_dir: Path,
-    vocab_modes: list[str] | None = None,
+    vocab_mode: str = "all",
     stopwords_path: Path | None = None,
     top_n: int = DEFAULT_TOP_N,
     scorer_codes: list[str] | None = None,
     min_doc_len: int = 0,
     force: bool = False,
-    select_globs: list[str] | None = None,
+    diagnose: bool = False,
 ) -> None:
-    """Generate keyword files for each corpus selection, vocabulary and scorer."""
+    """Generate one keyword file per corpus and scorer with progress logging."""
     if top_n < 0:
         raise ValueError("top_n must be >= 0")
     if min_doc_len < 0:
         raise ValueError("min_doc_len must be >= 0")
-    vocab_modes = list(dict.fromkeys(vocab_modes or ["all"]))
-    for mode in vocab_modes:
-        if mode not in VOCAB_MODES:
-            raise ValueError(f"Unknown vocabulary mode: {mode}")
+    if vocab_mode not in VOCAB_MODES:
+        raise ValueError(f"Unknown vocabulary mode: {vocab_mode}")
 
     run_start = perf_counter()
     stopwords: set[str] = set()
     effective_stopwords_path: Path | None = None
-    if any(mode in STOPWORD_VOCAB_MODES for mode in vocab_modes):
+    if vocab_mode in STOPWORD_VOCAB_MODES:
         effective_stopwords_path = stopwords_path or DEFAULT_STOPWORDS
         if not effective_stopwords_path.is_file():
             raise FileNotFoundError(
-                f"Vocabulary modes {vocab_modes!r} require a stopword list, "
+                f"Vocabulary mode {vocab_mode!r} requires a stopword list, "
                 f"but it was not found: {effective_stopwords_path}"
             )
         log(f"Loading stopwords: {effective_stopwords_path}")
@@ -127,20 +128,10 @@ def generate(
         f"{len(base_corpus.lemmas) - 1} terms in {perf_counter() - load_start:.1f}s"
     )
 
-    source_label = corpus_label(input_prefix)
-    if select_globs:
-        corpora = {
-            f"{source_label}-{selection_label(glob)}": base_corpus.select(glob)
-            for glob in dict.fromkeys(select_globs)
-        }
-    else:
-        corpora = {source_label: base_corpus}
-    candidate_masks = {
-        mode: vocabulary_mask(base_corpus.lemmas, mode, stopwords)
-        for mode in vocab_modes
-    }
-    for mode, candidates in candidate_masks.items():
-        log(f"Vocabulary {mode}: {int(np.count_nonzero(candidates))} candidate terms")
+    corpora = {corpus_label(input_prefix): base_corpus}
+    candidates = keyword_mask(base_corpus, vocab_mode, stopwords)
+    candidate_count = int(np.count_nonzero(candidates))
+    log(f"Vocabulary {vocab_mode}: {candidate_count} candidate terms")
     output_dir.mkdir(parents=True, exist_ok=True)
     log(f"Output directory: {output_dir}")
 
@@ -164,109 +155,113 @@ def generate(
         skipped_corpus = 0
         log(
             f"{corpus_code}: {corpus.n_docs} documents, {eligible_count} eligible, "
-            f"{scorer_count} scorers, {len(vocab_modes)} vocabularies"
+            f"{scorer_count} scorers"
         )
 
         # Process one scorer completely before moving to the next. This makes
         # progress visible, writes completed files immediately, and makes an
         # interrupted run resumable at scorer granularity.
-        for vocab_mode, candidates in candidate_masks.items():
-            for scorer_index, scorer in enumerate(all_scorers, start=1):
-                path = keyword_output_path(
-                    output_dir,
-                    corpus_code,
-                    scorer.code,
-                    vocab_mode,
-                    top_n,
-                    min_doc_len,
-                )
-                prefix = f"{corpus_code} {vocab_mode} [{scorer_index}/{scorer_count}] {scorer.code}"
-                if path.exists() and not force:
-                    skipped_count += 1
-                    skipped_corpus += 1
-                    continue
+        for scorer_index, scorer in enumerate(all_scorers, start=1):
+            path = keyword_output_path(
+                output_dir,
+                corpus_code,
+                scorer.code,
+                vocab_mode,
+                top_n,
+                min_doc_len,
+                diagnose=diagnose,
+            )
+            prefix = f"{corpus_code} [{scorer_index}/{scorer_count}] {scorer.code}"
+            if diagnose:
+                log(f"{prefix}: diagnostic score cutoff {diagnostic_cutoff(scorer):.5g}")
+            if path.exists() and not force:
+                skipped_count += 1
+                skipped_corpus += 1
+                continue
 
-                scorer_start = perf_counter()
-                status = f"{prefix}: START -> {path.name}"
-                print(f"{status} | 0.0s", end="", flush=True)
-                spinner = "|/-\\"
-                spinner_index = 0
-                last_update = scorer_start
-                blocks: list[str] = []
+            scorer_start = perf_counter()
+            status = f"{prefix}: START -> {path.name}"
+            print(f"{status} | 0.0s", end="", flush=True)
+            spinner = "|/-\\"
+            spinner_index = 0
+            last_update = scorer_start
+            blocks: list[str] = []
 
-                try:
-                    for doc_id in eligible_doc_ids:
-                        document = corpus.document(doc_id)
-                        term_ids, tf = corpus.terms(doc_id)
-                        keep = candidates[term_ids]
-                        candidate_terms = term_ids[keep]
-                        candidate_tf = tf[keep]
+            try:
+                for doc_id in eligible_doc_ids:
+                    document = corpus.document(doc_id)
+                    term_ids, tf = corpus.terms(doc_id)
+                    keep = candidates[term_ids]
+                    candidate_terms = term_ids[keep]
+                    candidate_tf = tf[keep]
 
-                        scores = np.asarray(
-                            scorer.score_terms(doc_id, candidate_terms, candidate_tf),
-                            dtype=np.float64,
+                    scores = np.asarray(
+                        scorer.score_terms(doc_id, candidate_terms, candidate_tf),
+                        dtype=np.float64,
+                    )
+                    if not np.all(np.isfinite(scores)):
+                        raise ValueError(
+                            f"{scorer.code} returned a non-finite score "
+                            f"for {document.identifier}"
                         )
-                        if not np.all(np.isfinite(scores)):
-                            raise ValueError(
-                                f"{scorer.code} returned a non-finite score "
-                                f"for {document.identifier}"
-                            )
 
-                        if scorer.code == "lrc":
-                            keep = scores > 0.0
-                        elif scorer.code == "extf":
-                            keep = corpus.df[candidate_terms] == 1
-                        else:
-                            keep = slice(None)
-                        candidate_terms = candidate_terms[keep]
-                        candidate_tf = candidate_tf[keep]
-                        scores = scores[keep]
-
-                        tie_cf = (
-                            corpus.cf[candidate_terms]
-                            if scorer.code == "tf"
-                            else None
+                    cutoff = diagnostic_cutoff(scorer) if diagnose else neutral_score(scorer)
+                    keyword = scores > cutoff
+                    if diagnose and scorer.code in {"txm", "g2"}:
+                        keyword = scores >= cutoff
+                    tie_cf = (
+                        -corpus.cf[candidate_terms[keyword]]
+                        if scorer.code == "tf"
+                        else None
+                    )
+                    ranked = rank_terms(
+                        candidate_terms[keyword],
+                        candidate_tf[keyword],
+                        scores[keyword],
+                        0 if diagnose else top_n,
+                        cf=tie_cf,
+                    )
+                    if diagnose:
+                        score_by_term = dict(zip(candidate_terms[keyword], scores[keyword]))
+                        keywords = KEYWORD_SEPARATOR.join(
+                            f"{corpus.lemmas[int(term_id)]} "
+                            f"({score_by_term[int(term_id)]:.5g})"
+                            for term_id in ranked
                         )
-                        ranked = rank_terms(
-                            candidate_terms,
-                            candidate_tf,
-                            scores,
-                            top_n,
-                            cf=tie_cf,
-                        )
+                    else:
                         keywords = KEYWORD_SEPARATOR.join(
                             corpus.lemmas[int(term_id)] for term_id in ranked
                         )
-                        blocks.append(f"{metadata_line(document)}\n{keywords}\n\n")
+                    blocks.append(f"{metadata_line(document)}\n{keywords}\n\n")
 
-                        now = perf_counter()
-                        if now - last_update >= 0.2:
-                            spinner_index = (spinner_index + 1) % len(spinner)
-                            print(
-                                f"\r{status} {spinner[spinner_index]} "
-                                f"{now - scorer_start:.1f}s",
-                                end="",
-                                flush=True,
-                            )
-                            last_update = now
-                except Exception:
-                    print(flush=True)
-                    raise
+                    now = perf_counter()
+                    if now - last_update >= 0.2:
+                        spinner_index = (spinner_index + 1) % len(spinner)
+                        print(
+                            f"\r{status} {spinner[spinner_index]} "
+                            f"{now - scorer_start:.1f}s",
+                            end="",
+                            flush=True,
+                        )
+                        last_update = now
+            except Exception:
+                print(flush=True)
+                raise
 
-                # Re-check immediately before writing in case another process created
-                # the file while this scorer was being computed.
-                if path.exists() and not force:
-                    skipped_count += 1
-                    skipped_corpus += 1
-                    print(flush=True)
-                    log(f"{prefix}: SKIP created by another process: {path.name}")
-                    continue
+            # Re-check immediately before writing in case another process created
+            # the file while this scorer was being computed.
+            if path.exists() and not force:
+                skipped_count += 1
+                skipped_corpus += 1
+                print(flush=True)
+                log(f"{prefix}: SKIP created by another process: {path.name}")
+                continue
 
-                write_atomic(path, "".join(blocks))
-                elapsed = perf_counter() - scorer_start
-                file_count += 1
-                generated_corpus += 1
-                print(f"\r{status} DONE ({elapsed:.1f}s)", flush=True)
+            write_atomic(path, "".join(blocks))
+            elapsed = perf_counter() - scorer_start
+            file_count += 1
+            generated_corpus += 1
+            print(f"\r{status} DONE ({elapsed:.1f}s)", flush=True)
 
         log(
             f"{corpus_code}: DONE; {generated_corpus} generated, "
@@ -280,8 +275,8 @@ def generate(
     )
     log(
         f"DONE: generated {file_count} files; skipped {skipped_count} existing files "
-        f"for {len(corpora)} corpus selection(s) in {output_dir}; "
-        f"top={top_n}; min_doc_len={min_doc_len}; vocab={','.join(vocab_modes)}; "
+        f"for {base_corpus.n_docs} documents in {output_dir}; "
+        f"top={top_n}; min_doc_len={min_doc_len}; vocab={vocab_mode}; "
         f"stopwords={stopword_text}; elapsed={perf_counter() - run_start:.1f}s"
     )
 
@@ -293,18 +288,70 @@ def keyword_output_path(
     vocab_mode: str,
     top_n: int,
     min_doc_len: int = 0,
+    diagnose: bool = False,
 ) -> Path:
     """Return the keyword output path for one corpus/scorer combination."""
     min_tag = f"-min{min_doc_len}" if min_doc_len > 0 else ""
+    depth = "diagnostic" if diagnose else str(top_n)
     filename = (
-        f"{corpus_code}-keywords{top_n}-{vocab_mode}{min_tag}-{scorer_code}.txt"
+        f"{corpus_code}-keywords{depth}-{vocab_mode}{min_tag}-{scorer_code}.txt"
     )
     return output_dir / filename
+
+
+def keyword_mask(
+    corpus: Corpus,
+    vocab_mode: str,
+    stopwords: set[str],
+) -> np.ndarray:
+    """Return a boolean mask of terms eligible as keyword candidates."""
+    mask = np.zeros(len(corpus.lemmas), dtype=bool)
+
+    for term_id in range(1, len(corpus.lemmas)):
+        lemma = corpus.lemmas[term_id]
+        is_cap = bool(lemma[:1].isupper())
+        is_stop = normalize_word(lemma) in stopwords if stopwords else False
+
+        if vocab_mode == "all":
+            keep = True
+        elif vocab_mode == "content":
+            keep = not is_stop and not is_cap
+        elif vocab_mode == "nostops":
+            keep = not is_stop
+        elif vocab_mode == "nocaps":
+            keep = not is_cap
+        elif vocab_mode == "stops":
+            keep = is_stop
+        elif vocab_mode == "caps":
+            keep = is_cap
+        elif vocab_mode == "stopscaps":
+            keep = is_stop or is_cap
+        else:
+            raise ValueError(f"Unknown vocabulary mode: {vocab_mode}")
+        mask[term_id] = keep
+
+    return mask
 
 
 def log(message: str) -> None:
     """Print one progress message immediately."""
     print(message, flush=True)
+
+
+def load_stopwords(path: Path) -> set[str]:
+    """Load a one-entry-per-line stopword file.
+
+    Empty lines, comment lines beginning with ``#``, and the conventional
+    ``__STOPWORDS`` header are ignored.
+    """
+    words: set[str] = set()
+    with path.open("r", encoding="utf-8-sig") as stream:
+        for line in stream:
+            value = line.strip()
+            if not value or value.startswith("#") or value == "__STOPWORDS":
+                continue
+            words.add(normalize_word(value))
+    return words
 
 
 def main() -> None:
@@ -313,13 +360,13 @@ def main() -> None:
     generate(
         args.input_prefix,
         args.output_dir,
-        vocab_modes=args.vocab,
+        vocab_mode=args.vocab,
         stopwords_path=args.stopwords,
         top_n=args.top,
         scorer_codes=args.scorer or None,
         min_doc_len=args.min_doc_len,
         force=args.force,
-        select_globs=args.select,
+        diagnose=args.diagnose,
     )
 
 
@@ -342,6 +389,30 @@ def metadata_line(document: Document) -> str:
     if description:
         return f"[{document.identifier}] {description}"
     return f"[{document.identifier}]"
+
+
+def neutral_score(scorer: Scorer) -> float:
+    """Return the measure's neutral score (a ratio of 1 for SimpleMaths)."""
+    return 1.0 if scorer.code.startswith("simplemaths") else 0.0
+
+
+def diagnostic_cutoff(scorer: Scorer) -> float:
+    """Return a conventional positive-keyword cutoff, when one exists.
+
+    LRC has a built-in confidence limit. TXM uses its customary index 3;
+    signed G² uses the approximate chi-square 5% critical value. Other
+    measures have no significance boundary and use their neutral score.
+    """
+    if scorer.code == "txm":
+        return 3.0
+    if scorer.code == "g2":
+        return float(chi2.isf(0.05, 1))
+    return neutral_score(scorer)
+
+
+def normalize_word(value: str) -> str:
+    """Return a normalized case-insensitive form for stopword comparison."""
+    return unicodedata.normalize("NFC", value.strip()).casefold()
 
 
 def parse_args() -> argparse.Namespace:
@@ -370,27 +441,12 @@ def parse_args() -> argparse.Namespace:
         help=f"Keyword output directory (default: {default_output})",
     )
     parser.add_argument(
-        "--select",
-        action="extend",
-        nargs="+",
-        default=[],
-        metavar="GLOB",
-        help=(
-            "Score each matching document-identifier glob as an independent "
-            "subcorpus with recomputed cf, df and corpus lengths; "
-            "may be repeated (default: whole corpus)."
-        ),
-    )
-    parser.add_argument(
         "--vocab",
-        action="extend",
-        nargs="+",
         choices=VOCAB_MODES,
-        default=[],
-        metavar="VOCAB",
+        default="all",
         help=(
-            "One or more vocabulary modes (all, content, nostops, nocaps, "
-            "stops, caps, stopscaps); may be repeated (default: all)."
+            "Keyword candidates: all, content, nostops, nocaps, stops, caps, "
+            "or stopscaps (default: all)"
         ),
     )
     parser.add_argument(
@@ -423,6 +479,16 @@ def parse_args() -> argparse.Namespace:
         ),
     )
     parser.add_argument(
+        "--diagnose",
+        action="store_true",
+        help=(
+            "Output all terms passing each scorer's inclusion cutoff with scores: "
+            "LRC > 0, TXM >= 3, G2 >= chi-square(1) 5%%, "
+            "others above neutral (no statistical threshold for TF-IDF). "
+            "Ignores --top and writes separate diagnostic files."
+        ),
+    )
+    parser.add_argument(
         "--min-doc-len",
         type=int,
         default=0,
@@ -451,7 +517,7 @@ def rank_terms(
     ``top_n == 0`` means no truncation; otherwise return at most ``top_n`` terms.
     Default ordering is score descending, tf descending, then term_id ascending.
     For raw TF only, caller supplies corpus cf, producing:
-    tf descending, cf ascending, then term_id ascending.
+    tf descending, cf descending, then term_id ascending.
     """
     term_ids = np.asarray(term_ids, dtype=np.int64)
     tf = np.asarray(tf, dtype=np.int64)
@@ -469,7 +535,7 @@ def rank_terms(
             raise ValueError("cf must have the same shape as term_ids")
         keys = (
             term_ids,
-            cf,
+            -cf,
             -tf,
             -scores,
         )
