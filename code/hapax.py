@@ -52,7 +52,7 @@ def first_hapax_rank(
 ) -> int | None:
     """Return the first rank of a complete contiguous hapax block, if retained."""
     valid = allowed & ~np.isnan(scores)
-    if scorer_code == "lrc":
+    if scorer_code == "lrc" or scorer_code == "g2" or scorer_code == "txm":
         valid &= scores > 0.0
     if not np.any(valid & hapax):
         return None

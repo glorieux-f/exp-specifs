@@ -46,18 +46,19 @@ COLOR_ORDER = (0, 1, 2, 3, 4, 8, 9, 5, 6, 7)
 # Command-line family IDs are independent of figure labels.
 # Most match their scorer-code prefix; the SimpleMaths family is the exception.
 CODE_PREFIXES = {
-    "subtfidfa": "subtfidfa",
-    "tfidfa": "tfidfa",
-    "etfidfa": "etfidfa",
-    "hgta": "hgta",
-    "g2a": "g2a",
+    "bm25": "bm25",
     "chi2a": "chi2a",
+    "etfidfa": "etfidfa",
+    "f2log": "f2logs",
+    "g2a": "g2a",
+    "hgta": "hgta",
+    "inbz": "inbz",
+    "lrca": "lrca",
+    "logsimplemaths": "logsimplemathsk",
     "poissonidfa": "poissonidfa",
     "simplemaths": "simplemathsk",
-    "logsimplemaths": "logsimplemathsk",
-    "f2log": "f2logs",
-    "inbz": "inbz",
-    "bm25": "bm25",
+    "subtfidfa": "subtfidfa",
+    "tfidfa": "tfidfa",
 }
 NUMBER_RE = r"[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?"
 BM25_RE = re.compile(rf"^bm25k(?P<parameter>{NUMBER_RE})b(?P<b>{NUMBER_RE})$")

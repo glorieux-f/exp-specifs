@@ -42,7 +42,6 @@ class Scorer(ABC):
     """Base class for a term-document scorer."""
 
     requires_complement = False
-    ascending = False
 
     def __init__(self, corpus: TermDocCorpus) -> None:
         self.corpus = corpus
@@ -1521,6 +1520,85 @@ class PositiveLRC(LRC):
         return scores
 
 
+class LRCAlpha(PositiveLRC):
+    """Parametric ranking from TF through LRC+ toward document exclusivity.
+
+    Let R = 2 ** PositiveLRC, N be the number of corpus documents, and df
+    be the document frequency of the term. The proposed ranking family is:
+
+        0 <= alpha <= 1:  tf ** (1 - alpha) * R ** alpha
+        alpha >= 1:       R * (N / df) ** (alpha - 1)
+
+    alpha=0 reproduces TF scores exactly; alpha=1 has the same ranking as
+    PositiveLRC. As alpha increases, lower df receives increasing priority;
+    in the limit, df=1 terms rank ahead of all df>1 terms, provided their
+    LRC+ confidence-bound values are finite and positive.
+
+    For alpha>1, the implementation divides the second expression by the
+    term-independent factor N ** (alpha - 1). Thus its computed values are
+    R / df ** (alpha - 1), with exactly the same term ranking and better
+    numerical stability for large alpha.
+
+    This experimental interpolation is not itself a confidence-bound test.
+    """
+
+    _registrations = (
+        ('lrca{alpha}', 'LRCα({alpha:g})'),
+    )
+
+    def __init__(
+        self,
+        corpus: TermDocCorpus,
+        alpha: float = 1.0,
+        confidence: float = 0.95,
+        family_size: int | None = None,
+    ) -> None:
+        if not isfinite(alpha) or alpha < 0.0:
+            raise ValueError("alpha must be finite and >= 0")
+        super().__init__(corpus, confidence=confidence, family_size=family_size)
+        self.alpha = float(alpha)
+
+    @property
+    def code(self) -> str:
+        """Return the filename-safe parameterized scorer code."""
+        return f"lrca{self.alpha:g}"
+
+    @property
+    def name(self) -> str:
+        """Return the human-readable scorer name."""
+        return f"LRC alpha (alpha={self.alpha:g})"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Score present terms using the TF--LRC+--exclusivity trajectory."""
+        observed = np.asarray(tf, dtype=np.float64)
+        if self.alpha == 0.0:
+            return observed.copy()
+
+        log_r = super().score_terms(doc_id, term_ids, tf)
+        with np.errstate(divide="ignore", invalid="ignore", over="ignore", under="ignore"):
+            if self.alpha <= 1.0:
+                # Work with logarithms to avoid intermediate overflow/underflow.
+                log_score = ((1.0 - self.alpha) * np.log2(observed)
+                             + self.alpha * log_r)
+            else:
+                # Rank-equivalent to R * (N / df) ** (alpha - 1), after
+                # division by the common factor N ** (alpha - 1).
+                df = np.asarray(self.corpus.df[term_ids], dtype=np.float64)
+                log_score = log_r - (self.alpha - 1.0) * np.log2(df)
+            scores = np.exp2(log_score)
+
+        # Terms absent from the document should not introduce NaNs through
+        # operations involving logarithms of zero.
+        scores[observed == 0.0] = 0.0
+        scores[np.isnan(log_r)] = np.nan
+        return scores
+
+
 class MinimumSensitivity(Scorer):
     """Sketch Engine minimum-sensitivity association score.
 
@@ -2546,40 +2624,6 @@ class Txm(Scorer):
 
         scores[invalid] = np.nan
         return scores
-
-
-class TxmNegative(Txm):
-    """Negative TXM specificity, ranked from most to least negative.
-
-    Non-negative scores become zero and must be excluded by the caller.
-    Score arrays remain aligned with the input terms. Callers must select
-    scores < 0 and sort ascending when ``ascending`` is true.
-    """
-
-    _registrations = (
-        ('txmneg', 'TXM−'),
-    )
-
-    ascending = True
-
-    @property
-    def code(self) -> str:
-        """Return the filename code."""
-        return "txmneg"
-
-    @property
-    def name(self) -> str:
-        """Return the human-readable scorer name."""
-        return "Negative TXM"
-
-    def score_terms(
-        self,
-        doc_id: int,
-        term_ids: IntArray,
-        tf: IntArray,
-    ) -> FloatArray:
-        """Retain negative TXM scores and map non-negative scores to zero."""
-        return np.maximum(-super().score_terms(doc_id, term_ids, tf), 0.0)
 
 
 class ZScore(Scorer):
