@@ -42,6 +42,7 @@ class Scorer(ABC):
     """Base class for a term-document scorer."""
 
     requires_complement = False
+    ascending = False
 
     def __init__(self, corpus: TermDocCorpus) -> None:
         self.corpus = corpus
@@ -2545,6 +2546,40 @@ class Txm(Scorer):
 
         scores[invalid] = np.nan
         return scores
+
+
+class TxmNegative(Txm):
+    """Negative TXM specificity, ranked from most to least negative.
+
+    Non-negative scores become zero and must be excluded by the caller.
+    Score arrays remain aligned with the input terms. Callers must select
+    scores < 0 and sort ascending when ``ascending`` is true.
+    """
+
+    _registrations = (
+        ('txmneg', 'TXM−'),
+    )
+
+    ascending = True
+
+    @property
+    def code(self) -> str:
+        """Return the filename code."""
+        return "txmneg"
+
+    @property
+    def name(self) -> str:
+        """Return the human-readable scorer name."""
+        return "Negative TXM"
+
+    def score_terms(
+        self,
+        doc_id: int,
+        term_ids: IntArray,
+        tf: IntArray,
+    ) -> FloatArray:
+        """Retain negative TXM scores and map non-negative scores to zero."""
+        return np.maximum(-super().score_terms(doc_id, term_ids, tf), 0.0)
 
 
 class ZScore(Scorer):

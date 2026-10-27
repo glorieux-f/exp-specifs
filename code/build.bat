@@ -17,16 +17,16 @@ setlocal EnableExtensions EnableDelayedExpansion
 :: python .\keywords-matrix.py --metric rbo --vocab content ..\results\keywords100param ..\results\keywords-pcoa\romans19e-keywords100param-rbo.tsv
 :: python .\pcoa-families.py ..\results\keywords-pcoa\romans19e-keywords100param-rbo.tsv --output-prefix ..\results\keywords-pcoa\romans19e-keywords100param-rbo --families simplemaths subtfidfa bm25 tfidfa hgta g2a --flip 2 --title "Balzac, Dumas, Sand, Verne, Zola ; plus de 7000 chapitres ; 100 mots clés. Distances entre formules paramétrables de spécificité."
 
+:: Hapax
+python .\hapax.py ..\data\3_contingency\romans19e-  ..\results\hapax\  --vocab all content --min-doc-len 1000  --scorer lrc lrcplus g2 txm poissondev tfidfa0.77 subtfidfa0.27 simplemaths tf
+
 :: 1000 keywords 
-:: python .\keywords.py ..\data\3_contingency\romans19e-  ..\results\keywords1000\  --select "verne*" "balzac*" "sand*" "zola*" "dumas*"  --vocab all content --top 1000 --min-doc-len 1000  --scorer lrc lrcplus g2 txm poissondev tfidfa0.77 subtfidfa0.27  simplemaths tf
-python .\keywords.py ..\data\3_contingency\romans19e-  ..\results\keywords100spec\  --select "verne*" "balzac*" "sand*" "zola*" "dumas*"  --vocab all content --top 100 --min-doc-len 1000  --scorer lrc lrcplus g2 txm poissondev tfidfa0.77 subtfidfa0.27  simplemaths tf
-
-python .\keywords.py ..\data\3_contingency\romans19e-  ..\results\keywords-diag\  --select "verne*" "balzac*" "sand*" "zola*" "dumas*"  --vocab all --diagnose --min-doc-len 1000  --scorer lrc lrcplus g2 txm poissondev tfidfa0.77 subtfidfa0.27  simplemaths tf
-
-
-python .\keywords-average.py -o ..\results\keywords-average\keywords1000-all-average.txt ..\results\keywords1000\*-all-*.txt
-python .\keywords-average.py -o ..\results\keywords-average\keywords1000-content-average.txt ..\results\keywords1000\*-content-*.txt
-python .\keywords-average.py -o ..\results\keywords-average\keywords100-all-average.txt ..\results\keywords100spec\*-all-*.txt
+:: python .\keywords.py ..\data\3_contingency\romans19e-  ..\results\keywords1000\  --select "verne*" "balzac*" "sand*" "zola*" "dumas*"  --vocab all content --top 1000 --min-doc-len 1000  --scorer lrc lrcplus g2 txm poissondev tfidfa0.77 subtfidfa0.27 simplemaths tf
+:: python .\keywords.py ..\data\3_contingency\romans19e-  ..\results\keywords100spec\  --select "verne*" "balzac*" "sand*" "zola*" "dumas*"  --vocab all content --top 100 --min-doc-len 1000  --scorer lrc lrcplus g2 txm poissondev tfidfa0.77 subtfidfa0.27  simplemaths tf
+:: python .\keywords.py ..\data\3_contingency\romans19e-  ..\results\keywords-diag\  --select "verne*" "balzac*" "sand*" "zola*" "dumas*"  --vocab all --diagnose --min-doc-len 1000  --scorer lrc lrcplus g2 txm poissondev tfidfa0.77 subtfidfa0.27  simplemaths tf txmneg 
+:: python .\keywords-average.py -o ..\results\keywords-average\keywords1000-all-average.txt ..\results\keywords1000\*-all-*.txt
+:: python .\keywords-average.py -o ..\results\keywords-average\keywords1000-content-average.txt ..\results\keywords1000\*-content-*.txt
+:: python .\keywords-average.py -o ..\results\keywords-average\keywords100-all-average.txt ..\results\keywords100spec\*-all-*.txt
 
 
 :: plot keywords dispersion
