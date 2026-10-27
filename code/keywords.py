@@ -224,7 +224,7 @@ def generate(
                             keep = scores >= cutoff if scorer.code in {"txm", "g2"} else scores > cutoff
                             if scorer.code == "extf":
                                 keep &= corpus.df[candidate_terms] == 1
-                        elif scorer.code == "lrc":
+                        elif scorer.code == "lrc" or scorer.code == "g2" or scorer.code == "txm":
                             keep = scores > 0.0
                         elif scorer.code == "extf":
                             keep = corpus.df[candidate_terms] == 1

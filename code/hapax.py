@@ -6,6 +6,7 @@ one row per document meeting --min-doc-len, including documents without hapaxes.
 
 Output columns:
     doc_id       Original 1-based document ID.
+    docname      Document identifier (e.g. verne1870a-43).
     doc_len      Document length in tokens (unfiltered).
     rank_count   Number of distinct ranked candidates in the vocabulary mode.
     hapax_count  Number of true hapaxes in that vocabulary mode.
@@ -91,7 +92,7 @@ def parse_args() -> argparse.Namespace:
             "Output files:\n"
             "  romans19e-hapax.tsv          (all vocabulary)\n"
             "  romans19e-hapax-content.tsv  (content vocabulary)\n\n"
-            "Columns: doc_id, doc_len, rank_count, hapax_count, then scorer codes.\n"
+            "Columns: doc_id, docname, doc_len, rank_count, hapax_count, then scorer codes.\n"
             "rank_count counts distinct candidate terms, before scorer-specific filtering.\n"
             "Blank scorer cell: no hapax retained in that ranking.\n"
             "CF/DF and doc_len always come from the full input corpus."
@@ -125,6 +126,7 @@ def parse_args() -> argparse.Namespace:
 def write_tsv(
     path: Path,
     doc_ids: np.ndarray,
+    docnames: list[str],
     doc_lengths: np.ndarray,
     rank_counts: np.ndarray,
     hapax_counts: np.ndarray,
@@ -136,10 +138,10 @@ def write_tsv(
     try:
         with temporary.open("w", encoding="utf-8", newline="") as stream:
             writer = csv.writer(stream, delimiter="\t", lineterminator="\n")
-            writer.writerow(["doc_id", "doc_len", "rank_count", "hapax_count", *scorer_codes])
+            writer.writerow(["doc_id", "docname", "doc_len", "rank_count", "hapax_count", *scorer_codes])
             for i, doc_id in enumerate(doc_ids):
                 writer.writerow([
-                    int(doc_id), int(doc_lengths[i]), int(rank_counts[i]), int(hapax_counts[i]),
+                    int(doc_id), docnames[i], int(doc_lengths[i]), int(rank_counts[i]), int(hapax_counts[i]),
                     *("" if rank < 0 else int(rank) for rank in ranks[i]),
                 ])
         os.replace(temporary, path)
@@ -179,6 +181,7 @@ def main() -> None:
 
     eligible = corpus.doc_ids[corpus.doc_len[corpus.doc_ids] >= args.min_doc_len]
     doc_lengths = corpus.doc_len[eligible]
+    docnames = [corpus.document(int(doc_id)).identifier for doc_id in eligible]
     rank_counts = {mode: np.zeros(len(eligible), dtype=np.int32) for mode in modes}
     hapax_counts = {mode: np.zeros(len(eligible), dtype=np.int32) for mode in modes}
     first_ranks = {
@@ -221,7 +224,7 @@ def main() -> None:
         suffix = "" if mode == "all" else f"-{mode}"
         path = args.output_dir / f"{corpus_name}-hapax{suffix}.tsv"
         write_tsv(
-            path, eligible, doc_lengths, rank_counts[mode], hapax_counts[mode],
+            path, eligible, docnames, doc_lengths, rank_counts[mode], hapax_counts[mode],
             scorer_codes, first_ranks[mode],
         )
         print(
