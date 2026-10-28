@@ -8,26 +8,27 @@ setlocal EnableExtensions EnableDelayedExpansion
 :: python cooc.py --corpus ../data/3_contingency/romans19e- --pivot indigène --window 3 5 10 30 100 --scorers simplemaths tscore tf mi logratio txm --vocab content --top 30 -o ../results/cooc "../data/2_lemma/verne*.tsv"
 
 :: plot non parametric formula keyword 100
-:: python .\keywords.py  ..\data\3_contingency\romans19e-  ..\results\keywords100\  --select "verne*" "balzac*" "sand*" "zola*" "dumas*"  --vocab "all" "content" "nostops"  --top 100 --min-doc-len 1000  --scorer bm25 bm25k1000b1 btfidf cf chi2 df extf g2 logdice logratio lrc mi milogf minsens poissondev simplemaths simplemathsk1 subtfidf subtfidfa0.27 tf tficf tfidf tfidfa0.77 tscore txm
-:: python .\keywords-matrix.py --metric rbo --vocab content ..\results\keywords100 ..\results\keywords-pcoa\romans19e-keywords100-rbo.tsv
-:: python .\pcoa.py ..\results\keywords-pcoa\romans19e-keywords100-rbo.tsv --exclude "cf" "df" "*alpha*" --flip 2 --title "Balzac, Dumas, Sand, Verne, Zola ; plus de 7000 chapitres ; 100 mots clés. Spectre des formules de spécificité."
+:: python .\keywords.py  ..\data\3_contingency\romans19e-  ..\results\keywords100\  --select "verne*" "balzac*" "sand*" "zola*" "dumas*"  --vocab all content nostops nocaps  --top 100 --min-doc-len 1000  --scorer bm25 bm25k1000b1 btfidf cf chi2 df extf g2 logdice logratio lrc lrcplus mi milogf minsens poissondev simplemaths simplemathsk1 subtfidf subtfidfa0.27 tf tficf tfidf tfidfa0.77 tscore txm tfidfa100
+:: python .\keywords-matrix.py --metric rbo --vocab all ..\results\keywords100 ..\results\keywords-pcoa\romans19e-keywords100-all.tsv
+:: python .\pcoa.py ..\results\keywords-pcoa\romans19e-keywords100-all.tsv --exclude df cf tf tficf tfidfa100 --title "Balzac, Dumas, Sand, Verne, Zola ; plus de 7000 chapitres ; 100 mots clés. Spectre des formules de spécificité."
 
 :: plot parametric formula keyword 100
-:: python .\keywords.py  ..\data\3_contingency\romans19e-  ..\results\keywords100param\  --select "verne*" "balzac*" "sand*" "zola*" "dumas*"  --vocab content --top 100 --min-doc-len 1000  --scorer bm25k10000b1 bm25k1000b1 bm25k100b1 bm25k10b1 bm25k6b1 bm25k3b1  bm25k1b1 bm25k0.1b1 bm25k0.001b1  bm25k0.0001b1  g2a0 g2a0.25 g2a0.5 g2a0.75 g2a1 g2a1.5 g2a2 g2a3 g2a4 g2a8 g2a16 lrca0 lrca0.25 lrca0.5 lrca0.75 lrca1 lrca1.5 lrca2 lrca2.5 lrca3.3 lrca4 lrca8 lrca16 simplemathsk100000 simplemathsk10000 simplemathsk1000 simplemathsk500 simplemathsk170 simplemathsk100 simplemathsk60 simplemathsk20 simplemathsk10 simplemathsk5 simplemathsk1 simplemathsk0.1 simplemathsk0.01 simplemathsk0.001 simplemathsk0.0001 subtfidfa0 subtfidfa0.05 subtfidfa0.1 subtfidfa0.27 subtfidfa0.5 subtfidfa0.75 subtfidfa1 subtfidfa1.5 subtfidfa2 subtfidfa4 subtfidfa8 subtfidfa16 tfidfa0 tfidfa0.25 tfidfa0.5 tfidfa0.77 tfidfa1 tfidfa1.5 tfidfa2 tfidfa3 tfidfa4 tfidfa8 tfidfa16 hgta0 hgta0.25 hgta0.5 hgta0.75 hgta1 hgta1.5 hgta2 hgta3 hgta4 hgta8 hgta16
-:: python .\keywords-matrix.py --metric rbo --vocab content ..\results\keywords100param ..\results\keywords-pcoa\romans19e-keywords100param-rbo.tsv
-:: python .\pcoa-families.py ..\results\keywords-pcoa\romans19e-keywords100param-rbo.tsv --output-prefix ..\results\keywords-pcoa\romans19e-keywords100param-rbo --families simplemaths subtfidfa bm25 lrca  tfidfa hgta g2a --flip 2 --title "Balzac, Dumas, Sand, Verne, Zola ; plus de 7000 chapitres ; 100 mots clés. Distances entre formules paramétrables de spécificité."
+python .\keywords.py  ..\data\3_contingency\romans19e-  ..\results\keywords100param\  --select "verne*" "balzac*" "sand*" "zola*" "dumas*"  --vocab content all nocaps --top 100 --min-doc-len 1000  --scorer bm25k1000b1 bm25k10b1 bm25k6b1 bm25k3b1  bm25k1b1 bm25k0.1b1 bm25k0.00001b1  g2a0.5 g2a0.75 g2a1 g2a1.5 g2a2 g2a3 g2a4 g2a8 g2a16 lrca0.3 lrca0.5 lrca0.75 lrca1 lrca1.5 lrca2 lrca2.5 lrca3.3 lrca4 lrca8 lrca16 simplemathsk100000 simplemathsk10000 simplemathsk1000 simplemathsk170 simplemathsk50 simplemathsk20 simplemathsk10 simplemathsk5 simplemathsk1 simplemathsk0.1 simplemathsk0.0001 subtfidfa0.05 subtfidfa0.1 subtfidfa0.27 subtfidfa0.5 subtfidfa0.75 subtfidfa1 subtfidfa1.5 subtfidfa2 subtfidfa4 subtfidfa8 subtfidfa16 tfidfa0.5 tfidfa0.77 tfidfa1 tfidfa1.5 tfidfa2 tfidfa3 tfidfa4 tfidfa8 tfidfa16  hgta0.5 hgta0.75 hgta1 hgta1.5 hgta2 hgta3 hgta4 hgta8 hgta16
+python .\keywords-matrix.py --metric rbo --vocab all ..\results\keywords100param ..\results\keywords-pcoa\romans19e-keywords100param-all.tsv
+python .\pcoa-families.py ..\results\keywords-pcoa\romans19e-keywords100param-all.tsv --output-prefix ..\results\keywords-pcoa\romans19e-keywords100param-all --families simplemaths subtfidfa bm25 lrca  tfidfa hgta g2a --flip 2 --title "Balzac, Dumas, Sand, Verne, Zola ; plus de 7000 chapitres ; 100 mots clés. Distances entre formules paramétrables de spécificité."
 
 :: python .\keywords.py ..\data\3_contingency\romans19e-  ..\results\keywords-diag\  --select "verne*" "balzac*" "sand*" "zola*" "dumas*"  --vocab all --diagnose --min-doc-len 1000  --scorer lrc lrcplus g2 txm poissondev tfidfa0.77 subtfidfa0.27  simplemaths tf txmneg 
 
-
 :: Hapax
-:: python .\hapax.py ..\data\3_contingency\romans19e-  ..\results\hapax\  --vocab all content --min-doc-len 1000  --scorer tfidfa100 g2 txm tfidfa0.77 simplemaths subtfidfa0.27 lrcplus tf
-python hapax_heatmap.py ..\results\hapax\romans19e-hapax-content.tsv --max-rank 100
-python hapax_heatmap.py ..\results\hapax\romans19e-hapax.tsv  --max-rank 100
+:: python .\hapax.py ..\data\3_contingency\romans19e-  ..\results\hapax\  --vocab all content --min-doc-len 1000  --scorer tfidfa100 g2 txm tfidfa0.77 simplemaths subtfidfa0.27 lrcplus lrc tf
+:: python hapax_heatmap.py ..\results\hapax\romans19e-hapax-content.tsv --max-rank 100
+:: python hapax_heatmap.py ..\results\hapax\romans19e-hapax.tsv  --max-rank 100
 
 :: Topwords
-:: python .\ranks.py ..\data\3_contingency\romans19e- ..\results\topwords\ --dfrank 1 200 --min-doc-len 1000 --vocab all --scorer tfidfa100 g2 txm  lrcplus tfidfa0.77 subtfidfa0.27  simplemaths tf
+:: python .\ranks.py ..\data\3_contingency\romans19e- ..\results\topwords\ --dfrank 1 200 --min-doc-len 1000 --vocab all --scorer tfidfa100 g2 txm lrcplus tfidfa0.77 subtfidfa0.27  simplemaths tf --force
 :: python .\ranks_heatmap.py  ..\results\topwords\romans19e-ranks-all-min1000-dfrank1-200.tsv --max-rank 100
+
+
 :: python .\ranks.py ..\data\3_contingency\romans19e- ..\results\topwords\ --cfrank 1 200 --min-doc-len 1000 --vocab all --scorer g2 txm  lrcplus tfidfa0.77 subtfidfa0.27  simplemaths tf
 :: python .\ranks_heatmap.py  ..\results\topwords\romans19e-ranks-all-min1000-cfrank1-200.tsv --max-rank 300
 :: 1000 keywords 
@@ -37,8 +38,8 @@ python hapax_heatmap.py ..\results\hapax\romans19e-hapax.tsv  --max-rank 100
 :: python .\keywords-average.py -o ..\results\keywords-average\keywords1000-content-average.txt ..\results\keywords1000\*-content-*.txt
 :: python .\keywords-average.py -o ..\results\keywords-average\keywords100-all-average.txt ..\results\keywords100spec\*-all-*.txt
 
-:: topw
-
+:: topwords freqlists
+:: python keywords-freqlist.py "..\results\keywords100\*-all-*.txt" ..\results\keywords100-freqlist  --scorer tfidfa100 g2 txm lrcplus tfidfa0.77 subtfidfa0.27 simplemaths tf
 
 :: plot keywords dispersion
 :: python .\keywords-dispersion.py ..\data\3_contingency\ "..\results\keywords-verne\*.txt" verne1870a-42 --output-dir ..\results\keywords-verne\ --freq cf  --top 820 --cmap inferno_r

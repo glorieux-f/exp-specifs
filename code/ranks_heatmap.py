@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import importlib.util
 from pathlib import Path
 import re
 
@@ -22,17 +23,6 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import SymLogNorm
 from matplotlib.ticker import FixedLocator
 import numpy as np
-
-
-LABELS = {
-    "g2": "G²",
-    "txm": "TXM",
-    "tfidfa0.77": "TF-IDFα(0.77)",
-    "simplemaths": "SimpleMaths",
-    "subtfidfa0.27": "subTF-IDFα(0.27)",
-    "lrcplus": "LRC+",
-    "tf": "TF",
-}
 
 
 def load_occupancy(path: Path, max_rank: int, requested: list[str]) -> tuple[list[str], np.ndarray, int]:
@@ -107,54 +97,137 @@ def load_occupancy(path: Path, max_rank: int, requested: list[str]) -> tuple[lis
     counts = np.cumsum(difference[:, 1:max_rank + 1], axis=1)
     denominators = np.cumsum(eligible[1:max_rank + 1])
     values = np.divide(
-        counts * 100.0, denominators[np.newaxis, :],
-        out=np.full_like(counts, np.nan), where=denominators[np.newaxis, :] > 0,
+        counts * 100.0,
+        denominators[np.newaxis, :],
+        out=np.full_like(counts, np.nan),
+        where=denominators[np.newaxis, :] > 0,
     )
     return codes, values, len(seen)
 
 
-def frequency_label(path: Path) -> str:
-    """Extract DF/CF range from the export filename if present."""
-    match = re.search(r"-(df|cf)(?:-?rank)(\d+)-(\d+)$", path.stem)
+def parse_rankmax(path: Path) -> int | None:
+    """Extract the upper bound of dfrank/cfrank from the filename."""
+    match = re.search(r"-(?:df|cf)rank(\d+)-(\d+)$", path.stem)
     if not match:
-        return "Termes sélectionnés"
-    measure, low, high = match.groups()
-    return f"Termes de rang {low}–{high} par {measure.upper()} décroissante"
+        match = re.search(r"-(?:df|cf)-?rank(\d+)-(\d+)$", path.stem)
+    return int(match.group(2)) if match else None
+
+
+def format_int(value: int) -> str:
+    """Format integer with French-style thousands spacing."""
+    return f"{value:,}".replace(",", " ")
+
+
+def figure_title(path: Path, codes: list[str], n_docs: int) -> str:
+    """Build the main title in one place."""
+    rankmax = parse_rankmax(path)
+    rank_text = format_int(rankmax) if rankmax is not None else "n"
+    n_formulas = len(codes)
+    formula_word = "formule" if n_formulas == 1 else "formules"
+    return (
+        f"Rangs des {rank_text} termes les plus fréquents "
+        f"selon {n_formulas} {formula_word} pour {format_int(n_docs)} documents"
+    )
+
+
+def scorer_labels(codes: list[str]) -> list[str]:
+    """Resolve display labels through scorers.py when available."""
+    try:
+        from scorers import scorer_label  # type: ignore
+    except Exception:
+        scorer_label = None
+
+    if scorer_label is None:
+        local_path = Path(__file__).with_name("scorers.py")
+        if local_path.is_file():
+            spec = importlib.util.spec_from_file_location("_ranks_heatmap_scorers", local_path)
+            if spec and spec.loader:
+                module = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(module)
+                scorer_label = getattr(module, "scorer_label", None)
+
+    labels: list[str] = []
+    for code in codes:
+        if scorer_label is not None:
+            try:
+                labels.append(scorer_label(code))
+                continue
+            except Exception:
+                pass
+        labels.append(code)
+    return labels
+
+
+def colorbar_label() -> str:
+    """Return the scale legend text."""
+    return "Documents (%) ayant à ce rang un terme parmi les plus fréquents — échelle logarithmique"
+
+
+def choose_xticks(max_rank: int) -> list[int]:
+    """Return readable x-axis ticks."""
+    step = next(
+        (s for s in (10, 20, 25, 50, 100, 200, 250, 500, 1000) if max_rank / s <= 10),
+        2000,
+    )
+    return sorted({1, max_rank, *range(step, max_rank + 1, step)})
 
 
 def plot(path: Path, output: Path, codes: list[str], values: np.ndarray, n_docs: int) -> None:
     """Save an exact-position grayscale heatmap in SVG and PNG."""
     max_rank = values.shape[1]
     plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 11, "svg.fonttype": "none"})
-    fig = plt.figure(figsize=(14, max(5.1, 2.8 + len(codes) * 0.46)))
-    ax = fig.add_axes([0.185, 0.26, 0.795, 0.55])
+
+    height = max(4.6, 2.0 + len(codes) * 0.50)
+    fig = plt.figure(figsize=(14, height), constrained_layout=False)
+
+    # Compact layout with explicit geometry.
+    left = 0.12
+    width = 0.855
+    plot_bottom = 0.24
+    plot_height = 0.54
+    bar_bottom = 0.12
+    bar_height = 0.035
+
+    ax = fig.add_axes([left, plot_bottom, width, plot_height])
+    cax = fig.add_axes([left, bar_bottom, width, bar_height])
+
+    norm = SymLogNorm(linthresh=1, linscale=0.35, vmin=0, vmax=100, base=10)
     image = ax.imshow(
         values,
-        cmap="Greys", norm=SymLogNorm(linthresh=1, linscale=0.3, vmin=0, vmax=100, base=10),
-        interpolation="nearest", aspect="auto", rasterized=True,
+        cmap="Greys",
+        norm=norm,
+        interpolation="nearest",
+        aspect="auto",
+        rasterized=True,
         extent=[0.5, max_rank + 0.5, len(codes) - 0.5, -0.5],
     )
-    ax.set_yticks(range(len(codes)), [LABELS.get(code, code) for code in codes])
-    ax.tick_params(axis="y", length=0, pad=11)
-    ax.set_xlim(0.5, max_rank + 0.5)
-    step = next((s for s in (10, 20, 25, 50, 100, 200, 250, 500, 1000)
-                 if max_rank / s <= 10), 2000)
-    ticks = sorted({1, max_rank, *range(step, max_rank + 1, step)})
-    ax.xaxis.set_major_locator(FixedLocator(ticks))
-    ax.set_xlabel("Rang du terme (échelle linéaire)", labelpad=9)
-    for y in np.arange(0.5, len(codes) - 0.5, 1):
-        ax.axhline(y, color="0.7", lw=0.7)
 
-    formatted_n = f"{n_docs:,}".replace(",", " ")
-    fig.suptitle(f"{frequency_label(path)} — {formatted_n} documents", y=0.965, fontsize=15)
-    fig.text(0.58, 0.899, "Documents dont le terme au rang indiqué appartient à la sélection (ex æquo répartis)",
-             ha="center", fontsize=10.5)
-    bar_ax = fig.add_axes([0.185, 0.11, 0.795, 0.035])
-    bar = fig.colorbar(image, cax=bar_ax, orientation="horizontal")
-    bar.ax.invert_xaxis()  # Black (100%) on the left, white (0%) on the right.
-    bar.set_ticks([0, 1, 3, 10, 30, 100])
-    bar.set_ticklabels(["0", "1", "3", "10", "30", "100"])
-    bar.set_label("Documents (%) — échelle logarithmique (0 inclus)", labelpad=8)
+    ax.set_yticks(range(len(codes)), scorer_labels(codes))
+    ax.tick_params(axis="y", length=0, pad=6)
+    ax.set_xlim(0.5, max_rank + 0.5)
+    ax.xaxis.set_major_locator(FixedLocator(choose_xticks(max_rank)))
+    ax.tick_params(axis="x", top=True, labeltop=True, bottom=False, labelbottom=False)
+    ax.set_xlabel("Rang dand une liste de mots-clés", labelpad=10)
+    ax.xaxis.set_label_position("top")
+
+    for y in np.arange(0.5, len(codes) - 0.5, 1):
+        ax.axhline(y, color="0.75", lw=0.7)
+
+    cbar = fig.colorbar(image, cax=cax, orientation="horizontal")
+    cbar.ax.invert_xaxis()
+    cbar.set_ticks([0, 1, 3, 10, 30, 100])
+    cbar.set_ticklabels(["0%", "1%", "3%", "10%", "30%", "100%"])
+
+    fig.text(
+        0.5,
+        bar_bottom + bar_height + 0.035,
+        colorbar_label(),
+        ha="center",
+        va="center",
+        fontsize=11,
+    )
+
+    fig.suptitle(figure_title(path, codes, n_docs), y=0.955, fontsize=15.5)
 
     output.parent.mkdir(parents=True, exist_ok=True)
     for extension in (".png", ".svg"):
@@ -163,9 +236,6 @@ def plot(path: Path, output: Path, codes: list[str], values: np.ndarray, n_docs:
         print(f"Saved: {target}")
     plt.close(fig)
     print(f"Documents represented: {n_docs}; rank range: 1–{max_rank}")
-    for code, data in zip(codes, values):
-        checkpoints = [r for r in (1, 10, 50, 100, max_rank) if r <= max_rank]
-        print(code + ": " + ", ".join(f"r={r}: {data[r - 1]:.1f}%" for r in dict.fromkeys(checkpoints)))
 
 
 def main() -> None:
@@ -173,7 +243,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("input_tsv", type=Path, help="TSV produced by revised ranks.py")
     parser.add_argument("--output", type=Path, help="Prefix for PNG and SVG (default: INPUT-heatmap)")
-    parser.add_argument("--max-rank", type=int, default=500, help="Largest rank displayed (default: 500)")
+    parser.add_argument("--max-rank", type=int, default=100, help="Largest rank displayed (default: 100)")
     parser.add_argument("--scorer", action="extend", nargs="+", default=[], help="Scorers in display order")
     args = parser.parse_args()
     if args.max_rank < 1:
