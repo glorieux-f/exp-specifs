@@ -215,7 +215,7 @@ def plot(path: Path, output: Path, codes: list[str], counts: np.ndarray, n_docum
     ax.grid(axis="x", which="major", color="0.5", linewidth=0.5, alpha=0.18)
     ax.set_axisbelow(False)
 
-    fig.text(0.53, 0.951, f"{format(n_hapax_documents, ',').replace(',', ' ')} documents avec hapax (tf=df=1) — mots-clé selon différentes formules — % d’hapax par rang",
+    fig.text(0.53, 0.951, f"{format(n_hapax_documents, ',').replace(',', ' ')} documents avec hapax (df=1, tf=1) — mots-clé selon différentes formules — % d’hapax par rang",
              ha="center", va="top", fontsize=15)
  
     bar_axis = fig.add_axes([0.175, 0.112, 0.72, 0.035])
