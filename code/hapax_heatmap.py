@@ -33,6 +33,7 @@ DEFAULT_MAX_RANK = 2000
 FALLBACK_LABELS = {
     "subtfidfa16": "subTF-IDFα(16)",
     "tfidfa16": "TF-IDFα(16)",
+    "tfidfa100": "TF-IDFα(100)",
     "lrc": "LRC",
     "lrcplus": "LRC+",
     "g2": "G²",
@@ -170,8 +171,19 @@ def plot(path: Path, output: Path, codes: list[str], counts: np.ndarray, n_docum
         "font.family": "DejaVu Sans",
         "font.size": 11,
     })
-    fig = plt.figure(figsize=(14, max(4.7, 2.5 + len(codes) * 0.42)))
-    ax = fig.add_axes([0.175, 0.255, 0.72, 0.56])
+    height = max(4.6, 2.0 + len(codes) * 0.50)
+    fig = plt.figure(figsize=(14, height), constrained_layout=False)
+
+    # Match the geometry of ranks_heatmap.py.
+    left = 0.12
+    width = 0.855
+    plot_bottom = 0.24
+    plot_height = 0.54
+    bar_bottom = 0.12
+    bar_height = 0.035
+
+    ax = fig.add_axes([left, plot_bottom, width, plot_height])
+    bar_axis = fig.add_axes([left, bar_bottom, width, bar_height])
 
     # The linear part represents exact zero and the first nonzero document.
     # A Greys colormap maps zero to white and the maximum to black.
@@ -193,8 +205,10 @@ def plot(path: Path, output: Path, codes: list[str], counts: np.ndarray, n_docum
     ax.set_xlim(1, max_rank + 1)
     ax.set_ylim(len(codes), 0)
     ax.set_yticks(np.arange(len(codes)) + 0.5, scorer_labels(codes))
-    ax.tick_params(axis="y", length=0, pad=12)
-    ax.set_xlabel("Rang du mot-clé (échelle linéaire)")
+    ax.tick_params(axis="y", length=0, pad=6)
+    ax.tick_params(axis="x", top=True, labeltop=True, bottom=False, labelbottom=False)
+    ax.set_xlabel("Rang du mot-clé", labelpad=10)
+    ax.xaxis.set_label_position("top")
 
     # Choose equal-spaced major ticks on the linear axis.
     step = next((n for n in (10, 20, 25, 50, 100, 200, 250, 500, 1000, 2000)
@@ -215,10 +229,11 @@ def plot(path: Path, output: Path, codes: list[str], counts: np.ndarray, n_docum
     ax.grid(axis="x", which="major", color="0.5", linewidth=0.5, alpha=0.18)
     ax.set_axisbelow(False)
 
-    fig.text(0.53, 0.951, f"{format(n_hapax_documents, ',').replace(',', ' ')} documents avec hapax (df=1, tf=1) — mots-clé selon différentes formules — % d’hapax par rang",
-             ha="center", va="top", fontsize=15)
- 
-    bar_axis = fig.add_axes([0.175, 0.112, 0.72, 0.035])
+    fig.suptitle(
+        f"{format(n_hapax_documents, ',').replace(',', ' ')} documents avec hapax (df=1, tf=1) — mots-clé selon différentes formules — % d’hapax par rang",
+        y=0.955, fontsize=15,
+    )
+
     bar = fig.colorbar(image, cax=bar_axis, orientation="horizontal")
     bar.ax.invert_xaxis()  # Highest occupancy / black at the left.
     if max_percent > 0:
@@ -228,7 +243,11 @@ def plot(path: Path, output: Path, codes: list[str], counts: np.ndarray, n_docum
         bar.set_ticks(levels)
         bar.set_ticklabels(["0" if v == 0 else f"{v:.3g}".replace(".", ",") for v in levels])
     bar.ax.xaxis.set_minor_locator(NullLocator())
-    bar.set_label("Documents contenant au moins un hapax (%) — échelle logarithmique", labelpad=7)
+    fig.text(
+        0.5, bar_bottom + bar_height + 0.035,
+        "Documents contenant au moins un hapax (%) — échelle logarithmique",
+        ha="center", va="center", fontsize=11,
+    )
 
     output.parent.mkdir(parents=True, exist_ok=True)
     png = output.with_suffix(".png")
