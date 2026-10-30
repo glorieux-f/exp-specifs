@@ -22,14 +22,14 @@ setlocal EnableExtensions EnableDelayedExpansion
 
 :: python .\keywords.py ..\data\3_contingency\romans19e-  ..\results\keywords-diag\  --select "verne*" "balzac*" "sand*" "zola*" "dumas*"  --vocab all --diagnose --min-doc-len 1000  --scorer lrc lrcplus g2 txm poissondev tfidfa0.77 subtfidfa0.37  simplemaths tf txmneg 
 
-:: Hapax
-python .\hapax.py ..\data\3_contingency\romans19e-  ..\results\hapax\  --vocab all content --min-doc-len 1000  --scorer tfidfa100 g2 txm tfidfa0.77 simplemaths subtfidfa0.37 lrcplus lrc tf
-python hapax_heatmap.py ..\results\hapax\romans19e-hapax-content.tsv --max-rank 100
-:: python hapax_heatmap.py ..\results\hapax\romans19e-hapax.tsv  --max-rank 100
-
 :: Topwords
 :: python .\ranks.py ..\data\3_contingency\romans19e- ..\results\topwords\ --dfrank 1 200 --min-doc-len 1000 --vocab all --scorer tfidfa100 g2 txm lrcplus tfidfa0.77 subtfidfa0.37  simplemaths tf --force
 :: python .\ranks_heatmap.py  ..\results\topwords\romans19e-ranks-all-min1000-dfrank1-200.tsv --max-rank 100
 
+:: Hapax
+:: python .\hapax.py ..\data\3_contingency\romans19e-  ..\results\hapax\  --vocab all content --min-doc-len 1000  --scorer tfidfa100 g2 txm tfidfa0.77 subtfidfa0.37 simplemaths lrcplus lrc tf
+python hapax_heatmap.py ..\results\hapax\romans19e-hapax.tsv --max-rank 100
+
+ :: python .\keywords-freqlist.py  ..\results\keywords100\*-all-*.txt ..\results\keywords100-freqlist --scorer tfidfa100 g2 txm lrcplus tfidfa0.77 subtfidfa0.37  simplemaths tf
 
 :end
